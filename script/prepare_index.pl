@@ -1,405 +1,195 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
-use v5.16;
 use lib 'lib', '../lib';
-use Set::Scalar;
-use Mojo::DOM;
-use Mojo::Util qw/encode decode/;
-use Mojo::ByteStream 'b';
-
+use Getopt::Long;
+use Benchmark qw/:hireswallclock/;
+use IO::Compress::Gzip qw/$GzipError/;
 use Log::Log4perl;
-Log::Log4perl->init("script/log4perl.conf");
-
 use KorAP::Document;
 use KorAP::Tokenizer;
 
+our $VERSION = 0.01;
+
+# Merges foundry data to create indexer friendly documents
+# ndiewald, 2013/11/05
+
+sub printhelp {
+  print <<'EOHELP';
+
+Merge foundry data based on a tokenization and create indexer friendly documents.
+
+Call:
+prepare_index.pl -z --input <directory> --outputfile <filename>
+
+--input|-i <directory>          Directory of the document to index
+--output|-o <filename>          Document name for output (optional),
+                                Writes to <STDOUT> by default
+--token|-t <foundry>[#<layer>]  Define the default tokenization by specifying
+                                the name of the foundry and optionally the name
+                                of the layer. Defaults to OpenNLP#tokens.
+--skip|-s <foundry>[#<layer>]   Skip specific foundries by specifying the name
+                                or specific layers by defining the name
+                                with a # in front of the foundry,
+                                e.g. Mate#Morpho. Alternatively you can skip #ALL.
+                                Can be set multiple times.
+--allow|-a <foundry>#<layer>    Allow specific foundries and layers by defining them
+                                combining the foundry name with a # and the layer name.
+--primary|-p                    Output primary data or not. Defaults to true.
+                                Can be flagged using --no-primary as well.
+--human|-m                      Represent the data human friendly,
+                                while the output defaults to JSON
+--pretty|-y                     Pretty print json output
+--gzip|-z                       Compress the output
+                                (expects a defined output file)
+--log|-l                        The Log4perl log level, defaults to ERROR.
+--help|-h                       Print this document (optional)
+
+diewald@ids-mannheim.de, 2013/11/04
+
+EOHELP
+  exit(defined $_[0] ? $_[0] : 0);
+};
+
+# Options from the command line
+my ($input, $output, $text, $gzip, $log_level, @skip, $token_base, $primary, @allow, $pretty);
+GetOptions(
+  'input|x=s'   => \$input,
+  'output|o=s'  => \$output,
+  'human|m'     => \$text,
+  'token|t=s'   => \$token_base,
+  'gzip|z'      => \$gzip,
+  'skip|s=s'    => \@skip,
+  'log|l=s'     => \$log_level,
+  'allow|a=s'   => \@allow,
+  'primary|p!'  => \$primary,
+  'pretty|y'    => \$pretty,
+  'help|h'      => sub { printhelp }
+);
+
+printhelp(1) if !$input || ($gzip && !$output);
+
+$log_level //= 'ERROR';
+
+my %skip;
+$skip{lc($_)} = 1 foreach @skip;
+
+Log::Log4perl->init({
+  'log4perl.rootLogger' => uc($log_level) . ', STDERR',
+  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
+  'log4perl.appender.STDERR.layout' => 'PatternLayout',
+  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
+});
+
+my $log = Log::Log4perl->get_logger('main');
+
+BEGIN {
+  $main::TIME = Benchmark->new;
+  $main::LAST_STOP = Benchmark->new;
+};
+
+sub stop_time {
+  my $new = Benchmark->new;
+  $log->trace(
+    'The code took: '.
+      timestr(timediff($new, $main::LAST_STOP)) .
+	' (overall: ' . timestr(timediff($new, $main::TIME)) . ')'
+      );
+  $main::LAST_STOP = $new;
+};
 
 # Call perl script/prepare_index.pl WPD/AAA/00001
 
-sub parse_doc {
-  my $doc = KorAP::Document->new(
-    path => shift . '/'
-  );
-
-  $doc->parse;
-
-  my $tokens = KorAP::Tokenizer->new(
-    path => $doc->path,
-    doc => $doc,
-    foundry => 'connexor',
-    layer => 'tokens'
-  );
-
-  $tokens->parse;
-
-  my $i = 0;
-  $tokens->add_spandata(
-    foundry => 'connexor',
-    layer => 'sentences',
-    #skip => 1,
-    cb => sub {
-      my ($stream, $span) = @_;
-      my $mtt = $stream->pos($span->p_start);
-      $mtt->add(
-	term => '<>:s',
-	o_start => $span->o_start,
-	o_end => $span->o_end,
-	p_end => $span->p_end
-      );
-      $i++;
-    }
-  );
-
-  $tokens->stream->add_meta('s', '<i>' . $i);
-
-  $i = 0;
-  $tokens->add_spandata(
-    foundry => 'base',
-    layer => 'paragraph',
-    #skip => 1,
-    cb => sub {
-      my ($stream, $span) = @_;
-      my $mtt = $stream->pos($span->p_start);
-      $mtt->add(
-	term => '<>:p',
-	o_start => $span->o_start,
-	o_end => $span->o_end,
-	p_end => $span->p_end
-      );
-      $i++;
-    }
-  );
-  $tokens->stream->add_meta('p', '<i>' . $i);
-
-  $tokens->add_tokendata(
-    foundry => 'opennlp',
-    layer => 'morpho',
-    #skip => 1,
-    cb => sub {
-      my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
-      my $content = $token->content;
-
-      my $found;
-
-      # syntax
-      if (($found = $content->at('f[name="pos"]')) && ($found = $found->text)) {
-	$mtt->add(
-	  term => 'opennlp_p:' . $found
-	);
-      };
-    });
+# Create and parse new document
+$input =~ s{([^/])$}{$1/};
+my $doc = KorAP::Document->new( path => $input );
+$doc->parse;
 
 
-  my $model = 'ne_dewac_175m_600';
-  $tokens->add_tokendata(
-    foundry => 'corenlp',
-    #skip => 1,
-    layer => $model,
-    cb => sub {
-      my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
-      my $content = $token->content;
+my ($token_base_foundry, $token_base_layer) = (qw/OpenNLP Tokens/);
+if ($token_base) {
+  ($token_base_foundry, $token_base_layer) = split /#/, $token_base;
+};
 
-      my $found;
+# Get tokenization
+my $tokens = KorAP::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => $token_base_foundry,
+  layer => $token_base_layer,
+  name => 'tokens'
+);
+$tokens->parse;
 
-      if (($found = $content->at('f[name=ne] f[name=ent]')) && ($found = $found->text)) {
-	$mtt->add(
-	  term => 'corenlp_' . $model . ':' . $found
-	);
-      };
-    });
+my @layers;
 
-  $model = 'ne_hgc_175m_600';
-  $tokens->add_tokendata(
-    foundry => 'corenlp',
-    #skip => 1,
-    layer => $model,
-    cb => sub {
-      my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
-      my $content = $token->content;
+# Base information
+push(@layers, ['OpenNLP', 'Sentences']);
+push(@layers, ['Base', 'Paragraphs']);
 
-      my $found;
+# OpenNLP
+push(@layers, ['OpenNLP', 'Morpho']);
 
-      if (($found = $content->at('f[name=ne] f[name=ent]')) && ($found = $found->text)) {
-	$mtt->add(
-	  term => 'corenlp_' . $model . ':' . $found
-	);
-      };
-    });
+# CoreNLP
+push(@layers, ['CoreNLP', 'NamedEntities', 'ne_dewac_175m_600']);
+push(@layers, ['CoreNLP', 'NamedEntities', 'ne_hgc_175m_600']);
 
-  $tokens->add_tokendata(
-    foundry => 'connexor',
-    layer => 'morpho',
-    #skip => 1,
-    cb => sub {
-      my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
-      my $content = $token->content;
+# Connexor
+push(@layers, ['Connexor', 'Morpho']);
+push(@layers, ['Connexor', 'Syntax']);
+push(@layers, ['Connexor', 'Phrase']);
 
-      my $found;
+# TreeTagger
+push(@layers, ['TreeTagger', 'Morpho']);
 
-      # Lemma
-      if (($found = $content->at('f[name="lemma"]')) && ($found = $found->text)) {
-	if (index($found, "\N{U+00a0}") >= 0) {
-	  $found = b($found)->decode;
-	  foreach (split(/\x{00A0}/, $found)) {
-	    $mtt->add(
-	      term => 'cnx_l:' . b($_)->encode
-	    );
-	  }
-	}
-	else {
-	  $mtt->add(
-	    term => 'cnx_l:' . $found # b($found)->encode
-	  );
-	};
-      };
+# Mate
+push(@layers, ['Mate', 'Morpho']);
+push(@layers, ['Mate', 'Dependency']);
 
-      # POS
-      if (($found = $content->at('f[name="pos"]')) && ($found = $found->text)) {
-	$mtt->add(
-	  term => 'cnx_p:' . $found
-	);
-      };
-
-      # MSD
-      # Todo: Look in the description!
-      if (($found = $content->at('f[name="msd"]')) && ($found = $found->text)) {
-	foreach (split(':', $found)) {
-	  $mtt->add(
-	    term => 'cnx_m:' . $_
-	  );
-	};
-      };
-    }
-  );
-
-  $tokens->add_tokendata(
-    foundry => 'connexor',
-    layer => 'syntax',
-    #skip => 1,
-    cb => sub {
-      my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
-      my $content = $token->content;
-
-      my $found;
-
-      # syntax
-      if (($found = $content->at('f[name="pos"]')) && ($found = $found->text)) {
-	$mtt->add(
-	  term => 'cnx_syn:' . $found
-	);
-      };
-    });
-
-  $tokens->add_spandata(
-    foundry => 'connexor',
-    layer => 'phrase',
-    #skip => 1,
-    cb => sub {
-      my ($stream, $span) = @_;
-
-      my $type = $span->content->at('f[name=pos]');
-      if ($type && ($type = $type->text)) {
-	my $mtt = $stream->pos($span->p_start);
-	$mtt->add(
-	  term => '<>:cnx_const:' . $type,
-	  o_start => $span->o_start,
-	  o_end => $span->o_end,
-	  p_end => $span->p_end
-	);
-      };
-    }
-  );
-
-  $tokens->add_tokendata(
-    foundry => 'tree_tagger',
-    #skip => 1,
-    layer => 'morpho',
-    cb => sub {
-      my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
-      my $content = $token->content;
-
-      my $found;
-
-      # lemma
-      if (($found = $content->at('f[name="lemma"]')) &&
-	    ($found = $found->text) && $found ne 'UNKNOWN') {
-	$mtt->add(
-	  term => 'tt_l:' . $found
-	);
-      };
-
-      # pos
-      if (($found = $content->at('f[name="ctag"]')) && ($found = $found->text)) {
-	$mtt->add(
-	  term => 'tt_p:' . $found
-	);
-      };
-    });
-
-  $tokens->add_tokendata(
-    foundry => 'mate',
-    layer => 'morpho',
-    cb => sub {
-      my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
-      my $content = $token->content;
-
-      my $found;
-
-      my $capital = 0;
-
-      # pos
-      if (($found = $content->at('f[name="pos"]')) &&
-	    ($found = $found->text)) {
-	$mtt->add(term => 'mate_p:' . $found
-	);
-      };
-
-      # lemma
-      if (($found = $content->at('f[name="lemma"]'))
-	    && ($found = $found->text)
-	      && $found ne '--') {
-	$mtt->add(term => 'mate_l:' . b($found)->decode('latin-1')->encode->to_string);
-      };
-
-      # MSD
-      if (($found = $content->at('f[name="msd"]')) &&
-	    ($found = $found->text) &&
-	      ($found ne '_')) {
-	foreach (split '\|', $found) {
-	  my ($x, $y) = split "=", $_;
-	  # case, tense, number, mood, person, degree, gender
-	  $mtt->add(term => 'mate_m:' . $x . ':' . $y);
-	};
-      };
-    });
+# XIP
+push(@layers, ['XIP', 'Morpho']);
+push(@layers, ['XIP', 'Constituency']);
+push(@layers, ['XIP', 'Dependency']);
 
 
-  $tokens->add_tokendata(
-    foundry => 'xip',
-    #skip => 1,
-    layer => 'morpho',
-    encoding => 'bytes',
-    cb => sub {
-      my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
-      my $content = $token->content;
-
-      my $found;
-
-      my $capital = 0;
-      # pos
-      if (($found = $content->at('f[name="pos"]')) && ($found = $found->text)) {
-	$mtt->add(
-	  term => 'xip_p:' . $found
-	);
-
-	$capital = 1 if $found eq 'NOUN';
-      };
-
-      # lemma
-      if (($found = $content->at('f[name="lemma"]')) && ($found = $found->text)) {
-	my (@token) = split('#', $found);
-
-	my $full = '';
-	foreach (@token) {
-	  $full .= $_;
-	  $_ =~ s{/\w+$}{};
-	  $mtt->add(term => 'xip_l:' . $_);
-	};
-	if (@token > 1) {
-	  $full =~ s{/}{}g;
-	  $full = lc $full;
-	  $full = $capital ? ucfirst($full) : $full;
-	  $mtt->add(term => 'xip_l:' . $full);
-	};
-      };
-    });
-
-
-  # Collect all spans and check for roots
-  my %xip_const;
-  my $xip_const_root = Set::Scalar->new;
-  my $xip_const_noroot = Set::Scalar->new;
-
-  # First run:
-  $tokens->add_spandata(
-    foundry => 'xip',
-    layer => 'constituency',
-    encoding => 'bytes',
-    #skip => 1,
-    cb => sub {
-      my ($stream, $span) = @_;
-
-      $xip_const{$span->id} = $span;
-      $xip_const_root->insert($span->id);
-
-      $span->content->find('rel[label=dominates][target]')->each(
-	sub {
-	  my $rel = shift;
-	  $xip_const_noroot->insert($rel->attr('target'));
-	}
-      );
-    }
-  );
-
-  my $stream = $tokens->stream;
-
-  my $add_const = sub {
-    my $span = shift;
-    my $level = shift;
-    my $mtt = $stream->pos($span->p_start);
-
-    my $content = $span->content;
-    my $type = $content->at('f[name=const]');
-    if ($type && ($type = $type->text)) {
-      # $type is now NPA, NP, NUM
-      my %term = (
-	term => '<>:xip_const:' . $type,
-	o_start => $span->o_start,
-	o_end => $span->o_end,
-	p_end => $span->p_end
-      );
-
-      $term{payload} = '<s>' . $level if $level;
-
-      $mtt->add(%term);
-
-      my $this = __SUB__;
-
-      $content->find('rel[label=dominates][target]')->each(
-	sub {
-	  my $subspan = delete $xip_const{$_[0]->attr('target')} or return;
-	  $this->($subspan, $level + 1);
-	}
-      );
+if ($skip{'#all'}) {
+  foreach (@allow) {
+    $tokens->add(split('#', $_));
+    stop_time;
+  };
+}
+else {
+  # Add to index file - respect skipping
+  foreach my $info (@layers) {
+    unless ($skip{lc($info->[0]) . '#' . lc($info->[1])}) {
+      $tokens->add(@$info);
+      stop_time;
     };
   };
+};
 
-  my $diff = $xip_const_root->difference($xip_const_noroot);
-  foreach ($diff->members) {
-    my $obj = delete $xip_const{$_} or next;
-    $add_const->($obj, 0);
+my $file;
+
+my $print_text = $text ? $tokens->to_string($primary) : ($pretty ? $tokens->to_pretty_json($primary) : $tokens->to_json($primary));
+
+if ($output) {
+  if ($gzip) {
+    $file = IO::Compress::Gzip->new($output, Minimal => 1);
+  }
+  else {
+    $file = IO::File->new($output, "w");
   };
 
-  # Todo: Add mate-morpho
-  # Todo: Add mate-dependency
-  # Todo: Add xip-dependency
+#  binmode $file, ':utf8';
 
-  print $tokens->stream->to_string;
+  $file->print($print_text);
+  $file->close;
+}
+else {
+#  binmode STDOUT, ':utf8';
+  print $print_text . "\n";
 };
 
-if ($ARGV[0]) {
-  parse_doc($ARGV[0]);
-};
-
-
+stop_time;
 
 __END__

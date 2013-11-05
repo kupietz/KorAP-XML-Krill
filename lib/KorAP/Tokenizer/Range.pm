@@ -35,9 +35,9 @@ sub before {
 
   if ($found =~ /!(\d+):(\d+)$/) {
     return $1 >= 0 ? $1 : 0;
-  }
-  else {
-    return $found;
+#  }
+#  else {
+#    return $found;
   };
 };
 
@@ -46,9 +46,9 @@ sub after {
   my $found = $$self->lookup( shift() );
   if ($found =~ /!(\d+):(\d+)$/) {
     return $2;
-  }
-  else {
-    return $found;
+#  }
+#  else {
+#    return $found;
   };
 };
 

@@ -1,12 +1,12 @@
-package KorAP::MultiTermTokenStream;
+package KorAP::Field::MultiTermTokenStream;
 use Mojo::Base -base;
-use KorAP::MultiTermToken;
+use KorAP::Field::MultiTermToken;
 
 has [qw/oStart oEnd/];
 
 sub add {
   my $self = shift;
-  my $mtt = shift // KorAP::MultiTermToken->new;
+  my $mtt = shift // KorAP::Field::MultiTermToken->new;
   $self->{mtt} //= [];
   push(@{$self->{mtt}}, $mtt);
   return $mtt;
@@ -28,6 +28,11 @@ sub pos {
 sub to_string {
   my $self = shift;
   return join("\n" , map { $_->to_string } @{$self->{mtt}}) . "\n";
+};
+
+sub to_array {
+  my $self = shift;
+  [ map { $_->to_array } @{$self->{mtt}} ];
 };
 
 1;

@@ -42,29 +42,33 @@ sub id {
   $_[0]->[4];
 };
 
-
 sub content {
   if (defined $_[1]) {
     $_[0]->[5] = $_[1];
   }
   else {
-    if ($_[0]->processed) {
-      return $_[0]->[5];
-    }
-    else {
-      my $c = Mojo::DOM->new($_[0]->[5]);
-      $c->xml(1);
-      $_[0]->processed(1);
-      return $_[0]->[5] = $c;
-    };
+    return $_[0]->[5];
   };
 };
 
-sub processed {
-  if (defined $_[1]) {
-    $_[0]->[6] = $_[1] ? 1 : 0;
+sub dom {
+  if ($_[0]->[6]) {
+    return $_[0]->[6];
+  }
+  else {
+    my $c = Mojo::DOM->new($_[0]->[5]);
+    $c->xml(1);
+    return $_[0]->[6] = $c;
   };
-  $_[0]->[6];
+};
+
+sub hash {
+  if (defined $_[1]) {
+    $_[0]->[7] = $_[1];
+  }
+  else {
+    return $_[0]->[7];
+  };
 };
 
 1;

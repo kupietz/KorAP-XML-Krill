@@ -1,4 +1,4 @@
-package KorAP::MultiTerm;
+package KorAP::Field::MultiTerm;
 use Mojo::Base -base;
 
 has [qw/p_start p_end o_start o_end term payload/];

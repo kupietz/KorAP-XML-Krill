@@ -1,58 +1,43 @@
 package KorAP::Tokenizer::Spans;
-use Mojo::Base -base;
+use Mojo::Base 'KorAP::Tokenizer::Units';
 use KorAP::Tokenizer::Span;
 use Mojo::DOM;
 use Mojo::ByteStream 'b';
+use XML::Fast;
 
-has [qw/path foundry layer range primary should have/];
-has 'encoding' => 'utf-8';
+has 'range';
 
 sub parse {
   my $self = shift;
   my $file = b($self->path . $self->foundry . '/' . $self->layer . '.xml')->slurp;
 
-  my $spans = Mojo::DOM->new($file);
-  $spans->xml(1);
+  # my $spans = Mojo::DOM->new($file);
+  # $spans->xml(1);
+
+  # my $spans = XML::LibXML->load_xml(string => $file);
+
+  my $spans = xml2hash($file, text => '#text', attr => '-')->{layer}->{spanList}->{span};
 
   my ($should, $have) = (0,0);
-  my ($from, $to);
+  my ($from, $to, $h);
 
   my @spans;
-  $spans->find('span')->each(
-    sub {
-      my $s = shift;
+  my $p = $self->primary;
 
-      $should++;
+  foreach my $s (@$spans) {
 
-      if ($self->encoding eq 'bytes') {
-	$from = $self->primary->bytes2chars($s->attr('from'));
-	$to = $self->primary->bytes2chars($s->attr('to'));
-      }
-      else {
-	$from = $s->attr('from');
-	$to = $s->attr('to');
-      };
+    $should++;
 
-      return unless $to > $from;
+    my $span = $self->span(
+      $s->{-from},
+      $s->{-to},
+      $s
+    ) or next;
 
-      my $span = KorAP::Tokenizer::Span->new;
+    $have++;
 
-      $span->id($s->attr('id'));
-      $span->o_start($from);
-      $span->o_end($to);
-      $span->p_start($self->range->after($span->o_start));
-      $span->p_end($self->range->before($span->o_end));
-
-      return unless $span->p_end >= $span->p_start;
-
-      if (@{$s->children}) {
-	$span->content($s->content_xml);
-      };
-
-      $have++;
-
-      push(@spans, $span);
-    });
+    push(@spans, $span);
+  };
 
   $self->should($should);
   $self->have($have);

@@ -5,7 +5,10 @@ use Carp qw/croak/;
 use Mojo::ByteStream 'b';
 use feature 'state';
 use Packed::Array;
+use utf8;
 
+# our $QUOT = b("„“”")->decode;
+our $QUOT_RE = qr/[„“”]/;
 
 # Constructor
 sub new {
@@ -19,13 +22,37 @@ sub data {
   my $self = shift;
   my ($from, $to) = @_;
 
-  return b(substr($self->[0], $from))->encode if $from && !$to;
+#  return b(substr($self->[0], $from))->encode if $from && !$to;
+  return substr($self->[0], $from) if $from && !$to;
 
-  return b($self->[0])->encode unless $to;
+#  return b($self->[0])->encode unless $to;
+  return $self->[0] unless $to;
 
   my $substr = substr($self->[0], $from, $to - $from);
   if ($substr) {
-    return b($substr)->encode;
+#    return b($substr)->encode;
+    return $substr;
+  };
+  # encode 'UTF-8',
+  croak 'Unable to find substring';
+};
+
+
+sub data_bytes {
+  my $self = shift;
+  my ($from, $to) = @_;
+
+  use bytes;
+
+  return b(substr($self->[0], $from))->decode if $from && !$to;
+
+#  return b($self->[0])->encode unless $to;
+  return b($self->[0])->decode unless $to;
+
+  my $substr = substr($self->[0], $from, $to - $from);
+  if ($substr) {
+#    return b($substr)->encode;
+    return b($substr)->decode;
   };
   # encode 'UTF-8',
   croak 'Unable to find substring';
@@ -45,17 +72,31 @@ sub data_length {
 sub bytes2chars {
   my $self = shift;
   unless ($self->[2]) {
-    $self->_calc_chars;
+    $self->[2] = $self->_calc_chars($self->[0]);
   };
   return $self->[2]->[shift];
 };
 
+# Get correct offset
+sub xip2chars {
+  my $self = shift;
+  unless ($self->[3]) {
+    my $buffer = $self->[0];
+
+    # Hacky work around: replace fancy quotation marks for XIP
+    $buffer =~ s{$QUOT_RE}{"}g;
+
+    $self->[3] = $self->_calc_chars($buffer);
+  };
+  return $self->[3]->[shift];
+};
 
 # Calculate character offsets
 sub _calc_chars {
   use bytes;
-
   my $self = shift;
+  my $text = shift;
+
   tie my @array, 'Packed::Array';
 
   state $leading = pack( 'B8', '10000000' );
@@ -65,14 +106,14 @@ sub _calc_chars {
   my $c;
 
   # Init array
-  my $l = length($self->[0]);
+  my $l = length($text);
   $array[$l-1] = 0;
 
   # Iterate over every character
-  while ($i < $l) {
+  while ($i <= $l) {
 
     # Get actual character
-    $c = substr($self->[0], $i, 1);
+    $c = substr($text, $i, 1);
 
     # store character position
     $array[$i++] = $j;
@@ -81,7 +122,7 @@ sub _calc_chars {
     if (ord($c & $leading) && ord($c & $start)) {
 
       # Get the next byte - expecting a following character
-      $c = substr($self->[0], $i, 1);
+      $c = substr($text, $i, 1);
 
       # Character is part of a multibyte
       while (ord($c & $leading)) {
@@ -90,14 +131,13 @@ sub _calc_chars {
 	$array[$i] = (ord($c & $start)) ? ++$j : $j;
 
 	# Get next character
-	$c = substr($self->[0], ++$i, 1);
+	$c = substr($text, ++$i, 1);
       };
     };
 
     $j++;
   };
-
-  $self->[2] = \@array;
+  return \@array;
 };
 
 

@@ -1,16 +1,18 @@
 package KorAP::Tokenizer;
-
 use Mojo::Base -base;
 use Mojo::ByteStream 'b';
-use Carp qw/carp croak/;
+use Mojo::Loader;
+use Carp qw/croak/;
 use KorAP::Tokenizer::Range;
 use KorAP::Tokenizer::Match;
 use KorAP::Tokenizer::Spans;
 use KorAP::Tokenizer::Tokens;
-use KorAP::MultiTermTokenStream;
+use KorAP::Field::MultiTermTokenStream;
+use JSON::XS;
 use Log::Log4perl;
 
-has [qw/path foundry layer doc stream should have/];
+has [qw/path foundry doc stream should have name/];
+has layer => 'Tokens';
 
 has 'log' => sub {
   Log::Log4perl->get_logger(__PACKAGE__)
@@ -21,8 +23,8 @@ sub parse {
   my $self = shift;
 
   # Create new token stream
-  my $mtts = KorAP::MultiTermTokenStream->new;
-  my $file = b($self->path . $self->foundry . '/' . ($self->layer // 'tokens') . '.xml')->slurp;
+  my $mtts = KorAP::Field::MultiTermTokenStream->new;
+  my $file = b($self->path . lc($self->foundry) . '/' . lc($self->layer) . '.xml')->slurp;
   my $tokens = Mojo::DOM->new($file);
   $tokens->xml(1);
 
@@ -121,13 +123,12 @@ sub add_spandata {
 
   my $cb = delete $param{cb};
 
-  if ($param{encoding} && $param{encoding} eq 'bytes') {
-    $param{primary} = $self->doc->primary;
-  };
+  $param{primary} = $self->doc->primary;
 
   my $spans = KorAP::Tokenizer::Spans->new(
     path => $self->path,
     range => $self->range,
+    match => $self->match,
     %param
   );
 
@@ -140,12 +141,11 @@ sub add_spandata {
     $self->log->debug('With an alignment quota of ' . _perc($spans->should, $spans->have) . ' %');
   };
 
-
   if ($cb) {
     foreach (@$spanarray) {
-      $cb->($self->stream, $_);
+      $cb->($self->stream, $_, $spans);
     };
-    return;
+    return 1;
   };
   return $spans;
 };
@@ -165,12 +165,11 @@ sub add_tokendata {
 
   my $cb = delete $param{cb};
 
-  if ($param{encoding} && $param{encoding} eq 'bytes') {
-    $param{primary} = $self->doc->primary;
-  };
+  $param{primary} = $self->doc->primary;
 
   my $tokens = KorAP::Tokenizer::Tokens->new(
     path => $self->path,
+    range => $self->range,
     match => $self->match,
     %param
   );
@@ -189,11 +188,32 @@ sub add_tokendata {
 
   if ($cb) {
     foreach (@$tokenarray) {
-      $cb->($self->stream, $_);
+      $cb->($self->stream, $_, $tokens);
     };
-    return;
+    return 1;
   };
   return $tokens;
+};
+
+
+sub add {
+  my $self = shift;
+  my $loader = Mojo::Loader->new;
+  my $foundry = shift;
+  my $layer = shift;
+  my $mod = 'KorAP::Index::' . $foundry . '::' . $layer;
+
+  if ($mod->can('new') || eval("require $mod; 1;")) {
+    if (my $retval = $mod->new($self)->parse(@_)) {
+      $self->support($foundry => $layer, @_);
+      return $retval;
+    };
+  }
+  else {
+    $self->log->error('Unable to load '.$mod . '(' . $@ . ')');
+  };
+
+  return;
 };
 
 
@@ -212,6 +232,73 @@ sub _perc {
   return sprintf("%.2f", $a_quota) . '%' .
     ((($a_quota + $b_quota) <= 100) ?
        ' [' . sprintf("%.2f", $a_quota + $b_quota) . '%]' : '');
+};
+
+
+sub support {
+  my $self = shift;
+  unless ($_[0]) {
+    return $self->{support} // {};
+  }
+  elsif (!$_[1]) {
+    return $self->{support}->{$_[0]} // []
+  };
+  my $f = lc shift;
+  my $l = lc shift;
+  my @info = @_;
+  $self->{support} //= {};
+  $self->{support}->{$f} //= [];
+  push(@{$self->{support}->{$f}}, [$l, @info]);
+};
+
+
+sub to_string {
+  my $self = shift;
+  my $primary = defined $_[0] ? $_[0] : 1;
+  my $string = "<meta>\n";
+  $string .= $self->doc->to_string;
+  $string .= "</meta>\n";
+  if ($primary) {
+    $string .= "<text>\n";
+    $string .= $self->doc->primary->data . "\n";
+    $string .= "</text>\n";
+  };
+  $string .= '<field name="' . $self->name . "\">\n";
+  $string .= "<info>\n";
+  $string .= 'tokenization = ' . $self->foundry . '#' . $self->layer . "\n";
+  foreach my $foundry (keys %{$self->support}) {
+    foreach (@{$self->support($foundry)}) {
+      $string .= 'support = ' . $foundry . '#' . join(',', @{$_}) . "\n";
+    };
+  };
+  $string .= "</info>\n";
+  $string .= $self->stream->to_string;
+  $string .= "</field>";
+  return $string;
+};
+
+sub to_data {
+  my $self = shift;
+  my $primary = defined $_[0] ? $_[0] : 1;
+  my %data;
+  $data{meta} = $self->doc->to_hash;
+  $data{primary} = $self->doc->primary->data if $primary;
+  $data{fields} = [ {
+    name => $self->name,
+    data => $self->stream->to_array,
+    tokenization => [lc($self->foundry), lc($self->layer)],
+    support => $self->support
+  }];
+  \%data;
+};
+
+sub to_json {
+  encode_json($_[0]->to_data($_[1]));
+};
+
+
+sub to_pretty_json {
+  JSON::XS->new->pretty->encode($_[0]->to_data($_[1]));
 };
 
 
@@ -276,7 +363,7 @@ The L<KorAP::Document> object.
 
   $tokens->stream->add_meta('adjCount', '<i>45');
 
-The L<KorAP::MultiTermTokenStream> object
+The L<KorAP::Field::MultiTermTokenStream> object
 
 
 =head2 range
@@ -321,7 +408,7 @@ Start the tokenization process.
 Add span information to the parsed token stream.
 Expects a C<foundry> name, a C<layer> name and a
 callback parameter, that will be called after each parsed
-span. The L<KorAP::MultiTermTokenStream> object will be passed,
+span. The L<KorAP::Field::MultiTermTokenStream> object will be passed,
 as well as the current L<KorAP::Tokenizer::Span>.
 
 An optional parameter C<encoding> may indicate that the span offsets
@@ -351,7 +438,7 @@ An optional parameter C<skip> allows for skipping the process.
 Add token information to the parsed token stream.
 Expects a C<foundry> name, a C<layer> name and a
 callback parameter, that will be called after each parsed
-token. The L<KorAP::MultiTermTokenStream> object will be passed,
+token. The L<KorAP::Field::MultiTermTokenStream> object will be passed,
 as well as the current L<KorAP::Tokenizer::Span>.
 
 An optional parameter C<encoding> may indicate that the token offsets

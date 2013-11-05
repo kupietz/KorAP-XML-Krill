@@ -1,5 +1,5 @@
-package KorAP::MultiTermToken;
-use KorAP::MultiTerm;
+package KorAP::Field::MultiTermToken;
+use KorAP::Field::MultiTerm;
 use Mojo::Base -base;
 
 has [qw/o_start o_end/];
@@ -9,10 +9,10 @@ sub add {
   my $mt;
   unless (ref $_[0] eq 'MultiTerm') {
     if (@_ == 1) {
-      $mt = KorAP::MultiTerm->new(term => shift());
+      $mt = KorAP::Field::MultiTerm->new(term => shift());
     }
     else {
-      $mt = KorAP::MultiTerm->new(@_);
+      $mt = KorAP::Field::MultiTerm->new(@_);
     };
   }
   else {
@@ -29,6 +29,11 @@ sub to_string {
   $string .= join ('|', map($_->to_string, @{$self->{mt}}));
   $string .= ']';
   return $string;
+};
+
+sub to_array {
+  my $self = shift;
+  [map($_->to_string, @{$self->{mt}})];
 };
 
 1;

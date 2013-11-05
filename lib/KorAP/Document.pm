@@ -4,11 +4,15 @@ use v5.16;
 
 use Mojo::ByteStream 'b';
 use Mojo::DOM;
-use Carp qw/croak carp/;
+use Carp qw/croak/;
 use KorAP::Document::Primary;
 
-has [qw/id corpus_id path/];
-has [qw/pub_date title sub_title pub_place/];
+our @ATTR = qw/id corpus_id pub_date
+	       title sub_title pub_place/;
+has 'path';
+has [@ATTR];
+
+has log => sub { Log::Log4perl->get_logger(__PACKAGE__) };
 
 # parse document
 sub parse {
@@ -17,7 +21,7 @@ sub parse {
 
   state $unable = 'Unable to parse document';
 
-  carp 'Parse document ' . $self->path;
+  $self->log->trace('Parse document ' . $self->path);
 
   my $dom = Mojo::DOM->new($file);
 
@@ -84,7 +88,7 @@ sub text_class {
 sub _parse_meta {
   my $self = shift;
 
-  my $file = b($self->path . 'header.xml')->slurp->decode('iso-8859-1')->encode;
+  my $file = b($self->path . 'header.xml')->slurp->decode('iso-8859-1');
 
   my $dom = Mojo::DOM->new($file);
   my $monogr = $dom->at('monogr');
@@ -125,6 +129,55 @@ sub _parse_meta {
   );
   $self->text_class(@topic);
 };
+
+sub to_string {
+  my $self = shift;
+
+  my $string;
+
+  foreach (@ATTR) {
+    if (my $att = $self->$_) {
+      $att =~ s/\n/ /g;
+      $att =~ s/\s\s+/ /g;
+      $string .= $_ . ' = ' . $att . "\n";
+    };
+  };
+
+  if ($self->author) {
+    foreach (@{$self->author}) {
+      $_ =~ s/\n/ /g;
+      $_ =~ s/\s\s+/ /g;
+      $string .= 'author = ' . $_ . "\n";
+    };
+  };
+
+  if ($self->text_class) {
+    foreach (@{$self->text_class}) {
+      $string .= 'text_class = ' . $_ . "\n";
+    };
+  };
+
+  return $string;
+};
+
+
+sub to_hash {
+  my $self = shift;
+
+  my %hash;
+
+  foreach (@ATTR, 'author', 'text_class') {
+    if (my $att = $self->$_) {
+      $att =~ s/\n/ /g;
+      $att =~ s/\s\s+/ /g;
+      $hash{$_} = $att;
+    };
+  };
+
+  return \%hash;
+};
+
+
 
 
 1;
