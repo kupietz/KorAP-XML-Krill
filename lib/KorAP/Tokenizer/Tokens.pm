@@ -14,6 +14,8 @@ sub parse {
 #  my $spans = Mojo::DOM->new($file);
 #  $spans->xml(1);
   my $spans = xml2hash($file, text => '#text', attr => '-')->{layer}->{spanList}->{span};
+  $spans = [$spans] if ref $spans ne 'ARRAY';
+
 
   my ($should, $have) = (0,0);
 

@@ -17,6 +17,7 @@ sub parse {
   # my $spans = XML::LibXML->load_xml(string => $file);
 
   my $spans = xml2hash($file, text => '#text', attr => '-')->{layer}->{spanList}->{span};
+  $spans = [$spans] if ref $spans ne 'ARRAY';
 
   my ($should, $have) = (0,0);
   my ($from, $to, $h);
