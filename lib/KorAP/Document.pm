@@ -160,24 +160,33 @@ sub to_string {
   return $string;
 };
 
+sub _k {
+  my $x = $_[0];
+  $x =~ s/_(\w)/\U$1\E/g;
+  $x =~ s/id$/ID/gi;
+  return $x;
+};
+
 
 sub to_hash {
   my $self = shift;
 
   my %hash;
 
-  foreach (@ATTR, 'author', 'text_class') {
+  foreach (@ATTR) {
     if (my $att = $self->$_) {
       $att =~ s/\n/ /g;
       $att =~ s/\s\s+/ /g;
-      $hash{$_} = $att;
+      $hash{_k($_)} = $att;
     };
+  };
+
+  foreach ('author', 'text_class') {
+      $hash{_k($_)} = join(',', @{ $self->$_ });
   };
 
   return \%hash;
 };
-
-
 
 
 1;

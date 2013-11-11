@@ -21,7 +21,7 @@ sub parse {
 		($found->{-name} eq 'ent') &&
 		  ($found = $found->{'#text'})) {
 	$mtt->add(
-	  term => 'corenlp_' . $model . ':' . $found
+	  term => 'corenlp/' . $model . ':' . $found
 	);
       };
     }) or return;

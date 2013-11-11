@@ -22,8 +22,7 @@ sub parse {
 	# pos
 	if (($f->{-name} eq 'pos') &&
 	      ($found = $f->{'#text'})) {
-	  $mtt->add(term => 'mate_p:' . $found
-		  );
+	  $mtt->add(term => 'mate/p:' . $found);
 	}
 
 	# lemma
@@ -31,7 +30,7 @@ sub parse {
 		 && ($found = $f->{'#text'})
 		   && $found ne '--') {
 	  # b($found)->decode('latin-1')->encode->to_string
-	  $mtt->add(term => 'mate_l:' . $found);
+	  $mtt->add(term => 'mate/l:' . $found);
 	}
 
 	# MSD
@@ -41,7 +40,7 @@ sub parse {
 	  foreach (split '\|', $found) {
 	    my ($x, $y) = split "=", $_;
 	    # case, tense, number, mood, person, degree, gender
-	    $mtt->add(term => 'mate_m:' . $x . ':' . $y);
+	    $mtt->add(term => 'mate/m:' . $x . ':' . $y);
 	  };
 	};
       };

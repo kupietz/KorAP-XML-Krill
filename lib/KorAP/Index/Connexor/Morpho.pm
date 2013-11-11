@@ -24,13 +24,13 @@ sub parse {
 	  if (index($found, "\N{U+00a0}") >= 0) {
 	    foreach (split(/\x{00A0}/, $found)) {
 	      $mtt->add(
-		term => 'cnx_l:' . $_
+		term => 'cnx/l:' . $_
 	      );
 	    }
 	  }
 	  else {
 	    $mtt->add(
-	      term => 'cnx_l:' . $found
+	      term => 'cnx/l:' . $found
 	    );
 	  };
 	}
@@ -38,7 +38,7 @@ sub parse {
 	# POS
 	elsif (($f->{-name} eq 'pos') && ($found = $f->{'#text'})) {
 	  $mtt->add(
-	    term => 'cnx_p:' . $found
+	    term => 'cnx/p:' . $found
 	  );
 
 	}
@@ -47,7 +47,7 @@ sub parse {
 	elsif (($f->{-name} eq 'msd') && ($found = $f->{'#text'})) {
 	  foreach (split(':', $found)) {
 	    $mtt->add(
-	      term => 'cnx_m:' . $_
+	      term => 'cnx/m:' . $_
 	    );
 	  };
 	};

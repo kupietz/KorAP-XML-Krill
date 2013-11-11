@@ -26,7 +26,7 @@ sub parse {
 	if ($_->{-type} && $_->{-type} eq 'unary') {
 	  next if $_->{-label} eq '--';
 	  $mtt->add(
-	    term => 'mate_d:' . $label
+	    term => 'mate/d:' . $label
 	  );
 	}
 	else {
@@ -37,12 +37,12 @@ sub parse {
 	  my $rel_token = $tokens->token($from, $to) or next;
 
 	  $mtt->add(
-	    term => '>:mate_d:' . $label,
+	    term => '>:mate/d:' . $label,
 	    payload => '<i>' . $rel_token->pos
 	  );
 
 	  $stream->pos($rel_token->pos)->add(
-	    term => '<:mate_d:' . $label,
+	    term => '<:mate/d:' . $label,
 	    payload => '<i>' . $token->pos
 	  );
 	};

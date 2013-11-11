@@ -21,7 +21,7 @@ sub parse {
 	# pos
 	if (($_->{-name} eq 'pos') && ($found = $_->{'#text'})) {
 	  $mtt->add(
-	    term => 'xip_p:' . $found
+	    term => 'xip/p:' . $found
 	  );
 
 	  $capital = 1 if $found eq 'NOUN';
@@ -42,13 +42,13 @@ sub parse {
 	  foreach (@token) {
 	    $full .= $_;
 	    $_ =~ s{/\w+$}{};
-	    $mtt->add(term => 'xip_l:' . $_);
+	    $mtt->add(term => 'xip/l:' . $_);
 	  };
 	  if (@token > 1) {
 	    $full =~ s{/}{}g;
 	    $full = lc $full;
 	    $full = $capital ? ucfirst($full) : $full;
-	    $mtt->add(term => 'xip_l:' . $full);
+	    $mtt->add(term => 'xip/l:' . $full);
 	  };
 	};
       };

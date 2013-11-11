@@ -27,14 +27,14 @@ sub parse {
 		  ($found ne 'UNKNOWN') &&
 		    ($found ne '?')) {
 	    $mtt->add(
-	      term => 'tt_l:' . $found
+	      term => 'tt/l:' . $found
 	    );
 	  };
 
 	  # pos
 	  if (($_->{-name} eq 'ctag') && ($found = $_->{'#text'})) {
 	    $mtt->add(
-	      term => 'tt_p:' . $found
+	      term => 'tt/p:' . $found
 	    );
 	  };
 	};

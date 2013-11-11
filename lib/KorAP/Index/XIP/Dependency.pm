@@ -25,7 +25,7 @@ sub parse {
 
 	if ($_->{-type} && $_->{-type} eq 'unary') {
 	  $mtt->add(
-	    term => 'xip_d:' . $label
+	    term => 'xip/d:' . $label
 	  );
 	}
 	else {
@@ -37,12 +37,12 @@ sub parse {
 
 	  # die $token->pos . ' -' . $label . '-> ' . $rel_token->pos;
 	  $mtt->add(
-	    term => '>:xip_d:' . $label,
+	    term => '>:xip/d:' . $label,
 	    payload => '<i>' . $rel_token->pos
 	  );
 
 	  $stream->pos($rel_token->pos)->add(
-	    term => '<:xip_d:' . $label,
+	    term => '<:xip/d:' . $label,
 	    payload => '<i>' . $token->pos
 	  );
 	};

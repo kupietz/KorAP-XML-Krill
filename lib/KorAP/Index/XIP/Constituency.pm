@@ -48,13 +48,13 @@ sub parse {
 
     # $type is now NPA, NP, NUM ...
     my %term = (
-      term => '<>:xip_const:' . $type,
+      term => '<>:xip/const:' . $type,
       o_start => $span->o_start,
       o_end => $span->o_end,
       p_end => $span->p_end
     );
 
-    $term{payload} = '<s>' . $level if $level;
+    $term{payload} = '<b>' . $level if $level;
 
     $mtt->add(%term);
 

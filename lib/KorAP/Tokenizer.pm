@@ -280,15 +280,19 @@ sub to_string {
 sub to_data {
   my $self = shift;
   my $primary = defined $_[0] ? $_[0] : 1;
-  my %data;
-  $data{meta} = $self->doc->to_hash;
-  $data{primary} = $self->doc->primary->data if $primary;
-  $data{fields} = [ {
+  my %data = %{$self->doc->to_hash};
+
+  my @fields;
+  push(@fields, { primaryData => $self->doc->primary->data }) if $primary;
+
+  push(@fields, {
     name => $self->name,
     data => $self->stream->to_array,
     tokenization => [lc($self->foundry), lc($self->layer)],
     support => $self->support
-  }];
+  });
+
+  $data{fields} = \@fields;
   \%data;
 };
 

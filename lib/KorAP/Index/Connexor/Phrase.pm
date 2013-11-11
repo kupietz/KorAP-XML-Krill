@@ -19,7 +19,7 @@ sub parse {
       if ($type) {
 	my $mtt = $stream->pos($span->p_start);
 	$mtt->add(
-	  term => '<>:cnx_const:' . $type,
+	  term => '<>:cnx/const:' . $type,
 	  o_start => $span->o_start,
 	  o_end => $span->o_end,
 	  p_end => $span->p_end
