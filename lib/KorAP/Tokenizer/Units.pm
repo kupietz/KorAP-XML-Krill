@@ -33,9 +33,12 @@ sub span {
   unless ($end) {
     $end = $self->range->before($span->o_end) or return;
   };
-  $span->p_end($end);
+  # $span->p_end($end);
+  # return unless $span->p_end >= $span->p_start;
 
-  return unless $span->p_end >= $span->p_start;
+  # EXPERIMENTAL:
+  return unless $end >= $span->p_start;
+  $span->p_end($end + 1);
 
   $span->hash($s) if $s;
 
