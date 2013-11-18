@@ -238,7 +238,18 @@ sub _perc {
 sub support {
   my $self = shift;
   unless ($_[0]) {
-    return $self->{support} // {};
+    my @supports;
+    foreach my $foundry (keys %{$self->{support}}) {
+      push(@supports, $foundry);
+      foreach my $layer (@{$self->{support}->{$foundry}}) {
+	  my @layers = @$layer;
+	  push(@supports, $foundry . '#' . $layers[0]);
+	  if ($layers[1]) {
+	      push(@supports, $foundry . '#' . join('#', @layers));
+	  };
+      };
+    };
+    return lc ( join ' ', @supports );
   }
   elsif (!$_[1]) {
     return $self->{support}->{$_[0]} // []
@@ -288,13 +299,14 @@ sub to_data {
   push(@fields, {
     name => $self->name,
     data => $self->stream->to_array,
-    tokenization => [lc($self->foundry), lc($self->layer)],
-    support => $self->support
+    tokenization => lc($self->foundry) . '#' . lc($self->layer),
+    foundries => $self->support
   });
 
   $data{fields} = \@fields;
   \%data;
 };
+
 
 sub to_json {
   encode_json($_[0]->to_data($_[1]));
