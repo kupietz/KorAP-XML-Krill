@@ -22,7 +22,7 @@ sub parse {
     }
   ) or return;
 
-  $$self->stream->add_meta('p', '<i>' . $i);
+  $$self->stream->add_meta('paragraph', '<i>' . $i);
 
   return 1;
 };

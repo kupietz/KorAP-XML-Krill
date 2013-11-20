@@ -181,8 +181,12 @@ sub to_hash {
     };
   };
 
-  foreach ('author', 'text_class') {
+  for ('author') {
       $hash{_k($_)} = join(',', @{ $self->$_ });
+  };
+
+  for ('text_class') {
+      $hash{_k($_)} = join(' ', @{ $self->$_ });
   };
 
   return \%hash;

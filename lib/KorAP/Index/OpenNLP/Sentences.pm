@@ -21,7 +21,7 @@ sub parse {
     }
   ) or return;
 
-  $$self->stream->add_meta('s', '<i>' . $i);
+  $$self->stream->add_meta('sentence', '<i>' . $i);
 
   return 1;
 };

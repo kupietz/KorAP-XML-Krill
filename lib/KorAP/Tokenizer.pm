@@ -81,7 +81,7 @@ sub parse {
     });
 
   # Add token count
-  $mtts->add_meta('t', '<i>' . $have);
+  $mtts->add_meta('token', '<i>' . $have);
 
   $range->gap($old, $doc->primary->data_length, $have-1) if $doc->primary->data_length >= $old;
 
@@ -243,9 +243,9 @@ sub support {
       push(@supports, $foundry);
       foreach my $layer (@{$self->{support}->{$foundry}}) {
 	  my @layers = @$layer;
-	  push(@supports, $foundry . '#' . $layers[0]);
+	  push(@supports, $foundry . '/' . $layers[0]);
 	  if ($layers[1]) {
-	      push(@supports, $foundry . '#' . join('#', @layers));
+	      push(@supports, $foundry . '/' . join('/', @layers));
 	  };
       };
     };

@@ -124,7 +124,7 @@ $tokens->parse;
 my @layers;
 
 # Base information
-push(@layers, ['OpenNLP', 'Sentences']);
+push(@layers, ['Base', 'Sentences']);
 push(@layers, ['Base', 'Paragraphs']);
 
 # OpenNLP
