@@ -24,7 +24,8 @@ sub parse {
 
   # Create new token stream
   my $mtts = KorAP::Field::MultiTermTokenStream->new;
-  my $file = b($self->path . lc($self->foundry) . '/' . lc($self->layer) . '.xml')->slurp;
+  my $path = $self->path . lc($self->foundry) . '/' . lc($self->layer) . '.xml';
+  my $file = b($path)->slurp;
   my $tokens = Mojo::DOM->new($file);
   $tokens->xml(1);
 
@@ -47,6 +48,11 @@ sub parse {
       my $from = $span->attr('from');
       my $to = $span->attr('to');
       my $token = $doc->primary->data($from, $to);
+
+      unless ($token) {
+	  $self->log->error("Unable to find substring [$from-$to] in $path");
+	  return;
+      };
 
       $should++;
 
@@ -81,7 +87,7 @@ sub parse {
     });
 
   # Add token count
-  $mtts->add_meta('token', '<i>' . $have);
+  $mtts->add_meta('tokens', '<i>' . $have);
 
   $range->gap($old, $doc->primary->data_length, $have-1) if $doc->primary->data_length >= $old;
 

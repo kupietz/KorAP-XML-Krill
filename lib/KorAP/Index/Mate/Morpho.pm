@@ -40,7 +40,7 @@ sub parse {
 	  foreach (split '\|', $found) {
 	    my ($x, $y) = split "=", $_;
 	    # case, tense, number, mood, person, degree, gender
-	    $mtt->add(term => 'mate/m:' . $x . ':' . $y);
+	    $mtt->add(term => 'mate/m:' . $x . ($y ? ':' . $y : ''));
 	  };
 	};
       };

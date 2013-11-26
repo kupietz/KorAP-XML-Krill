@@ -3,7 +3,9 @@ use KorAP::Tokenizer::Span;
 use KorAP::Tokenizer::Token;
 use Mojo::Base -base;
 
-has [qw/path foundry layer match range primary should have/];
+has [qw/path foundry layer match range primary/];
+has 'should' => 0;
+has 'have' => 0;
 has 'encoding' => 'utf-8';
 
 sub span {

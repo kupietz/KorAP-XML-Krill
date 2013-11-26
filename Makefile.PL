@@ -15,6 +15,7 @@ WriteMakefile(
     'Log::Log4perl' => 1.42,
     'JSON::XS'      => 3.01,
     'Set::Scalar'   => 1.26,
+    'IO::Dir::Recursive' => 0,
     'Benchmark'     => 0,
     'Carp'          => 0,
     'strict'        => 0,

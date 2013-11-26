@@ -20,7 +20,7 @@ sub printhelp {
 Merge foundry data based on a tokenization and create indexer friendly documents.
 
 Call:
-prepare_index.pl -z --input <directory> --outputfile <filename>
+prepare_index.pl -z --input <directory> --output <filename>
 
 --input|-i <directory>          Directory of the document to index
 --output|-o <filename>          Document name for output (optional),
@@ -54,7 +54,7 @@ EOHELP
 # Options from the command line
 my ($input, $output, $text, $gzip, $log_level, @skip, $token_base, $primary, @allow, $pretty);
 GetOptions(
-  'input|x=s'   => \$input,
+  'input|i=s'   => \$input,
   'output|o=s'  => \$output,
   'human|m'     => \$text,
   'token|t=s'   => \$token_base,

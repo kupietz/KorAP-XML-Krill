@@ -113,6 +113,10 @@ sub _parse_meta {
   my $day = $dom->at("pubDate[type=day]");
   $day = $day ? $day->text : 0;
 
+  $year = 0  if $year  !~ /^\d+$/;
+  $month = 0 if $month !~ /^\d+$/;
+  $day = 0   if $day   !~ /^\d+$/;
+
   my $date = $year ? ($year < 100 ? '20' . $year : $year) : '0000';
   $date .= length($month) == 1 ? '0' . $month : $month;
   $date .= length($day) == 1 ? '0' . $day : $day;

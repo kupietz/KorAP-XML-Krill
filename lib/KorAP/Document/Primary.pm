@@ -1,7 +1,7 @@
 package KorAP::Document::Primary;
 use strict;
 use warnings;
-use Carp qw/croak/;
+use Carp qw/croak carp/;
 use Mojo::ByteStream 'b';
 use feature 'state';
 use Packed::Array;
@@ -34,7 +34,8 @@ sub data {
     return $substr;
   };
   # encode 'UTF-8',
-  croak 'Unable to find substring';
+  carp 'Unable to find substring';
+  return;
 };
 
 
@@ -55,7 +56,7 @@ sub data_bytes {
     return b($substr)->decode;
   };
   # encode 'UTF-8',
-  croak 'Unable to find substring';
+  carp 'Unable to find substring';
 };
 
 
