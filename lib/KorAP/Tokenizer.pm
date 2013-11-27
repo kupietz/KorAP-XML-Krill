@@ -49,7 +49,7 @@ sub parse {
       my $to = $span->attr('to');
       my $token = $doc->primary->data($from, $to);
 
-      unless ($token) {
+      unless (defined $token) {
 	  $self->log->error("Unable to find substring [$from-$to] in $path");
 	  return;
       };
@@ -138,7 +138,7 @@ sub add_spandata {
     %param
   );
 
-  my $spanarray = $spans->parse;
+  my $spanarray = $spans->parse or return;
 
   if ($spans->should == $spans->have) {
     $self->log->trace('With perfect alignment!');
@@ -180,7 +180,7 @@ sub add_tokendata {
     %param
   );
 
-  my $tokenarray = $tokens->parse;
+  my $tokenarray = $tokens->parse or return;
 
   if ($tokens->should == $tokens->have) {
     $self->log->trace('With perfect alignment!');

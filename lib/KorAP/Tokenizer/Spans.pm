@@ -22,21 +22,19 @@ sub parse {
 
   # my $spans = XML::LibXML->load_xml(string => $file);
 
-  my $spans;
-
+  my ($spans, $error);
   try {
       local $SIG{__WARN__} = sub {
-	  my $msg = shift;
-	  $self->log->error('Error in ' . $path . ($msg ? ': ' . $msg : ''));
+	  $error = 1;
       };
-
       $spans = xml2hash($file, text => '#text', attr => '-')->{layer}->{spanList};
-
   }
   catch  {
-      $self->log->error('Span error in ' . $path . ($_ ? ': ' . $_ : ''));
-      return [];
+      $self->log->warn('Span error in ' . $path . ($_ ? ': ' . $_ : ''));
+      $error = 1;
   };
+
+  return if $error;
 
   if (ref $spans && $spans->{span}) {
       $spans = $spans->{span};

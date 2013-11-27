@@ -29,12 +29,13 @@ sub data {
   return $self->[0] unless $to;
 
   my $substr = substr($self->[0], $from, $to - $from);
-  if ($substr) {
+  if (defined $substr) {
 #    return b($substr)->encode;
     return $substr;
   };
+
   # encode 'UTF-8',
-  carp 'Unable to find substring';
+  # carp 'Unable to find substring';
   return;
 };
 
@@ -51,12 +52,14 @@ sub data_bytes {
   return b($self->[0])->decode unless $to;
 
   my $substr = substr($self->[0], $from, $to - $from);
-  if ($substr) {
+  if (defined $substr) {
 #    return b($substr)->encode;
     return b($substr)->decode;
   };
+
   # encode 'UTF-8',
-  carp 'Unable to find substring';
+  # carp 'Unable to find substring';
+  return;
 };
 
 
