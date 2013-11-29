@@ -91,18 +91,18 @@ sub _parse_meta {
   my $file = b($self->path . 'header.xml')->slurp->decode('iso-8859-1');
 
   my $dom = Mojo::DOM->new($file);
-  my $monogr = $dom->at('monogr');
+  my $analytic = $dom->at('analytic');
 
   # Get title
-  my $title = $monogr->at('h\.title[type=main]');
+  my $title = $analytic->at('h\.title[type=main]');
   $self->title($title->text) if $title;
 
   # Get Subtitle
-  my $sub_title = $monogr->at('h\.title[type=sub]');
+  my $sub_title = $analytic->at('h\.title[type=sub]');
   $self->sub_title($sub_title->text) if $sub_title;
 
   # Get Author
-  my $author = $monogr->at('h\.author');
+  my $author = $analytic->at('h\.author');
   $self->author($author->all_text) if $author;
 
   # Get pubDate
