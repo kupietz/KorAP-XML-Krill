@@ -11,11 +11,13 @@ sub new {
 
 sub set {
   my $self = shift;
+  # warn 'Set range: ', join(',', @_);
   $$self->set_range(@_);
 };
 
 sub gap {
   my $self = shift;
+  # warn 'Gap range: ', join(',', @_);
   $$self->set_range($_[0], $_[1], '!' . ($_[2] - 1) . ':' . $_[2]);
 };
 
@@ -31,6 +33,7 @@ sub before {
   my $found = $$self->lookup( $offset );
   unless (defined $found) {
     warn 'There is no value for ', $offset;
+    return;
   };
 
   if ($found =~ /!(\d+):(\d+)$/) {

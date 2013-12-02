@@ -105,7 +105,6 @@ $input =~ s{([^/])$}{$1/};
 my $doc = KorAP::Document->new( path => $input );
 $doc->parse;
 
-
 my ($token_base_foundry, $token_base_layer) = (qw/OpenNLP Tokens/);
 if ($token_base) {
   ($token_base_foundry, $token_base_layer) = split /#/, $token_base;

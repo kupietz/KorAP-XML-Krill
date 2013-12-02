@@ -19,9 +19,9 @@ sub parse {
   my $self = shift;
   my $file = b($self->path . 'data.xml')->slurp;
 
-  state $unable = 'Unable to parse document';
+  state $unable = 'Unable to parse document ' . $self->path;
 
-  $self->log->trace('Parse document ' . $self->path);
+  $self->log->debug('Parse document ' . $self->path);
 
   my $dom = Mojo::DOM->new($file);
 
@@ -34,11 +34,11 @@ sub parse {
       $self->corpus_id($1);
     }
     else {
-      croak $unable;
+      croak $unable . ': ID not parseable';
     };
   }
   else {
-    croak $unable;
+    croak $unable . ': No raw_text found or no ID';
   };
 
   # Get primary data

@@ -49,6 +49,8 @@ sub parse {
       my $to = $span->attr('to');
       my $token = $doc->primary->data($from, $to);
 
+      # warn 'Has ' . $from . '->' . $to . "($old)";
+
       unless (defined $token) {
 	  $self->log->error("Unable to find substring [$from-$to] in $path");
 	  return;
@@ -89,7 +91,7 @@ sub parse {
   # Add token count
   $mtts->add_meta('tokens', '<i>' . $have);
 
-  $range->gap($old, $doc->primary->data_length, $have-1) if $doc->primary->data_length >= $old;
+  $range->gap($old, $doc->primary->data_length + 1, $have-1) if $doc->primary->data_length >= ($old - 1);
 
   # Add info
   $self->stream($mtts);
