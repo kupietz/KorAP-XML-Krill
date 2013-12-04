@@ -15,6 +15,9 @@ has 'log' => sub {
 sub parse {
   my $self = shift;
   my $path = $self->path . $self->foundry . '/' . $self->layer . '.xml';
+
+  return unless -e $path;
+
   my $file = b($path)->slurp;
 
   # my $spans = Mojo::DOM->new($file);
