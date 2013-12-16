@@ -49,5 +49,8 @@ sub parse {
   return 1;
 };
 
+sub layer_info {
+    ['mate/l=lemma', 'mate/p=pos', 'mate/m=msd']
+}
 
 1;

@@ -1,7 +1,7 @@
 package KorAP::Tokenizer::Spans;
 use Mojo::Base 'KorAP::Tokenizer::Units';
 use KorAP::Tokenizer::Span;
-use Mojo::DOM;
+# use Mojo::DOM;
 use Mojo::ByteStream 'b';
 use XML::Fast;
 use Try::Tiny;
@@ -19,11 +19,6 @@ sub parse {
   return unless -e $path;
 
   my $file = b($path)->slurp;
-
-  # my $spans = Mojo::DOM->new($file);
-  # $spans->xml(1);
-
-  # my $spans = XML::LibXML->load_xml(string => $file);
 
   my ($spans, $error);
   try {

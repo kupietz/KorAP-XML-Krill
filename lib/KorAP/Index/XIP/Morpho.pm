@@ -57,5 +57,9 @@ sub parse {
   return 1;
 };
 
+sub layer_info {
+    ['xip/l=lemma', 'xip/p=pos']
+};
+
 
 1;

@@ -21,7 +21,8 @@ WriteMakefile(
     'strict'        => 0,
     'warnings'      => 0,
     'utf8'          => 0,
-    'bytes'         => 0
+    'bytes'         => 0,
+    'List::MoreUtils' => 0.33
   },
 #  LICENSE      => 'perl',
   MIN_PERL_VERSION => '5.016',

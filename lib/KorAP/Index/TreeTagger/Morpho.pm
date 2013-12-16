@@ -44,5 +44,8 @@ sub parse {
   return 1;
 };
 
+sub layer_info {
+    ['tt/p=pos', 'tt/l=lemma']
+};
 
 1;

@@ -58,5 +58,10 @@ sub parse {
   return 1;
 };
 
+sub layer_info {
+    ['cnx/l=lemma', 'cnx/p=pos', 'cnx/m=msd'];
+};
+
+
 
 1;

@@ -52,5 +52,9 @@ sub parse {
   return 1;
 };
 
+sub layer_info {
+    ['mate/d=dep']
+};
+
 
 1;

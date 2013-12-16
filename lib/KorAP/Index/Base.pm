@@ -24,4 +24,8 @@ sub new {
   bless \$tokens, $class;
 };
 
+sub layer_info {
+    return []
+};
+
 1;

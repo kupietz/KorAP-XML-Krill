@@ -48,7 +48,7 @@ sub parse {
 
     # $type is now NPA, NP, NUM ...
     my %term = (
-      term => '<>:xip/const:' . $type,
+      term => '<>:xip/c:' . $type,
       o_start => $span->o_start,
       o_end => $span->o_end,
       p_end => $span->p_end
@@ -79,5 +79,8 @@ sub parse {
   return 1;
 };
 
+sub layer_info {
+    ['xip/c=const']
+}
 
 1;

@@ -1,8 +1,6 @@
 package KorAP::Index::Base::Paragraphs;
 use KorAP::Index::Base;
 
-
-
 sub parse {
   my $self = shift;
   my $i = 0;
@@ -26,5 +24,7 @@ sub parse {
 
   return 1;
 };
+
+
 
 1;

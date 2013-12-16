@@ -54,5 +54,9 @@ sub parse {
   return 1;
 };
 
+sub layer_info {
+    ['xip/d=dep']
+}
+
 
 1;

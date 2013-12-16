@@ -1,9 +1,9 @@
 package KorAP::Document;
 use Mojo::Base -base;
 use v5.16;
-
 use Mojo::ByteStream 'b';
-use Mojo::DOM;
+use XML::Fast;
+use Try::Tiny;
 use Carp qw/croak/;
 use KorAP::Document::Primary;
 
@@ -19,17 +19,26 @@ sub parse {
   my $self = shift;
   my $file = b($self->path . 'data.xml')->slurp;
 
+  my ($rt, $error);
   state $unable = 'Unable to parse document ' . $self->path;
+  try {
+      local $SIG{__WARN__} = sub {
+	  $error = 1;
+      };
+      $rt = xml2hash($file, text => '#text', attr => '-')->{raw_text};
+  }
+  catch  {
+      $self->log->warn($unable);
+      $error = 1;
+  };
+
+  return if $error;
 
   $self->log->debug('Parse document ' . $self->path);
 
-  my $dom = Mojo::DOM->new($file);
-
-  my $rt = $dom->at('raw_text');
-
   # Get document id and corpus id
-  if ($rt && $rt->attr('docid')) {
-    $self->id($rt->attr('docid'));
+  if ($rt && $rt->{'-docid'}) {
+    $self->id($rt->{'-docid'});
     if ($self->id =~ /^([^_]+)_/) {
       $self->corpus_id($1);
     }
@@ -42,11 +51,9 @@ sub parse {
   };
 
   # Get primary data
-  my $pd = $rt->at('text');
+  my $pd = $rt->{text};
   if ($pd) {
-
-    $pd = b($pd->text)->decode;
-    $self->{pd} = KorAP::Document::Primary->new($pd->to_string);
+    $self->{pd} = KorAP::Document::Primary->new($pd);
   }
   else {
     croak $unable;

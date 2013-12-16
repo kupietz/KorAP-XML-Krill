@@ -27,4 +27,8 @@ sub parse {
   return 1;
 };
 
+sub layer_info {
+    ['opennlp/p=pos'];
+};
+
 1;

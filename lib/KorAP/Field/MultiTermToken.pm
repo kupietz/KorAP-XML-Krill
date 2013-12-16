@@ -1,6 +1,7 @@
 package KorAP::Field::MultiTermToken;
 use KorAP::Field::MultiTerm;
 use Mojo::Base -base;
+use List::MoreUtils 'uniq';
 
 has [qw/o_start o_end/];
 
@@ -33,7 +34,7 @@ sub to_string {
 
 sub to_array {
   my $self = shift;
-  [map($_->to_string, @{$self->{mt}})];
+  [uniq(map($_->to_string, @{$self->{mt}}))];
 };
 
 1;

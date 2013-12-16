@@ -2,12 +2,15 @@ package KorAP::Tokenizer;
 use Mojo::Base -base;
 use Mojo::ByteStream 'b';
 use Mojo::Loader;
+use XML::Fast;
+use Try::Tiny;
 use Carp qw/croak/;
 use KorAP::Tokenizer::Range;
 use KorAP::Tokenizer::Match;
 use KorAP::Tokenizer::Spans;
 use KorAP::Tokenizer::Tokens;
 use KorAP::Field::MultiTermTokenStream;
+use List::MoreUtils 'uniq';
 use JSON::XS;
 use Log::Log4perl;
 
@@ -26,8 +29,8 @@ sub parse {
   my $mtts = KorAP::Field::MultiTermTokenStream->new;
   my $path = $self->path . lc($self->foundry) . '/' . lc($self->layer) . '.xml';
   my $file = b($path)->slurp;
-  my $tokens = Mojo::DOM->new($file);
-  $tokens->xml(1);
+#  my $tokens = Mojo::DOM->new($file);
+#  $tokens->xml(1);
 
   my $doc = $self->doc;
 
@@ -41,25 +44,58 @@ sub parse {
 
   $self->log->trace('Tokenize data ' . $self->foundry . ':' . $self->layer);
 
+  # TODO: Reuse the following code from Spans.pm and tokens.pm
+  my ($tokens, $error);
+  try {
+      local $SIG{__WARN__} = sub {
+	  $error = 1;
+      };
+      $tokens = xml2hash($file, text => '#text', attr => '-')->{layer}->{spanList};
+  }
+  catch  {
+      $self->log->warn('Token error in ' . $path . ($_ ? ': ' . $_ : ''));
+      $error = 1;
+  };
+
+  return if $error;
+
+  if (ref $tokens && $tokens->{span}) {
+      $tokens = $tokens->{span};
+  }
+  else {
+      return [];
+  };
+
+  $tokens = [$tokens] if ref $tokens ne 'ARRAY';
+
   # Iterate over all tokens
-  $tokens->find('span')->each(
-    sub {
-      my $span = $_;
-      my $from = $span->attr('from');
-      my $to = $span->attr('to');
+  # $tokens->find('span')->each(
+  #    sub {
+  # my $span = $_;
+  foreach my $span (@$tokens) {
+      my $from = $span->{'-from'};
+      my $to = $span->{'-to'};
       my $token = $doc->primary->data($from, $to);
 
       # warn 'Has ' . $from . '->' . $to . "($old)";
 
       unless (defined $token) {
 	  $self->log->error("Unable to find substring [$from-$to] in $path");
-	  return;
+	  next;
       };
 
       $should++;
 
       # Ignore non-word tokens
-      return if $token !~ /[\w\d]/;
+      next if $token !~ /[\w\d]/;
+
+#      my $limit = 40;
+#      if ($should > $limit) {
+#	  warn $token;
+#      };
+#      if ($should > $limit+20) {
+#	  die;
+#      };
 
       my $mtt = $mtts->add;
 
@@ -86,7 +122,7 @@ sub parse {
       $mtt->add('_' . $have . '#' . $mtt->o_start . '-' . $mtt->o_end);
 
       $have++;
-    });
+  };
 
   # Add token count
   $mtts->add_meta('tokens', '<i>' . $have);
@@ -213,7 +249,12 @@ sub add {
 
   if ($mod->can('new') || eval("require $mod; 1;")) {
     if (my $retval = $mod->new($self)->parse(@_)) {
+
+      # This layer is supported
       $self->support($foundry => $layer, @_);
+
+      # Get layerinfo
+      $self->layer_info($mod->layer_info);
       return $retval;
     };
   }
@@ -270,6 +311,17 @@ sub support {
   push(@{$self->{support}->{$f}}, [$l, @info]);
 };
 
+sub layer_info {
+    my $self = shift;
+    $self->{layer_info} //= [];
+    if ($_[0]) {
+	push(@{$self->{layer_info}}, @{$_[0]});
+    }
+    else {
+	return join ' ', uniq @{$self->{layer_info}};
+    };
+};
+
 
 sub to_string {
   my $self = shift;
@@ -290,6 +342,10 @@ sub to_string {
       $string .= 'support = ' . $foundry . '#' . join(',', @{$_}) . "\n";
     };
   };
+  foreach my $layer_info (keys %{$self->layer_info}) {
+    $string .= 'layer_info = ' . $_ . "\n";
+  };
+
   $string .= "</info>\n";
   $string .= $self->stream->to_string;
   $string .= "</field>";
@@ -308,7 +364,8 @@ sub to_data {
     name => $self->name,
     data => $self->stream->to_array,
     tokenization => lc($self->foundry) . '#' . lc($self->layer),
-    foundries => $self->support
+    foundries => $self->support,
+    layerInfo => $self->layer_info
   });
 
   $data{fields} = \@fields;

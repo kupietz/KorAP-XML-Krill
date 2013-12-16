@@ -19,7 +19,7 @@ sub parse {
       if ($type) {
 	my $mtt = $stream->pos($span->p_start);
 	$mtt->add(
-	  term => '<>:cnx/const:' . $type,
+	  term => '<>:cnx/c:' . $type,
 	  o_start => $span->o_start,
 	  o_end => $span->o_end,
 	  p_end => $span->p_end
@@ -29,6 +29,10 @@ sub parse {
   ) or return;
 
   return 1;
+};
+
+sub layer_info {
+    ['cnx/c=const'];
 };
 
 
