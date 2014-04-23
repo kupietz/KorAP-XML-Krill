@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>WPD/AAA.00001</textSigle>
+            <t.title assemblage="external">WPD/AAA.00001 Ruru; Jens.Ol; Aglarech; u.a.: A, In: Wikipedia - URL:http://de.wikipedia.org: Wikipedia, 2005</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world" status="unknown"/>
+            <pubDate/>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <h.title type="main">A</h.title>
+                <h.title type="sub"/>
+                <h.title type="abbr" level="m"/>
+                <h.title type="abbr" level="a"/>
+                <h.author>Ruru; Jens.Ol; Aglarech; u.a.</h.author>
+                <editor/>
+                <imprint/>
+                <biblScope type="subsume"/>
+                <biblScope type="pp"/>
+                <biblNote n="1"/>
+              </analytic>
+              <monogr>
+                <h.title type="main">Wikipedia</h.title>
+                <h.title type="sub">Die freie Enzyklopädie</h.title>
+                <h.author/>
+                <editor>wikipedia.org</editor>
+                <edition>
+                  <further>Auflage I/2005</further>
+                  <kind/>
+                  <appearance/>
+                </edition>
+                <imprint>
+                  <publisher>Wikipedia</publisher>
+                  <pubDate type="year">2005</pubDate>
+                  <pubDate type="month">03</pubDate>
+                  <pubDate type="day">28</pubDate>
+                  <pubPlace>URL:http://de.wikipedia.org</pubPlace>
+                </imprint>
+                <biblScope type="vol"/>
+                <biblScope type="volume-title"/>
+              </monogr>
+            </biblStruct>
+            <reference type="complete" assemblage="non-automatic">WPD/AAA.00001 Ruru; Jens.Ol; Aglarech; u.a.: A, In: Wikipedia - URL:http://de.wikipedia.org: Wikipedia, 2005</reference>
+            <reference type="short" assemblage="regular">WPD/AAA.00001 Ruru; Jens.Ol; Aglarech; u.a.: A, In: Wikipedia - URL:http://de.wikipedia.org: Wikipedia, 2005 [Kurzzitierung nicht verfügbar]</reference>
+          </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+          <samplingDecl/>
+          <tagsDecl>
+            <tagUsage gi="list" occurs="23"/>
+            <tagUsage gi="p" occurs="73"/>
+            <tagUsage gi="s" occurs="97"/>
+          </tagsDecl>
+        </encodingDesc>
+        <profileDesc>
+          <creation>
+            <creatDate>2005</creatDate>
+            <creatRef/>
+            <creatRefShort/>
+          </creation>
+          <textClass>
+            <catRef n="0.99" target="topic.freizeit-unterhaltung.reisen" scheme="topic"/>
+            <catRef n="0.00" target="topic.wissenschaft.populaerwissenschaft" scheme="topic"/>
+          </textClass>
+          <textDesc>
+            <textDomain/>
+          </textDesc>
+        </profileDesc>
+      </idsHeader>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="WPD_AAA.00001">
+  <spanList>
+    <span from="0" to="74" />
+    <span from="75" to="160" />
+    <span from="161" to="224" />
+    <span from="225" to="377" />
+    <span from="378" to="685" />
+    <span from="686" to="919" />
+    <span from="920" to="1002" />
+    <span from="1003" to="1005" />
+    <span from="1006" to="1081" />
+    <span from="1082" to="1084" />
+    <span from="1085" to="1092" />
+    <span from="1093" to="1149" />
+    <span from="1150" to="1436" />
+    <span from="1437" to="1633" />
+    <span from="1634" to="1696" />
+    <span from="1697" to="1742" />
+    <span from="1743" to="1747" />
+    <span from="1748" to="1868" />
+    <span from="1869" to="1931" />
+    <span from="1932" to="2005" />
+    <span from="2006" to="2123" />
+    <span from="2124" to="2212" />
+    <span from="2213" to="2302" />
+    <span from="2303" to="2417" />
+    <span from="2418" to="2583" />
+    <span from="2584" to="2948" />
+    <span from="2949" to="3085" />
+    <span from="3086" to="3120" />
+    <span from="3121" to="3156" />
+    <span from="3157" to="3214" />
+    <span from="3215" to="3273" />
+    <span from="3274" to="3324" />
+    <span from="3325" to="3455" />
+    <span from="3456" to="3551" />
+    <span from="3552" to="3650" />
+    <span from="3651" to="3681" />
+    <span from="3682" to="3713" />
+    <span from="3714" to="4259" />
+    <span from="4260" to="4315" />
+    <span from="4316" to="4361" />
+    <span from="4362" to="4419" />
+    <span from="4420" to="4484" />
+    <span from="4485" to="4518" />
+    <span from="4519" to="4543" />
+    <span from="4544" to="4595" />
+    <span from="4596" to="4779" />
+    <span from="4780" to="4817" />
+    <span from="4818" to="4893" />
+    <span from="4894" to="5101" />
+    <span from="5102" to="5161" />
+    <span from="5162" to="5244" />
+    <span from="5244" to="5271" />
+    <span from="5273" to="5306" />
+    <span from="5307" to="5309" />
+    <span from="5310" to="5345" />
+    <span from="5346" to="5417" />
+    <span from="5418" to="5540" />
+    <span from="5541" to="5687" />
+    <span from="5688" to="5726" />
+    <span from="5727" to="5784" />
+    <span from="5785" to="5838" />
+    <span from="5839" to="5948" />
+    <span from="5949" to="6083" />
+  </spanList>
+</layer>

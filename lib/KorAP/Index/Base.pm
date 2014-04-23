@@ -25,7 +25,7 @@ sub new {
 };
 
 sub layer_info {
-    return []
+  []
 };
 
 1;

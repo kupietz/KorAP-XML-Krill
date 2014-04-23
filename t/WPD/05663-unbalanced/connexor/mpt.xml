@@ -1,0 +1,2675 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<cnxfdg1 language="de" version="4.8">
+<sentence>
+<token pos="0" len="4">
+<text>Mehr</text>
+<lemma>mehr</lemma>
+<tags syntax="@PREMOD" morpho="PRON"/>
+</token>
+<np>
+<token pos="5" len="11">
+<text>Arbeitslose</text>
+<lemma>arbeit lose</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+<token pos="17" len="1">
+<text>i</text>
+<lemma>in</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="18" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<token pos="20" len="8">
+<text>Dezember</text>
+<lemma>dezember</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<np>
+<token pos="29" len="7">
+<text>Herisau</text>
+<lemma>Herisau</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="36" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="38" len="2">
+<text>In</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="41" len="9">
+<text>Appenzell</text>
+<lemma>Appenzell</lemma>
+<tags syntax="@PREMOD" morpho="N" sub1="Prop"/>
+</token>
+<token pos="51" len="12">
+<text>Ausserrhoden</text>
+<lemma>Ausserrhoden</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="64" len="3">
+<text>ist</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="68" len="3">
+<text>die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="72" len="4">
+<text>Zahl</text>
+<lemma>zahl</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="77" len="3">
+<text>der</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+<lemma>der</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<np>
+<token pos="81" len="12">
+<text>arbeitslosen</text>
+<lemma>arbeit los</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="94" len="16">
+<text>Stellensuchenden</text>
+<lemma>stelle suchende</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="111" len="1">
+<text>i</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="112" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="114" len="8">
+<text>Dezember</text>
+<lemma>dezember</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+<token pos="123" len="2">
+<text>um</text>
+<lemma>um</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="126" len="2">
+<text>36</text>
+<lemma>36</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<token pos="129" len="8">
+<text>Personen</text>
+<lemma>person</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="138" len="3">
+<text>auf</text>
+<lemma>auf</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="142" len="3">
+<text>280</text>
+<lemma>280</lemma>
+<tags syntax="@NH" morpho="NUM"/>
+</token>
+<token pos="146" len="9">
+<text>gestiegen</text>
+<lemma>steigen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="PCP" sub2="PERF"/>
+</token>
+<token pos="155" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="157" len="3">
+<text>Die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="161" len="17">
+<text>Arbeitslosenquote</text>
+<lemma>arbeit lose quote</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="179" len="8">
+<text>erhöhte</text>
+<lemma>erhöhen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="188" len="4">
+<text>sich</text>
+<lemma>sich</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="193" len="3">
+<text>von</text>
+<lemma>von</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="197" len="3">
+<text>0,9</text>
+<lemma>0,9</lemma>
+<tags syntax="@NH" morpho="NUM"/>
+</token>
+<token pos="201" len="3">
+<text>auf</text>
+<lemma>auf</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="205" len="3">
+<text>1,1</text>
+<lemma>1,1</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<np>
+<token pos="209" len="7">
+<text>Prozent</text>
+<lemma>prozent</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="216" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="218" len="3">
+<text>wie</text>
+<lemma>wie</lemma>
+<tags syntax="@PREMARK" morpho="CS"/>
+</token>
+<token pos="222" len="3">
+<text>die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="226" len="25">
+<text>Volkswirtschaftsdirektion</text>
+<lemma>volk wirtschaft direktion</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="252" len="1">
+<text>a</text>
+<lemma>an</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="253" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="255" len="7">
+<text>Freitag</text>
+<lemma>freitag</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="263" len="9">
+<text>mitteilte</text>
+<lemma>mitteilen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="272" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<np>
+<token pos="274" len="5">
+<text>Total</text>
+<lemma>Total</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="280" len="7">
+<text>suchten</text>
+<lemma>suchen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="288" len="3">
+<text>420</text>
+<lemma>420</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<np>
+<token pos="292" len="8">
+<text>Personen</text>
+<lemma>person</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="301" len="1">
+<text>-</text>
+<lemma>-</lemma>
+<tags/>
+</token>
+<token pos="303" len="2">
+<text>23</text>
+<lemma>23</lemma>
+<tags syntax="@NH" morpho="NUM"/>
+</token>
+<token pos="306" len="4">
+<text>mehr</text>
+<lemma>mehr</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="311" len="3">
+<text>als</text>
+<lemma>als</lemma>
+<tags syntax="@PREMARK" morpho="CS"/>
+</token>
+<token pos="315" len="1">
+<text>i</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="316" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="318" len="8">
+<text>Vormonat</text>
+<lemma>vormonat</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="327" len="1">
+<text>-</text>
+<lemma>-</lemma>
+<tags/>
+</token>
+<token pos="329" len="4">
+<text>eine</text>
+<lemma>eine</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="334" len="4">
+<text>neue</text>
+<lemma>neu</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="339" len="6">
+<text>Stelle</text>
+<lemma>stelle</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="345" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="347" len="3">
+<text>Die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="351" len="4">
+<text>Zahl</text>
+<lemma>zahl</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="356" len="3">
+<text>der</text>
+<lemma>der</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="360" len="5">
+<text>nicht</text>
+<lemma>nicht</lemma>
+<tags syntax="@PREMOD" morpho="ADV"/>
+</token>
+<np>
+<token pos="366" len="12">
+<text>arbeitslosen</text>
+<lemma>arbeit los</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="379" len="16">
+<text>Stellensuchenden</text>
+<lemma>stelle suchende</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="396" len="4">
+<text>sank</text>
+<lemma>sinken</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="401" len="3">
+<text>von</text>
+<lemma>von</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="405" len="3">
+<text>153</text>
+<lemma>153</lemma>
+<tags syntax="@NH" morpho="NUM"/>
+</token>
+<token pos="409" len="3">
+<text>auf</text>
+<lemma>auf</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="413" len="4">
+<text>140.</text>
+<lemma>140.</lemma>
+<tags syntax="@PREMOD" morpho="NUM" sub1="ORD"/>
+</token>
+<token pos="418" len="3">
+<text>Von</text>
+<lemma>von</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="422" len="10">
+<text>Kurzarbeit</text>
+<lemma>kurz arbeit</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="433" len="9">
+<text>betroffen</text>
+<lemma>betroffen</lemma>
+<tags syntax="@NH" morpho="A"/>
+</token>
+<token pos="443" len="5">
+<text>waren</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="449" len="1">
+<text>i</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="450" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="452" len="8">
+<text>Dezember</text>
+<lemma>dezember</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="461" len="2">
+<text>22</text>
+<lemma>22</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<np>
+<token pos="464" len="8">
+<text>Personen</text>
+<lemma>person</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="472" len="1">
+<text>;</text>
+<lemma>;</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="474" len="1">
+<text>i</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="475" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="477" len="9">
+<text>September</text>
+<lemma>september</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="487" len="5">
+<text>waren</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="493" len="2">
+<text>es</text>
+<lemma>es</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="496" len="6">
+<text>sieben</text>
+<lemma>sieben</lemma>
+<tags syntax="@NH" morpho="NUM"/>
+</token>
+<token pos="503" len="3">
+<text>und</text>
+<lemma>und</lemma>
+<tags syntax="@CC" morpho="CC"/>
+</token>
+<token pos="507" len="1">
+<text>i</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="508" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="510" len="8">
+<text>Dezember</text>
+<lemma>dezember</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="519" len="3">
+<text>des</text>
+<lemma>das</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="523" len="8">
+<text>Vorjahrs</text>
+<lemma>vor jahr</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="532" len="2">
+<text>22</text>
+<lemma>22</lemma>
+<tags syntax="@NH" morpho="NUM"/>
+</token>
+<token pos="535" len="7">
+<text>gewesen</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="PCP" sub2="PERF"/>
+</token>
+<token pos="542" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="544" len="2">
+<text>81</text>
+<lemma>81</lemma>
+<tags syntax="@NH" morpho="NUM"/>
+</token>
+<token pos="547" len="3">
+<text>der</text>
+<lemma>der</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="551" len="5">
+<text>nicht</text>
+<lemma>nicht</lemma>
+<tags syntax="@PREMOD" morpho="ADV"/>
+</token>
+<np>
+<token pos="557" len="12">
+<text>arbeitslosen</text>
+<lemma>arbeit los</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="570" len="16">
+<text>Stellensuchenden</text>
+<lemma>stelle suchende</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="587" len="10">
+<text>arbeiteten</text>
+<lemma>arbeiten</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="598" len="2">
+<text>in</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="601" len="5">
+<text>einem</text>
+<lemma>ein</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="607" len="17">
+<text>Zwischenverdienst</text>
+<lemma>zwischen verdienst</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="624" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="626" len="8">
+<text>während</text>
+<lemma>während</lemma>
+<tags syntax="@PREMARK" morpho="CS"/>
+</token>
+<token pos="635" len="3">
+<text>die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="639" len="8">
+<text>übrigen</text>
+<lemma>übrig</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="648" len="2">
+<text>59</text>
+<lemma>59</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<token pos="651" len="8">
+<text>Personen</text>
+<lemma>person</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+<token pos="660" len="2">
+<text>in</text>
+<lemma>in</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="663" len="4">
+<text>eine</text>
+<lemma>eine</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<token pos="668" len="17">
+<text>arbeitsmarktliche</text>
+<lemma>arbeitsmarktlich</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="686" len="9">
+<text>Massnahme</text>
+<lemma>massnahme</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="696" len="11">
+<text>eingebunden</text>
+<lemma>ein gebunden</lemma>
+<tags syntax="@NH" morpho="A"/>
+</token>
+<token pos="708" len="5">
+<text>waren</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="713" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="715" len="3">
+<text>Die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="719" len="7">
+<text>Zunahme</text>
+<lemma>zunahme</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+<token pos="727" len="3">
+<text>bei</text>
+<lemma>bei</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="731" len="3">
+<text>den</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<token pos="735" len="12">
+<text>arbeitslosen</text>
+<lemma>arbeit los</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="748" len="16">
+<text>Stellensuchenden</text>
+<lemma>stelle suchende</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="765" len="3">
+<text>sei</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="SUB" sub2="PRES"/>
+</token>
+<token pos="769" len="5">
+<text>unter</text>
+<lemma>unter</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="775" len="7">
+<text>anderem</text>
+<lemma>andere</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="783" len="3">
+<text>mit</text>
+<lemma>mit</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="787" len="3">
+<text>dem</text>
+<lemma>das</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="791" len="9">
+<text>Auslaufen</text>
+<lemma>auslaufen</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<np>
+<token pos="801" len="11">
+<text>zahlreicher</text>
+<lemma>zahl reich</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="813" len="34">
+<text>Zwischenverdienst-Beschäftigungen</text>
+<lemma>zwischen verdienst beschäftigung</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+<token pos="848" len="3">
+<text>auf</text>
+<lemma>auf</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="852" len="3">
+<text>das</text>
+<lemma>das</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<token pos="856" len="10">
+<text>Jahresende</text>
+<lemma>jahr ende</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="867" len="2">
+<text>zu</text>
+<lemma>zu</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="870" len="10">
+<text>begründen</text>
+<lemma>begründen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="INF"/>
+</token>
+<token pos="880" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="882" len="6">
+<text>heisst</text>
+<lemma>heissen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="889" len="2">
+<text>es</text>
+<lemma>es</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="891" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="893" len="5">
+<text>Zudem</text>
+<lemma>zudem</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="899" len="7">
+<text>würden</text>
+<lemma>werden</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="SUB" sub2="PAST"/>
+</token>
+<token pos="907" len="3">
+<text>die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="911" len="8">
+<text>Abgänge</text>
+<lemma>abgang</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="920" len="2">
+<text>in</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="923" len="3">
+<text>den</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="927" len="13">
+<text>verschiedenen</text>
+<lemma>verschieden</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="941" len="25">
+<text>Beschäfitgungsprogrammen</text>
+<lemma>beschäfitgungsprogrammen</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="967" len="1">
+<text>i</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="968" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="970" len="8">
+<text>Dezember</text>
+<lemma>dezember</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="979" len="5">
+<text>nicht</text>
+<lemma>nicht</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="985" len="7">
+<text>ersetzt</text>
+<lemma>ersetzen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="PCP" sub2="PERF"/>
+</token>
+<token pos="992" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="994" len="8">
+<text>Aufgrund</text>
+<lemma>aufgrund</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="1003" len="3">
+<text>der</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1007" len="11">
+<text>Erfahrungen</text>
+<lemma>erfahrung</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+<token pos="1019" len="3">
+<text>aus</text>
+<lemma>aus</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="1023" len="9">
+<text>früheren</text>
+<lemma>früh</lemma>
+<tags syntax="@PREMOD" morpho="A" sub1="CMP"/>
+</token>
+<token pos="1033" len="6">
+<text>Jahren</text>
+<lemma>jahr</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="1040" len="3">
+<text>sei</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="SUB" sub2="PRES"/>
+</token>
+<token pos="1044" len="1">
+<text>i</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="1045" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1047" len="6">
+<text>Januar</text>
+<lemma>januar</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1054" len="4">
+<text>2000</text>
+<lemma>2000</lemma>
+<tags syntax="@NH" morpho="NUM"/>
+</token>
+<token pos="1059" len="8">
+<text>nochmals</text>
+<lemma>nochmals</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="1068" len="4">
+<text>eine</text>
+<lemma>eine</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1073" len="7">
+<text>Zunahme</text>
+<lemma>zunahme</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1081" len="3">
+<text>der</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1085" len="16">
+<text>Stellensuchenden</text>
+<lemma>stelle suchende</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1102" len="2">
+<text>zu</text>
+<lemma>zu</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="1105" len="8">
+<text>erwarten</text>
+<lemma>erwarten</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="INF"/>
+</token>
+<token pos="1113" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<np>
+<token pos="1115" len="4">
+<text>Ende</text>
+<lemma>ende</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+<token pos="1120" len="8">
+<text>Dezember</text>
+<lemma>dezember</lemma>
+<tags syntax="@POSTMOD" morpho="N"/>
+</token>
+</np>
+<token pos="1129" len="4">
+<text>1999</text>
+<lemma>1999</lemma>
+<tags syntax="@NH" morpho="NUM"/>
+</token>
+<token pos="1134" len="6">
+<text>wurden</text>
+<lemma>werden</lemma>
+<tags syntax="@AUX" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="1141" len="3">
+<text>420</text>
+<lemma>420</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<np>
+<token pos="1145" len="15">
+<text>Stellensuchende</text>
+<lemma>stelle suchende</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="1161" len="11">
+<text>registriert</text>
+<lemma>registrieren</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="PCP" sub2="PERF"/>
+</token>
+<token pos="1172" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="1174" len="4">
+<text>1998</text>
+<lemma>1998</lemma>
+<tags syntax="@NH" morpho="NUM"/>
+</token>
+<token pos="1179" len="5">
+<text>waren</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="1185" len="2">
+<text>es</text>
+<lemma>es</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="1188" len="4">
+<text>537.</text>
+<lemma>537.</lemma>
+<tags syntax="@PREMOD" morpho="NUM" sub1="ORD"/>
+</token>
+<token pos="1193" len="5">
+<text>Damit</text>
+<lemma>damit</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="1199" len="4">
+<text>habe</text>
+<lemma>haben</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="SUB" sub2="PRES"/>
+</token>
+<token pos="1204" len="4">
+<text>sich</text>
+<lemma>sich</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="1209" len="3">
+<text>die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1213" len="9">
+<text>Situation</text>
+<lemma>situation</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<np>
+<token pos="1223" len="6">
+<text>innert</text>
+<lemma>innert</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="1230" len="11">
+<text>Jahresfrist</text>
+<lemma>jahr frist</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1242" len="5">
+<text>stark</text>
+<lemma>stark</lemma>
+<tags syntax="@NH" morpho="A"/>
+</token>
+<token pos="1248" len="10">
+<text>verbessert</text>
+<lemma>verbessern</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="PCP" sub2="PERF"/>
+</token>
+<token pos="1258" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="1260" len="8">
+<text>schreibt</text>
+<lemma>schreiben</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="1269" len="3">
+<text>die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1273" len="26">
+<text>Volkswirtschaftsdirektion.</text>
+<lemma>volk wirtschaft direktion.</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<np>
+<token pos="1299" len="3">
+<text>sda</text>
+<lemma>sda</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<np>
+<token pos="1303" len="7">
+<text>Gesunde</text>
+<lemma>Gesunde</lemma>
+<tags syntax="@PREMOD" morpho="N" sub1="Prop"/>
+</token>
+<token pos="1311" len="10">
+<text>Ernährung</text>
+<lemma>Ernährung</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="1322" len="3">
+<text>ist</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="1326" len="3">
+<text>vor</text>
+<lemma>vor</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="1330" len="5">
+<text>allem</text>
+<lemma>alle</lemma>
+<tags syntax="@PREMOD" morpho="PRON"/>
+</token>
+<np>
+<token pos="1336" len="8">
+<text>fettarme</text>
+<lemma>fett arm</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="1345" len="10">
+<text>Ernährung</text>
+<lemma>ernährung</lemma>
+<tags syntax="@PREMOD" morpho="N"/>
+</token>
+<token pos="1356" len="6">
+<text>Widnau</text>
+<lemma>widnau</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1362" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="1364" len="3">
+<text>Die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<token pos="1368" len="3">
+<text>von</text>
+<lemma>von</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="1372" len="5">
+<text>Zepra</text>
+<lemma>Zepra</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="1378" len="3">
+<text>und</text>
+<lemma>und</lemma>
+<tags syntax="@CC" morpho="CC"/>
+</token>
+<np>
+<token pos="1382" len="13">
+<text>Fitnesscenter</text>
+<lemma>fitness center</lemma>
+<tags syntax="@PREMOD" morpho="N"/>
+</token>
+<token pos="1396" len="7">
+<text>Nöllen</text>
+<lemma>Nöllen</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="1404" len="13">
+<text>organisierten</text>
+<lemma>organisieren</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<np>
+<token pos="1418" len="20">
+<text>Gesundheitsvorträge</text>
+<lemma>gesundheit vortrag</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="1439" len="4">
+<text>sind</text>
+<lemma>sein</lemma>
+<tags syntax="@AUX" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="1444" len="13">
+<text>ausgesprochen</text>
+<lemma>aussprechen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="PCP" sub2="PERF"/>
+</token>
+<token pos="1458" len="3">
+<text>gut</text>
+<lemma>gut</lemma>
+<tags syntax="@NH" morpho="A"/>
+</token>
+<token pos="1462" len="7">
+<text>besucht</text>
+<lemma>besuchen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="PCP" sub2="PERF"/>
+</token>
+<token pos="1469" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="1471" len="1">
+<text>A</text>
+<lemma>an</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="1472" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1474" len="8">
+<text>Dienstag</text>
+<lemma>dienstag</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<np>
+<token pos="1483" len="5">
+<text>gings</text>
+<lemma>ging</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+<token pos="1489" len="2">
+<text>um</text>
+<lemma>um</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="1492" len="7">
+<text>gesunde</text>
+<lemma>gesund</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="1500" len="10">
+<text>Ernährung</text>
+<lemma>ernährung</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1510" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<np>
+<token pos="1512" len="4">
+<text>Rund</text>
+<lemma>rund</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="1517" len="2">
+<text>70</text>
+<lemma>70</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<token pos="1520" len="8">
+<text>Personen</text>
+<lemma>person</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="1529" len="7">
+<text>folgten</text>
+<lemma>folgen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="1537" len="3">
+<text>dem</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1541" len="7">
+<text>Vortrag</text>
+<lemma>vortrag</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+<token pos="1549" len="3">
+<text>von</text>
+<lemma>von</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="1553" len="20">
+<text>Ernährungsberaterin</text>
+<lemma>ernährung beraterin</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<np>
+<token pos="1574" len="6">
+<text>Sandra</text>
+<lemma>Sandra</lemma>
+<tags syntax="@PREMOD" morpho="N" sub1="Prop"/>
+</token>
+<token pos="1581" len="5">
+<text>Zaugg</text>
+<lemma>Zaugg</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="1587" len="2">
+<text>in</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="1590" len="3">
+<text>der</text>
+<lemma>die</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="1594" len="2">
+<text>&quot;</text>
+<lemma>&quot;</lemma>
+<tags/>
+</token>
+<np>
+<token pos="1596" len="12">
+<text>Griechischen</text>
+<lemma>griechisch</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="1609" len="7">
+<text>Taverne</text>
+<lemma>Taverne</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="1616" len="2">
+<text>&quot;</text>
+<lemma>&quot;</lemma>
+<tags/>
+</token>
+<token pos="1619" len="2">
+<text>in</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="1622" len="6">
+<text>Widnau</text>
+<lemma>Widnau</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="1628" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="1630" len="2">
+<text>&quot;</text>
+<lemma>&quot;</lemma>
+<tags/>
+</token>
+<token pos="1632" len="3">
+<text>Was</text>
+<lemma>was</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="1636" len="5">
+<text>haben</text>
+<lemma>haben</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="1642" len="3">
+<text>Sie</text>
+<lemma>sie</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="1646" len="5">
+<text>heute</text>
+<lemma>heute</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="1652" len="8">
+<text>gegessen</text>
+<lemma>essen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="PCP" sub2="PERF"/>
+</token>
+<token pos="1660" len="1">
+<text>?</text>
+<lemma>?</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="1661" len="2">
+<text>&quot;</text>
+<lemma>&quot;</lemma>
+<tags/>
+</token>
+<token pos="1663" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="1665" len="6">
+<text>fragte</text>
+<lemma>fragen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<np>
+<token pos="1672" len="6">
+<text>Sandra</text>
+<lemma>Sandra</lemma>
+<tags syntax="@PREMOD" morpho="N" sub1="Prop"/>
+</token>
+<token pos="1679" len="5">
+<text>Zaugg</text>
+<lemma>Zaugg</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="1685" len="3">
+<text>das</text>
+<lemma>das</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1689" len="8">
+<text>Publikum</text>
+<lemma>publikum</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1698" len="2">
+<text>zu</text>
+<lemma>zu</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="1701" len="6">
+<text>Beginn</text>
+<lemma>beginn</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1708" len="5">
+<text>ihres</text>
+<lemma>ihr</lemma>
+<tags syntax="@PREMOD" morpho="PRON"/>
+</token>
+<np>
+<token pos="1714" len="8">
+<text>Vortrags</text>
+<lemma>vortrag</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1722" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="1724" len="3">
+<text>Die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1728" len="20">
+<text>Ernährungsberaterin</text>
+<lemma>ernährung beraterin</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<np>
+<token pos="1749" len="3">
+<text>SRK</text>
+<lemma>SRK</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1753" len="7">
+<text>verband</text>
+<lemma>verbinden</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="1761" len="4">
+<text>ihre</text>
+<lemma>ihr</lemma>
+<tags syntax="@PREMOD" morpho="PRON"/>
+</token>
+<np>
+<token pos="1766" len="13">
+<text>Ausführungen</text>
+<lemma>ausführung</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+<token pos="1780" len="3">
+<text>mit</text>
+<lemma>mit</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="1784" len="9">
+<text>konkreten</text>
+<lemma>konkret</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="1794" len="15">
+<text>Demonstrationen</text>
+<lemma>demonstration</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="1810" len="4">
+<text>für</text>
+<lemma>für</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="1815" len="9">
+<text>fettarmes</text>
+<lemma>fett arm</lemma>
+<tags syntax="@NH" morpho="A"/>
+</token>
+<token pos="1825" len="6">
+<text>Kochen</text>
+<lemma>kochen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="INF"/>
+</token>
+<token pos="1831" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="1833" len="4">
+<text>Denn</text>
+<lemma>denn</lemma>
+<tags syntax="@CC" morpho="CC"/>
+</token>
+<token pos="1838" len="4">
+<text>für</text>
+<lemma>für</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="1843" len="16">
+<text>Fettpölsterchen</text>
+<lemma>Fettpölsterchen</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="1860" len="3">
+<text>sei</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="SUB" sub2="PRES"/>
+</token>
+<token pos="1864" len="3">
+<text>vor</text>
+<lemma>vor</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="1868" len="5">
+<text>allem</text>
+<lemma>alle</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="1874" len="3">
+<text>der</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1878" len="10">
+<text>Fettgehalt</text>
+<lemma>fett gehalt</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1889" len="3">
+<text>der</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1893" len="7">
+<text>Nahrung</text>
+<lemma>nahrung</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1901" len="14">
+<text>verantwortlich</text>
+<lemma>verantwortlich</lemma>
+<tags syntax="@NH" morpho="A"/>
+</token>
+<token pos="1915" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="1917" len="3">
+<text>und</text>
+<lemma>und</lemma>
+<tags syntax="@CC" morpho="CC"/>
+</token>
+<token pos="1921" len="5">
+<text>nicht</text>
+<lemma>nicht</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="1927" len="3">
+<text>die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="1931" len="10">
+<text>gegessenen</text>
+<lemma>gegessen</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="1942" len="13">
+<text>Kohlenhydrate</text>
+<lemma>kohle hydrat</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="1955" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="1957" len="3">
+<text>Als</text>
+<lemma>als</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+<lemma>als</lemma>
+<tags syntax="@PREMARK" morpho="CS"/>
+</token>
+<np>
+<token pos="1961" len="10">
+<text>Faustregel</text>
+<lemma>faust regel</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+<token pos="1972" len="4">
+<text>für</text>
+<lemma>für</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="1977" len="3">
+<text>den</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<token pos="1981" len="11">
+<text>Fettverzehr</text>
+<lemma>fett verzehr</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="1993" len="4">
+<text>gilt</text>
+<lemma>gelten</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="1997" len="1">
+<text>:</text>
+<lemma>:</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="1999" len="3">
+<text>Wer</text>
+<lemma>wer</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="2003" len="4">
+<text>1,80</text>
+<lemma>1,80</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<np>
+<token pos="2008" len="5">
+<text>Meter</text>
+<lemma>meter</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2014" len="5">
+<text>gross</text>
+<lemma>gross</lemma>
+<tags syntax="@NH" morpho="A"/>
+</token>
+<token pos="2020" len="3">
+<text>ist</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="2023" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="2025" len="4">
+<text>darf</text>
+<lemma>dürfen</lemma>
+<tags syntax="@AUX" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<np>
+<token pos="2030" len="8">
+<text>täglich</text>
+<lemma>täglich</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="2039" len="2">
+<text>80</text>
+<lemma>80</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<token pos="2042" len="5">
+<text>Gramm</text>
+<lemma>gramm</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<np>
+<token pos="2048" len="4">
+<text>Fett</text>
+<lemma>fett</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2053" len="11">
+<text>konsumieren</text>
+<lemma>konsumieren</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="INF"/>
+</token>
+<token pos="2064" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="2066" len="3">
+<text>und</text>
+<lemma>und</lemma>
+<tags syntax="@CC" morpho="CC"/>
+</token>
+<token pos="2070" len="3">
+<text>wer</text>
+<lemma>wer</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="2074" len="4">
+<text>1,60</text>
+<lemma>1,60</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<np>
+<token pos="2079" len="5">
+<text>Meter</text>
+<lemma>meter</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2085" len="5">
+<text>gross</text>
+<lemma>gross</lemma>
+<tags syntax="@NH" morpho="A"/>
+</token>
+<token pos="2091" len="3">
+<text>ist</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="2094" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="2096" len="4">
+<text>darf</text>
+<lemma>dürfen</lemma>
+<tags syntax="@AUX" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="2101" len="2">
+<text>60</text>
+<lemma>60</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<np>
+<token pos="2104" len="5">
+<text>Gramm</text>
+<lemma>gramm</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<np>
+<token pos="2110" len="4">
+<text>Fett</text>
+<lemma>fett</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2115" len="5">
+<text>essen</text>
+<lemma>essen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="INF"/>
+</token>
+<token pos="2120" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="2122" len="4">
+<text>Dies</text>
+<lemma>dieser</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="2127" len="9">
+<text>geschieht</text>
+<lemma>geschehen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="2137" len="2">
+<text>zu</text>
+<lemma>zu</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="2139" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<token pos="2141" len="5">
+<text>einen</text>
+<lemma>einer</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="2147" len="2">
+<text>in</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="2150" len="11">
+<text>versteckter</text>
+<lemma>versteckt</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="2162" len="4">
+<text>Form</text>
+<lemma>form</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2166" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="2168" len="3">
+<text>als</text>
+<lemma>als</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="2172" len="8">
+<text>Desserts</text>
+<lemma>dessert</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2180" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<np>
+<token pos="2182" len="5">
+<text>Wurst</text>
+<lemma>wurst</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2188" len="3">
+<text>und</text>
+<lemma>und</lemma>
+<tags syntax="@CC" morpho="CC"/>
+</token>
+<np>
+<token pos="2192" len="5">
+<text>Käse</text>
+<lemma>käse</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2198" len="3">
+<text>und</text>
+<lemma>und</lemma>
+<tags syntax="@CC" morpho="CC"/>
+</token>
+<token pos="2202" len="2">
+<text>zu</text>
+<lemma>zu</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="2204" len="1">
+<text>m</text>
+<lemma>das</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<token pos="2206" len="7">
+<text>anderen</text>
+<lemma>andere</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="2214" len="3">
+<text>als</text>
+<lemma>als</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="2218" len="9">
+<text>sichtbare</text>
+<lemma>sichtbar</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="2228" len="5">
+<text>Fette</text>
+<lemma>fett</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2233" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="2235" len="2">
+<text>in</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="2238" len="4">
+<text>Form</text>
+<lemma>form</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+<token pos="2243" len="3">
+<text>von</text>
+<lemma>von</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="2247" len="6">
+<text>Butter</text>
+<lemma>butter</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2253" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<np>
+<token pos="2255" len="4">
+<text>Rahm</text>
+<lemma>rahm</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2260" len="4">
+<text>oder</text>
+<lemma>oder</lemma>
+<tags syntax="@CC" morpho="CC"/>
+</token>
+<np>
+<token pos="2265" len="13">
+<text>Pflanzenölen</text>
+<lemma>pflanze öl</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2278" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="2280" len="3">
+<text>Die</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<token pos="2284" len="14">
+<text>Kaltgepressten</text>
+<lemma>kalt gepresst</lemma>
+<tags syntax="@NH" morpho="A"/>
+</token>
+<token pos="2299" len="5">
+<text>unter</text>
+<lemma>unter</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="2305" len="3">
+<text>den</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="2309" len="13">
+<text>Pflanzenölen</text>
+<lemma>pflanze öl</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2323" len="6">
+<text>eignen</text>
+<lemma>eignen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="2330" len="4">
+<text>sich</text>
+<lemma>sich</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="2335" len="4">
+<text>sehr</text>
+<lemma>sehr</lemma>
+<tags syntax="@PREMOD" morpho="ADV"/>
+</token>
+<token pos="2340" len="3">
+<text>gut</text>
+<lemma>gut</lemma>
+<tags syntax="@NH" morpho="A"/>
+</token>
+<token pos="2344" len="4">
+<text>für</text>
+<lemma>für</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<np>
+<token pos="2349" len="6">
+<text>Salate</text>
+<lemma>salat</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2355" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<np>
+<token pos="2357" len="15">
+<text>Sonnenblumenöl</text>
+<lemma>sonne blume öl</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2372" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<np>
+<token pos="2374" len="9">
+<text>Distelöl</text>
+<lemma>distel öl</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2383" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<np>
+<token pos="2385" len="11">
+<text>Maiskeimöl</text>
+<lemma>mais keim öl</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2397" len="3">
+<text>und</text>
+<lemma>und</lemma>
+<tags syntax="@CC" morpho="CC"/>
+</token>
+<np>
+<token pos="2401" len="14">
+<text>Traubenkernöl</text>
+<lemma>traube kern öl</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2416" len="4">
+<text>sind</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="2421" len="9">
+<text>besonders</text>
+<lemma>besonders</lemma>
+<tags syntax="@PREMOD" morpho="ADV"/>
+</token>
+<token pos="2431" len="5">
+<text>reich</text>
+<lemma>reich</lemma>
+<tags syntax="@NH" morpho="A"/>
+</token>
+<token pos="2437" len="2">
+<text>an</text>
+<lemma>an</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="2440" len="9">
+<text>wichtigen</text>
+<lemma>wichtig</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="2449" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<np>
+<token pos="2451" len="8">
+<text>mehrfach</text>
+<lemma>mehrfach</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="2460" len="14">
+<text>ungesättigten</text>
+<lemma>ungesättigt</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="2475" len="11">
+<text>Fettsäuren</text>
+<lemma>fett säure</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2486" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="2488" len="5">
+<text>Diese</text>
+<lemma>dieser</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="2494" len="7">
+<text>können</text>
+<lemma>können</lemma>
+<tags syntax="@AUX" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="2502" len="2">
+<text>vo</text>
+<lemma>von</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="2504" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="2506" len="7">
+<text>Körper</text>
+<lemma>körper</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2514" len="5">
+<text>nicht</text>
+<lemma>nicht</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+</token>
+<token pos="2520" len="6">
+<text>selbst</text>
+<lemma>selbst</lemma>
+<tags syntax="@ADVL" morpho="ADV"/>
+<lemma>selbst</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="2527" len="9">
+<text>aufgebaut</text>
+<lemma>aufbauen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="PCP" sub2="PERF"/>
+</token>
+<token pos="2537" len="6">
+<text>werden</text>
+<lemma>werden</lemma>
+<tags syntax="@AUX" morpho="V" sub1="INF"/>
+</token>
+<token pos="2543" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="2545" len="3">
+<text>Ein</text>
+<lemma>ein</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="2549" len="10">
+<text>Esslöffel</text>
+<lemma>essen löffel</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2560" len="3">
+<text>pro</text>
+<lemma>pro</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="2564" len="3">
+<text>Tag</text>
+<lemma>tag</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2568" len="5">
+<text>deckt</text>
+<lemma>decken</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="2574" len="3">
+<text>den</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="2578" len="11">
+<text>Tagesbedarf</text>
+<lemma>tag bedarf</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2589" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="2591" len="2">
+<text>Um</text>
+<lemma>um</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="2594" len="11">
+<text>Umweltgifte</text>
+<lemma>umwelt gift</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+<token pos="2606" len="2">
+<text>in</text>
+<lemma>in</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="2609" len="3">
+<text>den</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<token pos="2613" len="15">
+<text>Nahrungsmitteln</text>
+<lemma>nahrung mittel</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2629" len="3">
+<text>und</text>
+<lemma>und</lemma>
+<tags syntax="@CC" morpho="CC"/>
+</token>
+<token pos="2633" len="2">
+<text>um</text>
+<lemma>um</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="2636" len="10">
+<text>functional</text>
+<lemma>functional</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="2647" len="4">
+<text>food</text>
+<lemma>food</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2652" len="4">
+<text>ging</text>
+<lemma>gehen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PAST"/>
+</token>
+<token pos="2657" len="2">
+<text>es</text>
+<lemma>es</lemma>
+<tags syntax="@NH" morpho="PRON"/>
+</token>
+<token pos="2660" len="2">
+<text>in</text>
+<lemma>in</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="2663" len="3">
+<text>der</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="2667" len="15">
+<text>abschliessenden</text>
+<lemma>abschliessend</lemma>
+<tags syntax="@PREMOD" morpho="A"/>
+</token>
+<token pos="2683" len="16">
+<text>Diskussionsrunde</text>
+<lemma>diskussion runde</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2699" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<np>
+<token pos="2701" len="6">
+<text>Sandra</text>
+<lemma>Sandra</lemma>
+<tags syntax="@PREMOD" morpho="N" sub1="Prop"/>
+</token>
+<token pos="2708" len="6">
+<text>Zauggs</text>
+<lemma>Zaugg</lemma>
+<tags syntax="@PREMOD" morpho="N" sub1="Prop"/>
+</token>
+<token pos="2715" len="5">
+<text>Fazit</text>
+<lemma>fazit</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2720" len="1">
+<text>:</text>
+<lemma>:</lemma>
+<tags/>
+</token>
+<token pos="2722" len="2">
+<text>&quot;</text>
+<lemma>&quot;</lemma>
+<tags/>
+</token>
+<token pos="2724" len="5">
+<text>Keine</text>
+<lemma>kein</lemma>
+<tags syntax="@PREMOD" morpho="PRON"/>
+</token>
+<np>
+<token pos="2730" len="8">
+<text>Früchte</text>
+<lemma>frucht</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2739" len="2">
+<text>zu</text>
+<lemma>zu</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="2742" len="5">
+<text>essen</text>
+<lemma>essen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="INF"/>
+</token>
+<token pos="2748" len="3">
+<text>sei</text>
+<lemma>sein</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="SUB" sub2="PRES"/>
+</token>
+<token pos="2752" len="4">
+<text>für</text>
+<lemma>für</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="2757" len="3">
+<text>den</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="2761" len="7">
+<text>Körper</text>
+<lemma>körper</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2769" len="3">
+<text>mit</text>
+<lemma>mit</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<np>
+<token pos="2773" len="10">
+<text>Sicherheit</text>
+<lemma>sicherheit</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2784" len="12">
+<text>schädlicher</text>
+<lemma>schädlich</lemma>
+<tags syntax="@NH" morpho="A" sub1="CMP"/>
+</token>
+<token pos="2797" len="3">
+<text>als</text>
+<lemma>als</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="2801" len="3">
+<text>ein</text>
+<lemma>ein</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<token pos="2805" len="4">
+<text>paar</text>
+<lemma>paar</lemma>
+<tags syntax="@PREMOD" morpho="PRON"/>
+</token>
+<np>
+<token pos="2810" len="10">
+<text>Giftstoffe</text>
+<lemma>gift stoff</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<np>
+<token pos="2821" len="10">
+<text>mitzuessen</text>
+<lemma>mitzuesse</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2831" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<token pos="2833" len="3">
+<text>Der</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="2837" len="8">
+<text>nächste</text>
+<lemma>nahe</lemma>
+<tags syntax="@PREMOD" morpho="A" sub1="SUP"/>
+</token>
+<token pos="2846" len="18">
+<text>Gesundheitsvortrag</text>
+<lemma>gesundheit vortrag</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2865" len="6">
+<text>findet</text>
+<lemma>finden</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="2872" len="1">
+<text>a</text>
+<lemma>an</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="2873" len="1">
+<text>m</text>
+<lemma>der</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="2875" len="13">
+<text>Dienstagabend</text>
+<lemma>dienstag abend</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2888" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="2890" len="3">
+<text>22.</text>
+<lemma>22.</lemma>
+<tags syntax="@PREMOD" morpho="NUM"/>
+</token>
+<np>
+<token pos="2894" len="8">
+<text>Ferbruar</text>
+<lemma>Ferbruar</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+</np>
+<token pos="2902" len="1">
+<text>,</text>
+<lemma>,</lemma>
+<tags/>
+</token>
+<token pos="2904" len="5">
+<text>statt</text>
+<lemma>statt</lemma>
+<tags syntax="@PREMARK" morpho="CS"/>
+</token>
+<token pos="2909" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+<sentence>
+<np>
+<token pos="2911" len="9">
+<text>Madeleine</text>
+<lemma>Madeleine</lemma>
+<tags syntax="@PREMOD" morpho="N" sub1="Prop"/>
+</token>
+<token pos="2921" len="6">
+<text>Brogli</text>
+<lemma>Brogli</lemma>
+<tags syntax="@NH" morpho="N" sub1="Prop"/>
+</token>
+<token pos="2928" len="3">
+<text>von</text>
+<lemma>von</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="2932" len="3">
+<text>der</text>
+<lemma>die</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<token pos="2936" len="17">
+<text>Selbsthilfegruppe</text>
+<lemma>selbst hilfe gruppe</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+<token pos="2954" len="4">
+<text>für</text>
+<lemma>für</lemma>
+<tags syntax="@POSTMOD" morpho="PREP"/>
+</token>
+<token pos="2959" len="13">
+<text>Essstörungen</text>
+<lemma>essen störung</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="2973" len="7">
+<text>spricht</text>
+<lemma>sprechen</lemma>
+<tags syntax="@MAIN" morpho="V" sub1="IND" sub2="PRES"/>
+</token>
+<token pos="2981" len="2">
+<text>zu</text>
+<lemma>zu</lemma>
+<tags syntax="@PREMARK" morpho="PREP"/>
+</token>
+<token pos="2983" len="1">
+<text>m</text>
+<lemma>das</lemma>
+<tags syntax="@PREMOD" morpho="DET"/>
+</token>
+<np>
+<token pos="2985" len="5">
+<text>Thema</text>
+<lemma>thema</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="2991" len="2">
+<text>&quot;</text>
+<lemma>&quot;</lemma>
+<tags/>
+</token>
+<np>
+<token pos="2993" len="17">
+<text>Schönheitsideale</text>
+<lemma>schönheit ideal</lemma>
+<tags syntax="@NH" morpho="N" sub2="PL"/>
+</token>
+</np>
+<token pos="3011" len="3">
+<text>und</text>
+<lemma>und</lemma>
+<tags syntax="@CC" morpho="CC"/>
+</token>
+<np>
+<token pos="3015" len="10">
+<text>Gesundheit</text>
+<lemma>gesundheit</lemma>
+<tags syntax="@NH" morpho="N"/>
+</token>
+</np>
+<token pos="3025" len="2">
+<text>&quot;</text>
+<lemma>&quot;</lemma>
+<tags/>
+</token>
+<token pos="3027" len="1">
+<text>.</text>
+<lemma>.</lemma>
+<tags/>
+</token>
+</sentence>
+</cnxfdg1>

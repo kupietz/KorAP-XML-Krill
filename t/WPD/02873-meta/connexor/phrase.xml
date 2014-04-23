@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="A00_JAN.02873">
+  <spanList>
+    <span from="0" to="9">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="14" to="21">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="28" to="62">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="65" to="82">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="91" to="111">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="135" to="139">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="140" to="150">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="171" to="182">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="189" to="196">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="212" to="219">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="246" to="270">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="307" to="320">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="340" to="349">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="358" to="369">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="389" to="418">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="444" to="460">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="465" to="482">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="495" to="499">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="534" to="539">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="544" to="559">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="593" to="598">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="652" to="658">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="659" to="670">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="692" to="715">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="721" to="731">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="781" to="786">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="802" to="821">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="826" to="832">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="852" to="871">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="881" to="899">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="966" to="970">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="981" to="1002">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1039" to="1045">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1048" to="1050">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1060" to="1062">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1064" to="1074">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1084" to="1092">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1093" to="1100">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1105" to="1110">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1134" to="1199">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1213" to="1220">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1227" to="1238">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1240" to="1247">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1254" to="1286">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1291" to="1299">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1306" to="1332">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1363" to="1378">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1383" to="1406">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1415" to="1435">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1454" to="1461">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1530" to="1538">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1590" to="1605">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1610" to="1631">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1689" to="1703">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1708" to="1714">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1739" to="1743">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1744" to="1751">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1766" to="1785">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1794" to="1825">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1838" to="1851">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1856" to="1872">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1878" to="1898">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1917" to="1928">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1942" to="1947">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1975" to="1981">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="1988" to="1997">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2018" to="2024">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2031" to="2041">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2046" to="2052">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2062" to="2064">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2066" to="2076">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2086" to="2094">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2095" to="2104">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2111" to="2115">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2121" to="2133">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2140" to="2153">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2159" to="2186">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2188" to="2199">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2200" to="2216">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2222" to="2247">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2249" to="2299">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2314" to="2320">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2325" to="2329">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2330" to="2339">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2344" to="2413">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2444" to="2450">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2455" to="2460">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2471" to="2481">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2496" to="2537">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2542" to="2561">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2576" to="2583">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2607" to="2611">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2624" to="2628">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2629" to="2638">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2642" to="2645">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2656" to="2676">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2684" to="2691">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="2710" to="2716">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

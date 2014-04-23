@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>MK2/ERL.00001</textSigle>
+            <t.title assemblage="non-automatic">MK2/ERL.00001 Amtsblatt des Landesbezirks Baden [diverse Erlasse], Hrsg. und Schriftleitung: Präsidialstelle der Landesverwaltung Baden in Karlsruhe. - Karlsruhe, o.J.</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world" status="unknown"/>
+            <pubDate/>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <monogr>
+                <h.title type="main">Amtsblatt des Landesbezirks Baden [diverse Erlasse]</h.title>
+                <h.title type="sub"/>
+                <h.title type="abbr" level="m">Amtsblatt Landesbezirk Baden</h.title>
+                <h.author/>
+                <editor/>
+                <edition>
+                  <further/>
+                  <kind/>
+                  <appearance>Fotokopie</appearance>
+                </edition>
+                <imprint>
+                  <publisher>Badenia Verlag und Druckerei</publisher>
+                  <pubDate type="year">o.J.</pubDate>
+                  <pubDate type="month"/>
+                  <pubDate type="day"/>
+                  <pubPlace>Karlsruhe</pubPlace>
+                </imprint>
+                <biblScope type="subsume"/>
+                <biblScope type="pp">S. 82-83</biblScope>
+                <biblScope type="vol"/>
+                <biblScope type="volume-title"/>
+              </monogr>
+            </biblStruct>
+            <reference type="complete" assemblage="non-automatic">MK2/ERL.00001 Amtsblatt des Landesbezirks Baden [diverse Erlasse], Hrsg. und Schriftleitung: Präsidialstelle der Landesverwaltung Baden in Karlsruhe. Karlsruhe: Badenia Verlag und Druckerei, o.J., S. 82-83</reference>
+            <reference type="short" assemblage="regular">MK2/ERL.00001 Amtsblatt Landesbezirk Baden, o.J.</reference>
+          </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+          <samplingDecl/>
+          <tagsDecl>
+            <tagUsage gi="pb" occurs="3"/>
+            <tagUsage gi="ptr" occurs="1"/>
+            <tagUsage gi="list" occurs="5"/>
+            <tagUsage gi="p" occurs="1"/>
+            <tagUsage gi="s" occurs="85"/>
+            <tagUsage gi="num" occurs="4"/>
+            <tagUsage gi="orig" occurs="5"/>
+          </tagsDecl>
+        </encodingDesc>
+        <profileDesc>
+          <creation>
+            <creatDate>1960-1974</creatDate>
+            <creatRef/>
+            <creatRefShort/>
+          </creation>
+          <textClass>
+            <catRef n="1" target="topic.politik.kommunalpolitik" scheme="topic"/>
+          </textClass>
+          <textDesc>
+            <textType>Erlass</textType>
+            <textTypeRef/>
+            <textDomain/>
+          </textDesc>
+        </profileDesc>
+      </idsHeader>

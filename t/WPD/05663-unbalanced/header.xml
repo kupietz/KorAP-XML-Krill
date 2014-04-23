@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>A00/JAN.05663</textSigle>
+            <t.title assemblage="regular">A00/JAN.05663 St. Galler Tagblatt, 24.01.2000, Ressort: RT-VOL (Abk.); Mehr Arbeitslose im Dezember</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world" status="unknown"/>
+            <pubDate/>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <h.title type="main">Mehr Arbeitslose im Dezember</h.title>
+                <h.author/>
+                <imprint/>
+                <biblScope type="pp"/>
+                <biblScope type="suppl"/>
+                <biblScope type="suppltitle"/>
+                <biblNote n="1"/>
+              </analytic>
+              <monogr>
+                <h.title type="main"/>
+                <imprint>
+                  <pubDate type="year">2000</pubDate>
+                  <pubDate type="month">01</pubDate>
+                  <pubDate type="day">24</pubDate>
+                </imprint>
+                <biblScope type="issue"/>
+                <biblScope type="issueplace"/>
+              </monogr>
+            </biblStruct>
+            <reference type="complete" assemblage="regular">A00/JAN.05663 St. Galler Tagblatt, [Tageszeitung], 24.01.2000, Jg. 56. Originalressort: RT-VOL (Abk.); Mehr Arbeitslose im Dezember, [Bericht]</reference>
+            <reference type="short" assemblage="regular">A00/JAN.05663 St. Galler Tagblatt, 24.01.2000</reference>
+          </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+          <samplingDecl/>
+          <tagsDecl>
+            <tagUsage gi="p" occurs="6"/>
+            <tagUsage gi="s" occurs="30"/>
+          </tagsDecl>
+        </encodingDesc>
+        <profileDesc>
+          <creation>
+            <creatDate>2000.01.24</creatDate>
+          </creation>
+          <textClass>
+            <catRef n="0.99" target="topic.gesundheit-ernaehrung.gesundheit" scheme="topic"/>
+            <h.keywords>
+              <keyTerm/>
+            </h.keywords>
+          </textClass>
+          <textDesc>
+            <textTypeArt>Bericht</textTypeArt>
+            <textDomain/>
+            <column>RT-VOL (Abk.)</column>
+          </textDesc>
+        </profileDesc>
+      </idsHeader>

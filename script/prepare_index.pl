@@ -121,25 +121,27 @@ my $tokens = KorAP::Tokenizer->new(
 $tokens->parse;
 
 my @layers;
-
-# Base information
 push(@layers, ['Base', 'Sentences']);
 push(@layers, ['Base', 'Paragraphs']);
 
 # OpenNLP
 push(@layers, ['OpenNLP', 'Morpho']);
+push(@layers, ['OpenNLP', 'Sentences']);
 
 # CoreNLP
 push(@layers, ['CoreNLP', 'NamedEntities', 'ne_dewac_175m_600']);
 push(@layers, ['CoreNLP', 'NamedEntities', 'ne_hgc_175m_600']);
+push(@layers, ['CoreNLP', 'Sentences']);
 
 # Connexor
 push(@layers, ['Connexor', 'Morpho']);
 push(@layers, ['Connexor', 'Syntax']);
 push(@layers, ['Connexor', 'Phrase']);
+push(@layers, ['Connexor', 'Sentences']);
 
 # TreeTagger
 push(@layers, ['TreeTagger', 'Morpho']);
+push(@layers, ['TreeTagger', 'Sentences']);
 
 # Mate
 push(@layers, ['Mate', 'Morpho']);
@@ -149,6 +151,7 @@ push(@layers, ['Mate', 'Dependency']);
 push(@layers, ['XIP', 'Morpho']);
 push(@layers, ['XIP', 'Constituency']);
 push(@layers, ['XIP', 'Dependency']);
+push(@layers, ['XIP', 'Sentences']);
 
 
 if ($skip{'#all'}) {

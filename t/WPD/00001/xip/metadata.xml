@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="metadata.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<metadata docid="WPD_AAA.00001" type="foundry" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <doc file="../data.xml" />
+  <foundry name="xip">
+    <layer segm="tok" file="tokens.xml" name="token" id="l1" />
+    <layer segm="s" file="sentences.xml" name="sent" id="l2" />
+    <layer info="const" file="constituency.xml" name="syntax-const" id="l3" />
+    <layer info="rel" file="dependency.xml" name="syntax-dep" id="l4" />
+    <layer info="pos lemma" file="morpho.xml" name="morph" id="l5" />
+  </foundry>
+</metadata>

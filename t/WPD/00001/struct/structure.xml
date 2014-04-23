@@ -1,0 +1,2417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="WPD_AAA.00001" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="6083">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">idsText</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="version">1.0</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="0">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">idsHeader</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="version">1.1</f>
+            <f name="status">new</f>
+            <f name="TEIform">teiHeader</f>
+            <f name="pattern">text</f>
+            <f name="type">text</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s2" from="0" to="6083">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">text</f>
+      </fs>
+    </span>
+    <span id="s3" from="0" to="0">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">front</f>
+      </fs>
+    </span>
+    <span id="s4" from="0" to="6083">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">body</f>
+      </fs>
+    </span>
+    <span id="s5" from="0" to="6083">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">0</f>
+            <f name="type">Enzyklopädie-Artikel</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s6" from="0" to="377">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s7" from="0" to="224">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s8" from="0" to="0">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">gap</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="desc">Abbildung</f>
+            <f name="reason">omitted</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s9" from="0" to="74">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s10" from="0" to="1">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">bo</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s11" from="7" to="8">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">bo</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s12" from="75" to="160">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s13" from="161" to="224">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s14" from="225" to="377">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s15" from="225" to="377">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s16" from="378" to="1508">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s17" from="378" to="391">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s18" from="378" to="391">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s19" from="392" to="1092">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s20" from="392" to="685">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s21" from="686" to="919">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s22" from="920" to="1092">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s23" from="1093" to="1149">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s24" from="1093" to="1149">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s25" from="1150" to="1163">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s26" from="1150" to="1163">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s27" from="1164" to="1241">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s28" from="1164" to="1188">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s29" from="1164" to="1188">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s30" from="1164" to="1188">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s31" from="1189" to="1222">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s32" from="1189" to="1222">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s33" from="1189" to="1222">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s34" from="1223" to="1241">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s35" from="1223" to="1241">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s36" from="1223" to="1241">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s37" from="1242" to="1255">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s38" from="1242" to="1255">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s39" from="1256" to="1362">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s40" from="1256" to="1280">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s41" from="1256" to="1280">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s42" from="1256" to="1280">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s43" from="1281" to="1325">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s44" from="1281" to="1325">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s45" from="1281" to="1325">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s46" from="1326" to="1362">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s47" from="1326" to="1362">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s48" from="1326" to="1362">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s49" from="1363" to="1436">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s50" from="1363" to="1436">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s51" from="1437" to="1446">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s52" from="1437" to="1440">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s53" from="1437" to="1440">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s54" from="1437" to="1440">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s55" from="1441" to="1446">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s56" from="1441" to="1446">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s57" from="1441" to="1446">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s58" from="1447" to="1487">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s59" from="1447" to="1487">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s60" from="1488" to="1508">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s61" from="1488" to="1497">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s62" from="1488" to="1497">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s63" from="1488" to="1497">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s64" from="1498" to="1508">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s65" from="1498" to="1508">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s66" from="1498" to="1508">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s67" from="1509" to="2583">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s68" from="1509" to="1520">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s69" from="1509" to="1520">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s70" from="1521" to="2005">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s71" from="1521" to="1633">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s72" from="1634" to="1696">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s73" from="1697" to="1868">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s74" from="1869" to="1931">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s75" from="1930" to="1930">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">reg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1A</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s76" from="1932" to="2005">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s77" from="2006" to="2583">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s78" from="2006" to="2123">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s79" from="2124" to="2302">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s80" from="2303" to="2417">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s81" from="2418" to="2583">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s82" from="2584" to="5345">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s83" from="2584" to="2598">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s84" from="2584" to="2598">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s85" from="2599" to="2707">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s86" from="2599" to="2614">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s87" from="2599" to="2614">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s88" from="2599" to="2614">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s89" from="2599" to="2614">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s90" from="2615" to="2707">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s91" from="2615" to="2649">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s92" from="2615" to="2649">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s93" from="2615" to="2649">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s94" from="2650" to="2673">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s95" from="2650" to="2673">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s96" from="2650" to="2673">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s97" from="2674" to="2707">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s98" from="2674" to="2707">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s99" from="2674" to="2707">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s100" from="2708" to="2891">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s101" from="2708" to="2725">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s102" from="2708" to="2725">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s103" from="2708" to="2725">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s104" from="2708" to="2725">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s105" from="2726" to="2891">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s106" from="2726" to="2808">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s107" from="2726" to="2808">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s108" from="2726" to="2808">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s109" from="2809" to="2891">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s110" from="2809" to="2891">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s111" from="2809" to="2891">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s112" from="2892" to="3214">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s113" from="2892" to="2919">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s114" from="2892" to="2919">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s115" from="2892" to="2919">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s116" from="2892" to="2919">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s117" from="2920" to="3214">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s118" from="2920" to="2948">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s119" from="2920" to="2948">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s120" from="2920" to="2948">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s121" from="2949" to="3085">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s122" from="2949" to="3085">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s123" from="2949" to="3085">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s124" from="3086" to="3120">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s125" from="3086" to="3120">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s126" from="3086" to="3120">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s127" from="3121" to="3156">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s128" from="3121" to="3156">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s129" from="3121" to="3156">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s130" from="3157" to="3214">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s131" from="3157" to="3214">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s132" from="3157" to="3214">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s133" from="3215" to="3551">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s134" from="3215" to="3232">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s135" from="3215" to="3232">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s136" from="3215" to="3232">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s137" from="3215" to="3232">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s138" from="3233" to="3551">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s139" from="3233" to="3273">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s140" from="3233" to="3273">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s141" from="3233" to="3273">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s142" from="3274" to="3324">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s143" from="3274" to="3324">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s144" from="3274" to="3324">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s145" from="3325" to="3455">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s146" from="3325" to="3455">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s147" from="3325" to="3455">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s148" from="3456" to="3551">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s149" from="3456" to="3551">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s150" from="3456" to="3551">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s151" from="3474" to="3474">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">reg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1G</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s152" from="3527" to="3550">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s153" from="3552" to="3713">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s154" from="3552" to="3564">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s155" from="3552" to="3564">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s156" from="3552" to="3564">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s157" from="3552" to="3564">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s158" from="3565" to="3713">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s159" from="3565" to="3650">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s160" from="3565" to="3650">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s161" from="3565" to="3650">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s162" from="3651" to="3681">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s163" from="3651" to="3681">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s164" from="3651" to="3681">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s165" from="3682" to="3713">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s166" from="3682" to="3713">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s167" from="3682" to="3713">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s168" from="3714" to="4044">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s169" from="3714" to="3727">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s170" from="3714" to="3727">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s171" from="3714" to="3727">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s172" from="3714" to="3727">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s173" from="3728" to="4044">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s174" from="3728" to="3768">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s175" from="3728" to="3768">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s176" from="3728" to="3768">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s177" from="3740" to="3740">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s178" from="3769" to="3824">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s179" from="3769" to="3824">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s180" from="3769" to="3824">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s181" from="3781" to="3781">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s182" from="3825" to="3868">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s183" from="3825" to="3868">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s184" from="3825" to="3868">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s185" from="3837" to="3837">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s186" from="3869" to="3911">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s187" from="3869" to="3911">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s188" from="3869" to="3911">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s189" from="3881" to="3881">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s190" from="3912" to="3938">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s191" from="3912" to="3938">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s192" from="3912" to="3938">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s193" from="3924" to="3924">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s194" from="3939" to="4044">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s195" from="3939" to="4044">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s196" from="3939" to="4044">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s197" from="4045" to="4170">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s198" from="4045" to="4066">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s199" from="4045" to="4066">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s200" from="4045" to="4066">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s201" from="4045" to="4066">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s202" from="4067" to="4170">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s203" from="4067" to="4108">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s204" from="4067" to="4108">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s205" from="4067" to="4108">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s206" from="4109" to="4170">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s207" from="4109" to="4170">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s208" from="4109" to="4170">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s209" from="4171" to="4595">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s210" from="4171" to="4214">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s211" from="4171" to="4214">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s212" from="4171" to="4214">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s213" from="4171" to="4214">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s214" from="4215" to="4595">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s215" from="4215" to="4259">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s216" from="4215" to="4259">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s217" from="4215" to="4259">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s218" from="4260" to="4315">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s219" from="4260" to="4315">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s220" from="4260" to="4315">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s221" from="4316" to="4361">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s222" from="4316" to="4361">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s223" from="4316" to="4361">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s224" from="4362" to="4419">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s225" from="4362" to="4419">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s226" from="4362" to="4419">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s227" from="4420" to="4484">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s228" from="4420" to="4484">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s229" from="4420" to="4484">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s230" from="4485" to="4543">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s231" from="4485" to="4543">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s232" from="4485" to="4543">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s233" from="4544" to="4595">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s234" from="4544" to="4595">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s235" from="4544" to="4595">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s236" from="4596" to="5345">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s237" from="4596" to="5161">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s238" from="4596" to="4702">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s239" from="4596" to="4702">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s240" from="4596" to="4702">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s241" from="4703" to="4779">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s242" from="4703" to="4779">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s243" from="4703" to="4779">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s244" from="4780" to="4817">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s245" from="4780" to="4817">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s246" from="4780" to="4817">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s247" from="4818" to="4893">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s248" from="4818" to="4893">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s249" from="4818" to="4893">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s250" from="4894" to="5043">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s251" from="4894" to="5043">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s252" from="4894" to="5043">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s253" from="5044" to="5101">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s254" from="5044" to="5101">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s255" from="5044" to="5101">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s256" from="5102" to="5161">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s257" from="5102" to="5161">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s258" from="5102" to="5161">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s259" from="5162" to="5345">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s260" from="5162" to="5203">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s261" from="5162" to="5203">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s262" from="5162" to="5203">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s263" from="5204" to="5272">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s264" from="5204" to="5272">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s265" from="5204" to="5272">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s266" from="5238" to="5238">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s267" from="5247" to="5248">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s268" from="5273" to="5345">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s269" from="5273" to="5345">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s270" from="5273" to="5345">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s271" from="5295" to="5295">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s272" from="5346" to="5784">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s273" from="5346" to="5360">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s274" from="5346" to="5360">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s275" from="5361" to="5784">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s276" from="5361" to="5417">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s277" from="5418" to="5540">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s278" from="5541" to="5784">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s279" from="5785" to="5876">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s280" from="5785" to="5797">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s281" from="5785" to="5797">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s282" from="5798" to="5876">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s283" from="5798" to="5876">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s284" from="5798" to="5876">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s285" from="5798" to="5838">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s286" from="5816" to="5837">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s287" from="5839" to="5876">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s288" from="5877" to="6083">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s289" from="5877" to="5888">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s290" from="5877" to="5888">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s291" from="5889" to="5936">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s292" from="5889" to="5936">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s293" from="5889" to="5936">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s294" from="5889" to="5936">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s295" from="5890" to="5936">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">http://www.wam.umd.edu/~rfradkin/alphapage.html</f>
+            <f name="targOrder">u</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s296" from="5937" to="6021">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s297" from="5937" to="6021">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s298" from="5938" to="5948">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s299" from="6014" to="6014">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">bo</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s300" from="6021" to="6021">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">bo</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s301" from="6022" to="6083">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">list</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">unordered</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s302" from="6022" to="6070">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s303" from="6022" to="6070">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s304" from="6022" to="6070">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s305" from="6071" to="6083">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">item</f>
+      </fs>
+    </span>
+    <span id="s306" from="6071" to="6083">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s307" from="6071" to="6083">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s308" from="6083" to="6083">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">back</f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

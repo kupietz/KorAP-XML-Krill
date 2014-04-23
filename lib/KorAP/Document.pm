@@ -2,21 +2,43 @@ package KorAP::Document;
 use Mojo::Base -base;
 use v5.16;
 use Mojo::ByteStream 'b';
+use Mojo::Util qw/encode/;
 use XML::Fast;
 use Try::Tiny;
 use Carp qw/croak/;
 use KorAP::Document::Primary;
+use Log::Log4perl;
+use KorAP::Log;
+use Mojo::DOM;
+use Data::Dumper;
 
 our @ATTR = qw/id corpus_id pub_date
 	       title sub_title pub_place/;
 has 'path';
 has [@ATTR];
 
-has log => sub { Log::Log4perl->get_logger(__PACKAGE__) };
+has log => sub {
+  if(Log::Log4perl->initialized()) {
+    state $log = Log::Log4perl->get_logger(__PACKAGE__);
+    return $log;
+  };
+  state $log = KorAP::Log->new;
+  return $log;
+};
+
+sub new {
+  my $class = shift;
+  my $self = bless { @_ }, $class;
+  if (exists $self->{path} && $self->{path} !~ m!\/$!) {
+    $self->{path} .= '/';
+  };
+  return $self;
+};
 
 # parse document
 sub parse {
   my $self = shift;
+
   my $file = b($self->path . 'data.xml')->slurp;
 
   my ($rt, $error);
@@ -89,8 +111,6 @@ sub text_class {
   };
   return ($self->{topics} // []);
 };
-
-
 
 sub _parse_meta {
   my $self = shift;
@@ -182,6 +202,8 @@ sub _k {
 sub to_hash {
   my $self = shift;
 
+  $self->parse unless $self->id;
+
   my %hash;
 
   foreach (@ATTR) {
@@ -202,6 +224,85 @@ sub to_hash {
 
   return \%hash;
 };
+
+
+
+sub _parse_meta_fast {
+  my $self = shift;
+
+  #  my $file = b($self->path . 'header.xml')->slurp->decode('iso-8859-1');
+    my $file = b($self->path . 'header.xml')->slurp;
+
+  my ($meta, $error);
+  state $unable = 'Unable to parse document ' . $self->path;
+
+  try {
+      local $SIG{__WARN__} = sub {
+	  $error = 1;
+      };
+      $meta = xml2hash($file, text => '#text', attr => '-', array => ['h.title', 'imprint', 'catRef', 'h.author'])->{idsHeader};
+  }
+  catch  {
+      $self->log->warn($unable);
+      $error = 1;
+  };
+
+  return if $error;
+
+  my $bibl_struct = $meta->{fileDesc}->{sourceDesc}->{biblStruct};
+  my $analytic = $bibl_struct->{analytic};
+
+  my $titles = $analytic->{'h.title'};
+  foreach (@$titles) {
+    if ($_->{'-type'} eq 'main') {
+      $self->title($_->{'#text'});
+    }
+    elsif ($_->{'-type'} eq 'sub') {
+      $self->sub_title($_->{'#text'});
+    };
+  };
+
+  # Get Author
+  if (my $author = $analytic->{'h.author'}) {
+    $self->author($author->[0]);
+  };
+
+  # Get pubDate
+  my $date = $bibl_struct->{monogr}->{imprint};
+  my ($year, $month, $day) = (0,0,0);
+  foreach (@$date) {
+    warn $date;
+    if ($date->{-type} eq 'year') {
+      $year = $date->{'#text'};
+    }
+    elsif ($date->{-type} eq 'month') {
+      $month = $date->{'#text'};
+    }
+    elsif ($date->{-type} eq 'day') {
+      $day = $date->{'#text'};
+    };
+  };
+
+  $year  = 0 if $year  !~ /^\d+$/;
+  $month = 0 if $month !~ /^\d+$/;
+  $day   = 0 if $day   !~ /^\d+$/;
+
+  $date = $year ? ($year < 100 ? '20' . $year : $year) : '0000';
+  $date .= length($month) == 1 ? '0' . $month : $month;
+  $date .= length($day) == 1 ? '0' . $day : $day;
+
+  $self->pub_date($date);
+
+  # Get textClasses
+  my @topic;
+  my $textClass = $meta->{profileDesc}->{textClass}->{catRef};
+  foreach (@$textClass) {
+    my ($ign, @ttopic) = split('\.', $_->{'-target'});
+    push(@topic, @ttopic);
+  };
+  $self->text_class(@topic);
+};
+
 
 
 1;

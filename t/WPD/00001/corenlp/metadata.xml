@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="metadata.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<metadata docid="WPD_AAA.00001" type="foundry" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <doc file="../data.xml" />
+  <foundry name="corenlp">
+    <layer segm="tok" file="tokens.xml" name="token" id="l1" />
+    <layer segm="s" file="sentences.xml" name="sent" id="l2" />
+  </foundry>
+</metadata>

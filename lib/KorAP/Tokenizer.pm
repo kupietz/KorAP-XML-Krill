@@ -17,9 +17,15 @@ use Log::Log4perl;
 has [qw/path foundry doc stream should have name/];
 has layer => 'Tokens';
 
-has 'log' => sub {
-  Log::Log4perl->get_logger(__PACKAGE__)
+has log => sub {
+  if(Log::Log4perl->initialized()) {
+    state $log = Log::Log4perl->get_logger(__PACKAGE__);
+    return $log;
+  };
+  state $log = KorAP::Log->new;
+  return $log;
 };
+
 
 # Parse tokens of the document
 sub parse {
@@ -50,7 +56,7 @@ sub parse {
       local $SIG{__WARN__} = sub {
 	  $error = 1;
       };
-      $tokens = xml2hash($file, text => '#text', attr => '-')->{layer}->{spanList};
+      $tokens = xml2hash($file, text => '#text', array => ['span'], attr => '-')->{layer}->{spanList};
   }
   catch  {
       $self->log->warn('Token error in ' . $path . ($_ ? ': ' . $_ : ''));
@@ -60,7 +66,7 @@ sub parse {
   return if $error;
 
   if (ref $tokens && $tokens->{span}) {
-      $tokens = $tokens->{span};
+    $tokens = $tokens->{span};
   }
   else {
       return [];
@@ -88,14 +94,6 @@ sub parse {
 
       # Ignore non-word tokens
       next if $token !~ /[\w\d]/;
-
-#      my $limit = 40;
-#      if ($should > $limit) {
-#	  warn $token;
-#      };
-#      if ($should > $limit+20) {
-#	  die;
-#      };
 
       my $mtt = $mtts->add;
 
@@ -136,7 +134,7 @@ sub parse {
   $self->should($should);
   $self->have($have);
 
-    $self->log->debug('With a non-word quota of ' . _perc($self->should, $self->should - $self->have) . ' %');
+  $self->log->debug('With a non-word quota of ' . _perc($self->should, $self->should - $self->have) . ' %');
 };
 
 
@@ -298,7 +296,7 @@ sub support {
 	  };
       };
     };
-    return lc ( join ' ', @supports );
+    return lc ( join ' ', sort {$a cmp $b } @supports );
   }
   elsif (!$_[1]) {
     return $self->{support}->{$_[0]} // []
@@ -318,7 +316,7 @@ sub layer_info {
 	push(@{$self->{layer_info}}, @{$_[0]});
     }
     else {
-	return join ' ', uniq @{$self->{layer_info}};
+	return join ' ', sort {$a cmp $b } uniq @{$self->{layer_info}};
     };
 };
 
@@ -337,13 +335,17 @@ sub to_string {
   $string .= '<field name="' . $self->name . "\">\n";
   $string .= "<info>\n";
   $string .= 'tokenization = ' . $self->foundry . '#' . $self->layer . "\n";
-  foreach my $foundry (keys %{$self->support}) {
-    foreach (@{$self->support($foundry)}) {
-      $string .= 'support = ' . $foundry . '#' . join(',', @{$_}) . "\n";
+  if ($self->support) {
+    foreach my $foundry (keys %{$self->support}) {
+      foreach (@{$self->support($foundry)}) {
+	$string .= 'support = ' . $foundry . '#' . join(',', @{$_}) . "\n";
+      };
     };
   };
-  foreach my $layer_info (keys %{$self->layer_info}) {
-    $string .= 'layer_info = ' . $_ . "\n";
+  if ($self->layer_info) {
+    foreach my $layer_info (keys %{$self->layer_info}) {
+      $string .= 'layer_info = ' . $_ . "\n";
+    };
   };
 
   $string .= "</info>\n";
@@ -425,6 +427,13 @@ The path of the document.
 
 The name of the foundry.
 
+=head2 should
+
+Number of tokens that exist at all.
+
+=head2 have
+
+Number of tokens effectively stored in the token stream (e.g., no punctuations).
 
 =head2 layer
 

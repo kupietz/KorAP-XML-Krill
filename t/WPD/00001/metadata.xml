@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="metadata.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<metadata docid="WPD_AAA.00001" type="document" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <doc file="data.xml" />
+  <foundry name="corenlp" path="corenlp" />
+  <foundry name="base" path="base" />
+  <foundry name="opennlp" path="opennlp" />
+  <foundry name="mpt" path="connexor" restricted="1" />
+  <foundry name="xip" path="xip" restricted="1" />
+  <foundry name="tt" path="tree_tagger" />
+  <foundry name="mate" path="mate" />
+</metadata>

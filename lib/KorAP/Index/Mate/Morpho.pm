@@ -19,7 +19,7 @@ sub parse {
 
       foreach my $f (@{$content->{fs}->{f}}) {
 
-	# pos
+	#pos
 	if (($f->{-name} eq 'pos') &&
 	      ($found = $f->{'#text'})) {
 	  $mtt->add(term => 'mate/p:' . $found);

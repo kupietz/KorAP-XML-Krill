@@ -53,5 +53,14 @@ sub hash {
   };
 };
 
+sub to_string {
+  my $v = shift;
+  {
+    no warnings;
+    return '[(' . $v->[0] . ')' .
+      $v->[1] . '-' .$v->[2] . ']';
+  };
+};
+
 
 1;

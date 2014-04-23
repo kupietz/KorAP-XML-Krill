@@ -13,17 +13,17 @@ sub set {
 };
 
 sub lookup {
-  return undef unless $_[1] && $_[2];
+  return undef unless defined $_[1] && defined $_[2];
   $_[0]->{$_[1] . ':' . $_[2]} // undef;
 };
 
 sub startswith {
-  return undef unless $_[1];
+  return undef unless defined $_[1];
   $_[0]->{'[' . $_[1]} // undef;
 };
 
 sub endswith {
-  return undef unless $_[1];
+  return undef unless defined $_[1];
   $_[0]->{$_[1] . ']'} // undef;
 };
 

@@ -1,0 +1,1501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="A00_JAN.02873">
+  <spanList>
+    <span id="s1_n0" from="0" to="9">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s1_n2" from="10" to="13">
+      <rel label="COORD">
+        <span from="0" to="9" />
+      </rel>
+      <rel label="COORD">
+        <span from="14" to="21" />
+      </rel>
+    </span>
+    <span id="s1_n4" from="14" to="21">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s1_n6" from="22" to="27">
+      <rel label="DETERM">
+        <span from="28" to="33" />
+      </rel>
+    </span>
+    <span id="s1_n8" from="28" to="33">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s1_n44" from="34" to="41">
+      <rel label="NMOD">
+        <span from="28" to="33" />
+      </rel>
+    </span>
+    <span id="s1_n14" from="42" to="52">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s1_n16" from="53" to="63">
+      <rel label="NMOD">
+        <span from="42" to="52" />
+      </rel>
+    </span>
+    <span id="s1_n29" from="66" to="83">
+      <rel label="PERSON" type="unary" />
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s2_n0" from="85" to="88">
+      <rel label="DETERM">
+        <span from="101" to="113" />
+      </rel>
+    </span>
+    <span id="s2_n2" from="89" to="100">
+      <rel label="NMOD">
+        <span from="101" to="113" />
+      </rel>
+    </span>
+    <span id="s2_n27" from="101" to="113">
+      <rel label="PERSON" type="unary" />
+      <rel label="SUBJ">
+        <span from="154" to="160" />
+      </rel>
+    </span>
+    <span id="s2_n37" from="122" to="130">
+      <rel label="VMOD">
+        <span from="154" to="160" />
+      </rel>
+    </span>
+    <span id="s2_n35" from="131" to="142">
+      <rel label="VMOD">
+        <span from="154" to="160" />
+      </rel>
+    </span>
+    <span id="s2_n16" from="134" to="137">
+      <rel label="DETERM">
+        <span from="138" to="142" />
+      </rel>
+    </span>
+    <span id="s2_n20" from="143" to="153">
+      <rel label="PRED">
+        <span from="154" to="160" />
+      </rel>
+    </span>
+    <span id="s2_n22" from="154" to="160">
+      <rel label="MODAL">
+        <span from="114" to="121" />
+      </rel>
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s3_n0" from="162" to="165">
+      <rel label="CONNECT">
+        <span from="224" to="231" />
+      </rel>
+    </span>
+    <span id="s3_n2" from="166" to="169">
+      <rel label="SUBJ">
+        <span from="224" to="231" />
+      </rel>
+    </span>
+    <span id="s3_n73" from="170" to="185">
+      <rel label="VMOD">
+        <span from="224" to="231" />
+      </rel>
+    </span>
+    <span id="s3_n8" from="186" to="191">
+      <rel label="DETERM">
+        <span from="192" to="199" />
+      </rel>
+    </span>
+    <span id="s3_n55" from="192" to="199">
+      <rel label="NMOD">
+        <span from="174" to="185" />
+      </rel>
+      <rel label="ORG" type="unary" />
+    </span>
+    <span id="s3_n57" from="200" to="211">
+      <rel label="VMOD">
+        <span from="224" to="231" />
+      </rel>
+    </span>
+    <span id="s3_n14" from="212" to="215">
+      <rel label="DETERM">
+        <span from="216" to="223" />
+      </rel>
+    </span>
+    <span id="s3_n16" from="216" to="223">
+      <rel label="OBJ">
+        <span from="224" to="231" />
+      </rel>
+    </span>
+    <span id="s3_n18" from="224" to="231">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s3_n22" from="233" to="237">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s3_n26" from="250" to="260">
+      <rel label="SUBJ">
+        <span from="297" to="302" />
+      </rel>
+    </span>
+    <span id="s3_n74" from="261" to="275">
+      <rel label="NMOD">
+        <span from="250" to="260" />
+      </rel>
+    </span>
+    <span id="s3_n75" from="276" to="285">
+      <rel label="VMOD">
+        <span from="297" to="302" />
+      </rel>
+    </span>
+    <span id="s3_n56" from="286" to="295">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s3_n42" from="297" to="302">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s3_n44" from="303" to="306">
+      <rel label="OBJ">
+        <span from="297" to="302" />
+      </rel>
+    </span>
+    <span id="s3_n46" from="307" to="311">
+      <rel label="DETERM">
+        <span from="319" to="325" />
+      </rel>
+    </span>
+    <span id="s3_n48" from="312" to="318">
+      <rel label="NMOD">
+        <span from="319" to="325" />
+      </rel>
+    </span>
+    <span id="s3_n50" from="319" to="325">
+      <rel label="OBJ">
+        <span from="297" to="302" />
+      </rel>
+    </span>
+    <span id="s3_n52" from="325" to="326">
+      <rel label="TRUNC">
+        <span from="238" to="249" />
+      </rel>
+    </span>
+    <span id="s4_n0" from="327" to="330">
+      <rel label="SUBJ">
+        <span from="331" to="335" />
+      </rel>
+    </span>
+    <span id="s4_n2" from="331" to="335">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s4_n4" from="336" to="340">
+      <rel label="VPREF">
+        <span from="331" to="335" />
+      </rel>
+    </span>
+    <span id="s4_n53" from="341" to="355">
+      <rel label="VMOD">
+        <span from="331" to="335" />
+      </rel>
+    </span>
+    <span id="s4_n54" from="356" to="375">
+      <rel label="VMOD">
+        <span from="331" to="335" />
+      </rel>
+    </span>
+    <span id="s4_n12" from="359" to="363">
+      <rel label="DETERM">
+        <span from="364" to="375" />
+      </rel>
+    </span>
+    <span id="s4_n41" from="364" to="375">
+      <rel label="PERSON" type="unary" />
+    </span>
+    <span id="s4_n56" from="376" to="385">
+      <rel label="VMOD">
+        <span from="331" to="335" />
+      </rel>
+    </span>
+    <span id="s4_n24" from="390" to="394">
+      <rel label="DETERM">
+        <span from="395" to="408" />
+      </rel>
+    </span>
+    <span id="s4_n26" from="395" to="408">
+      <rel label="OBJ">
+        <span from="425" to="436" />
+      </rel>
+    </span>
+    <span id="s4_n55" from="409" to="424">
+      <rel label="VMOD">
+        <span from="425" to="436" />
+      </rel>
+    </span>
+    <span id="s4_n30" from="413" to="419">
+      <rel label="NMOD">
+        <span from="420" to="424" />
+      </rel>
+    </span>
+    <span id="s4_n42" from="425" to="436">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s5_n0" from="438" to="444">
+      <rel label="CONNECT">
+        <span from="489" to="492" />
+      </rel>
+    </span>
+    <span id="s5_n2" from="445" to="449">
+      <rel label="DETERM">
+        <span from="457" to="466" />
+      </rel>
+    </span>
+    <span id="s5_n4" from="450" to="456">
+      <rel label="NMOD">
+        <span from="457" to="466" />
+      </rel>
+    </span>
+    <span id="s5_n6" from="457" to="466">
+      <rel label="SUBJ">
+        <span from="489" to="492" />
+      </rel>
+    </span>
+    <span id="s5_n8" from="467" to="470">
+      <rel label="DETERM">
+        <span from="480" to="488" />
+      </rel>
+    </span>
+    <span id="s5_n10" from="471" to="479">
+      <rel label="NMOD">
+        <span from="480" to="488" />
+      </rel>
+    </span>
+    <span id="s5_n12" from="480" to="488">
+      <rel label="SUBJ">
+        <span from="489" to="492" />
+      </rel>
+    </span>
+    <span id="s5_n14" from="489" to="492">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s5_n18" from="497" to="500">
+      <rel label="DETERM">
+        <span from="501" to="505" />
+      </rel>
+    </span>
+    <span id="s5_n20" from="501" to="505">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s5_n22" from="506" to="509">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s5_n49" from="515" to="528">
+      <rel label="VMOD">
+        <span from="529" to="534" />
+      </rel>
+    </span>
+    <span id="s5_n26" from="515" to="517">
+      <rel label="ADJMOD">
+        <span from="518" to="528" />
+      </rel>
+    </span>
+    <span id="s5_n30" from="529" to="534">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s5_n34" from="536" to="541">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s5_n36" from="542" to="547">
+      <rel label="SUBJ">
+        <span from="536" to="541" />
+      </rel>
+    </span>
+    <span id="s5_n38" from="548" to="551">
+      <rel label="DETERM">
+        <span from="552" to="567" />
+      </rel>
+    </span>
+    <span id="s5_n40" from="552" to="567">
+      <rel label="OBJ">
+        <span from="536" to="541" />
+      </rel>
+    </span>
+    <span id="s5_n42" from="568" to="570">
+      <rel label="VPREF">
+        <span from="536" to="541" />
+      </rel>
+    </span>
+    <span id="s6_n0" from="572" to="574">
+      <rel label="EXPL">
+        <span from="575" to="580" />
+      </rel>
+      <rel label="SUBJ">
+        <span from="575" to="580" />
+      </rel>
+    </span>
+    <span id="s6_n2" from="575" to="580">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s6_n17" from="581" to="587">
+      <rel label="VMOD">
+        <span from="575" to="580" />
+      </rel>
+    </span>
+    <span id="s6_n10" from="595" to="599">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s7_n0" from="601" to="606">
+      <rel label="SUBJ">
+        <span from="607" to="612" />
+      </rel>
+    </span>
+    <span id="s7_n2" from="607" to="612">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s7_n4" from="613" to="617">
+      <rel label="REFLEX">
+        <span from="607" to="612" />
+      </rel>
+    </span>
+    <span id="s7_n29" from="618" to="640">
+      <rel label="VMOD">
+        <span from="607" to="612" />
+      </rel>
+    </span>
+    <span id="s7_n6" from="618" to="628">
+      <rel label="ADJMOD">
+        <span from="629" to="640" />
+      </rel>
+    </span>
+    <span id="s7_n36" from="650" to="681">
+      <rel label="VMOD">
+        <span from="682" to="691" />
+      </rel>
+    </span>
+    <span id="s7_n16" from="654" to="657">
+      <rel label="DETERM">
+        <span from="669" to="681" />
+      </rel>
+    </span>
+    <span id="s7_n18" from="658" to="661">
+      <rel label="DETERM">
+        <span from="669" to="681" />
+      </rel>
+      <rel label="PREDET">
+        <span from="654" to="657" />
+      </rel>
+    </span>
+    <span id="s7_n20" from="662" to="668">
+      <rel label="NMOD">
+        <span from="669" to="681" />
+      </rel>
+    </span>
+    <span id="s7_n24" from="682" to="691">
+      <rel label="AUXIL">
+        <span from="645" to="649" />
+      </rel>
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s8_n0" from="693" to="698">
+      <rel label="NEGAT">
+        <span from="703" to="714" />
+      </rel>
+    </span>
+    <span id="s8_n55" from="699" to="714">
+      <rel label="VMOD">
+        <span from="715" to="721" />
+      </rel>
+    </span>
+    <span id="s8_n2" from="699" to="702">
+      <rel label="ADJMOD">
+        <span from="703" to="714" />
+      </rel>
+    </span>
+    <span id="s8_n6" from="715" to="721">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s8_n8" from="722" to="727">
+      <rel label="SUBJ">
+        <span from="715" to="721" />
+      </rel>
+    </span>
+    <span id="s8_n10" from="728" to="732">
+      <rel label="DETERM">
+        <span from="733" to="743" />
+      </rel>
+    </span>
+    <span id="s8_n12" from="733" to="743">
+      <rel label="OBJ">
+        <span from="715" to="721" />
+      </rel>
+    </span>
+    <span id="s8_n73" from="744" to="760">
+      <rel label="VMOD">
+        <span from="715" to="721" />
+      </rel>
+    </span>
+    <span id="s8_n16" from="749" to="752">
+      <rel label="DETERM">
+        <span from="753" to="760" />
+      </rel>
+    </span>
+    <span id="s8_n22" from="762" to="766">
+      <rel label="VMOD">
+        <span from="777" to="782" />
+      </rel>
+    </span>
+    <span id="s8_n57" from="767" to="776">
+      <rel label="VMOD">
+        <span from="777" to="782" />
+      </rel>
+    </span>
+    <span id="s8_n26" from="777" to="782">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s8_n28" from="783" to="786">
+      <rel label="SUBJ">
+        <span from="777" to="782" />
+      </rel>
+    </span>
+    <span id="s8_n71" from="787" to="798">
+      <rel label="VMOD">
+        <span from="777" to="782" />
+      </rel>
+    </span>
+    <span id="s8_n38" from="805" to="808">
+      <rel label="SUBJ">
+        <span from="845" to="858" />
+      </rel>
+    </span>
+    <span id="s8_n58" from="814" to="821">
+      <rel label="VMOD">
+        <span from="845" to="858" />
+      </rel>
+    </span>
+    <span id="s8_n44" from="822" to="833">
+      <rel label="OBJ">
+        <span from="845" to="858" />
+      </rel>
+    </span>
+    <span id="s8_n46" from="834" to="837">
+      <rel label="COORD">
+        <span from="822" to="833" />
+      </rel>
+      <rel label="COORD">
+        <span from="838" to="844" />
+      </rel>
+    </span>
+    <span id="s8_n48" from="838" to="844">
+      <rel label="OBJ">
+        <span from="845" to="858" />
+      </rel>
+    </span>
+    <span id="s8_n50" from="845" to="858">
+      <rel label="MODAL">
+        <span from="809" to="813" />
+      </rel>
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s9_n0" from="860" to="863">
+      <rel label="DETERM">
+        <span from="872" to="884" />
+      </rel>
+    </span>
+    <span id="s9_n2" from="864" to="871">
+      <rel label="NMOD">
+        <span from="872" to="884" />
+      </rel>
+    </span>
+    <span id="s9_n46" from="886" to="913">
+      <rel label="VMOD">
+        <span from="936" to="939" />
+      </rel>
+    </span>
+    <span id="s9_n10" from="890" to="893">
+      <rel label="DETERM">
+        <span from="901" to="913" />
+      </rel>
+    </span>
+    <span id="s9_n12" from="894" to="900">
+      <rel label="NMOD">
+        <span from="901" to="913" />
+      </rel>
+    </span>
+    <span id="s9_n16" from="914" to="924">
+      <rel label="AUXIL">
+        <span from="925" to="934" />
+      </rel>
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s9_n24" from="936" to="939">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s9_n26" from="940" to="946">
+      <rel label="ADJMOD">
+        <span from="947" to="951" />
+      </rel>
+    </span>
+    <span id="s9_n28" from="947" to="951">
+      <rel label="PRED">
+        <span from="936" to="939" />
+      </rel>
+    </span>
+    <span id="s9_n38" from="952" to="961">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s10_n0" from="963" to="968">
+      <rel label="SUBJ">
+        <span from="969" to="975" />
+      </rel>
+    </span>
+    <span id="s10_n2" from="969" to="975">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s10_n34" from="976" to="985">
+      <rel label="VMOD">
+        <span from="969" to="975" />
+      </rel>
+    </span>
+    <span id="s10_n10" from="987" to="990">
+      <rel label="CONNECT">
+        <span from="1018" to="1026" />
+      </rel>
+    </span>
+    <span id="s10_n12" from="991" to="995">
+      <rel label="REFLEX">
+        <span from="1018" to="1026" />
+      </rel>
+    </span>
+    <span id="s10_n14" from="996" to="1001">
+      <rel label="SUBJ">
+        <span from="1018" to="1026" />
+      </rel>
+    </span>
+    <span id="s10_n35" from="1002" to="1017">
+      <rel label="VMOD">
+        <span from="1018" to="1026" />
+      </rel>
+    </span>
+    <span id="s10_n18" from="1005" to="1010">
+      <rel label="DETERM">
+        <span from="1011" to="1017" />
+      </rel>
+    </span>
+    <span id="s10_n22" from="1018" to="1026">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s11_n2" from="1032" to="1034">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s11_n14" from="1051" to="1053">
+      <rel label="NMOD">
+        <span from="1054" to="1060" />
+      </rel>
+    </span>
+    <span id="s12_n32" from="1079" to="1089">
+      <rel label="DATE" type="unary" />
+    </span>
+    <span id="s12_n31" from="1093" to="1102">
+      <rel label="TIME" type="unary" />
+    </span>
+    <span id="s12_n22" from="1103" to="1107">
+      <rel label="NMOD">
+        <span from="1093" to="1102" />
+      </rel>
+    </span>
+    <span id="s13_n16" from="1117" to="1125">
+      <rel label="VMOD">
+        <span from="1126" to="1131" />
+      </rel>
+    </span>
+    <span id="s13_n4" from="1126" to="1131">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s13_n6" from="1132" to="1135">
+      <rel label="SUBJ">
+        <span from="1126" to="1131" />
+      </rel>
+    </span>
+    <span id="s13_n8" from="1136" to="1142">
+      <rel label="VMOD">
+        <span from="1126" to="1131" />
+      </rel>
+    </span>
+    <span id="s14_n0" from="1144" to="1148">
+      <rel label="DETERM">
+        <span from="1149" to="1157" />
+      </rel>
+    </span>
+    <span id="s14_n2" from="1149" to="1157">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s14_n35" from="1158" to="1186">
+      <rel label="NMOD">
+        <span from="1149" to="1157" />
+      </rel>
+    </span>
+    <span id="s14_n6" from="1164" to="1168">
+      <rel label="DETERM">
+        <span from="1169" to="1186" />
+      </rel>
+    </span>
+    <span id="s14_n12" from="1190" to="1197">
+      <rel label="LOC" type="unary" />
+    </span>
+    <span id="s14_n18" from="1217" to="1220">
+      <rel label="COORD">
+        <span from="1207" to="1216" />
+      </rel>
+      <rel label="COORD">
+        <span from="1221" to="1228" />
+      </rel>
+    </span>
+    <span id="s14_n20" from="1221" to="1228">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s15_n0" from="1230" to="1237">
+      <rel label="LOC" type="unary" />
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s15_n2" from="1238" to="1242">
+      <rel label="DATE" type="unary" />
+      <rel label="NMOD">
+        <span from="1230" to="1237" />
+      </rel>
+    </span>
+    <span id="s16_n77" from="1244" to="1255">
+      <rel label="PERSON" type="unary" />
+    </span>
+    <span id="s16_n78" from="1257" to="1264">
+      <rel label="PERSON" type="unary" />
+    </span>
+    <span id="s16_n14" from="1267" to="1270">
+      <rel label="DETERM">
+        <span from="1294" to="1303" />
+      </rel>
+    </span>
+    <span id="s16_n16" from="1271" to="1278">
+      <rel label="NMOD">
+        <span from="1294" to="1303" />
+      </rel>
+      <rel label="NMOD2">
+        <span from="1308" to="1316" />
+      </rel>
+    </span>
+    <span id="s16_n18" from="1279" to="1282">
+      <rel label="COORD">
+        <span from="1271" to="1278" />
+      </rel>
+      <rel label="COORD">
+        <span from="1283" to="1293" />
+      </rel>
+    </span>
+    <span id="s16_n20" from="1283" to="1293">
+      <rel label="NMOD">
+        <span from="1294" to="1303" />
+      </rel>
+      <rel label="NMOD2">
+        <span from="1308" to="1316" />
+      </rel>
+    </span>
+    <span id="s16_n22" from="1294" to="1303">
+      <rel label="PERSON" type="unary" />
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s16_n24" from="1304" to="1307">
+      <rel label="COORD">
+        <span from="1294" to="1303" />
+      </rel>
+      <rel label="COORD">
+        <span from="1308" to="1316" />
+      </rel>
+    </span>
+    <span id="s16_n26" from="1308" to="1316">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s16_n28" from="1317" to="1322">
+      <rel label="DETERM">
+        <span from="1323" to="1327" />
+      </rel>
+    </span>
+    <span id="s16_n30" from="1323" to="1327">
+      <rel label="NMOD">
+        <span from="1308" to="1316" />
+      </rel>
+    </span>
+    <span id="s16_n79" from="1329" to="1330">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s16_n38" from="1332" to="1349">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s16_n42" from="1351" to="1359">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s16_n44" from="1360" to="1368">
+      <rel label="VMOD">
+        <span from="1351" to="1359" />
+      </rel>
+    </span>
+    <span id="s16_n108" from="1369" to="1395">
+      <rel label="VMOD">
+        <span from="1351" to="1359" />
+      </rel>
+    </span>
+    <span id="s16_n48" from="1373" to="1379">
+      <rel label="DETERM">
+        <span from="1391" to="1395" />
+      </rel>
+    </span>
+    <span id="s16_n50" from="1380" to="1390">
+      <rel label="NMOD">
+        <span from="1391" to="1395" />
+      </rel>
+    </span>
+    <span id="s16_n54" from="1396" to="1399">
+      <rel label="DETERM">
+        <span from="1414" to="1423" />
+      </rel>
+    </span>
+    <span id="s16_n56" from="1400" to="1413">
+      <rel label="NMOD">
+        <span from="1414" to="1423" />
+      </rel>
+    </span>
+    <span id="s16_n58" from="1414" to="1423">
+      <rel label="SUBJ">
+        <span from="1351" to="1359" />
+      </rel>
+    </span>
+    <span id="s16_n60" from="1424" to="1427">
+      <rel label="COORD">
+        <span from="1414" to="1423" />
+      </rel>
+      <rel label="COORD">
+        <span from="1445" to="1452" />
+      </rel>
+    </span>
+    <span id="s16_n62" from="1428" to="1431">
+      <rel label="DETERM">
+        <span from="1445" to="1452" />
+      </rel>
+    </span>
+    <span id="s16_n64" from="1432" to="1444">
+      <rel label="NMOD">
+        <span from="1445" to="1452" />
+      </rel>
+    </span>
+    <span id="s16_n66" from="1445" to="1452">
+      <rel label="OBJ">
+        <span from="1351" to="1359" />
+      </rel>
+    </span>
+    <span id="s16_n68" from="1453" to="1459">
+      <rel label="DETERM">
+        <span from="1460" to="1466" />
+      </rel>
+    </span>
+    <span id="s16_n70" from="1460" to="1466">
+      <rel label="OBJ">
+        <span from="1351" to="1359" />
+      </rel>
+    </span>
+    <span id="s17_n13" from="1486" to="1494">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s18_n0" from="1496" to="1500">
+      <rel label="SUBJ">
+        <span from="1501" to="1508" />
+      </rel>
+    </span>
+    <span id="s18_n2" from="1501" to="1508">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s18_n4" from="1509" to="1512">
+      <rel label="OBJ">
+        <span from="1501" to="1508" />
+      </rel>
+    </span>
+    <span id="s18_n19" from="1518" to="1531">
+      <rel label="VMOD">
+        <span from="1501" to="1508" />
+      </rel>
+    </span>
+    <span id="s18_n8" from="1518" to="1522">
+      <rel label="ADJMOD">
+        <span from="1523" to="1531" />
+      </rel>
+    </span>
+    <span id="s18_n12" from="1532" to="1535">
+      <rel label="COORD">
+        <span from="1523" to="1531" />
+      </rel>
+      <rel label="COORD">
+        <span from="1536" to="1541" />
+      </rel>
+    </span>
+    <span id="s18_n20" from="1536" to="1541">
+      <rel label="VMOD">
+        <span from="1501" to="1508" />
+      </rel>
+    </span>
+    <span id="s19_n0" from="1543" to="1546">
+      <rel label="DETERM">
+        <span from="1547" to="1555" />
+      </rel>
+    </span>
+    <span id="s19_n2" from="1547" to="1555">
+      <rel label="SUBJ">
+        <span from="1586" to="1598" />
+      </rel>
+    </span>
+    <span id="s19_n6" from="1561" to="1569">
+      <rel label="VMOD">
+        <span from="1586" to="1598" />
+      </rel>
+    </span>
+    <span id="s19_n35" from="1570" to="1579">
+      <rel label="VMOD">
+        <span from="1586" to="1598" />
+      </rel>
+    </span>
+    <span id="s19_n12" from="1580" to="1585">
+      <rel label="VMOD">
+        <span from="1586" to="1598" />
+      </rel>
+    </span>
+    <span id="s19_n14" from="1586" to="1598">
+      <rel label="AUXIL">
+        <span from="1556" to="1560" />
+      </rel>
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s19_n18" from="1600" to="1604">
+      <rel label="OBJ">
+        <span from="1651" to="1661" />
+      </rel>
+    </span>
+    <span id="s19_n20" from="1605" to="1608">
+      <rel label="DETERM">
+        <span from="1609" to="1624" />
+      </rel>
+    </span>
+    <span id="s19_n22" from="1609" to="1624">
+      <rel label="OBJ">
+        <span from="1651" to="1661" />
+      </rel>
+    </span>
+    <span id="s19_n24" from="1625" to="1628">
+      <rel label="DETERM">
+        <span from="1640" to="1650" />
+      </rel>
+    </span>
+    <span id="s19_n26" from="1629" to="1639">
+      <rel label="NMOD">
+        <span from="1640" to="1650" />
+      </rel>
+    </span>
+    <span id="s19_n28" from="1640" to="1650">
+      <rel label="NMOD">
+        <span from="1609" to="1624" />
+      </rel>
+    </span>
+    <span id="s19_n30" from="1651" to="1661">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s20_n0" from="1663" to="1665">
+      <rel label="VMOD">
+        <span from="1666" to="1672" />
+      </rel>
+    </span>
+    <span id="s20_n2" from="1666" to="1672">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s20_n25" from="1673" to="1683">
+      <rel label="VMOD">
+        <span from="1666" to="1672" />
+      </rel>
+    </span>
+    <span id="s20_n6" from="1684" to="1687">
+      <rel label="DETERM">
+        <span from="1709" to="1724" />
+      </rel>
+    </span>
+    <span id="s20_n8" from="1688" to="1695">
+      <rel label="ADJMOD">
+        <span from="1696" to="1708" />
+      </rel>
+    </span>
+    <span id="s20_n10" from="1696" to="1708">
+      <rel label="NMOD">
+        <span from="1709" to="1724" />
+      </rel>
+    </span>
+    <span id="s20_n12" from="1709" to="1724">
+      <rel label="SUBJ">
+        <span from="1666" to="1672" />
+      </rel>
+    </span>
+    <span id="s20_n14" from="1725" to="1728">
+      <rel label="DETERM">
+        <span from="1729" to="1735" />
+      </rel>
+    </span>
+    <span id="s20_n16" from="1729" to="1735">
+      <rel label="NMOD">
+        <span from="1709" to="1724" />
+      </rel>
+    </span>
+    <span id="s20_n27" from="1736" to="1754">
+      <rel label="VMOD">
+        <span from="1666" to="1672" />
+      </rel>
+    </span>
+    <span id="s20_n18" from="1736" to="1744">
+      <rel label="ADJMOD">
+        <span from="1745" to="1754" />
+      </rel>
+    </span>
+    <span id="s21_n0" from="1759" to="1760">
+      <rel label="VMAIN" type="unary" />
+      <rel label="VMOD">
+        <span from="1776" to="1780" />
+      </rel>
+    </span>
+    <span id="s21_n4" from="1761" to="1765">
+      <rel label="OBJ">
+        <span from="1759" to="1760" />
+      </rel>
+      <rel label="SUBJ">
+        <span from="1776" to="1780" />
+      </rel>
+    </span>
+    <span id="s21_n6" from="1766" to="1768">
+      <rel label="VMOD">
+        <span from="1759" to="1760" />
+      </rel>
+      <rel label="VMOD">
+        <span from="1776" to="1780" />
+      </rel>
+    </span>
+    <span id="s21_n8" from="1769" to="1774">
+      <rel label="OBJ">
+        <span from="1759" to="1760" />
+      </rel>
+      <rel label="OBJ">
+        <span from="1776" to="1780" />
+      </rel>
+    </span>
+    <span id="s21_n12" from="1776" to="1780">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s21_n50" from="1781" to="1809">
+      <rel label="VMOD">
+        <span from="1759" to="1760" />
+      </rel>
+    </span>
+    <span id="s21_n16" from="1785" to="1788">
+      <rel label="DETERM">
+        <span from="1801" to="1809" />
+      </rel>
+    </span>
+    <span id="s21_n18" from="1789" to="1800">
+      <rel label="NMOD">
+        <span from="1801" to="1809" />
+      </rel>
+    </span>
+    <span id="s21_n20" from="1801" to="1809">
+      <rel label="OBJ">
+        <span from="1776" to="1780" />
+      </rel>
+      <rel label="PLINK">
+        <span from="1781" to="1784" />
+      </rel>
+    </span>
+    <span id="s21_n51" from="1810" to="1817">
+      <rel label="VMOD">
+        <span from="1776" to="1780" />
+      </rel>
+      <rel label="VMOD">
+        <span from="1759" to="1760" />
+      </rel>
+    </span>
+    <span id="s21_n26" from="1818" to="1827">
+      <rel label="NMOD">
+        <span from="1828" to="1840" />
+      </rel>
+    </span>
+    <span id="s21_n28" from="1828" to="1840">
+      <rel label="OBJ">
+        <span from="1776" to="1780" />
+      </rel>
+      <rel label="OBJ">
+        <span from="1759" to="1760" />
+      </rel>
+    </span>
+    <span id="s21_n52" from="1841" to="1850">
+      <rel label="VMOD">
+        <span from="1776" to="1780" />
+      </rel>
+      <rel label="VMOD">
+        <span from="1759" to="1760" />
+      </rel>
+    </span>
+    <span id="s21_n32" from="1844" to="1850">
+      <rel label="LOC" type="unary" />
+    </span>
+    <span id="s22_n87" from="1852" to="1876">
+      <rel label="VMOD">
+        <span from="1986" to="1996" />
+      </rel>
+      <rel label="VMOD">
+        <span from="1925" to="1933" />
+      </rel>
+    </span>
+    <span id="s22_n2" from="1856" to="1862">
+      <rel label="DETERM">
+        <span from="1863" to="1876" />
+      </rel>
+    </span>
+    <span id="s22_n67" from="1881" to="1897">
+      <rel label="PERSON" type="unary" />
+      <rel label="SUBJ">
+        <span from="1925" to="1933" />
+      </rel>
+      <rel label="SUBJ">
+        <span from="1986" to="1996" />
+      </rel>
+    </span>
+    <span id="s22_n12" from="1898" to="1902">
+      <rel label="DETERM">
+        <span from="1916" to="1924" />
+      </rel>
+    </span>
+    <span id="s22_n14" from="1903" to="1915">
+      <rel label="NMOD">
+        <span from="1916" to="1924" />
+      </rel>
+    </span>
+    <span id="s22_n16" from="1916" to="1924">
+      <rel label="OBJ">
+        <span from="1986" to="1996" />
+      </rel>
+      <rel label="OBJ">
+        <span from="1925" to="1933" />
+      </rel>
+    </span>
+    <span id="s22_n18" from="1925" to="1933">
+      <rel label="AUXIL">
+        <span from="1877" to="1880" />
+      </rel>
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s22_n22" from="1935" to="1938">
+      <rel label="SUBJ">
+        <span from="1974" to="1981" />
+      </rel>
+    </span>
+    <span id="s22_n24" from="1939" to="1942">
+      <rel label="DETERM">
+        <span from="1943" to="1954" />
+      </rel>
+    </span>
+    <span id="s22_n26" from="1943" to="1954">
+      <rel label="OBJ">
+        <span from="1974" to="1981" />
+      </rel>
+    </span>
+    <span id="s22_n69" from="1955" to="1959">
+      <rel label="VMOD">
+        <span from="1974" to="1981" />
+      </rel>
+    </span>
+    <span id="s22_n88" from="1960" to="1973">
+      <rel label="VMOD">
+        <span from="1974" to="1981" />
+      </rel>
+    </span>
+    <span id="s22_n32" from="1964" to="1967">
+      <rel label="DETERM">
+        <span from="1968" to="1973" />
+      </rel>
+    </span>
+    <span id="s22_n36" from="1974" to="1981">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s22_n40" from="1986" to="1996">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s22_n42" from="1997" to="2000">
+      <rel label="DETERM">
+        <span from="2001" to="2007" />
+      </rel>
+    </span>
+    <span id="s22_n44" from="2001" to="2007">
+      <rel label="OBJ">
+        <span from="1986" to="1996" />
+      </rel>
+      <rel label="OBJ">
+        <span from="1925" to="1933" />
+      </rel>
+    </span>
+    <span id="s22_n46" from="2008" to="2013">
+      <rel label="DETERM">
+        <span from="2014" to="2023" />
+      </rel>
+    </span>
+    <span id="s22_n48" from="2014" to="2023">
+      <rel label="NMOD">
+        <span from="2001" to="2007" />
+      </rel>
+    </span>
+    <span id="s22_n52" from="2032" to="2036">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s22_n58" from="2041" to="2043">
+      <rel label="NMOD">
+        <span from="2044" to="2050" />
+      </rel>
+    </span>
+    <span id="s23_n45" from="2057" to="2067">
+      <rel label="DATE" type="unary" />
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s23_n43" from="2069" to="2075">
+      <rel label="TIME" type="unary" />
+    </span>
+    <span id="s23_n14" from="2076" to="2078">
+      <rel label="NMOD">
+        <span from="2069" to="2075" />
+      </rel>
+    </span>
+    <span id="s23_n22" from="2088" to="2090">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s23_n46" from="2092" to="2102">
+      <rel label="DATE" type="unary" />
+    </span>
+    <span id="s23_n44" from="2106" to="2115">
+      <rel label="TIME" type="unary" />
+    </span>
+    <span id="s23_n36" from="2116" to="2123">
+      <rel label="NMOD">
+        <span from="2106" to="2115" />
+      </rel>
+    </span>
+    <span id="s24_n0" from="2135" to="2138">
+      <rel label="DETERM">
+        <span from="2139" to="2143" />
+      </rel>
+    </span>
+    <span id="s24_n2" from="2139" to="2143">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s25_n0" from="2145" to="2148">
+      <rel label="DETERM">
+        <span from="2157" to="2161" />
+      </rel>
+    </span>
+    <span id="s25_n2" from="2149" to="2156">
+      <rel label="NMOD">
+        <span from="2157" to="2161" />
+      </rel>
+    </span>
+    <span id="s25_n4" from="2157" to="2161">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s26_n0" from="2163" to="2167">
+      <rel label="DETERM">
+        <span from="2175" to="2181" />
+      </rel>
+    </span>
+    <span id="s26_n2" from="2168" to="2174">
+      <rel label="NMOD">
+        <span from="2175" to="2181" />
+      </rel>
+    </span>
+    <span id="s26_n4" from="2175" to="2181">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s27_n0" from="2183" to="2186">
+      <rel label="DETERM">
+        <span from="2208" to="2215" />
+      </rel>
+    </span>
+    <span id="s27_n2" from="2187" to="2207">
+      <rel label="NMOD">
+        <span from="2208" to="2215" />
+      </rel>
+    </span>
+    <span id="s27_n4" from="2208" to="2215">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s28_n0" from="2217" to="2228">
+      <rel label="NMOD">
+        <span from="2229" to="2235" />
+      </rel>
+    </span>
+    <span id="s28_n2" from="2229" to="2235">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s28_n16" from="2236" to="2245">
+      <rel label="NMOD">
+        <span from="2229" to="2235" />
+      </rel>
+    </span>
+    <span id="s29_n0" from="2247" to="2250">
+      <rel label="DETERM">
+        <span from="2269" to="2278" />
+      </rel>
+    </span>
+    <span id="s29_n2" from="2251" to="2268">
+      <rel label="NMOD">
+        <span from="2269" to="2278" />
+      </rel>
+    </span>
+    <span id="s29_n4" from="2269" to="2278">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s30_n19" from="2280" to="2291">
+      <rel label="PERSON" type="unary" />
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s30_n4" from="2291" to="2293">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s30_n6" from="2294" to="2308">
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s30_n28" from="2309" to="2331">
+      <rel label="NMOD">
+        <span from="2294" to="2308" />
+      </rel>
+    </span>
+    <span id="s30_n10" from="2314" to="2317">
+      <rel label="DETERM">
+        <span from="2324" to="2331" />
+      </rel>
+    </span>
+    <span id="s30_n12" from="2318" to="2323">
+      <rel label="NMOD">
+        <span from="2324" to="2331" />
+      </rel>
+    </span>
+    <span id="s31_n46" from="2333" to="2352">
+      <rel label="VMOD">
+        <span from="2458" to="2465" />
+      </rel>
+    </span>
+    <span id="s31_n2" from="2337" to="2345">
+      <rel label="DETERM">
+        <span from="2346" to="2352" />
+      </rel>
+    </span>
+    <span id="s31_n8" from="2357" to="2364">
+      <rel label="SUBJ">
+        <span from="2458" to="2465" />
+      </rel>
+    </span>
+    <span id="s31_n10" from="2365" to="2373">
+      <rel label="OBJ">
+        <span from="2458" to="2465" />
+      </rel>
+    </span>
+    <span id="s31_n12" from="2374" to="2377">
+      <rel label="DETERM">
+        <span from="2378" to="2398" />
+      </rel>
+    </span>
+    <span id="s31_n14" from="2378" to="2398">
+      <rel label="OBJ">
+        <span from="2458" to="2465" />
+      </rel>
+    </span>
+    <span id="s31_n47" from="2399" to="2437">
+      <rel label="VMOD">
+        <span from="2458" to="2465" />
+      </rel>
+    </span>
+    <span id="s31_n18" from="2403" to="2409">
+      <rel label="DETERM">
+        <span from="2421" to="2437" />
+      </rel>
+    </span>
+    <span id="s31_n20" from="2410" to="2420">
+      <rel label="NMOD">
+        <span from="2421" to="2437" />
+      </rel>
+    </span>
+    <span id="s31_n24" from="2438" to="2448">
+      <rel label="OBJ">
+        <span from="2458" to="2465" />
+      </rel>
+    </span>
+    <span id="s31_n26" from="2449" to="2457">
+      <rel label="VMOD">
+        <span from="2458" to="2465" />
+      </rel>
+    </span>
+    <span id="s31_n28" from="2458" to="2465">
+      <rel label="AUXIL">
+        <span from="2353" to="2356" />
+      </rel>
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s32_n0" from="2467" to="2470">
+      <rel label="VMOD">
+        <span from="2496" to="2504" />
+      </rel>
+    </span>
+    <span id="s32_n4" from="2475" to="2478">
+      <rel label="DETERM">
+        <span from="2479" to="2485" />
+      </rel>
+    </span>
+    <span id="s32_n6" from="2479" to="2485">
+      <rel label="SUBJ">
+        <span from="2496" to="2504" />
+      </rel>
+    </span>
+    <span id="s32_n8" from="2486" to="2489">
+      <rel label="DETERM">
+        <span from="2490" to="2495" />
+      </rel>
+    </span>
+    <span id="s32_n10" from="2490" to="2495">
+      <rel label="NMOD">
+        <span from="2479" to="2485" />
+      </rel>
+    </span>
+    <span id="s32_n12" from="2496" to="2504">
+      <rel label="AUXIL">
+        <span from="2471" to="2474" />
+      </rel>
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s33_n0" from="2506" to="2516">
+      <rel label="SUBJ">
+        <span from="2621" to="2630" />
+      </rel>
+    </span>
+    <span id="s33_n4" from="2518" to="2530">
+      <rel label="ADJMOD">
+        <span from="2531" to="2545" />
+      </rel>
+    </span>
+    <span id="s33_n6" from="2531" to="2545">
+      <rel label="ADJMOD">
+        <span from="2546" to="2557" />
+      </rel>
+    </span>
+    <span id="s33_n8" from="2546" to="2557">
+      <rel label="NMOD">
+        <span from="2558" to="2573" />
+      </rel>
+    </span>
+    <span id="s33_n12" from="2574" to="2577">
+      <rel label="COORD">
+        <span from="2558" to="2573" />
+      </rel>
+      <rel label="COORD">
+        <span from="2587" to="2597" />
+      </rel>
+    </span>
+    <span id="s33_n14" from="2578" to="2586">
+      <rel label="NMOD">
+        <span from="2587" to="2597" />
+      </rel>
+    </span>
+    <span id="s33_n22" from="2603" to="2606">
+      <rel label="DETERM">
+        <span from="2612" to="2620" />
+      </rel>
+    </span>
+    <span id="s33_n24" from="2607" to="2611">
+      <rel label="NMOD">
+        <span from="2612" to="2620" />
+      </rel>
+    </span>
+    <span id="s33_n26" from="2612" to="2620">
+      <rel label="OBJ">
+        <span from="2621" to="2630" />
+      </rel>
+    </span>
+    <span id="s33_n28" from="2621" to="2630">
+      <rel label="AUXIL">
+        <span from="2599" to="2602" />
+      </rel>
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s34_n0" from="2632" to="2640">
+      <rel label="VMOD">
+        <span from="2656" to="2662" />
+      </rel>
+    </span>
+    <span id="s34_n72" from="2641" to="2649">
+      <rel label="VMOD">
+        <span from="2656" to="2662" />
+      </rel>
+    </span>
+    <span id="s34_n4" from="2645" to="2649">
+      <rel label="PERSON" type="unary" />
+    </span>
+    <span id="s34_n54" from="2650" to="2655">
+      <rel label="VMOD">
+        <span from="2656" to="2662" />
+      </rel>
+    </span>
+    <span id="s34_n8" from="2656" to="2662">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s34_n10" from="2663" to="2670">
+      <rel label="SUBJ">
+        <span from="2656" to="2662" />
+      </rel>
+    </span>
+    <span id="s34_n12" from="2671" to="2679">
+      <rel label="OBJ">
+        <span from="2656" to="2662" />
+      </rel>
+    </span>
+    <span id="s34_n73" from="2680" to="2686">
+      <rel label="VMOD">
+        <span from="2656" to="2662" />
+      </rel>
+    </span>
+    <span id="s34_n22" from="2691" to="2696">
+      <rel label="DETERM">
+        <span from="2697" to="2702" />
+      </rel>
+    </span>
+    <span id="s34_n24" from="2697" to="2702">
+      <rel label="OBJ">
+        <span from="2733" to="2744" />
+      </rel>
+    </span>
+    <span id="s34_n74" from="2703" to="2717">
+      <rel label="VMOD">
+        <span from="2733" to="2744" />
+      </rel>
+    </span>
+    <span id="s34_n28" from="2707" to="2710">
+      <rel label="DETERM">
+        <span from="2711" to="2717" />
+      </rel>
+    </span>
+    <span id="s34_n32" from="2718" to="2724">
+      <rel label="DETERM">
+        <span from="2725" to="2732" />
+      </rel>
+    </span>
+    <span id="s34_n34" from="2725" to="2732">
+      <rel label="NMOD">
+        <span from="2711" to="2717" />
+      </rel>
+    </span>
+    <span id="s34_n53" from="2733" to="2744">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s34_n44" from="2749" to="2750">
+      <rel label="NMOD">
+        <span from="2751" to="2757" />
+      </rel>
+    </span>
+  </spanList>
+</layer>
