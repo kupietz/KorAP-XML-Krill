@@ -12,10 +12,26 @@ use KorAP::Log;
 use Mojo::DOM;
 use Data::Dumper;
 
-our @ATTR = qw/id corpus_id pub_date
-	       title sub_title pub_place/;
+our @ATTR = qw/id
+	       corpus_id
+	       pub_date
+	       title
+	       sub_title
+	       pub_place/;
+
+our @ADVANCED_ATTR = qw/publisher
+			editor
+			text_type
+			text_type_art
+			creation_date
+			coll_title
+			coll_sub_title
+			coll_author
+			coll_editor
+			/;
+
 has 'path';
-has [@ATTR];
+has [@ATTR, @ADVANCED_ATTR];
 
 has log => sub {
   if(Log::Log4perl->initialized()) {
@@ -120,17 +136,71 @@ sub _parse_meta {
   my $dom = Mojo::DOM->new($file);
   my $analytic = $dom->at('analytic');
 
-  # Get title
-  my $title = $analytic->at('h\.title[type=main]');
-  $self->title($title->text) if $title;
+  if ($analytic) {
+    # Get title
+    my $title = $analytic->at('h\.title[type=main]');
+    $self->title($title->text) if $title;
 
-  # Get Subtitle
-  my $sub_title = $analytic->at('h\.title[type=sub]');
-  $self->sub_title($sub_title->text) if $sub_title;
+    # Get Subtitle
+    my $sub_title = $analytic->at('h\.title[type=sub]');
+    $self->sub_title($sub_title->text) if $sub_title;
 
-  # Get Author
-  my $author = $analytic->at('h\.author');
-  $self->author($author->all_text) if $author;
+    # Get Author
+    my $author = $analytic->at('h\.author');
+    $self->author($author->all_text) if $author;
+
+    # Get Editor
+    my $editor = $analytic->at('editor');
+    $self->editor($editor->all_text) if $editor;
+  };
+
+  # Get PubPlace
+  my $place = $dom->at('pubPlace');
+  $self->pub_place($place->all_text) if $place;
+
+  # Get Publisher
+  my $publisher = $dom->at('publisher');
+  $self->publisher($publisher->all_text) if $publisher;
+
+  my $mono = $dom->at('monogr');
+  if ($mono) {
+    # Get title
+    my $title = $mono->at('h\.title[type=main]');
+
+    # It's a monograph
+    if (!$self->title) {
+      $self->title($title->text) if $title;
+
+      # Get Subtitle
+      my $sub_title = $mono->at('h\.title[type=sub]');
+      $self->sub_title($sub_title->text) if $sub_title;
+
+    }
+    else {
+      $self->coll_title($title->text) if $title;
+
+      # Get Subtitle
+      my $sub_title = $mono->at('h\.title[type=sub]');
+      $self->coll_sub_title($sub_title->text) if $sub_title;
+    };
+
+    # Get Author
+    my $author = $mono->at('h\.author');
+    $self->coll_author($author->all_text) if $author;
+
+    # Get editor
+    my $editor = $mono->at('editor');
+    $self->coll_editor($editor->all_text) if $editor;
+  };
+
+  # Get text type
+  my $text_type = $dom->at('textDesc textType');
+  $self->text_type($text_type->all_text) if $text_type;
+
+  # Get text type
+  my $text_type_art = $dom->at('textDesc textTypeArt');
+  $self->text_type_art($text_type_art->all_text) if $text_type_art;
+
 
   # Get pubDate
   my $year = $dom->at("pubDate[type=year]");
@@ -149,6 +219,23 @@ sub _parse_meta {
   $date .= length($day) == 1 ? '0' . $day : $day;
 
   $self->pub_date($date);
+
+  # creatDate
+  my $createdate = $dom->at('creatDate');
+  if ($createdate) {
+    $createdate = $createdate->all_text;
+    if (index($createdate, '-') > -1) {
+      $self->log->warn("Creation date ranges are not supported yet");
+    }
+    else {
+      $createdate =~ s{^(\d{4})$}{$1\.00};
+      $createdate =~ s{^(\d{4})\.(\d{2})$}{$1\.$2\.00};
+      if ($createdate =~ /^\d{4}\.\d{2}\.\d{2}$/) {
+	$createdate =~ tr/\.//d;
+	$self->creation_date($createdate);
+      };
+    };
+  };
 
   # Get textClasses
   my @topic;

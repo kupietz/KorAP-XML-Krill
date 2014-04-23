@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="A01_APR.13047">
+  <spanList>
+    <span from="0" to="42" />
+    <span from="43" to="172" />
+    <span from="173" to="364" />
+    <span from="365" to="433" />
+    <span from="434" to="477" />
+    <span from="478" to="633" />
+    <span from="634" to="664" />
+    <span from="665" to="789" />
+    <span from="790" to="865" />
+    <span from="866" to="1008" />
+    <span from="1009" to="1050" />
+    <span from="1051" to="1220" />
+    <span from="1221" to="1280" />
+    <span from="1281" to="1327" />
+  </spanList>
+</layer>

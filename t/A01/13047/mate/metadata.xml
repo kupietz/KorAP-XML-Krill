@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="metadata.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<metadata docid="A01_APR.13047" type="foundry" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <doc file="../data.xml" />
+  <foundry name="opennlp">
+    <layer info="rel" file="dependency.xml" name="syntax-dep" id="l1" />
+    <layer info="pos lemma" file="morpho.xml" name="morph" id="l2" />
+  </foundry>
+</metadata>

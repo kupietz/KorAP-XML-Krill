@@ -1,10 +1,15 @@
 #!/usr/bin/env perl
+# source ~/perl5/perlbrew/etc/bashrc
+# perlbrew switch perl-blead@korap
 use strict;
 use warnings;
 use utf8;
 use Test::More;
 use Benchmark ':hireswallclock';
 use lib 'lib', '../lib';
+
+use File::Basename 'dirname';
+use File::Spec::Functions 'catdir';
 
 use_ok('KorAP::Document');
 
@@ -42,7 +47,7 @@ push(@layers, ['XIP', 'Dependency']);
 push(@layers, ['XIP', 'Sentences']);
 
 
-my $path = 'WPD/00001';
+my $path = catdir(dirname(__FILE__), 'WPD/00001');
 ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
 is($doc->path, $path . '/', 'Path');
 
@@ -58,7 +63,7 @@ ok(!$doc->sub_title, 'subTitle');
 is($doc->id, 'WPD_AAA.00001', 'ID');
 is($doc->corpus_id, 'WPD', 'corpusID');
 is($doc->pub_date, '20050328', 'pubDate');
-ok(!$doc->pub_place, 'pubPlace');
+is($doc->pub_place, 'URL:http://de.wikipedia.org', 'pubPlace');
 is($doc->text_class->[0], 'freizeit-unterhaltung', 'TextClass');
 is($doc->text_class->[1], 'reisen', 'TextClass');
 is($doc->text_class->[2], 'wissenschaft', 'TextClass');
@@ -81,7 +86,7 @@ ok(my $tokens = KorAP::Tokenizer->new(
 ), 'New Tokenizer');
 ok($tokens->parse, 'Parse');
 
-is($tokens->path, 'WPD/00001/', 'Path');
+is($tokens->path, $path . '/', 'Path');
 is($tokens->foundry, 'OpenNLP', 'Foundry');
 is($tokens->doc->id, 'WPD_AAA.00001', 'Doc id');
 is($tokens->should, 1068, 'Should');
@@ -99,13 +104,13 @@ is($tokens->stream->pos(118)->to_string, '[(763-768)s:Linie|i:linie|_118#763-768
 # Add sentences
 ok($tokens->add('Base', 'Sentences'), 'Add Sentences');
 
-is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s#0-74$<i>13|<>:base/t#0-6083$<i>923|-:sentences$<i>96]', 'Startinfo');
+is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s#0-74$<i>13|<>:base/text#0-6083$<i>923|-:sentences$<i>96]', 'Startinfo');
 
 foreach (@layers) {
   ok($tokens->add(@$_), 'Add '. join(', ', @$_));
 };
 
-is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s#0-74$<i>13|<>:base/t#0-6083$<i>923|-:sentences$<i>96|<>:base/para#0-224$<i>34|-:paragraphs$<i>76|opennlp/p:NE|<>:opennlp/s#0-74$<i>13|<>:corenlp/s#0-6$<i>2|cnx/l:A|cnx/p:N|cnx/syn:@NH|<>:cnx/s#0-74$<i>13|tt/l:A|tt/p:NN|tt/l:A|tt/p:FM|<>:tt/s#0-6083$<i>923|>:mate/d:PNC$<i>2|xip/p:SYMBOL|xip/l:A|<>:xip/c:TOP#0-74$<i>13|<>:xip/c:MC#0-73$<i>13<b>1|>:xip/d:SUBJ$<i>3|<:xip/d:COORD$<i>1|<>:xip/s#0-74$<i>13]', 'Startinfo');
+is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s#0-74$<i>13|<>:base/text#0-6083$<i>923|-:sentences$<i>96|<>:base/para#0-224$<i>34|-:paragraphs$<i>76|opennlp/p:NE|<>:opennlp/s#0-74$<i>13|<>:corenlp/s#0-6$<i>2|cnx/l:A|cnx/p:N|cnx/syn:@NH|<>:cnx/s#0-74$<i>13|tt/l:A|tt/p:NN|tt/l:A|tt/p:FM|<>:tt/s#0-6083$<i>923|>:mate/d:PNC$<i>2|xip/p:SYMBOL|xip/l:A|<>:xip/c:TOP#0-74$<i>13|<>:xip/c:MC#0-73$<i>13<b>1|>:xip/d:SUBJ$<i>3|<:xip/d:COORD$<i>1|<>:xip/s#0-74$<i>13]', 'Startinfo');
 
 
 is($tokens->stream->pos(118)->to_string,
