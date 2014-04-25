@@ -104,13 +104,13 @@ is($tokens->stream->pos(118)->to_string, '[(763-768)s:Linie|i:linie|_118#763-768
 # Add sentences
 ok($tokens->add('Base', 'Sentences'), 'Add Sentences');
 
-is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s#0-74$<i>13|<>:base/text#0-6083$<i>923|-:sentences$<i>96]', 'Startinfo');
+is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s#0-74$<i>13|<>:base/text#0-6083$<i>923|-:base/sentences$<i>96]', 'Startinfo');
 
 foreach (@layers) {
   ok($tokens->add(@$_), 'Add '. join(', ', @$_));
 };
 
-is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s#0-74$<i>13|<>:base/text#0-6083$<i>923|-:sentences$<i>96|<>:base/para#0-224$<i>34|-:paragraphs$<i>76|opennlp/p:NE|<>:opennlp/s#0-74$<i>13|<>:corenlp/s#0-6$<i>2|cnx/l:A|cnx/p:N|cnx/syn:@NH|<>:cnx/s#0-74$<i>13|tt/l:A|tt/p:NN|tt/l:A|tt/p:FM|<>:tt/s#0-6083$<i>923|>:mate/d:PNC$<i>2|xip/p:SYMBOL|xip/l:A|<>:xip/c:TOP#0-74$<i>13|<>:xip/c:MC#0-73$<i>13<b>1|>:xip/d:SUBJ$<i>3|<:xip/d:COORD$<i>1|<>:xip/s#0-74$<i>13]', 'Startinfo');
+is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s#0-74$<i>13|<>:base/text#0-6083$<i>923|-:base/sentences$<i>96|<>:base/para#0-224$<i>34|-:base/paragraphs$<i>76|opennlp/p:NE|<>:opennlp/s#0-74$<i>13|-:opennlp/sentences$<i>50|<>:corenlp/s#0-6$<i>2|-:corenlp/sentences$<i>65|cnx/l:A|cnx/p:N|cnx/syn:@NH|<>:cnx/s#0-74$<i>13|-:cnx/sentences$<i>62|tt/l:A|tt/p:NN|tt/l:A|tt/p:FM|<>:tt/s#0-6083$<i>923|-:tt/sentences$<i>1|>:mate/d:PNC$<i>2|xip/p:SYMBOL|xip/l:A|<>:xip/c:TOP#0-74$<i>13|<>:xip/c:MC#0-73$<i>13<b>1|>:xip/d:SUBJ$<i>3|<:xip/d:COORD$<i>1|<>:xip/s#0-74$<i>13|-:xip/sentences$<i>2]', 'Startinfo');
 
 
 is($tokens->stream->pos(118)->to_string,

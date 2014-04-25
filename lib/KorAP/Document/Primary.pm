@@ -19,46 +19,33 @@ sub new {
 
 # Get the data as a substring
 sub data {
-  my $self = shift;
-  my ($from, $to) = @_;
+  my ($self, $from, $to) = @_;
 
-#  return b(substr($self->[0], $from))->encode if $from && !$to;
   return substr($self->[0], $from) if $from && !$to;
 
-#  return b($self->[0])->encode unless $to;
   return $self->[0] unless $to;
 
   my $substr = substr($self->[0], $from, $to - $from);
-  if (defined $substr) {
-#    return b($substr)->encode;
-    return $substr;
-  };
 
-  # encode 'UTF-8',
-  # carp 'Unable to find substring';
+  return $substr if defined $substr;
+
   return;
 };
 
 
 sub data_bytes {
-  my $self = shift;
-  my ($from, $to) = @_;
+  my ($self, $from, $to) = @_;
 
   use bytes;
 
   return b(substr($self->[0], $from))->decode if $from && !$to;
 
-#  return b($self->[0])->encode unless $to;
   return b($self->[0])->decode unless $to;
 
   my $substr = substr($self->[0], $from, $to - $from);
-  if (defined $substr) {
-#    return b($substr)->encode;
-    return b($substr)->decode;
-  };
 
-  # encode 'UTF-8',
-  # carp 'Unable to find substring';
+  return b($substr)->decode if defined $substr;
+
   return;
 };
 
@@ -81,6 +68,7 @@ sub bytes2chars {
   return $self->[2]->[shift];
 };
 
+
 # Get correct offset
 sub xip2chars {
   my $self = shift;
@@ -94,6 +82,7 @@ sub xip2chars {
   };
   return $self->[3]->[shift];
 };
+
 
 # Calculate character offsets
 sub _calc_chars {

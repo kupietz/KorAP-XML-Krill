@@ -20,7 +20,7 @@ sub parse {
     }
   ) or return;
 
-  $$self->stream->add_meta('paragraphs', '<i>' . $i);
+  $$self->stream->add_meta('base/paragraphs', '<i>' . $i);
 
   return 1;
 };

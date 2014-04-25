@@ -3,6 +3,7 @@ use KorAP::Index::Base;
 
 sub parse {
   my $self = shift;
+  my $i = 0;
 
   $$self->add_spandata(
     foundry => 'opennlp',
@@ -16,8 +17,11 @@ sub parse {
 	o_end => $span->o_end,
 	p_end => $span->p_end
       );
+      $i++;
     }
   ) or return;
+
+  $$self->stream->add_meta('opennlp/sentences', '<i>' . $i);
 
   return 1;
 };

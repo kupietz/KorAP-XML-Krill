@@ -34,7 +34,7 @@ sub parse {
     o_end => $last_o
   );
 
-  $$self->stream->add_meta('sentences', '<i>' . $i);
+  $$self->stream->add_meta('base/sentences', '<i>' . $i);
 
   return 1;
 };

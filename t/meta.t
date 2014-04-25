@@ -248,20 +248,41 @@ ok(!$doc->coll_author, 'Collection author');
 ok(!$doc->text_type, 'text_type');
 is($doc->text_type_art, 'Bericht', 'text_type art');
 
+# ART
+$path = catdir(dirname(__FILE__), 'artificial');
+ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+is($doc->path, $path . '/', 'Path');
 
+ok($doc = KorAP::Document->new( path => $path ), 'Load Korap::Document');
+is($doc->path, $path . '/', 'Path');
+
+ok($doc->parse, 'Parse document');
+
+# Metdata
+is($doc->title, 'Artificial Title', 'title');
+is($doc->sub_title, 'Artificial Subtitle', 'subTitle');
+is($doc->id, 'ART_00001', 'ID');
+is($doc->corpus_id, 'ART', 'corpusID');
+is($doc->pub_date, '20010402', 'pubDate');
+is($doc->pub_place, 'Mannheim', 'pubPlace');
+is($doc->text_class->[0], 'freizeit-unterhaltung', 'TextClass');
+is($doc->text_class->[1], 'vereine-veranstaltungen', 'TextClass');
+ok(!$doc->text_class->[2], 'TextClass');
+is($doc->author->[0], 'Ruru', 'author');
+is($doc->author->[1], 'Jens.Ol', 'author');
+is($doc->author->[2], 'Aglarech', 'author');
+ok(!$doc->author->[3], 'author');
+
+# Additional information
+is($doc->editor, 'Nils Diewald', 'Editor');
+is($doc->publisher, 'Artificial articles Inc.', 'Publisher');
+is($doc->creation_date, '19990601', 'Creation date');
+is($doc->coll_title, 'Artificial articles', 'Collection title');
+is($doc->coll_sub_title, 'Best of!', 'Collection subtitle');
+is($doc->coll_editor, 'Nils Diewald', 'Collection editor');
+is($doc->coll_author, 'Nils Diewald', 'Collection author');
+is($doc->text_type, 'Zeitung: Tageszeitung', 'No text_type');
+is($doc->text_type_art, 'Bericht', 'text_type art');
 
 done_testing;
 __END__
-
-
-
-
-
-
-
-
-
-
-
-
-

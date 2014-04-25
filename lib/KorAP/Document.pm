@@ -55,19 +55,30 @@ sub new {
 sub parse {
   my $self = shift;
 
-  my $file = b($self->path . 'data.xml')->slurp;
+  my $data_xml = $self->path . 'data.xml';
 
-  my ($rt, $error);
-  state $unable = 'Unable to parse document ' . $self->path;
-  try {
+  my ($rt, $error, $file);
+
+  my $unable = 'Unable to parse document ' . $self->path;
+
+  unless (-e $data_xml) {
+    $self->log->warn($unable . ' - no data.xml found');
+    $error = 1;
+  }
+
+  else {
+    $file = b($data_xml)->slurp;
+
+    try {
       local $SIG{__WARN__} = sub {
-	  $error = 1;
+	$error = 1;
       };
       $rt = xml2hash($file, text => '#text', attr => '-')->{raw_text};
-  }
-  catch  {
-      $self->log->warn($unable);
-      $error = 1;
+    }
+      catch  {
+	$self->log->warn($unable);
+	$error = 1;
+      };
   };
 
   return if $error;
@@ -321,7 +332,7 @@ sub _parse_meta_fast {
     my $file = b($self->path . 'header.xml')->slurp;
 
   my ($meta, $error);
-  state $unable = 'Unable to parse document ' . $self->path;
+  my $unable = 'Unable to parse document ' . $self->path;
 
   try {
       local $SIG{__WARN__} = sub {
