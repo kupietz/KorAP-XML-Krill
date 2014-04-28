@@ -96,7 +96,8 @@ $i = 0;
 foreach (qw/APPRART ADJA ADJA NN VVFIN ART NN ART NN NE PTKVZ KOUS ART NN NN NN VVPP VAFIN/) {
   like($tokens->stream->pos($i++)->to_string,
        qr!\|opennlp/p:$_!,
-       'Annotation (OpenNLP) is correct');
+       'Annotation (OpenNLP/p) is correct: ' . $_
+     );
 };
 
 # Add OpenNLP/sentences
@@ -128,9 +129,7 @@ is($tokens->stream->pos(0)->to_string,
 
 
 # New instantiation
-ok($tokens = new_tokenizer, 'New Tokenizer');
-
-ok($tokens->parse, 'Parse');
+ok($tokens = new_tokenizer->parse, 'Parse');
 
 # Add CoreNLP/NamedEntities
 ok($tokens->add('CoreNLP', 'NamedEntities', 'ne_dewac_175m_600'), 'Add CoreNLP/NamedEntities');
@@ -142,8 +141,7 @@ is($tokens->stream->pos(9)->to_string,
 
 
 # New instantiation
-ok($tokens = new_tokenizer, 'New Tokenizer');
-ok($tokens->parse, 'Parse');
+ok($tokens = new_tokenizer->parse, 'Parse');
 
 # Add CoreNLP/Morpho
 ok($tokens->add('CoreNLP', 'Morpho'), 'Add CoreNLP/Morpho');
@@ -156,7 +154,7 @@ $i = 0;
 foreach (qw/APPRART ADJ ADJA NN VVFIN ART NN ART NN NE PTKVZ KOUS ART NN NN NN VVPP VAFIN/) {
   like($tokens->stream->pos($i++)->to_string,
        qr!\|corenlp/p:$_!,
-       'Annotation (CoreNLP) is correct');
+       'Annotation (CoreNLP/p) is correct: '. $_);
 };
 
 # Add CoreNLP/Sentences
@@ -168,8 +166,7 @@ is($tokens->stream->pos(0)->to_string,
 
 
 # New instantiation
-ok($tokens = new_tokenizer, 'New Tokenizer');
-ok($tokens->parse, 'Parse');
+ok($tokens = new_tokenizer->parse, 'New Tokenizer');
 
 # Add CoreNLP/Sentences
 ok($tokens->add('Connexor', 'Sentences'), 'Add Connexor/Sentences');
@@ -178,16 +175,151 @@ is($tokens->stream->pos(0)->to_string,
    '[(0-3)s:Zum|i:zum|_0#0-3|-:tokens$<i>18|<>:cnx/s#0-129$<i>17|-:cnx/sentences$<i>1]',
    'Correct cnx annotation');
 
+# New instantiation
+ok($tokens = new_tokenizer->parse, 'New Tokenizer');
+
+# Add Connexor/Morpho
+ok($tokens->add('Connexor', 'Morpho'), 'Add Connexor/Morpho');
+
+$i = 0;
+foreach (qw/! A A N V DET N DET N N NUM CS DET N N N V V/) {
+  if ($_ eq '!') {
+    $i++;
+    next;
+  };
+  like($tokens->stream->pos($i++)->to_string,
+       qr!\|cnx/p:$_!,
+       'Annotation (Connexor/p) is correct: ' . $_);
+};
+
+$i = 0;
+foreach (qw/! ! ! ! IND:PRES ! ! ! ! Prop ! ! ! ! ! ! PCP:PERF IND:PRES/) {
+  if ($_ eq '!') {
+    $i++;
+    next;
+  };
+  foreach my $f (split(':', $_)) {
+    like($tokens->stream->pos($i)->to_string,
+	 qr!\|cnx/m:$f!,
+	 'Annotation (Connexor/m) is correct: '. $f);
+  };
+  $i++;
+};
+
+# New instantiation
+ok($tokens = new_tokenizer->parse, 'New Tokenizer');
+
+# Add Connexor/Phrase
+ok($tokens->add('Connexor', 'Phrase'), 'Add Connexor/Phrase');
+my $stream = $tokens->stream;
+like($stream->pos(1)->to_string, qr!\|<>:cnx/c:np#4-30\$<i>4!, 'Annotation (Connexor/c) is correct');
+like($stream->pos(6)->to_string, qr!\|<>:cnx/c:np#40-47\$<i>7!, 'Annotation (Connexor/c) is correct');
+like($stream->pos(8)->to_string, qr!\|<>:cnx/c:np#52-73\$<i>10!, 'Annotation (Connexor/c) is correct');
+like($stream->pos(13)->to_string, qr!\|<>:cnx/c:np#89-111\$<i>16!, 'Annotation (Connexor/c) is correct');
+
+# New instantiation
+ok($tokens = new_tokenizer->parse, 'New Tokenizer');
+
+# Add Connexor/Syntax
+ok($tokens->add('Connexor', 'Syntax'), 'Add Connexor/Syntax');
+$stream = $tokens->stream;
+
+$i = 0;
+foreach (qw/! @PREMOD @PREMOD @NH @MAIN @PREMOD @NH @PREMOD
+	    @PREMOD @NH @NH @PREMARK @PREMOD @PREMOD @NH @NH @MAIN @AUX/) {
+  if ($_ eq '!') {
+    $i++;
+    next;
+  };
+  like($tokens->stream->pos($i++)->to_string,
+       qr!\|cnx/syn:$_!,
+       'Annotation (Connexor/syn) is correct: ' . $_);
+};
+
+# New instantiation
+ok($tokens = new_tokenizer->parse, 'New Tokenizer');
+
+# Add XIP/Sentences
+ok($tokens->add('XIP', 'Sentences'), 'Add XIP/Sentences');
+
+is($tokens->stream->pos(0)->to_string, '[(0-3)s:Zum|i:zum|_0#0-3|-:tokens$<i>18|<>:xip/s#0-129$<i>17|-:xip/sentences$<i>1]', 'First sentence');
+
+# Add XIP/Morpho
+ok($tokens->add('XIP', 'Morpho'), 'Add XIP/Morpho');
+$stream = $tokens->stream;
+
+$i = 0;
+foreach (qw/PREP ADJ ADJ NOUN VERB DET NOUN DET NOUN NOUN PTCL CONJ DET NOUN NOUN NOUN VERB VERB/) {
+  if ($_ eq '!') {
+    $i++;
+    next;
+  };
+  like($tokens->stream->pos($i++)->to_string,
+       qr!\|xip/p:$_!,
+       'Annotation (xip/p) is correct: ' . $_);
+};
+
+$i = 0;
+foreach ('zu', 'letzt', 'kulturell', 'Anlass', '=laden:laden', 'die', 'Leitung', 'der', '#schulen:#Heim:schulen#Heim', 'Hofbergli', 'ein', 'bevor', 'der', 'Betrieb', 'Ende', '#schulen:#Jahr:schulen#Jahr') {
+  if ($_ eq '!') {
+    $i++;
+    next;
+  };
+  foreach my $f (split(':', $_)) {
+    like($tokens->stream->pos($i)->to_string,
+	 qr!\|xip/l:$f!,
+	 'Annotation (xip/l) is correct: ' . $f);
+  };
+  $i++;
+};
+
+# New instantiation
+ok($tokens = new_tokenizer->parse, 'New Tokenizer');
+
+# Add XIP/Sentences
+ok($tokens->add('XIP', 'Dependency'), 'Add XIP/Sentences');
+
+$stream = $tokens->stream;
+like($stream->pos(1)->to_string, qr!\|>:xip/d:NMOD\$<i>3!, 'Dependency fine');
+like($stream->pos(3)->to_string, qr!\|<:xip/d:NMOD\$<i>1!, 'Dependency fine');
+like($stream->pos(3)->to_string, qr!\|<:xip/d:NMOD\$<i>2!, 'Dependency fine');
+like($stream->pos(4)->to_string, qr!\|>xip/d:VMAIN\$<i>4!, 'Dependency fine');
+like($stream->pos(4)->to_string, qr!\|<:xip/d:SUBJ\$<i>6!, 'Dependency fine');
+like($stream->pos(4)->to_string, qr!\|<:xip/d:VPREF\$<i>10!, 'Dependency fine');
+like($stream->pos(5)->to_string, qr!\|>:xip/d:DETERM\$<i>6!, 'Dependency fine');
+like($stream->pos(6)->to_string, qr!\|<:xip/d:DETERM\$<i>5!, 'Dependency fine');
+like($stream->pos(6)->to_string, qr!\|>:xip/d:SUBJ\$<i>4!, 'Dependency fine');
+like($stream->pos(6)->to_string, qr!\|<:xip/d:NMOD\$<i>8!, 'Dependency fine');
+like($stream->pos(7)->to_string, qr!\|>:xip/d:DETERM\$<i>8!, 'Dependency fine');
+like($stream->pos(8)->to_string, qr!\|<:xip/d:DETERM\$<i>7!, 'Dependency fine');
+like($stream->pos(8)->to_string, qr!\|>:xip/d:NMOD\$<i>6!, 'Dependency fine');
+like($stream->pos(8)->to_string, qr!\|<:xip/d:NMOD\$<i>9!, 'Dependency fine');
+like($stream->pos(9)->to_string, qr!\|>:xip/d:NMOD\$<i>8!, 'Dependency fine');
+like($stream->pos(10)->to_string, qr!\|>:xip/d:VPREF\$<i>4!, 'Dependency fine');
+like($stream->pos(11)->to_string, qr!\|>:xip/d:CONNECT\$<i>16!, 'Dependency fine');
+like($stream->pos(12)->to_string, qr!\|>:xip/d:DETERM\$<i>13!, 'Dependency fine');
+like($stream->pos(13)->to_string, qr!\|<:xip/d:DETERM\$<i>12!, 'Dependency fine');
+like($stream->pos(13)->to_string, qr!\|>:xip/d:SUBJ\$<i>16!, 'Dependency fine');
+like($stream->pos(14)->to_string, qr!\|>:xip/d:OBJ\$<i>16!, 'Dependency fine');
+like($stream->pos(15)->to_string, qr!\|>:xip/d:OBJ\$<i>16!, 'Dependency fine');
+like($stream->pos(16)->to_string, qr!\|<:xip/d:CONNECT\$<i>11!, 'Dependency fine');
+like($stream->pos(16)->to_string, qr!\|<:xip/d:SUBJ\$<i>13!, 'Dependency fine');
+like($stream->pos(16)->to_string, qr!\|<:xip/d:OBJ\$<i>14!, 'Dependency fine');
+like($stream->pos(16)->to_string, qr!\|<:xip/d:OBJ\$<i>15!, 'Dependency fine');
+like($stream->pos(16)->to_string, qr!\|>:xip/d:AUXIL\$<i>17!, 'Dependency fine');
+like($stream->pos(16)->to_string, qr!\|>xip/d:VMAIN\$<i>16!, 'Dependency fine');
+like($stream->pos(16)->to_string, qr!\|<xip/d:VMAIN\$<i>16!, 'Dependency fine');
+like($stream->pos(17)->to_string, qr!\|<:xip/d:AUXIL\$<i>16!, 'Dependency fine');
+
+
+# ADJA ADJA NN VVFIN ART NN ART NN NE PTKVZ KOUS ART NN NN NN VVPP VAFIN
+done_testing;
+__END__
 
 
 # Todo: CoreNLP/Constituency!
-# Todo: Connexor/Morpho
-# Todo: Connexor/Phrase
-# Todo: Connexor/Syntax
 
 
-done_testing;
-__END__
 
 
 
@@ -211,78 +343,5 @@ push(@layers, ['XIP', 'Constituency']);
 push(@layers, ['XIP', 'Dependency']);
 push(@layers, ['XIP', 'Sentences']);
 
-
-
-# Metdata
-is($doc->title, 'A', 'title');
-ok(!$doc->sub_title, 'subTitle');
-
-is($doc->id, 'WPD_AAA.00001', 'ID');
-is($doc->corpus_id, 'WPD', 'corpusID');
-is($doc->pub_date, '20050328', 'pubDate');
-is($doc->pub_place, 'URL:http://de.wikipedia.org', 'pubPlace');
-is($doc->text_class->[0], 'freizeit-unterhaltung', 'TextClass');
-is($doc->text_class->[1], 'reisen', 'TextClass');
-is($doc->text_class->[2], 'wissenschaft', 'TextClass');
-is($doc->text_class->[3], 'populaerwissenschaft', 'TextClass');
-ok(!$doc->text_class->[4], 'TextClass');
-is($doc->author->[0], 'Ruru', 'author');
-is($doc->author->[1], 'Jens.Ol', 'author');
-is($doc->author->[2], 'Aglarech', 'author');
-ok(!$doc->author->[3], 'author');
-
-# Get tokens
-use_ok('KorAP::Tokenizer');
-# Get tokenization
-ok(my $tokens = KorAP::Tokenizer->new(
-  path => $doc->path,
-  doc => $doc,
-  foundry => 'OpenNLP',
-  layer => 'Tokens',
-  name => 'tokens'
-), 'New Tokenizer');
-ok($tokens->parse, 'Parse');
-
-is($tokens->path, $path . '/', 'Path');
-is($tokens->foundry, 'OpenNLP', 'Foundry');
-is($tokens->doc->id, 'WPD_AAA.00001', 'Doc id');
-is($tokens->should, 1068, 'Should');
-is($tokens->have, 923, 'Have');
-is($tokens->name, 'tokens', 'Name');
-is($tokens->layer, 'Tokens', 'Layer');
-
-is($tokens->stream->pos(118)->to_string, '[(763-768)s:Linie|i:linie|_118#763-768]', 'Token is correct');
-
-# Add Mate
-ok($tokens->add('Mate', 'Morpho'), 'Add Mate');
-
-is($tokens->stream->pos(118)->to_string, '[(763-768)s:Linie|i:linie|_118#763-768|mate/l:linie|mate/p:NN|mate/m:case:acc|mate/m:number:sg|mate/m:gender:fem]', 'with Mate');
-
-# Add sentences
-ok($tokens->add('Base', 'Sentences'), 'Add Sentences');
-
-is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s#0-74$<i>13|<>:base/text#0-6083$<i>923|-:sentences$<i>96]', 'Startinfo');
-
-foreach (@layers) {
-  ok($tokens->add(@$_), 'Add '. join(', ', @$_));
-};
-
-is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s#0-74$<i>13|<>:base/text#0-6083$<i>923|-:sentences$<i>96|<>:base/para#0-224$<i>34|-:paragraphs$<i>76|opennlp/p:NE|<>:opennlp/s#0-74$<i>13|<>:corenlp/s#0-6$<i>2|cnx/l:A|cnx/p:N|cnx/syn:@NH|<>:cnx/s#0-74$<i>13|tt/l:A|tt/p:NN|tt/l:A|tt/p:FM|<>:tt/s#0-6083$<i>923|>:mate/d:PNC$<i>2|xip/p:SYMBOL|xip/l:A|<>:xip/c:TOP#0-74$<i>13|<>:xip/c:MC#0-73$<i>13<b>1|>:xip/d:SUBJ$<i>3|<:xip/d:COORD$<i>1|<>:xip/s#0-74$<i>13]', 'Startinfo');
-
-
-is($tokens->stream->pos(118)->to_string,
-   '[(763-768)s:Linie|i:linie|_118#763-768|'.
-     'mate/l:linie|mate/p:NN|mate/m:case:acc|mate/m:number:sg|mate/m:gender:fem|' .
-     'opennlp/p:NN|'.
-     'cnx/l:linie|cnx/p:N|cnx/syn:@NH|'.
-     'tt/l:Linie|tt/p:NN|'.
-     '<:mate/d:NK$<i>116|<:mate/d:NK$<i>117|>:mate/d:NK$<i>115|'.
-     'xip/p:NOUN|xip/l:Linie|<>:xip/c:NOUN#763-768$<i>119|<:xip/d:DETERM$<i>116|<:xip/d:NMOD$<i>117]', 'with All');
-
-is($tokens->layer_info, 'cnx/c=const cnx/l=lemma cnx/m=msd cnx/p=pos mate/d=dep mate/l=lemma mate/m=msd mate/p=pos opennlp/p=pos tt/l=lemma tt/p=pos xip/c=const xip/d=dep xip/l=lemma xip/p=pos', 'Layer info');
-
-is($tokens->support, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/namedentities corenlp/namedentities corenlp/namedentities/ne_dewac_175m_600 corenlp/namedentities/ne_hgc_175m_600 corenlp/sentences mate mate/dependency mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/dependency xip/morpho xip/sentences', 'Support');
-
-done_testing;
 
 __END__

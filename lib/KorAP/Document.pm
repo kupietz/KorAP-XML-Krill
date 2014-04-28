@@ -36,7 +36,6 @@ has [@ATTR, @ADVANCED_ATTR];
 has log => sub {
   if(Log::Log4perl->initialized()) {
     state $log = Log::Log4perl->get_logger(__PACKAGE__);
-    return $log;
   };
   state $log = KorAP::Log->new;
   return $log;

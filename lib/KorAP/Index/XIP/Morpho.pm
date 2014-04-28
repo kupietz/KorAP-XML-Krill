@@ -33,23 +33,32 @@ sub parse {
 	if (($_->{-name} eq 'lemma') && ($found = $_->{'#text'})) {
 
 	  # Verb delimiter (aus=druecken)
-	  $found =~ tr/=//d;
+	  $mtt->add(term => 'xip/l:' . $found);
+	  if ($found =~ tr/=//d) {
+	    $mtt->add(term => 'xip/l:' . $found);
+	  };
 
 	  # Composites
 	  my (@token) = split('#', $found);
 
+	  if (@token == 1) {
+#	    my $x = $token[0];
+#	    $x =~ s{/\w+$}{};
+#	    $mtt->add(term => 'xip/l:' . $x);
+	    next;
+	  };
 	  my $full = '';
 	  foreach (@token) {
 	    $full .= $_;
 	    $_ =~ s{/\w+$}{};
-	    $mtt->add(term => 'xip/l:' . $_);
+	    $mtt->add(term => 'xip/l:#' . $_);
 	  };
-	  if (@token > 1) {
-	    $full =~ s{/}{}g;
-	    $full = lc $full;
-	    $full = $capital ? ucfirst($full) : $full;
-	    $mtt->add(term => 'xip/l:' . $full);
-	  };
+#	  if (@token > 1) {
+#	    $full =~ s{/}{}g;
+#	    $full = lc $full;
+#	    $full = $capital ? ucfirst($full) : $full;
+#	    $mtt->add(term => 'xip/l:' . $full);
+#	  };
 	};
       };
     }) or return;

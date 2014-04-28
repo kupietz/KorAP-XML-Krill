@@ -1,11 +1,14 @@
 package KorAP::Log;
 use Mojo::Base -base;
+use Carp;
 
 has 'warn'  => sub {};
 has 'debug' => sub {};
 has 'trace' => sub {};
-has 'error' => sub {
-  warn(join ' ', @_);
+
+sub error {
+  shift;
+  carp(join ' ', @_);
 };
 
 1;

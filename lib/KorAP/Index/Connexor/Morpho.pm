@@ -43,7 +43,7 @@ sub parse {
 
 	}
 	# MSD
-	# Todo: Look in the description!
+	# This could follow http://www.ids-mannheim.de/cosmas2/projekt/referenz/connexor/morph.html
 	elsif (($f->{-name} eq 'msd') && ($found = $f->{'#text'})) {
 	  foreach (split(':', $found)) {
 	    $mtt->add(

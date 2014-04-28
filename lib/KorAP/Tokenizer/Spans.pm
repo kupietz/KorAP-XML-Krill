@@ -1,4 +1,7 @@
 package KorAP::Tokenizer::Spans;
+use strict;
+use warnings;
+use KorAP::Log;
 use Mojo::Base 'KorAP::Tokenizer::Units';
 use KorAP::Tokenizer::Span;
 # use Mojo::DOM;
@@ -9,14 +12,21 @@ use Try::Tiny;
 has 'range';
 
 has 'log' => sub {
-  Log::Log4perl->get_logger(__PACKAGE__)
+  if(Log::Log4perl->initialized()) {
+    state $log = Log::Log4perl->get_logger(__PACKAGE__);
+  };
+  state $log = KorAP::Log->new;
+  return $log;
 };
 
 sub parse {
   my $self = shift;
   my $path = $self->path . $self->foundry . '/' . $self->layer . '.xml';
 
-  return unless -e $path;
+  unless (-e $path) {
+    $self->log->error('Unable to load file ' . $path);
+    return;
+  };
 
   my $file = b($path)->slurp;
 

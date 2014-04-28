@@ -4,8 +4,8 @@ use KorAP::Index::Base;
 sub parse {
   my $self = shift;
 
-  # TODO: Create XIP tree here - for indirect dependency
-  # >>:xip_d:SUBJ<i>566<i>789
+  # Phrase depencies are currently ignored.
+  #
 
   $$self->add_tokendata(
     foundry => 'xip',
@@ -25,7 +25,12 @@ sub parse {
 
 	if ($_->{-type} && $_->{-type} eq 'unary') {
 	  $mtt->add(
-	    term => 'xip/d:' . $label
+	    term => '>xip/d:' . $label,
+	    payload => '<i>' . $token->pos
+	  );
+	  $mtt->add(
+	    term => '<xip/d:' . $label,
+	    payload => '<i>' . $token->pos
 	  );
 	}
 	else {

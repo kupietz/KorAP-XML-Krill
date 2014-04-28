@@ -20,7 +20,6 @@ has layer => 'Tokens';
 has log => sub {
   if(Log::Log4perl->initialized()) {
     state $log = Log::Log4perl->get_logger(__PACKAGE__);
-    return $log;
   };
   state $log = KorAP::Log->new;
   return $log;
@@ -69,7 +68,7 @@ sub parse {
     $tokens = $tokens->{span};
   }
   else {
-      return [];
+      return $self;
   };
 
   $tokens = [$tokens] if ref $tokens ne 'ARRAY';
@@ -135,6 +134,8 @@ sub parse {
   $self->have($have);
 
   $self->log->debug('With a non-word quota of ' . _perc($self->should, $self->should - $self->have) . ' %');
+
+  return $self;
 };
 
 
@@ -173,6 +174,8 @@ sub add_spandata {
     match => $self->match,
     %param
   );
+
+  use Data::Dumper;
 
   my $spanarray = $spans->parse or return;
 
