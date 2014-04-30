@@ -277,7 +277,7 @@ foreach ('zu', 'letzt', 'kulturell', 'Anlass', '=laden:laden', 'die', 'Leitung',
 ok($tokens = new_tokenizer->parse, 'New Tokenizer');
 
 # Add XIP/Sentences
-ok($tokens->add('XIP', 'Dependency'), 'Add XIP/Sentences');
+ok($tokens->add('XIP', 'Dependency'), 'Add XIP/Dependency');
 
 $stream = $tokens->stream;
 like($stream->pos(1)->to_string, qr!\|>:xip/d:NMOD\$<i>3!, 'Dependency fine');
@@ -310,6 +310,72 @@ like($stream->pos(16)->to_string, qr!\|>:xip/d:AUXIL\$<i>17!, 'Dependency fine')
 like($stream->pos(16)->to_string, qr!\|>xip/d:VMAIN\$<i>16!, 'Dependency fine');
 like($stream->pos(16)->to_string, qr!\|<xip/d:VMAIN\$<i>16!, 'Dependency fine');
 like($stream->pos(17)->to_string, qr!\|<:xip/d:AUXIL\$<i>16!, 'Dependency fine');
+
+# New instantiation
+ok($tokens = new_tokenizer->parse, 'New Tokenizer');
+
+# Add XIP/Sentences
+ok($tokens->add('XIP', 'Constituency'), 'Add XIP/Constituency');
+
+$stream = $tokens->stream;
+like($stream->pos(0)->to_string, qr!\|<>:xip/c:TOP#0-129\$<i>17!, 'Constituency fine');
+like($stream->pos(0)->to_string, qr!\|<>:xip/c:MC#0-129\$<i>17<b>1!, 'Constituency fine');
+like($stream->pos(0)->to_string, qr!\|<>:xip/c:PP#0-30\$<i>4<b>2!, 'Constituency fine');
+like($stream->pos(0)->to_string, qr!\|<>:xip/c:PREP#0-3\$<i>1!, 'Constituency fine');
+
+like($stream->pos(1)->to_string, qr!\|<>:xip/c:NP#4-30\$<i>4<b>3!, 'Constituency fine');
+like($stream->pos(1)->to_string, qr!\|<>:xip/c:NPA#4-30\$<i>4<b>4!, 'Constituency fine');
+like($stream->pos(1)->to_string, qr!\|<>:xip/c:AP#4-11\$<i>2<b>5!, 'Constituency fine');
+like($stream->pos(1)->to_string, qr!\|<>:xip/c:ADJ#4-11\$<i>2<b>6!, 'Constituency fine');
+
+like($stream->pos(2)->to_string, qr!\|<>:xip/c:AP#12-23\$<i>3<b>5!, 'Constituency fine');
+like($stream->pos(2)->to_string, qr!\|<>:xip/c:ADJ#12-23\$<i>3<b>6!, 'Constituency fine');
+
+like($stream->pos(3)->to_string, qr!\|<>:xip/c:NOUN#24-30\$<i>4<b>5!, 'Constituency fine');
+
+like($stream->pos(4)->to_string, qr!\|<>:xip/c:VERB#31-35\$<i>5<b>2!, 'Constituency fine');
+
+like($stream->pos(5)->to_string, qr!\|<>:xip/c:NP#36-47\$<i>7<b>2!, 'Constituency fine');
+like($stream->pos(5)->to_string, qr!\|<>:xip/c:DET#36-39\$<i>6<b>3!, 'Constituency fine');
+
+like($stream->pos(6)->to_string, qr!\|<>:xip/c:NPA#40-47\$<i>7<b>3!, 'Constituency fine');
+like($stream->pos(6)->to_string, qr!\|<>:xip/c:NOUN#40-47\$<i>7<b>4!, 'Constituency fine');
+
+like($stream->pos(7)->to_string, qr!\|<>:xip/c:NP#48-63\$<i>9<b>2!, 'Constituency fine');
+like($stream->pos(7)->to_string, qr!\|<>:xip/c:DET#48-51\$<i>8<b>3!, 'Constituency fine');
+
+like($stream->pos(8)->to_string, qr!\|<>:xip/c:NPA#52-63\$<i>9<b>3!, 'Constituency fine');
+like($stream->pos(8)->to_string, qr!\|<>:xip/c:NOUN#52-63\$<i>9<b>4!, 'Constituency fine');
+
+like($stream->pos(9)->to_string, qr!\|<>:xip/c:NP#64-73\$<i>10<b>2!, 'Constituency fine');
+like($stream->pos(9)->to_string, qr!\|<>:xip/c:NPA#64-73\$<i>10<b>3!, 'Constituency fine');
+like($stream->pos(9)->to_string, qr!\|<>:xip/c:NOUN#64-73\$<i>10<b>4!, 'Constituency fine');
+
+like($stream->pos(10)->to_string, qr!\|<>:xip/c:PTCL#74-77\$<i>11<b>2!, 'Constituency fine');
+
+like($stream->pos(11)->to_string, qr!\|<>:xip/c:SC#79-128\$<i>18!, 'Constituency fine');
+like($stream->pos(11)->to_string, qr!\|<>:xip/c:CONJ#79-84\$<i>12<b>1!, 'Constituency fine');
+
+like($stream->pos(12)->to_string, qr!\|<>:xip/c:NP#85-96\$<i>14<b>1!, 'Constituency fine');
+like($stream->pos(12)->to_string, qr!\|<>:xip/c:DET#85-88\$<i>13<b>2!, 'Constituency fine');
+
+
+like($stream->pos(13)->to_string, qr!\|<>:xip/c:NPA#89-96\$<i>14<b>2!, 'Constituency fine');
+like($stream->pos(13)->to_string, qr!\|<>:xip/c:NOUN#89-96\$<i>14<b>3!, 'Constituency fine');
+
+like($stream->pos(14)->to_string, qr!\|<>:xip/c:NP#97-101\$<i>15<b>1!, 'Constituency fine');
+like($stream->pos(14)->to_string, qr!\|<>:xip/c:NPA#97-101\$<i>15<b>2!, 'Constituency fine');
+like($stream->pos(14)->to_string, qr!\|<>:xip/c:NOUN#97-101\$<i>15<b>3!, 'Constituency fine');
+
+like($stream->pos(15)->to_string, qr!\|<>:xip/c:NP#102-111\$<i>16<b>1!, 'Constituency fine');
+like($stream->pos(15)->to_string, qr!\|<>:xip/c:NPA#102-111\$<i>16<b>2!, 'Constituency fine');
+like($stream->pos(15)->to_string, qr!\|<>:xip/c:NOUN#102-111\$<i>16<b>3!, 'Constituency fine');
+
+like($stream->pos(16)->to_string, qr!\|<>:xip/c:VERB#112-123\$<i>17<b>1!, 'Constituency fine');
+
+like($stream->pos(17)->to_string, qr!\|<>:xip/c:VERB#124-128\$<i>18<b>1!, 'Constituency fine');
+
+# diag $stream->to_string;
 
 
 # ADJA ADJA NN VVFIN ART NN ART NN NE PTKVZ KOUS ART NN NN NN VVPP VAFIN

@@ -49,9 +49,17 @@ sub after {
     return;
   };
 
-  if ($found =~ /!(\d+):(\d+)$/) {
+  if ($found =~ /^!(\d+):(\d+)$/) {
     return $2;
   };
+};
+
+
+sub to_string {
+  my $self = shift;
+  return join('', map {'['.join(',',@$_).']'}
+		@{$$self->get_range(0,100,'...')})
+    . '...';
 };
 
 1;

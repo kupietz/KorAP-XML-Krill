@@ -175,8 +175,6 @@ sub add_spandata {
     %param
   );
 
-  use Data::Dumper;
-
   my $spanarray = $spans->parse or return;
 
   if ($spans->should == $spans->have) {

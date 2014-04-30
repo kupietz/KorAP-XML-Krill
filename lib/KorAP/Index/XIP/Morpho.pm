@@ -19,7 +19,8 @@ sub parse {
       my $capital = 0;
       foreach (@$content) {
 	# pos
-	if (($_->{-name} eq 'pos') && ($found = $_->{'#text'})) {
+	if (($_->{-name} eq 'pos') &&
+	      ($found = $_->{'#text'})) {
 	  $mtt->add(
 	    term => 'xip/p:' . $found
 	  );
@@ -30,7 +31,8 @@ sub parse {
 
       foreach (@$content) {
 	# lemma
-	if (($_->{-name} eq 'lemma') && ($found = $_->{'#text'})) {
+	if (($_->{-name} eq 'lemma') &&
+	      ($found = $_->{'#text'})) {
 
 	  # Verb delimiter (aus=druecken)
 	  $mtt->add(term => 'xip/l:' . $found);
@@ -42,9 +44,6 @@ sub parse {
 	  my (@token) = split('#', $found);
 
 	  if (@token == 1) {
-#	    my $x = $token[0];
-#	    $x =~ s{/\w+$}{};
-#	    $mtt->add(term => 'xip/l:' . $x);
 	    next;
 	  };
 	  my $full = '';
@@ -53,12 +52,6 @@ sub parse {
 	    $_ =~ s{/\w+$}{};
 	    $mtt->add(term => 'xip/l:#' . $_);
 	  };
-#	  if (@token > 1) {
-#	    $full =~ s{/}{}g;
-#	    $full = lc $full;
-#	    $full = $capital ? ucfirst($full) : $full;
-#	    $mtt->add(term => 'xip/l:' . $full);
-#	  };
 	};
       };
     }) or return;

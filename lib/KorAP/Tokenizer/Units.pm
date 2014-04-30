@@ -24,7 +24,6 @@ sub span {
   $span->o_end($to);
 
   my $start = $self->match->startswith($span->o_start);
-
   unless (defined $start) {
     $start = $self->range->after($span->o_start) or return;
   };
@@ -32,9 +31,11 @@ sub span {
   $span->p_start($start);
 
   my $end = $self->match->endswith($span->o_end);
-  unless ($end) {
+
+  unless (defined $end) {
     $end = $self->range->before($span->o_end) or return;
   };
+
   # $span->p_end($end);
   # return unless $span->p_end >= $span->p_start;
 
@@ -56,11 +57,6 @@ sub token {
   my $pos = $self->match->lookup($from, $to);
 
   return unless defined $pos;
-
-#      if ($from == $to) {
-#	print "Unable to find match for $from - $to (resp ".$s->{-from} . '-' . $s->{-to}.") " . $s->{-id};
-#	print "\n";
-#      };
 
   my $token = KorAP::Tokenizer::Token->new;
   $token->id($s->{-id}) if $s && $s->{-id};

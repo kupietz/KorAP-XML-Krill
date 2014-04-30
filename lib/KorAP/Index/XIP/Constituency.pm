@@ -1,14 +1,21 @@
 package KorAP::Index::XIP::Constituency;
 use KorAP::Index::Base;
 use Set::Scalar;
+use Scalar::Util qw/weaken/;
 use v5.16;
+
+our $URI_RE = qr/^[^\#]+\#(.+?)$/;
 
 sub parse {
   my $self = shift;
 
-  # Collect all spans and check for roots
+  # Collect all spans
   my %xip_const;
+
+  # Collect all roots
   my $xip_const_root = Set::Scalar->new;
+
+  # Collect all non-roots
   my $xip_const_noroot = Set::Scalar->new;
 
   # First run:
@@ -19,25 +26,44 @@ sub parse {
     cb => sub {
       my ($stream, $span) = @_;
 
+      # Collect the span
       $xip_const{$span->id} = $span;
+
+      # It's probably a root
       $xip_const_root->insert($span->id);
 
       my $rel = $span->hash->{rel} or return;
       $rel = [$rel] unless ref $rel eq 'ARRAY';
 
       foreach (@$rel) {
-	if ($_->{-label} eq 'dominates' && $_->{-target}) {
-	  $xip_const_noroot->insert($_->{-target});
+	if ($_->{-label} eq 'dominates') {
+
+	  my $target = $_->{-target};
+	  if (!$target && $_->{-uri} &&
+		$_->{-uri} =~ $URI_RE)  {
+	    $target = $1;
+	  };
+
+	  next unless $target;
+
+	  # It's definately not a root
+	  $xip_const_noroot->insert($target);
 	};
       };
     }
   ) or return;
 
+  # Get the stream
   my $stream = $$self->stream;
 
+  # Recursive tree traversal method
   my $add_const = sub {
-    my $span = shift;
-    my $level = shift;
+    my ($span, $level) = @_;
+
+    weaken $xip_const_root;
+    weaken $xip_const_noroot;
+
+    # Get the correct position for the span
     my $mtt = $stream->pos($span->p_start);
 
     my $content = $span->hash;
@@ -54,6 +80,7 @@ sub parse {
       p_end => $span->p_end
     );
 
+    # Only add level payload if node != root
     $term{payload} = '<b>' . $level if $level;
 
     $mtt->add(%term);
@@ -64,14 +91,30 @@ sub parse {
     $rel = [$rel] unless ref $rel eq 'ARRAY';
 
     foreach (@$rel) {
-      next if $_->{-label} ne 'dominates' || !$_->{-target};
-      my $subspan = delete $xip_const{$_->{-target}} or return;
+      next if $_->{-label} ne 'dominates';
+      my $target;
+
+      $target = $_->{-target};
+      if (!$target && $_->{-uri} && $_->{-uri} =~ $URI_RE)  {
+	$target = $1;
+      };
+
+      next unless $target;
+
+      my $subspan = delete $xip_const{$target};
+      unless ($subspan) {
+	warn "Span " . $target . " not found";
+	return;
+      };
       $this->($subspan, $level + 1);
     };
   };
 
-  my $diff = $xip_const_root->difference($xip_const_noroot);
-  foreach ($diff->members) {
+  # Calculate all roots
+  my $roots = $xip_const_root->difference($xip_const_noroot);
+
+  # Start tree traversal from the root
+  foreach ($roots->members) {
     my $obj = delete $xip_const{$_} or next;
     $add_const->($obj, 0);
   };
@@ -79,6 +122,8 @@ sub parse {
   return 1;
 };
 
+
+# Layer info
 sub layer_info {
     ['xip/c=const']
 }
