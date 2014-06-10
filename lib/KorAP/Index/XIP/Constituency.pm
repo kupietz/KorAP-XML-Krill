@@ -68,9 +68,17 @@ sub parse {
 
     my $content = $span->hash;
     my $f = $content->{fs}->{f};
-    return unless $f->{-name} eq 'const';
+    unless ($f->{-name} eq 'const') {
+      warn $f->{-id} . ' is no constant';
+      return;
+    };
 
-    my $type = $f->{'#text'} or return;
+    my $type = $f->{'#text'};
+
+    unless ($type) {
+      warn $f->{-id} . ' has no content';
+      return;
+    };
 
     # $type is now NPA, NP, NUM ...
     my %term = (
@@ -87,7 +95,13 @@ sub parse {
 
     my $this = __SUB__;
 
-    my $rel = $content->{rel} or return;
+    my $rel = $content->{rel};
+
+    unless ($rel) {
+      warn $f->{-id} . ' has no relation';
+      return;
+    };
+
     $rel = [$rel] unless ref $rel eq 'ARRAY';
 
     foreach (@$rel) {
@@ -103,7 +117,7 @@ sub parse {
 
       my $subspan = delete $xip_const{$target};
       unless ($subspan) {
-	warn "Span " . $target . " not found";
+#	warn "Span " . $target . " not found";
 	return;
       };
       $this->($subspan, $level + 1);
@@ -115,7 +129,9 @@ sub parse {
 
   # Start tree traversal from the root
   foreach ($roots->members) {
+
     my $obj = delete $xip_const{$_} or next;
+
     $add_const->($obj, 0);
   };
 

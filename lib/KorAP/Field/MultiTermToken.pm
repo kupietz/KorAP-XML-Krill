@@ -32,9 +32,46 @@ sub to_string {
   return $string;
 };
 
+
 sub to_array {
   my $self = shift;
   [uniq(map($_->to_string, @{$self->{mt}}))];
 };
 
+sub to_solr {
+  my $self = shift;
+  my @array = map { $_->to_solr(0) } @{$self->{mt}};
+  $array[0]->{i} = 1;
+  return \@array;
+};
+
 1;
+
+
+__END__
+
+[
+  {
+   "e":128,
+   "i":22,
+   "p":"DQ4KDQsODg8=",
+   "s":123,
+   "t":"one",
+   "y":"word"
+  },
+  {
+   "e":8,
+   "i":1,
+   "s":5,
+   "t":"two",
+   "y":"word"
+  },
+  {
+   "e":22,
+   "i":1,
+   "s":20,
+   "t":"three",
+   "y":"foobar"
+  }
+ ]
+

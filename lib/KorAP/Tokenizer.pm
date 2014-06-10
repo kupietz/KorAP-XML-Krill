@@ -25,6 +25,9 @@ has log => sub {
   return $log;
 };
 
+warn('IMPLEMENT AGGRESSIVE TOKENIZATION (trennen mit [-\'\s])');
+warn('In the payload the position of the partial token has to be marked, '.
+       'so the voodoo operator can do its thing');
 
 # Parse tokens of the document
 sub parse {
@@ -193,7 +196,6 @@ sub add_spandata {
   return $spans;
 };
 
-
 # Add information to the tokens
 sub add_tokendata {
   my $self = shift;
@@ -244,6 +246,12 @@ sub add {
   my $loader = Mojo::Loader->new;
   my $foundry = shift;
   my $layer = shift;
+
+  unless ($foundry && $layer) {
+    warn 'Unable to add specific module - not enough information given!';
+    return;
+  };
+
   my $mod = 'KorAP::Index::' . $foundry . '::' . $layer;
 
   if ($mod->can('new') || eval("require $mod; 1;")) {
@@ -285,13 +293,21 @@ sub _perc {
 
 sub support {
   my $self = shift;
+
+  # No setting - just getting
   unless ($_[0]) {
     my @supports;
+
+    # Get all foundries
     foreach my $foundry (keys %{$self->{support}}) {
       push(@supports, $foundry);
+
+      # Get all layers
       foreach my $layer (@{$self->{support}->{$foundry}}) {
 	  my @layers = @$layer;
 	  push(@supports, $foundry . '/' . $layers[0]);
+
+	  # More information
 	  if ($layers[1]) {
 	      push(@supports, $foundry . '/' . join('/', @layers));
 	  };
@@ -309,6 +325,7 @@ sub support {
   $self->{support}->{$f} //= [];
   push(@{$self->{support}->{$f}}, [$l, @info]);
 };
+
 
 sub layer_info {
     my $self = shift;
@@ -336,17 +353,13 @@ sub to_string {
   $string .= '<field name="' . $self->name . "\">\n";
   $string .= "<info>\n";
   $string .= 'tokenization = ' . $self->foundry . '#' . $self->layer . "\n";
-  if ($self->support) {
-    foreach my $foundry (keys %{$self->support}) {
-      foreach (@{$self->support($foundry)}) {
-	$string .= 'support = ' . $foundry . '#' . join(',', @{$_}) . "\n";
-      };
-    };
+
+  # There is support info
+  if (my $support = $self->support) {
+    $string .= 'support = ' . $support . "\n";
   };
-  if ($self->layer_info) {
-    foreach my $layer_info (keys %{$self->layer_info}) {
-      $string .= 'layer_info = ' . $_ . "\n";
-    };
+  if (my $layer_info = $self->layer_info) {
+    $string .= 'layer_info = ' . $layer_info . "\n";
   };
 
   $string .= "</info>\n";

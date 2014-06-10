@@ -19,6 +19,7 @@ has 'log' => sub {
   return $log;
 };
 
+
 sub parse {
   my $self = shift;
   my $path = $self->path . $self->foundry . '/' . $self->layer . '.xml';

@@ -35,4 +35,9 @@ sub to_array {
   [ map { $_->to_array } @{$self->{mtt}} ];
 };
 
+sub to_solr {
+  my $self = shift;
+  [ map { $_->to_solr } @{$self->{mtt}} ];
+};
+
 1;
