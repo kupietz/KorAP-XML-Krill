@@ -147,8 +147,7 @@ sub add_subtokens {
     my $o_end = $mtt->o_end;
     my $l = $o_end - $o_start;
 
-    my $s = substr($mtt->lc_surface,2);
-    my $os = $s;
+    my $os = my $s = $mtt->lc_surface;
 
     # Algorithm based on aggressive tokenization in
     # tokenize.pl from Carsten Schnober
