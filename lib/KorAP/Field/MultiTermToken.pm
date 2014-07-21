@@ -26,11 +26,11 @@ sub add {
 
 
 sub surface {
-  $_[0]->{mt}->[0]->term;
+  substr($_[0]->{mt}->[0]->term,2);
 };
 
 sub lc_surface {
-  $_[0]->{mt}->[1]->term;
+  substr($_[0]->{mt}->[1]->term,2);
 };
 
 sub to_string {
