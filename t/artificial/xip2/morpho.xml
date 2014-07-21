@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer docid="A01_APR.13047" version="KorAP-0.4" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <spanList>
+    <span from="0" id="s2_n0" to="3">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">zu</f>
+            <f name="pos">PREP</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="4" id="s2_n2" to="11">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">letzt</f>
+            <f name="pos">ADJ</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="12" id="s2_n4" to="23">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">kulturell</f>
+             <f name="pos">ADJ</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="24" id="s2_n6" to="30">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Anlass</f>
+            <f name="pos">NOUN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="31" id="s2_n8" to="36">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">=laden</f>
+            <f name="pos">VERB</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="37" id="s2_n10" to="40">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">die</f>
+            <f name="pos">DET</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="41" id="s2_n12" to="48">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Leitung</f>
+            <f name="pos">NOUN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="49" id="s2_n14" to="52">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">der</f>
+            <f name="pos">DET</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="53" id="s2_n16" to="64">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">schulen#Heim</f>
+            <f name="pos">NOUN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="65" id="s2_n18" to="74">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Hofbergli</f>
+            <f name="pos">NOUN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="75" id="s2_n20" to="78">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">ein</f>
+            <f name="pos">PTCL</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="78" id="s2_n22" to="79">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">,</f>
+            <f name="pos">PUNCT</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="80" id="s2_n24" to="85">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">bevor</f>
+            <f name="pos">CONJ</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="86" id="s2_n26" to="89">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">der</f>
+            <f name="pos">DET</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="90" id="s2_n28" to="97">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Betrieb</f>
+            <f name="pos">NOUN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="98" id="s2_n30" to="102">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Ende</f>
+            <f name="pos">NOUN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="103" id="s2_n32" to="112">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">schulen#Jahr</f>
+            <f name="pos">NOUN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="113" id="s2_n34" to="124">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">ein=stellen</f>
+            <f name="pos">VERB</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="125" id="s2_n36" to="129">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">werden</f>
+            <f name="pos">VERB</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="129" id="s2_n38" to="130">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">.</f>
+            <f name="pos">PUNCT</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>
