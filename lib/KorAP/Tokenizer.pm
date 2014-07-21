@@ -148,7 +148,6 @@ sub add_subtokens {
     my $l = $o_end - $o_start;
 
     my $s = substr($mtt->lc_surface,2);
-    $s = 'einkaufs-zettel';
     my $os = $s;
 
     # Algorithm based on aggressive tokenization in
@@ -188,7 +187,7 @@ sub add_subtokens {
     };
   };
 
-  return 1;
+  return $self;
 };
 
 
