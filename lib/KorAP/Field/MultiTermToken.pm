@@ -24,6 +24,15 @@ sub add {
   return $mt;
 };
 
+
+sub surface {
+  $_[0]->{mt}->[0]->term;
+};
+
+sub lc_surface {
+  $_[0]->{mt}->[1]->term;
+};
+
 sub to_string {
   my $self = shift;
   my $string = '[(' . $self->o_start . '-'. $self->o_end . ')';

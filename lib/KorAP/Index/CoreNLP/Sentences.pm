@@ -1,17 +1,18 @@
-package KorAP::Index::Base::Paragraphs;
+package KorAP::Index::CoreNLP::Sentences;
 use KorAP::Index::Base;
 
 sub parse {
   my $self = shift;
   my $i = 0;
+
   $$self->add_spandata(
-    foundry => 'base',
-    layer => 'paragraph',
+    foundry => 'corenlp',
+    layer => 'sentences',
     cb => sub {
       my ($stream, $span) = @_;
       my $mtt = $stream->pos($span->p_start);
       $mtt->add(
-	term => '<>:base/s:p',
+	term => '<>:corenlp/s:s',
 	o_start => $span->o_start,
 	o_end => $span->o_end,
 	p_end => $span->p_end
@@ -20,11 +21,9 @@ sub parse {
     }
   ) or return;
 
-  $$self->stream->add_meta('base/paragraphs', '<i>' . $i);
+  $$self->stream->add_meta('corenlp/sentences', '<i>' . $i);
 
   return 1;
 };
-
-
 
 1;

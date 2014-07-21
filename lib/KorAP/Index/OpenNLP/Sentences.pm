@@ -12,7 +12,7 @@ sub parse {
       my ($stream, $span) = @_;
       my $mtt = $stream->pos($span->p_start);
       $mtt->add(
-	term => '<>:opennlp/s',
+	term => '<>:opennlp/s:s',
 	o_start => $span->o_start,
 	o_end => $span->o_end,
 	p_end => $span->p_end

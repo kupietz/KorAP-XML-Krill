@@ -98,7 +98,7 @@ sub parse {
     my $rel = $content->{rel};
 
     unless ($rel) {
-      warn $f->{-id} . ' has no relation';
+      warn $f->{-id} . ' has no relation' if $f->{-id};
       return;
     };
 
@@ -116,10 +116,9 @@ sub parse {
       next unless $target;
 
       my $subspan = delete $xip_const{$target};
-      unless ($subspan) {
-#	warn "Span " . $target . " not found";
-	return;
-      };
+      return unless $subspan;
+      #	warn "Span " . $target . " not found";
+
       $this->($subspan, $level + 1);
     };
   };

@@ -30,6 +30,10 @@ sub to_string {
   return join("\n" , map { $_->to_string } @{$self->{mtt}}) . "\n";
 };
 
+sub multi_term_tokens {
+  $_[0]->{mtt};
+};
+
 sub to_array {
   my $self = shift;
   [ map { $_->to_array } @{$self->{mtt}} ];

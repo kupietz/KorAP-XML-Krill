@@ -1,3 +1,7 @@
+0.2 2014-07-21
+        - Sentence annotations for all providing foundries
+	- Starting subtokenization
+
 0.1 2014-04-15
 	- [bugfix] for first token annotations
         - Sentences are now available from all foundries that have it

@@ -15,7 +15,7 @@ sub parse {
       my $mtt = $stream->pos($span->p_start);
       $first = [$span->p_start, $span->o_start] unless defined $first;
       $mtt->add(
-	term => '<>:base/s',
+	term => '<>:base/s:s',
 	o_start => $span->o_start,
 	o_end => $span->o_end,
 	p_end => $span->p_end
@@ -28,7 +28,7 @@ sub parse {
 
   my $mt = $$self->stream->pos($first->[0]);
   $mt->add(
-    term => '<>:base/text',
+    term => '<>:base/s:t',
     o_start => $first->[1],
     p_end => $last_p,
     o_end => $last_o

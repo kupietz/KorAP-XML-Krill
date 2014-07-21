@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><layer xmlns="http://ids-mannheim.de/ns/KorAP" docid="ART_00001" VERSION="KorAP-0.4">
 <spanList>
-  -43
       <span id="s_7" from="0" to="3"/>
       <span id="s_8" from="4" to="11"/>
       <span id="s_9" from="12" to="23"/>

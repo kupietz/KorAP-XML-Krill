@@ -5,10 +5,10 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-  NAME         => 'KorAP::Bundle',
+  NAME         => 'KorAP::Indexer',
   AUTHOR       => 'Nils Diewald',
   ABSTRACT     => 'Perl Implementation for Generating Multifoundry Lucene Indices',
-  VERSION_FROM => 'lib/KorAP/Bundle.pm',
+  VERSION_FROM => 'lib/KorAP/Indexer.pm',
   PREREQ_PM => {
     'Mojolicious'    => 4.51,
     'Packed::Array'  => 0.01,

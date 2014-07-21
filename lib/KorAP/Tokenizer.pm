@@ -25,10 +25,6 @@ has log => sub {
   return $log;
 };
 
-warn('IMPLEMENT AGGRESSIVE TOKENIZATION (trennen mit [-\'\s])');
-warn('In the payload the position of the partial token has to be marked, '.
-       'so the voodoo operator can do its thing');
-
 # Parse tokens of the document
 sub parse {
   my $self = shift;
@@ -103,6 +99,7 @@ sub parse {
       $range->gap($old, $from, $have) unless $old >= $from;
 
       # Add surface term
+      # That's always the first term!
       $mtt->add('s:' . $token);
 
       # Add case insensitive term
@@ -139,6 +136,59 @@ sub parse {
   $self->log->debug('With a non-word quota of ' . _perc($self->should, $self->should - $self->have) . ' %');
 
   return $self;
+};
+
+sub add_subtokens {
+  my $self = shift;
+  my $mtts = $self->stream or return;
+
+  foreach my $mtt (@{$mtts->multi_term_tokens}) {
+    my $o_start = $mtt->o_start;
+    my $o_end = $mtt->o_end;
+    my $l = $o_end - $o_start;
+
+    my $s = substr($mtt->lc_surface,2);
+    $s = 'einkaufs-zettel';
+    my $os = $s;
+
+    # Algorithm based on aggressive tokenization in
+    # tokenize.pl from Carsten Schnober
+    $s =~ s/[[:alpha:]]/a/g;
+    $s =~ s/[[:digit:]]/0/g;
+    $s =~ s/\p{Punct}/#/g;
+    $s =~ y/~/A/;
+    $s .= 'E';
+
+    while ($s =~ /(a+)[^a]/g) {
+      my $from = $-[1];
+      my $to = $+[1];
+      $mtt->add(
+	term => 'i^1:' . substr($os, $from, $from + $to),
+	o_start => $from + $o_start,
+	o_end => $to + $o_start
+      ) unless $to - $from == $l;
+    };
+    while ($s =~ /(0+)[^0]/g) {
+      my $from = $-[1];
+      my $to = $+[1];
+      $mtt->add(
+	term => 'i^2:' . substr($os, $from, $from + $to),
+	o_start => $from + $o_start,
+	o_end => $to + $o_start
+      ) unless $to - $from == $l;
+    };
+    while ($s =~ /(#)/g) {
+      my $from = $-[1];
+      my $to = $+[1];
+      $mtt->add(
+	term => 'i^3:' . substr($os, $from, $from + $to),
+	o_start => $from + $o_start,
+	o_end => $to + $o_start
+      ) unless $to - $from == $l;
+    };
+  };
+
+  return 1;
 };
 
 
@@ -490,6 +540,19 @@ The L<KorAP::Tokenizer::Match> object for converting token offsets to positions.
   $tokens->parse;
 
 Start the tokenization process.
+
+
+=head2 add_subtokens
+
+  $tokens->split_tokens;
+  $tokens->split_tokens(
+    sub {
+       ...
+    }
+  );
+
+Add sub token information to the index.
+This is based on the C<aggressive> tokenization, written by Carsten Schnober.
 
 
 =head2 add_spandata
