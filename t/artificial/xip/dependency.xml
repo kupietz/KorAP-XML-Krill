@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer docid="A01_APR.13047" version="KorAP-0.4" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <spanList> 
+    <span from="0" id="s2_n57" to="30">
+      <rel label="VMOD">
+        <span from="31" to="36" />
+      </rel>
+    </span>
+    <span from="4" id="s2_n2" to="11">
+      <rel label="NMOD">
+        <span from="24" to="30" />
+      </rel>
+    </span>
+    <span from="12" id="s2_n4" to="23">
+      <rel label="NMOD">
+        <span from="24" to="30" />
+      </rel>
+    </span>
+    <span from="31" id="s2_n8" to="36">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span from="37" id="s2_n10" to="40">
+      <rel label="DETERM">
+        <span from="41" to="48" />
+      </rel>
+    </span>
+    <span from="41" id="s2_n12" to="48">
+      <rel label="SUBJ">
+        <span from="31" to="36" />
+      </rel>
+    </span>
+    <span from="49" id="s2_n14" to="52">
+      <rel label="DETERM">
+        <span from="53" to="64" />
+      </rel>
+    </span>
+    <span from="53" id="s2_n16" to="64">
+      <rel label="NMOD">
+        <span from="41" to="48" />
+      </rel>
+    </span>
+    <span from="65" id="s2_n18" to="74">
+      <rel label="NMOD">
+        <span from="53" to="64" />
+      </rel>
+    </span>
+    <span from="75" id="s2_n20" to="78">
+      <rel label="VPREF">
+        <span from="31" to="36" />
+      </rel>
+    </span>
+    <span from="80" id="s2_n24" to="85">
+      <rel label="CONNECT">
+        <span from="113" to="124" />
+      </rel>
+    </span>
+    <span from="86" id="s2_n26" to="89">
+      <rel label="DETERM">
+        <span from="90" to="97" />
+      </rel>
+    </span>
+    <span from="90" id="s2_n28" to="97">
+      <rel label="SUBJ">
+        <span from="113" to="124" />
+      </rel>
+    </span>
+    <span from="98" id="s2_n30" to="102">
+      <rel label="OBJ">
+        <span from="113" to="124" />
+      </rel>
+    </span>
+    <span from="103" id="s2_n32" to="112">
+      <rel label="OBJ">
+        <span from="113" to="124" />
+      </rel>
+    </span>
+    <span from="113" id="s2_n34" to="124">
+      <rel label="AUXIL">
+        <span from="125" to="129" />
+      </rel>
+      <rel label="VMAIN" type="unary" />
+    </span>
+  </spanList>
+</layer>
