@@ -523,3 +523,53 @@ Run the parsing process of the document
 
 
 =cut
+
+
+Deal with:
+        <attribute name="info">
+          <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">kind of
+            information expressed by the given layer of annotation (there may, and often will, be
+            more than one)</documentation>
+          <list>
+            <oneOrMore>
+              <choice>
+                <value type="NCName">pos</value>
+                <value type="NCName">lemma</value>
+                <value type="NCName">msd</value>
+                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">'msd' is
+                  the traditional abbreviation for "morphosyntactic description", listing info on
+                  e.g. tense, person, case, etc.</documentation>
+                <value type="NCName">dep</value>
+                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">'dep' is
+                  information about types of relations, used in dependency-style annotations; it is
+                  an indication for the visualiser that word-to-word relationships should be
+                  displayed</documentation>
+                <value type="NCName">lbl</value>
+                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">'lbl'
+                  indicates the presence of labels over dependency relations</documentation>
+                <value type="NCName">const</value>
+                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">'const'
+                  stands for 'constituency' or hierarchical, tree-based annotations; it is an
+                  indication for the visualiser that it should display syntactic
+                  trees</documentation>
+                <value type="NCName">cat</value>
+                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">'cat' is
+                  used for syntactic categories, as separate from pos; note that these sets need not
+                  be disjoint (at the lexical level, they usually overlap), but the frontend prefers
+                  to keep them separate. 'cat' will be found in the context of chunking or
+                  hierarchical parsing and will characterise nodes; it may also be found in
+                  dependency annotations, to indicate labels on nodes, as opposed to labels on arcs
+                  (the latter are signalled by 'lbl')</documentation>
+                <value type="NCName">struct</value>
+                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">all
+                  non-linguistic information (headers, highlights, etc.)</documentation>
+                <value type="NCName">frag</value>
+                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"
+                  >non-exhaustive coverage (when spanList/@fragmented="true")</documentation>
+                <value type="NCName">ne</value>
+                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">named
+                  entities</documentation>
+              </choice>
+            </oneOrMore>
+          </list>
+        </attribute>
