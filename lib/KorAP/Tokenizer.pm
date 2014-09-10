@@ -14,6 +14,13 @@ use List::MoreUtils 'uniq';
 use JSON::XS;
 use Log::Log4perl;
 
+# Add punktuations to the index
+# [Er sagte: "Hallo - na?"] becomes
+# [s:Er|tt/l:er|_1#0-2]
+# [s:sagte|tt/l:sagen|_2#3-8|.>::#8-9$1|.>tt/l:PUNCT#8-9$1|.>:"#10-11$2|.>tt/l:PUNCT#10-11$2]
+# [s:Hallo|tt/l:hallo|_3#11-16|.<::#8-9$2|.<tt/l:PUNCT#8-9$2|.<:"#10-11$1|.<tt/l:PUNCT#10-11$1|.>:-#17-18$1|.>tt/l:PUNCT#17-18$1]
+# [s:na|tt/l:na|_4#19-21|.<:-#17-18$1|.<tt/l:PUNCT#17-18$1|.>:?#21-22$1|.>tt/l:PUNCT#21-22$1|.>:"#22-23$2|.>tt/l:PUNCT#22-23$2]
+
 has [qw/path foundry doc stream should have name/];
 has layer => 'Tokens';
 
