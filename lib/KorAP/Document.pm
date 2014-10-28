@@ -1,6 +1,5 @@
 package KorAP::Document;
 use Mojo::Base -base;
-use v5.16;
 use Mojo::ByteStream 'b';
 use Mojo::Util qw/encode/;
 use XML::Fast;
@@ -11,9 +10,11 @@ use Log::Log4perl;
 use KorAP::Log;
 use Mojo::DOM;
 use Data::Dumper;
+use File::Spec::Functions qw/catdir catfile splitdir/;
 
-our @ATTR = qw/id
-	       corpus_id
+our @ATTR = qw/text_sigle
+	       doc_sigle
+	       corpus_sigle
 	       pub_date
 	       title
 	       sub_title
@@ -21,13 +22,33 @@ our @ATTR = qw/id
 
 our @ADVANCED_ATTR = qw/publisher
 			editor
+
 			text_type
 			text_type_art
+			text_type_ref
+			text_column
+			text_domain
+
 			creation_date
+
+			license
+
+			pages
+
+			file_edition_statement
+			bibl_edition_statement
+
+			reference
+
+			language
+
 			coll_title
 			coll_sub_title
 			coll_author
 			coll_editor
+
+			corpus_title
+			corpus_sub_title
 			/;
 
 has 'path';
@@ -86,9 +107,10 @@ sub parse {
 
   # Get document id and corpus id
   if ($rt && $rt->{'-docid'}) {
-    $self->id($rt->{'-docid'});
-    if ($self->id =~ /^([^_]+)_/) {
-      $self->corpus_id($1);
+    $self->text_sigle($rt->{'-docid'});
+    if ($self->text_sigle =~ /^(([^_]+)_[^\._]+?)\.\d+$/) {
+      $self->corpus_sigle($2);
+      $self->doc_sigle($1);
     }
     else {
       croak $unable . ': ID not parseable';
@@ -107,8 +129,20 @@ sub parse {
     croak $unable;
   };
 
-  # Get meta data
-  $self->_parse_meta;
+  my @path = grep { $_ } splitdir($self->path);
+  my @header;
+
+  foreach (0..2) {
+    unshift @header, catfile(@path, 'header.xml');
+    pop @path;
+  };
+  my @type = qw/corpus doc text/;
+  foreach (@header) {
+    # Get corpus, doc and text meta data
+    my $type = shift(@type);
+    $self->_parse_meta($_, $type) if -e $_;
+  };
+
   return 1;
 };
 
@@ -138,30 +172,52 @@ sub text_class {
   return ($self->{topics} // []);
 };
 
+sub keywords {
+  my $self = shift;
+  if ($_[0]) {
+    return $self->{keywords} = [ @_ ];
+  };
+  return ($self->{keywords} // []);
+};
+
+
 sub _parse_meta {
   my $self = shift;
+  my $header_xml = shift;
+  my $type = shift;
 
-  my $file = b($self->path . 'header.xml')->slurp->decode('iso-8859-1');
+  my $file = b($header_xml)->slurp->decode('iso-8859-1');
 
   my $dom = Mojo::DOM->new($file);
+
   my $analytic = $dom->at('analytic');
 
+  # There is an analytic element
   if ($analytic) {
+
     # Get title
     my $title = $analytic->at('h\.title[type=main]');
-    $self->title($title->text) if $title;
 
     # Get Subtitle
     my $sub_title = $analytic->at('h\.title[type=sub]');
-    $self->sub_title($sub_title->text) if $sub_title;
 
     # Get Author
     my $author = $analytic->at('h\.author');
-    $self->author($author->all_text) if $author;
 
     # Get Editor
     my $editor = $analytic->at('editor');
+
+    if ($type eq 'text') {
+      $self->title($title->text) if $title;
+      $self->sub_title($sub_title->text) if $sub_title;
+    }
+    elsif ($type eq 'corpus') {
+      $self->corpus_title($title->text) if $title;
+      $self->corpus_sub_title($sub_title->text) if $sub_title;
+    };
+
     $self->editor($editor->all_text) if $editor;
+    $self->author($author->all_text) if $author;
   };
 
   # Get PubPlace
@@ -169,7 +225,7 @@ sub _parse_meta {
   $self->pub_place($place->all_text) if $place;
 
   # Get Publisher
-  my $publisher = $dom->at('publisher');
+  my $publisher = $dom->at('imprint publisher');
   $self->publisher($publisher->all_text) if $publisher;
 
   my $mono = $dom->at('monogr');
@@ -177,21 +233,25 @@ sub _parse_meta {
     # Get title
     my $title = $mono->at('h\.title[type=main]');
 
-    # It's a monograph
-    if (!$self->title) {
-      $self->title($title->text) if $title;
+    # Get Subtitle
+    my $sub_title = $mono->at('h\.title[type=sub]');
 
-      # Get Subtitle
-      my $sub_title = $mono->at('h\.title[type=sub]');
-      $self->sub_title($sub_title->text) if $sub_title;
-
+    if ($type eq 'corpus') {
+      $self->corpus_title($title->text) if $title;
+      $self->corpus_sub_title($sub_title->text) if $sub_title;
     }
-    else {
-      $self->coll_title($title->text) if $title;
 
-      # Get Subtitle
-      my $sub_title = $mono->at('h\.title[type=sub]');
-      $self->coll_sub_title($sub_title->text) if $sub_title;
+    # It's a monograph
+    elsif ($type eq 'text') {
+      if (!$self->title) {
+	$self->title($title->text) if $title;
+	$self->sub_title($sub_title->text) if $sub_title;
+      }
+      else {
+	# collTitle
+	$self->coll_title($title->text) if $title;
+	$self->coll_sub_title($sub_title->text) if $sub_title;
+      };
     };
 
     # Get Author
@@ -199,64 +259,134 @@ sub _parse_meta {
     $self->coll_author($author->all_text) if $author;
 
     # Get editor
-    my $editor = $mono->at('editor');
-    $self->coll_editor($editor->all_text) if $editor;
-  };
-
-  # Get text type
-  my $text_type = $dom->at('textDesc textType');
-  $self->text_type($text_type->all_text) if $text_type;
-
-  # Get text type
-  my $text_type_art = $dom->at('textDesc textTypeArt');
-  $self->text_type_art($text_type_art->all_text) if $text_type_art;
-
-
-  # Get pubDate
-  my $year = $dom->at("pubDate[type=year]");
-  $year = $year ? $year->text : 0;
-  my $month = $dom->at("pubDate[type=month]");
-  $month = $month ? $month->text : 0;
-  my $day = $dom->at("pubDate[type=day]");
-  $day = $day ? $day->text : 0;
-
-  $year = 0  if $year  !~ /^\d+$/;
-  $month = 0 if $month !~ /^\d+$/;
-  $day = 0   if $day   !~ /^\d+$/;
-
-  my $date = $year ? ($year < 100 ? '20' . $year : $year) : '0000';
-  $date .= length($month) == 1 ? '0' . $month : $month;
-  $date .= length($day) == 1 ? '0' . $day : $day;
-
-  $self->pub_date($date);
-
-  # creatDate
-  my $createdate = $dom->at('creatDate');
-  if ($createdate) {
-    $createdate = $createdate->all_text;
-    if (index($createdate, '-') > -1) {
-      $self->log->warn("Creation date ranges are not supported yet");
-    }
-    else {
-      $createdate =~ s{^(\d{4})$}{$1\.00};
-      $createdate =~ s{^(\d{4})\.(\d{2})$}{$1\.$2\.00};
-      if ($createdate =~ /^\d{4}\.\d{2}\.\d{2}$/) {
-	$createdate =~ tr/\.//d;
-	$self->creation_date($createdate);
+    if (my $editor = $mono->at('editor')) {
+      unless ($self->editor) {
+	$self->editor($editor->all_text);
       };
+      $self->coll_editor($editor->all_text);
     };
   };
 
-  # Get textClasses
-  my @topic;
-  $dom->find("textClass catRef")->each(
+  # Get text type
+  my $text_desc = $dom->at('textDesc');
+
+  if ($text_desc) {
+    my $text_type = $text_desc->at('textType');
+    $self->text_type($text_type->all_text) if $text_type;
+
+    # Get text domain
+    my $text_domain = $text_desc->at('textDomain');
+    $self->text_domain($text_domain->all_text) if $text_domain;
+
+    # Get text type art
+    my $text_type_art = $text_desc->at('textTypeArt');
+    $self->text_type_art($text_type_art->all_text) if $text_type_art;
+
+    # Get text type art
+    my $text_type_ref = $text_desc->at('textTypeRef');
+    $self->text_type_ref($text_type_ref->all_text) if $text_type_ref;
+  };
+
+  # Get pubDate
+  my $pub_date = $dom->find('pubDate[type=year]');
+  $pub_date->each(
     sub {
-      my ($ign, @ttopic) = split('\.', $_->attr('target'));
-      push(@topic, @ttopic);
+      my $x = shift->parent;
+      my $year = $x->at("pubDate[type=year]");
+      return unless $year;
+
+      $year = $year ? $year->text : 0;
+      my $month = $x->at("pubDate[type=month]");
+      $month = $month ? $month->text : 0;
+      my $day = $x->at("pubDate[type=day]");
+      $day = $day ? $day->text : 0;
+
+      $year = 0  if $year  !~ /^\d+$/;
+      $month = 0 if $month !~ /^\d+$/;
+      $day = 0   if $day   !~ /^\d+$/;
+
+      my $date = $year ? ($year < 100 ? '20' . $year : $year) : '0000';
+      $date .= length($month) == 1 ? '0' . $month : $month;
+      $date .= length($day) == 1 ? '0' . $day : $day;
+      $self->pub_date($date);
+    });
+
+  # creatDate
+  my $create_date = $dom->at('creatDate');
+  if ($create_date) {
+    $create_date = $create_date->all_text;
+    if (index($create_date, '-') > -1) {
+      $self->log->warn("Creation date ranges are not supported");
+      ($create_date) = split /\s*-\s*/, $create_date;
     }
-  );
-  $self->text_class(@topic);
+
+    $create_date =~ s{^(\d{4})$}{$1\.00};
+    $create_date =~ s{^(\d{4})\.(\d{2})$}{$1\.$2\.00};
+    if ($create_date =~ /^\d{4}\.\d{2}\.\d{2}$/) {
+      $create_date =~ tr/\.//d;
+      $self->creation_date($create_date);
+    };
+  };
+
+  my $text_class = $dom->at('textClass');
+  if ($text_class) {
+    # Get textClasses
+    my @topic;
+
+    $text_class->find("catRef")->each(
+      sub {
+	my ($ign, @ttopic) = split('\.', $_->attr('target'));
+	push(@topic, @ttopic);
+      }
+    );
+    $self->text_class(@topic) if @topic > 0;
+
+    my @keywords = $text_class->find("h\.keywords > keyTerm")->each;
+    $self->keywords(@keywords) if @keywords > 0;
+  };
+
+  if (my $edition_statement = $dom->at('biblFull editionStmt')) {
+    $self->bibl_edition_statement($edition_statement->all_text);
+  };
+
+  if (my $edition_statement = $dom->at('fileDescl editionStmt')) {
+    $self->file_edition_statement($edition_statement->all_text);
+  };
+
+  if (my $file_desc = $dom->at('fileDesc')) {
+    if (my $availability = $file_desc->at('publicationStmt > availability')) {
+      $self->license($availability->all_text);
+    };
+  };
+
+  if ($type eq 'corpus') {
+    if (my $language = $dom->at('profileDesc > langUsage > language[id]')) {
+      $self->language($language->attr('id'));
+    };
+  }
+
+  elsif ($type eq 'text') {
+
+    if (my $reference = $dom->at('sourceDesc reference[type=complete]')) {
+      if (my $ref_text = $reference->all_text) {
+	  $ref_text =~ s!^[a-zA-Z0-9]+\/[a-zA-Z0-9]+\.\d+\s+!!;
+	  $self->reference($ref_text);
+	};
+    };
+
+    my $column = $dom->at('textDesc > column');
+    $self->text_column($column->all_text) if $column;
+
+    if (my $pages = $dom->at('biblStruct biblScope[type="pp"]')) {
+      $pages = $pages->all_text;
+      if ($pages && $pages =~ m/(\d+)\s*-\s*(\d+)/) {
+	$self->pages($1 . '-' . $2);
+      };
+    };
+  }
 };
+
+
 
 sub to_string {
   my $self = shift;
@@ -299,11 +429,31 @@ sub _k {
 sub to_hash {
   my $self = shift;
 
-  $self->parse unless $self->id;
+  $self->parse unless $self->text_sigle;
 
   my %hash;
 
-  foreach (@ATTR) {
+  if ($self->editor &&
+	$self->coll_editor &&
+	  $self->editor eq $self->coll_editor) {
+    delete $self->{coll_editor};
+  };
+#  elsif (!$self->editor && $self->coll_editor) {
+#    $self->editor(delete $self->{coll_editor});
+#  };
+
+  if ($self->author &&
+	$self->coll_author &&
+	  join('',@{$self->author}) eq $self->coll_author) {
+    delete $self->{coll_author};
+  };
+
+#  elsif (!$self->{author} && $self->coll_author) {
+#    $self->author($self->coll_author);
+#    delete $self->{coll_author};
+#  };
+
+  foreach (@ATTR, @ADVANCED_ATTR) {
     if (my $att = $self->$_) {
       $att =~ s/\n/ /g;
       $att =~ s/\s\s+/ /g;
@@ -312,18 +462,22 @@ sub to_hash {
   };
 
   for ('author') {
-      $hash{_k($_)} = join(',', @{ $self->$_ });
+    my @array = @{ $self->$_ };
+    next unless @array;
+    $hash{_k($_)} = join(',', @array);
   };
 
-  for ('text_class') {
-      $hash{_k($_)} = join(' ', @{ $self->$_ });
+  for (qw/text_class keywords/) {
+    my @array = @{ $self->$_ };
+    next unless @array;
+    $hash{_k($_)} = join(' ', @array);
   };
 
   return \%hash;
 };
 
 
-
+# Don't work that well
 sub _parse_meta_fast {
   my $self = shift;
 
@@ -432,18 +586,26 @@ Parse the primary and meta data of a document.
 
 =head2 ATTRIBUTES
 
-=head2 id
+=head2 text_sigle
 
-  $doc->id(75476);
-  print $doc->id;
+  $doc->text_sigle(75476);
+  print $doc->text_sigle;
+
+The unique identifier of the text.
+
+
+=head2 doc_sigle
+
+  $doc->doc_sigle(75476);
+  print $doc->doc_sigle;
 
 The unique identifier of the document.
 
 
-=head2 corpus_id
+=head2 corpus_sigle
 
-  $doc->corpus_id(4);
-  print $doc->corpus_id;
+  $doc->corpus_sigle(4);
+  print $doc->corpus_sigle;
 
 The unique identifier of the corpus.
 

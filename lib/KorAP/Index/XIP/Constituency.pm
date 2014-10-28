@@ -2,7 +2,6 @@ package KorAP::Index::XIP::Constituency;
 use KorAP::Index::Base;
 use Set::Scalar;
 use Scalar::Util qw/weaken/;
-use v5.16;
 
 our $URI_RE = qr/^[^\#]+\#(.+?)$/;
 
@@ -57,7 +56,8 @@ sub parse {
   my $stream = $$self->stream;
 
   # Recursive tree traversal method
-  my $add_const = sub {
+  my $add_const;
+  $add_const= sub {
     my ($span, $level) = @_;
 
     weaken $xip_const_root;
@@ -93,7 +93,8 @@ sub parse {
 
     $mtt->add(%term);
 
-    my $this = __SUB__;
+    # my $this = __SUB__
+    my $this = $add_const;
 
     my $rel = $content->{rel};
 

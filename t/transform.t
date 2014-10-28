@@ -61,8 +61,8 @@ ok($doc->parse, 'Parse document');
 is($doc->title, 'A', 'title');
 ok(!$doc->sub_title, 'subTitle');
 
-is($doc->id, 'WPD_AAA.00001', 'ID');
-is($doc->corpus_id, 'WPD', 'corpusID');
+is($doc->text_sigle, 'WPD_AAA.00001', 'ID');
+is($doc->corpus_sigle, 'WPD', 'corpusID');
 is($doc->pub_date, '20050328', 'pubDate');
 is($doc->pub_place, 'URL:http://de.wikipedia.org', 'pubPlace');
 is($doc->text_class->[0], 'freizeit-unterhaltung', 'TextClass');
@@ -89,7 +89,7 @@ ok($tokens->parse, 'Parse');
 
 is($tokens->path, $path . '/', 'Path');
 is($tokens->foundry, 'OpenNLP', 'Foundry');
-is($tokens->doc->id, 'WPD_AAA.00001', 'Doc id');
+is($tokens->doc->text_sigle, 'WPD_AAA.00001', 'Doc id');
 is($tokens->should, 1068, 'Should');
 is($tokens->have, 923, 'Have');
 is($tokens->name, 'tokens', 'Name');
@@ -129,6 +129,8 @@ is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mat
 is($tokens->layer_info, 'cnx/c=const cnx/l=lemma cnx/m=msd cnx/p=pos mate/d=dep mate/l=lemma mate/m=msd mate/p=pos opennlp/p=pos tt/l=lemma tt/p=pos xip/c=const xip/d=dep xip/l=lemma xip/p=pos', 'Layer info');
 
 is($tokens->support, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/namedentities corenlp/namedentities corenlp/namedentities/ne_dewac_175m_600 corenlp/namedentities/ne_hgc_175m_600 corenlp/sentences mate mate/dependency mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/dependency xip/morpho xip/sentences', 'Support');
+
+
 
 
 # encode_json $tokens->stream->to_solr;
