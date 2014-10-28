@@ -182,13 +182,10 @@ if ($output) {
     $file = IO::File->new($output, "w");
   };
 
-#  binmode $file, ':utf8';
-
   $file->print($print_text);
   $file->close;
 }
 else {
-#  binmode STDOUT, ':utf8';
   print $print_text . "\n";
 };
 

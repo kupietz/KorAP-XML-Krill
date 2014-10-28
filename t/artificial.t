@@ -53,7 +53,7 @@ ok($tokens->parse, 'Parse');
 
 is($tokens->foundry, 'OpenNLP', 'Foundry');
 
-is($tokens->doc->id, 'ART_00001', 'Doc id');
+is($tokens->doc->text_sigle, 'ART_ABC.00001', 'Doc id');
 is($tokens->should, 20, 'Should');
 is($tokens->have, 18, 'Have');
 is($tokens->name, 'tokens', 'Name');
