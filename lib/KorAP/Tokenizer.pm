@@ -445,26 +445,45 @@ sub to_string {
 sub to_data {
   my $self = shift;
   my $primary = defined $_[0] ? $_[0] : 1;
+  my $legacy =  defined $_[1] ? $_[1] : 0;
+
   my %data = %{$self->doc->to_hash};
-
   my @fields;
-  push(@fields, { primaryData => $self->doc->primary->data }) if $primary;
 
-  push(@fields, {
-    name => $self->name,
-    data => $self->stream->to_array,
-    tokenization => lc($self->foundry) . '#' . lc($self->layer),
-    foundries => $self->support,
-    layerInfo => $self->layer_info
-  });
+  if ($legacy) {
+    push(@fields, { primaryData => $self->doc->primary->data }) if $primary;
 
-  $data{fields} = \@fields;
+    push(@fields, {
+      name => $self->name,
+      data => $self->stream->to_array,
+      tokenization => lc($self->foundry) . '#' . lc($self->layer),
+      foundries => $self->support,
+      layerInfo => $self->layer_info
+    });
+
+    $data{fields} = \@fields;
+  }
+
+  else {
+    $data{primaryData} = $self->doc->primary->data if $primary;
+    $data{tokenName}   = $self->name;
+    $data{data}        = $self->stream->to_array;
+    $data{tokenSource} = lc($self->foundry) . '#' . lc($self->layer);
+    $data{foundries}   = $self->support;
+    $data{layerInfos}  = $self->layer_info;
+    $data{version}     = '0.02';
+  };
+
   \%data;
 };
 
 
+sub to_json_legacy {
+  encode_json($_[0]->to_data($_[1], 1));
+};
+
 sub to_json {
-  encode_json($_[0]->to_data($_[1]));
+  encode_json($_[0]->to_data($_[1], 0));
 };
 
 
@@ -564,6 +583,25 @@ The L<KorAP::Tokenizer::Match> object for converting token offsets to positions.
   $tokens->parse;
 
 Start the tokenization process.
+
+
+=head2 to_json_legacy
+
+  print $tokens->to_json_legacy;
+  print $tokens->to_json_legacy(1);
+
+Return the token data in legacy JSON format.
+An optional parsed boolean parameter indicates,
+if primary data should be included.
+
+=head2 to_json
+
+  print $tokens->to_json;
+  print $tokens->to_json(1);
+
+Return the token data in JSON format
+An optional parsed boolean parameter indicates,
+if primary data should be included.
 
 
 =head2 add_subtokens

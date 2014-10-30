@@ -24,6 +24,12 @@ sub add {
   return $mt;
 };
 
+# Return a new term id
+sub id_counter {
+  $_[0]->{id_counter} //= 1;
+  return $_[0]->{id_counter}++;
+};
+
 
 sub surface {
   substr($_[0]->{mt}->[0]->term,2);
@@ -47,12 +53,14 @@ sub to_array {
   [uniq(map($_->to_string, @{$self->{mt}}))];
 };
 
+
 sub to_solr {
   my $self = shift;
   my @array = map { $_->to_solr(0) } @{$self->{mt}};
   $array[0]->{i} = 1;
   return \@array;
 };
+
 
 1;
 

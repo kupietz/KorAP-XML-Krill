@@ -9,10 +9,10 @@ use Log::Log4perl;
 use KorAP::Document;
 use KorAP::Tokenizer;
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 # Merges foundry data to create indexer friendly documents
-# ndiewald, 2013/11/05
+# ndiewald, 2014/10/29
 
 sub printhelp {
   print <<'EOHELP';

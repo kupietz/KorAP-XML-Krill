@@ -2,12 +2,12 @@ package KorAP::Index::CoreNLP::NamedEntities;
 use KorAP::Index::Base;
 
 sub parse {
-  my $self = shift;
-  my $model = shift;
+  my $self   = shift;
+  my $model  = shift;
 
   $$self->add_tokendata(
     foundry => 'corenlp',
-    layer => $model,
+    layer => $model // lc('NamedEntities'),
     cb => sub {
       my ($stream, $token) = @_;
       my $mtt = $stream->pos($token->pos);
@@ -21,12 +21,16 @@ sub parse {
 		($found->{-name} eq 'ent') &&
 		  ($found = $found->{'#text'})) {
 	$mtt->add(
-	  term => 'corenlp/' . $model . ':' . $found
+	  term => 'corenlp/ne:' . $found
 	);
       };
     }) or return;
 
   return 1;
+};
+
+sub layer_info {
+    ['corenlp/ne=tokens'];
 };
 
 1;

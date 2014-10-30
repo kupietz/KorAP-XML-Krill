@@ -28,7 +28,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['opennlp/p=pos'];
+    ['opennlp/p=tokens'];
 };
 
 1;

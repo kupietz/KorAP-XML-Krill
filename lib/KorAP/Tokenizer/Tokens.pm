@@ -13,9 +13,23 @@ has 'log' => sub {
 
 sub parse {
   my $self = shift;
+
   my $path = $self->path . $self->foundry . '/' . $self->layer . '.xml';
 
-  return unless -e $path;
+  # Legacy data support
+  unless (-e $path) {
+    if ($self->layer eq 'namedentities') {
+      $path = $self->path . $self->foundry . '/ne_combined.xml';
+      return unless -e $path;
+    }
+    elsif ($self->layer eq 'morpho' && $self->foundry eq 'glemm') {
+      $path = $self->path . $self->foundry . '/glemm.xml';
+      return unless -e $path;
+    }
+    else {
+      return;
+    };
+  };
 
   my $file = b($path)->slurp;
 

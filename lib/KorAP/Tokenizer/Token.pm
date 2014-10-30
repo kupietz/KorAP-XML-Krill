@@ -7,6 +7,7 @@ sub new {
   bless [], shift;
 };
 
+# get or set token position
 sub pos {
   if (defined $_[1]) {
     $_[0]->[0] = $_[1];
@@ -15,6 +16,7 @@ sub pos {
 };
 
 
+# Get or set token content
 sub content {
   if (defined $_[1]) {
     $_[0]->[1] = $_[1];
@@ -24,6 +26,8 @@ sub content {
   };
 };
 
+
+# Get or set token id
 sub id {
   if ($_[1]) {
     $_[0]->[2] = $_[1];
@@ -32,6 +36,7 @@ sub id {
     $_[0]->[2];
   };
 };
+
 
 sub dom {
   if ($_[0]->[3]) {
