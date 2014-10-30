@@ -18,7 +18,8 @@ sub parse {
 	term => '<>:base/s:s',
 	o_start => $span->o_start,
 	o_end => $span->o_end,
-	p_end => $span->p_end
+	p_end => $span->p_end,
+	payload => '<b>2'
       );
       $last_p = $span->p_end;
       $last_o = $span->o_end;
@@ -31,7 +32,8 @@ sub parse {
     term => '<>:base/s:t',
     o_start => $first->[1],
     p_end => $last_p,
-    o_end => $last_o
+    o_end => $last_o,
+    payload => '<b>0'
   );
 
   $$self->stream->add_meta('base/sentences', '<i>' . $i);

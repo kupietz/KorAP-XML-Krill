@@ -1,7 +1,6 @@
 package KorAP::Index::CoreNLP::Constituency;
 use KorAP::Index::Base;
 use Set::Scalar;
-use v5.16;
 
 sub parse {
   my $self = shift;
@@ -25,8 +24,14 @@ sub parse {
       $rel = [$rel] unless ref $rel eq 'ARRAY';
 
       foreach (@$rel) {
-	if ($_->{-label} eq 'dominates' && $_->{-target}) {
-	  $corenlp_const_noroot->insert($_->{-target});
+	if ($_->{-label} eq 'dominates') {
+	  if ($_->{-target}) {
+	    $corenlp_const_noroot->insert($_->{-target});
+	  }
+	  elsif (my $uri = $_->{-uri}) {
+	    $uri =~ s/^morpho\.xml#//;
+	    $corenlp_const_noroot->insert($uri);
+	  };
 	};
       };
     }
@@ -34,7 +39,8 @@ sub parse {
 
   my $stream = $$self->stream;
 
-  my $add_const = sub {
+  my $add_const;
+  $add_const = sub {
     my $span = shift;
     my $level = shift;
     my $mtt = $stream->pos($span->p_start);
@@ -53,11 +59,11 @@ sub parse {
       p_end => $span->p_end
     );
 
-    $term{payload} = '<b>' . $level if $level;
+    $term{payload} = '<b>' . ($level // 0);
 
     $mtt->add(%term);
 
-    my $this = __SUB__;
+    my $this = $add_const;
 
     my $rel = $content->{rel} or return;
     $rel = [$rel] unless ref $rel eq 'ARRAY';
@@ -79,7 +85,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['corenlp/c=const']
+    ['corenlp/c=spans']
 }
 
 1;

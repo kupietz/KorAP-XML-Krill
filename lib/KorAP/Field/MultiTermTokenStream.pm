@@ -34,6 +34,7 @@ sub multi_term_tokens {
   $_[0]->{mtt};
 };
 
+
 sub to_array {
   my $self = shift;
   [ map { $_->to_array } @{$self->{mtt}} ];
