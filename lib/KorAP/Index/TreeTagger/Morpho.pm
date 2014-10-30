@@ -22,11 +22,11 @@ sub parse {
 	$content = $fs->{fs}->{f};
 
 	my @val;
-	my $certainty = '';
+	my $certainty = 0;
 	foreach (@$content) {
 	  if ($_->{-name} eq 'certainty') {
 	    $certainty = floor(($_->{'#text'} * 255));
-	    $certainty = '$<b>' . $certainty if $certainty;
+	    $certainty = $certainty if $certainty;
 	  }
 	  else {
 	    push @val, $_
@@ -39,16 +39,20 @@ sub parse {
 		($found = $_->{'#text'}) &&
 		  ($found ne 'UNKNOWN') &&
 		    ($found ne '?')) {
-	    $mtt->add(
-	      term => 'tt/l:' . $found . $certainty
+	    my %term = (
+	      term => 'tt/l:' . $found
 	    );
+	    $term{payload} = '<b>' . $certainty if $certainty;
+	    $mtt->add(%term);
 	  };
 
 	  # pos
 	  if (($_->{-name} eq 'ctag') && ($found = $_->{'#text'})) {
-	    $mtt->add(
-	      term => 'tt/p:' . $found . $certainty
+	    my %term = (
+	      term => 'tt/p:' . $found
 	    );
+	    $term{payload} = '<b>' . $certainty if $certainty;
+	    $mtt->add(%term);
 	  };
 	};
       };

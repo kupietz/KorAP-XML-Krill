@@ -15,7 +15,8 @@ sub parse {
 	term => '<>:cnx/s:s',
 	o_start => $span->o_start,
 	o_end => $span->o_end,
-	p_end => $span->p_end
+	p_end => $span->p_end,
+	payload => '<b>2'
       );
       $i++;
     }

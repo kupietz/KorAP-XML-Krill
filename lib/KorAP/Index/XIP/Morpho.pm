@@ -60,7 +60,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['xip/l=lemma', 'xip/p=pos']
+    ['xip/l=tokens', 'xip/p=tokens']
 };
 
 

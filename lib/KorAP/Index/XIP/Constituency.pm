@@ -34,6 +34,7 @@ sub parse {
       my $rel = $span->hash->{rel} or return;
       $rel = [$rel] unless ref $rel eq 'ARRAY';
 
+      # Iterate over all relations
       foreach (@$rel) {
 	if ($_->{-label} eq 'dominates') {
 
@@ -43,6 +44,7 @@ sub parse {
 	    $target = $1;
 	  };
 
+	  # The target may not be addressable
 	  next unless $target;
 
 	  # It's definately not a root
@@ -57,7 +59,7 @@ sub parse {
 
   # Recursive tree traversal method
   my $add_const;
-  $add_const= sub {
+  $add_const = sub {
     my ($span, $level) = @_;
 
     weaken $xip_const_root;
@@ -68,6 +70,7 @@ sub parse {
 
     my $content = $span->hash;
     my $f = $content->{fs}->{f};
+
     unless ($f->{-name} eq 'const') {
       warn $f->{-id} . ' is no constant';
       return;
@@ -89,7 +92,7 @@ sub parse {
     );
 
     # Only add level payload if node != root
-    $term{payload} = '<b>' . $level if $level;
+    $term{payload} ='<b>' . ($level // 0);
 
     $mtt->add(%term);
 
@@ -141,7 +144,7 @@ sub parse {
 
 # Layer info
 sub layer_info {
-    ['xip/c=const']
-}
+  ['xip/c=spans']
+};
 
 1;
