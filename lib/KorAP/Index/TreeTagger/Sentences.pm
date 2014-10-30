@@ -26,4 +26,9 @@ sub parse {
   return 1;
 };
 
+sub layer_info {
+    ['tt/s=spans'];
+};
+
+
 1;

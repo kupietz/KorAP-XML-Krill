@@ -1,6 +1,24 @@
 package KorAP::Index::Connexor::Morpho;
 use KorAP::Index::Base;
 
+our %MAP = (
+  'v_ind'   => 'mood',
+  'v_imp'   => 'mood',
+  'v_sub'   => 'mood',
+  'v_fin'   => 'inf',
+  'v_pcp'   => 'inf',
+  'v_pres'  => 'tense',
+  'v_past'  => 'tense',
+  'v_prog'  => 'tense',
+  'v_perf'  => 'tense',
+  'n_abbr'  => 'type',
+  'n_prop'  => 'type',
+  'n_pl'    => 'type',
+  'a_cmp'   => 'degree',
+  'a_sub'   => 'degree',
+  'num_ord' => 'type'
+);
+
 sub parse {
   my $self = shift;
 
@@ -43,7 +61,8 @@ sub parse {
 
 	}
 	# MSD
-	# This could follow http://www.ids-mannheim.de/cosmas2/projekt/referenz/connexor/morph.html
+	# This could follow
+	# http://www.ids-mannheim.de/cosmas2/projekt/referenz/connexor/morph.html
 	elsif (($f->{-name} eq 'msd') && ($found = $f->{'#text'})) {
 	  foreach (split(':', $found)) {
 	    $mtt->add(
@@ -59,7 +78,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['cnx/l=lemma', 'cnx/p=pos', 'cnx/m=msd'];
+    ['cnx/l=tokens', 'cnx/p=tokens', 'cnx/m=tokens'];
 };
 
 

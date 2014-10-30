@@ -25,6 +25,10 @@ sub parse {
   return 1;
 };
 
+sub layer_info {
+    ['base/s=spans'];
+};
+
 
 
 1;

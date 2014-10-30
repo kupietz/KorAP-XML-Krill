@@ -32,7 +32,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['cnx/c=const'];
+    ['cnx/c=spans'];
 };
 
 

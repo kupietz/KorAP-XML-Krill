@@ -28,7 +28,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['corenlp/p=pos'];
+  ['corenlp/p=tokens'];
 };
 
 1;
