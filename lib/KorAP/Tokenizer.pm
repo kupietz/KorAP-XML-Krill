@@ -18,26 +18,14 @@ use Log::Log4perl;
 # Bei den Autoren im Index darauf achten, dass auch "etc." indiziert wird
 
 # TODO 2:
+# That's now implemented but deactivated
+
 # Add punktuations to the index
 # [Er sagte: "Hallo - na?"] becomes
 # [s:Er|tt/l:er|_1#0-2]
 # [s:sagte|tt/l:sagen|_2#3-8|.>::#8-9$1|.>tt/l:PUNCT#8-9$1|.>:"#10-11$2|.>tt/l:PUNCT#10-11$2]
-# [s:Hallo|tt/l:hallo|_3#11-16|.<::#8-9$2|.<tt/l:PUNCT#8-9$2|.<:"#10-11$1|.<tt/l:PUNCT#10-11$1|.>:-#17-18$1|.>tt/l:PUNCT#17-18$1]
+# [s:Hallo|tt/l:hallo|_3#11-16|.<::#8-9$2|.<tt/l:PUNCT#8-9$2|.<:"#10-11$1|.<:tt/l:PUNCT#10-11$1|.>:-#17-18$1|.>tt/l:PUNCT#17-18$1]
 # [s:na|tt/l:na|_4#19-21|.<:-#17-18$1|.<tt/l:PUNCT#17-18$1|.>:?#21-22$1|.>tt/l:PUNCT#21-22$1|.>:"#22-23$2|.>tt/l:PUNCT#22-23$2]
-
-# TODO 3:
-# Meta-Data:
-# mysql> select * from textMeta limit 5;
-# +---------------+------------+------------+-------+--------+------+---------+-------------------------------------------+--------+-------+-------+-----------------------+-------------+-------+-----------+---------+----+------+------+----+----+-----+------+------+-----------+---------+-------+---------+-------------+------------------------+
-# | sigle         | date       | fname      | fpos  | length | tlen | country | topic1                                    | topic2 | tpc1v | tpc2v | supertopic1           | supertopic2 | words | stopwords | numbers | s  | pars | tags | oo | no | ngc | sscr | cs   | has       | ressort | genre | type    | articletype | md5                    |
-# +---------------+------------+------------+-------+--------+------+---------+-------------------------------------------+--------+-------+-------+-----------------------+-------------+-------+-----------+---------+----+------+------+----+----+-----+------+------+-----------+---------+-------+---------+-------------+------------------------+
-# | A00/JAN.00001 | 2000-01-01 | a00.i5.xml | 12667 |   3131 |  641 | CH      | Freizeit_Unterhaltung:Reisen              | NULL   |  0.99 |     0 | Freizeit_Unterhaltung | NULL        |    34 |        24 |       0 |  6 |    1 |    5 |  0 |  0 |   0 |    0 |    0 | headlines | NULL    | NULL  | Zeitung | Bericht     | dk6ORWB5uTH33eiakNcJAA | 
-# | A00/JAN.00002 | 2000-01-01 | a00.i5.xml | 15798 |  11853 | 9267 | CH      | Staat_Gesellschaft:Biographien_Interviews | NULL   |     1 |     0 | Staat_Gesellschaft    | NULL        |   652 |       445 |      12 | 77 |   18 |   14 |  0 |  0 |   0 |    0 |    0 | headlines | NULL    | NULL  | Zeitung | Bericht     | m7phXF1Ds+aPq3GfLRddCw | 
-# | A00/JAN.00003 | 2000-01-01 | a00.i5.xml | 27651 |   4768 | 2234 | CH      | Politik:Kommunalpolitik                   | NULL   |     1 |     0 | Politik               | NULL        |   135 |        74 |       2 | 16 |    3 |    9 |  0 |  0 |   0 |    0 |    0 | headlines | NULL    | NULL  | Zeitung | Bericht     | XwsIDMEIT7ht52DnMTkSHw | 
-# | A00/JAN.00004 | 2000-01-01 | a00.i5.xml | 32419 |  11096 | 8619 | CH      | Politik:Kommunalpolitik                   | NULL   |     1 |     0 | Politik               | NULL        |   521 |       368 |       7 | 57 |    8 |   22 |  0 |  0 |   0 |    0 |    0 | headlines | NULL    | NULL  | Zeitung | Bericht     | TSx4mDVLU6XibNHUUT+ubA | 
-# | A00/JAN.00005 | 2000-01-01 | a00.i5.xml | 43515 |   5421 | 2875 | CH      | Politik:Kommunalpolitik                   | NULL   |     1 |     0 | Politik               | NULL        |   177 |        94 |       7 | 19 |    3 |   11 |  0 |  0 |   0 |    0 |    0 | headlines | NULL    | NULL  | Zeitung | Bericht     | 6OGZ7MqyjSOb9AtvFLWodA | 
-# +---------------+------------+------------+-------+--------+------+---------+-------------------------------------------+--------+-------+-------+-----------------------+-------------+-------+-----------+---------+----+------+------+----+----+-----+------+------+-----------+---------+-------+---------+-------------+------------------------+
-
 
 
 has [qw/path foundry doc stream should have name/];
@@ -102,6 +90,9 @@ sub parse {
   # $tokens->find('span')->each(
   #    sub {
   # my $span = $_;
+  my $mtt;
+  my $distance = 0;
+  my (@non_word_tokens);
   foreach my $span (@$tokens) {
       my $from = $span->{'-from'};
       my $to = $span->{'-to'};
@@ -117,9 +108,28 @@ sub parse {
       $should++;
 
       # Ignore non-word tokens
-      next if $token !~ /[\w\d]/;
+      if ($token !~ /[\w\d]/) {
+#	if ($mtt) {
+#	  my $term = [$token, $from, $to];
+#	  $mtt->add(
+#	    term => '.>:'.$token,
+#	    payload => '<i>'.$from . '<i>' . $to . '<b>' . $distance++
+#	  );
+#	  push(@non_word_tokens, $term);
+#	}
+	next;
+      };
 
-      my $mtt = $mtts->add;
+      $mtt = $mtts->add;
+
+#      while (scalar @non_word_tokens) {
+#	local $_ = shift @non_word_tokens;
+#	$mtt->add(
+#	  term => '.<:' . $_->[0],
+#	  payload => '<i>' . $_->[1] . '<i>' . $_->[2] . '<b>' . --$distance
+#	);
+#	$distance = 0;
+#      };
 
       # Add gap for later finding matching positions before or after
       $range->gap($old, $from, $have) unless $old >= $from;
@@ -150,7 +160,9 @@ sub parse {
   # Add token count
   $mtts->add_meta('tokens', '<i>' . $have);
 
-  $range->gap($old, $doc->primary->data_length + 1, $have-1) if $doc->primary->data_length >= ($old - 1);
+  if ($doc->primary->data_length >= ($old - 1)) {
+    $range->gap($old, $doc->primary->data_length + 1, $have-1)
+  };
 
   # Add info
   $self->stream($mtts);
@@ -164,6 +176,8 @@ sub parse {
   return $self;
 };
 
+
+# This is now done by glemm
 sub add_subtokens {
   my $self = shift;
   my $mtts = $self->stream or return;

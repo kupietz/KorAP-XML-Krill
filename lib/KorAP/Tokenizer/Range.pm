@@ -66,7 +66,8 @@ sub after {
     return $2;
   }
   else {
-    $found + 1;
+    # I am not sure about that ...
+    $found;
   };
 };
 
