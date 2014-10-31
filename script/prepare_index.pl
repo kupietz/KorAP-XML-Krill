@@ -129,9 +129,13 @@ push(@layers, ['OpenNLP', 'Morpho']);
 push(@layers, ['OpenNLP', 'Sentences']);
 
 # CoreNLP
-push(@layers, ['CoreNLP', 'NamedEntities', 'ne_dewac_175m_600']);
-push(@layers, ['CoreNLP', 'NamedEntities', 'ne_hgc_175m_600']);
+push(@layers, ['CoreNLP', 'NamedEntities']);
 push(@layers, ['CoreNLP', 'Sentences']);
+push(@layers, ['CoreNLP', 'Morpho']);
+push(@layers, ['CoreNLP', 'Constituency']);
+
+# Glemm
+push(@layers, ['Glemm', 'Morpho']);
 
 # Connexor
 push(@layers, ['Connexor', 'Morpho']);
@@ -145,13 +149,13 @@ push(@layers, ['TreeTagger', 'Sentences']);
 
 # Mate
 push(@layers, ['Mate', 'Morpho']);
-push(@layers, ['Mate', 'Dependency']);
+# push(@layers, ['Mate', 'Dependency']);
 
 # XIP
 push(@layers, ['XIP', 'Morpho']);
 push(@layers, ['XIP', 'Constituency']);
-push(@layers, ['XIP', 'Dependency']);
 push(@layers, ['XIP', 'Sentences']);
+# push(@layers, ['XIP', 'Dependency']);
 
 
 if ($skip{'#all'}) {
