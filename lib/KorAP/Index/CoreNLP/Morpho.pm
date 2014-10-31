@@ -12,9 +12,7 @@ sub parse {
       my $mtt = $stream->pos($token->pos);
 
       my $content = $token->hash->{fs}->{f} or return;
-
       $content = $content->{fs}->{f};
-      my $found;
 
       # syntax
       if (($content->{-name} eq 'pos') && ($content->{'#text'})) {

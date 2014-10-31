@@ -24,6 +24,7 @@ sub span {
   $span->o_end($to);
 
   my $start = $self->match->startswith($span->o_start);
+
   unless (defined $start) {
     $start = $self->range->after($span->o_start) or return;
   };
@@ -33,7 +34,8 @@ sub span {
   my $end = $self->match->endswith($span->o_end);
 
   unless (defined $end) {
-    $end = $self->range->before($span->o_end) or return;
+    $end = $self->range->before($span->o_end);
+    return unless $end;
   };
 
   # $span->p_end($end);

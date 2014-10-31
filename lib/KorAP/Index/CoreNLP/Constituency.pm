@@ -18,18 +18,24 @@ sub parse {
       my ($stream, $span) = @_;
 
       $corenlp_const{$span->id} = $span;
+
+      # Maybe root
       $corenlp_const_root->insert($span->id);
 
       my $rel = $span->hash->{rel} or return;
+
+      # Make rel an array in case it's not
       $rel = [$rel] unless ref $rel eq 'ARRAY';
 
       foreach (@$rel) {
 	if ($_->{-label} eq 'dominates') {
 	  if ($_->{-target}) {
+#	    warn $_->{-target} . ' is no root';
 	    $corenlp_const_noroot->insert($_->{-target});
 	  }
 	  elsif (my $uri = $_->{-uri}) {
 	    $uri =~ s/^morpho\.xml#//;
+#	    warn $uri . ' is no root';
 	    $corenlp_const_noroot->insert($uri);
 	  };
 	};
@@ -40,6 +46,7 @@ sub parse {
   my $stream = $$self->stream;
 
   my $add_const;
+
   $add_const = sub {
     my $span = shift;
     my $level = shift;
@@ -75,9 +82,16 @@ sub parse {
     };
   };
 
+  # Next run
   my $diff = $corenlp_const_root->difference($corenlp_const_noroot);
+
+  # Iterate over all roots
   foreach ($diff->members) {
+
+    # Get root span based on root id
     my $obj = delete $corenlp_const{$_} or next;
+
+    # Start on level 0
     $add_const->($obj, 0);
   };
 
