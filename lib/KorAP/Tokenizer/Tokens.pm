@@ -33,6 +33,13 @@ sub parse {
 
   my $file = b($path)->slurp;
 
+  # Bug workaround
+  if ($self->foundry eq 'glemm') {
+    if (index($file, "</span\n") > 0) {
+      $file =~ s!</span$!</span>!gm
+    };
+  };
+
 #  my $spans = Mojo::DOM->new($file);
 #  $spans->xml(1);
 

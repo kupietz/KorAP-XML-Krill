@@ -45,3 +45,4 @@ my $first_token = join('||', @{$output->{data}->[0]});
 #like($first_token, qr!<>:xip/s:s#0-179\$<i>21!, 'data');
 
 diag Dumper $output->{data}->[0];
+diag Dumper $output->{data}->[3];

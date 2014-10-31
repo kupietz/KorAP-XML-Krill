@@ -18,7 +18,8 @@ our @ATTR = qw/text_sigle
 	       pub_date
 	       title
 	       sub_title
-	       pub_place/;
+	       pub_place
+	       author/;
 
 our @ADVANCED_ATTR = qw/publisher
 			editor
@@ -152,17 +153,17 @@ sub primary {
   $_[0]->{pd};
 };
 
-sub author {
-  my $self = shift;
-
-  # Set authors
-  if ($_[0]) {
-    return $self->{authors} = [
-      grep { $_ !~ m{^\s*u\.a\.\s*$} } split(/;\s+/, shift())
-    ];
-  }
-  return ($self->{authors} // []);
-};
+#sub author {
+#  my $self = shift;
+#
+#  # Set authors
+#  if ($_[0]) {
+#    return $self->{authors} = [
+#      grep { $_ !~ m{^\s*u\.a\.\s*$} } split(/;\s+/, shift())
+#    ];
+#  }
+#  return ($self->{authors} // []);
+#};
 
 sub text_class {
   my $self = shift;
@@ -401,13 +402,13 @@ sub to_string {
     };
   };
 
-  if ($self->author) {
-    foreach (@{$self->author}) {
-      $_ =~ s/\n/ /g;
-      $_ =~ s/\s\s+/ /g;
-      $string .= 'author = ' . $_ . "\n";
-    };
-  };
+#  if ($self->author) {
+#    foreach (@{$self->author}) {
+#      $_ =~ s/\n/ /g;
+#      $_ =~ s/\s\s+/ /g;
+#      $string .= 'author = ' . $_ . "\n";
+#    };
+#  };
 
   if ($self->text_class) {
     foreach (@{$self->text_class}) {
@@ -444,7 +445,8 @@ sub to_hash {
 
   if ($self->author &&
 	$self->coll_author &&
-	  join('',@{$self->author}) eq $self->coll_author) {
+#	  join('',@{$self->author}) eq $self->coll_author) {
+	  $self->author eq $self->coll_author) {
     delete $self->{coll_author};
   };
 
@@ -461,11 +463,11 @@ sub to_hash {
     };
   };
 
-  for ('author') {
-    my @array = @{ $self->$_ };
-    next unless @array;
-    $hash{_k($_)} = join(',', @array);
-  };
+#  for ('author') {
+#    my @array = @{ $self->$_ };
+#    next unless @array;
+#    $hash{_k($_)} = join(',', @array);
+#  };
 
   for (qw/text_class keywords/) {
     my @array = @{ $self->$_ };

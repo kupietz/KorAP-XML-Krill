@@ -31,7 +31,7 @@ is($doc->corpus_sigle, 'GOE', 'Correct corpus sigle');
 
 is($doc->corpus_title, 'Goethes Werke', 'Correct Corpus title');
 is($doc->text_type, 'Autobiographie', 'Correct Text Type');
-is($doc->author->[0], 'Goethe, Johann Wolfgang von', 'Author');
+is($doc->author, 'Goethe, Johann Wolfgang von', 'Author');
 is($doc->reference . "\n", <<'REF', 'Author');
 Goethe, Johann Wolfgang von: Autobiographische Einzelheiten, (Geschrieben bis 1832), In: Goethe, Johann Wolfgang von: Goethes Werke, Bd. 10, Autobiographische Schriften II, Hrsg.: Trunz, Erich. München: Verlag C. H. Beck, 1982, S. 529-547
 REF
