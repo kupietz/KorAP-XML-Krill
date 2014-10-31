@@ -37,10 +37,10 @@ my $tokens = KorAP::Tokenizer->new(
 ok($tokens, 'Token Object is fine');
 ok($tokens->parse, 'Token parsing is fine');
 
-$tokens->add('XIP', 'Constituency');
+$tokens->add('CoreNLP', 'Constituency');
 my $output = decode_json( $tokens->to_json );
-is($output->{foundries}, 'xip xip/constituency', 'Foundries');
-is($output->{layerInfos}, 'xip/c=spans', 'layerInfos');
+is($output->{foundries}, 'corenlp corenlp/constituency', 'Foundries');
+is($output->{layerInfos}, 'corenlp/c=spans', 'layerInfos');
 my $first_token = join('||', @{$output->{data}->[0]});
 #like($first_token, qr!<>:xip/s:s#0-179\$<i>21!, 'data');
 
