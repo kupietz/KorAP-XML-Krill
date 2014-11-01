@@ -10,7 +10,7 @@ use Log::Log4perl;
 use KorAP::Log;
 use Mojo::DOM;
 use Data::Dumper;
-use File::Spec::Functions qw/catdir catfile splitdir/;
+use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 
 our @ATTR = qw/text_sigle
 	       doc_sigle
@@ -57,8 +57,11 @@ has log => sub {
 sub new {
   my $class = shift;
   my $self = bless { @_ }, $class;
-  if (exists $self->{path} && $self->{path} !~ m!\/$!) {
-    $self->{path} .= '/';
+  if (exists $self->{path}) {
+    $self->{path} = rel2abs($self->{path});
+    if ($self->{path} !~ m!\/$!) {
+      $self->{path} .= '/';
+    };
   };
   return $self;
 };
@@ -121,11 +124,11 @@ sub parse {
     croak $unable;
   };
 
-  my @path = splitdir($self->path);
+  my @path = grep { $_ } splitdir($self->path);
   my @header;
 
   foreach (0..2) {
-    unshift @header, catfile(@path, 'header.xml');
+    unshift @header, '/' . catfile(@path, 'header.xml');
     pop @path;
   };
   my @type = qw/corpus doc text/;

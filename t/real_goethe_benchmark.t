@@ -4,6 +4,7 @@
 use strict;
 use warnings;
 use Test::More;
+use Mojo::ByteStream 'b';
 
 use Benchmark qw/:hireswallclock/;
 
@@ -19,6 +20,7 @@ use_ok('KorAP::Document');
 
 # GOE/AGA/03828
 my $path = catdir(dirname(__FILE__), 'GOE/AGA/03828');
+# Todo: Test with absolute path!
 
 ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -50,18 +52,20 @@ ok($tokens->add('CoreNLP', 'Sentences'),     'Add corenlp sentences');
 ok($tokens->add('CoreNLP', 'Morpho'),        'Add corenlp morpho');
 ok($tokens->add('CoreNLP', 'Constituency'),  'Add corenlp constituency');
 ok($tokens->add('Glemm', 'Morpho'),          'Add glemm morpho');
-ok($tokens->add('Connexor', 'Sentences'),    'Add cnx sentences');
-ok($tokens->add('Connexor', 'Morpho'),       'Add cnx morpho');
-ok($tokens->add('Connexor', 'Phrase'),       'Add cnx phrase');
-ok($tokens->add('Connexor', 'Syntax'),       'Add cnx syntax');
+# t ok($tokens->add('Connexor', 'Sentences'),    'Add cnx sentences');
+# t ok($tokens->add('Connexor', 'Morpho'),       'Add cnx morpho');
+# t ok($tokens->add('Connexor', 'Phrase'),       'Add cnx phrase');
+# t ok($tokens->add('Connexor', 'Syntax'),       'Add cnx syntax');
 ok($tokens->add('Mate', 'Morpho'),           'Add mate morpho');
 # $tokens->add('Mate', 'Dependency');
-ok($tokens->add('XIP', 'Sentences'),         'Add xip sentences');
-ok($tokens->add('XIP', 'Morpho'),            'Add xip morpho');
-ok($tokens->add('XIP', 'Constituency'),      'Add xip constituency');
+# t ok($tokens->add('XIP', 'Sentences'),         'Add xip sentences');
+# t ok($tokens->add('XIP', 'Morpho'),            'Add xip morpho');
+# t ok($tokens->add('XIP', 'Constituency'),      'Add xip constituency');
 # $tokens->add('XIP', 'Dependency');
 ok($tokens->to_json, 'To json');
 
 is($tokens->doc->to_hash->{title}, 'Autobiographische Einzelheiten');
+
+b($tokens->to_json)->spurt('AGA.03828.json');
 
 diag timestr(timediff(Benchmark->new, $t));
