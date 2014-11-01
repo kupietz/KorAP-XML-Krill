@@ -479,13 +479,16 @@ sub to_data {
   }
 
   else {
-    $data{primaryData} = $self->doc->primary->data if $primary;
-    $data{tokenName}   = $self->name;
-    $data{data}        = $self->stream->to_array;
-    $data{tokenSource} = lc($self->foundry) . '#' . lc($self->layer);
-    $data{foundries}   = $self->support;
-    $data{layerInfos}  = $self->layer_info;
-    $data{version}     = '0.02';
+    my %tokens;
+    $tokens{text} = $self->doc->primary->data if $primary;
+    $tokens{name}   = $self->name;
+    $tokens{stream}        = $self->stream->to_array;
+    $tokens{tokenSource} = lc($self->foundry) . '#' . lc($self->layer);
+    $tokens{foundries}   = $self->support;
+    $tokens{layerInfos}  = $self->layer_info;
+
+    $data{data} = \%tokens;
+    $data{version} = '0.02';
   };
 
   \%data;
