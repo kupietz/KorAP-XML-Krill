@@ -23,31 +23,22 @@ our @ATTR = qw/text_sigle
 
 our @ADVANCED_ATTR = qw/publisher
 			editor
-
 			text_type
 			text_type_art
 			text_type_ref
 			text_column
 			text_domain
-
 			creation_date
-
 			license
-
 			pages
-
 			file_edition_statement
 			bibl_edition_statement
-
 			reference
-
 			language
-
 			coll_title
 			coll_sub_title
 			coll_author
 			coll_editor
-
 			corpus_title
 			corpus_sub_title
 			/;
@@ -130,7 +121,7 @@ sub parse {
     croak $unable;
   };
 
-  my @path = grep { $_ } splitdir($self->path);
+  my @path = splitdir($self->path);
   my @header;
 
   foreach (0..2) {
