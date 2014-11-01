@@ -21,6 +21,7 @@ use_ok('KorAP::Document');
 
 # GOE/AGA/03828
 my $path = catdir(dirname(__FILE__), 'GOE/AGA/03828');
+# my $path = '/home/ndiewald/Repositories/korap/KorAP-sandbox/KorAP-lucene-indexer/t/GOE/AGA/03828';
 
 ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
