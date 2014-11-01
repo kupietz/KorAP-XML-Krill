@@ -66,6 +66,6 @@ ok($tokens->to_json, 'To json');
 
 is($tokens->doc->to_hash->{title}, 'Autobiographische Einzelheiten');
 
-b($tokens->to_json)->spurt('AGA.03828.json');
+b($tokens->to_json)->spurt('AGA-03828.json');
 
 diag timestr(timediff(Benchmark->new, $t));
