@@ -2,7 +2,6 @@
 use strict;
 use warnings;
 use FindBin;
-use v5.16;
 use Getopt::Long;
 use Directory::Iterator;
 

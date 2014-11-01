@@ -12,7 +12,6 @@ my $t = Benchmark->new;
 use utf8;
 use lib 'lib', '../lib';
 
-
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
@@ -39,6 +38,7 @@ my $tokens = KorAP::Tokenizer->new(
 );
 ok($tokens, 'Token Object is fine');
 ok($tokens->parse, 'Token parsing is fine');
+
 ok($tokens->add('Base', 'Sentences'),        'Add base sentences');
 ok($tokens->add('Base', 'Paragraphs'),       'Add base paragraphs');
 ok($tokens->add('OpenNLP', 'Sentences'),     'Add opennlp sentences');
@@ -61,5 +61,7 @@ ok($tokens->add('XIP', 'Morpho'),            'Add xip morpho');
 ok($tokens->add('XIP', 'Constituency'),      'Add xip constituency');
 # $tokens->add('XIP', 'Dependency');
 ok($tokens->to_json, 'To json');
+
+is($tokens->doc->to_hash->{title}, 'Autobiographische Einzelheiten');
 
 diag timestr(timediff(Benchmark->new, $t));
