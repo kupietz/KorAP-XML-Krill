@@ -56,6 +56,8 @@ sub token {
 
   ($from, $to) = $self->_offset($from, $to);
 
+  return if !$to;
+  $from ||= 0;
   return unless $to > $from;
 
   my $pos = $self->match->lookup($from, $to);

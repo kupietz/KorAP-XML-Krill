@@ -1,3 +1,8 @@
+0.3 2014-11-03
+        - Added new metadata scheme.
+	- Fixed a minor bug in the constituency tree building.
+	- Sorted terms in tokens a priori.
+
 0.2 2014-07-21
         - Sentence annotations for all providing foundries
 	- Starting subtokenization 
