@@ -1,6 +1,5 @@
 package KorAP::Tokenizer::Tokens;
 use Mojo::Base 'KorAP::Tokenizer::Units';
-use Mojo::DOM;
 use Mojo::ByteStream 'b';
 use KorAP::Tokenizer::Token;
 use Carp qw/croak carp/;

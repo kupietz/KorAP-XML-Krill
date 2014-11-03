@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="WDD11_G27.38989">
+  <spanList>
+    <span id="s0" from="0" to="1">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">{</f>
+            <f name="pos"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="1">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">{</f>
+            <f name="pos"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s2" from="2" to="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">sein</f>
+            <f name="pos">V</f>
+            <f name="msd">IND:PAST</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s3" from="6" to="19">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">lösch kandidat</f>
+            <f name="pos">N</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s4" from="19" to="20">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">|</f>
+            <f name="pos"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s5" from="20" to="22">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">6.</f>
+            <f name="pos">NUM</f>
+            <f name="msd">ORD</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s6" from="23" to="27">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">juli</f>
+            <f name="pos">N</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s7" from="28" to="32">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">2007</f>
+            <f name="pos">NUM</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s8" from="32" to="33">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">|</f>
+            <f name="pos"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s9" from="33" to="34">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">(</f>
+            <f name="pos"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s10" from="34" to="37">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">erl</f>
+            <f name="pos">N</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s11" from="37" to="38">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">.</f>
+            <f name="pos"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s12" from="38" to="39">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">,</f>
+            <f name="pos"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s13" from="40" to="46">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">bleiben</f>
+            <f name="pos">V</f>
+            <f name="msd">IND:PRES</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s14" from="46" to="47">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">)</f>
+            <f name="pos"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s15" from="47" to="48">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">}</f>
+            <f name="pos"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s16" from="48" to="49">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">}</f>
+            <f name="pos"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

@@ -15,6 +15,7 @@ use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 our @ATTR = qw/text_sigle
 	       doc_sigle
 	       corpus_sigle
+
 	       pub_date
 	       title
 	       sub_title
@@ -35,13 +36,21 @@ our @ADVANCED_ATTR = qw/publisher
 			bibl_edition_statement
 			reference
 			language
-			coll_title
-			coll_sub_title
-			coll_author
-			coll_editor
+
+			doc_title
+			doc_sub_title
+			doc_editor
+			doc_author
+
+			corpus_author
 			corpus_title
 			corpus_sub_title
+			corpus_editor
 			/;
+
+# Removed:    coll_title, coll_sub_title, coll_author, coll_editor
+# Introduced: doc_title, doc_sub_title, corpus_editor, doc_editor, corpus_author, doc_author
+
 
 has 'path';
 has [@ATTR, @ADVANCED_ATTR];
@@ -190,75 +199,101 @@ sub _parse_meta {
   # There is an analytic element
   if ($analytic) {
 
-    # Get title
-    my $title = $analytic->at('h\.title[type=main]');
-
-    # Get Subtitle
+    # Get title, subtitle, author, editor
+    my $title     = $analytic->at('h\.title[type=main]');
     my $sub_title = $analytic->at('h\.title[type=sub]');
+    my $author    = $analytic->at('h\.author');
+    my $editor    = $analytic->at('editor');
 
-    # Get Author
-    my $author = $analytic->at('h\.author');
-
-    # Get Editor
-    my $editor = $analytic->at('editor');
+    $title     = $title     ? $title->all_text     : undef;
+    $sub_title = $sub_title ? $sub_title->all_text : undef;
+    $author    = $author    ? $author->all_text    : undef;
+    $editor    = $editor    ? $editor->all_text    : undef;
 
     if ($type eq 'text') {
-      $self->title($title->text) if $title;
-      $self->sub_title($sub_title->text) if $sub_title;
+      $self->title($title)         if $title;
+      $self->sub_title($sub_title) if $sub_title;
+      $self->editor($editor)       if $editor;
+      $self->author($author)       if $author;
+    }
+    elsif ($type eq 'doc') {
+      $self->doc_title($title)         if $title;
+      $self->doc_sub_title($sub_title) if $sub_title;
+      $self->doc_author($author)       if $author;
+      $self->doc_editor($editor)       if $editor;
     }
     elsif ($type eq 'corpus') {
-      $self->corpus_title($title->text) if $title;
-      $self->corpus_sub_title($sub_title->text) if $sub_title;
+      $self->corpus_title($title)         if $title;
+      $self->corpus_sub_title($sub_title) if $sub_title;
+      $self->corpus_author($author)       if $author;
+      $self->corpus_editor($editor)       if $editor;
     };
+  };
 
-    $self->editor($editor->all_text) if $editor;
-    $self->author($author->all_text) if $author;
+  # Not in analytic
+  if ($type eq 'corpus') {
+    if (my $title = $dom->at('fileDesc > titleStmt > c\.title')) {
+      $self->corpus_title($title->all_text) if $title->all_text;
+    };
+  }
+
+  # doc title
+  elsif ($type eq 'doc') {
+    if (my $title = $dom->at('fileDesc > titleStmt > d\.title')) {
+      $self->doc_title($title->all_text) if $title->all_text;
+    };
+  }
+
+  # text title
+  elsif ($type eq 'text') {
+    unless ($self->title) {
+      if (my $title = $dom->at('fileDesc > titleStmt > t\.title')) {
+	$self->title($title->all_text) if $title->all_text;
+      };
+    };
   };
 
   # Get PubPlace
-  my $place = $dom->at('pubPlace');
-  $self->pub_place($place->all_text) if $place;
+  if (my $place = $dom->at('pubPlace')) {
+    $self->pub_place($place->all_text) if $place->all_text;
+  };
 
   # Get Publisher
-  my $publisher = $dom->at('imprint publisher');
-  $self->publisher($publisher->all_text) if $publisher;
+  if (my $publisher = $dom->at('imprint publisher')) {
+    $self->publisher($publisher->all_text) if $publisher->all_text;
+  };
 
   my $mono = $dom->at('monogr');
   if ($mono) {
-    # Get title
-    my $title = $mono->at('h\.title[type=main]');
 
-    # Get Subtitle
+    # Get title, subtitle, author, editor
+    my $title     = $mono->at('h\.title[type=main]');
     my $sub_title = $mono->at('h\.title[type=sub]');
+    my $author    = $mono->at('h\.author');
+    my $editor    = $mono->at('editor');
 
-    if ($type eq 'corpus') {
-      $self->corpus_title($title->text) if $title;
-      $self->corpus_sub_title($sub_title->text) if $sub_title;
+    $title     = $title     ? $title->all_text     : undef;
+    $sub_title = $sub_title ? $sub_title->all_text : undef;
+    $author    = $author    ? $author->all_text    : undef;
+    $editor    = $editor    ? $editor->all_text    : undef;
+
+    if ($type eq 'text') {
+      $self->title($title)         if $title;
+      $self->sub_title($sub_title) if $sub_title;
+      $self->editor($editor)       if $editor;
+      $self->author($author)       if $author;
     }
-
-    # It's a monograph
-    elsif ($type eq 'text') {
-      if (!$self->title) {
-	$self->title($title->text) if $title;
-	$self->sub_title($sub_title->text) if $sub_title;
-      }
-      else {
-	# collTitle
-	$self->coll_title($title->text) if $title;
-	$self->coll_sub_title($sub_title->text) if $sub_title;
-      };
-    };
-
-    # Get Author
-    my $author = $mono->at('h\.author');
-    $self->coll_author($author->all_text) if $author;
-
-    # Get editor
-    if (my $editor = $mono->at('editor')) {
-      unless ($self->editor) {
-	$self->editor($editor->all_text);
-      };
-      $self->coll_editor($editor->all_text);
+    elsif ($type eq 'doc') {
+      $self->doc_title($title)         if $title;
+      $self->doc_sub_title($sub_title) if $sub_title;
+      $self->doc_author($author)       if $author;
+      $self->doc_editor($editor)       if $editor;
+    }
+    elsif ($type eq 'corpus') {
+      $self->corpus_title($title)         if $title;
+      $self->corpus_sub_title($sub_title) if $sub_title;
+      $self->corpus_author($author)       if $author;
+      $self->corpus_editor($editor)       if $editor;
     };
   };
 
@@ -266,20 +301,24 @@ sub _parse_meta {
   my $text_desc = $dom->at('textDesc');
 
   if ($text_desc) {
-    my $text_type = $text_desc->at('textType');
-    $self->text_type($text_type->all_text) if $text_type;
+    if (my $text_type = $text_desc->at('textType')) {
+      $self->text_type($text_type->all_text) if $text_type->all_text;
+    };
 
     # Get text domain
-    my $text_domain = $text_desc->at('textDomain');
-    $self->text_domain($text_domain->all_text) if $text_domain;
+    if (my $text_domain = $text_desc->at('textDomain')) {
+      $self->text_domain($text_domain->all_text) if $text_domain->all_text;
+    };
 
     # Get text type art
-    my $text_type_art = $text_desc->at('textTypeArt');
-    $self->text_type_art($text_type_art->all_text) if $text_type_art;
+    if (my $text_type_art = $text_desc->at('textTypeArt')) {
+      $self->text_type_art($text_type_art->all_text) if $text_type_art->all_text;
+    };
 
     # Get text type art
-    my $text_type_ref = $text_desc->at('textTypeRef');
-    $self->text_type_ref($text_type_ref->all_text) if $text_type_ref;
+    if (my $text_type_ref = $text_desc->at('textTypeRef')) {
+      $self->text_type_ref($text_type_ref->all_text) if $text_type_ref->all_text;
+    };
   };
 
   # Get pubDate
@@ -296,9 +335,9 @@ sub _parse_meta {
       my $day = $x->at("pubDate[type=day]");
       $day = $day ? $day->text : 0;
 
-      $year = 0  if $year  !~ /^\d+$/;
+      $year  = 0 if $year  !~ /^\d+$/;
       $month = 0 if $month !~ /^\d+$/;
-      $day = 0   if $day   !~ /^\d+$/;
+      $day   = 0 if $day   !~ /^\d+$/;
 
       my $date = $year ? ($year < 100 ? '20' . $year : $year) : '0000';
       $date .= length($month) == 1 ? '0' . $month : $month;
@@ -308,7 +347,7 @@ sub _parse_meta {
 
   # creatDate
   my $create_date = $dom->at('creatDate');
-  if ($create_date) {
+  if ($create_date && $create_date->text) {
     $create_date = $create_date->all_text;
     if (index($create_date, '-') > -1) {
       $self->log->warn("Creation date ranges are not supported");
@@ -341,11 +380,13 @@ sub _parse_meta {
   };
 
   if (my $edition_statement = $dom->at('biblFull editionStmt')) {
-    $self->bibl_edition_statement($edition_statement->all_text);
+    $self->bibl_edition_statement($edition_statement->all_text)
+      if $edition_statement->text;
   };
 
   if (my $edition_statement = $dom->at('fileDescl editionStmt')) {
-    $self->file_edition_statement($edition_statement->all_text);
+    $self->file_edition_statement($edition_statement->all_text)
+      if $edition_statement->text;
   };
 
   if (my $file_desc = $dom->at('fileDesc')) {
@@ -354,19 +395,21 @@ sub _parse_meta {
     };
   };
 
+  # Some meta data only available in the corpus
   if ($type eq 'corpus') {
     if (my $language = $dom->at('profileDesc > langUsage > language[id]')) {
       $self->language($language->attr('id'));
     };
   }
 
+  # Some meta data only reevant from the text
   elsif ($type eq 'text') {
 
     if (my $reference = $dom->at('sourceDesc reference[type=complete]')) {
       if (my $ref_text = $reference->all_text) {
-	  $ref_text =~ s!^[a-zA-Z0-9]+\/[a-zA-Z0-9]+\.\d+\s+!!;
-	  $self->reference($ref_text);
-	};
+	$ref_text =~ s!^[a-zA-Z0-9]+\/[a-zA-Z0-9]+\.\d+[\s:]\s*!!;
+	$self->reference($ref_text);
+      };
     };
 
     my $column = $dom->at('textDesc > column');
@@ -378,9 +421,8 @@ sub _parse_meta {
 	$self->pages($1 . '-' . $2);
       };
     };
-  }
+  };
 };
-
 
 
 sub to_string {
@@ -428,27 +470,6 @@ sub to_hash {
 
   my %hash;
 
-  if ($self->editor &&
-	$self->coll_editor &&
-	  $self->editor eq $self->coll_editor) {
-    delete $self->{coll_editor};
-  };
-#  elsif (!$self->editor && $self->coll_editor) {
-#    $self->editor(delete $self->{coll_editor});
-#  };
-
-  if ($self->author &&
-	$self->coll_author &&
-#	  join('',@{$self->author}) eq $self->coll_author) {
-	  $self->author eq $self->coll_author) {
-    delete $self->{coll_author};
-  };
-
-#  elsif (!$self->{author} && $self->coll_author) {
-#    $self->author($self->coll_author);
-#    delete $self->{coll_author};
-#  };
-
   foreach (@ATTR, @ADVANCED_ATTR) {
     if (my $att = $self->$_) {
       $att =~ s/\n/ /g;
@@ -456,12 +477,6 @@ sub to_hash {
       $hash{_k($_)} = $att;
     };
   };
-
-#  for ('author') {
-#    my @array = @{ $self->$_ };
-#    next unless @array;
-#    $hash{_k($_)} = join(',', @array);
-#  };
 
   for (qw/text_class keywords/) {
     my @array = @{ $self->$_ };
@@ -518,7 +533,6 @@ sub _parse_meta_fast {
   my $date = $bibl_struct->{monogr}->{imprint};
   my ($year, $month, $day) = (0,0,0);
   foreach (@$date) {
-    warn $date;
     if ($date->{-type} eq 'year') {
       $year = $date->{'#text'};
     }

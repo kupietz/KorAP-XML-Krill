@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>BZK/D59.00089</textSigle>
+            <t.title assemblage="regular">BZK/D59.00089 Neues Deutschland, 19.02.1959, S. 7, Ressort: POLITIK; Saragat-Partei zerfällt</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world">ACA-NC-LC</availability>
+            <pubDate/>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <h.title type="main">Saragat-Partei zerfällt</h.title>
+                <h.author/>
+                <imprint/>
+                <biblScope type="pp">S. 7</biblScope>
+                <biblScope type="suppl"/>
+                <biblScope type="suppltitle"/>
+                <biblNote n="1">Agentur: ADN</biblNote>
+              </analytic>
+              <monogr>
+                <h.title type="main"/>
+                <imprint>
+                  <pubDate type="year">1959</pubDate>
+                  <pubDate type="month">02</pubDate>
+                  <pubDate type="day">19</pubDate>
+                </imprint>
+                <biblScope type="issue"/>
+                <biblScope type="issueplace">Berliner Ausgabe</biblScope>
+              </monogr>
+            </biblStruct>
+            <reference type="complete" assemblage="regular">BZK/D59.00089 Neues Deutschland, [Tageszeitung], 19.02.1959, Jg. 14, Berliner Ausgabe, S. 7. - Sachgebiet: Politik, Originalressort: POLITIK; Saragat-Partei zerfällt</reference>
+            <reference type="short" assemblage="regular">BZK/D59.00089 Neues Deutschland, 19.02.1959, S. 7</reference>
+          </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+          <samplingDecl/>
+          <tagsDecl>
+            <tagUsage gi="s" occurs="6"/>
+            <tagUsage gi="name" occurs="4"/>
+          </tagsDecl>
+        </encodingDesc>
+        <profileDesc>
+          <creation>
+            <creatDate>1959.02.19</creatDate>
+          </creation>
+          <textClass>
+            <catRef n="0.99" target="topic.politik.ausland" scheme="topic"/>
+            <h.keywords>
+              <keyTerm/>
+            </h.keywords>
+          </textClass>
+          <textDesc>
+            <textTypeArt/>
+            <textDomain>Politik</textDomain>
+            <column>POLITIK</column>
+          </textDesc>
+        </profileDesc>
+      </idsHeader>

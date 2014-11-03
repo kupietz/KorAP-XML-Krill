@@ -268,16 +268,18 @@ sub add_spandata {
 
   my $spanarray = $spans->parse or return;
 
-  if ($spans->should == $spans->have) {
-    $self->log->trace('With perfect alignment!');
-  }
-  else {
-    $self->log->debug('With an alignment quota of ' . _perc($spans->should, $spans->have) . ' %');
+  if ($self->log->is_debug) {
+    if ($spans->should == $spans->have) {
+      $self->log->trace('With perfect alignment!');
+    }
+    else {
+      $self->log->debug('With an alignment quota of ' . _perc($spans->should, $spans->have) . ' %');
+    };
   };
 
   if ($cb) {
     foreach (@$spanarray) {
-      $cb->($self->stream, $_, $spans);
+      $cb->($self->stream, $_); #, $spans);
     };
     return 1;
   };
@@ -309,19 +311,21 @@ sub add_tokendata {
 
   my $tokenarray = $tokens->parse or return;
 
-  if ($tokens->should == $tokens->have) {
-    $self->log->trace('With perfect alignment!');
-  }
-  else {
-    my $perc = _perc(
-      $tokens->should, $tokens->have, $self->should, $self->should - $self->have
-    );
-    $self->log->debug('With an alignment quota of ' . $perc);
+  if ($self->log->is_debug) {
+    if ($tokens->should == $tokens->have) {
+      $self->log->trace('With perfect alignment!');
+    }
+    else {
+      my $perc = _perc(
+	$tokens->should, $tokens->have, $self->should, $self->should - $self->have
+      );
+      $self->log->debug('With an alignment quota of ' . $perc);
+    };
   };
 
   if ($cb) {
     foreach (@$tokenarray) {
-      $cb->($self->stream, $_, $tokens);
+      $cb->($self->stream, $_); #, $tokens);
     };
     return 1;
   };

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+
+    <idsHeader TEIform="teiHeader" pattern="text" status="new" type="document" version="1.1">
+      <fileDesc>
+        <titleStmt>
+          <dokumentSigle>BZK/D59</dokumentSigle>
+          <d.title>Neues Deutschland, Jahrgangsquerschnitt 1959</d.title>
+        </titleStmt>
+        <publicationStmt>
+          <distributor/>
+          <pubAddress/>
+          <availability region="world">ACA-NC-LC</availability>
+          <pubDate/>
+        </publicationStmt>
+        <sourceDesc>
+          <biblStruct>
+            <monogr>
+              <h.title type="main">Neues Deutschland</h.title>
+              <h.title type="sub">Organ des Zentralkomitees der Sozialistischen Einheitspartei Deutschlands</h.title>
+              <h.title level="m" type="abbr">Neues Deutschland</h.title>
+              <editor/>
+              <imprint>
+                <publisher/>
+                <pubPlace>Berlin</pubPlace>
+              </imprint>
+              <biblScope type="vol">14</biblScope>
+            </monogr>
+          </biblStruct>
+          <reference assemblage="regular" type="super">BZK/D59 Neues Deutschland. Organ des Zentralkomitees der Sozialistischen Einheitspartei Deutschlands, [Tageszeitung], Berlin; 1959, Jg. 14</reference>
+        </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+        <textDesc>
+          <textType>Zeitung: Tageszeitung</textType>
+          <textTypeRef>Tageszeitung</textTypeRef>
+        </textDesc>
+      </profileDesc>
+    </idsHeader>
