@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="WDD11_G27.38989">
+  <spanList>
+    <span id="s1_n4" from="2" to="5">
+      <rel label="VMAIN" type="unary" />
+    </span>
+    <span id="s1_n11" from="6" to="22">
+      <rel label="SUBJ">
+        <span from="2" to="5" />
+      </rel>
+    </span>
+    <span id="s2_n0" from="24" to="28">
+      <rel label="DATE" type="unary" />
+      <rel label="THEMA" type="unary" />
+    </span>
+    <span id="s2_n2" from="29" to="34">
+      <rel label="THEMA" type="unary" />
+    </span>
+  </spanList>
+</layer>

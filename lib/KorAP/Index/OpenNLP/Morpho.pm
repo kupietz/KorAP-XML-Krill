@@ -1,10 +1,9 @@
 package KorAP::Index::OpenNLP::Morpho;
 use KorAP::Index::Base;
+use Scalar::Util 'weaken';
 
 sub parse {
-  my $self = shift;
-
-  $$self->add_tokendata(
+  ${shift()}->add_tokendata(
     foundry => 'opennlp',
     layer => 'morpho',
     cb => sub {

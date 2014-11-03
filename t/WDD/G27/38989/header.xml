@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text"
+                    pattern="text"
+                    status="new"
+                    version="1.0"
+                    TEIform="teiHeader">
+            <fileDesc>
+               <titleStmt>
+                  <textSigle>WDD11/G27.38989</textSigle>
+                  <t.title assemblage="external">WDD11/G27.38989: Diskussion:Gunter A. Pilz, In: Wikipedia - URL:http://de.wikipedia.org/wiki/Diskussion:Gunter_A._Pilz: Wikipedia, 2011</t.title>
+               </titleStmt>
+               <editionStmt version="0"/>
+               <publicationStmt>
+                  <distributor/>
+                  <pubAddress/>
+                  <availability region="world">CC-BY-SA</availability>
+                  <pubDate/>
+               </publicationStmt>
+               <sourceDesc Default="n">
+                  <biblStruct Default="n">
+                     <analytic>
+                        <h.title type="main">Diskussion:Gunter A. Pilz</h.title>
+                        <h.title type="sub"/>
+                        <h.title type="abbr" level="m"/>
+                        <h.title type="abbr" level="a"/>
+                        <h.author>&euro;pa,  u.a.</h.author>
+                        <editor/>
+                        <imprint/>
+                        <biblScope type="subsume"/>
+                        <biblScope type="pp"/>
+                        <biblNote n="1"/>
+                     </analytic>
+                     <monogr>
+                        <h.title type="main"/>
+                        <editor>wikipedia.org</editor>
+                        <edition>
+                           <further>
+                    Dump file "dewiki-20111029-pages-meta-current.xml.bz2" 
+                    retrieved from http://dumps.wikimedia.org
+                  </further>
+                           <kind/>
+                           <appearance/>
+                        </edition>
+                        <imprint>
+                           <pubDate type="year">2011</pubDate>
+                           <pubDate type="month">10</pubDate>
+                           <pubDate type="day">29</pubDate>
+                        </imprint>
+                        <biblScope type="vol"/>
+                        <biblScope type="volume-title"/>
+                     </monogr>
+                  </biblStruct>
+                  <reference type="complete" assemblage="non-automatic">WDD11/G27.38989: Diskussion:Gunter A. Pilz, In: Wikipedia - URL:http://de.wikipedia.org/wiki/Diskussion:Gunter_A._Pilz: Wikipedia, 2007</reference>
+               </sourceDesc>
+            </fileDesc>
+            <encodingDesc>
+               <samplingDecl Default="n"/>
+               <editorialDecl Default="n">
+                  <pagination type="no"/>
+               </editorialDecl>
+               <tagsDecl>
+                  <tagUsage gi="list" occurs="0"/>
+                  <tagUsage gi="p" occurs="0"/>
+               </tagsDecl>
+            </encodingDesc>
+            <profileDesc>
+               <creation>
+                  <creatDate>2007.07.07</creatDate>
+                  <creatRef/>
+                  <creatRefShort/>
+               </creation>
+               <textDesc>
+                  <textDomain/>
+               </textDesc>
+            </profileDesc>
+         </idsHeader>

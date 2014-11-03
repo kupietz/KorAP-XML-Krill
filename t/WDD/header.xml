@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+
+  <idsHeader TEIform="teiHeader" pattern="allesaußerZtg/Zschr" status="new" type="corpus" version="1.0">
+    <fileDesc>
+      <titleStmt>
+        <korpusSigle>WDD11</korpusSigle>
+        <c.title>Wikipedia.de 2011 Diskussionen</c.title>
+      </titleStmt>
+      <editionStmt version="1.0"/>
+      <publicationStmt>
+        <distributor>Institut für Deutsche Sprache</distributor>
+        <pubAddress>Postfach 10 16 21, D-68016 Mannheim</pubAddress>
+        <telephone>+49 (0)621 1581 0</telephone>
+        <eAddress type="www">http://www.ids-mannheim.de</eAddress>
+        <eAddress type="www">http://www.ids-mannheim.de/kl/projekte/korpora/</eAddress>
+        <eAddress type="email">dereko@ids-mannheim.de</eAddress>
+        <availability region="world" status="restricted">
+            This document, the IDS-Wikipdia.de-Corpus, is part of the
+            Archive of General Reference Corpora at the IDS. 
+            It is published under the Creative Commons Attribution-ShareAlike License.
+            See http://creativecommons.org/licenses/by-sa/3.0/legalcode for details.
+            See http://www.ids-mannheim.de/kl/projekte/korpora/releases.html on how to refer to this document.
+          </availability>
+        <pubDate type="year">2012</pubDate>
+      </publicationStmt>
+      <sourceDesc Default="n">
+        <biblStruct Default="n">
+          <monogr>
+            <h.title type="main">Wikipedia</h.title>
+            <h.author/>
+            <editor>wikipedia.org</editor>
+            <edition>
+              <further>
+                  Dump file "dewiki-20111029-pages-meta-current.xml.bz2" 
+                  retrieved from http://dumps.wikimedia.org
+                </further>
+              <kind/>
+              <appearance/>
+            </edition>
+            <imprint>
+              <publisher>Wikipedia</publisher>
+              <pubPlace>URL:http://de.wikipedia.org</pubPlace>
+            </imprint>
+          </monogr>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc Default="n">
+          The XSLT stylesheets and other conversion routines that have produced this corpus were initially developed 
+          in a collaboration of the IDS-projects "EuroGr@mm" (http://www.ids-mannheim.de/gra/eurogr@mm.html),
+          "Ausbau und Pflege der Korpora geschriebener Gegenwartssprache" (http://www.ids-mannheim.de/kl/projekte/korpora)
+          and Stefanie Haupt.
+        </projectDesc>
+      <editorialDecl Default="n">
+        <conformance level="1">
+            This document conforms to IDS-XCES (see http://www.ids-mannheim.de/kl/projekte/korpora/idsxces.html)
+          </conformance>
+      </editorialDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language id="de" usage="100">Deutsch</language>
+      </langUsage>
+      <textDesc>
+        <textType>Diskussionen zu Enzyklopädie-Artikeln</textType>
+        <textTypeRef/>
+      </textDesc>
+    </profileDesc>
+  </idsHeader>

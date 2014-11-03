@@ -30,24 +30,44 @@ is($doc->text_sigle, 'GOE_AGA.03828', 'Correct text sigle');
 is($doc->doc_sigle, 'GOE_AGA', 'Correct document sigle');
 is($doc->corpus_sigle, 'GOE', 'Correct corpus sigle');
 
-is($doc->corpus_title, 'Goethes Werke', 'Correct Corpus title');
-is($doc->text_type, 'Autobiographie', 'Correct Text Type');
+is($doc->title, 'Autobiographische Einzelheiten', 'Title');
+is($doc->pub_place, 'München', 'PubPlace');
+is($doc->pub_date, '19820000', 'Creation Date');
+ok(!$doc->sub_title, 'SubTitle');
 is($doc->author, 'Goethe, Johann Wolfgang von', 'Author');
+
+is($doc->publisher, 'Verlag C. H. Beck', 'Publisher');
+ok(!$doc->editor, 'Publisher');
+is($doc->text_type, 'Autobiographie', 'Correct Text Type');
+ok(!$doc->text_type_art, 'Correct Text Type Art');
+ok(!$doc->text_type_ref, 'Correct Text Type Ref');
+ok(!$doc->text_column, 'Correct Text Column');
+ok(!$doc->text_domain, 'Correct Text Domain');
+is($doc->creation_date, '18200000', 'Creation Date');
+is($doc->license, 'QAO-NC', 'License');
+is($doc->pages, '529-547', 'Pages');
+ok(!$doc->file_edition_statement, 'File Ed Statement');
+ok(!$doc->bibl_edition_statement, 'Bibl Ed Statement');
 is($doc->reference . "\n", <<'REF', 'Author');
 Goethe, Johann Wolfgang von: Autobiographische Einzelheiten, (Geschrieben bis 1832), In: Goethe, Johann Wolfgang von: Goethes Werke, Bd. 10, Autobiographische Schriften II, Hrsg.: Trunz, Erich. München: Verlag C. H. Beck, 1982, S. 529-547
 REF
-is($doc->pub_place, 'München', 'PubPlace');
-is($doc->publisher, 'Verlag C. H. Beck', 'Publisher');
-is($doc->coll_editor, 'Trunz, Erich', 'Editor');
 is($doc->language, 'de', 'Language');
-is($doc->license, 'QAO-NC', 'License');
-is($doc->creation_date, '18200000', 'Creation Date');
-is($doc->pub_date, '19820000', 'Creation Date');
-is($doc->title, 'Autobiographische Einzelheiten', 'Title');
-is($doc->pages, '529-547', 'Pages');
+
+is($doc->corpus_title, 'Goethes Werke', 'Correct Corpus title');
+ok(!$doc->corpus_sub_title, 'Correct Corpus Sub title');
+is($doc->corpus_author, 'Goethe, Johann Wolfgang von', 'Correct Corpus author');
+is($doc->corpus_editor, 'Trunz, Erich', 'Correct Corpus editor');
+
+is($doc->doc_title, 'Goethe: Autobiographische Schriften II, (1817-1825, 1832)',
+   'Correct Doc title');
+ok(!$doc->doc_sub_title, 'Correct Doc Sub title');
+ok(!$doc->doc_author, 'Correct Doc author');
+ok(!$doc->doc_editor, 'Correct Doc editor');
+
 
 # Tokenization
 use_ok('KorAP::Tokenizer');
+
 
 my ($token_base_foundry, $token_base_layer) = (qw/OpenNLP Tokens/);
 
@@ -64,7 +84,6 @@ ok($tokens->parse, 'Token parsing is fine');
 
 my $output = decode_json( $tokens->to_json );
 
-
 is(substr($output->{data}->{text}, 0, 100), 'Autobiographische einzelheiten Selbstschilderung (1) immer tätiger, nach innen und außen fortwirkend', 'Primary Data');
 is($output->{data}->{name}, 'tokens', 'tokenName');
 is($output->{data}->{tokenSource}, 'opennlp#tokens', 'tokenSource');
@@ -77,22 +96,39 @@ is($output->{textSigle}, 'GOE_AGA.03828', 'Correct text sigle');
 is($output->{docSigle}, 'GOE_AGA', 'Correct document sigle');
 is($output->{corpusSigle}, 'GOE', 'Correct corpus sigle');
 
-is($output->{corpusTitle}, 'Goethes Werke', 'Correct Corpus title');
-is($output->{textType}, 'Autobiographie', 'Correct Text Type');
+
 is($output->{author}, 'Goethe, Johann Wolfgang von', 'Author');
+is($output->{pubPlace}, 'München', 'PubPlace');
+is($output->{pubDate}, '19820000', 'Creation Date');
+is($output->{title}, 'Autobiographische Einzelheiten', 'Title');
+ok(!exists $output->{subTitle}, 'subTitle');
+
+is($output->{publisher}, 'Verlag C. H. Beck', 'Publisher');
+ok(!exists $output->{editor}, 'Editor');
+is($output->{textType}, 'Autobiographie', 'Correct Text Type');
+ok(!exists $output->{textTypeArt}, 'Correct Text Type');
+ok(!exists $output->{textTypeRef}, 'Correct Text Type');
+ok(!exists $output->{textColumn}, 'Correct Text Type');
+ok(!exists $output->{textDomain}, 'Correct Text Type');
+is($output->{creationDate}, '18200000', 'Creation Date');
+is($output->{license}, 'QAO-NC', 'License');
+is($output->{pages}, '529-547', 'Pages');
+ok(!exists $output->{fileEditionStatement}, 'Correct Text Type');
+ok(!exists $output->{biblEditionStatement}, 'Correct Text Type');
 is($output->{reference} . "\n", <<'REF', 'Author');
 Goethe, Johann Wolfgang von: Autobiographische Einzelheiten, (Geschrieben bis 1832), In: Goethe, Johann Wolfgang von: Goethes Werke, Bd. 10, Autobiographische Schriften II, Hrsg.: Trunz, Erich. München: Verlag C. H. Beck, 1982, S. 529-547
 REF
-is($output->{pubPlace}, 'München', 'PubPlace');
-is($output->{publisher}, 'Verlag C. H. Beck', 'Publisher');
-is($output->{collEditor}, 'Trunz, Erich', 'Editor');
 is($output->{language}, 'de', 'Language');
-is($output->{license}, 'QAO-NC', 'License');
-is($output->{creationDate}, '18200000', 'Creation Date');
-is($output->{pubDate}, '19820000', 'Creation Date');
-is($output->{title}, 'Autobiographische Einzelheiten', 'Title');
-is($output->{pages}, '529-547', 'Pages');
 
+is($output->{corpusTitle}, 'Goethes Werke', 'Correct Corpus title');
+ok(!exists $output->{corpusSubTitle}, 'Correct Text Type');
+is($output->{corpusAuthor}, 'Goethe, Johann Wolfgang von', 'Correct Corpus title');
+is($output->{corpusEditor}, 'Trunz, Erich', 'Editor');
+
+is($output->{docTitle}, 'Goethe: Autobiographische Schriften II, (1817-1825, 1832)', 'Correct Corpus title');
+ok(!exists $output->{docSubTitle}, 'Correct Text Type');
+ok(!exists $output->{docAuthor}, 'Correct Text Type');
+ok(!exists $output->{docEditor}, 'Correct Text Type');
 
 ## Base
 $tokens->add('Base', 'Sentences');

@@ -6,6 +6,8 @@ has 'warn'  => sub {};
 has 'debug' => sub {};
 has 'trace' => sub {};
 
+has is_debug => 0;
+
 sub error {
   shift;
   carp(join ' ', @_);

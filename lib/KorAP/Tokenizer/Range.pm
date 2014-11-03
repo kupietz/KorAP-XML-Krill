@@ -3,6 +3,8 @@ use strict;
 use warnings;
 use Array::IntSpan;
 
+our $SPAN_RE = qr/!([-+]?\d+):([-+]?\d+)$/;
+
 sub new {
   my $class = shift;
   my $range = Array::IntSpan->new;
@@ -41,7 +43,7 @@ sub before {
 
   # Hit a gap,
   # return preceding match
-  if ($found =~ /!(\d+):(\d+)$/) {
+  if ($found =~ $SPAN_RE) {
     return $1 >= 0 ? $1 : 0;
   }
   else {
@@ -62,7 +64,7 @@ sub after {
     return;
   };
 
-  if ($found =~ /^!(\d+):(\d+)$/) {
+  if ($found =~ $SPAN_RE) {
     return $2;
   }
   else {

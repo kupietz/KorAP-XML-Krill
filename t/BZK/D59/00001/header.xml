@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>BZK/D59.00001</textSigle>
+            <t.title assemblage="regular">BZK/D59.00001 Neues Deutschland, 01.01.1959, S. 1, Ressort: POLITIK; Unser gemeinsames Werk wird siegreich sein</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world">ACA-NC-LC</availability>
+            <pubDate/>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <h.title type="main">Unser gemeinsames Werk wird siegreich sein</h.title>
+                <h.author/>
+                <imprint/>
+                <biblScope type="pp">S. 1</biblScope>
+                <biblScope type="suppl"/>
+                <biblScope type="suppltitle"/>
+                <biblNote n="1">Agentur: ND</biblNote>
+              </analytic>
+              <monogr>
+                <h.title type="main"/>
+                <imprint>
+                  <pubDate type="year">1959</pubDate>
+                  <pubDate type="month">01</pubDate>
+                  <pubDate type="day">01</pubDate>
+                </imprint>
+                <biblScope type="issue"/>
+                <biblScope type="issueplace">Berliner Ausgabe</biblScope>
+              </monogr>
+            </biblStruct>
+            <reference type="complete" assemblage="regular">BZK/D59.00001 Neues Deutschland, [Tageszeitung], 01.01.1959, Jg. 14, Berliner Ausgabe, S. 1. - Sachgebiet: Politik, Originalressort: POLITIK; Unser gemeinsames Werk wird siegreich sein</reference>
+            <reference type="short" assemblage="regular">BZK/D59.00001 Neues Deutschland, 01.01.1959, S. 1</reference>
+          </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+          <samplingDecl/>
+          <tagsDecl>
+            <tagUsage gi="ptr" occurs="2"/>
+            <tagUsage gi="note" occurs="1"/>
+            <tagUsage gi="figure" occurs="1"/>
+            <tagUsage gi="p" occurs="2"/>
+            <tagUsage gi="s" occurs="29"/>
+            <tagUsage gi="name" occurs="15"/>
+            <tagUsage gi="orig" occurs="1"/>
+          </tagsDecl>
+        </encodingDesc>
+        <profileDesc>
+          <creation>
+            <creatDate>1959.01.01</creatDate>
+          </creation>
+          <textClass>
+            <catRef n="1" target="topic.politik.ausland" scheme="topic"/>
+            <h.keywords>
+              <keyTerm/>
+            </h.keywords>
+          </textClass>
+          <textDesc>
+            <textTypeArt/>
+            <textDomain>Politik</textDomain>
+            <column>POLITIK</column>
+          </textDesc>
+        </profileDesc>
+      </idsHeader>

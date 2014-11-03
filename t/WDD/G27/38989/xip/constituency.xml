@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="WDD11_G27.38989">
+  <spanList>
+    <span id="s1_n10" from="0" to="23">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">TOP</f>
+      </fs>
+      <rel label="dominates" uri="morpho.xml#s1_n0" />
+      <rel label="dominates" uri="morpho.xml#s1_n2" />
+      <rel label="dominates" target="s1_n14" />
+      <rel label="dominates" uri="morpho.xml#s1_n8" />
+    </span>
+    <span id="s1_n0" from="0" to="1">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">PUNCT</f>
+      </fs>
+    </span>
+    <span id="s1_n2" from="1" to="2">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">PUNCT</f>
+      </fs>
+    </span>
+    <span id="s1_n14" from="2" to="22">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">MC</f>
+      </fs>
+      <rel label="dominates" uri="morpho.xml#s1_n4" />
+      <rel label="dominates" target="s1_n13" />
+    </span>
+    <span id="s1_n4" from="2" to="5">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">VERB</f>
+      </fs>
+    </span>
+    <span id="s1_n13" from="6" to="22">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">NP</f>
+      </fs>
+      <rel label="dominates" target="s1_n12" />
+    </span>
+    <span id="s1_n12" from="6" to="22">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">NPA</f>
+      </fs>
+      <rel label="dominates" target="s1_n11" />
+    </span>
+    <span id="s1_n11" from="6" to="22">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">NOUN</f>
+      </fs>
+      <rel label="dominates" uri="morpho.xml#s1_n6" />
+    </span>
+    <span id="s1_n6" from="6" to="22">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">SYMBOL</f>
+      </fs>
+    </span>
+    <span id="s1_n8" from="22" to="23">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">PUNCT</f>
+      </fs>
+    </span>
+    <span id="s2_n18" from="24" to="50">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">TOP</f>
+      </fs>
+      <rel label="dominates" target="s2_n23" />
+      <rel label="dominates" target="s2_n24" />
+      <rel label="dominates" target="s2_n26" />
+      <rel label="dominates" uri="morpho.xml#s2_n14" />
+      <rel label="dominates" uri="morpho.xml#s2_n16" />
+    </span>
+    <span id="s2_n23" from="24" to="28">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">NP</f>
+      </fs>
+      <rel label="dominates" target="s2_n21" />
+    </span>
+    <span id="s2_n21" from="24" to="28">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">NPA</f>
+      </fs>
+      <rel label="dominates" uri="morpho.xml#s2_n0" />
+    </span>
+    <span id="s2_n0" from="24" to="28">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">NOUN</f>
+      </fs>
+    </span>
+    <span id="s2_n24" from="29" to="34">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">NP</f>
+      </fs>
+      <rel label="dominates" target="s2_n22" />
+    </span>
+    <span id="s2_n22" from="29" to="34">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">NPA</f>
+      </fs>
+      <rel label="dominates" target="s2_n20" />
+    </span>
+    <span id="s2_n20" from="29" to="34">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">NUM</f>
+      </fs>
+      <rel label="dominates" uri="morpho.xml#s2_n2" />
+    </span>
+    <span id="s2_n2" from="29" to="34">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">NUM</f>
+      </fs>
+    </span>
+    <span id="s2_n26" from="34" to="48">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">INS</f>
+      </fs>
+      <rel label="dominates" uri="morpho.xml#s2_n4" />
+      <rel label="dominates" target="s2_n25" />
+      <rel label="dominates" uri="morpho.xml#s2_n8" />
+      <rel label="dominates" uri="morpho.xml#s2_n10" />
+      <rel label="dominates" uri="morpho.xml#s2_n12" />
+    </span>
+    <span id="s2_n4" from="34" to="35">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">PUNCT</f>
+      </fs>
+    </span>
+    <span id="s2_n25" from="35" to="39">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">NP</f>
+      </fs>
+      <rel label="dominates" target="s2_n19" />
+    </span>
+    <span id="s2_n19" from="35" to="39">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">AP</f>
+      </fs>
+      <rel label="dominates" uri="morpho.xml#s2_n6" />
+    </span>
+    <span id="s2_n6" from="35" to="39">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">ADJ</f>
+      </fs>
+    </span>
+    <span id="s2_n8" from="39" to="40">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">PUNCT</f>
+      </fs>
+    </span>
+    <span id="s2_n10" from="41" to="47">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">VERB</f>
+      </fs>
+    </span>
+    <span id="s2_n12" from="47" to="48">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">PUNCT</f>
+      </fs>
+    </span>
+    <span id="s2_n14" from="48" to="49">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">PUNCT</f>
+      </fs>
+    </span>
+    <span id="s2_n16" from="49" to="50">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="const">PUNCT</f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

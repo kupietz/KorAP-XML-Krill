@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" docid="BZK_D59.00001" version="KorAP-0.4">
+   <spanList>
+      <span id="s1_n34" from="81" to="104">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s1_n36" from="105" to="113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s1_n39" from="114" to="120">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s1_n60" from="144" to="167">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s1_n62" from="168" to="176">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s1_n67" from="178" to="185">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-PER</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s1_n69" from="186" to="191">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-PER</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s1_n98" from="266" to="275">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-MISC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s1_n116" from="308" to="331">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-MISC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s2_n13" from="367" to="378">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s4_n56" from="813" to="824">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s5_n46" from="1063" to="1066">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s5_n53" from="1075" to="1086">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s5_n80" from="1148" to="1151">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s5_n109" from="1209" to="1215">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s5_n111" from="1216" to="1226">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s9_n6" from="1777" to="1785">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-MISC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s10_n8" from="1871" to="1883">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s11_n32" from="2015" to="2031">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s11_n39" from="2053" to="2060">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-PER</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s12_n9" from="2091" to="2097">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-PER</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s12_n18" from="2113" to="2119">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-MISC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s13_n11" from="2208" to="2221">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-MISC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s14_n70" from="2449" to="2465">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s15_n8" from="2534" to="2540">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-MISC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s17_n17" from="2936" to="2951">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s17_n36" from="2991" to="3003">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-MISC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s19_n11" from="3241" to="3253">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-MISC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s19_n16" from="3257" to="3262">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s19_n35" from="3296" to="3311">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s19_n54" from="3350" to="3356">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s20_n44" from="3441" to="3457">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s21_n31" from="3535" to="3538">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s21_n41" from="3550" to="3559">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-MISC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s21_n48" from="3577" to="3587">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s21_n107" from="3742" to="3763">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-ORG</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s21_n109" from="3764" to="3772">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-ORG</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s23_n22" from="4004" to="4019">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-MISC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s23_n27" from="4023" to="4028">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-LOC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s23_n38" from="4048" to="4057">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
+            <f name="ne">
+               <fs>
+                  <f name="ent">I-MISC</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+   </spanList>
+</layer>

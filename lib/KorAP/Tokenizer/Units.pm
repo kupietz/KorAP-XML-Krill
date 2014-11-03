@@ -47,7 +47,7 @@ sub span {
 
   $span->hash($s) if $s;
 
-  return $span;
+  $span;
 };
 
 sub token {
@@ -55,6 +55,8 @@ sub token {
   my ($from, $to, $s) = @_;
 
   ($from, $to) = $self->_offset($from, $to);
+
+  return unless $to > $from;
 
   my $pos = $self->match->lookup($from, $to);
 
@@ -66,27 +68,27 @@ sub token {
 
   $token->hash($s) if $s;
 
-  return $token;
+  $token;
 };
 
 
 sub _offset {
   my $self = shift;
+  return @_ if ($self->encoding eq 'utf-8' || !$self->encoding);
+
   my ($from, $to) = @_;
 
-  if ($self->encoding) {
-    my $p = $self->primary;
-    if ($self->encoding eq 'bytes') {
-      $from = $p->bytes2chars($from);
-      $to = $p->bytes2chars($to);
-    }
-    elsif ($self->encoding eq 'xip') {
-      $from = $p->xip2chars($from);
-      $to = $p->xip2chars($to);
-    };
+  my $p = $self->primary;
+  if ($self->encoding eq 'bytes') {
+    $from = $p->bytes2chars($from);
+    $to = $p->bytes2chars($to);
+  }
+  elsif ($self->encoding eq 'xip') {
+    $from = $p->xip2chars($from);
+    $to = $p->xip2chars($to);
   };
 
-  return ($from, $to);
+  ($from, $to);
 };
 
 1;

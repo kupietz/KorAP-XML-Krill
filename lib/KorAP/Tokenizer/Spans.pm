@@ -25,7 +25,7 @@ sub parse {
   my $path = $self->path . $self->foundry . '/' . $self->layer . '.xml';
 
   unless (-e $path) {
-    $self->log->error('Unable to load file ' . $path);
+    $self->log->warn('Unable to load file ' . $path);
     return;
   };
 
