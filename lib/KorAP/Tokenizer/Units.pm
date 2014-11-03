@@ -14,6 +14,8 @@ sub span {
 
   ($from, $to) = $self->_offset($from, $to);
 
+  return if !$to;
+  $from ||= 0;
   return unless $to > $from;
 
   my $span = KorAP::Tokenizer::Span->new;
