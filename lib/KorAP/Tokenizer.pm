@@ -279,7 +279,8 @@ sub add_spandata {
 
   if ($cb) {
     foreach (@$spanarray) {
-      $cb->($self->stream, $_); #, $spans);
+      $cb->($self->stream, $_) if defined $_->p_start;
+      #, $spans);
     };
     return 1;
   };
@@ -325,7 +326,8 @@ sub add_tokendata {
 
   if ($cb) {
     foreach (@$tokenarray) {
-      $cb->($self->stream, $_); #, $tokens);
+      $cb->($self->stream, $_) if defined $_->pos;
+      #, $tokens);
     };
     return 1;
   };
