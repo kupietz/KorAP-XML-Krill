@@ -9,7 +9,7 @@ use Log::Log4perl;
 use KorAP::Document;
 use KorAP::Tokenizer;
 
-our $VERSION = 0.02;
+our $VERSION = 0.03;
 
 # Merges foundry data to create indexer friendly documents
 # ndiewald, 2014/10/29
@@ -25,6 +25,7 @@ prepare_index.pl -z --input <directory> --output <filename>
 --input|-i <directory>          Directory of the document to index
 --output|-o <filename>          Document name for output (optional),
                                 Writes to <STDOUT> by default
+--overwrite|-w                  Overwrite files that already exist
 --token|-t <foundry>[#<layer>]  Define the default tokenization by specifying
                                 the name of the foundry and optionally the name
                                 of the layer. Defaults to OpenNLP#tokens.
@@ -45,17 +46,19 @@ prepare_index.pl -z --input <directory> --output <filename>
 --log|-l                        The Log4perl log level, defaults to ERROR.
 --help|-h                       Print this document (optional)
 
-diewald@ids-mannheim.de, 2013/11/04
+diewald@ids-mannheim.de, 2014/11/05
 
 EOHELP
   exit(defined $_[0] ? $_[0] : 0);
 };
 
 # Options from the command line
-my ($input, $output, $text, $gzip, $log_level, @skip, $token_base, $primary, @allow, $pretty);
+my ($input, $output, $text, $gzip, $log_level, @skip, $token_base,
+    $primary, @allow, $pretty, $overwrite);
 GetOptions(
   'input|i=s'   => \$input,
   'output|o=s'  => \$output,
+  'overwrite|w' => \$overwrite,
   'human|m'     => \$text,
   'token|t=s'   => \$token_base,
   'gzip|z'      => \$gzip,
@@ -83,6 +86,12 @@ Log::Log4perl->init({
 
 my $log = Log::Log4perl->get_logger('main');
 
+# Ignore processing
+if (!$overwrite && $output && -e $output) {
+  $log->trace($output . ' already exists');
+  exit(0);
+};
+
 BEGIN {
   $main::TIME = Benchmark->new;
   $main::LAST_STOP = Benchmark->new;
@@ -103,7 +112,11 @@ sub stop_time {
 # Create and parse new document
 $input =~ s{([^/])$}{$1/};
 my $doc = KorAP::Document->new( path => $input );
-$doc->parse;
+
+unless ($doc->parse) {
+  $log->trace($output . " can't be processed");
+  exit(0);
+};
 
 my ($token_base_foundry, $token_base_layer) = (qw/OpenNLP Tokens/);
 if ($token_base) {
@@ -118,7 +131,12 @@ my $tokens = KorAP::Tokenizer->new(
   layer => $token_base_layer,
   name => 'tokens'
 );
-$tokens->parse;
+
+# Unable to process base tokenization
+unless ($tokens->parse) {
+  $log->trace($output . " can't be processed");
+  exit(0);
+};
 
 my @layers;
 push(@layers, ['Base', 'Sentences']);
@@ -176,9 +194,11 @@ else {
 
 my $file;
 
-my $print_text = $text ? $tokens->to_string($primary) : ($pretty ? $tokens->to_pretty_json($primary) : $tokens->to_json($primary));
+my $print_text = $text ? $tokens->to_string($primary) :
+  ($pretty ? $tokens->to_pretty_json($primary) : $tokens->to_json($primary));
 
 if ($output) {
+
   if ($gzip) {
     $file = IO::Compress::Gzip->new($output, Minimal => 1);
   }
@@ -189,6 +209,7 @@ if ($output) {
   $file->print($print_text);
   $file->close;
 }
+
 else {
   print $print_text . "\n";
 };
