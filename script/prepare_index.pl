@@ -114,7 +114,7 @@ $input =~ s{([^/])$}{$1/};
 my $doc = KorAP::Document->new( path => $input );
 
 unless ($doc->parse) {
-  $log->trace($output . " can't be processed");
+  $log->warn($output . " can't be processed - no document data");
   exit(0);
 };
 
@@ -134,7 +134,7 @@ my $tokens = KorAP::Tokenizer->new(
 
 # Unable to process base tokenization
 unless ($tokens->parse) {
-  $log->trace($output . " can't be processed");
+  $log->error($output . " can't be processed - no base tokenization");
   exit(0);
 };
 
