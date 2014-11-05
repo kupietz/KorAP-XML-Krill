@@ -22,6 +22,7 @@ sub add_meta {
 sub pos {
   my $self = shift;
   my $pos = shift;
+  return unless defined $pos;
   return $self->{mtt}->[$pos];
 };
 

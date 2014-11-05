@@ -46,6 +46,12 @@ sub parse {
   # Create new token stream
   my $mtts = KorAP::Field::MultiTermTokenStream->new;
   my $path = $self->path . lc($self->foundry) . '/' . lc($self->layer) . '.xml';
+
+  unless (-e $path) {
+    $self->log->warn('Unable to load base tokenization: ' . $path);
+    return;
+  };
+
   my $file = b($path)->slurp;
 #  my $tokens = Mojo::DOM->new($file);
 #  $tokens->xml(1);
