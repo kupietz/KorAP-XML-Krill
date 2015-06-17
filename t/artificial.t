@@ -16,7 +16,7 @@ use_ok('KorAP::Document');
 
 my $path = catdir(dirname(__FILE__), 'artificial');
 ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
-is($doc->path, $path . '/', 'Path');
+like($doc->path, qr!$path/$!, 'Path');
 ok($doc->parse, 'Parse document');
 
 sub new_tokenizer {
@@ -105,7 +105,11 @@ foreach (qw/APPRART ADJA ADJA NN VVFIN ART NN ART NN NE PTKVZ KOUS ART NN NN NN 
 # Add OpenNLP/sentences
 ok($tokens->add('OpenNLP', 'Sentences'), 'Add OpenNLP/Sentences');
 
-is($tokens->stream->pos(0)->to_string, '[(0-3)-:opennlp/sentences$<i>1|-:tokens$<i>18|_0#0-3|i:zum|s:Zum|opennlp/p:APPRART|<>:opennlp/s:s#0-129$<i>17]', 'Correct sentence');
+is($tokens->stream->pos(0)->to_string,
+   '[(0-3)-:opennlp/sentences$<i>1|-:tokens$<i>18|<>:opennlp/s:s#0-129$<i>17<b>0|_0#0-3|i:zum|opennlp/p:APPRART|s:Zum]',
+#   '[(0-3)-:opennlp/sentences$<i>1|-:tokens$<i>18|_0#0-3|i:zum|s:Zum|opennlp/p:APPRART|<>:opennlp/s:s#0-129$<i>17]',
+   'Correct sentence'
+ );
 
 # New instantiation
 ok($tokens = KorAP::Tokenizer->new(
@@ -125,9 +129,9 @@ ok($tokens->add('Base', 'Sentences'), 'Add Base/Sentences');
 ok($tokens->add('Base', 'Paragraphs'), 'Add Base/Paragraphs');
 
 is($tokens->stream->pos(0)->to_string,
-   '[(0-3)-:base/paragraphs$<i>0|-:base/sentences$<i>1|-:tokens$<i>18|_0#0-3|i:zum|s:Zum|<>:base/s:t#0-129$<i>17<b>0|<>:base/s:s#0-129$<i>17<b>0]',
+   '[(0-3)-:base/paragraphs$<i>0|-:base/sentences$<i>1|-:tokens$<i>18|<>:base/s:t#0-129$<i>17<b>0|<>:base/s:s#0-129$<i>17<b>2|_0#0-3|i:zum|s:Zum]',
+#   '[(0-3)-:base/paragraphs$<i>0|-:base/sentences$<i>1|-:tokens$<i>18|_0#0-3|i:zum|s:Zum|<>:base/s:t#0-129$<i>17<b>0|<>:base/s:s#0-129$<i>17<b>0]',
    'Correct base annotation');
-
 
 # New instantiation
 ok($tokens = new_tokenizer->parse, 'Parse');
@@ -148,7 +152,8 @@ ok($tokens = new_tokenizer->parse, 'Parse');
 ok($tokens->add('CoreNLP', 'Morpho'), 'Add CoreNLP/Morpho');
 
 is($tokens->stream->pos(0)->to_string,
-   '[(0-3)-:tokens$<i>18|_0#0-3|i:zum|s:Zum|corenlp/p:APPRART]',
+   '[(0-3)-:tokens$<i>18|_0#0-3|corenlp/p:APPRART|i:zum|s:Zum]',
+#   '[(0-3)-:tokens$<i>18|_0#0-3|i:zum|s:Zum|corenlp/p:APPRART]',
    'Correct corenlp annotation');
 
 $i = 0;
@@ -158,12 +163,16 @@ foreach (qw/APPRART ADJ ADJA NN VVFIN ART NN ART NN NE PTKVZ KOUS ART NN NN NN V
        'Annotation (CoreNLP/p) is correct: '. $_);
 };
 
+
+
 # Add CoreNLP/Sentences
 ok($tokens->add('CoreNLP', 'Sentences'), 'Add CoreNLP/Sentences');
 
 is($tokens->stream->pos(0)->to_string,
-   '[(0-3)-:corenlp/sentences$<i>1|-:tokens$<i>18|_0#0-3|i:zum|s:Zum|corenlp/p:APPRART|<>:corenlp/s:s#0-129$<i>17]',
+   '[(0-3)-:corenlp/sentences$<i>1|-:tokens$<i>18|<>:corenlp/s:s#0-129$<i>17<b>0|_0#0-3|corenlp/p:APPRART|i:zum|s:Zum]',
+#   '[(0-3)-:corenlp/sentences$<i>1|-:tokens$<i>18|_0#0-3|i:zum|s:Zum|corenlp/p:APPRART|<>:corenlp/s:s#0-129$<i>17]',
    'Correct corenlp annotation');
+
 
 # New instantiation
 ok($tokens = new_tokenizer->parse, 'New Tokenizer');
@@ -172,7 +181,8 @@ ok($tokens = new_tokenizer->parse, 'New Tokenizer');
 ok($tokens->add('Connexor', 'Sentences'), 'Add Connexor/Sentences');
 
 is($tokens->stream->pos(0)->to_string,
-   '[(0-3)-:cnx/sentences$<i>1|-:tokens$<i>18|_0#0-3|i:zum|s:Zum|<>:cnx/s:s#0-129$<i>17<b>0]',
+   '[(0-3)-:cnx/sentences$<i>1|-:tokens$<i>18|<>:cnx/s:s#0-129$<i>17<b>0|_0#0-3|i:zum|s:Zum]',
+   #   '[(0-3)-:cnx/sentences$<i>1|-:tokens$<i>18|_0#0-3|i:zum|s:Zum|<>:cnx/s:s#0-129$<i>17<b>0]',
    'Correct cnx annotation');
 
 # New instantiation
@@ -213,10 +223,10 @@ ok($tokens = new_tokenizer->parse, 'New Tokenizer');
 # Add Connexor/Phrase
 ok($tokens->add('Connexor', 'Phrase'), 'Add Connexor/Phrase');
 my $stream = $tokens->stream;
-like($stream->pos(1)->to_string, qr!\|<>:cnx/c:np#4-30\$<i>4<b>0!, 'Annotation (Connexor/c) is correct');
-like($stream->pos(6)->to_string, qr!\|<>:cnx/c:np#40-47\$<i>7<b>0!, 'Annotation (Connexor/c) is correct');
-like($stream->pos(8)->to_string, qr!\|<>:cnx/c:np#52-73\$<i>10<b>0!, 'Annotation (Connexor/c) is correct');
-like($stream->pos(13)->to_string, qr!\|<>:cnx/c:np#89-111\$<i>16<b>0!, 'Annotation (Connexor/c) is correct');
+like($stream->pos(1)->to_string, qr!<>:cnx/c:np#4-30\$<i>4<b>0!, 'Annotation (Connexor/c) is correct');
+like($stream->pos(6)->to_string, qr!<>:cnx/c:np#40-47\$<i>7<b>0!, 'Annotation (Connexor/c) is correct');
+like($stream->pos(8)->to_string, qr!<>:cnx/c:np#52-73\$<i>10<b>0!, 'Annotation (Connexor/c) is correct');
+like($stream->pos(13)->to_string, qr!<>:cnx/c:np#89-111\$<i>16<b>0!, 'Annotation (Connexor/c) is correct');
 
 # New instantiation
 ok($tokens = new_tokenizer->parse, 'New Tokenizer');
@@ -243,7 +253,11 @@ ok($tokens = new_tokenizer->parse, 'New Tokenizer');
 # Add XIP/Sentences
 ok($tokens->add('XIP', 'Sentences'), 'Add XIP/Sentences');
 
-is($tokens->stream->pos(0)->to_string, '[(0-3)-:tokens$<i>18|_0#0-3|i:zum|s:Zum|-:xip/sentences$<i>1|<>:xip/s:s#0-129$<i>17<b>0]', 'First sentence');
+is($tokens->stream->pos(0)->to_string,
+   '[(0-3)-:tokens$<i>18|-:xip/sentences$<i>1|<>:xip/s:s#0-129$<i>17<b>0|_0#0-3|i:zum|s:Zum]',
+#   '[(0-3)-:tokens$<i>18|_0#0-3|i:zum|s:Zum|-:xip/sentences$<i>1|<>:xip/s:s#0-129$<i>17<b>0]',
+   'First sentence'
+ );
 
 # Add XIP/Morpho
 ok($tokens->add('XIP', 'Morpho'), 'Add XIP/Morpho');
@@ -261,14 +275,14 @@ foreach (qw/PREP ADJ ADJ NOUN VERB DET NOUN DET NOUN NOUN PTCL CONJ DET NOUN NOU
 };
 
 $i = 0;
-foreach ('zu', 'letzt', 'kulturell', 'Anlass', '=laden:laden', 'die', 'Leitung', 'der', '#schulen:#Heim:schulen#Heim', 'Hofbergli', 'ein', 'bevor', 'der', 'Betrieb', 'Ende', '#schulen:#Jahr:schulen#Jahr') {
+foreach ('zu', 'letzt', 'kulturell', 'Anlass', '=laden:laden', 'die', 'Leitung', 'der', '\#schulen:\#Heim:schulen\#Heim', 'Hofbergli', 'ein', 'bevor', 'der', 'Betrieb', 'Ende', '\#schulen:\#Jahr:schulen\#Jahr') {
   if ($_ eq '!') {
     $i++;
     next;
   };
   foreach my $f (split(':', $_)) {
     like($tokens->stream->pos($i)->to_string,
-	 qr!\|xip/l:$f!,
+	 qr!\|xip\/l:\Q$f\E!,
 	 'Annotation (xip/l) is correct: ' . $f);
   };
   $i++;
@@ -279,6 +293,7 @@ ok($tokens = new_tokenizer->parse, 'New Tokenizer');
 
 # Add XIP/Sentences
 ok($tokens->add('XIP', 'Dependency'), 'Add XIP/Dependency');
+
 
 $stream = $tokens->stream;
 like($stream->pos(1)->to_string, qr!\|>:xip/d:NMOD\$<i>3!, 'Dependency fine');

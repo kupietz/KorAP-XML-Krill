@@ -7,10 +7,10 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
   NAME         => 'KorAP::Indexer',
   AUTHOR       => 'Nils Diewald',
-  ABSTRACT     => 'Perl Implementation for Generating Multifoundry Lucene Indices',
+  ABSTRACT     => 'Preprocessor for Krill Index preparation',
   VERSION_FROM => 'lib/KorAP/Indexer.pm',
   PREREQ_PM => {
-    'Mojolicious'    => 4.51,
+    'Mojolicious'    => 6.11,
     'Packed::Array'  => 0.01,
     'Log::Log4perl'  => 1.42,
     'JSON::XS'       => 3.01,

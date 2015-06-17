@@ -5,7 +5,6 @@ sub parse {
   my $self = shift;
 
   # Phrase depencies are currently ignored.
-  #
 
   $$self->add_tokendata(
     foundry => 'xip',
@@ -14,6 +13,8 @@ sub parse {
     cb => sub {
       my ($stream, $token, $tokens) = @_;
       my $mtt = $stream->pos($token->pos);
+
+warn $tokens;
 
       my $content = $token->hash;
 
@@ -60,7 +61,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['xip/d=dep']
+  ['xip/d=rels']
 }
 
 

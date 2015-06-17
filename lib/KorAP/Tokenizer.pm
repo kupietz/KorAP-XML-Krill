@@ -1,7 +1,6 @@
 package KorAP::Tokenizer;
 use Mojo::Base -base;
 use Mojo::ByteStream 'b';
-use Mojo::Loader;
 use XML::Fast;
 use Try::Tiny;
 use Carp qw/croak/;
@@ -158,7 +157,11 @@ sub parse {
       $old = $to + 1;
 
       # Add position term
-      $mtt->add('_' . $have . '#' . $mtt->o_start . '-' . $mtt->o_end);
+      $mtt->add(
+	term => '_' . $have,
+	o_start => $mtt->o_start,
+	o_end => $mtt->o_end
+      );
 
       $have++;
   };
@@ -343,7 +346,6 @@ sub add_tokendata {
 
 sub add {
   my $self = shift;
-  my $loader = Mojo::Loader->new;
   my $foundry = shift;
   my $layer = shift;
 

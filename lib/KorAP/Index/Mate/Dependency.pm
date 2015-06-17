@@ -6,7 +6,7 @@ sub parse {
   my $self = shift;
 
   # TODO: Create XIP tree here - for indirect dependency
-  # >>:xip_d:SUBJ<i>566<i>789
+  # >>:xip/d:SUBJ<i>566<i>789
 
   $$self->add_tokendata(
     foundry => 'mate',
@@ -53,7 +53,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['mate/d=dep']
+  ['mate/d=rels']
 };
 
 
