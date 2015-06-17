@@ -502,7 +502,12 @@ sub _parse_meta_fast {
       local $SIG{__WARN__} = sub {
 	  $error = 1;
       };
-      $meta = xml2hash($file, text => '#text', attr => '-', array => ['h.title', 'imprint', 'catRef', 'h.author'])->{idsHeader};
+      $meta = xml2hash(
+	$file,
+	text => '#text',
+	attr => '-',
+	array => ['h.title', 'imprint', 'catRef', 'h.author']
+      )->{idsHeader};
   }
   catch  {
       $self->log->warn($unable);

@@ -16,11 +16,13 @@ foreach my $file (qw/00001
 		     02439
 		     05663-unbalanced
 		     07452-deep/) {
-    my $call = 'perl ' . $dir . '/prepare_index.pl -i ' . $dir . '/../examples/WPD/AAA/' . $file . ' -o ' . $dir . '/../' . $file . '.json';
-    print 'Create ' . $file . ".json\n";
-    system($call);
+  my $out = $dir . '/../' . $file . '.json';
 
-    print 'Create ' . $file . ".json.gz\n";
-    $call .= '.gz -z';
-    system($call);
+  my $call = 'perl ' . $dir . '/prepare_index.pl -i ' . $dir . '/../examples/WPD/AAA/' . $file . ' -o ' . $out;
+  print 'Create ' . $out . "\n";
+  system($call);
+
+  print 'Create ' . $out . ".gz\n";
+  $call .= '.gz -z';
+  system($call);
 };

@@ -9,7 +9,7 @@ use lib 'lib', '../lib';
 use_ok('KorAP::Field::MultiTermTokenStream');
 
 ok(my $mtt = KorAP::Field::MultiTermToken->new, 'New token');
-ok($mtt->o_start(0), 'Set start character offset');
+ok(defined $mtt->o_start(0), 'Set start character offset');
 ok($mtt->o_end(5), 'Set end character offset');
 ok($mtt->add(term => '@:k=N',
 	     payload =>'<s>9'), 'Add token');
@@ -47,7 +47,7 @@ ok($mtt->add(term => '@:i=N',
 is($mtt->to_string,'[(0-5)<>:b=N#0-5$<i>5|<>:f=N#0-5$<i>6<b>5<b>122|<>:e=ADJ#0-5$<i>6<b>6|<>:d=N#0-5$<i>6<b>7|@:i=N$<s>3|@:h=N$<s>5|@:j=N$<s>8|@:k=N$<s>9|a=N$<b>144|c=N$<b>144|g=N$<b>144]', 'Check string');
 
 ok($mtt = KorAP::Field::MultiTermToken->new, 'New token');
-ok($mtt->o_start(0), 'Set start character offset');
+ok(defined $mtt->o_start(0), 'Set start character offset');
 ok($mtt->o_end(5), 'Set end character offset');
 
 # 2-7 to 2-4

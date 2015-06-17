@@ -250,7 +250,7 @@ $output = decode_json( $tokens->to_json );
 like($output->{data}->{foundries}, qr!connexor/sentences!, 'Foundries');
 like($output->{data}->{layerInfos}, qr!cnx/s=spans!, 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!<>:cnx/s:s#0-179\$<i>21<b>2!, 'data');
+like($first_token, qr!<>:cnx/s:s#0-179\$<i>21<b>0!, 'data');
 
 $tokens->add('Connexor', 'Morpho');
 $output = decode_json( $tokens->to_json );

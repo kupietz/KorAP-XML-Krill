@@ -45,7 +45,7 @@ sub p_start {
   if (defined $_[1]) {
     return $_[0]->[1] = $_[1];
   };
-  $_[0]->[1];
+  $_[0]->[1] // 0;
 };
 
 # 2
@@ -53,7 +53,7 @@ sub p_end {
   if (defined $_[1]) {
     return $_[0]->[2] = $_[1];
   };
-  $_[0]->[2];
+  $_[0]->[2] // 0;
 };
 
 # 3
@@ -61,7 +61,7 @@ sub o_start {
   if (defined $_[1]) {
     return $_[0]->[3] = $_[1];
   };
-  $_[0]->[3];
+  $_[0]->[3] // 0;
 };
 
 # 4
@@ -69,7 +69,7 @@ sub o_end {
   if (defined $_[1]) {
     return $_[0]->[4] = $_[1];
   };
-  $_[0]->[4];
+  $_[0]->[4] // 0;
 };
 
 # 5
@@ -77,7 +77,7 @@ sub term {
   if (defined $_[1]) {
     return $_[0]->[5] = $_[1];
   };
-  $_[0]->[5];
+  $_[0]->[5] // '';
 };
 
 # 6
@@ -91,7 +91,8 @@ sub store_offsets {
 
 # to string based on array
 sub to_string {
-  my $string = $_[0]->[5];
+  my $string = _escape_term($_[0]->[5]);
+
   if (defined $_[0]->[3]) {
     $string .= '#' .$_[0]->[3] .'-' . $_[0]->[4];
   };
@@ -142,7 +143,11 @@ sub to_string_2 {
   return $string;
 };
 
-
+sub _escape_term ($) {
+  my $str = shift;
+  $str =~ s/([\#\$\\])/\\$1/g;
+  return $str;
+};
 
 
 sub to_solr {
