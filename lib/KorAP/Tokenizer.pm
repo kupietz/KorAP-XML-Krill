@@ -4,6 +4,7 @@ use Mojo::ByteStream 'b';
 use XML::Fast;
 use Try::Tiny;
 use Carp qw/croak/;
+use Scalar::Util qw/weaken/;
 use KorAP::Tokenizer::Range;
 use KorAP::Tokenizer::Match;
 use KorAP::Tokenizer::Spans;
@@ -335,7 +336,8 @@ sub add_tokendata {
 
   if ($cb) {
     foreach (@$tokenarray) {
-      $cb->($self->stream, $_) if defined $_->pos;
+      # weaken $tokens;
+      $cb->($self->stream, $_, $tokens) if defined $_->pos;
       #, $tokens);
     };
     return 1;

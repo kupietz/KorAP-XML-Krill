@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsheader type="text" version="1.1">
+  <fileDesc>
+    <titleStmt>
+      <textsigle>VDI14/JAN.00001</textsigle>
+      <t.title assemblage="external">VDI14/JAN.00001 VDI nachrichten, 17.01.2014, S. 10; 10- Zz mit Zahl</t.title>
+    </titleStmt>
+    <publicationStmt>
+      <distributor></distributor>
+      <pubAddress></pubAddress>
+      <availability></availability>
+      <pubDate></pubDate>
+    </publicationStmt>
+    <sourceDesc>
+      <biblStruct>
+	<analytic>
+	  <h.title type="main">10- Zz mit Zahl</h.title>
+	  <h.author>Windhövel, Kerstin</h.author>
+	  <imprint>
+	  </imprint>
+	  <biblScope type="pp">S. 10</biblScope>
+	  <biblScope type="suppl"></biblScope>
+	  <biblScope type="suppltitle"></biblScope>
+	  <biblNote n="1">Id: 578453</biblNote>
+	</analytic>
+	<monogr>
+	  <h.title></h.title>
+	  <imprint>
+	    <pubDate type="year">2014</pubDate>
+	    <pubDate type="month">01</pubDate>
+	    <pubDate type="day">17</pubDate>
+	  </imprint>
+	  <biblScope type="issue">03</biblScope>
+	  <biblScope type="issueplace"></biblScope>
+	</monogr>
+      </biblStruct>
+      <reference type="complete" assemblage="regular">VDI14/JAN.00001 VDI nachrichten, 17.01.2014, S. 10; 10- Zz mit Zahl [Ausführliche Zitierung nicht verfügbar]</reference>
+      <reference type="short" assemblage="regular">VDI14/JAN.00001 VDI nachr., 17.01.2014, S. 10</reference>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <samplingDecl>
+    </samplingDecl>
+    <tagsDecl>
+      <tagUsage gi="p" occurs="2"></tagUsage>
+      <tagUsage gi="q" occurs="1"></tagUsage>
+      <tagUsage gi="s" occurs="3"></tagUsage>
+    </tagsDecl>
+  </encodingDesc>
+  <profileDesc>
+    <creation>
+      <creatdate>2014.01.17</creatdate>
+    </creation>
+    <textClass>
+      <catRef target="topic.Freizeit-Unterhaltung.Reisen" n="0.38" scheme="topic" />
+      <catRef target="topic.Politik.Ausland" n="0.14" scheme="topic" />
+      <h.keywords>
+	<keyterm></keyterm>
+      </h.keywords>
+    </textClass>
+    <textdesc>
+      <texttypeart></texttypeart>
+      <textdomain></textdomain>
+      <column></column>
+    </textdesc>
+  </profileDesc>
+</idsheader>

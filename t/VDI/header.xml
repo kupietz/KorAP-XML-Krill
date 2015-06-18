@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsheader type="corpus" pattern="Ztg/Zschr" version="1.1">
+  <fileDesc>
+    <titleStmt>
+      <korpussigle>VDI14</korpussigle>
+      <c.title>VDI nachrichten 2014</c.title>
+    </titleStmt>
+    <publicationStmt>
+      <distributor>		Institut für Deutsche Sprache		</distributor>
+      <pubAddress>		Postfach 10 16 21, D-68016 Mannheim	</pubAddress>
+      <telephone>		+49 (0)621 1581 0			</telephone>
+      <availability></availability>
+      <pubDate></pubDate>
+    </publicationStmt>
+    <sourceDesc>
+      <biblFull>
+	<titleStmt>
+	  <x.title></x.title>
+	</titleStmt>
+	<editionStmt>
+	</editionStmt>
+	<publicationStmt>
+	  <distributor></distributor>
+	  <pubAddress></pubAddress>
+	  <availability></availability>
+	  <pubDate></pubDate>
+	</publicationStmt>
+      </biblFull>
+      <biblStruct>
+	<monogr>
+	  <h.title type="main">VDI nachrichten</h.title>
+	  <h.title type="sub"></h.title>
+	  <h.title type="abbr" level="m">VDI nachr.</h.title>
+	  <editor>Verein Deutscher Ingenieure</editor>
+	  <imprint>
+	    <publisher>VDI Verlag GmbH</publisher>
+	    <pubPlace>Düsseldorf</pubPlace>
+	  </imprint>
+	  <biblScope type="vol"></biblScope>
+	</monogr>
+      </biblStruct>
+      <reference type="super" assemblage="regular">VDI14 VDI nachrichten, [Wochenzeitung]; Hrsg.: Verein Deutscher Ingenieure, Düsseldorf: VDI Verlag GmbH; 2014</reference>
+    </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+    <projectDesc>
+    </projectDesc>
+    <samplingDecl>
+    </samplingDecl>
+    <editorialDecl>
+      <transduction>
+	TraDuCES - Korpus-Transformationscompiler, Version 3.6.4,
+	Eric Seubert, IDS Mannheim, 7. April 2014
+	Optionen bei der Konvertierung:
+	- Dubletten-Modus:
+	Entfernung aller als Dubletten klassifizierten Texte.
+	- Indexierungsmodus für COSMAS II:
+	Erzeugung von Ersatzreferenzen für ausführliche Zitierung.
+	Entfernung aller Deklarationen für Dubletten.
+	Entfernung von Texten mit Sperrvermerken.
+	Entfernung von Texten mit minimalem Inhalt.
+      </transduction>
+      <pagination type="no"></pagination>
+    </editorialDecl>
+    <classDecl>
+      <taxonomy id="topic">
+	<h.bibl>Thementaxonomie (siehe http://www.ids-mannheim.de/kl/projekte/methoden/te.html)</h.bibl>
+	<category id="topic.Fiktion">
+	  <catDesc>Fiktion</catDesc>
+	  <category id="topic.Fiktion.Vermischtes">
+	    <catDesc>Fiktion:Vermischtes</catDesc>
+	  </category>
+	</category>
+	<category id="topic.Freizeit-Unterhaltung">
+	  <catDesc>Freizeit_Unterhaltung</catDesc>
+	  <category id="topic.Freizeit-Unterhaltung.Reisen">
+	    <catDesc>Freizeit_Unterhaltung:Reisen</catDesc>
+	  </category>
+	  <category id="topic.Freizeit-Unterhaltung.Rundfunk">
+	    <catDesc>Freizeit_Unterhaltung:Rundfunk</catDesc>
+	  </category>
+	  <category id="topic.Freizeit-Unterhaltung.Vereine-Veranstaltungen">
+	    <catDesc>Freizeit_Unterhaltung:Vereine_Veranstaltungen</catDesc>
+	  </category>
+	</category>
+	<category id="topic.Gesundheit-Ernaehrung">
+	  <catDesc>Gesundheit_Ernaehrung</catDesc>
+	  <category id="topic.Gesundheit-Ernaehrung.Ernaehrung">
+	    <catDesc>Gesundheit_Ernaehrung:Ernaehrung</catDesc>
+	  </category>
+	  <category id="topic.Gesundheit-Ernaehrung.Gesundheit">
+	    <catDesc>Gesundheit_Ernaehrung:Gesundheit</catDesc>
+	  </category>
+	</category>
+	<category id="topic.Kultur">
+	  <catDesc>Kultur</catDesc>
+	  <category id="topic.Kultur.Bildende-Kunst">
+	    <catDesc>Kultur:Bildende Kunst</catDesc>
+	  </category>
+	  <category id="topic.Kultur.Darstellende-Kunst">
+	    <catDesc>Kultur:Darstellende Kunst</catDesc>
+	  </category>
+	  <category id="topic.Kultur.Film">
+	    <catDesc>Kultur:Film</catDesc>
+	  </category>
+	  <category id="topic.Kultur.Literatur">
+	    <catDesc>Kultur:Literatur</catDesc>
+	  </category>
+	  <category id="topic.Kultur.Mode">
+	    <catDesc>Kultur:Mode</catDesc>
+	  </category>
+	  <category id="topic.Kultur.Musik">
+	    <catDesc>Kultur:Musik</catDesc>
+	  </category>
+	</category>
+	<category id="topic.Natur-Umwelt">
+	  <catDesc>Natur_Umwelt</catDesc>
+	  <category id="topic.Natur-Umwelt.Garten">
+	    <catDesc>Natur_Umwelt:Garten</catDesc>
+	  </category>
+	  <category id="topic.Natur-Umwelt.Tiere">
+	    <catDesc>Natur_Umwelt:Tiere</catDesc>
+	  </category>
+	  <category id="topic.Natur-Umwelt.Wetter-Klima">
+	    <catDesc>Natur_Umwelt:Wetter_Klima</catDesc>
+	  </category>
+	</category>
+	<category id="topic.Politik">
+	  <catDesc>Politik</catDesc>
+	  <category id="topic.Politik.Ausland">
+	    <catDesc>Politik:Ausland</catDesc>
+	  </category>
+	  <category id="topic.Politik.Inland">
+	    <catDesc>Politik:Inland</catDesc>
+	  </category>
+	  <category id="topic.Politik.Kommunalpolitik">
+	    <catDesc>Politik:Kommunalpolitik</catDesc>
+	  </category>
+	</category>
+	<category id="topic.Rest">
+	  <catDesc>Rest</catDesc>
+	  <category id="topic.Rest.boersenkurse">
+	    <catDesc>Rest:boersenkurse</catDesc>
+	  </category>
+	  <category id="topic.Rest.geburt-tod-heirat">
+	    <catDesc>Rest:geburt_tod_heirat</catDesc>
+	  </category>
+	  <category id="topic.Rest.impressum">
+	    <catDesc>Rest:impressum</catDesc>
+	  </category>
+	  <category id="topic.Rest.inhaltsverzeichnisse">
+	    <catDesc>Rest:inhaltsverzeichnisse</catDesc>
+	  </category>
+	  <category id="topic.Rest.ligatabellen">
+	    <catDesc>Rest:ligatabellen</catDesc>
+	  </category>
+	  <category id="topic.Rest.tabellen">
+	    <catDesc>Rest:tabellen</catDesc>
+	  </category>
+	  <category id="topic.Rest.veranstaltungshinweise">
+	    <catDesc>Rest:veranstaltungshinweise</catDesc>
+	  </category>
+	</category>
+	<category id="topic.Sport">
+	  <catDesc>Sport</catDesc>
+	  <category id="topic.Sport.Ballsport">
+	    <catDesc>Sport:Ballsport</catDesc>
+	  </category>
+	  <category id="topic.Sport.Fussball">
+	    <catDesc>Sport:Fussball</catDesc>
+	  </category>
+	  <category id="topic.Sport.Motorsport">
+	    <catDesc>Sport:Motorsport</catDesc>
+	  </category>
+	  <category id="topic.Sport.Radsport">
+	    <catDesc>Sport:Radsport</catDesc>
+	  </category>
+	  <category id="topic.Sport.Tennis">
+	    <catDesc>Sport:Tennis</catDesc>
+	  </category>
+	  <category id="topic.Sport.Vermischtes">
+	    <catDesc>Sport:Vermischtes</catDesc>
+	  </category>
+	  <category id="topic.Sport.Wintersport">
+	    <catDesc>Sport:Wintersport</catDesc>
+	  </category>
+	</category>
+	<category id="topic.Staat-Gesellschaft">
+	  <catDesc>Staat_Gesellschaft</catDesc>
+	  <category id="topic.Staat-Gesellschaft.Arbeit-und-Beruf">
+	    <catDesc>Staat_Gesellschaft:Arbeit_und_Beruf</catDesc>
+	  </category>
+	  <category id="topic.Staat-Gesellschaft.Bildung">
+	    <catDesc>Staat_Gesellschaft:Bildung</catDesc>
+	  </category>
+	  <category id="topic.Staat-Gesellschaft.Biographien-Interviews">
+	    <catDesc>Staat_Gesellschaft:Biographien_Interviews</catDesc>
+	  </category>
+	  <category id="topic.Staat-Gesellschaft.Drittes-Reich-Rechtsextremismus">
+	    <catDesc>Staat_Gesellschaft:Drittes_Reich_Rechtsextremismus</catDesc>
+	  </category>
+	  <category id="topic.Staat-Gesellschaft.Familie-Geschlecht">
+	    <catDesc>Staat_Gesellschaft:Familie_Geschlecht</catDesc>
+	  </category>
+	  <category id="topic.Staat-Gesellschaft.Kirche">
+	    <catDesc>Staat_Gesellschaft:Kirche</catDesc>
+	  </category>
+	  <category id="topic.Staat-Gesellschaft.Recht">
+	    <catDesc>Staat_Gesellschaft:Recht</catDesc>
+	  </category>
+	  <category id="topic.Staat-Gesellschaft.Tod">
+	    <catDesc>Staat_Gesellschaft:Tod</catDesc>
+	  </category>
+	  <category id="topic.Staat-Gesellschaft.Verbrechen">
+	    <catDesc>Staat_Gesellschaft:Verbrechen</catDesc>
+	  </category>
+	</category>
+	<category id="topic.Technik-Industrie">
+	  <catDesc>Technik_Industrie</catDesc>
+	  <category id="topic.Technik-Industrie.EDV-Elektronik">
+	    <catDesc>Technik_Industrie:EDV_Elektronik</catDesc>
+	  </category>
+	  <category id="topic.Technik-Industrie.Kfz">
+	    <catDesc>Technik_Industrie:Kfz</catDesc>
+	  </category>
+	  <category id="topic.Technik-Industrie.Transport-Verkehr">
+	    <catDesc>Technik_Industrie:Transport_Verkehr</catDesc>
+	  </category>
+	  <category id="topic.Technik-Industrie.Umweltschutz">
+	    <catDesc>Technik_Industrie:Umweltschutz</catDesc>
+	  </category>
+	  <category id="topic.Technik-Industrie.Unfaelle">
+	    <catDesc>Technik_Industrie:Unfaelle</catDesc>
+	  </category>
+	</category>
+	<category id="topic.Wirtschaft-Finanzen">
+	  <catDesc>Wirtschaft_Finanzen</catDesc>
+	  <category id="topic.Wirtschaft-Finanzen.Banken">
+	    <catDesc>Wirtschaft_Finanzen:Banken</catDesc>
+	  </category>
+	  <category id="topic.Wirtschaft-Finanzen.Bilanzen">
+	    <catDesc>Wirtschaft_Finanzen:Bilanzen</catDesc>
+	  </category>
+	  <category id="topic.Wirtschaft-Finanzen.Oeffentliche-Finanzen">
+	    <catDesc>Wirtschaft_Finanzen:Oeffentliche_Finanzen</catDesc>
+	  </category>
+	  <category id="topic.Wirtschaft-Finanzen.Sozialprodukt">
+	    <catDesc>Wirtschaft_Finanzen:Sozialprodukt</catDesc>
+	  </category>
+	  <category id="topic.Wirtschaft-Finanzen.Waehrung">
+	    <catDesc>Wirtschaft_Finanzen:Waehrung</catDesc>
+	  </category>
+	</category>
+	<category id="topic.Wissenschaft">
+	  <catDesc>Wissenschaft</catDesc>
+	  <category id="topic.Wissenschaft.Populaerwissenschaft">
+	    <catDesc>Wissenschaft:Populaerwissenschaft</catDesc>
+	  </category>
+	</category>
+	<category id="topic.unklassifizierbar">
+	  <catDesc>Text ist thematisch nicht klassifizierbar.</catDesc>
+	</category>
+      </taxonomy>
+    </classDecl>
+  </encodingDesc>
+  <profileDesc>
+    <langusage>
+      <language id="de" usage="100">Deutsch</language>
+    </langusage>
+    <textdesc>
+      <texttype>Zeitung: Wochenzeitung</texttype>
+      <texttyperef>Wochenzeitung</texttyperef>
+    </textdesc>
+  </profileDesc>
+</idsheader>

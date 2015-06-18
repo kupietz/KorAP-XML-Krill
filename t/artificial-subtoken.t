@@ -16,7 +16,7 @@ use_ok('KorAP::Document');
 
 my $path = catdir(dirname(__FILE__), 'artificial');
 ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
-is($doc->path, $path . '/', 'Path');
+like($doc->path, qr!$path/$!, 'Path');
 ok($doc->parse, 'Parse document');
 
 sub new_tokenizer {

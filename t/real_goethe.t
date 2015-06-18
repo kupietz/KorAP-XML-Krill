@@ -53,7 +53,7 @@ Goethe, Johann Wolfgang von: Autobiographische Einzelheiten, (Geschrieben bis 18
 REF
 is($doc->language, 'de', 'Language');
 
-is($doc->corpus_title, 'Goethes Werke', 'Correct Corpus title');
+is($doc->corpus_title, 'Goethe-Korpus', 'Correct Corpus title');
 ok(!$doc->corpus_sub_title, 'Correct Corpus Sub title');
 is($doc->corpus_author, 'Goethe, Johann Wolfgang von', 'Correct Corpus author');
 is($doc->corpus_editor, 'Trunz, Erich', 'Correct Corpus editor');
@@ -63,7 +63,6 @@ is($doc->doc_title, 'Goethe: Autobiographische Schriften II, (1817-1825, 1832)',
 ok(!$doc->doc_sub_title, 'Correct Doc Sub title');
 ok(!$doc->doc_author, 'Correct Doc author');
 ok(!$doc->doc_editor, 'Correct Doc editor');
-
 
 # Tokenization
 use_ok('KorAP::Tokenizer');
@@ -120,7 +119,7 @@ Goethe, Johann Wolfgang von: Autobiographische Einzelheiten, (Geschrieben bis 18
 REF
 is($output->{language}, 'de', 'Language');
 
-is($output->{corpusTitle}, 'Goethes Werke', 'Correct Corpus title');
+is($output->{corpusTitle}, 'Goethe-Korpus', 'Correct Corpus title');
 ok(!exists $output->{corpusSubTitle}, 'Correct Text Type');
 is($output->{corpusAuthor}, 'Goethe, Johann Wolfgang von', 'Correct Corpus title');
 is($output->{corpusEditor}, 'Trunz, Erich', 'Editor');

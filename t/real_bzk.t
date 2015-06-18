@@ -63,7 +63,7 @@ ok(!$doc->corpus_sub_title, 'Correct Corpus sub title');
 ok(!$doc->corpus_author, 'Correct Corpus author');
 ok(!$doc->corpus_editor, 'Correct Corpus editor');
 
-is($doc->doc_title, 'Neues Deutschland', 'Correct Doc title');
+is($doc->doc_title, 'Neues Deutschland, Jahrgangsquerschnitt 1959', 'Correct Doc title');
 is($doc->doc_sub_title, 'Organ des Zentralkomitees der Sozialistischen Einheitspartei Deutschlands', 'Correct Doc sub title');
 ok(!$doc->doc_author, 'Correct Doc author');
 ok(!$doc->doc_editor, 'Correct doc editor');
@@ -127,7 +127,7 @@ ok(!exists $output->{corpusSubTitle}, 'Correct Corpus sub title');
 ok(!exists $output->{corpusAuthor}, 'Correct Corpus author');
 ok(!exists $output->{corpusEditor}, 'Correct Corpus editor');
 
-is($output->{docTitle}, 'Neues Deutschland', 'Correct Doc title');
+is($output->{docTitle}, 'Neues Deutschland, Jahrgangsquerschnitt 1959', 'Correct Doc title');
 is($output->{docSubTitle}, 'Organ des Zentralkomitees der Sozialistischen Einheitspartei Deutschlands', 'Correct Doc sub title');
 ok(!exists $output->{docAuthor}, 'Correct Doc author');
 ok(!exists $output->{docEditor}, 'Correct doc editor');
