@@ -8,21 +8,28 @@ sub parse {
   # TODO: Create XIP tree here - for indirect dependency
   # >>:xip/d:SUBJ<i>566<i>789
 
+  # Relation data
   $$self->add_tokendata(
     foundry => 'mate',
     layer => 'dependency',
     cb => sub {
       my ($stream, $token, $tokens) = @_;
+
+      # Get MultiTermToken from stream
       my $mtt = $stream->pos($token->pos);
 
+      # Serialized information from token
       my $content = $token->hash;
 
+      # Get relation information
       my $rel = $content->{rel};
       $rel = [$rel] unless ref $rel eq 'ARRAY';
 
+      # Iterate over relations
       foreach (@$rel) {
 	my $label = $_->{-label};
 
+	# Relation type
 	if ($_->{-type} && $_->{-type} eq 'unary') {
 	  next if $_->{-label} eq '--';
 	  $mtt->add(

@@ -14,8 +14,6 @@ sub parse {
       my ($stream, $token, $tokens) = @_;
       my $mtt = $stream->pos($token->pos);
 
-warn $tokens;
-
       my $content = $token->hash;
 
       my $rel = $content->{rel};

@@ -14,6 +14,16 @@ use File::Spec::Functions 'catdir';
 
 use_ok('KorAP::Document');
 
+sub _t2h {
+  my $string = shift;
+  $string =~ s/^\[\(\d+?-\d+?\)(.+?)\]$/$1/;
+  my %hash = ();
+  foreach (split(qr!\|!, $string)) {
+    $hash{$_} = 1;
+  };
+  return \%hash;
+};
+
 my @layers;
 # push(@layers, ['Base', 'Sentences']);
 push(@layers, ['Base', 'Paragraphs']);
@@ -50,10 +60,10 @@ push(@layers, ['XIP', 'Sentences']);
 
 my $path = catdir(dirname(__FILE__), 'WPD/00001');
 ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
-is($doc->path, $path . '/', 'Path');
+like($doc->path, qr!$path/$!, 'Path');
 
 ok($doc = KorAP::Document->new( path => $path ), 'Load Korap::Document');
-is($doc->path, $path . '/', 'Path');
+like($doc->path, qr!$path/$!, 'Path');
 
 ok($doc->parse, 'Parse document');
 
@@ -70,10 +80,11 @@ is($doc->text_class->[1], 'reisen', 'TextClass');
 is($doc->text_class->[2], 'wissenschaft', 'TextClass');
 is($doc->text_class->[3], 'populaerwissenschaft', 'TextClass');
 ok(!$doc->text_class->[4], 'TextClass');
-is($doc->author->[0], 'Ruru', 'author');
-is($doc->author->[1], 'Jens.Ol', 'author');
-is($doc->author->[2], 'Aglarech', 'author');
-ok(!$doc->author->[3], 'author');
+is($doc->author, 'Ruru; Jens.Ol; Aglarech; u.a.', 'author');
+#is($doc->author->[0], 'Ruru', 'author');
+#is($doc->author->[1], 'Jens.Ol', 'author');
+#is($doc->author->[2], 'Aglarech', 'author');
+#ok(!$doc->author->[3], 'author');
 
 # Get tokens
 use_ok('KorAP::Tokenizer');
@@ -87,7 +98,7 @@ ok(my $tokens = KorAP::Tokenizer->new(
 ), 'New Tokenizer');
 ok($tokens->parse, 'Parse');
 
-is($tokens->path, $path . '/', 'Path');
+like($tokens->path, qr!$path/$!, 'Path');
 is($tokens->foundry, 'OpenNLP', 'Foundry');
 is($tokens->doc->text_sigle, 'WPD_AAA.00001', 'Doc id');
 is($tokens->should, 1068, 'Should');
@@ -95,23 +106,38 @@ is($tokens->have, 923, 'Have');
 is($tokens->name, 'tokens', 'Name');
 is($tokens->layer, 'Tokens', 'Layer');
 
-is($tokens->stream->pos(118)->to_string, '[(763-768)s:Linie|i:linie|_118#763-768]', 'Token is correct');
+is_deeply(_t2h($tokens->stream->pos(118)->to_string),
+   _t2h('[(763-768)s:Linie|i:linie|_118#763-768]'),
+   'Token is correct');
 
 # Add Mate
 ok($tokens->add('Mate', 'Morpho'), 'Add Mate');
 
-is($tokens->stream->pos(118)->to_string, '[(763-768)s:Linie|i:linie|_118#763-768|mate/l:linie|mate/p:NN|mate/m:case:acc|mate/m:number:sg|mate/m:gender:fem]', 'with Mate');
+is_deeply(
+  _t2h($tokens->stream->pos(118)->to_string),
+  _t2h('[(763-768)s:Linie|i:linie|_118#763-768|mate/l:linie|mate/p:NN|mate/m:case:acc|mate/m:number:sg|mate/m:gender:fem]'),
+  'with Mate');
 
 # Add sentences
 ok($tokens->add('Base', 'Sentences'), 'Add Sentences');
 
-is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s:s#0-74$<i>13|<>:base/s:t#0-6083$<i>923|-:base/sentences$<i>96]', 'Startinfo');
+is_deeply(
+  _t2h($tokens->stream->pos(0)->to_string),
+  _t2h('[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s:s#0-74$<i>13<b>2|<>:base/s:t#0-6083$<i>923<b>0|-:base/sentences$<i>96]'),
+  'Startinfo'
+);
 
 foreach (@layers) {
   ok($tokens->add(@$_), 'Add '. join(', ', @$_));
 };
 
-is($tokens->stream->pos(0)->to_string, '[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s:s#0-74$<i>13|<>:base/s:t#0-6083$<i>923|-:base/sentences$<i>96|<>:base/s:p#0-224$<i>34|-:base/paragraphs$<i>76|opennlp/p:NE|<>:opennlp/s:s#0-74$<i>13|-:opennlp/sentences$<i>50|<>:corenlp/s:s#0-6$<i>2|-:corenlp/sentences$<i>65|cnx/l:A|cnx/p:N|cnx/syn:@NH|<>:cnx/c:np#0-1$<i>1|<>:cnx/s:s#0-74$<i>13|-:cnx/sentences$<i>62|tt/l:A|tt/p:NN|tt/l:A|tt/p:FM|<>:tt/s:s#0-6083$<i>923|-:tt/sentences$<i>1|>:mate/d:PNC$<i>2|xip/p:SYMBOL|xip/l:A|<>:xip/c:TOP#0-74$<i>13|<>:xip/c:MC#0-73$<i>13<b>1|<>:xip/c:NP#0-1$<i>1<b>2|<>:xip/c:NPA#0-1$<i>1<b>3|<>:xip/c:NOUN#0-1$<i>1<b>4|<>:xip/c:SYMBOL#0-1$<i>1<b>5|>:xip/d:SUBJ$<i>3|<:xip/d:COORD$<i>1|<>:xip/s:s#0-74$<i>13|-:xip/sentences$<i>64]', 'Startinfo');
+is(
+  _t2h($tokens->stream->pos(0)->to_string),
+  _t2h('[(0-1)s:A|i:a|_0#0-1|-:tokens$<i>923|mate/p:XY|<>:base/s:s#0-74$<i>13|<>:base/s:t#0-6083$<i>923|-:base/sentences$<i>96|<>:base/s:p#0-224$<i>34|-:base/paragraphs$<i>76|opennlp/p:NE|<>:opennlp/s:s#0-74$<i>13|-:opennlp/sentences$<i>50|<>:corenlp/s:s#0-6$<i>2|-:corenlp/sentences$<i>65|cnx/l:A|cnx/p:N|cnx/syn:@NH|<>:cnx/c:np#0-1$<i>1|<>:cnx/s:s#0-74$<i>13|-:cnx/sentences$<i>62|tt/l:A|tt/p:NN|tt/l:A|tt/p:FM|<>:tt/s:s#0-6083$<i>923|-:tt/sentences$<i>1|>:mate/d:PNC$<i>2|xip/p:SYMBOL|xip/l:A|<>:xip/c:TOP#0-74$<i>13|<>:xip/c:MC#0-73$<i>13<b>1|<>:xip/c:NP#0-1$<i>1<b>2|<>:xip/c:NPA#0-1$<i>1<b>3|<>:xip/c:NOUN#0-1$<i>1<b>4|<>:xip/c:SYMBOL#0-1$<i>1<b>5|>:xip/d:SUBJ$<i>3|<:xip/d:COORD$<i>1|<>:xip/s:s#0-74$<i>13|-:xip/sentences$<i>64]'),
+  'Startinfo');
+
+done_testing;
+__END__
 
 
 #is($tokens->stream->pos(118)->to_string,

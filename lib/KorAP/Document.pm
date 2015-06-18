@@ -15,9 +15,8 @@ use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 our @ATTR = qw/text_sigle
 	       doc_sigle
 	       corpus_sigle
-
-	       pub_date
 	       title
+	       pub_date
 	       sub_title
 	       pub_place
 	       author/;
@@ -47,6 +46,7 @@ our @ADVANCED_ATTR = qw/publisher
 			corpus_sub_title
 			corpus_editor
 			/;
+# Separate: text_class, keywords
 
 # Removed:    coll_title, coll_sub_title, coll_author, coll_editor
 # Introduced: doc_title, doc_sub_title, corpus_editor, doc_editor, corpus_author, doc_author
@@ -136,6 +136,7 @@ sub parse {
   my @path = grep { $_ } splitdir($self->path);
   my @header;
 
+  # Parse the corpus file, the doc file, and the text file for meta information
   foreach (0..2) {
     unshift @header, '/' . catfile(@path, 'header.xml');
     pop @path;
@@ -176,12 +177,35 @@ sub text_class {
   return ($self->{topics} // []);
 };
 
+sub text_class_string {
+  return join ' ', @{shift->text_class};
+}
+
 sub keywords {
   my $self = shift;
   if ($_[0]) {
     return $self->{keywords} = [ @_ ];
   };
   return ($self->{keywords} // []);
+};
+
+sub keywords_string {
+  return join ' ', @{shift->keywords};
+}
+
+sub _remove_prefix {
+  return $_[0];
+
+  # This may render some titles wrong, e.g. 'VDI nachrichten 2014' ...
+  my $title = shift;
+  my $prefix = shift;
+  $prefix =~ tr!_!/!;
+  if (index($title, $prefix) == 0) {
+    $title = substr($title, length($prefix));
+    $title =~ s/^\s+//;
+    $title =~ s/\s+$//;
+  };
+  return $title;
 };
 
 
@@ -211,19 +235,19 @@ sub _parse_meta {
     $editor    = $editor    ? $editor->all_text    : undef;
 
     if ($type eq 'text') {
-      $self->title($title)         if $title;
+      $self->title(_remove_prefix($title, $self->text_sigle)) if $title;
       $self->sub_title($sub_title) if $sub_title;
       $self->editor($editor)       if $editor;
       $self->author($author)       if $author;
     }
     elsif ($type eq 'doc') {
-      $self->doc_title($title)         if $title;
+      $self->doc_title(_remove_prefix($title, $self->doc_sigle)) if $title;
       $self->doc_sub_title($sub_title) if $sub_title;
       $self->doc_author($author)       if $author;
       $self->doc_editor($editor)       if $editor;
     }
     elsif ($type eq 'corpus') {
-      $self->corpus_title($title)         if $title;
+      $self->corpus_title(_remove_prefix($title, $self->corpus_sigle)) if $title;
       $self->corpus_sub_title($sub_title) if $sub_title;
       $self->corpus_author($author)       if $author;
       $self->corpus_editor($editor)       if $editor;
@@ -232,15 +256,19 @@ sub _parse_meta {
 
   # Not in analytic
   if ($type eq 'corpus') {
-    if (my $title = $dom->at('fileDesc > titleStmt > c\.title')) {
-      $self->corpus_title($title->all_text) if $title->all_text;
+    unless ($self->corpus_title) {
+      if (my $title = $dom->at('fileDesc > titleStmt > c\.title')) {
+	$self->corpus_title(_remove_prefix($title->all_text, $self->corpus_sigle)) if $title->all_text;
+      };
     };
   }
 
   # doc title
   elsif ($type eq 'doc') {
-    if (my $title = $dom->at('fileDesc > titleStmt > d\.title')) {
-      $self->doc_title($title->all_text) if $title->all_text;
+    unless ($self->doc_title) {
+      if (my $title = $dom->at('fileDesc > titleStmt > d\.title')) {
+	$self->doc_title(_remove_prefix($title->all_text, $self->doc_sigle)) if $title->all_text;
+      };
     };
   }
 
@@ -248,7 +276,7 @@ sub _parse_meta {
   elsif ($type eq 'text') {
     unless ($self->title) {
       if (my $title = $dom->at('fileDesc > titleStmt > t\.title')) {
-	$self->title($title->all_text) if $title->all_text;
+	$self->title(_remove_prefix($title->all_text, $self->text_sigle)) if $title->all_text;
       };
     };
   };
@@ -263,39 +291,39 @@ sub _parse_meta {
     $self->publisher($publisher->all_text) if $publisher->all_text;
   };
 
-  my $mono = $dom->at('monogr');
-  if ($mono) {
-
-    # Get title, subtitle, author, editor
-    my $title     = $mono->at('h\.title[type=main]');
-    my $sub_title = $mono->at('h\.title[type=sub]');
-    my $author    = $mono->at('h\.author');
-    my $editor    = $mono->at('editor');
-
-    $title     = $title     ? $title->all_text     : undef;
-    $sub_title = $sub_title ? $sub_title->all_text : undef;
-    $author    = $author    ? $author->all_text    : undef;
-    $editor    = $editor    ? $editor->all_text    : undef;
-
-    if ($type eq 'text') {
-      $self->title($title)         if $title;
-      $self->sub_title($sub_title) if $sub_title;
-      $self->editor($editor)       if $editor;
-      $self->author($author)       if $author;
-    }
-    elsif ($type eq 'doc') {
-      $self->doc_title($title)         if $title;
-      $self->doc_sub_title($sub_title) if $sub_title;
-      $self->doc_author($author)       if $author;
-      $self->doc_editor($editor)       if $editor;
-    }
-    elsif ($type eq 'corpus') {
-      $self->corpus_title($title)         if $title;
-      $self->corpus_sub_title($sub_title) if $sub_title;
-      $self->corpus_author($author)       if $author;
-      $self->corpus_editor($editor)       if $editor;
-    };
-  };
+#  my $mono = $dom->at('monogr');
+#  if ($mono) {
+#
+#    # Get title, subtitle, author, editor
+#    my $title     = $mono->at('h\.title[type=main]');
+#    my $sub_title = $mono->at('h\.title[type=sub]');
+#    my $author    = $mono->at('h\.author');
+#    my $editor    = $mono->at('editor');
+#
+#    $title     = $title     ? $title->all_text     : undef;
+#    $sub_title = $sub_title ? $sub_title->all_text : undef;
+#    $author    = $author    ? $author->all_text    : undef;
+#    $editor    = $editor    ? $editor->all_text    : undef;
+#
+#    if ($type eq 'text') {
+#      $self->title($title)         if $title && !$self->title;
+#      $self->sub_title($sub_title) if $sub_title && !$self->sub_title;
+#      $self->editor($editor)       if $editor && !$self->editor;
+#      $self->author($author)       if $author && !$self->author;
+#    }
+#    elsif ($type eq 'doc') {
+#      $self->doc_title($title)         if $title && !$self->doc_title;
+#      $self->doc_sub_title($sub_title) if $sub_title && !$self->doc_sub_title;
+#      $self->doc_author($author)       if $author && !$self->doc_author;
+#      $self->doc_editor($editor)       if $editor && !$self->doc_editor;
+#    }
+#    elsif ($type eq 'corpus') {
+#      $self->corpus_title($title)         if $title && !$self->corpus_title;
+#      $self->corpus_sub_title($sub_title) if $sub_title && !$self->corpus_sub_title;
+#      $self->corpus_author($author)       if $author && !$self->corpus_author;
+#      $self->corpus_editor($editor)       if $editor && !$self->corpus_editor;
+#    };
+#  };
 
   # Get text type
   my $text_desc = $dom->at('textDesc');
@@ -423,6 +451,7 @@ sub _parse_meta {
     };
   };
 };
+
 
 
 sub to_string {
