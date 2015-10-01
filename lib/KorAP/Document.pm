@@ -12,6 +12,10 @@ use Mojo::DOM;
 use Data::Dumper;
 use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 
+# TODO: Currently metadata is processed multiple times - that's horrible!
+#       Due to the kind of processing, processed metadata may be stored in
+#       a multiprocess cache instead.
+
 our @ATTR = qw/text_sigle
 	       doc_sigle
 	       corpus_sigle

@@ -6,6 +6,8 @@ sub parse {
 
   # Phrase depencies are currently ignored.
 
+  my $rel_id = 1;
+
   $$self->add_tokendata(
     foundry => 'xip',
     layer => 'dependency',
@@ -22,6 +24,7 @@ sub parse {
       foreach (@$rel) {
 	my $label = $_->{-label};
 
+	# Relation is "unary" - meaning relation to itself
 	if ($_->{-type} && $_->{-type} eq 'unary') {
 	  $mtt->add(
 	    term => '>xip/d:' . $label,

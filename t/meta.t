@@ -12,6 +12,9 @@ use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
 
+diag 'Support "availability"';
+diag 'Support "pubPlace-key"';
+
 # TODO: Make 'text' -> 'primaryText'
 
 use_ok('KorAP::Document');
