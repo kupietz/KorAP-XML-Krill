@@ -1,6 +1,7 @@
 package KorAP::Field::MultiTermToken;
 use KorAP::Field::MultiTerm;
 use List::MoreUtils 'uniq';
+use Carp qw/carp croak/;
 use strict;
 use warnings;
 
@@ -9,6 +10,7 @@ use warnings;
 sub new {
   bless [], shift;
 };
+
 
 sub add {
   my $self = shift;
@@ -77,19 +79,24 @@ sub to_string {
 
 # Get relation based positions
 sub _rel_right_pos {
+
+  # There are relation ids!
+
   # token to token - right token
   if ($_[0] =~ m/^<i>(\d+)<s>/o) {
     return ($1, $1);
   }
+
   # token/span to span - right token
   elsif ($_[0] =~ m/^<i>(\d+)<i>(\d+)<s>/o) {
     return ($1, $2);
   }
+
   # span to token - right token
   elsif ($_[0] =~ m/^<b>\d+<i>(\d+)<s>/o) {
     return ($1, $1);
   };
-  warn 'Unknown relation format!';
+  carp 'Unknown relation format!';
   return (0,0);
 };
 

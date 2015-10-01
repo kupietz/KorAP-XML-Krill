@@ -68,7 +68,7 @@ sub parse {
 
   $self->log->trace('Tokenize data ' . $self->foundry . ':' . $self->layer);
 
-  # TODO: Reuse the following code from Spans.pm and tokens.pm
+  # TODO: Reuse the following code from Spans.pm and Tokens.pm
   my ($tokens, $error);
   try {
       local $SIG{__WARN__} = sub {
@@ -113,7 +113,7 @@ sub parse {
 
       $should++;
 
-      # Ignore non-word tokens
+      # Ignore non-word and non-number tokens (sorry!)
       if ($token !~ /[\w\d]/) {
 #	if ($mtt) {
 #	  my $term = [$token, $from, $to];

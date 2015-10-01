@@ -33,19 +33,27 @@ sub data {
 };
 
 
+# Get the data using byte ofsets
 sub data_bytes {
   my ($self, $from, $to) = @_;
 
   use bytes;
 
-  return b(substr($self->[0], $from))->decode if $from && !$to;
+  # Only start offset defined
+  if ($from && !$to) {
+    return b(substr($self->[0], $from))->decode;
+  };
 
+  # No offset defined
   return b($self->[0])->decode unless $to;
 
+  # Get the substring based on offsets
   my $substr = substr($self->[0], $from, $to - $from);
 
+  # Decode
   return b($substr)->decode if defined $substr;
 
+  # No data
   return;
 };
 
