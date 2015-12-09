@@ -6,7 +6,7 @@ sub parse {
   my $i = 0;
   $$self->add_spandata(
     foundry => 'base',
-    layer => 'paragraph',
+    layer => 'struct', # formerly paragraph
     cb => sub {
       my ($stream, $span) = @_;
       my $mtt = $stream->pos($span->p_start);

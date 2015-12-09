@@ -27,6 +27,9 @@ sub new {
     }
     elsif ($_[$i] eq 'o_end') {
       $self->o_end($_[$i+1]);
+    }
+    elsif ($_[$i] eq 'pti') {
+      $self->pti($_[$i+1]);
     };
   };
   $self;
@@ -88,18 +91,35 @@ sub store_offsets {
   $_[0]->[6];
 };
 
+# pti
+sub pti {
+  if (defined $_[1]) {
+    return $_[0]->[10] = $_[1];
+  };
+  $_[0]->[10];
+};
 
-# to string based on array
+
+# To string based on array
 sub to_string {
   my $string = _escape_term($_[0]->[5]);
 
+  $string .= '$';
+
+  # PTI
+  $string .= '<b>' .
+    ($_[0]->[10] ? $_[0]->[10] : '???');
+
+  # Offsets
   if (defined $_[0]->[3]) {
-    $string .= '#' .$_[0]->[3] .'-' . $_[0]->[4];
+    $string .= '<i>' .$_[0]->[3] .
+      '<i>' . $_[0]->[4];
   };
 
-  my $pl = $_[0]->[1] ? $_[0]->[1] - 1 : $_[0]->[0];
+  my $pl = $_[0]->[1] ?
+    $_[0]->[1] - 1 : $_[0]->[0];
+
   if ($_[0]->[2] || $_[0]->[0]) {
-    $string .= '$';
     if ($_[0]->[2]) {
       $string .= '<i>' . $_[0]->[2];
     };

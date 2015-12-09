@@ -9,7 +9,7 @@ sub parse {
 
   $$self->add_spandata(
     foundry => 'base',
-    layer => 'sentences',
+    layer => 'struct', # formerly sentence
     cb => sub {
       my ($stream, $span) = @_;
       my $mtt = $stream->pos($span->p_start);

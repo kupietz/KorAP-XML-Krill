@@ -14,11 +14,19 @@ sub span {
 
   ($from, $to) = $self->_offset($from, $to);
 
-  return if !$to;
-  $from ||= 0;
-  return unless $to > $from;
+  # return if !$to;
+  $to   //= 0;
+  $from //= 0;
+
+  # The span is invalid
+  return unless $from <= $to;
 
   my $span = KorAP::Tokenizer::Span->new;
+
+  # The span is a milestone
+  if ($from == $to) {
+    $span->milestone(1);
+  };
 
   $span->id($s->{-id}) if $s && $s->{-id};
 
@@ -37,7 +45,7 @@ sub span {
 
   unless (defined $end) {
     $end = $self->range->before($span->o_end);
-    return unless $end;
+    return unless defined $end;
   };
 
   # $span->p_end($end);

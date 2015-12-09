@@ -71,14 +71,18 @@ sub parse {
   # TODO: Reuse the following code from Spans.pm and Tokens.pm
   my ($tokens, $error);
   try {
-      local $SIG{__WARN__} = sub {
-	  $error = 1;
-      };
-      $tokens = xml2hash($file, text => '#text', array => ['span'], attr => '-')->{layer}->{spanList};
-  }
-  catch  {
-      $self->log->warn('Token error in ' . $path . ($_ ? ': ' . $_ : ''));
+    local $SIG{__WARN__} = sub {
       $error = 1;
+    };
+    $tokens = xml2hash(
+      $file,
+      text => '#text',
+      array => ['span'],
+      attr => '-'
+    )->{layer}->{spanList};
+  } catch {
+    $self->log->warn('Token error in ' . $path . ($_ ? ': ' . $_ : ''));
+    $error = 1;
   };
 
   return if $error;
@@ -87,7 +91,7 @@ sub parse {
     $tokens = $tokens->{span};
   }
   else {
-      return $self;
+    return $self;
   };
 
   $tokens = [$tokens] if ref $tokens ne 'ARRAY';
@@ -100,76 +104,83 @@ sub parse {
   my $distance = 0;
   my (@non_word_tokens);
   foreach my $span (@$tokens) {
-      my $from = $span->{'-from'};
-      my $to = $span->{'-to'};
-      my $token = $doc->primary->data($from, $to);
+    my $from = $span->{'-from'};
+    my $to = $span->{'-to'};
 
-      # warn 'Has ' . $from . '->' . $to . "($old)";
+    # Get the subring from primary data
+    my $token = $doc->primary->data($from, $to);
 
-      unless (defined $token) {
-	  $self->log->error("Unable to find substring [$from-$to] in $path");
-	  next;
-      };
+    # Token is undefined
+    unless (defined $token) {
+      $self->log->error("Unable to find substring [$from-$to] in $path");
+      next;
+    };
 
-      $should++;
+    # This token should be recognized
+    $should++;
 
-      # Ignore non-word and non-number tokens (sorry!)
-      if ($token !~ /[\w\d]/) {
-#	if ($mtt) {
-#	  my $term = [$token, $from, $to];
-#	  $mtt->add(
-#	    term => '.>:'.$token,
-#	    payload => '<i>'.$from . '<i>' . $to . '<b>' . $distance++
-#	  );
-#	  push(@non_word_tokens, $term);
-#	}
-	next;
-      };
+    # Ignore non-word and non-number tokens (sorry!)
+    if ($token !~ /[\w\d]/) {
 
-      $mtt = $mtts->add;
+      # TODO: Recognize punctuations!
+      #	if ($mtt) {
+      #	  my $term = [$token, $from, $to];
+      #	  $mtt->add(
+      #	    term => '.>:'.$token,
+      #	    payload => '<i>'.$from . '<i>' . $to . '<b>' . $distance++
+      #	  );
+      #	  push(@non_word_tokens, $term);
+      #	}
+      next;
+    };
 
-#      while (scalar @non_word_tokens) {
-#	local $_ = shift @non_word_tokens;
-#	$mtt->add(
-#	  term => '.<:' . $_->[0],
-#	  payload => '<i>' . $_->[1] . '<i>' . $_->[2] . '<b>' . --$distance
-#	);
-#	$distance = 0;
-#      };
+    # Get a new MultiTermToken
+    $mtt = $mtts->add;
 
-      # Add gap for later finding matching positions before or after
-      $range->gap($old, $from, $have) unless $old >= $from;
+    #      while (scalar @non_word_tokens) {
+    #	local $_ = shift @non_word_tokens;
+    #	$mtt->add(
+    #	  term => '.<:' . $_->[0],
+    #	  payload => '<i>' . $_->[1] . '<i>' . $_->[2] . '<b>' . --$distance
+    #	);
+    #	$distance = 0;
+    #      };
 
-      # Add surface term
-      # That's always the first term!
-      $mtt->add('s:' . $token);
+    # Add gap for later finding matching positions before or after
+    # Have here is the last valid position
+    $range->gap($old, $from, $have) unless $old >= $from;
 
-      # Add case insensitive term
-      $mtt->add('i:' . lc $token);
+    # Add surface term
+    # That's always the first term!
+    $mtt->add('s:' . $token);
 
-      # Add offset information
-      $mtt->o_start($from);
-      $mtt->o_end($to);
+    # Add case insensitive term
+    $mtt->add('i:' . lc $token);
 
-      # Store offset information for position matching
-      $range->set($from, $to, $have);
-      $match->set($from, $to, $have);
+    # Add offset information
+    $mtt->o_start($from);
+    $mtt->o_end($to);
 
-      $old = $to + 1;
+    # Store offset information for position matching
+    $range->set($from, $to, $have);
+    $match->set($from, $to, $have);
 
-      # Add position term
-      $mtt->add(
-	term => '_' . $have,
-	o_start => $mtt->o_start,
-	o_end => $mtt->o_end
-      );
+    $old = $to + 1;
 
-      $have++;
+    # Add position term
+    $mtt->add(
+      term => '_' . $have,
+      o_start => $mtt->o_start,
+      o_end => $mtt->o_end
+    );
+
+    $have++;
   };
 
   # Add token count
   $mtts->add_meta('tokens', '<i>' . $have);
 
+  # Create a gap for the 
   if ($doc->primary->data_length >= ($old - 1)) {
     $range->gap($old, $doc->primary->data_length + 1, $have-1)
   };
@@ -290,7 +301,6 @@ sub add_spandata {
   if ($cb) {
     foreach (@$spanarray) {
       $cb->($self->stream, $_) if defined $_->p_start;
-      #, $spans);
     };
     return 1;
   };
