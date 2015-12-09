@@ -377,6 +377,9 @@ sub add {
       # Get layerinfo
       $self->layer_info($mod->layer_info);
       return $retval;
+    }
+    else {
+      $self->log->error('Unable to parse '.$mod);
     };
   }
   else {
@@ -514,7 +517,7 @@ sub to_data {
     $tokens{layerInfos}  = $self->layer_info;
 
     $data{data} = \%tokens;
-    $data{version} = '0.02';
+    $data{version} = '0.03';
   };
 
   \%data;
