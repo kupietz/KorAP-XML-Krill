@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>GOE/AGX.00002</textSigle>
+            <t.title assemblage="regular">GOE/AGX.00002 Goethe: Maximen und Reflexionen. Religion und Christentum, [Aphorismen], (Erstv. 1827-1842), In: Goethes Werke, Bd. 12. - München, 1982</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world">QAO-NC</availability>
+            <pubDate/>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <h.title type="main">Maximen und Reflexionen</h.title>
+                <h.title type="sub">Religion und Christentum</h.title>
+                <h.title type="abbr" level="m">Goethe, Werke; Maximen</h.title>
+                <h.title type="abbr" level="a">Goethe: Maximen und Reflexionen. Religion und Christentum, [Aphorismen], (Erstv. 1827-1842)</h.title>
+                <h.author>Goethe, Johann Wolfgang von</h.author>
+                <editor/>
+                <imprint/>
+                <biblScope type="subsume"/>
+                <biblScope type="pp">S. 372-377</biblScope>
+                <biblNote n="1">Zur Entstehungszeit siehe Bd. 12, Bibliographie, S. 798, aber auch Nachwort, S. 727 und 738</biblNote>
+              </analytic>
+              <monogr>
+                <h.title type="main"/>
+                <imprint/>
+              </monogr>
+            </biblStruct>
+            <reference type="complete" assemblage="regular">GOE/AGX.00002 Goethe, Johann Wolfgang von: Maximen und Reflexionen. Religion und Christentum, [Aphorismen], (Erstveröffentlichung: Stuttgart ; Tübingen, 1827-1842), In: Goethe, Johann Wolfgang von: Goethes Werke, Bd. 12, Schriften zur Kunst. Schriften zur Literatur. Maximen und Reflexionen, Hrsg.: Trunz, Erich. München: Verlag C. H. Beck, 1982, S. 372-377</reference>
+            <reference type="short" assemblage="regular">GOE/AGX.00002 Goethe, Werke; Maximen, (Erstv. 1827-1842), 1982, Bd. 12</reference>
+          </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+          <samplingDecl/>
+          <tagsDecl>
+            <tagUsage gi="pb" occurs="6"/>
+            <tagUsage gi="list" occurs="1"/>
+            <tagUsage gi="s" occurs="65"/>
+            <tagUsage gi="orig" occurs="4"/>
+          </tagsDecl>
+        </encodingDesc>
+        <profileDesc>
+          <textClass/>
+          <textDesc>
+            <textDomain/>
+          </textDesc>
+        </profileDesc>
+      </idsHeader>

@@ -17,7 +17,7 @@ WriteMakefile(
     'Set::Scalar'    => 1.26,
     'XML::Fast'      => 0.11,
     'Try::Tiny'      => 0.21,
-    'Array::IntSpan' => 2,
+    'Array::IntSpan' => 2.003,
     'List::MoreUtils' => 0.33,
     'IO::Dir::Recursive' => 0.03,
     'Directory::Iterator' => 0,

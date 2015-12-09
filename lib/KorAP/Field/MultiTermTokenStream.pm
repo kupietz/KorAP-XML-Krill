@@ -8,6 +8,7 @@ sub add {
   my $self = shift;
   my $mtt = shift // KorAP::Field::MultiTermToken->new;
   $self->{mtt} //= [];
+  $self->{tui} //= [];
   push(@{$self->{mtt}}, $mtt);
   return $mtt;
 };
@@ -35,6 +36,12 @@ sub multi_term_tokens {
   $_[0]->{mtt};
 };
 
+sub tui {
+  my $self = shift;
+  my $pos = shift;
+  return unless defined $pos;
+  return ++$self->{tui}->[$pos];
+};
 
 sub to_array {
   my $self = shift;

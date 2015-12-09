@@ -1,6 +1,9 @@
 package KorAP::Index::XIP::Dependency;
 use KorAP::Index::Base;
 
+# > source to target
+# < target to source
+
 sub parse {
   my $self = shift;
 
