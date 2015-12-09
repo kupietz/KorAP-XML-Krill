@@ -9,7 +9,7 @@ sub parse {
 
   $$self->add_spandata(
     foundry => 'base',
-    layer => 'struct', # formerly sentence
+    layer => 'sentences',
     cb => sub {
       my ($stream, $span) = @_;
       my $mtt = $stream->pos($span->p_start);
@@ -19,7 +19,8 @@ sub parse {
 	o_start => $span->o_start,
 	o_end => $span->o_end,
 	p_end => $span->p_end,
-	payload => '<b>2'
+	payload => '<b>2',
+	pti => 64
       );
       $last_p = $span->p_end;
       $last_o = $span->o_end;
@@ -33,7 +34,8 @@ sub parse {
     o_start => $first->[1],
     p_end => $last_p,
     o_end => $last_o,
-    payload => '<b>0'
+    payload => '<b>0',
+    pti => 64
   );
 
   $$self->stream->add_meta('base/sentences', '<i>' . $i);
@@ -42,7 +44,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['base/s=spans'];
+  ['base/s=spans'];
 };
 
 1;
