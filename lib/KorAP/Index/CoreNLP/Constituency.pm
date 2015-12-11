@@ -30,12 +30,10 @@ sub parse {
       foreach (@$rel) {
 	if ($_->{-label} eq 'dominates') {
 	  if ($_->{-target}) {
-#	    warn $_->{-target} . ' is no root';
 	    $corenlp_const_noroot->insert($_->{-target});
 	  }
 	  elsif (my $uri = $_->{-uri}) {
 	    $uri =~ s/^morpho\.xml#//;
-#	    warn $uri . ' is no root';
 	    $corenlp_const_noroot->insert($uri);
 	  };
 	};
@@ -63,7 +61,8 @@ sub parse {
       term => '<>:corenlp/c:' . $type,
       o_start => $span->o_start,
       o_end => $span->o_end,
-      p_end => $span->p_end
+      p_end => $span->p_end,
+      pti => 64
     );
 
     $term{payload} = '<b>' . ($level // 0);
@@ -98,8 +97,10 @@ sub parse {
   return 1;
 };
 
+
 sub layer_info {
-    ['corenlp/c=spans']
-}
+  ['corenlp/c=spans']
+};
+
 
 1;

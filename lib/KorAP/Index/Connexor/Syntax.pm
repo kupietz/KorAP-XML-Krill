@@ -13,7 +13,6 @@ sub parse {
       my $found;
       my $spans = $token->hash->{fs}->{f}->{fs}->{f};
 
-
       # syntax
       foreach (@$spans) {
 	if (($_->{-name} eq 'pos') && ($found = $_->{'#text'})) {
@@ -28,7 +27,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['cnx/syn=tokens'];
+  ['cnx/syn=tokens'];
 };
 
 1;

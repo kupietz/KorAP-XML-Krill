@@ -7,7 +7,7 @@ sub parse {
 
   $$self->add_spandata(
     foundry => 'opennlp',
-    layer => 'struct',
+    layer => 'sentences',
     cb => sub {
       my ($stream, $span) = @_;
       my $mtt = $stream->pos($span->p_start);
@@ -16,7 +16,8 @@ sub parse {
 	o_start => $span->o_start,
 	o_end => $span->o_end,
 	p_end => $span->p_end,
-	payload => '<b>0' # t/p/s -> could be 2 as well
+	pti => 64,
+	payload => '<b>0'
       );
       $i++;
     }

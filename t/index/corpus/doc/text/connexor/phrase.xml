@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="Corpus_Doc.00001">
+  <spanList>
+    <span from="4" to="30">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="40" to="47">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="52" to="73">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+    <span from="89" to="111">
+      <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+        <f name="pos">np</f>
+      </fs>
+    </span>
+  </spanList>
+</layer>
