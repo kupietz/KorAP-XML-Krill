@@ -43,9 +43,8 @@ sub parse {
 	  # Composites
 	  my (@token) = split('#', $found);
 
-	  if (@token == 1) {
-	    next;
-	  };
+	  next if @token == 1;
+
 	  my $full = '';
 	  foreach (@token) {
 	    $full .= $_;

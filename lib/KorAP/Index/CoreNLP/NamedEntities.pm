@@ -1,6 +1,10 @@
 package KorAP::Index::CoreNLP::NamedEntities;
 use KorAP::Index::Base;
 
+# Import named entities, potentially with a specified
+# Model. However - now all models are mapped to the 'ne'-Prefix
+# and are indistinguishable in annotations. However - if only one
+# model is used, the model is listed in the foundries.
 sub parse {
   my $self   = shift;
   my $model  = shift;

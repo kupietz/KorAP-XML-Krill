@@ -88,7 +88,8 @@ sub parse {
       term => '<>:xip/c:' . $type,
       o_start => $span->o_start,
       o_end => $span->o_end,
-      p_end => $span->p_end
+      p_end => $span->p_end,
+      pti => 64
     );
 
     # Only add level payload if node != root

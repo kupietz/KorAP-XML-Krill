@@ -35,16 +35,17 @@ ok(my $tokens = KorAP::Tokenizer->new(
 
 ok($tokens->parse, 'Parse');
 
-ok($tokens->add('CoreNLP', 'Sentences'), 'Add Structure');
+ok($tokens->add('CoreNLP', 'NamedEntities', 'ne_dewac_175m_600'), 'Add Structure');
 
 my $data = $tokens->to_data->{data};
 
-like($data->{foundries}, qr!corenlp/sentences!, 'data');
-is($data->{stream}->[0]->[0], '-:corenlp/sentences$<i>1', 'Number of paragraphs');
-is($data->{stream}->[0]->[1], '-:tokens$<i>18', 'Number of tokens');
-is($data->{stream}->[0]->[2], '<>:corenlp/s:s$<b>64<i>0<i>129<i>17<b>0', 'Text');
-is($data->{stream}->[0]->[3], '_0$<i>0<i>3', 'Position');
-is($data->{stream}->[-1]->[0], '_17$<i>124<i>128', 'Position');
+like($data->{foundries}, qr!corenlp/namedentities!, 'data');
+like($data->{foundries}, qr!corenlp/namedentities/ne_dewac_175m_600!, 'data');
+like($data->{layerInfos}, qr!corenlp/ne=tokens!, 'layerInfos');
+is($data->{stream}->[0]->[0], '-:tokens$<i>18', 'Number of tokens');
+is($data->{stream}->[9]->[0], '_9$<i>64<i>73', 'Position of NE');
+is($data->{stream}->[9]->[1], 'corenlp/ne:I-LOC', 'Position of NE');
+is($data->{stream}->[9]->[2], 'i:hofbergli', 'Position of NE');
 
 done_testing;
 
