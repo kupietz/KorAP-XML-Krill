@@ -1,4 +1,4 @@
-package KorAP::Index::Mate::Morpho;
+package KorAP::Index::Mate::MorphoAttr;
 use KorAP::Index::Base;
 
 # This attaches morphological information as attributes to the pos
@@ -15,11 +15,12 @@ sub parse {
 
       my $content = $token->hash->{fs}->{f};
 
-      my ($found, $pos, $msd, $id);
+      my ($found, $pos, $msd, $tui);
 
       my $capital = 0;
 
       foreach my $f (@{$content->{fs}->{f}}) {
+
 	#pos
 	if (($f->{-name} eq 'pos') && ($found = $f->{'#text'})) {
 	  $pos = $found;
@@ -37,18 +38,32 @@ sub parse {
 		 ($found = $f->{'#text'}) &&
 		   ($found ne '_')) {
 	  $msd = $found;
-	  $id = $mtt->id_counter;
+	  $tui = $mtt->id_counter;
 	};
       };
 
-      $mtt->add(term => 'mate/m:' . $pos . ($id ? ('$<s>' . $id) : ''));
+      my %term = (
+	term => 'mate/p:' . $pos
+      );
+
+      # There are attributes needed
+      if ($tui) {
+	$term{pti} = 128;
+	$term{payload} = '<s>' . $tui
+      };;
+
+      $mtt->add(%term);
 
       # MSD
       if ($msd) {
 	foreach (split '\|', $msd) {
 	  my ($x, $y) = split "=", $_;
 	  # case, tense, number, mood, person, degree, gender
-	  $mtt->add(term => '@:' . $x . ($y ? '=' . $y : '') . '$<s>' . $id);
+	  $mtt->add(
+	    term => '@:' . $x . ($y ? '=' . $y : ''),
+	    pti => 16,
+	    payload => '<s>' . $tui
+	  );
 	};
       };
     }) or return;
@@ -57,7 +72,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['mate/l=tokens', 'mate/m=tokens']
+    ['mate/l=tokens', 'mate/p=tokens']
 };
 
 1;

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="Corpus_Doc.0001" version="KorAP-0.4" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <spanList>
+    <span from="0" id="s_7" to="3">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">zum</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">APPRART</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="4" id="s_8" to="11">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">letzt</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">ADJA</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="12" id="s_9" to="23">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">kulturell</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">ADJA</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="24" id="s_10" to="30">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Anlaß</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">NN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="31" id="s_11" to="35">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">laden</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">VVFIN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="36" id="s_12" to="39">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">die</f>
+            <f name="certainty">0.997413</f>
+            <f name="ctag">ART</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="40" id="s_13" to="47">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Leitung</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">NN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="48" id="s_14" to="51">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">die</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">ART</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="52" id="s_15" to="63">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Schulheim</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">NN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="64" id="s_16" to="73">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">UNKNOWN</f>
+            <f name="certainty">0.912122</f>
+            <f name="ctag">NE</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="74" id="s_17" to="77">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">ein</f>
+            <f name="certainty">0.992479</f>
+            <f name="ctag">PTKVZ</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="77" id="s_18" to="78">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">,</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">$,</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="79" id="s_19" to="84">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">bevor</f>
+            <f name="certainty">0.999168</f>
+            <f name="ctag">KOUS</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="85" id="s_20" to="88">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">die</f>
+            <f name="certainty">0.999135</f>
+            <f name="ctag">ART</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="89" id="s_21" to="96">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Betrieb</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">NN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="97" id="s_22" to="101">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Ende</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">NN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="102" id="s_23" to="111">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Schuljahr</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">NN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="112" id="s_24" to="123">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">einstellen</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">VVPP</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span from="124" id="s_25" to="128">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">werden</f>
+            <f name="certainty">1.000000</f>
+            <f name="ctag">VAFIN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

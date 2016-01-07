@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer docid="Corpus_Doc.0001" version="KorAP-0.4" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <spanList>
+    <span from="0" id="s2_1" to="3">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">zu</f>
+	    <f name="pos">APPRART</f>
+	    <f name="msd">case=dat|number=sg|gender=neut</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="4" id="s2_2" to="11">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">letzter</f>
+	    <f name="pos">ADJA</f>
+	    <f name="msd">case=dat|number=sg|gender=neut|degree=pos</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="12" id="s2_3" to="23">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">kulturell</f>
+	    <f name="pos">ADJA</f>
+	    <f name="msd">case=gen|number=sg|gender=neut|degree=pos</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="24" id="s2_4" to="30">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">anlass</f>
+	    <f name="pos">NN</f>
+	    <f name="msd">case=gen|number=sg|gender=neut</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="31" id="s2_5" to="35">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">laden</f>
+	    <f name="pos">VVFIN</f>
+	    <f name="msd">number=sg|person=3|tense=pres|mood=ind</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="36" id="s2_6" to="39">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">der</f>
+	    <f name="pos">ART</f>
+	    <f name="msd">case=acc|number=sg|gender=fem</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="40" id="s2_7" to="47">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">leitung</f>
+	    <f name="pos">NN</f>
+	    <f name="msd">case=acc|number=sg|gender=fem</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="48" id="s2_8" to="51">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">der</f>
+	    <f name="pos">ART</f>
+	    <f name="msd">case=gen|number=sg|gender=neut</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="52" id="s2_9" to="63">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">schulheime</f>
+	    <f name="pos">NN</f>
+	    <f name="msd">case=gen|number=sg|gender=neut</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="64" id="s2_10" to="73">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">hofbergli</f>
+	    <f name="pos">NE</f>
+	    <f name="msd">case=nom|number=sg|gender=*</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="74" id="s2_11" to="77">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">ein</f>
+	    <f name="pos">PTKVZ</f>
+	    <f name="msd">_</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="77" id="s2_12" to="78">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">--</f>
+	    <f name="pos">$,</f>
+	    <f name="msd">_</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="79" id="s2_13" to="84">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">bevor</f>
+	    <f name="pos">KOUS</f>
+	    <f name="msd">_</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="85" id="s2_14" to="88">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">der</f>
+	    <f name="pos">ART</f>
+	    <f name="msd">case=nom|number=sg|gender=masc</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="89" id="s2_15" to="96">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">betrieb</f>
+	    <f name="pos">NN</f>
+	    <f name="msd">case=nom|number=sg|gender=masc</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="97" id="s2_16" to="101">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">ende</f>
+	    <f name="pos">NN</f>
+	    <f name="msd">case=*|number=sg|gender=neut</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="102" id="s2_17" to="111">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">schuljahr</f>
+	    <f name="pos">NN</f>
+	    <f name="msd">case=*|number=sg|gender=masc</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="112" id="s2_18" to="123">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">einstellen</f>
+	    <f name="pos">VVPP</f>
+	    <f name="msd">_</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+    <span from="124" id="s2_19" to="128">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+	<f name="lex">
+	  <fs>
+	    <f name="lemma">werden</f>
+	    <f name="pos">VAFIN</f>
+	    <f name="msd">number=sg|person=3|tense=pres|mood=ind</f>
+	  </fs>
+	</f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

@@ -42,7 +42,10 @@ sub parse {
 	    my %term = (
 	      term => 'tt/l:' . $found
 	    );
-	    $term{payload} = '<b>' . $certainty if $certainty;
+	    if ($certainty) {
+	      $term{pti} = 129;
+	      $term{payload} = '<b>' . $certainty;
+	    };
 	    $mtt->add(%term);
 	  };
 
@@ -51,7 +54,10 @@ sub parse {
 	    my %term = (
 	      term => 'tt/p:' . $found
 	    );
-	    $term{payload} = '<b>' . $certainty if $certainty;
+	    if ($certainty) {
+	      $term{pti} = 129;
+	      $term{payload} = '<b>' . $certainty;
+	    };
 	    $mtt->add(%term);
 	  };
 	};

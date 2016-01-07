@@ -109,6 +109,11 @@ sub _sort {
     # Both are attributes
     # Order attributes by reference id
     if (index($a->[5], '@:') == 0 && index($b->[5], '@:') == 0) {
+
+
+#      use Data::Dumper;
+#      die Dumper $a;
+
       my ($a_id) = ($a->[0] =~ m/^<s>(\d+)/);
       my ($b_id) = ($b->[0] =~ m/^<s>(\d+)/);
       if ($a_id > $b_id) {
