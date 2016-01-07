@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="ART_ABC.00001">
+  <spanList>
+    <span id="s1" from="0" to="3">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">zu</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s2" from="4" to="11">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">letzt-</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s3" from="12" to="23">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">kulturell</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s4" from="24" to="30">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Anlass</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="derivation">true</f>
+            <f name="lemma">an-</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="derivation">true</f>
+            <f name="lemma">lass</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s5" from="31" to="35">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">laden</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s6" from="36" to="39">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">d-</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s7" from="40" to="47">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Leitung</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="derivation">true</f>
+            <f name="lemma">leiten</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="derivation">true</f>
+            <f name="lemma">-ung</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s8" from="48" to="51">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">d-</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s9" from="52" to="63">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Schulheim</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="composition">true</f>
+            <f name="lemma">Schule</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="composition">true</f>
+            <f name="lemma">Heim</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="composition">true</f>
+            <f name="lemma">schulen</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s10" from="74" to="77">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">ein</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s11" from="79" to="84">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">bevor</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s12" from="85" to="88">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">d-</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s13" from="89" to="96">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Betrieb</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="lemma">betreiben</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="derivation">true</f>
+            <f name="lemma">be-</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="derivation">true</f>
+            <f name="lemma">treiben</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s14" from="97" to="101">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Ende</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="lemma">ende</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="lemma">enden</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s15" from="102" to="111">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Schuljahr</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="composition">true</f>
+            <f name="lemma">Schule</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="composition">true</f>
+            <f name="lemma">Jahr</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="composition">true</f>
+            <f name="lemma">schulen</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s16" from="112" to="123">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">einstellen</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="derivation">true</f>
+            <f name="lemma">ein-</f>
+          </fs>
+        </f>
+        <f name="lex">
+          <fs>
+            <f name="derivation">true</f>
+            <f name="lemma">stellen</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s17" from="124" to="128">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">werden</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>
