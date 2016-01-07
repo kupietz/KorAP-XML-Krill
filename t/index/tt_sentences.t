@@ -35,25 +35,18 @@ ok(my $tokens = KorAP::Tokenizer->new(
 
 ok($tokens->parse, 'Parse');
 
-ok($tokens->add('Glemm', 'Morpho'), 'Add Structure');
+ok($tokens->add('TreeTagger', 'Sentences'), 'Add Structure');
 
 my $data = $tokens->to_data->{data};
 
-like($data->{foundries}, qr!glemm/morpho!, 'data');
-like($data->{layerInfos}, qr!glemm/l=tokens!, 'data');
+#diag Dumper $data;
 
-is($data->{stream}->[0]->[2], 'glemm/l:__zu', 'Lemma');
-is($data->{stream}->[1]->[1], 'glemm/l:__letzt-', 'Lemma');
-
-is($data->{stream}->[3]->[1], 'glemm/l:_+an-', 'Lemma');
-is($data->{stream}->[3]->[2], 'glemm/l:_+lass', 'Lemma');
-is($data->{stream}->[3]->[3], 'glemm/l:__Anlass', 'Lemma');
-
-is($data->{stream}->[6]->[1], 'glemm/l:_+-ung', 'Lemma');
-is($data->{stream}->[6]->[2], 'glemm/l:_+leiten', 'Lemma');
-is($data->{stream}->[6]->[3], 'glemm/l:__Leitung', 'Lemma');
-
-is($data->{stream}->[-1]->[1], 'glemm/l:__werden', 'Lemma');
+like($data->{foundries}, qr!treetagger/sentences!, 'data');
+is($data->{stream}->[0]->[0], '-:tokens$<i>18', 'Number of tokens');
+is($data->{stream}->[0]->[1], '-:tt/sentences$<i>1', 'Number of paragraphs');
+is($data->{stream}->[0]->[2], '<>:tt/s:s$<b>64<i>0<i>130<i>17<b>0', 'Text');
+is($data->{stream}->[0]->[3], '_0$<i>0<i>3', 'Position');
+is($data->{stream}->[-1]->[0], '_17$<i>124<i>128', 'Position');
 
 done_testing;
 

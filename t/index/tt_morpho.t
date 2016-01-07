@@ -35,26 +35,27 @@ ok(my $tokens = KorAP::Tokenizer->new(
 
 ok($tokens->parse, 'Parse');
 
-ok($tokens->add('Glemm', 'Morpho'), 'Add Structure');
+ok($tokens->add('TreeTagger', 'Morpho'), 'Add Structure');
 
 my $data = $tokens->to_data->{data};
 
-like($data->{foundries}, qr!glemm/morpho!, 'data');
-like($data->{layerInfos}, qr!glemm/l=tokens!, 'data');
+like($data->{foundries}, qr!treetagger/morpho!, 'data');
+like($data->{layerInfos}, qr!tt/p=tokens!, 'data');
+like($data->{layerInfos}, qr!tt/l=tokens!, 'data');
 
-is($data->{stream}->[0]->[2], 'glemm/l:__zu', 'Lemma');
-is($data->{stream}->[1]->[1], 'glemm/l:__letzt-', 'Lemma');
+is($data->{stream}->[0]->[4], 'tt/l:zum$<b>129<b>255', 'POS');
+is($data->{stream}->[0]->[5], 'tt/p:APPRART$<b>129<b>255', 'POS');
 
-is($data->{stream}->[3]->[1], 'glemm/l:_+an-', 'Lemma');
-is($data->{stream}->[3]->[2], 'glemm/l:_+lass', 'Lemma');
-is($data->{stream}->[3]->[3], 'glemm/l:__Anlass', 'Lemma');
+is($data->{stream}->[3]->[3], 'tt/l:Anlaß$<b>129<b>255', 'POS');
+is($data->{stream}->[3]->[4], 'tt/p:NN$<b>129<b>255', 'POS');
 
-is($data->{stream}->[6]->[1], 'glemm/l:_+-ung', 'Lemma');
-is($data->{stream}->[6]->[2], 'glemm/l:_+leiten', 'Lemma');
-is($data->{stream}->[6]->[3], 'glemm/l:__Leitung', 'Lemma');
+is($data->{stream}->[10]->[3], 'tt/l:ein$<b>129<b>253', 'POS');
+is($data->{stream}->[10]->[4], 'tt/p:PTKVZ$<b>129<b>253', 'POS');
 
-is($data->{stream}->[-1]->[1], 'glemm/l:__werden', 'Lemma');
+is($data->{stream}->[-1]->[3], 'tt/l:werden$<b>129<b>255', 'POS');
+is($data->{stream}->[-1]->[4], 'tt/p:VAFIN$<b>129<b>255', 'POS');
 
 done_testing;
 
 __END__
+

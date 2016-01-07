@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer docid="Corpus_Doc.0001"
+       version="KorA-0.2"
+       xmlns="http://ids-mannheim.de/ns/KorA">
+  <spanList>
+    <span from="0"
+          to="3">
+      <rel label="MO">
+        <span from="31"
+              to="35" />
+      </rel>
+    </span>
+    <span from="4"
+          to="11">
+      <rel label="NK">
+        <span from="24"
+              to="30" />
+      </rel>
+    </span>
+    <span from="12"
+          to="23">
+      <rel label="NK">
+        <span from="24"
+              to="30" />
+      </rel>
+    </span>
+    <span from="24"
+          to="30">
+      <rel label="NK">
+        <span from="0"
+              to="3" />
+      </rel>
+    </span>
+    <span from="31"
+          to="35">
+      <rel label="--"
+           type="unary" />
+    </span>
+    <span from="36"
+          to="39">
+      <rel label="NK">
+        <span from="40"
+              to="47" />
+      </rel>
+    </span>
+    <span from="40"
+          to="47">
+      <rel label="SB">
+        <span from="31"
+              to="35" />
+      </rel>
+    </span>
+    <span from="48"
+          to="51">
+      <rel label="NK">
+        <span from="52"
+              to="63" />
+      </rel>
+    </span>
+    <span from="52"
+          to="63">
+      <rel label="AG">
+        <span from="40"
+              to="47" />
+      </rel>
+    </span>
+    <span from="64"
+          to="73">
+      <rel label="NK">
+        <span from="52"
+              to="63" />
+      </rel>
+    </span>
+    <span from="74"
+          to="77">
+      <rel label="SVP">
+        <span from="31"
+              to="35" />
+      </rel>
+    </span>
+    <span from="77"
+          to="78">
+      <rel label="--">
+        <span from="74"
+              to="77" />
+      </rel>
+    </span>
+    <span from="79"
+          to="84">
+      <rel label="CP">
+        <span from="124"
+              to="128" />
+      </rel>
+    </span>
+    <span from="85"
+          to="88">
+      <rel label="NK">
+        <span from="89"
+              to="96" />
+      </rel>
+    </span>
+    <span from="89"
+          to="96">
+      <rel label="SB">
+        <span from="124"
+              to="128" />
+      </rel>
+    </span>
+    <span from="97"
+          to="101">
+      <rel label="OA">
+        <span from="112"
+              to="123" />
+      </rel>
+    </span>
+    <span from="102"
+          to="111">
+      <rel label="NK">
+        <span from="97"
+              to="101" />
+      </rel>
+    </span>
+    <span from="112"
+          to="123">
+      <rel label="OC">
+        <span from="124"
+              to="128" />
+      </rel>
+    </span>
+    <span from="124"
+          to="128">
+      <rel label="MO">
+        <span from="31"
+              to="35" />
+      </rel>
+    </span>
+  </spanList>
+</layer>
