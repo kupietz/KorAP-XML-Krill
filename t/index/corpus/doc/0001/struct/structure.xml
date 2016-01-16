@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="A01_APR.13047" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="128" l="1">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">idsText</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="version">1.0</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="0" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">idsHeader</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="version">1.1</f>
+            <f name="status">new</f>
+            <f name="TEIform">teiHeader</f>
+            <f name="pattern">text</f>
+            <f name="type">text</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s2" from="0" to="128" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">text</f>
+      </fs>
+    </span>
+    <span id="s3" from="0" to="0" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">front</f>
+      </fs>
+    </span>
+    <span id="s4" from="0" to="128" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">body</f>
+      </fs>
+    </span>
+    <span id="s5" from="0" to="128" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">0</f>
+            <f name="type">Zeitung</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s6" from="0" to="31" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">main</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s7" from="0" to="31" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s8" from="32" to="42" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">byline</f>
+      </fs>
+    </span>
+    <span id="s9" from="32" to="42" l="7">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s10" from="43" to="128" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+            <f name="type">section</f>
+            <f name="complete">y</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s11" from="43" to="128" l="7">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s12" from="43" to="128" l="8">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="broken">no</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

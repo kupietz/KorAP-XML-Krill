@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="text.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<raw_text docid="Corpus_Doc.0002" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <metadata file="metadata.xml" />
+  <text>Maximen und Reflexionen Religion und Christentum.  wir sind naturforschend Pantheisten, dichtend Polytheisten, sittlich Monotheisten. Gott, wenn wir hoch stehen, ist alles; stehen wir niedrig, so ist er ein Supplement unsrer Armseligkeit.</text>
+</raw_text>

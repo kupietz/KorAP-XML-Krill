@@ -1,0 +1,53 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use utf8;
+use Test::More;
+use lib 't/index';
+use TestInit;
+use Scalar::Util qw/weaken/;
+use Data::Dumper;
+
+use_ok('KorAP::Document');
+
+ok(my $tokens = TestInit::tokens('0001'), 'Parse tokens');
+
+ok($tokens->add('DeReKo', 'Structure'), 'Add Structure');
+
+my $data = $tokens->to_data->{data};
+
+like($data->{foundries}, qr!dereko/structure!, 'data');
+like($data->{layerInfos}, qr!dereko/s=spans!, 'data');
+
+# Empty element (from 0 to 0) on level 1, with TUI 2
+is($data->{stream}->[0]->[1],
+   '<>:dereko/s:idsHeader$<b>65<i>0<i>0<i>1<b>1<s>2',
+   'Empty element');
+
+# Attributes:
+is($data->{stream}->[0]->[10],
+   '@:dereko/s:version:1.1$<b>17<s>2',
+   'Attribute of idsHeader');
+
+is($data->{stream}->[0]->[11],
+   '@:dereko/s:TEIform:teiHeader$<b>17<s>2',
+   'Attribute of idsHeader');
+
+is($data->{stream}->[0]->[12],
+   '@:dereko/s:status:new$<b>17<s>2',
+   'Attribute of idsHeader');
+
+is($data->{stream}->[0]->[13],
+   '@:dereko/s:type:text$<b>17<s>2',
+   'Attribute of idsHeader');
+
+is($data->{stream}->[0]->[14],
+   '@:dereko/s:pattern:text$<b>17<s>2',
+   'Attribute of idsHeader');
+
+
+diag 'TODO: Test for element spans';
+
+done_testing;
+
+__END__
