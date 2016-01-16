@@ -11,7 +11,7 @@ use_ok('KorAP::Document');
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
-my $path = catdir(dirname(__FILE__), 'corpus', 'doc', 'text');
+my $path = catdir(dirname(__FILE__), 'corpus', 'doc', '0001');
 
 ok(my $doc = KorAP::Document->new(
   path => $path . '/'

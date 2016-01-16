@@ -1,28 +1,16 @@
-package KorAP::Index::Struct::Structure;
+package KorAP::Index::DeReKo::Structure;
 use KorAP::Index::Base;
-use Scalar::Util 'weaken';
 use Data::Dumper;
-
-# Support attributes using token-unique identifiers!
 
 sub parse {
   my $self = shift;
-  my $i = 0;
-
-  my $depth = 0;
-  my $tui = 0;
-
-  # Build tree structure!
-  my @mtt = ();
-
-  # Range for tree depth
-  # my $range = Array::IntSpan->new;
 
   $$self->add_spandata(
     foundry => 'struct',
     layer => 'structure',
     cb => sub {
       my ($stream, $span) = @_;
+      my $tui = 0;
 
       # Get starting position
       my $p_start = $span->p_start;
@@ -36,26 +24,34 @@ sub parse {
 	$attrs = $feature->[1]->{fs}->{f};
 	$attrs = ref $attrs eq 'ARRAY' ? $attrs : [$attrs];
 	$feature = $feature->[0];
+	$tui = $stream->tui($p_start);
       };
 
       # Get term label
       my $name = $feature->{'#text'};
 
-      # Add the element to the stream
-      push(@mtt, {
+      # Get the mtt
+      my $mtt = $stream->pos($p_start);
+
+      my $p_end = $span->p_end;
+
+      # Add structure
+      my $mt = $mtt->add(
 	term    => '<>:dereko/s:' . $name,
 	o_start => $span->o_start,
 	o_end   => $span->o_end,
 	p_start => $p_start,
-	p_end   => $span->p_end,
-	pti     => $span->milestone ? 65 : 64
-      });
+	p_end   => $p_end,
+	pti     => $span->milestone ? 65 : 64,
+      );
 
-      # Get the mtt
-      # my $mtt = $stream->pos($p_start);
-      # my $unit = $mtt->add(...)
-      # payload => '<b>' . $depth . ($tui ? '<s>' . $tui : ''),
-      # $tui = $stream->tui($p_start);
+      my $level = $span->hash->{'-l'};
+      if ($level || $tui) {
+	my $pl;
+	$pl .= '<b>' . ($level ? $level - 1 : 0);
+	$pl .= '<s>' . $tui if $tui;
+	$mt->payload($pl);
+      };
 
       # Add attributes
       if ($attrs) {
@@ -64,36 +60,24 @@ sub parse {
 	foreach (@$attrs) {
 
 	  # Add attributes
-	  push(@mtt, {
+	  $mtt->add(
 	    term =>
 	      '@:dereko/s:' . $_->{'-name'} . ':' . $_->{'#text'},
 	    p_start => $p_start,
-	    p_end   => $span->p_end,
-	    pti     => 17
-	  });
-
-	  # '<s>' . $tui
-	  # $unit = $mtt->add(
-	  # warn $unit->to_string;
+	    pti     => 17,
+	    payload => '<s>' . $tui .
+	      ($span->milestone ? '' : '<i>' . $p_end)
+	  );
 	};
       };
-
-      $i++;
     }
   ) or return;
-
-
-
-
-
-
-  $$self->stream->add_meta('dereko/sentences', '<i>' . $i);
 
   return 1;
 };
 
 sub layer_info {
-    ['dereko/s=spans'];
+  ['dereko/s=spans'];
 };
 
 1;
