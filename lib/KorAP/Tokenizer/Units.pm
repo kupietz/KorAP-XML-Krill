@@ -41,19 +41,24 @@ sub span {
 
   $span->p_start($start);
 
-  my $end = $self->match->endswith($span->o_end);
+  if ($span->milestone) {
+    $span->p_end($start);
+  }
+  else {
+    my $end = $self->match->endswith($span->o_end);
 
-  unless (defined $end) {
-    $end = $self->range->before($span->o_end);
-    return unless defined $end;
-  };
+    unless (defined $end) {
+      $end = $self->range->before($span->o_end);
+      return unless defined $end;
+    };
 
-  # $span->p_end($end);
-  # return unless $span->p_end >= $span->p_start;
+    # $span->p_end($end);
+    # return unless $span->p_end >= $span->p_start;
 
-  # EXPERIMENTAL:
-  return unless $end >= $span->p_start;
-  $span->p_end($end + 1);
+    # EXPERIMENTAL:
+    return unless $end >= $span->p_start;
+    $span->p_end($end + 1);
+  }
 
   $span->hash($s) if $s;
 

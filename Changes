@@ -1,13 +1,18 @@
-0.3 2014-11-03
+0.04 2016-01-17
+        - Added PTI to all payloads.
+	- Added support for empty elements.
+	- Added support for element attributes in struct.
+
+0.03 2014-11-03
         - Added new metadata scheme.
 	- Fixed a minor bug in the constituency tree building.
 	- Sorted terms in tokens a priori.
 
-0.2 2014-07-21
+0.02 2014-07-21
         - Sentence annotations for all providing foundries
 	- Starting subtokenization 
 
-0.1 2014-04-15
+0.01 2014-04-15
 	- [bugfix] for first token annotations
         - Sentences are now available from all foundries that have it
         - <>:p is now <>:base/para

@@ -21,7 +21,7 @@ like($data->{layerInfos}, qr!dereko/s=spans!, 'data');
 
 # Empty element (from 0 to 0) on level 1, with TUI 2
 is($data->{stream}->[0]->[1],
-   '<>:dereko/s:idsHeader$<b>65<i>0<i>0<i>1<b>1<s>2',
+   '<>:dereko/s:idsHeader$<b>65<i>0<i>0<i>0<b>1<s>2',
    'Empty element');
 
 # Attributes:
@@ -46,7 +46,17 @@ is($data->{stream}->[0]->[14],
    'Attribute of idsHeader');
 
 
-diag 'TODO: Test for element spans';
+is($data->{stream}->[4]->[1],
+   '<>:dereko/s:s$<b>64<i>32<i>42<i>6<b>6<s>1',
+   'Sentence span');
+
+is($data->{stream}->[4]->[2],
+   '@:dereko/s:broken:no$<b>17<s>1<i>6',
+   'Attribute of sentence span');
+
+is($data->{stream}->[6]->[0],
+   '<>:dereko/s:pb$<b>65<i>42<i>42<i>6<b>6<s>1',
+   'Pagebreak element');
 
 done_testing;
 
