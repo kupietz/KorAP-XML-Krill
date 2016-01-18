@@ -5,37 +5,12 @@ use utf8;
 use Test::More skip_all => 'Not yet implemented';
 use Scalar::Util qw/weaken/;
 use Data::Dumper;
+use lib 't/index';
+use TestInit;
 
-use_ok('KorAP::Document');
+ok(my $tokens = TestInit::tokens('0001'), 'Parse tokens');
 
-use File::Basename 'dirname';
-use File::Spec::Functions 'catdir';
-
-my $path = catdir(dirname(__FILE__), 'corpus', 'doc', '0001');
-
-ok(my $doc = KorAP::Document->new(
-  path => $path . '/'
-), 'Load Korap::Document');
-
-like($doc->path, qr!$path/$!, 'Path');
-ok($doc->parse, 'Parse document');
-
-ok($doc->primary->data, 'Primary data in existence');
-is($doc->primary->data_length, 129, 'Data length');
-
-use_ok('KorAP::Tokenizer');
-
-ok(my $tokens = KorAP::Tokenizer->new(
-  path => $doc->path,
-  doc => $doc,
-  foundry => 'OpenNLP',
-  layer => 'Tokens',
-  name => 'tokens'
-), 'New Tokenizer');
-
-ok($tokens->parse, 'Parse');
-
-ok($tokens->add('CoreNLP', 'Dependency'), 'Add Structure');
+ok($tokens->add('XIP', 'Dependency'), 'Add Structure');
 
 my $data = $tokens->to_data->{data};
 
