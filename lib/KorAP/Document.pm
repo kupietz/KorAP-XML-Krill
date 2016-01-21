@@ -116,7 +116,7 @@ sub parse {
   # Get document id and corpus id
   if ($rt && $rt->{'-docid'}) {
     $self->text_sigle($rt->{'-docid'});
-    if ($self->text_sigle =~ /^(([^_]+)_[^\._]+?)\.\d+$/) {
+    if ($self->text_sigle =~ /^(([^_]+)_[^\._]+?)\..+?$/) {
       $self->corpus_sigle($2);
       $self->doc_sigle($1);
     }
