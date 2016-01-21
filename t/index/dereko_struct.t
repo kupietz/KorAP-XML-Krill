@@ -8,8 +8,6 @@ use TestInit;
 use Scalar::Util qw/weaken/;
 use Data::Dumper;
 
-use_ok('KorAP::Document');
-
 ok(my $tokens = TestInit::tokens('0001'), 'Parse tokens');
 
 ok($tokens->add('DeReKo', 'Structure'), 'Add Structure');
