@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<teiHeader>
+<dokumentSigle>TEST_BSP</dokumentSigle>
+    <fileDesc>
+      <titleStmt>
+        <title level="u" type="main">Beispielkorpus</title>
+        <title level="u" type="sub">Subkorpus Beispieltext</title>
+      </titleStmt>
+      <publicationStmt>
+        <p>Dieses Korpus wird als Teil der OpenSource-Testsuite einer Konvertierungssoftware veröffentlicht.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Der hier erfasste Text entstammt einem größeren Forschungskorpus.</p>
+      </sourceDesc>
+    </fileDesc>
+        <language ident="de">Deutsch</language>
+      <editorialDecl xml:id="TEST.BSP.Metadaten.Autoren">
+        <interpretation>
+          <p>Dieses Korpus beinhaltet Metadaten zum Autor des Textes und weiteren, fiktiven Autoren. Eine Liste aller Autoren ist in der Sektion <gi corresp="#TEST.BSP.Autoren">particDesc</gi> zusammengestellt. Jeder Autor ist dabei als <tag scheme="TEI">person</tag> kodiert und führt Attribute mit Angaben zu seiner Altersklasse (<att scheme="TEI">age</att>) und seinem Geschlecht (<att scheme="TEI">sex</att>). Letzteres ist gemäß <ref target="http://microformats.org/wiki/gender-formats">vCard-Richtlinien</ref> kodiert. Die Zuordnung der Autoren zu ihren Texten regeln die Metadaten der Texte.</p>
+          <ab>
+            <elementSpec ident="person">
+              <attList>
+                <attDef ident="age">
+                  <valList>
+                    <valItem ident="A">
+                      <desc>Kinder im Alter bis zu 6 Jahren</desc>
+                    </valItem>
+                    <valItem ident="B">
+                      <desc>Kinder im Alter zwischen 7 und 10 Jahren (entspricht etwa den Schulklassen 1 bis 4)</desc>
+                    </valItem>
+                    <valItem ident="C">
+                      <desc>Kinder im Alter zwischen 11 und 12 Jahren (entspricht etwa den Schulklassen 5 bis 6)</desc>
+                    </valItem>
+                    <valItem ident="D">
+                      <desc>Kinder im Alter zwischen 13 und 14 Jahren (entspricht etwa den Schulklassen 7 bis 8)</desc>
+                    </valItem>
+                    <valItem ident="X">
+                      <desc>Kinder, deren Alter nicht dokumentiert ist</desc>
+                    </valItem>
+                  </valList>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </ab>
+        </interpretation>
+      </editorialDecl>
+      <particDesc xml:id="TEST.BSP.Autoren">
+        <person age="X" ana="#TEST.BSP.Metadaten.Autoren" n="1" sex="M" xml:id="TEST.BSP.Autoren.1"/>
+        <person age="A" ana="#TEST.BSP.Metadaten.Autoren" n="2" sex="M" xml:id="TEST.BSP.Autoren.2"/>
+        <person age="A" ana="#TEST.BSP.Metadaten.Autoren" n="3" sex="F" xml:id="TEST.BSP.Autoren.3"/>
+        <person age="B" ana="#TEST.BSP.Metadaten.Autoren" n="4" sex="M" xml:id="TEST.BSP.Autoren.4a"/>
+        <person age="C" ana="#TEST.BSP.Metadaten.Autoren" n="5" sex="F" xml:id="TEST.BSP.Autoren.4b"/>
+        <person age="A" ana="#TEST.BSP.Metadaten.Autoren" n="6" sex="F" xml:id="TEST.BSP.Autoren.5a"/>
+        <person age="B" ana="#TEST.BSP.Metadaten.Autoren" n="7" sex="F" xml:id="TEST.BSP.Autoren.5b"/>
+        <person age="B" ana="#TEST.BSP.Metadaten.Autoren" n="8" sex="F" xml:id="TEST.BSP.Autoren.5c"/>
+        <person age="C" ana="#TEST.BSP.Metadaten.Autoren" n="9" sex="M" xml:id="TEST.BSP.Autoren.6"/>
+        <person age="C" ana="#TEST.BSP.Metadaten.Autoren" n="10" sex="M" xml:id="TEST.BSP.Autoren.7"/>
+        <person age="A" ana="#TEST.BSP.Metadaten.Autoren" n="11" sex="F" xml:id="TEST.BSP.Autoren.8a"/>
+        <person age="A" ana="#TEST.BSP.Metadaten.Autoren" n="12" sex="F" xml:id="TEST.BSP.Autoren.8b"/>
+        <person age="C" ana="#TEST.BSP.Metadaten.Autoren" n="13" sex="M" xml:id="TEST.BSP.Autoren.9a"/>
+        <person age="C" ana="#TEST.BSP.Metadaten.Autoren" n="14" sex="M" xml:id="TEST.BSP.Autoren.9b"/>
+        <person age="A" ana="#TEST.BSP.Metadaten.Autoren" n="15" sex="F" xml:id="TEST.BSP.Autoren.10"/>
+      </particDesc>
+        <interpretation xml:id="TEST.BSP.Kodex">
+          <p>Dieses Korpus beinhaltet Metadaten zu den Texten. Eine Liste aller Texte ist in der folgenden Sektion <gi corresp="#TEST.BSP.Texte">editorialDecl</gi> zusammengestellt. Jeder als <tag scheme="TEI">item</tag> realisierter Listeneintrag führt neben einem vollständig strukturierten bibliographischen Unterblock mit Titel und Autorenreferenz auch die Angabe ihrer Verschriftlichungsart im Attribut (<att scheme="TEI">rendition</att>). Letzteres ist gemäß folgender Interpretation kodiert:</p>
+          <ab>
+            <elementSpec ident="item">
+              <attList>
+                <attDef ident="rend">
+                  <valList>
+                    <valItem ident="M">
+                      <desc>Manuskript, handgeschriebene Texte</desc>
+                    </valItem>
+                    <valItem ident="T">
+                      <desc>Typoskript, maschinell verfasste Texte</desc>
+                    </valItem>
+                    <valItem ident="H">
+                      <desc>Hybrid, Texte mit sowohl handgeschriebenem als auch maschinell verfasstem Anteil</desc>
+                    </valItem>
+                    <valItem ident="X">
+                      <desc>Texte, deren Verschriftlichungsart unbekannt ist</desc>
+                    </valItem>
+                  </valList>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </ab>
+        </interpretation>
+        <segmentation xml:id="TEST.BSP.Token">
+          <p>Der Text in diesem Korpus wurde mit der Software <ref target="https://github.com/DFKI-MLT/JTok">jTok</ref> tokenisiert. Im Ergebnis wurden Sätze mit <tag scheme="TEI">s</tag>, Wörter mit <tag scheme="TEI">w</tag> und Satzpunktuation mit <tag scheme="TEI">c</tag> ausgezeichnet. Ferner wurden auf Textebene absatzübergreifend alle Sätze und auf Satzebene durchgängig alle Wörter und jede Satzpunktuation im jeweiligen Attribut <att scheme="TEI">n</att> und bei 1 beginnend durchgezählt.</p>
+        </segmentation>
+        <interpretation xml:id="TEST.BSP.POS">
+          <p>Dieses Korpus verwendet ein Wortart-Tagging nach dem Stuttgart-Tübingen-Tagset (<ref target="http://www.ims.uni-stuttgart.de/forschung/ressourcen/lexika/TagSets/stts-table.html">STTS</ref>). Dabei wurden drei ursprüngliche Tags ("$.", "$," und "$(") in ("_ENDE", "_KOMMA" und "_SONST") umbennant, um den Validitätsrichtlinien für XML-Identifikatoren (beschrieben in der <ref target="http://www.w3.org/TR/2006/REC-xml-20060816/">W3C-Empfehlung für XML 1.0 vom 16.08.2006</ref>) zu genügen.</p>
+          <ab>
+            <interpGrp type="annotation">
+              <interp xml:id="TEST.BSP.POS.ADJA">attributives Adjektiv</interp>
+              <interp xml:id="TEST.BSP.POS.ADJD">adverbiales oder prädikatives Adjektiv</interp>
+              <interp xml:id="TEST.BSP.POS.ADV">Adverb</interp>
+              <interp xml:id="TEST.BSP.POS.APPO">Postposition</interp>
+              <interp xml:id="TEST.BSP.POS.APPR">Präposition; Zirkumposition links</interp>
+              <interp xml:id="TEST.BSP.POS.APPRART">Präposition mit Artikel</interp>
+              <interp xml:id="TEST.BSP.POS.APZR">Zirkumposition rechts</interp>
+              <interp xml:id="TEST.BSP.POS.ART">bestimmter oder unbestimmter Artikel</interp>
+              <interp xml:id="TEST.BSP.POS.CARD">Kardinalzahl</interp>
+              <interp xml:id="TEST.BSP.POS.FM">Fremdsprachliches Material</interp>
+              <interp xml:id="TEST.BSP.POS.ITJ">Interjektion</interp>
+              <interp xml:id="TEST.BSP.POS.KOKOM">Vergleichskonjunktion</interp>
+              <interp xml:id="TEST.BSP.POS.KON">nebenordnende Konjunktion</interp>
+              <interp xml:id="TEST.BSP.POS.KOUI">unterordnende Konjunktion mit "zu" und Infinitiv</interp>
+              <interp xml:id="TEST.BSP.POS.KOUS">unterordnende Konjunktion mit Satz</interp>
+              <interp xml:id="TEST.BSP.POS.NE">normales Nomen</interp>
+              <interp xml:id="TEST.BSP.POS.NN">Eigennamen</interp>
+              <interp xml:id="TEST.BSP.POS.NNE">normales Nomen mit Eigennamen</interp>
+              <interp xml:id="TEST.BSP.POS.PAV">Pronominaladverb</interp>
+              <interp xml:id="TEST.BSP.POS.PDAT">attribuierendes Demonstrativpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.PDS">substituierendes Demonstrativpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.PIAT">attribuierendes Indefinitpronomen ohne Determiner</interp>
+              <interp xml:id="TEST.BSP.POS.PIDAT">attribuierendes Indefinitpronomen mit Determiner</interp>
+              <interp xml:id="TEST.BSP.POS.PIS">substituierendes Indefinitpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.PPER">irreflexives Personalpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.PPOSAT">attribuierendes Possessivpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.PPOSS">substituierendes Possessivpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.PRELAT">attribuierendes Relativpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.PRELS">substituierendes Relativpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.PRF">reflexives Personalpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.PROAV">Pronominaladverb</interp>
+              <interp xml:id="TEST.BSP.POS.PTKA">Partikel bei Adjektiv oder Adverb</interp>
+              <interp xml:id="TEST.BSP.POS.PTKANT">Antwortpartikel</interp>
+              <interp xml:id="TEST.BSP.POS.PTKNEG">Negationspartikel</interp>
+              <interp xml:id="TEST.BSP.POS.PTKVZ">abgetrennter Verbzusatz</interp>
+              <interp xml:id="TEST.BSP.POS.PTKZU">"zu" vor Infinitiv</interp>
+              <interp xml:id="TEST.BSP.POS.PWAT">attribuierendes Interrogativpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.PWAV">adverbiales Interrogativ- oder Relativpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.PWS">substituierendes Interrogativpronomen</interp>
+              <interp xml:id="TEST.BSP.POS.TRUNC">Kompositions-Erstglied</interp>
+              <interp xml:id="TEST.BSP.POS.VAFIN">finites Verb, aux</interp>
+              <interp xml:id="TEST.BSP.POS.VAIMP">Imperativ, aux</interp>
+              <interp xml:id="TEST.BSP.POS.VAINF">Infinitiv, aux</interp>
+              <interp xml:id="TEST.BSP.POS.VAPP">Partizip Perfekt, aux</interp>
+              <interp xml:id="TEST.BSP.POS.VMFIN">finites Verb, modal</interp>
+              <interp xml:id="TEST.BSP.POS.VMINF">Infinitiv, modal</interp>
+              <interp xml:id="TEST.BSP.POS.VMPP">Partizip Perfekt, modal</interp>
+              <interp xml:id="TEST.BSP.POS.VVFIN">finites Verb, voll</interp>
+              <interp xml:id="TEST.BSP.POS.VVIMP">Imperativ, voll</interp>
+              <interp xml:id="TEST.BSP.POS.VVINF">Infinitiv, voll</interp>
+              <interp xml:id="TEST.BSP.POS.VVIZU">Infinitiv mit "zu", voll</interp>
+              <interp xml:id="TEST.BSP.POS.VVPP">Partizip Perfekt, voll</interp>
+              <interp xml:id="TEST.BSP.POS.XY">Nichtwort, Sonderzeichen enthaltend</interp>
+              <interp xml:id="TEST.BSP.POS._KOMMA">Komma</interp>
+              <interp xml:id="TEST.BSP.POS._SONST">sonstige Satzzeichen; satzintern</interp>
+              <interp xml:id="TEST.BSP.POS._ENDE">Satzbeendende Interpunktion</interp>
+            </interpGrp>
+          </ab>
+        </interpretation>
+</teiHeader>

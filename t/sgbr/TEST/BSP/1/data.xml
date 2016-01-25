@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="text.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<raw_text docid="TEST_BSP.1" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <metadata file="metadata.xml" />
+  <text>Sommerüberraschung Es war einmal die Familie Patzig. In dieser Familie gab es die Mama Elisabeth, den Papa Guenther, die fuenfzehnjaehrige Lena, den neunjaerigen Kevin und die beiden kleinen Zwillinge Lion und Tayla, Oma Luise und ihr Mann, Opa Hermann Mueller, nicht zu vergessen:ihr Familienhund Barker. Es ist Sommeranfang! "Heute ist Wochenende", schreit Kevin.</text>
+</raw_text>

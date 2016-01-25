@@ -6,30 +6,24 @@ sub parse {
 
   $$self->add_tokendata(
     foundry => 'sgbr',
-    layer => 'lemma',
+    layer => 'ana',
     cb => sub {
       my ($stream, $token) = @_;
       my $mtt = $stream->pos($token->pos);
 
-      my $content = $token->hash->{fs}->{f};
-
       my $found;
-
-      my $capital = 0;
-
-      my $lemmata = (ref $content->{fs}->{f} eq 'ARRAY') ?
+      my $content = $token->hash->{fs}->{f};
+      my $pos = (ref $content->{fs}->{f} eq 'ARRAY') ?
 	$content->{fs}->{f} : [$content->{fs}->{f}];
 
-      my $first = 0;
-
-      foreach my $f (@$lemmata) {
+      # Iterate over all lemmata
+      foreach my $f (@$pos) {
 
 	# lemma
-	if (($f->{-name} eq 'lemma')
+	if (($f->{-name} eq 'ctag')
 	      && ($found = $f->{'#text'})) {
 	  # b($found)->decode('latin-1')->encode->to_string
-	  $mtt->add(term => 'sgbr/l:' . $found) unless $first++;
-	  $mtt->add(term => 'sgbr/lv:' . $found);
+	  $mtt->add(term => 'sgbr/p:' . $found);
 	};
       };
     }) or return;
@@ -38,7 +32,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['sgbr/l=tokens', 'sgbr/lv=tokens']
-}
+  ['sgbr/p=tokens']
+};
 
 1;

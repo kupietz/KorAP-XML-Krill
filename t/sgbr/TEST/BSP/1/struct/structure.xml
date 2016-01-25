@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="TEST_BSP.1" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="364" l="1">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">text</f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="18" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+      </fs>
+    </span>
+    <span id="s2" from="0" to="18" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s3" from="0" to="18" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.1</f>
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s4" from="19" to="364" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s5" from="19" to="52" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s6" from="19" to="21" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.PPER</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.2</f>
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s7" from="22" to="25" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.VAFIN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.3</f>
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s8" from="26" to="32" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.ADV</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.4</f>
+            <f name="n">3</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s9" from="33" to="36" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.ART</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.5</f>
+            <f name="n">4</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s10" from="37" to="44" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.6</f>
+            <f name="n">5</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s11" from="45" to="51" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="n">6</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s12" from="51" to="52" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._ENDE</f>
+            <f name="n">7</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s13" from="53" to="305" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">3</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s14" from="53" to="55" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.APPR</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.7</f>
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s15" from="56" to="62" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.PDAT</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.8</f>
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s16" from="63" to="70" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.6</f>
+            <f name="n">3</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s17" from="71" to="74" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.VVFIN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.9</f>
+            <f name="n">4</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s18" from="75" to="77" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.PPER</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.2</f>
+            <f name="n">5</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s19" from="78" to="81" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.ART</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.5</f>
+            <f name="n">6</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s20" from="82" to="86" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.10</f>
+            <f name="n">7</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s21" from="87" to="96" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.11</f>
+            <f name="n">8</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s22" from="96" to="97" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._KOMMA</f>
+            <f name="n">9</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s23" from="98" to="101" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.ART</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.12</f>
+            <f name="n">10</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s24" from="102" to="106" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.13</f>
+            <f name="n">11</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s25" from="107" to="115" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.14</f>
+            <f name="n">12</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s26" from="115" to="116" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._KOMMA</f>
+            <f name="n">13</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s27" from="117" to="120" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.ART</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.5</f>
+            <f name="n">14</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s28" from="121" to="138" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.ADJA</f>
+            <f name="n">15</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s29" from="139" to="143" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.15</f>
+            <f name="n">16</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s30" from="143" to="144" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._KOMMA</f>
+            <f name="n">17</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s31" from="145" to="148" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.ART</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.12</f>
+            <f name="n">18</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s32" from="149" to="161" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.ADJA</f>
+            <f name="n">19</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s33" from="162" to="167" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.16</f>
+            <f name="n">20</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s34" from="168" to="171" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.KON</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.17</f>
+            <f name="n">21</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s35" from="172" to="175" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.ART</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.5</f>
+            <f name="n">22</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s36" from="176" to="182" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.PIAT</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.18</f>
+            <f name="n">23</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s37" from="183" to="190" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.ADJA</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.19</f>
+            <f name="n">24</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s38" from="191" to="200" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.20</f>
+            <f name="n">25</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s39" from="201" to="205" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.21</f>
+            <f name="n">26</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s40" from="206" to="209" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.KON</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.17</f>
+            <f name="n">27</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s41" from="210" to="215" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.22</f>
+            <f name="n">28</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s42" from="215" to="216" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._KOMMA</f>
+            <f name="n">29</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s43" from="217" to="220" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.23</f>
+            <f name="n">30</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s44" from="221" to="226" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.24</f>
+            <f name="n">31</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s45" from="227" to="230" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.KON</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.17</f>
+            <f name="n">32</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s46" from="231" to="234" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.PPOSAT</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.25</f>
+            <f name="n">33</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s47" from="235" to="239" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.26</f>
+            <f name="n">34</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s48" from="239" to="240" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._KOMMA</f>
+            <f name="n">35</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s49" from="241" to="244" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.27</f>
+            <f name="n">36</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s50" from="245" to="252" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.28</f>
+            <f name="n">37</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s51" from="253" to="260" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.29</f>
+            <f name="n">38</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s52" from="260" to="261" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._KOMMA</f>
+            <f name="n">39</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s53" from="262" to="267" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.PTKNEG</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.30</f>
+            <f name="n">40</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s54" from="268" to="270" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.PTKZU</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.31</f>
+            <f name="n">41</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s55" from="271" to="280" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.VVINF</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.32</f>
+            <f name="n">42</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s56" from="280" to="281" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._ENDE</f>
+            <f name="n">43</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s57" from="281" to="284" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.PPOSAT</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.25</f>
+            <f name="n">44</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s58" from="285" to="297" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.33</f>
+            <f name="n">45</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s59" from="298" to="304" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.34</f>
+            <f name="n">46</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s60" from="304" to="305" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._ENDE</f>
+            <f name="n">47</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s61" from="306" to="326" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">4</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s62" from="306" to="308" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.PPER</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.2</f>
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s63" from="309" to="312" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.VAFIN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.3</f>
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s64" from="313" to="325" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.35</f>
+            <f name="n">3</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s65" from="325" to="326" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._ENDE</f>
+            <f name="n">4</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s66" from="327" to="364" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">5</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s67" from="327" to="328" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._SONST</f>
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s68" from="328" to="333" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.ADV</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.36</f>
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s69" from="334" to="337" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.VAFIN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.3</f>
+            <f name="n">3</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s70" from="338" to="348" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.37</f>
+            <f name="n">4</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s71" from="348" to="349" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._SONST</f>
+            <f name="n">5</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s72" from="349" to="350" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._KOMMA</f>
+            <f name="n">6</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s73" from="351" to="358" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.VVFIN</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.38</f>
+            <f name="n">7</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s74" from="359" to="364" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS.NE</f>
+            <f name="lemmaRef">#TEST.BSP.Lemmata.16</f>
+            <f name="n">8</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s75" from="364" to="364" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#TEST.BSP.POS._ENDE</f>
+            <f name="n">9</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>
