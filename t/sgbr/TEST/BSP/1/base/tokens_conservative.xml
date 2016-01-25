@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="TEST_BSP.1" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="t_0" from="0" to="18" />
+    <span id="t_1" from="19" to="21" />
+    <span id="t_2" from="22" to="25" />
+    <span id="t_3" from="26" to="32" />
+    <span id="t_4" from="33" to="36" />
+    <span id="t_5" from="37" to="44" />
+    <span id="t_6" from="45" to="51" />
+    <span id="t_7" from="51" to="52" />
+    <span id="t_8" from="53" to="55" />
+    <span id="t_9" from="56" to="62" />
+    <span id="t_10" from="63" to="70" />
+    <span id="t_11" from="71" to="74" />
+    <span id="t_12" from="75" to="77" />
+    <span id="t_13" from="78" to="81" />
+    <span id="t_14" from="82" to="86" />
+    <span id="t_15" from="87" to="96" />
+    <span id="t_16" from="96" to="97" />
+    <span id="t_17" from="98" to="101" />
+    <span id="t_18" from="102" to="106" />
+    <span id="t_19" from="107" to="115" />
+    <span id="t_20" from="115" to="116" />
+    <span id="t_21" from="117" to="120" />
+    <span id="t_22" from="121" to="138" />
+    <span id="t_23" from="139" to="143" />
+    <span id="t_24" from="143" to="144" />
+    <span id="t_25" from="145" to="148" />
+    <span id="t_26" from="149" to="161" />
+    <span id="t_27" from="162" to="167" />
+    <span id="t_28" from="168" to="171" />
+    <span id="t_29" from="172" to="175" />
+    <span id="t_30" from="176" to="182" />
+    <span id="t_31" from="183" to="190" />
+    <span id="t_32" from="191" to="200" />
+    <span id="t_33" from="201" to="205" />
+    <span id="t_34" from="206" to="209" />
+    <span id="t_35" from="210" to="215" />
+    <span id="t_36" from="215" to="216" />
+    <span id="t_37" from="217" to="220" />
+    <span id="t_38" from="221" to="226" />
+    <span id="t_39" from="227" to="230" />
+    <span id="t_40" from="231" to="234" />
+    <span id="t_41" from="235" to="239" />
+    <span id="t_42" from="239" to="240" />
+    <span id="t_43" from="241" to="244" />
+    <span id="t_44" from="245" to="252" />
+    <span id="t_45" from="253" to="260" />
+    <span id="t_46" from="260" to="261" />
+    <span id="t_47" from="262" to="267" />
+    <span id="t_48" from="268" to="270" />
+    <span id="t_49" from="271" to="284" />
+    <span id="t_50" from="285" to="297" />
+    <span id="t_51" from="298" to="304" />
+    <span id="t_52" from="304" to="305" />
+    <span id="t_53" from="306" to="308" />
+    <span id="t_54" from="309" to="312" />
+    <span id="t_55" from="313" to="325" />
+    <span id="t_56" from="325" to="326" />
+    <span id="t_57" from="328" to="333" />
+    <span id="t_58" from="334" to="337" />
+    <span id="t_59" from="338" to="348" />
+    <span id="t_60" from="348" to="349" />
+    <span id="t_61" from="349" to="350" />
+    <span id="t_62" from="351" to="358" />
+    <span id="t_63" from="359" to="364" />
+    <span id="t_64" from="364" to="365" />
+  </spanList>
+</layer>

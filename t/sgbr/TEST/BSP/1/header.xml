@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<teiHeader>
+<textSigle>TEST_BSP.1</textSigle>
+<item ana="#TEST.BSP.Kodex" n="1" rend="M" xml:id="TEST.BSP.Texte.1">
+<biblFull>
+<titleStmt>
+<title>Sommerüberraschung</title>
+<author ref="#TEST.BSP.Autoren.1"/>
+</titleStmt>
+<publicationStmt>
+<p>Dieser Text ist in Wirklichkeit nicht vorhanden.</p>
+</publicationStmt>
+</biblFull>
+</item>
+</teiHeader>
