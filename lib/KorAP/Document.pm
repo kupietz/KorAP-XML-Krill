@@ -145,11 +145,12 @@ sub parse {
     unshift @header, '/' . catfile(@path, 'header.xml');
     pop @path;
   };
+
   my @type = qw/corpus doc text/;
   foreach (@header) {
     # Get corpus, doc and text meta data
     my $type = shift(@type);
-    $self->_parse_meta($_, $type) if -e $_;
+    $self->_parse_meta_i5($_, $type) if -e $_;
   };
 
   return 1;
@@ -213,7 +214,7 @@ sub _remove_prefix {
 };
 
 
-sub _parse_meta {
+sub _parse_meta_i5 {
   my $self = shift;
   my $header_xml = shift;
   my $type = shift;
@@ -518,88 +519,6 @@ sub to_hash {
   };
 
   return \%hash;
-};
-
-
-# Don't work that well
-sub _parse_meta_fast {
-  my $self = shift;
-
-  #  my $file = b($self->path . 'header.xml')->slurp->decode('iso-8859-1');
-    my $file = b($self->path . 'header.xml')->slurp;
-
-  my ($meta, $error);
-  my $unable = 'Unable to parse document ' . $self->path;
-
-  try {
-      local $SIG{__WARN__} = sub {
-	  $error = 1;
-      };
-      $meta = xml2hash(
-	$file,
-	text => '#text',
-	attr => '-',
-	array => ['h.title', 'imprint', 'catRef', 'h.author']
-      )->{idsHeader};
-  }
-  catch  {
-      $self->log->warn($unable);
-      $error = 1;
-  };
-
-  return if $error;
-
-  my $bibl_struct = $meta->{fileDesc}->{sourceDesc}->{biblStruct};
-  my $analytic = $bibl_struct->{analytic};
-
-  my $titles = $analytic->{'h.title'};
-  foreach (@$titles) {
-    if ($_->{'-type'} eq 'main') {
-      $self->title($_->{'#text'});
-    }
-    elsif ($_->{'-type'} eq 'sub') {
-      $self->sub_title($_->{'#text'});
-    };
-  };
-
-  # Get Author
-  if (my $author = $analytic->{'h.author'}) {
-    $self->author($author->[0]);
-  };
-
-  # Get pubDate
-  my $date = $bibl_struct->{monogr}->{imprint};
-  my ($year, $month, $day) = (0,0,0);
-  foreach (@$date) {
-    if ($date->{-type} eq 'year') {
-      $year = $date->{'#text'};
-    }
-    elsif ($date->{-type} eq 'month') {
-      $month = $date->{'#text'};
-    }
-    elsif ($date->{-type} eq 'day') {
-      $day = $date->{'#text'};
-    };
-  };
-
-  $year  = 0 if $year  !~ /^\d+$/;
-  $month = 0 if $month !~ /^\d+$/;
-  $day   = 0 if $day   !~ /^\d+$/;
-
-  $date = $year ? ($year < 100 ? '20' . $year : $year) : '0000';
-  $date .= length($month) == 1 ? '0' . $month : $month;
-  $date .= length($day) == 1 ? '0' . $day : $day;
-
-  $self->pub_date($date);
-
-  # Get textClasses
-  my @topic;
-  my $textClass = $meta->{profileDesc}->{textClass}->{catRef};
-  foreach (@$textClass) {
-    my ($ign, @ttopic) = split('\.', $_->{'-target'});
-    push(@topic, @ttopic);
-  };
-  $self->text_class(@topic);
 };
 
 
