@@ -36,7 +36,7 @@
             <pubDate type="year">2001</pubDate>
             <pubDate type="month">04</pubDate>
             <pubDate type="day">02</pubDate>
-	    <pubPlace>Mannheim</pubPlace>
+	    <pubPlace key="DE">Mannheim</pubPlace>
           </imprint>
           <biblScope type="issue"/>
           <biblScope type="issueplace"/>

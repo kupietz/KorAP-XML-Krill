@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="text.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
-<raw_text docid="VDI_JAN.00001" xmlns="http://ids-mannheim.de/ns/KorAP">
+<raw_text docid="VDI14_JAN.00001" xmlns="http://ids-mannheim.de/ns/KorAP">
   <metadata file="metadata.xml" />
   <text>hui</text>
 </raw_text>
