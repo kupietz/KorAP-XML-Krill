@@ -11,10 +11,6 @@ use lib 'lib', '../lib';
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
-
-diag 'Support "availability"';
-diag 'Support "pubPlace-key"';
-
 # TODO: Make 'text' -> 'primaryText'
 
 use_ok('KorAP::Document');
@@ -60,7 +56,6 @@ ok(!$doc->text_domain, 'no text_domain');
 ok(!$doc->text_column, 'no text_column');
 ok(!$doc->keywords_string, 'no keywords');
 is($doc->text_class_string, 'freizeit-unterhaltung reisen wissenschaft populaerwissenschaft', 'no text classes');
-ok(!$doc->language, 'no text_column');
 
 #is($doc->coll_title, 'Wikipedia', 'Collection title');
 #is($doc->coll_sub_title, 'Die freie Enzyklopädie', 'Collection subtitle');
@@ -76,7 +71,6 @@ is($doc->title, 'Sexueller Missbrauch –„Das schreiende Kind steckt noch tief
 ok(!$doc->sub_title, 'subTitle');
 is($doc->text_sigle, 'BRZ13_APR.00001', 'ID');
 is($doc->corpus_sigle, 'BRZ13', 'corpusID');
-
 
 is($doc->pub_date, '20130402', 'pubDate');
 is($doc->pub_place, 'Braunschweig', 'pubPlace');
@@ -124,13 +118,13 @@ is($doc->creation_date, '20010402', 'Creation date');
 ok(!$doc->text_type, 'text_type');
 is($doc->text_type_art, 'Bericht', 'text_type art');
 
-
 # ERL/0001
 $path = catdir(dirname(__FILE__), 'ERL/00001');
 ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
-is($doc->title, 'MK2/ERL.00001 Amtsblatt des Landesbezirks Baden [diverse Erlasse], Hrsg. und Schriftleitung: Präsidialstelle der Landesverwaltung Baden in Karlsruhe. - Karlsruhe, o.J.', 'title'); # Amtsblatt des Landesbezirks Baden [diverse Erlasse]
+is($doc->title, 'Amtsblatt des Landesbezirks Baden [diverse Erlasse], Hrsg. und Schriftleitung: Präsidialstelle der Landesverwaltung Baden in Karlsruhe. - Karlsruhe, o.J.', 'title'); # Amtsblatt des Landesbezirks Baden [diverse Erlasse]
+# MK2/ERL.00001
 
 ok(!$doc->sub_title, 'subTitle');
 is($doc->text_sigle, 'MK2_ERL.00001', 'ID');
@@ -146,7 +140,11 @@ ok(!$doc->author, 'author');
 ok(!$doc->editor, 'Editor');
 is($doc->publisher, 'Badenia Verlag und Druckerei', 'Publisher');
 is($doc->creation_date, '19600000', 'Creation date');
-diag 'Non-acceptance of creation date ranges may be temporary';
+
+# !!!
+# diag 'Non-acceptance of creation date ranges may be temporary';
+
+
 #ok(!$doc->coll_title, 'Collection title');
 #ok(!$doc->coll_sub_title, 'Collection subtitle');
 #ok(!$doc->coll_editor, 'Collection editor');
@@ -155,11 +153,11 @@ is($doc->text_type, 'Erlass', 'text_type');
 ok(!$doc->text_type_art, 'text_type art');
 
 # A01/02035-substring
-$path = catdir(dirname(__FILE__), 'A01/02035-substring');
+$path = catdir(dirname(__FILE__), 'A00/02035-substring');
 ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
-is($doc->title, 'A00/JAN.02035 St. Galler Tagblatt, 11.01.2000, Ressort: TB-RSP (Abk.)', 'title');
+is($doc->title, 'St. Galler Tagblatt, 11.01.2000, Ressort: TB-RSP (Abk.)', 'title'); # A00/JAN.02035
 ok(!$doc->sub_title, 'subTitle');
 is($doc->text_sigle, 'A00_JAN.02035', 'ID');
 is($doc->corpus_sigle, 'A00', 'corpusID');
@@ -182,7 +180,7 @@ ok(!$doc->text_type, 'text_type');
 is($doc->text_type_art, 'Bericht', 'text_type art');
 
 # A01/02873-meta
-$path = catdir(dirname(__FILE__), 'A01/02873-meta');
+$path = catdir(dirname(__FILE__), 'A00/02873-meta');
 ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
@@ -197,6 +195,7 @@ is($doc->text_class->[1], 'film', 'TextClass');
 ok(!$doc->text_class->[2], 'TextClass');
 ok(!$doc->author, 'author');
 
+
 # Additional information
 ok(!$doc->editor, 'Editor');
 ok(!$doc->publisher, 'Publisher');
@@ -210,7 +209,7 @@ is($doc->text_type_art, 'Bericht', 'text_type art');
 
 
 # A01/05663-unbalanced
-$path = catdir(dirname(__FILE__), 'A01/05663-unbalanced');
+$path = catdir(dirname(__FILE__), 'A00/05663-unbalanced');
 ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
@@ -225,6 +224,7 @@ is($doc->text_class->[1], 'gesundheit', 'TextClass');
 ok(!$doc->text_class->[2], 'TextClass');
 ok(!$doc->author, 'author');
 
+
 # Additional information
 ok(!$doc->editor, 'Editor');
 ok(!$doc->publisher, 'Publisher');
@@ -238,7 +238,7 @@ is($doc->text_type_art, 'Bericht', 'text_type art');
 
 
 # A01/07452-deep
-$path = catdir(dirname(__FILE__), 'A01/07452-deep');
+$path = catdir(dirname(__FILE__), 'A00/07452-deep');
 ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
@@ -253,6 +253,7 @@ is($doc->text_class->[1], 'kommunalpolitik', 'TextClass');
 ok(!$doc->text_class->[2], 'TextClass');
 ok(!$doc->author, 'author');
 
+
 # Additional information
 ok(!$doc->editor, 'Editor');
 ok(!$doc->publisher, 'Publisher');
@@ -263,7 +264,6 @@ is($doc->creation_date, "20000129", 'Creation date');
 #ok(!$doc->coll_author, 'Collection author');
 ok(!$doc->text_type, 'text_type');
 is($doc->text_type_art, 'Bericht', 'text_type art');
-
 
 # ART
 $path = catdir(dirname(__FILE__), 'artificial');
@@ -282,6 +282,7 @@ is($doc->text_sigle, 'ART_ABC.00001', 'ID');
 is($doc->corpus_sigle, 'ART', 'corpusID');
 is($doc->pub_date, '20010402', 'pubDate');
 is($doc->pub_place, 'Mannheim', 'pubPlace');
+is($doc->pub_place_key, 'DE', 'pubPlace key');
 is($doc->text_class->[0], 'freizeit-unterhaltung', 'TextClass');
 is($doc->text_class->[1], 'vereine-veranstaltungen', 'TextClass');
 ok(!$doc->text_class->[2], 'TextClass');
@@ -310,10 +311,14 @@ ok($doc = KorAP::Document->new( path => $path ), 'Load Korap::Document');
 like($doc->path, qr!$path/$!, 'Path');
 
 ok($doc->parse, 'Parse document');
-is($doc->text_sigle, 'VDI_JAN.00001', 'text sigle');
-is($doc->doc_sigle, 'VDI_JAN', 'doc sigle');
-is($doc->corpus_sigle, 'VDI', 'corpus sigle');
+
+
+is($doc->text_sigle, 'VDI14_JAN.00001', 'text sigle');
+is($doc->doc_sigle, 'VDI14_JAN', 'doc sigle');
+is($doc->corpus_sigle, 'VDI14', 'corpus sigle');
+
 is($doc->title, '10- Zz mit Zahl', 'title');
+
 ok(!$doc->sub_title, 'subtitle');
 is($doc->pub_date, '20140117', 'pubdate');
 is($doc->pub_place, 'Düsseldorf', 'pubplace');
@@ -334,7 +339,8 @@ ok(!$doc->bibl_edition_statement, 'bibl edition statement');
 is($doc->reference, 'VDI nachrichten, 17.01.2014, S. 10; 10- Zz mit Zahl [Ausführliche Zitierung nicht verfügbar]', 'Reference');
 
 ok(!$doc->language, 'Language');
-diag 'This may be "de" in the future';
+# !!!
+# diag 'This may be "de" in the future';
 
 is($doc->doc_title, 'VDI nachrichten, Januar 2014', 'Doc title');
 ok(!$doc->doc_sub_title, 'Doc Sub title');
@@ -348,7 +354,6 @@ ok(!$doc->corpus_author, 'Corpus author');
 
 is($doc->keywords_string, '', 'Keywords');
 is($doc->text_class_string, 'Freizeit-Unterhaltung Reisen Politik Ausland', 'Text class');
-
 
 # WDD
 $path = catdir(dirname(__FILE__), 'WDD/G27/38989');
@@ -397,7 +402,9 @@ ok(!$doc->corpus_author, 'Corpus author');
 is($doc->keywords_string, '', 'Keywords');
 is($doc->text_class_string, '', 'Text class');
 
+
+is($doc->availability, 'CC-BY-SA', 'Availability');
+
+
 done_testing;
 __END__
-
-

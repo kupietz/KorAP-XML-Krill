@@ -49,6 +49,9 @@ our @ADVANCED_ATTR = qw/publisher
 			corpus_title
 			corpus_sub_title
 			corpus_editor
+
+			availability
+			pub_place_key
 			/;
 # Separate: text_class, keywords
 
@@ -66,6 +69,7 @@ has log => sub {
   state $log = KorAP::Log->new;
   return $log;
 };
+
 
 sub new {
   my $class = shift;
@@ -95,6 +99,7 @@ sub parse {
   }
 
   else {
+
     $file = b($data_xml)->slurp;
 
     try {
@@ -102,11 +107,10 @@ sub parse {
 	$error = 1;
       };
       $rt = xml2hash($file, text => '#text', attr => '-')->{raw_text};
-    }
-      catch  {
-	$self->log->warn($unable);
-	$error = 1;
-      };
+    } catch  {
+      $self->log->warn($unable);
+      $error = 1;
+    };
   };
 
   return if $error;
@@ -150,10 +154,34 @@ sub parse {
   foreach (@header) {
     # Get corpus, doc and text meta data
     my $type = shift(@type);
-    $self->_parse_meta_i5($_, $type) if -e $_;
+
+    next unless -e $_;
+
+    my $slurp = b($_)->slurp;
+    $slurp =~ /^[^>]+encoding\s*=\s*(["'])([^\1]+?)\1/;
+    my $file = $slurp->decode($2 // 'UTF-8');
+
+    # Get DOM
+    my $dom = Mojo::DOM->new($file);
+
+    if ($dom->at('idsHeader') || $dom->at('idsheader')) {
+      $self->_parse_meta_i5($dom, $type);
+    }
+    else {
+      $self->_parse_meta_tei($dom, $type);
+    };
   };
 
   return 1;
+};
+
+
+# Store arbitrary data
+sub store {
+  my $self = shift;
+  return $self->{store} unless @_;
+  return $self->{store}->{$_[0]} if @_ == 1;
+  $self->{store}->{$_[0]} = $_[1];
 };
 
 
@@ -199,7 +227,7 @@ sub keywords_string {
 }
 
 sub _remove_prefix {
-  return $_[0];
+#   return $_[0];
 
   # This may render some titles wrong, e.g. 'VDI nachrichten 2014' ...
   my $title = shift;
@@ -214,14 +242,78 @@ sub _remove_prefix {
 };
 
 
-sub _parse_meta_i5 {
+sub _parse_meta_tei {
   my $self = shift;
-  my $header_xml = shift;
+  my $dom = shift;
   my $type = shift;
 
-  my $file = b($header_xml)->slurp->decode('iso-8859-1');
+  my $stmt;
+  if ($type eq 'text' && ($stmt = $dom->at('titleStmt'))) {
 
-  my $dom = Mojo::DOM->new($file);
+    # Title
+    try {
+      $stmt->find('title')->each(
+	sub {
+	  my $type = $_->attr('type') || 'main';
+	  $self->title($_->all_text) if $type eq 'main';
+	  $self->sub_title($_->all_text) if $type eq 'sub';
+	}
+      );
+    };
+
+    # Author
+    try {
+      my $author = $stmt->at('author')->attr('ref');
+      $author = $self->{ref_author}->{$author};
+      if ($author) {
+	$self->author($author->{id});
+	$self->store('sgbrAuthorAgeClass' => $author->{age}) if $author->{age};
+	$self->store('sgbrAuthorSex' => $author->{sex}) if $author->{sex};
+      };
+    };
+
+    try {
+      my $kodex = $dom->at('item[rend]')->attr('rend');
+      $self->store('sgbrKodex' => $kodex);
+    };
+  }
+
+  elsif ($type eq 'doc') {
+    try {
+      $dom->find('particDesc person')->each(
+	sub {
+	  $self->{ref_author}->{'#' . $_->attr('xml:id')} = {
+	    age => $_->attr('age'),
+	    sex => $_->attr('sex'),
+	    id => $_->attr('xml:id')
+	  }
+	});
+    };
+
+    try {
+      my $lang = $dom->at('language[ident]')->attr('ident');
+      $self->language($lang);
+    };
+
+    try {
+      $stmt = $dom->find('titleStmt > title')->each(
+	sub {
+	  my $type = $_->attr('type') || 'main';
+	  $self->doc_title($_->all_text) if $type eq 'main';
+	  $self->doc_sub_title($_->all_text) if $type eq 'sub';
+	}
+      );
+    };
+  };
+  return;
+};
+
+
+
+sub _parse_meta_i5 {
+  my $self = shift;
+  my $dom = shift;
+  my $type = shift;
 
   my $analytic = $dom->at('analytic');
 
@@ -263,7 +355,8 @@ sub _parse_meta_i5 {
   if ($type eq 'corpus') {
     unless ($self->corpus_title) {
       if (my $title = $dom->at('fileDesc > titleStmt > c\.title')) {
-	$self->corpus_title(_remove_prefix($title->all_text, $self->corpus_sigle)) if $title->all_text;
+	$self->corpus_title(_remove_prefix($title->all_text, $self->corpus_sigle))
+	  if $title->all_text;
       };
     };
   }
@@ -272,7 +365,8 @@ sub _parse_meta_i5 {
   elsif ($type eq 'doc') {
     unless ($self->doc_title) {
       if (my $title = $dom->at('fileDesc > titleStmt > d\.title')) {
-	$self->doc_title(_remove_prefix($title->all_text, $self->doc_sigle)) if $title->all_text;
+	$self->doc_title(_remove_prefix($title->all_text, $self->doc_sigle))
+	  if $title->all_text;
       };
     };
   }
@@ -281,14 +375,16 @@ sub _parse_meta_i5 {
   elsif ($type eq 'text') {
     unless ($self->title) {
       if (my $title = $dom->at('fileDesc > titleStmt > t\.title')) {
-	$self->title(_remove_prefix($title->all_text, $self->text_sigle)) if $title->all_text;
-      };
+	$self->title(_remove_prefix($title->all_text, $self->text_sigle))
+	  if $title->all_text;
+      }
     };
   };
 
   # Get PubPlace
   if (my $place = $dom->at('pubPlace')) {
     $self->pub_place($place->all_text) if $place->all_text;
+    $self->pub_place_key($place->attr('key')) if $place->attr('key');
   };
 
   # Get Publisher
@@ -352,6 +448,13 @@ sub _parse_meta_i5 {
     if (my $text_type_ref = $text_desc->at('textTypeRef')) {
       $self->text_type_ref($text_type_ref->all_text) if $text_type_ref->all_text;
     };
+  };
+
+  # Availability
+  try {
+    $self->availability(
+      $dom->at('availability')->all_text
+    );
   };
 
   # Get pubDate
