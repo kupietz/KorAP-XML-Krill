@@ -6,14 +6,14 @@ use Test::More;
 use Scalar::Util qw/weaken/;
 use Data::Dumper;
 
-use_ok('KorAP::Document');
+use_ok('KorAP::XML::Krill');
 
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
 my $path = catdir(dirname(__FILE__), 'corpus', 'doc', '0001');
 
-ok(my $doc = KorAP::Document->new(
+ok(my $doc = KorAP::XML::Krill->new(
   path => $path . '/'
 ), 'Load Korap::Document');
 
@@ -23,9 +23,9 @@ ok($doc->parse, 'Parse document');
 ok($doc->primary->data, 'Primary data in existence');
 is($doc->primary->data_length, 129, 'Data length');
 
-use_ok('KorAP::Tokenizer');
+use_ok('KorAP::XML::Tokenizer');
 
-ok(my $tokens = KorAP::Tokenizer->new(
+ok(my $tokens = KorAP::XML::Tokenizer->new(
   path => $doc->path,
   doc => $doc,
   foundry => 'OpenNLP',

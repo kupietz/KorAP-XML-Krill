@@ -6,14 +6,14 @@ use Test::More;
 use Scalar::Util qw/weaken/;
 use Data::Dumper;
 use lib 't/index';
-use TestInit;
+use KorAP::XML::Krill;
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
 
 my $path = catdir(dirname(__FILE__), 'corpus', 'doc', '0001');
 
-ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::XML::Krill');
 ok($doc->parse, 'Parse document');
 like($doc->path, qr!$path/!, 'Path');
 

@@ -3,9 +3,9 @@ use strict;
 use warnings;
 use Test::More;
 
-use_ok('KorAP::Tokenizer::Range');
+use_ok('KorAP::XML::Tokenizer::Range');
 
-my $range = KorAP::Tokenizer::Range->new;
+my $range = KorAP::XML::Tokenizer::Range->new;
 
 # Set a gap from 0 to 2, refering to position 0
 $range->gap(0, 2, 0);

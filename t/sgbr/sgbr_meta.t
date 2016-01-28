@@ -4,13 +4,13 @@ use Test::More;
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 use Data::Dumper;
-use KorAP::Tokenizer;
-use KorAP::Document;
+use KorAP::XML::Tokenizer;
+use KorAP::XML::Krill;
 use utf8;
 
 my $path = catdir(dirname(__FILE__), 'TEST', 'BSP', 1);
 
-ok(my $doc = KorAP::Document->new(
+ok(my $doc = KorAP::XML::Krill->new(
   path => $path . '/'
 ), 'Create Document');
 

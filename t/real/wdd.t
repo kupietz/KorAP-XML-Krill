@@ -1,6 +1,3 @@
-#!/usr/bin/env perl
-# source ~/perl5/perlbrew/etc/bashrc
-# perlbrew switch perl-blead@korap
 use strict;
 use warnings;
 use Test::More;
@@ -17,12 +14,12 @@ use lib 'lib', '../lib';
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
-use_ok('KorAP::Document');
+use_ok('KorAP::XML::Krill');
 
 # GOE/AGA/03828
 my $path = catdir(dirname(__FILE__), '../corpus/WDD/G27/38989');
 
-ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 
 is($doc->text_sigle, 'WDD11_G27.38989', 'Correct text sigle');
@@ -61,12 +58,12 @@ ok(!$doc->doc_author, 'Correct Doc author');
 ok(!$doc->doc_editor, 'Correct doc editor');
 
 # Tokenization
-use_ok('KorAP::Tokenizer');
+use_ok('KorAP::XML::Tokenizer');
 
 my ($token_base_foundry, $token_base_layer) = (qw/OpenNLP Tokens/);
 
 # Get tokenization
-my $tokens = KorAP::Tokenizer->new(
+my $tokens = KorAP::XML::Tokenizer->new(
   path => $doc->path,
   doc => $doc,
   foundry => $token_base_foundry,
