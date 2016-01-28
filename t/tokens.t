@@ -25,7 +25,7 @@ is($term->p_end, 56);
 is($term->o_start, 34);
 is($term->o_end, 120);
 is($term->payload, '<i>56');
-is($term->to_string, 'Baum#34-120$<i>56<i>56');
+is($term->to_string, 'Baum$<i>34<i>120<i>56<i>56');
 
 ok($term = KorAP::Field::MultiTerm->new(
   term => 'Baum'
