@@ -8,14 +8,14 @@ use lib 'lib', '../lib';
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
-use_ok('KorAP::Document');
+use_ok('KorAP::XML::Krill');
 
 # WPD/00001
 my $path = catdir(dirname(__FILE__), 'corpus/WPD/00001');
-ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 like($doc->path, qr!$path/!, 'Path');
 
-ok($doc = KorAP::Document->new( path => $path ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path ), 'Load Korap::Document');
 like($doc->path, qr!$path/$!, 'Path');
 
 ok($doc->parse, 'Parse document');
@@ -59,7 +59,7 @@ is($doc->text_class_string, 'freizeit-unterhaltung reisen wissenschaft populaerw
 
 # BRZ13/00001
 $path = catdir(dirname(__FILE__), 'corpus/BRZ13/00001');
-ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
 is($doc->title, 'Sexueller Missbrauch –„Das schreiende Kind steckt noch tief in mir“', 'title');
@@ -88,7 +88,7 @@ ok(!$doc->text_type_art, 'text_type art');
 
 # A01/13047
 $path = catdir(dirname(__FILE__), 'corpus/A01/13047');
-ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
 is($doc->title, 'Fischer und Kolp im Sonnenhügel', 'title');
@@ -115,7 +115,7 @@ is($doc->text_type_art, 'Bericht', 'text_type art');
 
 # ERL/0001
 $path = catdir(dirname(__FILE__), 'corpus/ERL/00001');
-ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
 is($doc->title, 'Amtsblatt des Landesbezirks Baden [diverse Erlasse]', 'title'); # Amtsblatt des Landesbezirks Baden [diverse Erlasse]
@@ -149,7 +149,7 @@ ok(!$doc->text_type_art, 'text_type art');
 
 # A01/02035-substring
 $path = catdir(dirname(__FILE__), 'corpus/A00/02035-substring');
-ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
 is($doc->title, 'St. Galler Tagblatt, 11.01.2000, Ressort: TB-RSP (Abk.)', 'title'); # A00/JAN.02035
@@ -176,7 +176,7 @@ is($doc->text_type_art, 'Bericht', 'text_type art');
 
 # A01/02873-meta
 $path = catdir(dirname(__FILE__), 'corpus/A00/02873-meta');
-ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
 is($doc->title, 'Tradition und Moderne', 'title');
@@ -205,7 +205,7 @@ is($doc->text_type_art, 'Bericht', 'text_type art');
 
 # A01/05663-unbalanced
 $path = catdir(dirname(__FILE__), 'corpus/A00/05663-unbalanced');
-ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
 is($doc->title, 'Mehr Arbeitslose im Dezember', 'title');
@@ -234,7 +234,7 @@ is($doc->text_type_art, 'Bericht', 'text_type art');
 
 # A01/07452-deep
 $path = catdir(dirname(__FILE__), 'corpus/A00/07452-deep');
-ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
 is($doc->title, 'Wil im Dezember 1999', 'title');
@@ -262,10 +262,10 @@ is($doc->text_type_art, 'Bericht', 'text_type art');
 
 # ART
 $path = catdir(dirname(__FILE__), 'corpus/artificial');
-ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 #is($doc->path, $path . '/', 'Path');
 
-ok($doc = KorAP::Document->new( path => $path ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path ), 'Load Korap::Document');
 #is($doc->path, $path . '/', 'Path');
 
 ok($doc->parse, 'Parse document');
@@ -299,10 +299,10 @@ is($doc->text_type_art, 'Bericht', 'text_type art');
 
 # Multipath headers
 $path = catdir(dirname(__FILE__), 'corpus/VDI/JAN/00001');
-ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 like($doc->path, qr!$path/!, 'Path');
 
-ok($doc = KorAP::Document->new( path => $path ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path ), 'Load Korap::Document');
 like($doc->path, qr!$path/$!, 'Path');
 
 ok($doc->parse, 'Parse document');
@@ -352,7 +352,7 @@ is($doc->text_class_string, 'Freizeit-Unterhaltung Reisen Politik Ausland', 'Tex
 
 # WDD
 $path = catdir(dirname(__FILE__), 'corpus/WDD/G27/38989');
-ok($doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 like($doc->path, qr!$path/!, 'Path');
 ok($doc->parse, 'Parse document');
 

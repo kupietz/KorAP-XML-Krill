@@ -1,6 +1,3 @@
-#!/usr/bin/env perl
-# source ~/perl5/perlbrew/etc/bashrc
-# perlbrew switch perl-blead@korap
 use strict;
 use warnings;
 use utf8;
@@ -8,9 +5,9 @@ use Test::More;
 use Benchmark ':hireswallclock';
 use lib 'lib', '../lib';
 
-use_ok('KorAP::Field::MultiTerm');
+use_ok('KorAP::XML::Field::MultiTerm');
 
-ok(my $term = KorAP::Field::MultiTerm->new(
+ok(my $term = KorAP::XML::Field::MultiTerm->new(
   term => 'Baum',
   p_start => 0,
   p_end => 56,
@@ -27,7 +24,7 @@ is($term->o_end, 120);
 is($term->payload, '<i>56');
 is($term->to_string, 'Baum$<i>34<i>120<i>56<i>56');
 
-ok($term = KorAP::Field::MultiTerm->new(
+ok($term = KorAP::XML::Field::MultiTerm->new(
   term => 'Baum'
 ), 'Create new object');
 
@@ -39,7 +36,7 @@ is($term->o_end, 0);
 is($term->payload, undef);
 is($term->to_string, 'Baum');
 
-ok($term = KorAP::Field::MultiTerm->new(
+ok($term = KorAP::XML::Field::MultiTerm->new(
   term => 'Ba#um'
 ), 'Create new object');
 
@@ -51,7 +48,7 @@ is($term->o_end, 0);
 is($term->payload, undef);
 is($term->to_string, 'Ba\#um');
 
-ok($term = KorAP::Field::MultiTerm->new(
+ok($term = KorAP::XML::Field::MultiTerm->new(
   term => 'Ba#u$m',
   payload => '<i>45'
 ), 'Create new object');

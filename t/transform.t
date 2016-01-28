@@ -12,7 +12,7 @@ use lib 'lib', '../lib';
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
-use_ok('KorAP::Document');
+use_ok('KorAP::XML::Krill');
 
 sub _t2h {
   my $string = shift;
@@ -59,10 +59,10 @@ push(@layers, ['XIP', 'Sentences']);
 
 
 my $path = catdir(dirname(__FILE__), 'corpus/WPD/00001');
-ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 like($doc->path, qr!$path/$!, 'Path');
 
-ok($doc = KorAP::Document->new( path => $path ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path ), 'Load Korap::Document');
 like($doc->path, qr!$path/$!, 'Path');
 
 ok($doc->parse, 'Parse document');
@@ -83,9 +83,9 @@ ok(!$doc->text_class->[4], 'TextClass');
 is($doc->author, 'Ruru; Jens.Ol; Aglarech; u.a.', 'author');
 
 # Get tokens
-use_ok('KorAP::Tokenizer');
+use_ok('KorAP::XML::Tokenizer');
 # Get tokenization
-ok(my $tokens = KorAP::Tokenizer->new(
+ok(my $tokens = KorAP::XML::Tokenizer->new(
   path => $doc->path,
   doc => $doc,
   foundry => 'OpenNLP',

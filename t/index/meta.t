@@ -13,7 +13,7 @@ use File::Spec::Functions 'catdir';
 
 my $path = catdir(dirname(__FILE__), 'corpus', 'doc', '0001');
 
-ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
+ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 like($doc->path, qr!$path/!, 'Path');
 

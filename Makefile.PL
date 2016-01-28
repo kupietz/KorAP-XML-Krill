@@ -5,10 +5,10 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
-  NAME         => 'KorAP::Indexer',
+  NAME         => 'KorAP::XML::Krill',
   AUTHOR       => 'Nils Diewald',
-  ABSTRACT     => 'Preprocessor for Krill Index preparation',
-  VERSION_FROM => 'lib/KorAP/Indexer.pm',
+  ABSTRACT     => 'Preprocess KorAP XML documents for Krill',
+  VERSION_FROM => 'lib/KorAP/XML/Krill.pm',
   PREREQ_PM => {
     'Mojolicious'    => 6.11,
     'Packed::Array'  => 0.01,
