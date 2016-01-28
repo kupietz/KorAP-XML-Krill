@@ -1,5 +1,6 @@
 0.05 2016-01-28
         - Changed KorAP::Document to KorAP::XML::Krill.
+	- Preparation for GitHub release.
 
 0.04 2016-01-28
         - Added PTI to all payloads.
