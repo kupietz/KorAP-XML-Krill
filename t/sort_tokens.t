@@ -44,7 +44,18 @@ ok($mtt->add(term => '@:h=N',
 ok($mtt->add(term => '@:i=N',
 	     payload =>'<s>3'), 'Add token');
 
-is($mtt->to_string,'[(0-5)<>:b=N#0-5$<i>5|<>:f=N#0-5$<i>6<b>5<b>122|<>:e=ADJ#0-5$<i>6<b>6|<>:d=N#0-5$<i>6<b>7|@:i=N$<s>3|@:h=N$<s>5|@:j=N$<s>8|@:k=N$<s>9|a=N$<b>144|c=N$<b>144|g=N$<b>144]', 'Check string');
+is($mtt->to_string,
+   '[(0-5)<>:b=N$<i>0<i>5<i>5|'.
+     '<>:f=N$<i>0<i>5<i>6<b>5<b>122|'.
+       '<>:e=ADJ$<i>0<i>5<i>6<b>6|'.
+	 '<>:d=N$<i>0<i>5<i>6<b>7|'.
+	   '@:i=N$<s>3|'.
+	     '@:h=N$<s>5|'.
+	       '@:j=N$<s>8|'.
+		 '@:k=N$<s>9|'.
+		   'a=N$<b>144|'.
+		     'c=N$<b>144|'.
+		       'g=N$<b>144]', 'Check string');
 
 ok($mtt = KorAP::Field::MultiTermToken->new, 'New token');
 ok(defined $mtt->o_start(0), 'Set start character offset');

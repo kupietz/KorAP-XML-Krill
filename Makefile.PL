@@ -30,6 +30,10 @@ WriteMakefile(
   },
   MIN_PERL_VERSION => '5.014',
   test => {
-    TESTS => 't/*.t'
-  }
+    TESTS =>
+      't/*.t '.
+	't/index/*.t ' .
+	  't/sgbr/*.t ' .
+	    't/real/*.t'
+	  }
 );

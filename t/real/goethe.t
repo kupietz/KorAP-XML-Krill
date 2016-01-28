@@ -1,6 +1,3 @@
-#!/usr/bin/env perl
-# source ~/perl5/perlbrew/etc/bashrc
-# perlbrew switch perl-blead@korap
 use strict;
 use warnings;
 use Test::More;
@@ -20,7 +17,7 @@ use File::Spec::Functions 'catdir';
 use_ok('KorAP::Document');
 
 # GOE/AGA/03828
-my $path = catdir(dirname(__FILE__), 'GOE/AGA/03828');
+my $path = catdir(dirname(__FILE__), '../corpus/GOE/AGA/03828');
 # my $path = '/home/ndiewald/Repositories/korap/KorAP-sandbox/KorAP-lucene-indexer/t/GOE/AGA/03828';
 
 ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
@@ -53,7 +50,8 @@ Goethe, Johann Wolfgang von: Autobiographische Einzelheiten, (Geschrieben bis 18
 REF
 is($doc->language, 'de', 'Language');
 
-is($doc->corpus_title, 'Goethe-Korpus', 'Correct Corpus title');
+
+is($doc->corpus_title, 'Goethes Werke', 'Correct Corpus title');
 ok(!$doc->corpus_sub_title, 'Correct Corpus Sub title');
 is($doc->corpus_author, 'Goethe, Johann Wolfgang von', 'Correct Corpus author');
 is($doc->corpus_editor, 'Trunz, Erich', 'Correct Corpus editor');
@@ -66,7 +64,6 @@ ok(!$doc->doc_editor, 'Correct Doc editor');
 
 # Tokenization
 use_ok('KorAP::Tokenizer');
-
 
 my ($token_base_foundry, $token_base_layer) = (qw/OpenNLP Tokens/);
 
@@ -86,7 +83,7 @@ my $output = decode_json( $tokens->to_json );
 is(substr($output->{data}->{text}, 0, 100), 'Autobiographische einzelheiten Selbstschilderung (1) immer tätiger, nach innen und außen fortwirkend', 'Primary Data');
 is($output->{data}->{name}, 'tokens', 'tokenName');
 is($output->{data}->{tokenSource}, 'opennlp#tokens', 'tokenSource');
-is($output->{version}, '0.02', 'version');
+is($output->{version}, '0.03', 'version');
 is($output->{data}->{foundries}, '', 'Foundries');
 is($output->{data}->{layerInfos}, '', 'layerInfos');
 is($output->{data}->{stream}->[0]->[3], 's:Autobiographische', 'data');
@@ -94,7 +91,6 @@ is($output->{data}->{stream}->[0]->[3], 's:Autobiographische', 'data');
 is($output->{textSigle}, 'GOE_AGA.03828', 'Correct text sigle');
 is($output->{docSigle}, 'GOE_AGA', 'Correct document sigle');
 is($output->{corpusSigle}, 'GOE', 'Correct corpus sigle');
-
 
 is($output->{author}, 'Goethe, Johann Wolfgang von', 'Author');
 is($output->{pubPlace}, 'München', 'PubPlace');
@@ -119,7 +115,7 @@ Goethe, Johann Wolfgang von: Autobiographische Einzelheiten, (Geschrieben bis 18
 REF
 is($output->{language}, 'de', 'Language');
 
-is($output->{corpusTitle}, 'Goethe-Korpus', 'Correct Corpus title');
+is($output->{corpusTitle}, 'Goethes Werke', 'Correct Corpus title');
 ok(!exists $output->{corpusSubTitle}, 'Correct Text Type');
 is($output->{corpusAuthor}, 'Goethe, Johann Wolfgang von', 'Correct Corpus title');
 is($output->{corpusEditor}, 'Trunz, Erich', 'Editor');
@@ -139,9 +135,9 @@ is($output->{data}->{foundries}, 'base base/paragraphs base/sentences', 'Foundri
 is($output->{data}->{layerInfos}, 'base/s=spans', 'layerInfos');
 my $first_token = join('||', @{$output->{data}->{stream}->[0]});
 like($first_token, qr/s:Autobiographische/, 'data');
-like($first_token, qr/_0#0-17/, 'data');
-like($first_token, qr!<>:base/s:s#0-30\$<i>2<b>2!, 'data');
-like($first_token, qr!<>:base\/s:t#0-35199\$<i>5226<b>0!, 'data');
+like($first_token, qr/_0\$<i>0<i>17/, 'data');
+like($first_token, qr!<>:base/s:s\$<b>64<i>0<i>30<i>2<b>2!, 'data');
+like($first_token, qr!<>:base\/s:t\$<b>64<i>0<i>35199<i>5226<b>0!, 'data');
 
 ## OpenNLP
 $tokens->add('OpenNLP', 'Sentences');
@@ -152,7 +148,7 @@ is($output->{data}->{foundries},
    'Foundries');
 is($output->{data}->{layerInfos}, 'base/s=spans opennlp/s=spans', 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!<>:opennlp/s:s#0-254\$<i>32!, 'data');
+like($first_token, qr!<>:opennlp/s:s\$<b>64<i>0<i>254<i>32!, 'data');
 
 $tokens->add('OpenNLP', 'Morpho');
 $output = decode_json( $tokens->to_json );
@@ -171,19 +167,20 @@ is($output->{data}->{foundries},
    'Foundries');
 is($output->{data}->{layerInfos}, 'base/s=spans opennlp/p=tokens opennlp/s=spans tt/s=spans', 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!<>:tt/s:s#0-179\$<i>21<b>2!, 'data');
+like($first_token, qr!<>:tt/s:s\$<b>64<i>0<i>179<i>21<b>0!, 'data');
 
 $tokens->add('TreeTagger', 'Morpho');
 $output = decode_json( $tokens->to_json );
 is($output->{data}->{foundries},
    'base base/paragraphs base/sentences opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences',
    'Foundries');
+
 is($output->{data}->{layerInfos}, 'base/s=spans opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans', 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!tt/l:autobiographisch\$<b>165!, 'data');
-like($first_token, qr!tt/p:ADJA\$<b>165!, 'data');
-like($first_token, qr!tt/l:Autobiographische\$<b>89!, 'data');
-like($first_token, qr!tt/p:NN\$<b>89!, 'data');
+like($first_token, qr!tt/l:autobiographisch\$<b>129<b>165!, 'data');
+like($first_token, qr!tt/p:ADJA\$<b>129<b>165!, 'data');
+like($first_token, qr!tt/l:Autobiographische\$<b>129<b>89!, 'data');
+like($first_token, qr!tt/p:NN\$<b>129<b>89!, 'data');
 
 ## CoreNLP
 $tokens->add('CoreNLP', 'NamedEntities');
@@ -193,7 +190,7 @@ is($output->{data}->{foundries},
    'Foundries');
 is($output->{data}->{layerInfos}, 'base/s=spans corenlp/ne=tokens opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans', 'layerInfos');
 
-diag "Missing test for NamedEntities";
+# diag "Missing test for NamedEntities";
 
 # Problematic:
 # diag Dumper $output->{data}->{stream}->[180];
@@ -206,7 +203,7 @@ is($output->{data}->{foundries},
    'Foundries');
 is($output->{data}->{layerInfos}, 'base/s=spans corenlp/ne=tokens corenlp/s=spans opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans', 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!<>:corenlp/s:s#0-254\$<i>32!, 'data');
+like($first_token, qr!<>:corenlp/s:s\$<b>64<i>0<i>254<i>32<b>0!, 'data');
 
 $tokens->add('CoreNLP', 'Morpho');
 $output = decode_json( $tokens->to_json );
@@ -220,16 +217,16 @@ $output = decode_json( $tokens->to_json );
 like($output->{data}->{foundries}, qr!corenlp/constituency!, 'Foundries');
 like($output->{data}->{layerInfos}, qr!corenlp/c=spans!, 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!<>:corenlp/c:NP#0-17\$<i>1<b>6!, 'data');
-like($first_token, qr!<>:corenlp/c:CNP#0-17\$<i>1<b>7!, 'data');
-like($first_token, qr!<>:corenlp/c:NP#0-17\$<i>1<b>8!, 'data');
-like($first_token, qr!<>:corenlp/c:AP#0-17\$<i>1<b>9!, 'data');
-like($first_token, qr!<>:corenlp/c:PP#0-50\$<i>3<b>4!, 'data');
-like($first_token, qr!<>:corenlp/c:S#0-50\$<i>3<b>5!, 'data');
-like($first_token, qr!<>:corenlp/c:PP#0-58\$<i>5<b>2!, 'data');
-like($first_token, qr!<>:corenlp/c:S#0-58\$<i>5<b>3!, 'data');
-like($first_token, qr!<>:corenlp/c:ROOT#0-254\$<i>32<b>0!, 'data');
-like($first_token, qr!<>:corenlp/c:S#0-254\$<i>32<b>1!, 'data');
+like($first_token, qr!<>:corenlp/c:NP\$<b>64<i>0<i>17<i>1<b>6!, 'data');
+like($first_token, qr!<>:corenlp/c:CNP\$<b>64<i>0<i>17<i>1<b>7!, 'data');
+like($first_token, qr!<>:corenlp/c:NP\$<b>64<i>0<i>17<i>1<b>8!, 'data');
+like($first_token, qr!<>:corenlp/c:AP\$<b>64<i>0<i>17<i>1<b>9!, 'data');
+like($first_token, qr!<>:corenlp/c:PP\$<b>64<i>0<i>50<i>3<b>4!, 'data');
+like($first_token, qr!<>:corenlp/c:S\$<b>64<i>0<i>50<i>3<b>5!, 'data');
+like($first_token, qr!<>:corenlp/c:PP\$<b>64<i>0<i>58<i>5<b>2!, 'data');
+like($first_token, qr!<>:corenlp/c:S\$<b>64<i>0<i>58<i>5<b>3!, 'data');
+like($first_token, qr!<>:corenlp/c:ROOT\$<b>64<i>0<i>254<i>32<b>0!, 'data');
+like($first_token, qr!<>:corenlp/c:S\$<b>64<i>0<i>254<i>32<b>1!, 'data');
 
 ## Glemm
 $tokens->add('Glemm', 'Morpho');
@@ -249,7 +246,7 @@ $output = decode_json( $tokens->to_json );
 like($output->{data}->{foundries}, qr!connexor/sentences!, 'Foundries');
 like($output->{data}->{layerInfos}, qr!cnx/s=spans!, 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!<>:cnx/s:s#0-179\$<i>21<b>0!, 'data');
+like($first_token, qr!<>:cnx/s:s\$<b>64<i>0<i>179<i>21<b>0!, 'data');
 
 $tokens->add('Connexor', 'Morpho');
 $output = decode_json( $tokens->to_json );
@@ -266,7 +263,7 @@ $output = decode_json( $tokens->to_json );
 like($output->{data}->{foundries}, qr!connexor/phrase!, 'Foundries');
 like($output->{data}->{layerInfos}, qr!cnx/c=spans!, 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!<>:cnx/c:np#0-30\$<i>2!, 'data');
+like($first_token, qr!<>:cnx/c:np\$<b>64<i>0<i>30<i>2!, 'data');
 
 $tokens->add('Connexor', 'Syntax');
 $output = decode_json( $tokens->to_json );
@@ -289,8 +286,7 @@ like($first_token, qr!mate/m:case:nom!, 'data');
 like($first_token, qr!mate/m:number:pl!, 'data');
 like($first_token, qr!mate/m:gender:\*!, 'data');
 
-
-diag "No test for mate dependency";
+# diag "No test for mate dependency";
 
 ## XIP
 $tokens->add('XIP', 'Sentences');
@@ -298,7 +294,7 @@ $output = decode_json( $tokens->to_json );
 like($output->{data}->{foundries}, qr!xip/sentences!, 'Foundries');
 like($output->{data}->{layerInfos}, qr!xip/s=spans!, 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!<>:xip/s:s#0-179\$<i>21!, 'data');
+like($first_token, qr!<>:xip/s:s\$<b>64<i>0<i>179<i>21!, 'data');
 
 $tokens->add('XIP', 'Morpho');
 $output = decode_json( $tokens->to_json );
@@ -306,22 +302,19 @@ like($output->{data}->{foundries}, qr!xip/morpho!, 'Foundries');
 like($output->{data}->{layerInfos}, qr!xip/l=tokens!, 'layerInfos');
 like($output->{data}->{layerInfos}, qr!xip/p=tokens!, 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!<>:xip/s:s#0-179\$<i>21!, 'data');
-
+like($first_token, qr!<>:xip/s:s\$<b>64<i>0<i>179<i>21!, 'data');
 
 $tokens->add('XIP', 'Constituency');
 $output = decode_json( $tokens->to_json );
 like($output->{data}->{foundries}, qr!xip/constituency!, 'Foundries');
 like($output->{data}->{layerInfos}, qr!xip/c=spans!, 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!<>:xip/c:NP#0-17\$<i>1<b>1!, 'data');
-like($first_token, qr!<>:xip/c:AP#0-17\$<i>1<b>2!, 'data');
-like($first_token, qr!<>:xip/c:ADJ#0-17\$<i>1<b>3!, 'data');
-like($first_token, qr!<>:xip/c:TOP#0-179\$<i>21<b>0!, 'data');
+like($first_token, qr!<>:xip/c:NP\$<b>64<i>0<i>17<i>1<b>1!, 'data');
+like($first_token, qr!<>:xip/c:AP\$<b>64<i>0<i>17<i>1<b>2!, 'data');
+like($first_token, qr!<>:xip/c:ADJ\$<b>64<i>0<i>17<i>1<b>3!, 'data');
+like($first_token, qr!<>:xip/c:TOP\$<b>64<i>0<i>179<i>21<b>0!, 'data');
 
-diag "No test for xip dependency";
-
-# diag Dumper $output->{data}->{stream}->[0];
+# diag "No test for xip dependency";
 
 # print timestr(timediff(Benchmark->new, $t));
 

@@ -315,7 +315,7 @@ sub _parse_meta_i5 {
   my $dom = shift;
   my $type = shift;
 
-  my $analytic = $dom->at('analytic');
+  my $analytic = $dom->at('analytic') || $dom->at('monogr');
 
   # There is an analytic element
   if ($analytic) {

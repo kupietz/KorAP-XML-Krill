@@ -58,7 +58,7 @@ push(@layers, ['XIP', 'Dependency']);
 push(@layers, ['XIP', 'Sentences']);
 
 
-my $path = catdir(dirname(__FILE__), 'WPD/00001');
+my $path = catdir(dirname(__FILE__), 'corpus/WPD/00001');
 ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
 like($doc->path, qr!$path/$!, 'Path');
 
@@ -81,10 +81,6 @@ is($doc->text_class->[2], 'wissenschaft', 'TextClass');
 is($doc->text_class->[3], 'populaerwissenschaft', 'TextClass');
 ok(!$doc->text_class->[4], 'TextClass');
 is($doc->author, 'Ruru; Jens.Ol; Aglarech; u.a.', 'author');
-#is($doc->author->[0], 'Ruru', 'author');
-#is($doc->author->[1], 'Jens.Ol', 'author');
-#is($doc->author->[2], 'Aglarech', 'author');
-#ok(!$doc->author->[3], 'author');
 
 # Get tokens
 use_ok('KorAP::Tokenizer');
@@ -181,35 +177,10 @@ my $s =
     'Startinfo');
 };
 
-done_testing;
-__END__
-
-
-#is($tokens->stream->pos(118)->to_string,
-#   '[(763-768)s:Linie|i:linie|_118#763-768|'.
-#     'mate/l:linie|mate/p:NN|mate/m:case:acc|mate/m:number:sg|mate/m:gender:fem|' .
-#     'opennlp/p:NN|'.
-#     'cnx/l:linie|cnx/p:N|cnx/syn:@NH|'.
-#     'tt/l:Linie|tt/p:NN|'.
-#     '<:mate/d:NK$<i>116|<:mate/d:NK$<i>117|>:mate/d:NK$<i>115|'.
-#     'xip/p:NOUN|xip/l:Linie|<>:xip/c:NOUN#763-768$<i>119|<:xip/d:DETERM$<i>116|<:xip/d:NMOD$<i>117]', 'with All');
-
-#[(763-768)s:Linie|i:linie|_118#763-768|mate/l:linie|mate/p:NN|mate/m:case:acc|mate/m:number:sg|mate/m:gender:fem|opennlp/p:NN|cnx/l:linie|cnx/p:N|cnx/syn:@NH|tt/l:Linie|tt/p:NN|<:mate/d:NK$<i>116|<:mate/d:NK$<i>117|>:mate/d:NK$<i>115|
-#      xip/p:NOUN|xip/l:Linie|<:xip/d:DETERM$<i>116|<:xip/d:NMOD$<i>117]
-
-is($tokens->layer_info, 'cnx/c=const cnx/l=lemma cnx/m=msd cnx/p=pos mate/d=dep mate/l=lemma mate/m=msd mate/p=pos opennlp/p=pos tt/l=lemma tt/p=pos xip/c=const xip/d=dep xip/l=lemma xip/p=pos', 'Layer info');
+is($tokens->layer_info,
+   'base/s=spans cnx/c=spans cnx/l=tokens cnx/m=tokens cnx/p=tokens cnx/s=spans cnx/syn=tokens corenlp/ne=tokens corenlp/s=spans mate/d=rels mate/l=tokens mate/m=tokens mate/p=tokens opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans xip/c=spans xip/d=rels xip/l=tokens xip/p=tokens xip/s=spans', 'Layer info');
 
 is($tokens->support, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/namedentities corenlp/namedentities corenlp/namedentities/ne_dewac_175m_600 corenlp/namedentities/ne_hgc_175m_600 corenlp/sentences mate mate/dependency mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/dependency xip/morpho xip/sentences', 'Support');
 
-
-
-
-# encode_json $tokens->stream->to_solr;
-
 done_testing;
-
-
-
-
-
 __END__

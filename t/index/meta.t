@@ -48,10 +48,10 @@ ok(!$doc->doc_sub_title, 'Doc: subtitle');
 ok(!$doc->doc_editor, 'Doc: editor');
 ok(!$doc->doc_author, 'Doc: author');
 
-is($doc->corpus_title, 'Beispiel-Corpus', 'Corpus: title');
+is($doc->corpus_title, 'Werke von Beispiel', 'Corpus: title');
 ok(!$doc->corpus_sub_title, 'Corpus: subtitle');
-ok(!$doc->corpus_editor, 'Corpus: editor');
-ok(!$doc->corpus_author, 'Corpus: author');
+is($doc->corpus_editor, 'Mustermann, Monika', 'Corpus: editor');
+is($doc->corpus_author, 'Mustermann, Max', 'Corpus: author');
 
 done_testing;
 

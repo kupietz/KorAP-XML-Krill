@@ -20,7 +20,7 @@ use File::Spec::Functions 'catdir';
 use_ok('KorAP::Document');
 
 # GOE/AGA/03828
-my $path = catdir(dirname(__FILE__), 'WDD/G27/38989');
+my $path = catdir(dirname(__FILE__), '../corpus/WDD/G27/38989');
 
 ok(my $doc = KorAP::Document->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -32,7 +32,7 @@ is($doc->corpus_sigle, 'WDD11', 'Correct corpus sigle');
 is($doc->title, 'Diskussion:Gunter A. Pilz', 'Title');
 ok(!$doc->sub_title, 'No SubTitle');
 is($doc->author, '€pa, u.a.', 'Author');
-is($doc->editor, 'wikipedia.org', 'Publisher');
+ok(!$doc->editor, 'Publisher');
 
 is($doc->pub_place, 'URL:http://de.wikipedia.org', 'PubPlace');
 is($doc->publisher, 'Wikipedia', 'Publisher');
@@ -81,7 +81,7 @@ my $output = decode_json( $tokens->to_json );
 is(substr($output->{data}->{text}, 0, 100), '{{War Löschkandidat|6. Juli 2007|(erl., bleibt)}}', 'Primary Data');
 is($output->{data}->{name}, 'tokens', 'tokenName');
 is($output->{data}->{tokenSource}, 'opennlp#tokens', 'tokenSource');
-is($output->{version}, '0.02', 'version');
+is($output->{version}, '0.03', 'version');
 is($output->{data}->{foundries}, '', 'Foundries');
 is($output->{data}->{layerInfos}, '', 'layerInfos');
 is($output->{data}->{stream}->[0]->[3], 's:{War', 'data');
@@ -93,7 +93,7 @@ is($output->{corpusSigle}, 'WDD11', 'Correct corpus sigle');
 is($output->{title}, 'Diskussion:Gunter A. Pilz', 'Title');
 ok(!$output->{subTitle}, 'No SubTitle');
 is($output->{author}, '€pa, u.a.', 'Author');
-is($output->{editor}, 'wikipedia.org', 'Publisher');
+ok(!$output->{editor}, 'Editor');
 
 is($output->{pubPlace}, 'URL:http://de.wikipedia.org', 'PubPlace');
 is($output->{publisher}, 'Wikipedia', 'Publisher');
@@ -132,7 +132,7 @@ is($output->{data}->{foundries}, 'base base/paragraphs base/sentences', 'Foundri
 is($output->{data}->{layerInfos}, 'base/s=spans', 'layerInfos');
 my $first_token = join('||', @{$output->{data}->{stream}->[0]});
 like($first_token, qr/s:{War/, 'data');
-like($first_token, qr/_0#1-5/, 'data');
+like($first_token, qr/_0\$<i>1<i>5/, 'data');
 
 
 ## OpenNLP
@@ -152,6 +152,7 @@ is($output->{data}->{foundries},
    'Foundries');
 is($output->{data}->{layerInfos}, 'base/s=spans opennlp/p=tokens opennlp/s=spans', 'layerInfos');
 
+
 ## Treetagger
 $tokens->add('TreeTagger', 'Sentences');
 $output = decode_json( $tokens->to_json );
@@ -168,32 +169,48 @@ is($output->{data}->{foundries},
 is($output->{data}->{layerInfos}, 'base/s=spans opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans', 'layerInfos');
 
 ## CoreNLP
-$tokens->add('CoreNLP', 'NamedEntities');
+{
+  local $SIG{__WARN__} = sub {};
+  $tokens->add('CoreNLP', 'NamedEntities');
+};
 $output = decode_json( $tokens->to_json );
 is($output->{data}->{foundries},
    'base base/paragraphs base/sentences opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences',
    'Foundries');
 is($output->{data}->{layerInfos}, 'base/s=spans opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans', 'layerInfos');
 
-$tokens->add('CoreNLP', 'Sentences');
+
+{
+  local $SIG{__WARN__} = sub {};
+  $tokens->add('CoreNLP', 'Sentences');
+};
 $output = decode_json( $tokens->to_json );
 is($output->{data}->{foundries},
    'base base/paragraphs base/sentences opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences',
    'Foundries');
 is($output->{data}->{layerInfos}, 'base/s=spans opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans', 'layerInfos');
 
-$tokens->add('CoreNLP', 'Morpho');
+{
+  local $SIG{__WARN__} = sub {};
+  $tokens->add('CoreNLP', 'Morpho');
+};
 $output = decode_json( $tokens->to_json );
 unlike($output->{data}->{foundries}, qr!corenlp/morpho!, 'Foundries');
 unlike($output->{data}->{layerInfos}, qr!corenlp/p=tokens!, 'layerInfos');
 
-$tokens->add('CoreNLP', 'Constituency');
+{
+  local $SIG{__WARN__} = sub {};
+  $tokens->add('CoreNLP', 'Constituency');
+};
 $output = decode_json( $tokens->to_json );
 unlike($output->{data}->{foundries}, qr!corenlp/constituency!, 'Foundries');
 unlike($output->{data}->{layerInfos}, qr!corenlp/c=spans!, 'layerInfos');
 
 ## Glemm
-$tokens->add('Glemm', 'Morpho');
+{
+  local $SIG{__WARN__} = sub {};
+  $tokens->add('Glemm', 'Morpho');
+};
 $output = decode_json( $tokens->to_json );
 unlike($output->{data}->{foundries}, qr!glemm/morpho!, 'Foundries');
 unlike($output->{data}->{layerInfos}, qr!glemm/l=tokens!, 'layerInfos');
@@ -229,7 +246,7 @@ like($output->{data}->{layerInfos}, qr!mate/p=tokens!, 'layerInfos');
 like($output->{data}->{layerInfos}, qr!mate/l=tokens!, 'layerInfos');
 like($output->{data}->{layerInfos}, qr!mate/m=tokens!, 'layerInfos');
 
-diag "No test for mate dependency";
+# diag "No test for mate dependency";
 
 ## XIP
 $tokens->add('XIP', 'Sentences');
@@ -243,14 +260,12 @@ like($output->{data}->{foundries}, qr!xip/morpho!, 'Foundries');
 like($output->{data}->{layerInfos}, qr!xip/l=tokens!, 'layerInfos');
 like($output->{data}->{layerInfos}, qr!xip/p=tokens!, 'layerInfos');
 
-
 $tokens->add('XIP', 'Constituency');
 $output = decode_json( $tokens->to_json );
 like($output->{data}->{foundries}, qr!xip/constituency!, 'Foundries');
 like($output->{data}->{layerInfos}, qr!xip/c=spans!, 'layerInfos');
 
-diag "No test for xip dependency";
-
+# diag "No test for xip dependency";
 
 done_testing;
 __END__
