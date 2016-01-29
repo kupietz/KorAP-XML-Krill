@@ -142,9 +142,11 @@ my @layers;
 push(@layers, ['Base', 'Sentences']);
 push(@layers, ['Base', 'Paragraphs']);
 
-# OpenNLP
-push(@layers, ['OpenNLP', 'Morpho']);
-push(@layers, ['OpenNLP', 'Sentences']);
+# Connexor
+push(@layers, ['Connexor', 'Morpho']);
+push(@layers, ['Connexor', 'Syntax']);
+push(@layers, ['Connexor', 'Phrase']);
+push(@layers, ['Connexor', 'Sentences']);
 
 # CoreNLP
 push(@layers, ['CoreNLP', 'NamedEntities']);
@@ -152,28 +154,37 @@ push(@layers, ['CoreNLP', 'Sentences']);
 push(@layers, ['CoreNLP', 'Morpho']);
 push(@layers, ['CoreNLP', 'Constituency']);
 
+# DeReKo
+push(@layers, ['DeReKo', 'Structure']);
+
 # Glemm
 push(@layers, ['Glemm', 'Morpho']);
 
-# Connexor
-push(@layers, ['Connexor', 'Morpho']);
-push(@layers, ['Connexor', 'Syntax']);
-push(@layers, ['Connexor', 'Phrase']);
-push(@layers, ['Connexor', 'Sentences']);
+# Malt
+push(@layers, ['Malt', 'Dependency']);
+
+# Mate
+push(@layers, ['Mate', 'Morpho']);
+push(@layers, ['Mate', 'Dependency']);
+
+# OpenNLP
+push(@layers, ['OpenNLP', 'Morpho']);
+push(@layers, ['OpenNLP', 'Sentences']);
+
+# Schreibgebrauch
+push(@layers, ['Schreibgebrauch', 'Lemma']);
+push(@layers, ['Schreibgebrauch', 'Morpho']);
 
 # TreeTagger
 push(@layers, ['TreeTagger', 'Morpho']);
 push(@layers, ['TreeTagger', 'Sentences']);
 
-# Mate
-push(@layers, ['Mate', 'Morpho']);
-# push(@layers, ['Mate', 'Dependency']);
 
 # XIP
 push(@layers, ['XIP', 'Morpho']);
 push(@layers, ['XIP', 'Constituency']);
 push(@layers, ['XIP', 'Sentences']);
-# push(@layers, ['XIP', 'Dependency']);
+push(@layers, ['XIP', 'Dependency']);
 
 
 if ($skip{'#all'}) {

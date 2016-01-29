@@ -30,6 +30,9 @@ sub new {
     }
     elsif ($_[$i] eq 'pti') {
       $self->pti($_[$i+1]);
+    }
+    elsif ($_[$i] eq 'tui') {
+      $self->tui($_[$i+1]);
     };
   };
   $self;
@@ -99,6 +102,13 @@ sub pti {
   $_[0]->[10];
 };
 
+# Not serialized - just setter/getter
+sub tui {
+  if (defined $_[1]) {
+    return $_[0]->[11] = $_[1];
+  };
+  $_[0]->[11];
+};
 
 # To string based on array
 sub to_string {

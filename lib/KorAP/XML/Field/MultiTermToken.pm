@@ -68,6 +68,16 @@ sub to_array {
   [uniq(map($_->to_string, sort _sort @{$self->[0]}))];
 };
 
+# Get multiterm based on term content (treat as prefix)
+# TODO: This currently only works for simple terms!
+sub grep_mt {
+  my $self = shift;
+  my $term = shift;
+  foreach (@{$self->[0]}) {
+    return $_ if index($_->term, $term) == 0;
+  };
+  return;
+};
 
 sub to_string {
   my $self = shift;
@@ -78,6 +88,7 @@ sub to_string {
 };
 
 # Get relation based positions
+# TODO: Fix!
 sub _rel_right_pos {
 
   # There are relation ids!
