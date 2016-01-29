@@ -14,6 +14,8 @@ ok($tokens->add('Malt', 'dependency'), 'Add Structure');
 
 my $data = $tokens->to_data->{data};
 
+diag $data;
+
 done_testing;
 __END__
 

@@ -13,6 +13,25 @@ sub add {
   return $mtt;
 };
 
+sub get_node {
+  my ($self, $pos, $term) = @_;
+  my $mtt = $self->pos($pos);
+  my $node = $mtt->grep_mt($term);
+
+  # TODO: Check if term has PTI 128 - or what is wanted!
+
+  # TODO: if the node has no TUI - add!
+  return $node if $node;
+
+  my $tui = $self->tui($pos);
+  return $mtt->add(
+    term => $term,
+    pti => 128,
+    payload => '<s>' . $tui,
+    tui => $tui
+  );
+};
+
 sub add_meta {
   my $self = shift;
   my $mt = $self->pos(0)->add('-:' . shift);

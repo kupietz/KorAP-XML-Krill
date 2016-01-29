@@ -9,6 +9,7 @@ WriteMakefile(
   AUTHOR       => 'Nils Diewald',
   ABSTRACT     => 'Preprocess KorAP XML documents for Krill',
   VERSION_FROM => 'lib/KorAP/XML/Krill.pm',
+  LICENSE      => 'bsd_2',
   PREREQ_PM => {
     'Mojolicious'    => 6.11,
     'Packed::Array'  => 0.01,

@@ -15,7 +15,8 @@ use JSON::XS;
 use Log::Log4perl;
 
 # TODO 1:
-# Bei den Autoren im Index darauf achten, dass auch "etc." indiziert wird
+# Bei den Autoren im Index darauf achten,
+# dass auch "etc." indiziert wird
 
 # TODO 2:
 # That's now implemented but deactivated
@@ -53,8 +54,6 @@ sub parse {
   };
 
   my $file = b($path)->slurp;
-#  my $tokens = Mojo::DOM->new($file);
-#  $tokens->xml(1);
 
   my $doc = $self->doc;
 
@@ -332,6 +331,8 @@ sub add_tokendata {
 
   my $tokenarray = $tokens->parse or return;
 
+  # Output some debug information
+  # on token alignment
   if ($self->log->is_debug) {
     if ($tokens->should == $tokens->have) {
       $self->log->trace('With perfect alignment!');
@@ -344,6 +345,7 @@ sub add_tokendata {
     };
   };
 
+  # There is a callback defined!
   if ($cb) {
     foreach (@$tokenarray) {
       # weaken $tokens;
@@ -356,6 +358,7 @@ sub add_tokendata {
 };
 
 
+# Add Foundry#Layer annotation
 sub add {
   my $self = shift;
   my $foundry = shift;
@@ -508,19 +511,24 @@ sub to_data {
   }
 
   else {
-    my %tokens;
-    $tokens{text} = $self->doc->primary->data if $primary;
-    $tokens{name}   = $self->name;
-    $tokens{stream}        = $self->stream->to_array;
-    $tokens{tokenSource} = lc($self->foundry) . '#' . lc($self->layer);
-    $tokens{foundries}   = $self->support;
-    $tokens{layerInfos}  = $self->layer_info;
-
-    $data{data} = \%tokens;
+    my $tokens = $self->to_hash;
+    $tokens->{text} = $self->doc->primary->data if $primary;
+    $data{data} = $tokens;
     $data{version} = '0.03';
   };
 
   \%data;
+};
+
+sub to_hash {
+  my $self = shift;
+  return {
+    name => $self->name,
+    stream => $self->stream->to_array,
+    tokenSource => lc($self->foundry) . '#' . lc($self->layer),
+    foundries => $self->support,
+    layerInfos => $self->layer_info
+  }
 };
 
 

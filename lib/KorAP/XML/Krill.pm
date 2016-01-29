@@ -2,6 +2,7 @@ package KorAP::XML::Krill;
 use Mojo::Base -base;
 use Mojo::ByteStream 'b';
 use Mojo::Util qw/encode/;
+use Scalar::Util qw/weaken/;
 use XML::Fast;
 use Try::Tiny;
 use Carp qw/croak/;
@@ -174,7 +175,52 @@ sub parse {
     };
   };
 
-  return 1;
+  return $self;
+};
+
+
+sub tokenize {
+  my $self = shift;
+  my ($token_foundry, $token_layer) = @_;
+
+  $token_foundry //= 'OpenNLP';
+  $token_layer   //= 'Tokens';
+
+  my $tokens = KorAP::Tokenizer->new(
+    path => $self->path,
+    doc => $self,
+    foundry => $token_foundry,
+    layer => $token_layer,
+    name => 'tokens'
+  );
+
+  unless ($tokens->parse) {
+    $self->log->warn(
+      'Unable to tokenize ' . $self->path .
+	' with ' . $token_foundry . '#'
+	  . $token_layer
+    );
+  }
+  else {
+    weaken $self;
+    $self->{tokenizer} = $tokens;
+  };
+
+  return $self;
+};
+
+
+# Add annotation
+sub annotate {
+  my $self = shift;
+  unless ($self->{tokenizer}) {
+    $self->log->warn('No tokenizer defined')
+  }
+  else {
+    $self->{tokenizer}->add(@_);
+  };
+
+  $self;
 };
 
 
@@ -626,7 +672,13 @@ sub to_hash {
   return \%hash;
 };
 
-
+# Todo: Make this a KoralQuery serializer
+sub to_koral_query {
+  my $self = shift;
+  my $hash = $self->to_hash;
+  $hash->{text} = $self->primary->data;
+  $hash->{version} = '0.04';
+};
 
 1;
 

@@ -49,7 +49,8 @@ push(@layers, ['TreeTagger', 'Sentences']);
 
 # Mate
 # push(@layers, ['Mate', 'Morpho']);
-push(@layers, ['Mate', 'Dependency']);
+# push(@layers, ['Mate', 'Dependency']);
+diag 'Check for mate/d';
 
 # XIP
 push(@layers, ['XIP', 'Morpho']);
@@ -155,7 +156,7 @@ my $s =
   'tt/p:FM$<b>129<b>54|'.
   '<>:tt/s:s$<b>64<i>0<i>6083<i>923<b>0|'.
   '-:tt/sentences$<i>1|'.
-  '>:mate/d:PNC$<i>2|'.
+#  '>:mate/d:PNC$<i>2|'.
   'xip/p:SYMBOL|'.
   'xip/l:A|'.
   '<>:xip/c:TOP$<b>64<i>0<i>74<i>13<b>0|'.
@@ -178,9 +179,9 @@ my $s =
 };
 
 is($tokens->layer_info,
-   'base/s=spans cnx/c=spans cnx/l=tokens cnx/m=tokens cnx/p=tokens cnx/s=spans cnx/syn=tokens corenlp/ne=tokens corenlp/s=spans mate/d=rels mate/l=tokens mate/m=tokens mate/p=tokens opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans xip/c=spans xip/d=rels xip/l=tokens xip/p=tokens xip/s=spans', 'Layer info');
+   'base/s=spans cnx/c=spans cnx/l=tokens cnx/m=tokens cnx/p=tokens cnx/s=spans cnx/syn=tokens corenlp/ne=tokens corenlp/s=spans mate/l=tokens mate/m=tokens mate/p=tokens opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans xip/c=spans xip/d=rels xip/l=tokens xip/p=tokens xip/s=spans', 'Layer info'); # mate/d=rels
 
-is($tokens->support, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/namedentities corenlp/namedentities corenlp/namedentities/ne_dewac_175m_600 corenlp/namedentities/ne_hgc_175m_600 corenlp/sentences mate mate/dependency mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/dependency xip/morpho xip/sentences', 'Support');
+is($tokens->support, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/namedentities corenlp/namedentities corenlp/namedentities/ne_dewac_175m_600 corenlp/namedentities/ne_hgc_175m_600 corenlp/sentences mate mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/dependency xip/morpho xip/sentences', 'Support'); # mate/dependency
 
 done_testing;
 __END__
