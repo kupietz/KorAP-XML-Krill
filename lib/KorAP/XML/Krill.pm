@@ -655,7 +655,7 @@ sub to_hash {
 
   my %hash;
 
-  foreach (@ATTR, @ADVANCED_ATTR) {
+  foreach (@ATTR, @ADVANCED_ATTR, 'store') {
     if (my $att = $self->$_) {
       $att =~ s/\n/ /g;
       $att =~ s/\s\s+/ /g;
