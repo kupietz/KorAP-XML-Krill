@@ -59,6 +59,10 @@ ok(!$doc->corpus_sub_title, 'Corpus: subtitle');
 ok(!$doc->corpus_editor, 'Corpus: editor');
 ok(!$doc->corpus_author, 'Corpus: author');
 
+my $hash = $doc->to_hash;
+is($hash->{title}, 'Sommerüberraschung', 'Corpus title');
+is($hash->{store}->{sgbrAuthorSex}, 'M', 'store');
+
 done_testing;
 
 
