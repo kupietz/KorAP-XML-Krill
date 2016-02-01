@@ -7,6 +7,10 @@ sub new {
   bless [], shift;
 };
 
+sub type {
+  'token';
+};
+
 # get or set token position
 sub pos {
   if (defined $_[1]) {

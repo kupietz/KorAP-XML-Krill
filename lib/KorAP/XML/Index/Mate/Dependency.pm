@@ -10,6 +10,7 @@ sub parse {
   # >>:xip/d:SUBJ<i>566<i>789
 
   # Relation data
+  # Supports term-to-term and term-to-element only
   $$self->add_tokendata(
     foundry => 'mate',
     layer => 'dependency',
@@ -37,14 +38,13 @@ sub parse {
 	  # I have no clue, what -- should mean
 	  # next if $_->{-label} eq '--';
 
-	  # Target is at the same position!
-	  my $pos = $source->pos;
-
-
 	  # Get target node - not very elegant
 	  my $target = $stream->get_node(
-	    $pos, 'mate/d:' . $NODE_LABEL
+	    $source, 'mate/d:' . $NODE_LABEL
 	  );
+
+	  # Target is at the same position!
+	  my $pos = $source->pos;
 
 	  my %rel = (
 	    pti => 32, # term-to-term relation
@@ -72,24 +72,23 @@ sub parse {
 	  my $from = $_->{span}->{-from};
 	  my $to   = $_->{span}->{-to};
 
+	  # Get source node
+	  my $source_term = $stream->get_node(
+	    $source, 'mate/d:' . $NODE_LABEL
+	  );
+
 	  # Target
 	  my $target = $tokens->token($from, $to);
 
+	  # Relation is term-to-term with a found target!
 	  if ($target) {
-	    # Relation is term-to-term with a found target!
-
-	    # Get source node
-	    my $source_term = $stream->get_node(
-	      $source->pos, 'mate/d:' . $NODE_LABEL
-	    );
 
 	    # Get target node
 	    my $target_term = $stream->get_node(
-	      $target->pos, 'mate/d:' . $NODE_LABEL
+	      $target, 'mate/d:' . $NODE_LABEL
 	    );
 
-	    $mtt->add(
-	      term => '>:mate/d:' . $label,
+	    my %rel = (
 	      pti => 32, # term-to-term relation
 	      payload =>
 		'<i>' . $target->pos . # right part token position
@@ -97,36 +96,44 @@ sub parse {
 		    '<s>' . $target_term->tui # right part tui
 		  );
 
+	    $mtt->add(
+	      term => '>:mate/d:' . $label,
+	      %rel
+	    );
+
 	    my $target_mtt = $stream->pos($target->pos);
 	    $target_mtt->add(
 	      term => '<:mate/d:' . $label,
-	      pti => 32, # term-to-term relation
-	      payload =>
-		'<i>' . $target->pos . # right part token position (TODO: THIS IS PROBABLY WRONG!)
-		  '<s>' . $source_term->tui . # left part tui
-		    '<s>' . $target_term->tui # right part tui
-
+	      %rel
 	    );
 	  }
-	  else {
 
-	    # TODO: SPANS not yet supported
-	    next;
+	  # Relation is possibly term-to-element with a found target!
+	  elsif ($target = $tokens->span($from, $to)) {
+
+	    # Get target node
+	    my $target_span = $stream->get_node(
+	      $target, 'mate/d:' . $NODE_LABEL
+	    );
+
+	    my %rel = (
+	      pti => 33, # term-to-element relation
+	      payload =>
+		'<i>' . $target->p_start . # right part token position
+		  '<s>' . $source_term->tui . # left part tui
+		    '<s>' . $target_span->tui # right part tui
+		  );
+
+	    $mtt->add(
+	      term => '>:mate/d:' . $label,
+	      %rel
+	    );
+
+	    $mtt->add(
+	      term => '<:mate/d:' . $label,
+	      %rel
+	    );
 	  };
-
-
-	  # Temporary
-	  next;
-
-	  $mtt->add(
-	    term => '>:mate/d:' . $label,
-	    payload => '<i>' . $target->pos
-	  );
-
-	  $stream->pos($target->pos)->add(
-	    term => '<:mate/d:' . $label,
-	    payload => '<i>' . $source->pos
-	  );
 	};
       };
     }) or return;

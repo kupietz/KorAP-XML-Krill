@@ -7,6 +7,10 @@ sub new {
   bless [], shift;
 };
 
+sub type {
+  'span';
+};
+
 sub o_start {
   if (defined $_[1]) {
     $_[0]->[0] = $_[1];
