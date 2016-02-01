@@ -14,22 +14,48 @@ sub add {
 };
 
 sub get_node {
-  my ($self, $pos, $term) = @_;
-  my $mtt = $self->pos($pos);
-  my $node = $mtt->grep_mt($term);
+  my ($self, $unit, $term) = @_;
 
-  # TODO: Check if term has PTI 128 - or what is wanted!
+  if ($unit->type eq 'token') {
+    my $mtt = $self->pos($unit->pos);
+    my $node = $mtt->grep_mt($term);
 
-  # TODO: if the node has no TUI - add!
-  return $node if $node;
+    # TODO: Check if term has PTI 128 - or what is wanted!
 
-  my $tui = $self->tui($pos);
-  return $mtt->add(
-    term => $term,
-    pti => 128,
-    payload => '<s>' . $tui,
-    tui => $tui
-  );
+    # TODO: if the node has no TUI - add!
+    return $node if $node;
+
+    my $tui = $self->tui($unit->pos);
+    return $mtt->add(
+      term => $term,
+      pti => 128,
+      payload => '<s>' . $tui,
+      tui => $tui
+    );
+  }
+
+  # Is span
+  else {
+    my $mtt = $self->pos($unit->p_start);
+    my $node = $mtt->grep_mt('<>:' . $term);
+
+    # TODO: if the node has no TUI - add!
+    return $node if $node;
+
+    my $tui = $self->tui($unit->p_start);
+
+    return $mtt->add(
+      term => '<>:' . $term,
+      o_start => $unit->o_start,
+      o_end   => $unit->o_end,
+      p_start => $unit->p_start,
+      p_end   => $unit->p_end,
+      pti => 64,
+      payload => '<b>0<s>' . $tui,
+      tui => $tui
+    );
+
+  };
 };
 
 sub add_meta {
