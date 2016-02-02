@@ -88,23 +88,23 @@ sub parse {
 	      $target, 'mate/d:' . $NODE_LABEL
 	    );
 
-	    my %rel = (
+	    $mtt->add(
+	      term => '>:mate/d:' . $label,
 	      pti => 32, # term-to-term relation
 	      payload =>
 		'<i>' . $target->pos . # right part token position
 		  '<s>' . $source_term->tui . # left part tui
 		    '<s>' . $target_term->tui # right part tui
-		  );
-
-	    $mtt->add(
-	      term => '>:mate/d:' . $label,
-	      %rel
 	    );
 
 	    my $target_mtt = $stream->pos($target->pos);
 	    $target_mtt->add(
 	      term => '<:mate/d:' . $label,
-	      %rel
+	      pti => 32, # term-to-term relation
+	      payload =>
+		'<i>' . $source->pos . # left part token position
+		  '<s>' . $source_term->tui . # left part tui
+		    '<s>' . $target_term->tui # right part tui
 	    );
 	  }
 
@@ -116,6 +116,7 @@ sub parse {
 	      $target, 'mate/d:' . $NODE_LABEL
 	    );
 
+	    # TODO: THAT'S WRONG!
 	    my %rel = (
 	      pti => 33, # term-to-element relation
 	      payload =>
