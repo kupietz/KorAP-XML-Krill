@@ -27,8 +27,11 @@ is($doc->title, 'Sommerüberraschung', 'title');
 #is($doc->sub_title, 'Beispiel Text Untertitel', 'title');
 #is($doc->pub_date, '20010402', 'Publication date');
 #is($doc->pub_place, 'Mannheim', 'Publication place');
+
 is($doc->author, 'TEST.BSP.Autoren.1', 'Author');
+
 is($doc->store('sgbrAuthorAgeClass'), 'X', 'AgeClass');
+
 is($doc->store('sgbrAuthorSex'), 'M', 'Sex');
 is($doc->store('sgbrKodex'), 'M', 'Kodex');
 
@@ -62,6 +65,9 @@ ok(!$doc->corpus_author, 'Corpus: author');
 my $hash = $doc->to_hash;
 is($hash->{title}, 'Sommerüberraschung', 'Corpus title');
 is($hash->{store}->{sgbrAuthorSex}, 'M', 'store');
+
+# Sgbr specific keywords
+is($doc->keywords_string, 'sgbrAuthorAgeClass:X sgbrAuthorSex:M sgbrKodex:M');
 
 done_testing;
 
