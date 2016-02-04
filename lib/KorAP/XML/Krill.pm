@@ -255,7 +255,7 @@ sub text_class {
   if ($_[0]) {
     return $self->{topics} = [ @_ ];
   };
-  return ($self->{topics} // []);
+  return ($self->{topics} //= []);
 };
 
 sub text_class_string {
@@ -267,7 +267,7 @@ sub keywords {
   if ($_[0]) {
     return $self->{keywords} = [ @_ ];
   };
-  return ($self->{keywords} // []);
+  return ($self->{keywords} //= []);
 };
 
 sub keywords_string {
@@ -312,17 +312,32 @@ sub _parse_meta_tei {
     # Author
     try {
       my $author = $stmt->at('author')->attr('ref');
+
       $author = $self->{ref_author}->{$author};
+
       if ($author) {
+
+	my $array = $self->keywords;
 	$self->author($author->{id});
-	$self->store('sgbrAuthorAgeClass' => $author->{age}) if $author->{age};
-	$self->store('sgbrAuthorSex' => $author->{sex}) if $author->{sex};
+
+	if ($author->{age}) {
+	  $self->store('sgbrAuthorAgeClass' => $author->{age});
+	  push @$array, 'sgbrAuthorAgeClass:' . $author->{age};
+	};
+	if ($author->{sex}) {
+	  $self->store('sgbrAuthorSex' => $author->{sex});
+	  push @$array, 'sgbrAuthorSex:' . $author->{sex};
+	};
       };
     };
 
     try {
       my $kodex = $dom->at('item[rend]')->attr('rend');
-      $self->store('sgbrKodex' => $kodex);
+      if ($kodex) {
+	my $array = $self->keywords;
+	$self->store('sgbrKodex' => $kodex);
+	push @$array, 'sgbrKodex:' . $kodex;
+      };
     };
   }
 
@@ -330,6 +345,7 @@ sub _parse_meta_tei {
     try {
       $dom->find('particDesc person')->each(
 	sub {
+
 	  $self->{ref_author}->{'#' . $_->attr('xml:id')} = {
 	    age => $_->attr('age'),
 	    sex => $_->attr('sex'),
@@ -559,8 +575,9 @@ sub _parse_meta_i5 {
     );
     $self->text_class(@topic) if @topic > 0;
 
+    my $kws = $self->keywords;
     my @keywords = $text_class->find("h\.keywords > keyTerm")->each;
-    $self->keywords(@keywords) if @keywords > 0;
+    push(@$kws, @keywords) if @keywords > 0;
   };
 
   if (my $edition_statement = $dom->at('biblFull editionStmt')) {
