@@ -31,6 +31,8 @@ lib/KorAP/XML/Index/Mate/Morpho.pm
 lib/KorAP/XML/Index/OpenNLP/Morpho.pm
 lib/KorAP/XML/Index/OpenNLP/Sentences.pm
 lib/KorAP/XML/Index/OpenNLP/Morpho.pm
+lib/KorAP/XML/Index/Sgbr/Morpho.pm
+lib/KorAP/XML/Index/Sgbr/Lemma.pm
 lib/KorAP/XML/Index/TreeTagger/Morpho.pm
 lib/KorAP/XML/Index/TreeTagger/Sentences.pm
 lib/KorAP/XML/Index/XIP/Constituency.pm
@@ -636,7 +638,9 @@ t/corpus/GOE/AGX/00006/mate/tokenSpans/number_tokenSpans.xml
 t/corpus/WDD/G27/38989/mate/pipeline/one_token_per_line.txt
 t/corpus/WDD/G27/38989/mate/pipeline/parsed.txt
 t/corpus/WDD/G27/38989/mate/tokenSpans/number_tokenSpans.xml
+script/korapxml2krill
+script/korapxml2krill_dir
 Changes
-MANIFEST
 LICENSE
 Makefile.PL
+MANIFEST

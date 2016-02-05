@@ -456,40 +456,6 @@ sub _parse_meta_i5 {
     $self->publisher($publisher->all_text) if $publisher->all_text;
   };
 
-#  my $mono = $dom->at('monogr');
-#  if ($mono) {
-#
-#    # Get title, subtitle, author, editor
-#    my $title     = $mono->at('h\.title[type=main]');
-#    my $sub_title = $mono->at('h\.title[type=sub]');
-#    my $author    = $mono->at('h\.author');
-#    my $editor    = $mono->at('editor');
-#
-#    $title     = $title     ? $title->all_text     : undef;
-#    $sub_title = $sub_title ? $sub_title->all_text : undef;
-#    $author    = $author    ? $author->all_text    : undef;
-#    $editor    = $editor    ? $editor->all_text    : undef;
-#
-#    if ($type eq 'text') {
-#      $self->title($title)         if $title && !$self->title;
-#      $self->sub_title($sub_title) if $sub_title && !$self->sub_title;
-#      $self->editor($editor)       if $editor && !$self->editor;
-#      $self->author($author)       if $author && !$self->author;
-#    }
-#    elsif ($type eq 'doc') {
-#      $self->doc_title($title)         if $title && !$self->doc_title;
-#      $self->doc_sub_title($sub_title) if $sub_title && !$self->doc_sub_title;
-#      $self->doc_author($author)       if $author && !$self->doc_author;
-#      $self->doc_editor($editor)       if $editor && !$self->doc_editor;
-#    }
-#    elsif ($type eq 'corpus') {
-#      $self->corpus_title($title)         if $title && !$self->corpus_title;
-#      $self->corpus_sub_title($sub_title) if $sub_title && !$self->corpus_sub_title;
-#      $self->corpus_author($author)       if $author && !$self->corpus_author;
-#      $self->corpus_editor($editor)       if $editor && !$self->corpus_editor;
-#    };
-#  };
-
   # Get text type
   my $text_desc = $dom->at('textDesc');
 
@@ -640,19 +606,8 @@ sub to_string {
     };
   };
 
-#  if ($self->author) {
-#    foreach (@{$self->author}) {
-#      $_ =~ s/\n/ /g;
-#      $_ =~ s/\s\s+/ /g;
-#      $string .= 'author = ' . $_ . "\n";
-#    };
-#  };
-
-  if ($self->text_class) {
-    foreach (@{$self->text_class}) {
-      $string .= 'text_class = ' . $_ . "\n";
-    };
-  };
+  $string .= 'text_class = ' . $self->text_class_string . "\n";
+  $string .= 'keywords = ' . $self->keywords_string . "\n";
 
   return $string;
 };
@@ -697,6 +652,17 @@ sub to_koral_query {
   $hash->{version} = '0.04';
 };
 
+sub to_json {
+  my $self = shift;
+  unless ($self->{tokenizer}) {
+    $self->log->warn('No tokenizer defined');
+    return;
+  };
+
+  return $self->{tokenizer}->to_json;
+};
+
+
 1;
 
 
@@ -704,52 +670,34 @@ __END__
 
 =pod
 
+=encoding utf8
+
 =head1 NAME
 
-KorAP::XML::Krill
+KorAP::XML::Krill - Preprocess KorAP XML documents for Krill
 
 
 =head1 SYNOPSIS
 
+  # Create Converter Object
   my $doc = KorAP::XML::Krill->new(
     path => 'mydoc-1/'
   );
 
-  $doc->parse;
-
-  print $doc->title;
+  # Convert to krill json
+  print $doc->parse->tokenize->annotate('Mate', 'Morpho')->to_json;
 
 
 =head1 DESCRIPTION
 
-Parse the primary and meta data of a document.
+Parse the primary and meta data of a KorAP-XML document.
 
 
-=head2 ATTRIBUTES
+=head1 ATTRIBUTES
 
-=head2 text_sigle
+=head2 log
 
-  $doc->text_sigle(75476);
-  print $doc->text_sigle;
-
-The unique identifier of the text.
-
-
-=head2 doc_sigle
-
-  $doc->doc_sigle(75476);
-  print $doc->doc_sigle;
-
-The unique identifier of the document.
-
-
-=head2 corpus_sigle
-
-  $doc->corpus_sigle(4);
-  print $doc->corpus_sigle;
-
-The unique identifier of the corpus.
-
+L<Log::Log4perl> object for logging.
 
 =head2 path
 
@@ -759,39 +707,6 @@ The unique identifier of the corpus.
 The path of the document.
 
 
-=head2 title
-
-  $doc->title("Der Name der Rose");
-  print $doc->title;
-
-The title of the document.
-
-
-=head2 sub_title
-
-  $doc->sub_title("Natürlich eine Handschrift");
-  print $doc->sub_title;
-
-The title of the document.
-
-
-=head2 pub_place
-
-  $doc->pub_place("Rom");
-  print $doc->pub_place;
-
-The publication place of the document.
-
-
-=head2 pub_date
-
-  $doc->pub_place("19800404");
-  print $doc->pub_place;
-
-The publication date of the document,
-in the format "YYYYMMDD".
-
-
 =head2 primary
 
   print $doc->primary->data(0,20);
@@ -799,80 +714,50 @@ in the format "YYYYMMDD".
 The L<KorAP::XML::Document::Primary> object containing the primary data.
 
 
-=head2 author
-
-  $doc->author('Binks, Jar Jar; Luke Skywalker');
-  print $doc->author->[0];
-
-Set the author value as semikolon separated list of names or
-get an array reference of author names.
-
-=head2 text_class
-
-  $doc->text_class(qw/news sports/);
-  print $doc->text_class->[0];
-
-Set the text class as an array or get an array
-reference of text classes.
-
-
 =head1 METHODS
+
+=head2 annotate
+
+  $doc->add('Mate', 'Morpho');
+
+Add annotation layer to conversion process.
+
 
 =head2 parse
 
-  $doc->parse;
+  $doc = $doc->parse;
 
-Run the parsing process of the document
+Run the meta parsing process of the document.
 
+
+=head2 tokenize
+
+  $doc = $doc->tokenize('OpenNLP', 'Tokens');
+
+Accept the tokenization based on a given foundry and a given layer.
+
+
+=head1 AVAILABILITY
+
+  https://github.com/KorAP/KorAP-XML-Krill
+
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2015-2016, L<IDS Mannheim|http://www.ids-mannheim.de/>
+Author: L<Nils Diewald|http://nils-diewald.de/>
+
+KorAP::XML::Krill is developed as part of the
+L<KorAP|http://korap.ids-mannheim.de/>
+Corpus Analysis Platform at the
+L<Institute for the German Language (IDS)|http://ids-mannheim.de/>,
+member of the
+L<Leibniz-Gemeinschaft|http://www.leibniz-gemeinschaft.de/en/about-us/leibniz-competition/projekte-2011/2011-funding-line-2/>
+and supported by the L<KobRA|http://www.kobra.tu-dortmund.de> project,
+funded by the
+L<Federal Ministry of Education and Research (BMBF)|http://www.bmbf.de/en/>.
+
+KorAP::XML::Krill is free software published under the
+L<BSD-2 License|https://raw.githubusercontent.com/KorAP/KorAP-XML-Krill/master/LICENSE>.
 
 =cut
-
-
-Deal with:
-        <attribute name="info">
-          <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">kind of
-            information expressed by the given layer of annotation (there may, and often will, be
-            more than one)</documentation>
-          <list>
-            <oneOrMore>
-              <choice>
-                <value type="NCName">pos</value>
-                <value type="NCName">lemma</value>
-                <value type="NCName">msd</value>
-                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">'msd' is
-                  the traditional abbreviation for "morphosyntactic description", listing info on
-                  e.g. tense, person, case, etc.</documentation>
-                <value type="NCName">dep</value>
-                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">'dep' is
-                  information about types of relations, used in dependency-style annotations; it is
-                  an indication for the visualiser that word-to-word relationships should be
-                  displayed</documentation>
-                <value type="NCName">lbl</value>
-                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">'lbl'
-                  indicates the presence of labels over dependency relations</documentation>
-                <value type="NCName">const</value>
-                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">'const'
-                  stands for 'constituency' or hierarchical, tree-based annotations; it is an
-                  indication for the visualiser that it should display syntactic
-                  trees</documentation>
-                <value type="NCName">cat</value>
-                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">'cat' is
-                  used for syntactic categories, as separate from pos; note that these sets need not
-                  be disjoint (at the lexical level, they usually overlap), but the frontend prefers
-                  to keep them separate. 'cat' will be found in the context of chunking or
-                  hierarchical parsing and will characterise nodes; it may also be found in
-                  dependency annotations, to indicate labels on nodes, as opposed to labels on arcs
-                  (the latter are signalled by 'lbl')</documentation>
-                <value type="NCName">struct</value>
-                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">all
-                  non-linguistic information (headers, highlights, etc.)</documentation>
-                <value type="NCName">frag</value>
-                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0"
-                  >non-exhaustive coverage (when spanList/@fragmented="true")</documentation>
-                <value type="NCName">ne</value>
-                <documentation xmlns="http://relaxng.org/ns/compatibility/annotations/1.0">named
-                  entities</documentation>
-              </choice>
-            </oneOrMore>
-          </list>
-        </attribute>

@@ -121,10 +121,7 @@ sub _sort {
     # Order attributes by reference id
     if (index($a->[5], '@:') == 0 && index($b->[5], '@:') == 0) {
 
-
-#      use Data::Dumper;
-#      die Dumper $a;
-
+      # Check TUI
       my ($a_id) = ($a->[0] =~ m/^<s>(\d+)/);
       my ($b_id) = ($b->[0] =~ m/^<s>(\d+)/);
       if ($a_id > $b_id) {
@@ -198,8 +195,8 @@ sub _sort {
 
     # Check depth
     else {
-      my ($a_depth) = ($a->[0] ? $a->[0] =~ m/<b>(\d+)$/ : 0);
-      my ($b_depth) = ($b->[0] ? $b->[0] =~ m/<b>(\d+)$/ : 0);
+      my ($a_depth) = ($a->[0] ? $a->[0] =~ m/<b>(\d+)(?:<s>\d+)?$/ : 0);
+      my ($b_depth) = ($b->[0] ? $b->[0] =~ m/<b>(\d+)(?:<s>\d+)?$/ : 0);
 
       $a_depth //= 0;
       $b_depth //= 0;

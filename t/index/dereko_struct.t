@@ -43,7 +43,6 @@ is($data->{stream}->[0]->[14],
    '@:dereko/s:pattern:text$<b>17<s>2',
    'Attribute of idsHeader');
 
-
 is($data->{stream}->[4]->[1],
    '<>:dereko/s:s$<b>64<i>32<i>42<i>6<b>6<s>1',
    'Sentence span');
