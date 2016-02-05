@@ -382,11 +382,11 @@ sub add {
       return $retval;
     }
     else {
-      $self->log->error('Unable to parse '.$mod);
+      $self->log->warn('Unable to parse '.$mod);
     };
   }
   else {
-    $self->log->error('Unable to load '.$mod . '(' . $@ . ')');
+    $self->log->warn('Unable to load '.$mod . '(' . $@ . ')');
   };
 
   return;

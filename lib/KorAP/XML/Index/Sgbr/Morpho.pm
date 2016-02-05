@@ -1,4 +1,4 @@
-package KorAP::XML::Index::Schreibgebrauch::Morpho;
+package KorAP::XML::Index::Sgbr::Morpho;
 use KorAP::XML::Index::Base;
 
 sub parse {

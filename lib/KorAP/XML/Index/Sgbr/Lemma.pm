@@ -1,4 +1,4 @@
-package KorAP::XML::Index::Schreibgebrauch::Lemma;
+package KorAP::XML::Index::Sgbr::Lemma;
 use KorAP::XML::Index::Base;
 use Mojo::ByteStream 'b';
 

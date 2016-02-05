@@ -6,13 +6,18 @@ use Getopt::Long;
 use Benchmark qw/:hireswallclock/;
 use IO::Compress::Gzip qw/$GzipError/;
 use Log::Log4perl;
-use KorAP::Document;
-use KorAP::Tokenizer;
 
-our $VERSION = 0.03;
+use KorAP::XML::Krill;
+use KorAP::XML::Tokenizer;
+
+our $VERSION = 0.04;
 
 # Merges foundry data to create indexer friendly documents
 # ndiewald, 2014/10/29
+
+# 2016/02/04
+# - renamed to korapxml2krill
+# - added Schreibgebrauch support
 
 sub printhelp {
   print <<'EOHELP';
@@ -20,7 +25,7 @@ sub printhelp {
 Merge foundry data based on a tokenization and create indexer friendly documents.
 
 Call:
-prepare_index.pl -z --input <directory> --output <filename>
+korapxml2krill -z --input <directory> --output <filename>
 
 --input|-i <directory>          Directory of the document to index
 --output|-o <filename>          Document name for output (optional),
@@ -46,7 +51,7 @@ prepare_index.pl -z --input <directory> --output <filename>
 --log|-l                        The Log4perl log level, defaults to ERROR.
 --help|-h                       Print this document (optional)
 
-diewald@ids-mannheim.de, 2014/11/05
+diewald@ids-mannheim.de, 2016/02/04
 
 EOHELP
   exit(defined $_[0] ? $_[0] : 0);
@@ -107,11 +112,11 @@ sub stop_time {
   $main::LAST_STOP = $new;
 };
 
-# Call perl script/prepare_index.pl WPD/AAA/00001
+# Call perl script/korapxml2krill WPD/AAA/00001
 
 # Create and parse new document
 $input =~ s{([^/])$}{$1/};
-my $doc = KorAP::Document->new( path => $input );
+my $doc = KorAP::XML::Krill->new( path => $input );
 
 unless ($doc->parse) {
   $log->warn($output . " can't be processed - no document data");
@@ -124,7 +129,7 @@ if ($token_base) {
 };
 
 # Get tokenization
-my $tokens = KorAP::Tokenizer->new(
+my $tokens = KorAP::XML::Tokenizer->new(
   path => $doc->path,
   doc => $doc,
   foundry => $token_base_foundry,
@@ -161,7 +166,7 @@ push(@layers, ['DeReKo', 'Structure']);
 push(@layers, ['Glemm', 'Morpho']);
 
 # Malt
-push(@layers, ['Malt', 'Dependency']);
+# push(@layers, ['Malt', 'Dependency']);
 
 # Mate
 push(@layers, ['Mate', 'Morpho']);
@@ -172,13 +177,12 @@ push(@layers, ['OpenNLP', 'Morpho']);
 push(@layers, ['OpenNLP', 'Sentences']);
 
 # Schreibgebrauch
-push(@layers, ['Schreibgebrauch', 'Lemma']);
-push(@layers, ['Schreibgebrauch', 'Morpho']);
+push(@layers, ['Sgbr', 'Lemma']);
+push(@layers, ['Sgbr', 'Morpho']);
 
 # TreeTagger
 push(@layers, ['TreeTagger', 'Morpho']);
 push(@layers, ['TreeTagger', 'Sentences']);
-
 
 # XIP
 push(@layers, ['XIP', 'Morpho']);

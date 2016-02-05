@@ -75,10 +75,10 @@ t/real/bzk.t
 t/real/bzk_2.t
 t/real/goethe.t
 t/real/wdd.t
-t/sgbr/sgbr_lemma.t
-t/sgbr/sgbr_meta.t
-t/sgbr/sgbr_pos.t
-t/sgbr/sgbr_token.t
+t/sgbr/lemma.t
+t/sgbr/meta.t
+t/sgbr/pos.t
+t/sgbr/token.t
 t/corpus/BZK/header.xml
 t/corpus/GOE/header.xml
 t/corpus/VDI/header.xml

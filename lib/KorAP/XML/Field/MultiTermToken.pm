@@ -198,8 +198,8 @@ sub _sort {
 
     # Check depth
     else {
-      my ($a_depth) = ($a->[0] =~ m/^<b>(\d+)/);
-      my ($b_depth) = ($b->[0] =~ m/^<b>(\d+)/);
+      my ($a_depth) = ($a->[0] ? $a->[0] =~ m/<b>(\d+)$/ : 0);
+      my ($b_depth) = ($b->[0] ? $b->[0] =~ m/<b>(\d+)$/ : 0);
 
       $a_depth //= 0;
       $b_depth //= 0;
