@@ -7,6 +7,13 @@ use Directory::Iterator;
 
 my $local = $FindBin::Bin;
 
+# Changes
+# 2013/11/25
+# - Initial release
+#
+# 2016/02/04
+# - Rename to korapxml2krill_dir
+
 sub printhelp {
   print <<'EOHELP';
 
@@ -14,7 +21,7 @@ Merge foundry data based on a tokenization and create indexer friendly documents
 for whole directories.
 
 Call:
-wrap_folders.pl -z --input <directory> --output <directory>
+korapxml2krill_dir -z --input <directory> --output <directory>
 
 --input|-i <directory>          Directory of documents to index
 --output|-o <directory>         Name of output folder
@@ -38,7 +45,7 @@ wrap_folders.pl -z --input <directory> --output <directory>
 --log|-l                        The Log4perl log level, defaults to ERROR.
 --help|-h                       Print this document (optional)
 
-diewald@ids-mannheim.de, 2013/11/25
+diewald@ids-mannheim.de, 2016/02/04
 
 EOHELP
 
@@ -70,7 +77,7 @@ sub write_file {
   $file =~ tr/\//-/;
   $file =~ s{^-+}{};
 
-  my $call = 'perl ' . $local . '/prepare_index.pl -i ' . $anno . ' -o ' . $output . '/' . $file . '.json';
+  my $call = 'perl ' . $local . '/korapxml2krill -i ' . $anno . ' -o ' . $output . '/' . $file . '.json';
   $call .= '.gz -z' if $gzip;
   $call .= ' -m' if $text;
   $call .= ' -l ' . $log_level if $log_level;
@@ -78,6 +85,7 @@ sub write_file {
   $call .= ' -y ' . $pretty if $pretty;
   $call .= ' -a ' . $_ foreach @allow;
   $call .= ' -s ' . $_ foreach @skip;
+  print "Convert $file\n";
   system($call);
 };
 

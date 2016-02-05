@@ -25,7 +25,7 @@ sub _t2h {
 };
 
 my @layers;
-# push(@layers, ['Base', 'Sentences']);
+push(@layers, ['Base', 'Sentences']);
 push(@layers, ['Base', 'Paragraphs']);
 
 # OpenNLP
@@ -35,7 +35,17 @@ push(@layers, ['OpenNLP', 'Sentences']);
 # CoreNLP
 push(@layers, ['CoreNLP', 'NamedEntities', 'ne_dewac_175m_600']);
 push(@layers, ['CoreNLP', 'NamedEntities', 'ne_hgc_175m_600']);
+push(@layers, ['CoreNLP', 'NamedEntities']);
 push(@layers, ['CoreNLP', 'Sentences']);
+
+push(@layers, ['DeReKo', 'Structure']);
+
+push(@layers, ['Glemm', 'Morpho']);
+
+push(@layers, ['Mate', 'Morpho']);
+push(@layers, ['Mate', 'Dependency']);
+
+push(@layers, ['Malt', 'Dependency']);
 
 # Connexor
 push(@layers, ['Connexor', 'Morpho']);
@@ -48,7 +58,7 @@ push(@layers, ['TreeTagger', 'Morpho']);
 push(@layers, ['TreeTagger', 'Sentences']);
 
 # Mate
-# push(@layers, ['Mate', 'Morpho']);
+push(@layers, ['Mate', 'Morpho']);
 push(@layers, ['Mate', 'Dependency']);
 
 # XIP

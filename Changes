@@ -1,5 +1,6 @@
-0.05 2016-01-28
+0.05 2016-02-04
         - Changed KorAP::Document to KorAP::XML::Krill.
+	- Renamed "Schreibgebrauch" to "Sgbr".
 	- Preparation for GitHub release.
 
 0.04 2016-01-28

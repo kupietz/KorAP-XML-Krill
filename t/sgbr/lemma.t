@@ -26,7 +26,7 @@ ok(my $tokens = KorAP::XML::Tokenizer->new(
 
 ok($tokens->parse, 'Parse tokenization based on lemmata');
 
-ok($tokens->add('Schreibgebrauch', 'Lemma'), 'Add Structure');
+ok($tokens->add('Sgbr', 'Lemma'), 'Add Structure');
 
 my $data = $tokens->to_data->{data};
 
