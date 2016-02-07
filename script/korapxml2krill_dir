@@ -80,6 +80,7 @@ sub write_file {
   my $call = 'perl ' . $local . '/korapxml2krill -i ' . $anno . ' -o ' . $output . '/' . $file . '.json';
   $call .= '.gz -z' if $gzip;
   $call .= ' -m' if $text;
+  $call .= ' -t ' . $token_base if $token_base;
   $call .= ' -l ' . $log_level if $log_level;
   $call .= ' --no-primary ' if $primary;
   $call .= ' -y ' . $pretty if $pretty;
