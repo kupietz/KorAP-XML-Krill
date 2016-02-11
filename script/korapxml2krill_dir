@@ -86,20 +86,28 @@ sub write_file {
   $call .= ' -y ' . $pretty if $pretty;
   $call .= ' -a ' . $_ foreach @allow;
   $call .= ' -s ' . $_ foreach @skip;
-  print "Convert $file\n";
+  print $file;
   system($call);
+  print "\n";
 };
 
 
 my $it = Directory::Iterator->new($input);
+my @dirs;
 my $dir;
 while (1) {
 
     if (!$it->is_directory && ($dir = $it->get) && $dir =~ s{/data\.xml$}{}) {
-	write_file($dir);
+	push @dirs, $dir;
 	$it->prune;
     };
   last unless $it->next;
+};
+
+my $count = scalar @dirs;
+for (my $i = 0; $i < $count; $i++) {
+  print "Convert [$i/$count] ";
+  write_file($dirs[$i]);
 };
 
 

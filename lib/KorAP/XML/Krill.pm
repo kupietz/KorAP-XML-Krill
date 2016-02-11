@@ -296,37 +296,61 @@ sub _parse_meta_tei {
   my $type = shift;
 
   my $stmt;
-  if ($type eq 'text' && ($stmt = $dom->at('titleStmt'))) {
+  if ($type eq 'text') {
 
-    # Title
+    # Publisher
     try {
-      $stmt->find('title')->each(
-	sub {
-	  my $type = $_->attr('type') || 'main';
-	  $self->title($_->all_text) if $type eq 'main';
-	  $self->sub_title($_->all_text) if $type eq 'sub';
-	}
-      );
+      $self->publisher($dom->at('publisher')->all_text);
     };
 
-    # Author
+    # Date of publication
     try {
-      my $author = $stmt->at('author')->attr('ref');
+      my $date = $dom->at('date')->all_text;
+      if ($date =~ s!^\s*(\d{4})-(\d{2})-(\d{2})!$1$2$3!) {
+	$self->pub_date($date);
+      }
+      else {
+	$self->log->warn('"' . $date . '" is not a compatible pubDate');
+      }
+    };
 
-      $author = $self->{ref_author}->{$author};
+    # Publication place
+    try {
+      $self->pub_place($dom->at('pubPlace')->all_text);
+    };
 
-      if ($author) {
+    if ($stmt = $dom->at('titleStmt')) {
+      # Title
+      try {
+	$stmt->find('title')->each(
+	  sub {
+	    my $type = $_->attr('type') || 'main';
+	    $self->title($_->all_text) if $type eq 'main';
 
-	my $array = $self->keywords;
-	$self->author($author->{id});
+	    # Only support the first subtitle
+	    $self->sub_title($_->all_text) if $type eq 'sub' && !$self->sub_title;
+	  }
+	);
+      };
 
-	if ($author->{age}) {
-	  $self->store('sgbrAuthorAgeClass' => $author->{age});
-	  push @$array, 'sgbrAuthorAgeClass:' . $author->{age};
-	};
-	if ($author->{sex}) {
-	  $self->store('sgbrAuthorSex' => $author->{sex});
-	  push @$array, 'sgbrAuthorSex:' . $author->{sex};
+      # Author
+      try {
+	my $author = $stmt->at('author')->attr('ref');
+
+	$author = $self->{ref_author}->{$author};
+
+	if ($author) {
+	  my $array = $self->keywords;
+	  $self->author($author->{name} // $author->{id});
+
+	  if ($author->{age}) {
+	    $self->store('sgbrAuthorAgeClass' => $author->{age});
+	    push @$array, 'sgbrAuthorAgeClass:' . $author->{age};
+	  };
+	  if ($author->{sex}) {
+	    $self->store('sgbrAuthorSex' => $author->{sex});
+	    push @$array, 'sgbrAuthorSex:' . $author->{sex};
+	  };
 	};
       };
     };
@@ -346,11 +370,16 @@ sub _parse_meta_tei {
       $dom->find('particDesc person')->each(
 	sub {
 
-	  $self->{ref_author}->{'#' . $_->attr('xml:id')} = {
+	  my $hash = $self->{ref_author}->{'#' . $_->attr('xml:id')} = {
 	    age => $_->attr('age'),
 	    sex => $_->attr('sex'),
 	    id => $_->attr('xml:id')
-	  }
+	  };
+
+	  # Get name
+	  if ($_->at('persName')) {
+	    $hash->{name} = $_->at('persName')->all_text;
+	  };
 	});
     };
 
@@ -360,11 +389,20 @@ sub _parse_meta_tei {
     };
 
     try {
-      $stmt = $dom->find('titleStmt > title')->each(
+      $self->store('funder', $dom->at('funder > orgName')->all_text);
+    };
+
+    try {
+      $stmt = $dom->find('fileDesc > titleStmt > title')->each(
 	sub {
 	  my $type = $_->attr('type') || 'main';
 	  $self->doc_title($_->all_text) if $type eq 'main';
-	  $self->doc_sub_title($_->all_text) if $type eq 'sub';
+	  if ($type eq 'sub') {
+	    my $sub_title = $self->doc_sub_title;
+	    $self->doc_sub_title(
+	      ($sub_title ? $sub_title . ', ' : '') . $_->all_text
+	    );
+	  };
 	}
       );
     };
