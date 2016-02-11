@@ -24,12 +24,7 @@ is($doc->doc_sigle, 'TEST_BSP', 'ID-doc');
 is($doc->corpus_sigle, 'TEST', 'ID-corpus');
 
 is($doc->title, 'Sommerüberraschung', 'title');
-#is($doc->sub_title, 'Beispiel Text Untertitel', 'title');
-#is($doc->pub_date, '20010402', 'Publication date');
-#is($doc->pub_place, 'Mannheim', 'Publication place');
-
 is($doc->author, 'TEST.BSP.Autoren.1', 'Author');
-
 is($doc->store('sgbrAuthorAgeClass'), 'X', 'AgeClass');
 
 is($doc->store('sgbrAuthorSex'), 'M', 'Sex');
@@ -68,6 +63,7 @@ is($hash->{store}->{sgbrAuthorSex}, 'M', 'store');
 
 # Sgbr specific keywords
 is($doc->keywords_string, 'sgbrAuthorAgeClass:X sgbrAuthorSex:M sgbrKodex:M');
+
 
 done_testing;
 
