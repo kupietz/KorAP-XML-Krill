@@ -13,6 +13,9 @@ my $local = $FindBin::Bin;
 #
 # 2016/02/04
 # - Rename to korapxml2krill_dir
+#
+# 2016/02/12
+# - Support overwrite
 
 sub printhelp {
   print <<'EOHELP';
@@ -23,40 +26,43 @@ for whole directories.
 Call:
 korapxml2krill_dir -z --input <directory> --output <directory>
 
---input|-i <directory>          Directory of documents to index
---output|-o <directory>         Name of output folder
---token|-t <foundry>[#<layer>]  Define the default tokenization by specifying
-                                the name of the foundry and optionally the name
-                                of the layer. Defaults to OpenNLP#tokens.
---skip|-s <foundry>[#<layer>]   Skip specific foundries by specifying the name
-                                or specific layers by defining the name
-                                with a # in front of the foundry,
-                                e.g. Mate#Morpho. Alternatively you can skip #ALL.
-                                Can be set multiple times.
---allow|-a <foundry>#<layer>    Allow specific foundries and layers by defining them
-                                combining the foundry name with a # and the layer name.
---primary|-p                    Output primary data or not. Defaults to true.
-                                Can be flagged using --no-primary as well.
---human|-m                      Represent the data human friendly,
-                                while the output defaults to JSON
---pretty|-y                     Pretty print json output
---gzip|-z                       Compress the output
-                                (expects a defined output file)
---log|-l                        The Log4perl log level, defaults to ERROR.
---help|-h                       Print this document (optional)
+  --input|-i <directory>          Directory of documents to index
+  --output|-o <directory>         Name of output folder
+  --overwrite|-w                  Overwrite files that already exist
+  --token|-t <foundry>[#<layer>]  Define the default tokenization by specifying
+                                  the name of the foundry and optionally the name
+                                  of the layer. Defaults to OpenNLP#tokens.
+  --skip|-s <foundry>[#<layer>]   Skip specific foundries by specifying the name
+                                  or specific layers by defining the name
+                                  with a # in front of the foundry,
+                                  e.g. Mate#Morpho. Alternatively you can skip #ALL.
+                                  Can be set multiple times.
+  --allow|-a <foundry>#<layer>    Allow specific foundries and layers by defining them
+                                  combining the foundry name with a # and the layer name.
+  --primary|-p                    Output primary data or not. Defaults to true.
+                                  Can be flagged using --no-primary as well.
+  --human|-m                      Represent the data human friendly,
+                                  while the output defaults to JSON
+  --pretty|-y                     Pretty print json output
+  --gzip|-z                       Compress the output
+                                  (expects a defined output file)
+  --log|-l                        The Log4perl log level, defaults to ERROR.
+  --help|-h                       Print this document (optional)
 
-diewald@ids-mannheim.de, 2016/02/04
+diewald@ids-mannheim.de, 2016/02/12
 
 EOHELP
 
   exit(defined $_[0] ? $_[0] : 0);
 };
 
-my ($input, $output, $text, $gzip, $log_level, @skip, $token_base, $primary, @allow, $pretty);
+my ($input, $output, $text, $gzip, $log_level, @skip,
+    $token_base, $primary, @allow, $pretty, $overwrite);
 GetOptions(
   'input|i=s'   => \$input,
   'output|o=s'  => \$output,
   'human|m'     => \$text,
+  'overwrite|w' => \$overwrite,
   'token|t=s'   => \$token_base,
   'gzip|z'      => \$gzip,
   'skip|s=s'    => \@skip,
@@ -80,6 +86,7 @@ sub write_file {
   my $call = 'perl ' . $local . '/korapxml2krill -i ' . $anno . ' -o ' . $output . '/' . $file . '.json';
   $call .= '.gz -z' if $gzip;
   $call .= ' -m' if $text;
+  $call .= ' -w' if $overwrite;
   $call .= ' -t ' . $token_base if $token_base;
   $call .= ' -l ' . $log_level if $log_level;
   $call .= ' --no-primary ' if $primary;
