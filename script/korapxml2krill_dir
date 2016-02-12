@@ -86,7 +86,7 @@ sub write_file {
   $call .= ' -y ' . $pretty if $pretty;
   $call .= ' -a ' . $_ foreach @allow;
   $call .= ' -s ' . $_ foreach @skip;
-  print $file;
+  print "$file ";
   system($call);
   print "\n";
 };
@@ -106,7 +106,7 @@ while (1) {
 
 my $count = scalar @dirs;
 for (my $i = 0; $i < $count; $i++) {
-  print "Convert [$i/$count] ";
+  print 'Convert [' . ($i + 1) . "/$count] ";
   write_file($dirs[$i]);
 };
 
