@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="PRO-DUD_BSP-2013-01.32" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s1" from="0" to="6">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Selbst</f>
+            <f name="ctag">NE</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s2" from="7" to="10">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">ist</f>
+            <f name="ctag">VVFIN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s3" from="11" to="14">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">der</f>
+            <f name="ctag">ART</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s4" from="15" to="19">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Jeck</f>
+            <f name="ctag">NE</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

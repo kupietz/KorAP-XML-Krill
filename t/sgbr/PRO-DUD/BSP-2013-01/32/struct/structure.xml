@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="PRO-DUD_BSP-2013-01.32" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="18" l="1">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">text</f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="18" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+      </fs>
+    </span>
+    <span id="s2" from="0" to="18" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+      </fs>
+    </span>
+    <span id="s3" from="0" to="18" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s4" from="0" to="6" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#PRO.DUD.BSP.2013.01.POS.NE</f>
+            <f name="lemmaRef">#PRO.DUD.BSP.2013.01.Lemmata.3773</f>
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s5" from="7" to="10" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#PRO.DUD.BSP.2013.01.POS.VVFIN</f>
+            <f name="lemmaRef">#PRO.DUD.BSP.2013.01.Lemmata.2</f>
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s6" from="11" to="14" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#PRO.DUD.BSP.2013.01.POS.ART</f>
+            <f name="lemmaRef">#PRO.DUD.BSP.2013.01.Lemmata.3</f>
+            <f name="n">3</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s7" from="15" to="18" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#PRO.DUD.BSP.2013.01.POS.NE</f>
+            <f name="lemmaRef">#PRO.DUD.BSP.2013.01.Lemmata.227</f>
+            <f name="n">4</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s8" from="18" to="18" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+      </fs>
+    </span>
+    <span id="s9" from="18" to="18" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

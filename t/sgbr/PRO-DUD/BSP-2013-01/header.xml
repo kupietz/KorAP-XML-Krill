@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<teiHeader>
+<dokumentSigle>PRO-DUD_BSP-2013-01</dokumentSigle>
+    <fileDesc>
+      <titleStmt>
+        <title level="u" type="main">Korpus zur Beobachtung des Schreibgebrauchs im Deutschen</title>
+        <title level="u" type="sub">Subkorpus Ortsblatt</title>
+        <title level="u" type="sub">Jahrgang 2013</title>
+        <title level="u" type="sub">Monat Januar</title>
+        <funder>
+          <orgName>Bundesministerium für Bildung und Forschung</orgName>
+        </funder>
+        <editor n="1" xml:id="PRO.DUD.BSP.2013.01.Bearbeiter.1">
+          <persName>Thorsten Frank</persName>
+          <orgName>Bibliographisches Institut GmbH, Berlin</orgName>
+        </editor>
+      </titleStmt>
+      <publicationStmt>
+        <p>Dieses Subkorpus wurde als solches nicht veröffentlicht.</p>
+      </publicationStmt>
+      <sourceDesc>
+        <biblFull>
+          <titleStmt>
+            <title level="a">Kölner Stadt-Anzeiger</title>
+          </titleStmt>
+          <publicationStmt>
+            <publisher>Dorfmedien GmbH</publisher>
+            <pubPlace>Stadtingen</pubPlace>
+            <date>Januar 2013</date>
+          </publicationStmt>
+        </biblFull>
+      </sourceDesc>
+    </fileDesc>
+        <language ident="de">Deutsch</language>
+      <projectDesc>
+        <p>
+          Dieses Subkorpus wurde vom und für das Gemeinschaftsprojekt <name>Analyse und Instrumentarien zur Beobachtung des Schreibgebrauchs im Deutschen</name> (<ref target="http://www.schreibgebrauch.org/">http://www.schreibgebrauch.org/</ref> ) zusammengestellt. Das Projektkonsortium besteht aus folgenden Partnern:
+          <list><item><orgName>Institut für Deutsche Sprache, Mannheim</orgName></item><item><orgName>Institut für Computerlinguistik, Universität des Saarlandes, Saarbrücken</orgName></item><item><orgName>Bibliographisches Institut GmbH (Dudenverlag), Berlin</orgName></item><item><orgName>Wahrig bei Brockhaus, Gütersloh</orgName></item></list>
+        </p>
+      </projectDesc>
+      <particDesc xml:id="PRO.DUD.BSP.2013.01.Autoren">
+        <person n="1" xml:id="PRO.DUD.BSP.2013.01.Autoren.1">
+          <persName>unbekannt</persName>
+        </person>
+      </particDesc>
+        <interpretation xml:id="PRO.DUD.BSP.2013.01.Kodex">
+          <p>Dieses Korpus beinhaltet Metadaten zu den Texten. Eine Liste aller Texte in diesem Korpus ist in der folgenden Sektion <gi corresp="#PRO.DUD.BSP.2013.01.Texte">editorialDecl</gi> zusammengestellt. Jeder als <tag scheme="TEI">item</tag> realisierter Listeneintrag repräsentiert dabei einen Zeitungsartikel und führt neben einem vollständig strukturierten bibliographischen Unterblock mit Titel und Autorenreferenz auch die Angabe ihrer Verschriftlichungsart im Attribut (<att scheme="TEI">rend</att>). Dieses Attribut ist innerhalb der Korpora mit Texten professioneller Schreiber wohl immer "T" für maschinell verfasste Texte, wird aber hier trotzdem aufgenommen zur besseren Suchbarkeit im Gesamtkorpus. Das Attribut ist wie folgt kodiert:</p>
+          <ab>
+            <elementSpec ident="item">
+              <attList>
+                <attDef ident="rend">
+                  <valList>
+                    <valItem ident="M">
+                      <desc>Manuskript, handgeschriebene Texte</desc>
+                    </valItem>
+                    <valItem ident="T">
+                      <desc>Typoskript, maschinell verfasste Texte</desc>
+                    </valItem>
+                    <valItem ident="H">
+                      <desc>Hybrid, Texte mit sowohl handgeschriebenem als auch maschinell verfasstem Anteil</desc>
+                    </valItem>
+                    <valItem ident="X">
+                      <desc>Texte, deren Verschriftlichungsart unbekannt ist</desc>
+                    </valItem>
+                  </valList>
+                </attDef>
+              </attList>
+            </elementSpec>
+          </ab>
+        </interpretation>
+        <segmentation xml:id="PRO.DUD.BSP.2013.01.Token">
+          <p>Die Texte in diesem Korpus wurden mit der Software Duden Morphological Engine (DME) tokenisiert. Im Ergebnis wurden Sätze mit <tag scheme="TEI">s</tag>, Wörter mit <tag scheme="TEI">w</tag> und Satzpunktuation mit <tag scheme="TEI">c</tag> ausgezeichnet. Ferner wurden auf Textebene absatzübergreifend alle Sätze und auf Satzebene durchgängig alle Wörter und jede Satzpunktuation im jeweiligen Attribut <att scheme="TEI">n</att> und bei 1 beginnend durchgezählt.</p>
+        </segmentation>
+        <interpretation xml:id="PRO.DUD.BSP.2013.01.POS">
+          <p>Die Texte in diesem Korpus wurden mit der Software Duden Morphological Engine (DME) annotiert. Die Wortartinformationen wurden dann von <respons locus="value" resp="#PRO.DUD.BSP.2013.01.Bearbeiter.1"><desc>Thorsten Frank</desc></respons> in ein Wortart-Tagging nach dem Stuttgart-Tübingen-Tagset (<ref target="http://www.ims.uni-stuttgart.de/forschung/ressourcen/lexika/TagSets/stts-table.html">STTS</ref>) überführt. Dabei wurden drei ursprüngliche Tags ("$.", "$," und "$(") in ("_ENDE", "_KOMMA" und "_SONST") umbenannt, um den Validitätsrichtlinien für XML-Identifikatoren (beschrieben in der <ref target="http://www.w3.org/TR/2006/REC-xml-20060816/">W3C-Empfehlung für XML 1.0 vom 16.08.2006</ref>) zu genügen.</p>
+          <ab>
+            <interpGrp type="annotation">
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.ADJA">attributives Adjektiv</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.ADJD">adverbiales oder prädikatives Adjektiv</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.ADV">Adverb</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.APPO">Postposition</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.APPR">Präposition; Zirkumposition links</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.APPRART">Präposition mit Artikel</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.APZR">Zirkumposition rechts</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.ART">bestimmter oder unbestimmter Artikel</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.CARD">Kardinalzahl</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.FM">Fremdsprachliches Material</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.ITJ">Interjektion</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.KOKOM">Vergleichskonjunktion</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.KON">nebenordnende Konjunktion</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.KOUI">unterordnende Konjunktion mit "zu" und Infinitiv</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.KOUS">unterordnende Konjunktion mit Satz</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.NE">normales Nomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.NN">Eigennamen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.NNE">normales Nomen mit Eigennamen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PAV">Pronominaladverb</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PDAT">attribuierendes Demonstrativpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PDS">substituierendes Demonstrativpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PIAT">attribuierendes Indefinitpronomen ohne Determiner</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PIDAT">attribuierendes Indefinitpronomen mit Determiner</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PIS">substituierendes Indefinitpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PPER">irreflexives Personalpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PPOSAT">attribuierendes Possessivpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PPOSS">substituierendes Possessivpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PRELAT">attribuierendes Relativpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PRELS">substituierendes Relativpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PRF">reflexives Personalpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PROAV">Pronominaladverb</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PTKA">Partikel bei Adjektiv oder Adverb</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PTKANT">Antwortpartikel</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PTKNEG">Negationspartikel</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PTKVZ">abgetrennter Verbzusatz</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PTKZU">"zu" vor Infinitiv</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PWAT">attribuierendes Interrogativpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PWAV">adverbiales Interrogativ- oder Relativpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.PWS">substituierendes Interrogativpronomen</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.TRUNC">Kompositions-Erstglied</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VAFIN">finites Verb, aux</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VAIMP">Imperativ, aux</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VAINF">Infinitiv, aux</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VAPP">Partizip Perfekt, aux</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VMFIN">finites Verb, modal</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VMINF">Infinitiv, modal</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VMPP">Partizip Perfekt, modal</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VVFIN">finites Verb, voll</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VVIMP">Imperativ, voll</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VVINF">Infinitiv, voll</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VVIZU">Infinitiv mit "zu", voll</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.VVPP">Partizip Perfekt, voll</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS.XY">Nichtwort, Sonderzeichen enthaltend</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS._KOMMA">Komma</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS._SONST">sonstige Satzzeichen; satzintern</interp>
+              <interp xml:id="PRO.DUD.BSP.2013.01.POS._ENDE">Satzbeendende Interpunktion</interp>
+            </interpGrp>
+          </ab>
+        </interpretation>
+</teiHeader>

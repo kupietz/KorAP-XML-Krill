@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<teiHeader>
+<textSigle>PRO-DUD_BSP-2013-01.32</textSigle>
+<item ana="#PRO.DUD.BSP.2013.01.Kodex" n="32" rend="T" xml:id="PRO.DUD.BSP.2013.01.Texte.32">
+<biblFull>
+<titleStmt>
+<title>Nur Platt, kein Deutsch</title>
+<author ref="#PRO.DUD.BSP.2013.01.Autoren.1"/>
+</titleStmt>
+<publicationStmt>
+<publisher>Dorfblatt GmbH</publisher>
+<pubPlace>Stadtingen</pubPlace>
+<date>2013-01-26</date>
+</publicationStmt>
+</biblFull>
+</item>
+</teiHeader>
