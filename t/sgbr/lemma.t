@@ -56,4 +56,50 @@ is($stream->[-1]->[1], 'i:kevin', 'Last term');
 is($stream->[-1]->[2], 's:Kevin', 'Last term');
 is($stream->[-1]->[3], 'sgbr/l:Kevin', 'Last term');
 
+
+# Real data 1
+$path = catdir(dirname(__FILE__), 'CMC-TSK', '2014-09', '2843');
+
+ok($doc = KorAP::XML::Krill->new(
+  path => $path . '/'
+), 'Create Document');
+
+ok($doc->parse, 'Parse document');
+
+ok($tokens = KorAP::XML::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => 'Sgbr',
+  layer => 'Lemma',
+  name => 'tokens'
+), 'Create tokens based on lemmata');
+
+ok($tokens->parse, 'Parse tokenization based on lemmata');
+
+ok(!$tokens->add('Sgbr', 'Lemma'), 'Add Structure impossible - no token data');
+
+
+# Real data 2
+$path = catdir(dirname(__FILE__), 'CMC-TSK', '2014-09', '3401');
+
+ok($doc = KorAP::XML::Krill->new(
+  path => $path . '/'
+), 'Create Document');
+
+ok($doc->parse, 'Parse document');
+
+ok($tokens = KorAP::XML::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => 'Sgbr',
+  layer => 'Lemma',
+  name => 'tokens'
+), 'Create tokens based on lemmata');
+
+ok($tokens->parse, 'Parse tokenization based on lemmata');
+
+ok($tokens->add('Sgbr', 'Lemma'), 'Add Structure');
+
 done_testing;
+
+__END__

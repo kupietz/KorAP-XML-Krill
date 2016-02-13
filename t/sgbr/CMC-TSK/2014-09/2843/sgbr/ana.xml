@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="CMC-TSK_2014-09.2843" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s1" from="0" to="1">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">@</f>
+            <f name="ctag">APPR</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s2" from="2" to="17">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Koelle_am_Rhing</f>
+            <f name="ctag">NN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s3" from="18" to="23">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">10:18</f>
+            <f name="ctag">CARD</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s4" from="24" to="27">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">100</f>
+            <f name="ctag">CARD</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s5" from="28" to="29">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">%</f>
+            <f name="ctag">NN</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s6" from="29" to="30">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">!</f>
+            <f name="ctag">_ENDE</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

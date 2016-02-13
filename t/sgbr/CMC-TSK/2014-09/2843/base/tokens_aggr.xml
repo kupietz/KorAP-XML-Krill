@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="CMC-TSK_2014-09.2843" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="t_0" from="0" to="1" />
+    <span id="t_1" from="2" to="8" />
+    <span id="t_2" from="8" to="9" />
+    <span id="t_3" from="9" to="11" />
+    <span id="t_4" from="11" to="12" />
+    <span id="t_5" from="12" to="17" />
+    <span id="t_6" from="18" to="20" />
+    <span id="t_7" from="20" to="21" />
+    <span id="t_8" from="21" to="23" />
+    <span id="t_9" from="24" to="27" />
+    <span id="t_10" from="28" to="29" />
+    <span id="t_11" from="29" to="30" />
+  </spanList>
+</layer>

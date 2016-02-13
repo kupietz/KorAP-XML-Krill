@@ -17,7 +17,7 @@ use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 #       Due to the kind of processing, processed metadata may be stored in
 #       a multiprocess cache instead.
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 our @ATTR = qw/text_sigle
 	       doc_sigle
@@ -306,17 +306,24 @@ sub _parse_meta_tei {
     # Date of publication
     try {
       my $date = $dom->at('date')->all_text;
-      if ($date =~ s!^\s*(\d{4})-(\d{2})-(\d{2})!$1$2$3!) {
+      $self->store(sgbrDate => $date);
+      if ($date =~ s!^\s*(\d{4})-(\d{2})-(\d{2}).*$!$1$2$3!) {
 	$self->pub_date($date);
       }
       else {
 	$self->log->warn('"' . $date . '" is not a compatible pubDate');
-      }
+      };
     };
 
     # Publication place
     try {
-      $self->pub_place($dom->at('pubPlace')->all_text);
+      my $pp = $dom->at('pubPlace');
+      if ($pp) {
+	$self->pub_place($pp->all_text) if $pp->all_text;
+      };
+      if ($pp->attr('ref')) {
+	$self->reference($pp->attr('ref'));
+      };
     };
 
     if ($stmt = $dom->at('titleStmt')) {

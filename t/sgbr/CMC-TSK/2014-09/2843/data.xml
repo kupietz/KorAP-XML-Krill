@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="text.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<raw_text docid="CMC-TSK_2014-09.2843" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <metadata file="metadata.xml" />
+  <text>@ Koelle_am_Rhing 10:18 100 %!</text>
+</raw_text>
