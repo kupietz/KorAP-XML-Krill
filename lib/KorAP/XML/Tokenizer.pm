@@ -267,7 +267,12 @@ sub add_spandata {
   my $self = shift;
   my %param = @_;
 
-  croak 'No token data available' unless $self->stream;
+  unless ($self->stream) {
+    $self->log->warn(
+      'No token data available'
+    );
+    return;
+  };
 
   $self->log->trace(
     ($param{skip} ? 'Skip' : 'Add').' span data '.$param{foundry}.':'.$param{layer}
@@ -311,7 +316,13 @@ sub add_tokendata {
   my $self = shift;
   my %param = @_;
 
-  croak 'No token data available' unless $self->stream;
+  unless ($self->stream) {
+    $self->log->warn(
+      'No token data available'
+    );
+    return;
+  };
+
 
   $self->log->trace(
     ($param{skip} ? 'Skip' : 'Add').' token data '.$param{foundry}.':'.$param{layer}

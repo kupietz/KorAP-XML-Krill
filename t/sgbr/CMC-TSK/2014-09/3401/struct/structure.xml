@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="CMC-TSK_2014-09.3401" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="114" l="1">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">text</f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="15" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+      </fs>
+    </span>
+    <span id="s2" from="0" to="15" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s3" from="0" to="1" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.XY</f>
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s4" from="2" to="15" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.ADJD</f>
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s5" from="16" to="114" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s6" from="16" to="114" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s7" from="15" to="15" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.4291</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s8" from="17" to="18" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.ITJ</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.1627</f>
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s9" from="19" to="21" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.PTKANT</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.594</f>
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s10" from="22" to="26" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.KOUS</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.165</f>
+            <f name="n">3</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s11" from="27" to="30" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.PPER</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.455</f>
+            <f name="n">4</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s12" from="31" to="36" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.NN</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.4470</f>
+            <f name="n">5</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s13" from="37" to="40" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.ADV</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.342</f>
+            <f name="n">6</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s14" from="41" to="43" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.APPR</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.69</f>
+            <f name="n">7</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s15" from="44" to="49" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.PDS</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.11545</f>
+            <f name="n">8</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s16" from="50" to="63" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.NN</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.20665</f>
+            <f name="n">9</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s17" from="64" to="73" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.VVFIN</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.2620</f>
+            <f name="n">10</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s18" from="74" to="85" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.VVFIN</f>
+            <f name="n">11</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s19" from="86" to="89" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.PPER</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.455</f>
+            <f name="n">12</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s20" from="90" to="94" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.ADV</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.114</f>
+            <f name="n">13</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s21" from="95" to="97" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.APPRART</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.16</f>
+            <f name="n">14</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s22" from="98" to="106" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.ADJA</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.1000</f>
+            <f name="n">15</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s23" from="107" to="113" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.NN</f>
+            <f name="lemmaRef">#CMC.TSK.2014.09.Lemmata.20760</f>
+            <f name="n">16</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s24" from="113" to="114" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS._ENDE</f>
+            <f name="n">17</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s25" from="114" to="114" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS._ENDE</f>
+            <f name="n">18</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

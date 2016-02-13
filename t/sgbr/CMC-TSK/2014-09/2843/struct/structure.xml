@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="CMC-TSK_2014-09.2843" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="29" l="1">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">text</f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="23" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+      </fs>
+    </span>
+    <span id="s2" from="0" to="23" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s3" from="0" to="1" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.APPR</f>
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s4" from="2" to="17" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.NN</f>
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s5" from="18" to="23" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.CARD</f>
+            <f name="n">3</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s6" from="24" to="29" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s7" from="24" to="29" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s8" from="24" to="27" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.CARD</f>
+            <f name="n">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s9" from="28" to="29" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">w</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS.NN</f>
+            <f name="n">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s10" from="29" to="29" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ana">#CMC.TSK.2014.09.POS._ENDE</f>
+            <f name="n">3</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

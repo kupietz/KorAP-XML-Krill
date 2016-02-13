@@ -41,4 +41,17 @@ is($stream->[0]->[4], 'sgbr/p:NN', 'First term POS');
 is($stream->[1]->[3], 'sgbr/p:PPER', 'First term POS');
 is($stream->[-1]->[3], 'sgbr/p:NE', 'Last term POS');
 
+
+ok($tokens->add('Sgbr', 'Lemma'), 'Add Structure');
+
+$data = $tokens->to_data->{data};
+$stream = $data->{stream};
+
+is($stream->[-1]->[0], '_50$<i>359<i>364', 'Token number');
+is($stream->[-1]->[1], 'i:kevin', 'Position');
+is($stream->[-1]->[2], 's:Kevin', 'Last term');
+is($stream->[-1]->[3], 'sgbr/l:Kevin', 'Last term');
+is($stream->[-1]->[4], 'sgbr/p:NE', 'Last term');
+ok(!defined $stream->[-1]->[5], 'Last term');
+
 done_testing;

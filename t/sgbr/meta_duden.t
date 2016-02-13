@@ -29,6 +29,7 @@ ok(!$doc->sub_title, 'no subtitle');
 
 is($doc->publisher, 'Dorfblatt GmbH', 'Publisher');
 is($doc->pub_date, '20130126');
+is($doc->store('sgbrDate'), '2013-01-26');
 is($doc->pub_place, 'Stadtingen');
 
 is($doc->doc_title, 'Korpus zur Beobachtung des Schreibgebrauchs im Deutschen', 'Doc title');

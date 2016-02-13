@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<teiHeader>
+<textSigle>CMC-TSK_2014-09.2843</textSigle>
+<item xml:id="CMC.TSK.2014.09.Texte.2843" n="45">
+<biblFull>
+<titleStmt>
+<title>@ Koelle_am_Rhing 10:18</title>
+<author ref="#CMC.TSK.2014.09.Autoren.587"/>
+</titleStmt>
+<publicationStmt>
+<publisher>tagesschau.de</publisher>
+<pubPlace ref="http://meta.tagesschau.de/node/090285#comment-1732187"/>
+<date>2014-09-30 14:33:00</date>
+</publicationStmt>
+</biblFull>
+</item>
+</teiHeader>

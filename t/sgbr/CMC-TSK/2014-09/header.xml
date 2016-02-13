@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<teiHeader>
+<dokumentSigle>CMC-TSK_2014-09</dokumentSigle>
+      <fileDesc>
+         <titleStmt>
+            <title level="u" type="main">Korpus zur Beobachtung des Schreibgebrauchs im Deutschen</title>
+            <title level="u" type="sub">Subkorpus Internettexte</title>
+            <title level="u" type="sub">Subkorpus Leserkommentare Tagesschau</title>
+            <title level="u" type="sub">Subkorpus September 2014</title>
+            <title level="u" type="sub">Subkorpus Beispielauszug</title>
+            <funder>
+               <orgName>Bundesministerium für Bildung und Forschung</orgName>
+            </funder>
+            <editor n="1" xml:id="CMC.TSK.2014.09.Bearbeiter.1">
+               <persName>Peter M. Fischer</persName>
+               <orgName>Institut für Deutsche Sprache, Mannheim</orgName>
+            </editor>
+            <editor n="2" xml:id="CMC.TSK.2014.09.Bearbeiter.2">
+               <persName>Jakob Prange</persName>
+               <orgName>Saarland University</orgName>
+            </editor>
+         </titleStmt>
+         <publicationStmt>
+            <p>Dieses Subkorpus wurde als solches nicht veröffentlicht.</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Die hier erfassten Texte sind Leserkommentare auf der Nachrichtenseite der Tagesschau <ref target="http://www.tagesschau.de/"/>. Die Seite veröffentlicht Nachrichtenartikel, die eine kurze Zeit lang von Lesern kommentiert werden können. Der Leser muss hierzu vorher ein kostenloses Konto eingerichtet haben und sich dann auf der Seite anmelden.</p>
+         </sourceDesc>
+      </fileDesc>
+            <language ident="de">Deutsch</language>
+         <projectDesc>
+            <p>
+            Dieses Subkorpus wurde vom und für das Gemeinschaftsprojekt <name>Analyse und Instrumentarien zur Beobachtung des Schreibgebrauchs im Deutschen</name> (<ref target="http://www.schreibgebrauch.org/">http://www.schreibgebrauch.org/</ref>) zusammengestellt. Das Projektkonsortium besteht aus folgenden Partnern:
+            <list>
+                  <item>
+                     <orgName>Institut für Deutsche Sprache, Mannheim</orgName>
+                  </item>
+                  <item>
+                     <orgName>Institut für Computerlinguistik, Universität des Saarlandes, Saarbrücken</orgName>
+                  </item>
+                  <item>
+                     <orgName>Bibliographisches Institut GmbH (Dudenverlag), Berlin</orgName>
+                  </item>
+                  <item>
+                     <orgName>Wahrig bei Brockhaus, Gütersloh</orgName>
+                  </item>
+               </list>
+            </p>
+         </projectDesc>
+         <editorialDecl xml:id="CMC.TSK.2014.09.Metadaten.Autoren">
+            <interpretation>
+               <p>Dieses Korpus beinhaltet Metadaten zu den Autoren der Texte. Eine Liste aller Autoren, die in diesem Subkorpus kommentiert haben, wurde in der Sektion <gi corresp="#CMC.TSK.2014.09.Autoren">particDesc</gi> zusammengestellt. Jeder Autor ist dabei als <tag scheme="TEI">person</tag> kodiert und führt im Unterelement <tag scheme="TEI">persName</tag> sein oder ihr verwendetes Pseudonym. Aus Gründen der Anonymitätswahrung wurden keine weiteren personenbezogenen Metadaten in das Korpus aufgenommen. Die Zuordnung der Autoren zu ihren Texten regeln die Metadaten der Texte.</p>
+            </interpretation>
+         </editorialDecl>
+         <particDesc xml:id="CMC.TSK.2014.09.Autoren">
+            <person ana="#CMC.TSK.2014.09.Metadaten.Autoren" n="206" xml:id="CMC.TSK.2014.09.Autoren.206">
+               <persName type="pseudo">weltoffen</persName>
+            </person>
+            <person ana="#CMC.TSK.2014.09.Metadaten.Autoren" n="587" xml:id="CMC.TSK.2014.09.Autoren.587">
+               <persName type="pseudo">privat23</persName>
+            </person>
+            <person ana="#CMC.TSK.2014.09.Metadaten.Autoren" n="927" xml:id="CMC.TSK.2014.09.Autoren.927">
+               <persName type="pseudo">Koelle_am_Rhing</persName>
+            </person>
+            <person ana="#CMC.TSK.2014.09.Metadaten.Autoren" n="1043" xml:id="CMC.TSK.2014.09.Autoren.1043">
+               <persName type="pseudo">fitnessfrosch</persName>
+            </person>
+         </particDesc>
+            <interpretation xml:id="CMC.TSK.2014.09.Kodex">
+               <p>Dieses Korpus beinhaltet Metadaten zu den Kommentartexten wie auch zu den Nachrichtenartikeln, in dessen Kontext sie verfasst wurden. Die folgende Sektion <gi corresp="#CMC.TSK.2014.09.Texte">editorialDecl</gi> stellt eine strukturelle Übersicht aller Nachrichtenartikel und ihrer Kommentartexte zusammen. Jeder als <tag scheme="TEI">item</tag> realisierte Listeneintrag repräsentiert dabei einen Nachrichtenartikel, der neben einem vollständig strukturierten bibliographischen Unterblock mit Titel und Veröffentlichung auch jeweils als <tag scheme="TEI">desc</tag> kodiert einen kurzen Einleitungstext sowie Schlagwörter zum Inhalt (<tag scheme="TEI">name</tag>) und der geografischen Verortung (<tag scheme="TEI">geogName</tag>) führt. Darunter folgt eine Liste aller zu diesem Nachrichtenartikel verfasster Kommentartexte. Hier repräsentiert jeder als <tag scheme="TEI">item</tag> realisierte Listeneintrag einen Kommentartext, der ebenso einen vollständig strukturierten bibliographischen Unterblock mit Titel, Veröffentlichung und Autorenreferenz führt.</p>
+            </interpretation>
+           <segmentation xml:id="CMC.TSK.2014.09.Token">
+          <p>Die Texte in diesem Korpus wurden mit der Software <ref target="https://github.com/DFKI-MLT/JTok">jTok</ref> tokenisiert. Im Ergebnis wurden Sätze mit <tag scheme="TEI">s</tag>, Wörter mit <tag scheme="TEI">w</tag> und Satzpunktuation mit <tag scheme="TEI">c</tag> ausgezeichnet. Ferner wurden auf Textebene absatzübergreifend alle Sätze und auf Satzebene durchgängig alle Wörter und jede Satzpunktuation im jeweiligen Attribut <att scheme="TEI">n</att> und bei 1 beginnend durchgezählt.</p>
+        </segmentation>
+        <interpretation xml:id="CMC.TSK.2014.09.POS">
+          <p>Dieses Korpus verwendet ein Wortart-Tagging nach dem Stuttgart-Tübingen-Tagset (<ref target="http://www.ims.uni-stuttgart.de/forschung/ressourcen/lexika/TagSets/stts-table.html">STTS</ref>) und dessen Erweiterung für das Genre der internetbasierten Kommunikation (<ref target="http://opus.bsz-bw.de/ubhi/volltexte/2014/279/pdf/p027.pdf">STTS 2.0</ref>). Dabei wurden drei ursprüngliche Tags ("$.", "$," und "$(") in ("_ENDE", "_KOMMA" und "_SONST") umbennant, um den Validitätsrichtlinien für XML-Identifikatoren (beschrieben in der <ref target="http://www.w3.org/TR/2006/REC-xml-20060816/">W3C-Empfehlung für XML 1.0 vom 16.08.2006</ref>) zu genügen.</p>
+          <ab>
+            <interpGrp type="annotation">
+              <interp xml:id="CMC.TSK.2014.09.POS.ADJA">attributives Adjektiv</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.ADJD">adverbiales oder prädikatives Adjektiv</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.ADR">Adressierung</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.ADV">Adverb</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.APPO">Postposition</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.APPR">Präposition; Zirkumposition links</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.APPRART">Präposition mit Artikel</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.APZR">Zirkumposition rechts</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.ART">bestimmter oder unbestimmter Artikel</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.AW">Aktionswort</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.AWIND">Aktionswort-Indikator</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.CARD">Kardinalzahl</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.EMOASC">Emoticon, als Zeichenfolge dargestellt (Typ "ASCII")</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.ERRAW">falsch abgetrennter Wortteil</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.ERRTOK">Tokenisierungsfehler</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.FM">Fremdsprachliches Material</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.HST">Hashtag</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.ITJ">Interjektion</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.KOKOM">Vergleichskonjunktion</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.KON">nebenordnende Konjunktion</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.KOUI">unterordnende Konjunktion mit "zu" und Infinitiv</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.KOUS">unterordnende Konjunktion mit Satz</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.NE">Eigennamen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.NN">normales Nomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.ONO">Onomatopoetikon</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PDAT">attribuierendes Demonstrativpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PDS">substituierendes Demonstrativpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PIAT">attribuierendes Indefinitpronomen ohne Determiner</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PIS">substituierendes Indefinitpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PPER">irreflexives Personalpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PPOSAT">attribuierendes Possessivpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PPOSS">substituierendes Possessivpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PRELAT">attribuierendes Relativpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PRELS">substituierendes Relativpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PRF">reflexives Personalpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PROAV">Pronominaladverb</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PTKA">Partikel bei Adjektiv oder Adverb</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PTKANT">Antwortpartikel</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PTKNEG">Negationspartikel</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PTKVZ">abgetrennter Verbzusatz</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PTKZU">"zu" vor Infinitiv</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PWAT">attribuierendes Interrogativpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PWAV">adverbiales Interrogativ- oder Relativpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.PWS">substituierendes Interrogativpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.TRUNC">Kompositions-Erstglied</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.URL">Uniform Resource Locator</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VAFIN">finites Verb, aux</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VAIMP">Imperativ, aux</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VAINF">Infinitiv, aux</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VAPP">Partizip Perfekt, aux</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VAPPER">Verb, aux mit Personalpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VMFIN">finites Verb, modal</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VMINF">Infinitiv, modal</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VMPP">Partizip Perfekt, modal</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VVFIN">finites Verb, voll</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VVIMP">Imperativ, voll</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VVINF">Infinitiv, voll</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VVIZU">Infinitiv mit "zu", voll</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VVPP">Partizip Perfekt, voll</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.VVPPER">Verb, voll mit Personalpronomen</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS.XY">Nichtwort, Sonderzeichen enthaltend</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS._ENDE">Satzbeendende Interpunktion</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS._KOMMA">Komma</interp>
+              <interp xml:id="CMC.TSK.2014.09.POS._SONST">sonstige Satzzeichen; satzintern</interp>
+            </interpGrp>
+          </ab>
+        </interpretation>
+</teiHeader>
