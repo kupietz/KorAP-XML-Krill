@@ -28,6 +28,7 @@ lib/KorAP/XML/Index/Glemm/Morpho.pm
 lib/KorAP/XML/Index/Malt/Dependency.pm
 lib/KorAP/XML/Index/Mate/Dependency.pm
 lib/KorAP/XML/Index/Mate/Morpho.pm
+lib/KorAP/XML/Index/Mate/MorphoAttr.pm
 lib/KorAP/XML/Index/OpenNLP/Morpho.pm
 lib/KorAP/XML/Index/OpenNLP/Sentences.pm
 lib/KorAP/XML/Index/OpenNLP/Morpho.pm

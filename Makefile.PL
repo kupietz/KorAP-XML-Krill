@@ -37,5 +37,5 @@ WriteMakefile(
 	  't/sgbr/*.t ' .
 	    't/real/*.t'
 	  },
-  EXE_FILES => ['script/korapxml2krill']
+  EXE_FILES => ['script/korapxml2krill', 'script/korapxml2krill_dir']
 );

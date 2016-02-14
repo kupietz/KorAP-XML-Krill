@@ -128,7 +128,7 @@ $output = decode_json( $tokens->to_json );
 is($output->{data}->{foundries}, 'base base/paragraphs base/sentences', 'Foundries');
 is($output->{data}->{layerInfos}, 'base/s=spans', 'layerInfos');
 my $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr/s:{War/, 'data');
+like($first_token, qr/s:\{War/, 'data');
 like($first_token, qr/_0\$<i>1<i>5/, 'data');
 
 
