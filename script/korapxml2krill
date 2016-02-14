@@ -10,8 +10,6 @@ use Log::Log4perl;
 use KorAP::XML::Krill;
 use KorAP::XML::Tokenizer;
 
-our $VERSION = 0.04;
-
 # Merges foundry data to create indexer friendly documents
 # ndiewald, 2014/10/29
 
@@ -21,7 +19,14 @@ our $VERSION = 0.04;
 #
 # 2016/02/12
 # - fixed foundry skipping
+#
+# 2016/02/14
+# - Added version information
 
+sub printversion {
+  print "Version " . $KorAP::XML::Krill::VERSION . "\n\n";
+  exit(1);
+};
 
 sub printhelp {
   print <<'EOHELP';
@@ -54,8 +59,9 @@ korapxml2krill -z --input <directory> --output <filename>
                                   (expects a defined output file)
   --log|-l                        The Log4perl log level, defaults to ERROR.
   --help|-h                       Print this document (optional)
+  --version|-v                    Print version information
 
-diewald@ids-mannheim.de, 2016/02/12
+diewald@ids-mannheim.de, 2016/02/14
 
 EOHELP
   exit(defined $_[0] ? $_[0] : 0);
@@ -76,7 +82,8 @@ GetOptions(
   'allow|a=s'   => \@allow,
   'primary|p!'  => \$primary,
   'pretty|y'    => \$pretty,
-  'help|h'      => sub { printhelp }
+  'help|h'      => sub { printhelp },
+  'version|v'   => sub { printversion }
 );
 
 printhelp(1) if !$input || ($gzip && !$output);

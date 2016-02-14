@@ -21,6 +21,7 @@ WriteMakefile(
     'Array::IntSpan' => 2.003,
     'List::MoreUtils' => 0.33,
     'IO::Dir::Recursive' => 0.03,
+    'File::Temp'     => 0,
     'Directory::Iterator' => 0,
     'Benchmark'      => 0,
     'Carp'           => 0,

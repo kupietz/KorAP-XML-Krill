@@ -1,5 +1,6 @@
 lib/KorAP/XML/Krill.pm
 lib/KorAP/XML/Log.pm
+lib/KorAP/XML/Archive.pm
 lib/KorAP/XML/Tokenizer.pm
 lib/KorAP/XML/Tokenizer/Match.pm
 lib/KorAP/XML/Tokenizer/Range.pm
@@ -40,6 +41,7 @@ lib/KorAP/XML/Index/XIP/Constituency.pm
 lib/KorAP/XML/Index/XIP/Dependency.pm
 lib/KorAP/XML/Index/XIP/Morpho.pm
 lib/KorAP/XML/Index/XIP/Sentences.pm
+t/archive.t
 t/meta.t
 t/primary.t
 t/range.t
@@ -84,6 +86,7 @@ t/sgbr/meta_duden.t
 t/sgbr/meta_ids.t
 t/sgbr/pos.t
 t/sgbr/token.t
+t/corpus/archive.zip
 t/corpus/BZK/header.xml
 t/corpus/GOE/header.xml
 t/corpus/VDI/header.xml
