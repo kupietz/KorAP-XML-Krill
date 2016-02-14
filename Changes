@@ -1,3 +1,7 @@
+0.08 2016-02-14
+        - Added support for archive streaming.
+	- Improved scripts.
+
 0.07 2016-02-13
         - Improved support for Schreibgebrauch meta data
 	  (IDS flavour).

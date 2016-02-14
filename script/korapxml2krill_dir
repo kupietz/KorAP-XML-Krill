@@ -1,9 +1,14 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
+use lib 'lib';
 use FindBin;
+use File::Temp qw/tempdir/;
+use File::Spec::Functions qw/catfile catdir/;
 use Getopt::Long;
 use Directory::Iterator;
+use KorAP::XML::Krill;
+use KorAP::XML::Archive;
 
 my $local = $FindBin::Bin;
 
@@ -16,6 +21,14 @@ my $local = $FindBin::Bin;
 #
 # 2016/02/12
 # - Support overwrite
+#
+# 2016/02/14
+# - Added version information
+
+sub printversion {
+  print "Version " . $KorAP::XML::Krill::VERSION . "\n\n";
+  exit(1);
+};
 
 sub printhelp {
   print <<'EOHELP';
@@ -26,7 +39,7 @@ for whole directories.
 Call:
 korapxml2krill_dir -z --input <directory> --output <directory>
 
-  --input|-i <directory>          Directory of documents to index
+  --input|-i <directory|file>     Directory or archive file of documents to index
   --output|-o <directory>         Name of output folder
   --overwrite|-w                  Overwrite files that already exist
   --token|-t <foundry>[#<layer>]  Define the default tokenization by specifying
@@ -48,8 +61,9 @@ korapxml2krill_dir -z --input <directory> --output <directory>
                                   (expects a defined output file)
   --log|-l                        The Log4perl log level, defaults to ERROR.
   --help|-h                       Print this document (optional)
+  --version|-v                    Print version information
 
-diewald@ids-mannheim.de, 2016/02/12
+diewald@ids-mannheim.de, 2016/02/14
 
 EOHELP
 
@@ -70,12 +84,14 @@ GetOptions(
   'allow|a=s'   => \@allow,
   'primary|p!'  => \$primary,
   'pretty|y'    => \$pretty,
-  'help|h'      => sub { printhelp }
+  'help|h'      => sub { printhelp },
+  'version|v'   => sub { printversion }
 );
 
 printhelp(1) if !$input || !$output;
 
 
+# write file
 sub write_file {
   my $anno = shift;
   my $file = $anno;
@@ -98,23 +114,71 @@ sub write_file {
   print "\n";
 };
 
-
-my $it = Directory::Iterator->new($input);
-my @dirs;
-my $dir;
-while (1) {
-
+# Input is a directory
+if (-d $input) {
+  my $it = Directory::Iterator->new($input);
+  my @dirs;
+  my $dir;
+  while (1) {
     if (!$it->is_directory && ($dir = $it->get) && $dir =~ s{/data\.xml$}{}) {
-	push @dirs, $dir;
-	$it->prune;
+      push @dirs, $dir;
+      $it->prune;
     };
-  last unless $it->next;
-};
+    last unless $it->next;
+  };
 
-my $count = scalar @dirs;
-for (my $i = 0; $i < $count; $i++) {
-  print 'Convert [' . ($i + 1) . "/$count] ";
-  write_file($dirs[$i]);
+  my $count = scalar @dirs;
+  for (my $i = 0; $i < $count; $i++) {
+    print 'Convert [' . ($i + 1) . "/$count] ";
+    write_file($dirs[$i]);
+  };
+}
+
+# Input is a file
+elsif (-f($input) && (my $archive = KorAP::XML::Archive->new($input))) {
+  unless ($archive->test_unzip) {
+    print "Unzip is not installed or incompatible.\n\n";
+    exit(1);
+  };
+
+  unless ($archive->test) {
+    print "Zip archive not compatible.\n\n";
+    exit(1);
+  };
+
+  my @dirs = $archive->list_texts;
+  my $count = scalar @dirs;
+  for (my $i = 0; $i < $count; $i++) {
+    print 'Convert [' . ($i + 1) . "/$count] ";
+
+    # Split path information
+    my ($prefix, $corpus, $doc, $text) = $archive->split_path($dirs[$i]);
+
+    # Create temporary file
+    my $temp = tempdir(CLEANUP => 1);
+
+    # Extract from archive
+    if ($archive->extract($dirs[$i], $temp)) {
+
+      # Create corpus directory
+      $input = catdir($temp, $corpus);
+
+      # Temporary directory
+      my $dir = catdir($input, $doc, $text);
+
+      # Write file
+      write_file($dir);
+    }
+    else {
+      print "Unable to extract " . $dirs[$i] . "\n";
+    };
+
+    $temp = 0;
+  };
+}
+
+else {
+  print "Input is neither a directory nor an archive.\n\n";
 };
 
 
