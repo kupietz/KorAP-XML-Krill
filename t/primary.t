@@ -6,11 +6,11 @@ use Mojo::ByteStream 'b';
 use utf8;
 use lib 'lib', '../lib';
 
-use_ok('KorAP::Document::Primary');
+use_ok('KorAP::XML::Document::Primary');
 
 my $t = "Der März ging vorüber und demnächst würde es Herbstblätter regnen.";
 
-ok(my $p = KorAP::Document::Primary->new($t), 'Constructor');
+ok(my $p = KorAP::XML::Document::Primary->new($t), 'Constructor');
 
 is($p->data_length, 66, 'Text has correct length');
 
@@ -39,7 +39,7 @@ is(
 
 $t = 'Er dächte, daß dies „für alle Elemente gilt“.';
 
-ok($p = KorAP::Document::Primary->new($t), 'Constructor');
+ok($p = KorAP::XML::Document::Primary->new($t), 'Constructor');
 
 is($p->data_length, 45, 'Text has correct length');
 
