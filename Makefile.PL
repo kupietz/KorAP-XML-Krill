@@ -20,6 +20,7 @@ WriteMakefile(
     'Try::Tiny'      => 0.21,
     'Array::IntSpan' => 2.003,
     'List::MoreUtils' => 0.33,
+    'Parallel::ForkManager' => 1.17,
     'IO::Dir::Recursive' => 0.03,
     'File::Temp'     => 0,
     'Directory::Iterator' => 0,
