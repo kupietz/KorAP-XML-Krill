@@ -1,3 +1,6 @@
+0.10 2016-02-15
+        - Added EXPERIMENTAL support for parallel jobs.
+
 0.09 2016-02-15
         - Fixed temporary directory handling in scripts.
 	- Improved skipping for archive handling in scripts.
