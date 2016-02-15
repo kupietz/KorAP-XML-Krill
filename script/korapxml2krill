@@ -40,9 +40,9 @@ korapxml2krill -z --input <directory> --output <filename>
   --output|-o <filename>          Document name for output (optional),
                                   Writes to <STDOUT> by default
   --overwrite|-w                  Overwrite files that already exist
-  --token|-t <foundry>[#<layer>]  Define the default tokenization by specifying
+  --token|-t <foundry>[#<file>]   Define the default tokenization by specifying
                                   the name of the foundry and optionally the name
-                                  of the layer. Defaults to OpenNLP#tokens.
+                                  of the layer-file. Defaults to OpenNLP#tokens.
   --skip|-s <foundry>[#<layer>]   Skip specific foundries by specifying the name
                                   or specific layers by defining the name
                                   with a # in front of the foundry,
@@ -61,7 +61,7 @@ korapxml2krill -z --input <directory> --output <filename>
   --help|-h                       Print this document (optional)
   --version|-v                    Print version information
 
-diewald@ids-mannheim.de, 2016/02/14
+diewald@ids-mannheim.de, 2016/02/15
 
 EOHELP
   exit(defined $_[0] ? $_[0] : 0);
