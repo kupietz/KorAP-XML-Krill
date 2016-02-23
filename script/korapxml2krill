@@ -1,98 +1,104 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
-use lib 'lib', '../lib';
-use Getopt::Long;
+use FindBin;
+BEGIN { unshift @INC, "$FindBin::Bin/../lib" };
+use File::Spec::Functions qw/catfile catdir/;
+use Getopt::Long qw/GetOptions :config no_auto_abbrev/;
 use Benchmark qw/:hireswallclock/;
 use IO::Compress::Gzip qw/$GzipError/;
 use Log::Log4perl;
-
+use Pod::Usage;
+use Directory::Iterator;
 use KorAP::XML::Krill;
+use KorAP::XML::Archive;
 use KorAP::XML::Tokenizer;
+use Parallel::ForkManager;
 
-# Merges foundry data to create indexer friendly documents
-# ndiewald, 2014/10/29
-
+# CHANGES:
+# ----------------------------------------------------------
+# 2013/11/25
+# - Initial release
+#
+# 2014/10/29
+# - Merges foundry data to create indexer friendly documents
+#
 # 2016/02/04
 # - renamed to korapxml2krill
 # - added Schreibgebrauch support
 #
 # 2016/02/12
 # - fixed foundry skipping
+# - Support overwrite in archive processing
 #
 # 2016/02/14
 # - Added version information
+# - Added support for archive files
+#
+# 2016/02/15
+# - Fixed temporary directory bug
+# - Improved skipping before unzipping
+# - Added EXPERIMENTAL concurrency support
+#
+# 2016/02/23
+# - Merge korapxml2krill and korapxml2krill_dir
+# ----------------------------------------------------------
 
-sub printversion {
-  print "Version " . $KorAP::XML::Krill::VERSION . "\n\n";
-  exit(1);
+our $LAST_CHANGE = '2016/02/23';
+our $LOCAL = $FindBin::Bin;
+our $VERSION_MSG = <<"VERSION";
+Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
+VERSION
+
+
+# Parse comand
+my $cmd;
+our @ARGV;
+if ($ARGV[0] && index($ARGV[0], '-') != 0) {
+  $cmd = shift @ARGV;
 };
 
-sub printhelp {
-  print <<'EOHELP';
-
-Merge foundry data based on a tokenization and create indexer friendly documents.
-
-Call:
-korapxml2krill -z --input <directory> --output <filename>
-
-  --input|-i <directory>          Directory of the document to index
-  --output|-o <filename>          Document name for output (optional),
-                                  Writes to <STDOUT> by default
-  --overwrite|-w                  Overwrite files that already exist
-  --token|-t <foundry>[#<file>]   Define the default tokenization by specifying
-                                  the name of the foundry and optionally the name
-                                  of the layer-file. Defaults to OpenNLP#tokens.
-  --skip|-s <foundry>[#<layer>]   Skip specific foundries by specifying the name
-                                  or specific layers by defining the name
-                                  with a # in front of the foundry,
-                                  e.g. Mate#Morpho. Alternatively you can skip #ALL.
-                                  Can be set multiple times.
-  --allow|-a <foundry>#<layer>    Allow specific foundries and layers by defining them
-                                  combining the foundry name with a # and the layer name.
-  --primary|-p                    Output primary data or not. Defaults to true.
-                                  Can be flagged using --no-primary as well.
-  --human|-m                      Represent the data human friendly,
-                                  while the output defaults to JSON
-  --pretty|-y                     Pretty print json output
-  --gzip|-z                       Compress the output
-                                  (expects a defined output file)
-  --log|-l                        The Log4perl log level, defaults to ERROR.
-  --help|-h                       Print this document (optional)
-  --version|-v                    Print version information
-
-diewald@ids-mannheim.de, 2016/02/15
-
-EOHELP
-  exit(defined $_[0] ? $_[0] : 0);
-};
-
-# Options from the command line
-my ($input, $output, $text, $gzip, $log_level, @skip, $token_base,
-    $primary, @allow, $pretty, $overwrite);
+# Parse options from the command line
 GetOptions(
-  'input|i=s'   => \$input,
-  'output|o=s'  => \$output,
-  'overwrite|w' => \$overwrite,
-  'human|m'     => \$text,
-  'token|t=s'   => \$token_base,
-  'gzip|z'      => \$gzip,
-  'skip|s=s'    => \@skip,
-  'log|l=s'     => \$log_level,
-  'allow|a=s'   => \@allow,
-  'primary|p!'  => \$primary,
-  'pretty|y'    => \$pretty,
-  'help|h'      => sub { printhelp },
-  'version|v'   => sub { printversion }
+  'input|i=s'   => \(my $input),
+  'output|o=s'  => \(my $output),
+  'overwrite|w' => \(my $overwrite),
+  'human|m'     => \(my $text),
+  'token|t=s'   => \(my $token_base),
+  'gzip|z'      => \(my $gzip),
+  'skip|s=s'    => \(my @skip),
+  'log|l=s'     => \(my $log_level = 'ERROR'),
+  'allow|a=s'   => \(my @allow),
+  'primary|p!'  => \(my $primary),
+  'pretty|y'    => \(my $pretty),
+  'jobs|j=i'    => \(my $jobs = 0),
+  'help|h'      => sub {
+    pod2usage(
+      -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
+      -verbose => 99,
+      -msg => $VERSION_MSG,
+    );
+  },
+  'version|v'   => sub {
+    pod2usage(
+      -verbose => 0,
+      -msg => $VERSION_MSG
+    )
+  }
 );
 
-printhelp(1) if !$input || ($gzip && !$output);
+my %ERROR_HASH = (
+  -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
+  -verbose => 99,
+  -msg => $VERSION_MSG,
+  -exit => 1
+);
 
-$log_level //= 'ERROR';
+# Input has to be defined
+pod2usage(%ERROR_HASH) unless $input;
 
-my %skip;
-$skip{lc($_)} = 1 foreach @skip;
 
+# Initialize log4perl object
 Log::Log4perl->init({
   'log4perl.rootLogger' => uc($log_level) . ', STDERR',
   'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
@@ -102,143 +108,481 @@ Log::Log4perl->init({
 
 my $log = Log::Log4perl->get_logger('main');
 
-# Ignore processing
-if (!$overwrite && $output && -e $output) {
-  $log->trace($output . ' already exists');
-  exit(0);
+
+# Get file name based on path information
+sub get_file_name ($) {
+  my $file = shift;
+  $file =~ s/^?\/?$input//;
+  $file =~ tr/\//-/;
+  $file =~ s{^-+}{};
+  return $file;
 };
 
-BEGIN {
-  $main::TIME = Benchmark->new;
-  $main::LAST_STOP = Benchmark->new;
+
+# Write file
+sub write_file {
+  my $anno = shift;
+  my $file = get_file_name $anno;
+
+  # TODO: This should be done directly with a data structure! KorAP::XML::Wrap
+
+  my $call = 'perl ' . $LOCAL . '/korapxml2krill -i ' .
+    $anno . ' -o ' . $output . '/' . $file . '.json';
+  $call .= '.gz -z' if $gzip;
+  $call .= ' -m' if $text;
+  $call .= ' -w' if $overwrite;
+  $call .= ' -t ' . $token_base if $token_base;
+  $call .= ' -l ' . $log_level if $log_level;
+  $call .= ' --no-primary ' if $primary;
+  $call .= ' -y ' . $pretty if $pretty;
+  $call .= ' -a ' . $_ foreach @allow;
+  $call .= ' -s ' . $_ foreach @skip;
+  system($call);
+  return "$file";
 };
 
-sub stop_time {
-  my $new = Benchmark->new;
-  $log->trace(
-    'The code took: '.
-      timestr(timediff($new, $main::LAST_STOP)) .
-	' (overall: ' . timestr(timediff($new, $main::TIME)) . ')'
-      );
-  $main::LAST_STOP = $new;
-};
 
-# Create and parse new document
-$input =~ s{([^/])$}{$1/};
-my $doc = KorAP::XML::Krill->new( path => $input );
+# Process a single file
+unless ($cmd) {
 
-unless ($doc->parse) {
-  $log->warn($output . " can't be processed - no document data");
-  exit(0);
-};
+  # Can't print gzip to STDOUT
+  pod2usage(%ERROR_HASH) if $gzip && !$output;
 
-my ($token_base_foundry, $token_base_layer) = (qw/OpenNLP Tokens/);
-if ($token_base) {
-  ($token_base_foundry, $token_base_layer) = split /#/, $token_base;
-};
-
-# Get tokenization
-my $tokens = KorAP::XML::Tokenizer->new(
-  path => $doc->path,
-  doc => $doc,
-  foundry => $token_base_foundry,
-  layer => $token_base_layer,
-  name => 'tokens'
-);
-
-# Unable to process base tokenization
-unless ($tokens->parse) {
-  $log->error($output . " can't be processed - no base tokenization");
-  exit(0);
-};
-
-my @layers;
-push(@layers, ['Base', 'Sentences']);
-push(@layers, ['Base', 'Paragraphs']);
-
-# Connexor
-push(@layers, ['Connexor', 'Morpho']);
-push(@layers, ['Connexor', 'Syntax']);
-push(@layers, ['Connexor', 'Phrase']);
-push(@layers, ['Connexor', 'Sentences']);
-
-# CoreNLP
-push(@layers, ['CoreNLP', 'NamedEntities']);
-push(@layers, ['CoreNLP', 'Sentences']);
-push(@layers, ['CoreNLP', 'Morpho']);
-push(@layers, ['CoreNLP', 'Constituency']);
-
-# DeReKo
-push(@layers, ['DeReKo', 'Structure']);
-
-# Glemm
-push(@layers, ['Glemm', 'Morpho']);
-
-# Malt
-# push(@layers, ['Malt', 'Dependency']);
-
-# Mate
-push(@layers, ['Mate', 'Morpho']);
-push(@layers, ['Mate', 'Dependency']);
-
-# OpenNLP
-push(@layers, ['OpenNLP', 'Morpho']);
-push(@layers, ['OpenNLP', 'Sentences']);
-
-# Schreibgebrauch
-push(@layers, ['Sgbr', 'Lemma']);
-push(@layers, ['Sgbr', 'Morpho']);
-
-# TreeTagger
-push(@layers, ['TreeTagger', 'Morpho']);
-push(@layers, ['TreeTagger', 'Sentences']);
-
-# XIP
-push(@layers, ['XIP', 'Morpho']);
-push(@layers, ['XIP', 'Constituency']);
-push(@layers, ['XIP', 'Sentences']);
-push(@layers, ['XIP', 'Dependency']);
+  my %skip;
+  $skip{lc($_)} = 1 foreach @skip;
 
 
-if ($skip{'#all'}) {
-  foreach (@allow) {
-    $tokens->add(split('#', $_));
-    stop_time;
+  # Ignore processing
+  if (!$overwrite && $output && -e $output) {
+    $log->trace($output . ' already exists');
+    exit(0);
   };
-}
-else {
-  # Add to index file - respect skipping
-  foreach my $info (@layers) {
-    # Skip if Foundry or Foundry#Layer should be skipped
-    unless ($skip{lc($info->[0])} || $skip{lc($info->[0]) . '#' . lc($info->[1])}) {
-      $tokens->add(@$info);
+
+  BEGIN {
+    $main::TIME = Benchmark->new;
+    $main::LAST_STOP = Benchmark->new;
+  };
+
+  sub stop_time {
+    my $new = Benchmark->new;
+    $log->trace(
+      'The code took: '.
+	timestr(timediff($new, $main::LAST_STOP)) .
+	  ' (overall: ' . timestr(timediff($new, $main::TIME)) . ')'
+	);
+    $main::LAST_STOP = $new;
+  };
+
+  # Create and parse new document
+  $input =~ s{([^/])$}{$1/};
+  my $doc = KorAP::XML::Krill->new( path => $input );
+
+  unless ($doc->parse) {
+    $log->warn($output . " can't be processed - no document data");
+    exit(0);
+  };
+
+  my ($token_base_foundry, $token_base_layer) = (qw/OpenNLP Tokens/);
+  if ($token_base) {
+    ($token_base_foundry, $token_base_layer) = split /#/, $token_base;
+  };
+
+  # Get tokenization
+  my $tokens = KorAP::XML::Tokenizer->new(
+    path => $doc->path,
+    doc => $doc,
+    foundry => $token_base_foundry,
+    layer => $token_base_layer,
+    name => 'tokens'
+  );
+
+  # Unable to process base tokenization
+  unless ($tokens->parse) {
+    $log->error($output . " can't be processed - no base tokenization");
+    exit(0);
+  };
+
+  my @layers;
+  push(@layers, ['Base', 'Sentences']);
+  push(@layers, ['Base', 'Paragraphs']);
+
+  # Connexor
+  push(@layers, ['Connexor', 'Morpho']);
+  push(@layers, ['Connexor', 'Syntax']);
+  push(@layers, ['Connexor', 'Phrase']);
+  push(@layers, ['Connexor', 'Sentences']);
+
+  # CoreNLP
+  push(@layers, ['CoreNLP', 'NamedEntities']);
+  push(@layers, ['CoreNLP', 'Sentences']);
+  push(@layers, ['CoreNLP', 'Morpho']);
+  push(@layers, ['CoreNLP', 'Constituency']);
+
+  # DeReKo
+  push(@layers, ['DeReKo', 'Structure']);
+
+  # Glemm
+  push(@layers, ['Glemm', 'Morpho']);
+
+  # Malt
+  # push(@layers, ['Malt', 'Dependency']);
+
+  # Mate
+  push(@layers, ['Mate', 'Morpho']);
+  push(@layers, ['Mate', 'Dependency']);
+
+  # OpenNLP
+  push(@layers, ['OpenNLP', 'Morpho']);
+  push(@layers, ['OpenNLP', 'Sentences']);
+
+  # Schreibgebrauch
+  push(@layers, ['Sgbr', 'Lemma']);
+  push(@layers, ['Sgbr', 'Morpho']);
+
+  # TreeTagger
+  push(@layers, ['TreeTagger', 'Morpho']);
+  push(@layers, ['TreeTagger', 'Sentences']);
+
+  # XIP
+  push(@layers, ['XIP', 'Morpho']);
+  push(@layers, ['XIP', 'Constituency']);
+  push(@layers, ['XIP', 'Sentences']);
+  push(@layers, ['XIP', 'Dependency']);
+
+
+  if ($skip{'#all'}) {
+    foreach (@allow) {
+      $tokens->add(split('#', $_));
       stop_time;
     };
-  };
-};
-
-my $file;
-
-my $print_text = $text ? $tokens->to_string($primary) :
-  ($pretty ? $tokens->to_pretty_json($primary) : $tokens->to_json($primary));
-
-if ($output) {
-
-  if ($gzip) {
-    $file = IO::Compress::Gzip->new($output, Minimal => 1);
   }
   else {
-    $file = IO::File->new($output, "w");
+    # Add to index file - respect skipping
+    foreach my $info (@layers) {
+      # Skip if Foundry or Foundry#Layer should be skipped
+      unless ($skip{lc($info->[0])} || $skip{lc($info->[0]) . '#' . lc($info->[1])}) {
+	$tokens->add(@$info);
+	stop_time;
+      };
+    };
   };
 
-  $file->print($print_text);
-  $file->close;
+  my $file;
+
+  my $print_text = $text ? $tokens->to_string($primary) :
+    ($pretty ? $tokens->to_pretty_json($primary) : $tokens->to_json($primary));
+
+  if ($output) {
+
+    if ($gzip) {
+      $file = IO::Compress::Gzip->new($output, Minimal => 1);
+    }
+    else {
+      $file = IO::File->new($output, "w");
+    };
+
+    $file->print($print_text);
+    $file->close;
+  }
+
+  else {
+    print $print_text . "\n";
+  };
+
+  stop_time;
 }
 
-else {
-  print $print_text . "\n";
-};
+# Process an archive
+elsif ($cmd eq 'archive') {
 
-stop_time;
+  pod2usage(%ERROR_HASH) unless $output;
+
+  if ($output && (!-e $output || !-d $output)) {
+    print "Directory '$output' does not exist.\n\n";
+    exit(0);
+  };
+
+  # Zero means: everything runs in the parent process
+  my $pool = Parallel::ForkManager->new($jobs);
+
+  my $count = 0; # Texts to process
+  my $iter  = 1;  # Current text in process
+
+  # Report on fork message
+  $pool->run_on_finish (
+    sub {
+      my ($pid, $code) = shift;
+      my $data = pop;
+      print 'Convert ['. ($jobs > 0 ? "$pid:" : '') .
+	($iter++) . "/$count]" .
+	  ($code ? " $code" : '') .
+	    " $$data\n";
+    }
+  );
+
+  my $t;
+  print "Reading data ...\n";
+
+  # Input is a directory
+  if (-d $input) {
+    my $it = Directory::Iterator->new($input);
+    my @dirs;
+    my $dir;
+
+    while (1) {
+      if (!$it->is_directory && ($dir = $it->get) && $dir =~ s{/data\.xml$}{}) {
+	push @dirs, $dir;
+	$it->prune;
+      };
+      last unless $it->next;
+    };
+
+    print "Start processing ...\n";
+    $t = Benchmark->new;
+    $count = scalar @dirs;
+
+  DIRECTORY_LOOP:
+    for (my $i = 0; $i < $count; $i++) {
+
+      unless ($overwrite) {
+	my $filename = catfile(
+	  $output,
+	  get_file_name($dirs[$i]) . '.json' . ($gzip ? '.gz' : '')
+	);
+
+	if (-e $filename) {
+	  $iter++;
+	  print "Skip $filename\n";
+	  next;
+	};
+      };
+
+      # Get the next fork
+      my $pid = $pool->start and next DIRECTORY_LOOP;
+      my $msg;
+
+      $msg = write_file($dirs[$i]);
+      $pool->finish(0, \$msg);
+    };
+  }
+
+  # Input is a file
+  elsif (-f($input) && (my $archive = KorAP::XML::Archive->new($input))) {
+    unless ($archive->test_unzip) {
+      print "Unzip is not installed or incompatible.\n\n";
+      exit(1);
+    };
+
+    unless ($archive->test) {
+      print "Zip archive not compatible.\n\n";
+      exit(1);
+    };
+
+    print "Start processing ...\n";
+    $t = Benchmark->new;
+    my @dirs = $archive->list_texts;
+    $count = scalar @dirs;
+
+  ARCHIVE_LOOP:
+    for (my $i = 0; $i < $count; $i++) {
+
+      # Split path information
+      my ($prefix, $corpus, $doc, $text) = $archive->split_path($dirs[$i]);
+
+      unless ($overwrite) {
+	my $filename = catfile(
+	  $output,
+	  get_file_name(catdir($doc, $text)) . '.json' . ($gzip ? '.gz' : '')
+	);
+
+	if (-e $filename) {
+	  $iter++;
+	  print "Skip $filename\n";
+	  next;
+	};
+      };
+
+      # Get the next fork
+      my $pid = $pool->start and next ARCHIVE_LOOP;
+
+      # Create temporary file
+      my $temp = File::Temp->newdir;
+
+      my $msg;
+
+      # Extract from archive
+      if ($archive->extract($dirs[$i], $temp)) {
+
+	# Create corpus directory
+	$input = catdir("$temp", $corpus);
+
+	# Temporary directory
+	my $dir = catdir($input, $doc, $text);
+
+	# Write file
+	$msg = write_file($dir);
+
+	$temp = undef;
+	$pool->finish(0, \$msg);
+      }
+      else {
+
+	$temp = undef;
+	$msg = "Unable to extract " . $dirs[$i] . "\n";
+	$pool->finish(1, \$msg);
+      };
+    };
+  }
+
+  else {
+    print "Input is neither a directory nor an archive.\n\n";
+  };
+
+  $pool->wait_all_children;
+
+  print "Done.\n";
+  print timestr(timediff(Benchmark->new, $t))."\n\n";
+}
+
+# Unknown command
+else {
+  warn "Unknown command '$cmd'.\n\n";
+  pod2usage(%ERROR_HASH);
+}
 
 __END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+korapxml2krill - Merge KorapXML data and create Krill friendly documents
+
+
+=head1 SYNOPSIS
+
+  $ korapxml2krill [archive] -z --input <directory> --output <filename>
+
+
+=head1 DESCRIPTION
+
+L<KorAP::XML::Krill> is a library to convert KorAP-XML documents to files
+compatible with the L<Krill|https://github.com/KorAP/Krill> indexer.
+
+
+=head1 INSTALLATION
+
+The preferred way to install L<KorAP::XML::Krill> is to use L<cpanm|App::cpanminus>.
+
+  $ cpanm https://github.com/KorAP/KorAP-XML-Krill
+
+In case everything went well, the C<korapxml2krill> command line tool will
+be available.
+
+
+=head1 ARGUMENTS
+
+=over 2
+
+=item B<archive>
+
+Process an archive as a Zip-File or a folder of KorAP-XML documents.
+
+=back
+
+
+=head1 OPTIONS
+
+=over 2
+
+=item B<--input|-i> <directory|file>
+
+Directory or archive file of documents to index.
+
+=item B<--output|-o> <directory|file>
+
+Output folder for archive processing or
+document name for single output (optional),
+writes to <STDOUT> by default.
+
+=item B<--overwrite|-w>
+
+Overwrite files that already exist.
+
+=item B<--token|-t> <foundry>[#<file>]
+
+Define the default tokenization by specifying
+the name of the foundry and optionally the name
+of the layer-file. Defaults to OpenNLP#tokens.
+
+=item B<--skip|-s> <foundry>[#<layer>]
+
+Skip specific foundries by specifying the name
+or specific layers by defining the name
+with a # in front of the foundry,
+e.g. Mate#Morpho. Alternatively you can skip #ALL.
+Can be set multiple times.
+
+=item B<--allow|-a> <foundry>#<layer>
+
+Allow specific foundries and layers by defining them
+combining the foundry name with a # and the layer name.
+
+=item B<--primary|-p>
+
+Output primary data or not. Defaults to true.
+Can be flagged using --no-primary as well.
+
+=item B<--jobs|-j>
+
+Define the number of concurrent jobs in seperated forks
+for archive processing, defaults to 0. This is B<EXPERIMENTAL>!
+
+=item B<--human|-m>
+
+Represent the data human friendly, while the output defaults to JSON.
+
+=item B<--pretty|-y>
+
+Pretty print JSON output.
+
+=item B<--gzip|-z>
+
+Compress the output (expects a defined output file in single processing).
+
+=item B<--log|-l>
+
+The L<Log4perl> log level, defaults to C<ERROR>.
+
+=item B<--help|-h>
+
+Print this document.
+
+=item B<--version|-v>
+
+Print version information.
+
+=back
+
+=head1 AVAILABILITY
+
+  https://github.com/KorAP/KorAP-XML-Krill
+
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2015-2016, L<IDS Mannheim|http://www.ids-mannheim.de/>
+Author: L<Nils Diewald|http://nils-diewald.de/>
+
+L<KorAP::XML::Krill> is developed as part of the L<KorAP|http://korap.ids-mannheim.de/>
+Corpus Analysis Platform at the
+L<Institute for the German Language (IDS)|http://ids-mannheim.de/>,
+member of the
+L<Leibniz-Gemeinschaft|http://www.leibniz-gemeinschaft.de/en/about-us/leibniz-competition/projekte-2011/2011-funding-line-2/>.
+
+This program is free software published under the
+L<BSD-2 License|https://raw.githubusercontent.com/KorAP/KorAP-XML-Krill/master/LICENSE>.
+
+=cut

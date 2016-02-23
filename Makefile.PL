@@ -29,7 +29,8 @@ WriteMakefile(
     'strict'         => 0,
     'warnings'       => 0,
     'utf8'           => 0,
-    'bytes'          => 0
+    'bytes'          => 0,
+    'Pod::Usage'     => 0
   },
   MIN_PERL_VERSION => '5.014',
   test => {
