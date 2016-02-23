@@ -7,6 +7,7 @@ use XML::Fast;
 use Try::Tiny;
 use Carp qw/croak/;
 use KorAP::XML::Document::Primary;
+use KorAP::XML::Tokenizer;
 use Log::Log4perl;
 use KorAP::XML::Log;
 use Mojo::DOM;
@@ -17,7 +18,7 @@ use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 #       Due to the kind of processing, processed metadata may be stored in
 #       a multiprocess cache instead.
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 our @ATTR = qw/text_sigle
 	       doc_sigle
@@ -186,7 +187,8 @@ sub tokenize {
   $token_foundry //= 'OpenNLP';
   $token_layer   //= 'Tokens';
 
-  my $tokens = KorAP::Tokenizer->new(
+  # Create tokenizer
+  my $tokens = KorAP::XML::Tokenizer->new(
     path => $self->path,
     doc => $self,
     foundry => $token_foundry,
@@ -194,6 +196,7 @@ sub tokenize {
     name => 'tokens'
   );
 
+  # Parse tokens
   unless ($tokens->parse) {
     $self->log->warn(
       'Unable to tokenize ' . $self->path .
@@ -692,10 +695,13 @@ sub to_hash {
 # Todo: Make this a KoralQuery serializer
 sub to_koral_query {
   my $self = shift;
-  my $hash = $self->to_hash;
-  $hash->{text} = $self->primary->data;
-  $hash->{version} = '0.04';
+  my $hash = {};
+  $hash->{'@context'} = 'http://korap.ids-mannheim.de/ns/koral/0.4/context.jsonld';
+  $hash->{'@type'} = 'koral:corpus';
+#  $hash->{'text'} = $self->primary->data;
+#  my $hash = $self->to_hash;
 };
+
 
 sub to_json {
   my $self = shift;
