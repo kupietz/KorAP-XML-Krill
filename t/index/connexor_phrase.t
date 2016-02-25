@@ -15,6 +15,7 @@ ok($tokens->add('Connexor', 'Phrase'), 'Add Structure');
 my $data = $tokens->to_data->{data};
 
 like($data->{foundries}, qr!connexor/phrase!, 'data');
+is($data->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Text boundary');
 is($data->{stream}->[1]->[0], '<>:cnx/c:np$<b>64<i>4<i>30<i>4<b>0', 'Noun phrase');
 
 done_testing;

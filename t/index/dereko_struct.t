@@ -22,13 +22,12 @@ is($data->{stream}->[0]->[1],
    '<>:dereko/s:idsHeader$<b>65<i>0<i>0<i>0<b>1<s>2',
    'Empty element');
 
-# Attributes:
-is($data->{stream}->[0]->[10],
-   '@:dereko/s:version:1.1$<b>17<s>2',
-   'Attribute of idsHeader');
 
+is($data->{stream}->[0]->[5], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Text boundary');
+
+# Attributes:
 is($data->{stream}->[0]->[11],
-   '@:dereko/s:TEIform:teiHeader$<b>17<s>2',
+   '@:dereko/s:type:text$<b>17<s>2',
    'Attribute of idsHeader');
 
 is($data->{stream}->[0]->[12],
@@ -36,8 +35,10 @@ is($data->{stream}->[0]->[12],
    'Attribute of idsHeader');
 
 is($data->{stream}->[0]->[13],
-   '@:dereko/s:type:text$<b>17<s>2',
+   '@:dereko/s:version:1.1$<b>17<s>2',
    'Attribute of idsHeader');
+
+
 
 is($data->{stream}->[0]->[14],
    '@:dereko/s:pattern:text$<b>17<s>2',

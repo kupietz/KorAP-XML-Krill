@@ -17,7 +17,8 @@ my $data = $tokens->to_data->{data};
 like($data->{foundries}, qr!glemm/morpho!, 'data');
 like($data->{layerInfos}, qr!glemm/l=tokens!, 'data');
 
-is($data->{stream}->[0]->[2], 'glemm/l:__zu', 'Lemma');
+is($data->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Text boundary');
+is($data->{stream}->[0]->[3], 'glemm/l:__zu', 'Lemma');
 is($data->{stream}->[1]->[1], 'glemm/l:__letzt-', 'Lemma');
 
 is($data->{stream}->[3]->[1], 'glemm/l:_+an-', 'Lemma');

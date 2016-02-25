@@ -14,7 +14,8 @@ ok($tokens->add('Connexor', 'Morpho'), 'Add Structure');
 
 my $data = $tokens->to_data->{data};
 like($data->{foundries}, qr!connexor/morpho!, 'data');
-is($data->{stream}->[0]->[1], '_0$<i>0<i>3', 'Position');
+is($data->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Text boundary');
+is($data->{stream}->[0]->[2], '_0$<i>0<i>3', 'Position');
 is($data->{stream}->[1]->[1], 'cnx/l:letzt', 'Lemma');
 is($data->{stream}->[1]->[2], 'cnx/p:A', 'POS');
 is($data->{stream}->[2]->[1], 'cnx/l:kulturell', 'Lemma');

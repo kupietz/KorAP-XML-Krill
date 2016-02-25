@@ -207,7 +207,7 @@ sub _sort {
 	return 1;
       }
       else {
-	return 1;
+	return $a->[5] cmp $b->[5];
       };
     };
   };

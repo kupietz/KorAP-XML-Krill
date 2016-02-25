@@ -179,6 +179,16 @@ sub parse {
   # Add token count
   $mtts->add_meta('tokens', '<i>' . $have);
 
+  # Add text boundary
+  $mtts->pos(0)->add(
+    term => '<>:base/s:t',
+    o_start => 0,
+    p_end => ($have - 1),
+    o_end => $doc->primary->data_length,
+    payload => '<b>0',
+    pti => 64
+  );
+
   # Create a gap for the 
   if ($doc->primary->data_length >= ($old - 1)) {
     $range->gap($old, $doc->primary->data_length + 1, $have-1)

@@ -18,11 +18,12 @@ like($data->{foundries}, qr!mate/morphoattr!, 'data');
 like($data->{layerInfos}, qr!mate/p=tokens!, 'data');
 like($data->{layerInfos}, qr!mate/l=tokens!, 'data');
 
-is($data->{stream}->[0]->[1], '@:gender=neut$<b>16<s>1', 'POS');
-is($data->{stream}->[0]->[2], '@:number=sg$<b>16<s>1', 'POS');
-is($data->{stream}->[0]->[3], '@:case=dat$<b>16<s>1', 'POS');
-is($data->{stream}->[0]->[6], 'mate/l:zu', 'Lemmata');
-is($data->{stream}->[0]->[7], 'mate/p:APPRART$<b>128<s>1', 'POS');
+is($data->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Text boundary');
+is($data->{stream}->[0]->[2], '@:gender=neut$<b>16<s>1', 'POS');
+is($data->{stream}->[0]->[3], '@:number=sg$<b>16<s>1', 'POS');
+is($data->{stream}->[0]->[4], '@:case=dat$<b>16<s>1', 'POS');
+is($data->{stream}->[0]->[7], 'mate/l:zu', 'Lemmata');
+is($data->{stream}->[0]->[8], 'mate/p:APPRART$<b>128<s>1', 'POS');
 
 is($data->{stream}->[-1]->[0], '@:mood=ind$<b>16<s>1', 'POS');
 is($data->{stream}->[-1]->[1], '@:tense=pres$<b>16<s>1', 'POS');
