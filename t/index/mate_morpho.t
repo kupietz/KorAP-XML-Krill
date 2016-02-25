@@ -19,11 +19,12 @@ like($data->{layerInfos}, qr!mate/p=tokens!, 'data');
 like($data->{layerInfos}, qr!mate/l=tokens!, 'data');
 like($data->{layerInfos}, qr!mate/m=tokens!, 'data');
 
-is($data->{stream}->[0]->[3], 'mate/l:zu', 'POS');
-is($data->{stream}->[0]->[4], 'mate/m:case:dat', 'POS');
-is($data->{stream}->[0]->[5], 'mate/m:gender:neut', 'POS');
-is($data->{stream}->[0]->[6], 'mate/m:number:sg', 'POS');
-is($data->{stream}->[0]->[7], 'mate/p:APPRART', 'POS');
+is($data->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Text boundary');
+is($data->{stream}->[0]->[4], 'mate/l:zu', 'POS');
+is($data->{stream}->[0]->[5], 'mate/m:case:dat', 'POS');
+is($data->{stream}->[0]->[6], 'mate/m:gender:neut', 'POS');
+is($data->{stream}->[0]->[7], 'mate/m:number:sg', 'POS');
+is($data->{stream}->[0]->[8], 'mate/p:APPRART', 'POS');
 
 is($data->{stream}->[-1]->[2], 'mate/l:werden', 'POS');
 is($data->{stream}->[-1]->[3], 'mate/m:mood:ind', 'POS');

@@ -10,7 +10,7 @@ use TestInit;
 
 ok(my $tokens = TestInit::tokens('0001'), 'Parse tokens');
 
-is($tokens->stream->pos(0)->to_string, '[(0-3)-:tokens$<i>18|_0$<i>0<i>3|i:zum|s:Zum]', 'Token is correct');
+is($tokens->stream->pos(0)->to_string, '[(0-3)-:tokens$<i>18|<>:base/s:t$<b>64<i>0<i>129<i>17<b>0|_0$<i>0<i>3|i:zum|s:Zum]', 'Token is correct');
 
 is($tokens->stream->pos(1)->to_string, '[(4-11)_1$<i>4<i>11|i:letzten|s:letzten]', 'Token is correct');
 
@@ -42,16 +42,13 @@ foreach ([12,23, 'kulturellen'],
 
 ok(!$tokens->stream->pos($i++), 'No more tokens');
 
-
-
-
 ok($tokens->add('OpenNLP', 'Morpho'), 'Add Structure');
 
 my $data = $tokens->to_data->{data};
 
 like($data->{foundries}, qr!opennlp/morpho!, 'data');
-is($data->{stream}->[0]->[1], '_0$<i>0<i>3', 'Position');
-is($data->{stream}->[0]->[3], 'opennlp/p:APPRART', 'POS');
+is($data->{stream}->[0]->[2], '_0$<i>0<i>3', 'Position');
+is($data->{stream}->[0]->[4], 'opennlp/p:APPRART', 'POS');
 is($data->{stream}->[1]->[2], 'opennlp/p:ADJA', 'POS');
 is($data->{stream}->[2]->[2], 'opennlp/p:ADJA', 'POS');
 is($data->{stream}->[-1]->[2], 'opennlp/p:VAFIN', 'POS');

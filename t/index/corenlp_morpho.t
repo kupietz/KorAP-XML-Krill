@@ -15,7 +15,8 @@ ok($tokens->add('CoreNLP', 'Morpho'), 'Add Structure');
 my $data = $tokens->to_data->{data};
 like($data->{foundries}, qr!corenlp/morpho!, 'data');
 like($data->{layerInfos}, qr!corenlp/p=tokens!, 'data');
-is($data->{stream}->[0]->[2], 'corenlp/p:APPRART', 'POS');
+is($data->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Text boundary');
+is($data->{stream}->[0]->[3], 'corenlp/p:APPRART', 'POS');
 is($data->{stream}->[1]->[1], 'corenlp/p:ADJ', 'POS');
 is($data->{stream}->[2]->[1], 'corenlp/p:ADJA', 'POS');
 
