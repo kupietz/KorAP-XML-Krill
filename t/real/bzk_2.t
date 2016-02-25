@@ -90,7 +90,7 @@ is($output->{data}->{tokenSource}, 'opennlp#tokens', 'tokenSource');
 is($output->{version}, '0.03', 'version');
 is($output->{data}->{foundries}, '', 'Foundries');
 is($output->{data}->{layerInfos}, '', 'layerInfos');
-is($output->{data}->{stream}->[0]->[3], 's:Saragat-Partei', 'data');
+is($output->{data}->{stream}->[0]->[4], 's:Saragat-Partei', 'data');
 
 is($output->{textSigle}, 'BZK_D59.00089', 'Correct text sigle');
 is($output->{docSigle}, 'BZK_D59', 'Correct document sigle');

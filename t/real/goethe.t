@@ -86,7 +86,7 @@ is($output->{data}->{tokenSource}, 'opennlp#tokens', 'tokenSource');
 is($output->{version}, '0.03', 'version');
 is($output->{data}->{foundries}, '', 'Foundries');
 is($output->{data}->{layerInfos}, '', 'layerInfos');
-is($output->{data}->{stream}->[0]->[3], 's:Autobiographische', 'data');
+is($output->{data}->{stream}->[0]->[4], 's:Autobiographische', 'data');
 
 is($output->{textSigle}, 'GOE_AGA.03828', 'Correct text sigle');
 is($output->{docSigle}, 'GOE_AGA', 'Correct document sigle');

@@ -28,15 +28,15 @@ sub parse {
     }
   ) or return;
 
-  my $mt = $$self->stream->pos($first->[0]);
-  $mt->add(
-    term => '<>:base/s:t',
-    o_start => $first->[1],
-    p_end => $last_p,
-    o_end => $last_o,
-    payload => '<b>0',
-    pti => 64
-  );
+#  my $mt = $$self->stream->pos($first->[0]);
+#  $mt->add(
+#    term => '<>:base/s:t',
+#    o_start => $first->[1],
+#    p_end => $last_p,
+#    o_end => $last_o,
+#    payload => '<b>0',
+#    pti => 64
+#  );
 
   $$self->stream->add_meta('base/sentences', '<i>' . $i);
 

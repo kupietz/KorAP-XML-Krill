@@ -32,11 +32,12 @@ my $data = $tokens->to_data->{data};
 
 my $stream = $data->{stream};
 is($stream->[0]->[0], '-:tokens$<i>51', 'Token number');
-is($stream->[0]->[1], '_0$<i>0<i>18', 'Position');
-is($stream->[0]->[2], 'i:sommerüberraschung', 'First term');
-is($stream->[0]->[3], 's:Sommerüberraschung', 'First term');
-is($stream->[0]->[4], 'sgbr/l:Sommerüberraschung', 'First term');
-ok(!defined $stream->[0]->[5], 'First term');
+is($stream->[0]->[1], '<>:base/s:t$<b>64<i>0<i>365<i>50<b>0', 'Text Boundary');
+is($stream->[0]->[2], '_0$<i>0<i>18', 'Position');
+is($stream->[0]->[3], 'i:sommerüberraschung', 'First term');
+is($stream->[0]->[4], 's:Sommerüberraschung', 'First term');
+is($stream->[0]->[5], 'sgbr/l:Sommerüberraschung', 'First term');
+ok(!defined $stream->[0]->[6], 'First term');
 
 is($stream->[1]->[0], '_1$<i>19<i>21', 'Position');
 is($stream->[1]->[1], 'i:es', 'Second term');

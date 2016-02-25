@@ -17,8 +17,8 @@ my $data = $tokens->to_data->{data};
 like($data->{foundries}, qr!xip/morpho!, 'data');
 like($data->{layerInfos}, qr!xip/l=tokens!, 'data');
 like($data->{layerInfos}, qr!xip/p=tokens!, 'data');
-is($data->{stream}->[0]->[4], 'xip/l:zu', 'Lemma');
-is($data->{stream}->[0]->[5], 'xip/p:PREP', 'POS');
+is($data->{stream}->[0]->[5], 'xip/l:zu', 'Lemma');
+is($data->{stream}->[0]->[6], 'xip/p:PREP', 'POS');
 
 is($data->{stream}->[1]->[3], 'xip/l:letzt', 'Lemma');
 is($data->{stream}->[1]->[4], 'xip/p:ADJ', 'POS');

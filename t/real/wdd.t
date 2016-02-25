@@ -81,7 +81,7 @@ is($output->{data}->{tokenSource}, 'opennlp#tokens', 'tokenSource');
 is($output->{version}, '0.03', 'version');
 is($output->{data}->{foundries}, '', 'Foundries');
 is($output->{data}->{layerInfos}, '', 'layerInfos');
-is($output->{data}->{stream}->[0]->[3], 's:{War', 'data');
+is($output->{data}->{stream}->[0]->[4], 's:{War', 'data');
 
 is($output->{textSigle}, 'WDD11_G27.38989', 'Correct text sigle');
 is($output->{docSigle}, 'WDD11_G27', 'Correct document sigle');
