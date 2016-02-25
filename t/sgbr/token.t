@@ -31,9 +31,9 @@ my $data = $tokens->to_data->{data};
 my $stream = $data->{stream};
 
 is($stream->[0]->[0], '-:tokens$<i>51', 'Token number');
-is($stream->[0]->[1], '_0$<i>0<i>18', 'Position');
-is($stream->[0]->[2], 'i:sommerüberraschung', 'First term');
-is($stream->[0]->[3], 's:Sommerüberraschung', 'First term');
+is($stream->[0]->[2], '_0$<i>0<i>18', 'Position');
+is($stream->[0]->[3], 'i:sommerüberraschung', 'First term');
+is($stream->[0]->[4], 's:Sommerüberraschung', 'First term');
 is($stream->[-1]->[0], '_50$<i>359<i>364', 'Last position');
 is($stream->[-1]->[1], 'i:kevin', 'Last term');
 is($stream->[-1]->[2], 's:Kevin', 'Last term');
