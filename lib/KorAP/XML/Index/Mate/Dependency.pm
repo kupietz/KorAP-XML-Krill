@@ -1,7 +1,7 @@
 package KorAP::XML::Index::Mate::Dependency;
 use KorAP::XML::Index::Base;
 
-our $NODE_LABEL = 'NODE';
+our $NODE_LABEL = '&&&';
 
 sub parse {
   my $self = shift;
@@ -116,24 +116,31 @@ sub parse {
 	      $target, 'mate/d:' . $NODE_LABEL
 	    );
 
-	    # TODO: THAT'S WRONG!
-	    my %rel = (
-	      pti => 33, # term-to-element relation
-	      payload =>
-		'<i>' . $target->p_start . # right part token position
-		  '<s>' . $source_term->tui . # left part tui
-		    '<s>' . $target_span->tui # right part tui
-		  );
-
 	    $mtt->add(
 	      term => '>:mate/d:' . $label,
-	      %rel
+	      pti => 33, # term-to-element relation
+	      payload =>
+		'<i>' . $target->p_start . # right part start position
+		  '<i>' . $target->p_end . # right part end position
+		    '<s>' . $source_term->tui . # left part tui
+		      '<s>' . $target_span->tui # right part tui
 	    );
 
-	    $mtt->add(
+	    my $target_mtt = $stream->pos($target->p_start);
+	    $target_mtt->add(
 	      term => '<:mate/d:' . $label,
-	      %rel
+	      pti => 34, # element-to-term relation
+	      payload =>
+		'<i>' . $target_span->p_end . # end position
+		  '<i>' . $source->pos . # left part token position
+		    '<s>' . $source_term->tui . # left part tui
+		      '<s>' . $target_span->tui # right part tui
+
 	    );
+	  }
+	  else {
+#	    use Data::Dumper;
+#	    warn '2###### ' . Dumper($content);
 	  };
 	};
       };
