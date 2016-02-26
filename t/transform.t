@@ -168,7 +168,7 @@ my $s =
   '<>:tt/s:s$<b>64<i>0<i>6083<i>923<b>0|'.
   '-:tt/sentences$<i>1|'.
   '>:mate/d:PNC$<b>32<i>2<s>1<s>1|'.
-  'mate/d:NODE$<b>128<s>1|'.
+  'mate/d:&&&$<b>128<s>1|'.
   'xip/p:SYMBOL|'.
   'xip/l:A|'.
   '<>:xip/c:TOP$<b>64<i>0<i>74<i>13<b>0|'.
