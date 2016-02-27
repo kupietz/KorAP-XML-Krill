@@ -42,9 +42,12 @@ use Parallel::ForkManager;
 #
 # 2016/02/23
 # - Merge korapxml2krill and korapxml2krill_dir
+#
+# 2016/02/27
+# - Added extract function
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2016/02/23';
+our $LAST_CHANGE = '2016/02/27';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -58,6 +61,8 @@ if ($ARGV[0] && index($ARGV[0], '-') != 0) {
   $cmd = shift @ARGV;
 };
 
+my (@skip, @sigle);
+
 # Parse options from the command line
 GetOptions(
   'input|i=s'   => \(my $input),
@@ -66,7 +71,8 @@ GetOptions(
   'human|m'     => \(my $text),
   'token|t=s'   => \(my $token_base),
   'gzip|z'      => \(my $gzip),
-  'skip|s=s'    => \(my @skip),
+  'skip|s=s'    => \@skip,
+  'sigle|sg=s'  => \@sigle,
   'log|l=s'     => \(my $log_level = 'ERROR'),
   'allow|a=s'   => \(my @allow),
   'primary|p!'  => \(my $primary),
@@ -141,6 +147,9 @@ sub write_file {
   return "$file";
 };
 
+
+# Convert sigle to path construct
+s!^\s*([^_]+?)_([^\.]+?)\.(.+?)\s*$!$1/$2/$3! foreach @sigle;
 
 # Process a single file
 unless ($cmd) {
@@ -292,8 +301,43 @@ unless ($cmd) {
   stop_time;
 }
 
+# Extract XML files
+elsif ($cmd eq 'extract') {
+
+  pod2usage(%ERROR_HASH) unless $output;
+
+  # TODO: Support sigles and full archives
+
+  if ($output && (!-e $output || !-d $output)) {
+    print "Directory '$output' does not exist.\n\n";
+    exit(0);
+  };
+
+  if (-f($input) && (my $archive = KorAP::XML::Archive->new($input))) {
+
+    unless ($archive->test_unzip) {
+      print "Unzip is not installed or incompatible.\n\n";
+      exit(1);
+    };
+
+    # Test will be skipped
+
+    # Iterate over all given sigles and extract
+    foreach (@sigle) {
+      print "$_ ";
+      print '' . ($archive->extract('./'. $_, $output) ? '' : 'not ');
+      print "extracted.\n";
+    };
+
+    print "\n";
+    exit(1);
+  };
+}
+
 # Process an archive
 elsif ($cmd eq 'archive') {
+
+  # TODO: Support sigles
 
   pod2usage(%ERROR_HASH) unless $output;
 
@@ -488,7 +532,11 @@ be available.
 
 =item B<archive>
 
-Process an archive as a Zip-File or a folder of KorAP-XML documents.
+Process an archive as a Zip-file or a folder of KorAP-XML documents.
+
+=item B<extract>
+
+Extract KorAP-XML files from a Zip-file.
 
 =back
 
@@ -551,6 +599,12 @@ Pretty print JSON output.
 =item B<--gzip|-z>
 
 Compress the output (expects a defined output file in single processing).
+
+=item B<--sigle|-sg>
+
+Extract the given text sigles.
+Currently only supported on C<extract>.
+Can be set multiple times.
 
 =item B<--log|-l>
 

@@ -18,7 +18,7 @@ use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 #       Due to the kind of processing, processed metadata may be stored in
 #       a multiprocess cache instead.
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 our @ATTR = qw/text_sigle
 	       doc_sigle
