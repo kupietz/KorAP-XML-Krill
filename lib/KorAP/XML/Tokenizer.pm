@@ -294,10 +294,12 @@ sub add_spandata {
 
   $param{primary} = $self->doc->primary;
 
+  # Todo: Match and range may be part of stream!
   my $spans = KorAP::XML::Tokenizer::Spans->new(
     path => $self->path,
     range => $self->range,
     match => $self->match,
+    stream => $self->stream,
     %param
   );
 
@@ -347,6 +349,7 @@ sub add_tokendata {
     path => $self->path,
     range => $self->range,
     match => $self->match,
+    stream => $self->stream,
     %param
   );
 
@@ -386,7 +389,7 @@ sub add {
   my $layer = shift;
 
   unless ($foundry && $layer) {
-    warn 'Unable to add specific module - not enough information given!';
+    $self->log->warn('Unable to add specific module - not enough information given!');
     return;
   };
 

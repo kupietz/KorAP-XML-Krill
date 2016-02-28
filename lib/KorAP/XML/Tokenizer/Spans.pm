@@ -20,6 +20,7 @@ has 'log' => sub {
 };
 
 
+# Parse span file
 sub parse {
   my $self = shift;
   my $path = $self->path . $self->foundry . '/' . $self->layer . '.xml';
@@ -33,14 +34,14 @@ sub parse {
 
   my ($spans, $error);
   try {
-      local $SIG{__WARN__} = sub {
-	  $error = 1;
-      };
-      $spans = xml2hash($file, text => '#text', attr => '-', array => ['span'])->{layer}->{spanList};
+    local $SIG{__WARN__} = sub {
+      $error = 1;
+    };
+    $spans = xml2hash($file, text => '#text', attr => '-', array => ['span'])->{layer}->{spanList};
   }
   catch  {
-      $self->log->warn('Span error in ' . $path . ($_ ? ': ' . $_ : ''));
-      $error = 1;
+    $self->log->warn('Span error in ' . $path . ($_ ? ': ' . $_ : ''));
+    $error = 1;
   };
 
   return if $error;

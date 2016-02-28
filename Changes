@@ -1,7 +1,9 @@
-0.12 2016-02-27
+0.12 2016-02-28
         - Added extract method to korapxml2krill.
 	- Fixed Mate/Dependency.
 	- Fixed skip flag in korapxml2krill.
+	- Ignore spans outside the token range
+	  (i.e. character offsets end before tokens have started).
 
 0.11 2016-02-23
         - Merged korap2krill and korap2krill_dir.
