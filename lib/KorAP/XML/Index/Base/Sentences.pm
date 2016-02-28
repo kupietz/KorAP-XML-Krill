@@ -13,6 +13,7 @@ sub parse {
     cb => sub {
       my ($stream, $span) = @_;
       my $mtt = $stream->pos($span->p_start);
+
       $first = [$span->p_start, $span->o_start] unless defined $first;
       $mtt->add(
 	term => '<>:base/s:s',
