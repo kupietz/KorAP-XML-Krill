@@ -66,7 +66,7 @@ push(@layers, ['TreeTagger', 'Sentences']);
 # XIP
 push(@layers, ['XIP', 'Morpho']);
 push(@layers, ['XIP', 'Constituency']);
-push(@layers, ['XIP', 'Dependency']);
+# push(@layers, ['XIP', 'Dependency']); # Will be skipped
 push(@layers, ['XIP', 'Sentences']);
 
 
@@ -177,8 +177,8 @@ my $s =
   '<>:xip/c:NPA$<b>64<i>0<i>1<i>1<b>3|'.
   '<>:xip/c:NOUN$<b>64<i>0<i>1<i>1<b>4|'.
   '<>:xip/c:SYMBOL$<b>64<i>0<i>1<i>1<b>5|'.
-  '>:xip/d:SUBJ$<i>3|'.
-  '<:xip/d:COORD$<i>1|'.
+#  '>:xip/d:SUBJ$<i>3|'.
+#  '<:xip/d:COORD$<i>1|'.
   '<>:xip/s:s$<b>64<i>0<i>74<i>13<b>0|'.
   '-:xip/sentences$<i>65]';
 
@@ -192,9 +192,10 @@ my $s =
 
 
 is($tokens->layer_info,
-   'base/s=spans cnx/c=spans cnx/l=tokens cnx/m=tokens cnx/p=tokens cnx/s=spans cnx/syn=tokens corenlp/ne=tokens corenlp/s=spans mate/d=rels mate/l=tokens mate/m=tokens mate/p=tokens opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans xip/c=spans xip/d=rels xip/l=tokens xip/p=tokens xip/s=spans', 'Layer info');
+   'base/s=spans cnx/c=spans cnx/l=tokens cnx/m=tokens cnx/p=tokens cnx/s=spans cnx/syn=tokens corenlp/ne=tokens corenlp/s=spans mate/d=rels mate/l=tokens mate/m=tokens mate/p=tokens opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans xip/c=spans xip/l=tokens xip/p=tokens xip/s=spans', 'Layer info');
+# xip/d=rels
 
-is($tokens->support, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/namedentities corenlp/namedentities corenlp/namedentities/ne_dewac_175m_600 corenlp/namedentities/ne_hgc_175m_600 corenlp/sentences mate mate/dependency mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/dependency xip/morpho xip/sentences', 'Support');
-
+is($tokens->support, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/namedentities corenlp/namedentities corenlp/namedentities/ne_dewac_175m_600 corenlp/namedentities/ne_hgc_175m_600 corenlp/sentences mate mate/dependency mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/morpho xip/sentences', 'Support');
+# xip/dependency
 done_testing;
 __END__
