@@ -1,3 +1,6 @@
+0.13 2016-03-01
+        - Removed korapxml2krill_dir.
+
 0.12 2016-02-28
         - Added extract method to korapxml2krill.
 	- Fixed Mate/Dependency.
@@ -6,7 +9,7 @@
 	  (i.e. character offsets end before tokens have started).
 
 0.11 2016-02-23
-        - Merged korap2krill and korap2krill_dir.
+        - Merged korapxml2krill and korapxml2krill_dir.
 
 0.10 2016-02-15
         - Added EXPERIMENTAL support for parallel jobs.
