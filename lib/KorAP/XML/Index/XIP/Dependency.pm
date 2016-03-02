@@ -11,6 +11,9 @@ sub parse {
 
   my $rel_id = 1;
 
+  # XIP dependencies are currently skipped
+  return;
+
   $$self->add_tokendata(
     foundry => 'xip',
     layer => 'dependency',
@@ -30,11 +33,11 @@ sub parse {
 	# Relation is "unary" - meaning relation to itself
 	if ($_->{-type} && $_->{-type} eq 'unary') {
 	  $mtt->add(
-	    term => '>xip/d:' . $label,
+	    term => '>:xip/d:' . $label,
 	    payload => '<i>' . $token->pos
 	  );
 	  $mtt->add(
-	    term => '<xip/d:' . $label,
+	    term => '<:xip/d:' . $label,
 	    payload => '<i>' . $token->pos
 	  );
 	}
