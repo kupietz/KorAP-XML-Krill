@@ -673,7 +673,6 @@ t/corpus/WDD/G27/38989/mate/pipeline/one_token_per_line.txt
 t/corpus/WDD/G27/38989/mate/pipeline/parsed.txt
 t/corpus/WDD/G27/38989/mate/tokenSpans/number_tokenSpans.xml
 script/korapxml2krill
-script/korapxml2krill_dir
 Changes
 LICENSE
 Makefile.PL
