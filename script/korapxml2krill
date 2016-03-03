@@ -47,7 +47,7 @@ use Parallel::ForkManager;
 # - Added extract function
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2016/02/27';
+our $LAST_CHANGE = '2016/03/02';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
