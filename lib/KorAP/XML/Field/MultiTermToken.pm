@@ -98,16 +98,16 @@ sub _rel_right_pos {
     return ($1, $1);
   }
 
-  # token/span to span - right token
-  elsif ($_[0] =~ m/^<i>(\d+)<i>(\d+)<s>/o) {
+  # token/span to span - right token (including character offsets)
+  elsif ($_[0] =~ m/^<i>\d+<i>\d+<i>(\d+)<i>(\d+)<s>/o) {
     return ($1, $2);
   }
 
   # span to token - right token
-  elsif ($_[0] =~ m/^<b>\d+<i>(\d+)<s>/o) {
+  elsif ($_[0] =~ m/^<i>(\d+)<s>/o) {
     return ($1, $1);
   };
-  carp 'Unknown relation format!';
+  carp 'Unknown relation format! ' . $_[0];
   return (0,0);
 };
 
