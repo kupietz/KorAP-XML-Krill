@@ -1,6 +1,7 @@
 package KorAP::XML::Index::Mate::Dependency;
 use KorAP::XML::Index::Base;
-
+use strict;
+use warnings;
 our $NODE_LABEL = '&&&';
 
 sub parse {
@@ -39,9 +40,10 @@ sub parse {
 	  # next if $_->{-label} eq '--';
 
 	  # Get target node - not very elegant
-	  my $target = $stream->get_node(
-	    $source, 'mate/d:' . $NODE_LABEL
-	  );
+	  # This is only necessary for nodes with attributes
+	  #	  my $target = $stream->get_node(
+	  #	    $source, 'mate/d:' . $NODE_LABEL
+	  #	  );
 
 	  # Target is at the same position!
 	  my $pos = $source->pos;
@@ -50,8 +52,8 @@ sub parse {
 	    pti => 32, # term-to-term relation
 	    payload =>
 	      '<i>' . $pos . # right part token position
-		'<s>' . $target->tui . # left part tui
-		  '<s>' . $target->tui # right part tui
+		'<s>0' . # $target->tui . # left part tui
+		  '<s>0'  # . $target->tui # right part tui
 		);
 
 	  # Add relations
@@ -73,9 +75,10 @@ sub parse {
 	  my $to   = $_->{span}->{-to};
 
 	  # Get source node
-	  my $source_term = $stream->get_node(
-	    $source, 'mate/d:' . $NODE_LABEL
-	  );
+	  # This is only necessary for nodes with attributes
+	  #	  my $source_term = $stream->get_node(
+	  #	    $source, 'mate/d:' . $NODE_LABEL
+	  #	  );
 
 	  # Target
 	  my $target = $tokens->token($from, $to);
@@ -84,17 +87,17 @@ sub parse {
 	  if ($target) {
 
 	    # Get target node
-	    my $target_term = $stream->get_node(
-	      $target, 'mate/d:' . $NODE_LABEL
-	    );
+	    #	    my $target_term = $stream->get_node(
+	    #	      $target, 'mate/d:' . $NODE_LABEL
+	    #	    );
 
 	    $mtt->add(
 	      term => '>:mate/d:' . $label,
 	      pti => 32, # term-to-term relation
 	      payload =>
 		'<i>' . $target->pos . # right part token position
-		  '<s>' . $source_term->tui . # left part tui
-		    '<s>' . $target_term->tui # right part tui
+		  '<s>0' . # $source_term->tui . # left part tui
+		    '<s>0' # . $target_term->tui # right part tui
 	    );
 
 	    my $target_mtt = $stream->pos($target->pos);
@@ -103,8 +106,8 @@ sub parse {
 	      pti => 32, # term-to-term relation
 	      payload =>
 		'<i>' . $source->pos . # left part token position
-		  '<s>' . $source_term->tui . # left part tui
-		    '<s>' . $target_term->tui # right part tui
+		  '<s>0' . # $source_term->tui . # left part tui
+		    '<s>0' # . $target_term->tui # right part tui
 	    );
 	  }
 
@@ -112,18 +115,20 @@ sub parse {
 	  elsif ($target = $tokens->span($from, $to)) {
 
 	    # Get target node
-	    my $target_span = $stream->get_node(
-	      $target, 'mate/d:' . $NODE_LABEL
-	    );
+	    #	    my $target_span = $stream->get_node(
+	    #	      $target, 'mate/d:' . $NODE_LABEL
+	    #	    );
 
 	    $mtt->add(
 	      term => '>:mate/d:' . $label,
 	      pti => 33, # term-to-element relation
 	      payload =>
-		'<i>' . $target->p_start . # right part start position
-		  '<i>' . $target->p_end . # right part end position
-		    '<s>' . $source_term->tui . # left part tui
-		      '<s>' . $target_span->tui # right part tui
+		'<i>' . $target->o_start . # end position
+		  '<i>' . $target->o_end . # end position
+		    '<i>' . $target->p_start . # right part start position
+		      '<i>' . $target->p_end . # right part end position
+			'<s>0' . # $source_term->tui . # left part tui
+			  '<s>0' # . $target_span->tui # right part tui
 	    );
 
 	    my $target_mtt = $stream->pos($target->p_start);
@@ -131,16 +136,15 @@ sub parse {
 	      term => '<:mate/d:' . $label,
 	      pti => 34, # element-to-term relation
 	      payload =>
-		'<i>' . $target_span->p_end . # end position
-		  '<i>' . $source->pos . # left part token position
-		    '<s>' . $source_term->tui . # left part tui
-		      '<s>' . $target_span->tui # right part tui
+		'<i>' . $source->pos . # left part token position
+		  '<s>0' . # $source_term->tui . # left part tui
+		    '<s>0' # . $target_span->tui # right part tui
 
 	    );
 	  }
 	  else {
-#	    use Data::Dumper;
-#	    warn '2###### ' . Dumper($content);
+	    #	    use Data::Dumper;
+	    #	    warn '2###### ' . Dumper($content);
 	  };
 	};
       };
@@ -149,10 +153,10 @@ sub parse {
   return 1;
 };
 
-
 sub layer_info {
   ['mate/d=rels']
 };
 
-
 1;
+
+__END__
