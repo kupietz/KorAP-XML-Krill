@@ -136,9 +136,12 @@ sub parse {
 	      term => '<:mate/d:' . $label,
 	      pti => 34, # element-to-term relation
 	      payload =>
-		'<i>' . $source->pos . # left part token position
-		  '<s>0' . # $source_term->tui . # left part tui
-		    '<s>0' # . $target_span->tui # right part tui
+		'<i>' . $target->o_start . # end position
+		  '<i>' . $target->o_end . # end position
+		    '<i>' . $target->p_end . # right part end position
+		      '<i>' . $source->pos . # left part token position
+			'<s>0' . # $source_term->tui . # left part tui
+			  '<s>0' # . $target_span->tui # right part tui
 
 	    );
 	  }
