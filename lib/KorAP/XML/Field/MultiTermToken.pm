@@ -88,26 +88,32 @@ sub to_string {
 };
 
 # Get relation based positions
-# TODO: Fix!
 sub _rel_right_pos {
+  # Both are either < or >
 
-  # There are relation ids!
-
-  # token to token - right token
-  if ($_[0] =~ m/^<i>(\d+)<s>/o) {
+  # term to term - right token
+  if ($_[1] =~ m/^<i>(\d+)(?:<s>|$)/o) {
     return ($1, $1);
   }
 
-  # token/span to span - right token (including character offsets)
-  elsif ($_[0] =~ m/^<i>\d+<i>\d+<i>(\d+)<i>(\d+)<s>/o) {
+  # term to span - right token
+  # (including character offsets)
+  elsif ($_[0] == 33 && $_[1] =~ m/^(?:<i>\d+){2}<i>(\d+)<i>(\d+)<s>/o) {
     return ($1, $2);
   }
 
-  # span to token - right token
-  elsif ($_[0] =~ m/^<i>(\d+)<s>/o) {
+  # span to term
+  elsif ($_[0] == 34 && $_[1] =~ m/^(?:<i>\d+){3}<i>(\d+)<s>/o) {
     return ($1, $1);
+  }
+
+  # span-to-span
+  elsif ($_[0] == 35 && $_[1] =~ m/^(?:<i>\d+){4}<i>(\d+)<i>(\d+)<s>/o) {
+    return ($1, $2);
   };
-  carp 'Unknown relation format! ' . $_[0];
+
+  # span to term - right token
+  carp 'Unknown relation format! ' . $_[1];
   return (0,0);
 };
 
@@ -150,9 +156,13 @@ sub _sort {
 	return 1;
       }
       else {
+	# Both are either > or <
+
+	warn $a->to_string;
+
 	# Check for right positions
-	(my $a_start, $a_end) = _rel_right_pos($a->[0]);
-	(my $b_start, $b_end) = _rel_right_pos($b->[0]);
+	(my $a_start, $a_end) = _rel_right_pos($a->pti, $a->[0]);
+	(my $b_start, $b_end) = _rel_right_pos($b->pti, $b->[0]);
 	if ($a_start < $b_start) {
 	  return -1;
 	}
