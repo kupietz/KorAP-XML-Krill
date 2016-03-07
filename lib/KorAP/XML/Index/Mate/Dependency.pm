@@ -51,9 +51,9 @@ sub parse {
 	  my %rel = (
 	    pti => 32, # term-to-term relation
 	    payload =>
-	      '<i>' . $pos . # right part token position
-		'<s>0' . # $target->tui . # left part tui
-		  '<s>0'  # . $target->tui # right part tui
+	      '<i>' . $pos # . # right part token position
+#		'<s>0' . # $target->tui . # left part tui
+#		  '<s>0'  # . $target->tui # right part tui
 		);
 
 	  # Add relations
@@ -95,9 +95,9 @@ sub parse {
 	      term => '>:mate/d:' . $label,
 	      pti => 32, # term-to-term relation
 	      payload =>
-		'<i>' . $target->pos . # right part token position
-		  '<s>0' . # $source_term->tui . # left part tui
-		    '<s>0' # . $target_term->tui # right part tui
+		'<i>' . $target->pos # . # right part token position
+#		  '<s>0' . # $source_term->tui . # left part tui
+#		    '<s>0' # . $target_term->tui # right part tui
 	    );
 
 	    my $target_mtt = $stream->pos($target->pos);
@@ -105,9 +105,9 @@ sub parse {
 	      term => '<:mate/d:' . $label,
 	      pti => 32, # term-to-term relation
 	      payload =>
-		'<i>' . $source->pos . # left part token position
-		  '<s>0' . # $source_term->tui . # left part tui
-		    '<s>0' # . $target_term->tui # right part tui
+		'<i>' . $source->pos # . # left part token position
+#		  '<s>0' . # $source_term->tui . # left part tui
+#		    '<s>0' # . $target_term->tui # right part tui
 	    );
 	  }
 
@@ -126,9 +126,9 @@ sub parse {
 		'<i>' . $target->o_start . # end position
 		  '<i>' . $target->o_end . # end position
 		    '<i>' . $target->p_start . # right part start position
-		      '<i>' . $target->p_end . # right part end position
-			'<s>0' . # $source_term->tui . # left part tui
-			  '<s>0' # . $target_span->tui # right part tui
+		      '<i>' . $target->p_end # . # right part end position
+#			'<s>0' . # $source_term->tui . # left part tui
+#			  '<s>0' # . $target_span->tui # right part tui
 	    );
 
 	    my $target_mtt = $stream->pos($target->p_start);
@@ -139,9 +139,9 @@ sub parse {
 		'<i>' . $target->o_start . # end position
 		  '<i>' . $target->o_end . # end position
 		    '<i>' . $target->p_end . # right part end position
-		      '<i>' . $source->pos . # left part token position
-			'<s>0' . # $source_term->tui . # left part tui
-			  '<s>0' # . $target_span->tui # right part tui
+		      '<i>' . $source->pos # . # left part token position
+#			'<s>0' . # $source_term->tui . # left part tui
+#			  '<s>0' # . $target_span->tui # right part tui
 
 	    );
 	  }
