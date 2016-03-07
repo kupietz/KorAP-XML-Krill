@@ -72,9 +72,12 @@ $tokens->add('Mate', 'Dependency');
 
 my $stream = $tokens->to_data->{data}->{stream};
 
-is($stream->[77]->[0], '<:mate/d:--$<b>34<i>78<s>0<s>0', 'element to term');
+# This is not a goot relation example
+is($stream->[77]->[0],
+   '<:mate/d:--$<b>34<i>498<i>499<i>78<i>78',
+   'element to term');
 #is($stream->[77]->[1], '<>:mate/d:&&&$<b>64<i>498<i>499<i>78<b>0<s>1', 'element to term');
-is($stream->[78]->[0], '>:mate/d:--$<b>33<i>498<i>499<i>77<i>78<s>0<s>0', 'term to element');
+is($stream->[78]->[0], '>:mate/d:--$<b>33<i>498<i>499<i>77<i>78', 'term to element');
 # is($stream->[78]->[3], 'mate/d:&&&$<b>128<s>1', 'Node');
 
 
