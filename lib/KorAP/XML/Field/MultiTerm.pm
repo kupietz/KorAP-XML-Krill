@@ -3,6 +3,9 @@ use strict;
 use warnings;
 use MIME::Base64;
 
+# Todo: This should store only the pti and the payload - with clever access using the pti!
+# Everything should be stored as bytes already (if this is feasible)
+
 sub new {
   my $self = bless [], shift;
   my $i = 0;
