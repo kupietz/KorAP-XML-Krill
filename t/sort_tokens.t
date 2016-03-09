@@ -123,36 +123,6 @@ ok($mtt->add(term => '<:child-of',
 	       '<i>7<i>4<i>7<s>6<s>4<s>2'), 'New rel');
 
 
-is($mtt->to_string,
-   '[(0-5)'.
-   # 2 -> 2-4
-   '>:child-of$<b>33<i>0<i>0'                  . '<i>2<i>4<s>2<s>1<s>3|'.
-     # 2-7 -> 1-7
-   '>:child-of$<b>35<i>0<i>0<i>0<i>0' . '<i>7' . '<i>1<i>7<s>2<s>4<s>2|'.
-     # 2-7 -> 2-4
-   '<:child-of$<b>35<i>0<i>0<i>0<i>0' . '<i>7' . '<i>2<i>4<s>5<s>4<s>3|'.
-
-     # 2-7 -> 4-7
-   '<:child-of$<b>35<i>0<i>0<i>0<i>0' . '<i>7' . '<i>4<i>7<s>6<s>4<s>2|' .
-
-   # 2 -> 3
-  # '>:child-of$<b>32'                 . '<i>3<s>2<s>4<s>2|'.
-     # 2-4 -> 2-7
-   '>:child-of$<b>35<i>0<i>0<i>0<i>0' . '<i>4' . '<i>2<i>7<s>1<s>3<s>4|'.
-     # 2-4 -> 3
-   '<:child-of$<b>34<i>0<i>0' . '<i>4'         . '<i>3<s>3<s>3<s>1|' .
-     # 2-4 -> 4
-   '<:child-of$<b>34<i>0<i>0' . '<i>4'         . '<i>4<s>4<s>3<s>1' . #|'.
-     ']' ,
-   'Check sorted relations'
- );
-
-done_testing;
-__END__
-
-
-
-
 
 # 2 to 3
 ok($mtt->add(term => '>:child-of',
@@ -160,48 +130,31 @@ ok($mtt->add(term => '>:child-of',
 	     payload => '<i>3<s>2<s>4<s>2'
 	   ), 'New rel');
 
-
-done_testing;
-__END__
-
-NOTE: Sorting of the candidate spans can alternatively be done in
- * indexing, instead of here. (first by left positions and then by
- * right positions)
-
-
+#NOTE: Sorting of the candidate spans can alternatively be done in
+# * indexing, instead of here. (first by left positions and then by
+# * right positions)
 
 is($mtt->to_string,
    '[(0-5)'.
-     '>:child-of$<i>2<i>4<s>2<s>1<s>3|'.
-     '>:child-of$<i>3<s>2<s>4<s>2|'.
-
-     '>:child-of$<i>4<i>2<i>7<s>1<s>3<s>4|'.
-     '<:child-of$<i>4<b>0<i>3<s>3<s>3<s>1|'.
-     '<:child-of$<i>4<b>0<i>4<s>4<s>3<s>1|'.
-     '>:child-of$<i>7<i>1<i>7<s>2<s>4<s>2|'.
-     '<:child-of$<i>7<i>2<i>4<s>5<s>4<s>3|'.
-     '<:child-of$<i>7<i>4<i>7<s>6<s>4<s>2]',
+   # 2 -> 2-4
+   '>:child-of$<b>33<i>0<i>0'                  . '<i>2<i>4<s>2<s>1<s>3|'.
+   # 2 -> 3
+   '>:child-of$<b>32'                          . '<i>3<s>2<s>4<s>2|'.
+     # 2-4 -> 2-7
+   '>:child-of$<b>35<i>0<i>0<i>0<i>0' . '<i>4' . '<i>2<i>7<s>1<s>3<s>4|'.
+     # 2-4 -> 3
+   '<:child-of$<b>34<i>0<i>0' . '<i>4'         . '<i>3<s>3<s>3<s>1|' .
+     # 2-4 -> 4
+   '<:child-of$<b>34<i>0<i>0' . '<i>4'         . '<i>4<s>4<s>3<s>1|'.
+     # 2-7 -> 1-7
+   '>:child-of$<b>35<i>0<i>0<i>0<i>0' . '<i>7' . '<i>1<i>7<s>2<s>4<s>2|'.
+     # 2-7 -> 2-4
+   '<:child-of$<b>35<i>0<i>0<i>0<i>0' . '<i>7' . '<i>2<i>4<s>5<s>4<s>3|'.
+     # 2-7 -> 4-7
+   '<:child-of$<b>35<i>0<i>0<i>0<i>0' . '<i>7' . '<i>4<i>7<s>6<s>4<s>2' .
+     ']' ,
    'Check sorted relations'
  );
 
-# 2 -> 2-4
-# >:child-of$<i>2<i>4<s>2<s>1<s>3
-# 2 -> 3
-# >:child-of$<i>3<s>2<s>4<s>2
-# 2-4 -> 2-7
-# >:child-of$<i>4<i>2<i>7<s>1<s>3<s>4
-# 2-4 -> 3
-# <:child-of$<i>4<b>0<i>3<s>3<s>3<s>1
-# 2-4 -> 4
-# <:child-of$<i>4<b>0<i>4<s>4<s>3<s>1
-# 2-7 -> 1-7
-# >:child-of$<i>7<i>1<i>7<s>2<s>4<s>2
-# 2-7 -> 2-4
-# <:child-of$<i>7<i>2<i>4<s>5<s>4<s>3
-# 2-7 -> 4-7
-# <:child-of$<i>7<i>4<i>7<s>6<s>4<s>2
-
 done_testing;
-
-
 __END__
