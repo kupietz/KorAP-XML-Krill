@@ -1,6 +1,8 @@
-0.13 2016-03-02
+0.13 2016-03-10
         - Removed korapxml2krill_dir.
 	- Renamed dependency nodes.
+	- Made dependency relations more effective (trimmed down TUIs)
+	  ! This is currently very slow !
 
 0.12 2016-02-28
         - Added extract method to korapxml2krill.
