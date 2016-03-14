@@ -36,7 +36,7 @@ WriteMakefile(
   test => {
     TESTS =>
       't/*.t '.
-	't/index/*.t ' .
+	't/annotation/*.t ' .
 	  't/sgbr/*.t ' .
 	    't/real/*.t'
 	  },
