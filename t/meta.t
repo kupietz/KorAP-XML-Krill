@@ -57,35 +57,6 @@ is($doc->text_class_string, 'freizeit-unterhaltung reisen wissenschaft populaerw
 #is($doc->coll_editor, 'wikipedia.org', 'Collection editor');
 #ok(!$doc->coll_author, 'Collection author');
 
-# BRZ13/00001
-$path = catdir(dirname(__FILE__), 'corpus/BRZ13/00001');
-ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
-
-ok($doc->parse, 'Parse document');
-is($doc->title, 'Sexueller Missbrauch –„Das schreiende Kind steckt noch tief in mir“', 'title');
-ok(!$doc->sub_title, 'subTitle');
-is($doc->text_sigle, 'BRZ13_APR.00001', 'ID');
-is($doc->corpus_sigle, 'BRZ13', 'corpusID');
-
-is($doc->pub_date, '20130402', 'pubDate');
-is($doc->pub_place, 'Braunschweig', 'pubPlace');
-
-is($doc->text_class->[0], 'staat-gesellschaft', 'TextClass');
-is($doc->text_class->[1], 'familie-geschlecht', 'TextClass');
-ok(!$doc->text_class->[2], 'TextClass');
-ok(!$doc->author, 'author');
-
-# Additional information
-ok(!$doc->editor, 'Editor');
-is($doc->publisher, 'Braunschweiger Zeitungsverlag, Druckhaus Albert Limbach GmbH & Co. KG', 'Publisher');
-is($doc->creation_date, '20130402', 'Creation date');
-#is($doc->coll_title, 'Braunschweiger Zeitung', 'Collection title');
-#ok(!$doc->coll_sub_title, 'Collection subtitle');
-#ok(!$doc->coll_editor, 'Collection editor');
-#ok(!$doc->coll_author, 'Collection author');
-is($doc->text_type, 'Zeitung: Tageszeitung', 'text_type');
-ok(!$doc->text_type_art, 'text_type art');
-
 # A01/13047
 $path = catdir(dirname(__FILE__), 'corpus/A01/13047');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
