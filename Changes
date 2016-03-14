@@ -1,3 +1,6 @@
+0.14 2016-03-12
+        - Renamed ::Index to ::Annotate and ::Field to ::Index.
+
 0.13 2016-03-10
         - Removed korapxml2krill_dir.
 	- Renamed dependency nodes.
