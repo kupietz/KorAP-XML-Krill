@@ -9,7 +9,7 @@ use KorAP::XML::Tokenizer::Range;
 use KorAP::XML::Tokenizer::Match;
 use KorAP::XML::Tokenizer::Spans;
 use KorAP::XML::Tokenizer::Tokens;
-use KorAP::XML::Field::MultiTermTokenStream;
+use KorAP::XML::Index::MultiTermTokenStream;
 use List::MoreUtils 'uniq';
 use JSON::XS;
 use Log::Log4perl;
@@ -45,7 +45,7 @@ sub parse {
   my $self = shift;
 
   # Create new token stream
-  my $mtts = KorAP::XML::Field::MultiTermTokenStream->new;
+  my $mtts = KorAP::XML::Index::MultiTermTokenStream->new;
   my $path = $self->path . lc($self->foundry) . '/' . lc($self->layer) . '.xml';
 
   unless (-e $path) {
@@ -393,7 +393,7 @@ sub add {
     return;
   };
 
-  my $mod = 'KorAP::XML::Index::' . $foundry . '::' . $layer;
+  my $mod = 'KorAP::XML::Annotation::' . $foundry . '::' . $layer;
 
   if ($mod->can('new') || eval("require $mod; 1;")) {
     if (my $retval = $mod->new($self)->parse(@_)) {
@@ -638,7 +638,7 @@ The L<KorAP::XML::Krill> object.
 
   $tokens->stream->add_meta('adjCount', '<i>45');
 
-The L<KorAP::XML::Field::MultiTermTokenStream> object
+The L<KorAP::XML::Index::MultiTermTokenStream> object
 
 
 =head2 range
@@ -715,7 +715,7 @@ This is based on the C<aggressive> tokenization, written by Carsten Schnober.
 Add span information to the parsed token stream.
 Expects a C<foundry> name, a C<layer> name and a
 callback parameter, that will be called after each parsed
-span. The L<KorAP::XML::Field::MultiTermTokenStream> object will be passed,
+span. The L<KorAP::XML::Index::MultiTermTokenStream> object will be passed,
 as well as the current L<KorAP::XML::Tokenizer::Span>.
 
 An optional parameter C<encoding> may indicate that the span offsets
@@ -745,7 +745,7 @@ An optional parameter C<skip> allows for skipping the process.
 Add token information to the parsed token stream.
 Expects a C<foundry> name, a C<layer> name and a
 callback parameter, that will be called after each parsed
-token. The L<KorAP::XML::Field::MultiTermTokenStream> object will be passed,
+token. The L<KorAP::XML::Index::MultiTermTokenStream> object will be passed,
 as well as the current L<KorAP::XML::Tokenizer::Span>.
 
 An optional parameter C<encoding> may indicate that the token offsets

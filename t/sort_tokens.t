@@ -6,9 +6,9 @@ use Mojo::ByteStream 'b';
 use utf8;
 use lib 'lib', '../lib';
 
-use_ok('KorAP::XML::Field::MultiTermTokenStream');
+use_ok('KorAP::XML::Index::MultiTermTokenStream');
 
-ok(my $mtt = KorAP::XML::Field::MultiTermToken->new, 'New token');
+ok(my $mtt = KorAP::XML::Index::MultiTermToken->new, 'New token');
 ok(defined $mtt->o_start(0), 'Set start character offset');
 ok($mtt->o_end(5), 'Set end character offset');
 ok($mtt->add(term => '@:k=N',
@@ -70,7 +70,7 @@ is($mtt->to_string,
 		       'g=N$<b>129<b>144]',
    'Check string');
 
-ok($mtt = KorAP::XML::Field::MultiTermToken->new, 'New token');
+ok($mtt = KorAP::XML::Index::MultiTermToken->new, 'New token');
 ok(defined $mtt->o_start(0), 'Set start character offset');
 ok($mtt->o_end(5), 'Set end character offset');
 
