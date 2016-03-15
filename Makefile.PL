@@ -7,7 +7,7 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
   NAME         => 'KorAP::XML::Krill',
   AUTHOR       => 'Nils Diewald',
-  ABSTRACT     => 'Preprocess KorAP XML documents for Krill',
+  ABSTRACT     => 'Preprocess KorAP XML Documents for Krill',
   VERSION_FROM => 'lib/KorAP/XML/Krill.pm',
   LICENSE      => 'bsd_2',
   PREREQ_PM => {

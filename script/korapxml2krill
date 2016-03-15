@@ -75,7 +75,7 @@ GetOptions(
   'skip|s=s'    => \@skip,
   'sigle|sg=s'  => \@sigle,
   'log|l=s'     => \(my $log_level = 'ERROR'),
-  'allow|a=s'   => \(my @allow),
+  'anno|a=s'    => \(my @anno),
   'primary|p!'  => \(my $primary),
   'pretty|y'    => \(my $pretty),
   'jobs|j=i'    => \(my $jobs = 0),
@@ -142,7 +142,7 @@ sub write_file {
   $call .= ' -l ' . $log_level if $log_level;
   $call .= ' --no-primary ' if $primary;
   $call .= ' -y ' . $pretty if $pretty;
-  $call .= ' -a ' . $_ foreach @allow;
+  $call .= ' -a ' . $_ foreach @anno;
   $call .= ' -s ' . $_ foreach @skip;
   system($call);
   return "$file";
@@ -261,7 +261,7 @@ unless ($cmd) {
 
 
   if ($skip{'#all'}) {
-    foreach (@allow) {
+    foreach (@anno) {
       $tokens->add(split('#', $_));
       stop_time;
     };
@@ -508,13 +508,16 @@ korapxml2krill - Merge KorapXML data and create Krill friendly documents
 
 =head1 SYNOPSIS
 
-  $ korapxml2krill [archive] -z --input <directory> --output <filename>
+  $ korapxml2krill -z --input <directory> --output <filename>
+  $ korapxml2krill archive -z --input <directory> --output <directory>
+  $ korapxml2krill extract --input <directory> --output <filename> --sigle <SIGLE>
 
 
 =head1 DESCRIPTION
 
 L<KorAP::XML::Krill> is a library to convert KorAP-XML documents to files
 compatible with the L<Krill|https://github.com/KorAP/Krill> indexer.
+THe C<korapxml2krill> command line tool is a simple wrapper to the library.
 
 
 =head1 INSTALLATION
@@ -523,8 +526,8 @@ The preferred way to install L<KorAP::XML::Krill> is to use L<cpanm|App::cpanmin
 
   $ cpanm https://github.com/KorAP/KorAP-XML-Krill
 
-In case everything went well, the C<korapxml2krill> command line tool will
-be available.
+In case everything went well, the C<korapxml2krill> tool will
+be available on your command line.
 
 
 =head1 ARGUMENTS
@@ -554,7 +557,7 @@ Directory or archive file of documents to index.
 
 Output folder for archive processing or
 document name for single output (optional),
-writes to <STDOUT> by default.
+writes to C<STDOUT> by default.
 
 =item B<--overwrite|-w>
 
@@ -564,38 +567,41 @@ Overwrite files that already exist.
 
 Define the default tokenization by specifying
 the name of the foundry and optionally the name
-of the layer-file. Defaults to OpenNLP#tokens.
+of the layer-file. Defaults to C<OpenNLP#tokens>.
 
 =item B<--skip|-s> <foundry>[#<layer>]
 
 Skip specific foundries by specifying the name
 or specific layers by defining the name
 with a # in front of the foundry,
-e.g. Mate#Morpho. Alternatively you can skip #ALL.
+e.g. Mate#Morpho. Alternatively you can skip C<#ALL>.
 Can be set multiple times.
 
-=item B<--allow|-a> <foundry>#<layer>
+=item B<--anno|-a> <foundry>#<layer>
 
-Allow specific foundries and layers by defining them
-combining the foundry name with a # and the layer name.
+Allow specific annotion foundries and layers by defining them
+combining the foundry name with a C<#> and the layer name.
 
 =item B<--primary|-p>
 
-Output primary data or not. Defaults to true.
+Output primary data or not. Defaults to C<true>.
 Can be flagged using --no-primary as well.
+This is deprecated.
 
 =item B<--jobs|-j>
 
 Define the number of concurrent jobs in seperated forks
-for archive processing, defaults to 0. This is B<EXPERIMENTAL>!
+for archive processing, defaults to C<0>.
+This is experimental!
 
 =item B<--human|-m>
 
-Represent the data human friendly, while the output defaults to JSON.
+Represent the data in an alternative human readible format.
+This is deprecated.
 
 =item B<--pretty|-y>
 
-Pretty print JSON output.
+Pretty print JSON output. Defaults to C<false>.
 
 =item B<--gzip|-z>
 
@@ -620,6 +626,127 @@ Print this document.
 Print version information.
 
 =back
+
+=head1 ANNOTATION SUPPORT
+
+L<KorAP::XML::Krill> has built-in importer for some annotation foundries and layers
+developed in the KorAP project that are part of the KorAP preprocessing pipeline.
+The base foundry with paragraphs, sentences, and the text element are mandatory for
+L<Krill|https://github.com/KorAP/Krill>.
+
+=over2
+
+=item B<Base>
+
+=over 4
+
+=item Paragraphs
+
+=item Sentences
+
+=back
+
+=item B<Connexor>
+
+=over 4
+
+=item Morpho
+
+=item Phrase
+
+=item Sentences
+
+=item Syntax
+
+=back
+
+=item B<CoreNLP>
+
+=over 4
+
+=item Constituency
+
+=item Morpho
+
+=item NamedEntities
+
+=item Sentences
+
+=back
+
+=item B<DeReKo>
+
+=over 4
+
+=item Structure
+
+=back
+
+=item B<Glemm>
+
+=over 4
+
+=item Morpho
+
+=back
+
+=item B<Mate>
+
+=over 4
+
+=item Dependency
+
+=item Morpho
+
+=back
+
+=item B<OpenNLP>
+
+=over 4
+
+=item Morpho
+
+=item Sentences
+
+=back
+
+=item B<Sgbr>
+
+=over 4
+
+=item Lemma
+
+=item Morpho
+
+=back
+
+=item B<TreeTagger>
+
+=over 4
+
+=item Morpho
+
+=item Sentences
+
+=back
+
+=item B<XIP>
+
+=over 4
+
+=item Constituency
+
+=item Morpho
+
+=item Sentences
+
+=back
+
+=back
+
+More importers are in preparation.
+New annotation importers can be defined in the C<KorAP::XML::Annotation> namespace.
+See the built-in annotation importers as examples.
 
 =head1 AVAILABILITY
 

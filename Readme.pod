@@ -1,0 +1,271 @@
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+korapxml2krill - Merge KorapXML data and create Krill friendly documents
+
+
+=head1 SYNOPSIS
+
+  $ korapxml2krill -z --input <directory> --output <filename>
+  $ korapxml2krill archive -z --input <directory> --output <directory>
+  $ korapxml2krill extract --input <directory> --output <filename> --sigle <SIGLE>
+
+
+=head1 DESCRIPTION
+
+L<KorAP::XML::Krill> is a library to convert KorAP-XML documents to files
+compatible with the L<Krill|https://github.com/KorAP/Krill> indexer.
+THe C<korapxml2krill> command line tool is a simple wrapper to the library.
+
+
+=head1 INSTALLATION
+
+The preferred way to install L<KorAP::XML::Krill> is to use L<cpanm|App::cpanminus>.
+
+  $ cpanm https://github.com/KorAP/KorAP-XML-Krill
+
+In case everything went well, the C<korapxml2krill> tool will
+be available on your command line.
+
+
+=head1 ARGUMENTS
+
+=over 2
+
+=item B<archive>
+
+Process an archive as a Zip-file or a folder of KorAP-XML documents.
+
+=item B<extract>
+
+Extract KorAP-XML files from a Zip-file.
+
+=back
+
+
+=head1 OPTIONS
+
+=over 2
+
+=item B<--input|-i> <directory|file>
+
+Directory or archive file of documents to index.
+
+=item B<--output|-o> <directory|file>
+
+Output folder for archive processing or
+document name for single output (optional),
+writes to C<STDOUT> by default.
+
+=item B<--overwrite|-w>
+
+Overwrite files that already exist.
+
+=item B<--token|-t> <foundry>[#<file>]
+
+Define the default tokenization by specifying
+the name of the foundry and optionally the name
+of the layer-file. Defaults to C<OpenNLP#tokens>.
+
+=item B<--skip|-s> <foundry>[#<layer>]
+
+Skip specific foundries by specifying the name
+or specific layers by defining the name
+with a # in front of the foundry,
+e.g. Mate#Morpho. Alternatively you can skip C<#ALL>.
+Can be set multiple times.
+
+=item B<--anno|-a> <foundry>#<layer>
+
+Allow specific annotion foundries and layers by defining them
+combining the foundry name with a C<#> and the layer name.
+
+=item B<--primary|-p>
+
+Output primary data or not. Defaults to C<true>.
+Can be flagged using --no-primary as well.
+This is deprecated.
+
+=item B<--jobs|-j>
+
+Define the number of concurrent jobs in seperated forks
+for archive processing, defaults to C<0>.
+This is experimental!
+
+=item B<--human|-m>
+
+Represent the data in an alternative human readible format.
+This is deprecated.
+
+=item B<--pretty|-y>
+
+Pretty print JSON output. Defaults to C<false>.
+
+=item B<--gzip|-z>
+
+Compress the output (expects a defined output file in single processing).
+
+=item B<--sigle|-sg>
+
+Extract the given text sigles.
+Currently only supported on C<extract>.
+Can be set multiple times.
+
+=item B<--log|-l>
+
+The L<Log4perl> log level, defaults to C<ERROR>.
+
+=item B<--help|-h>
+
+Print this document.
+
+=item B<--version|-v>
+
+Print version information.
+
+=back
+
+=head1 ANNOTATION SUPPORT
+
+L<KorAP::XML::Krill> has built-in importer for some annotation foundries and layers
+developed in the KorAP project that are part of the KorAP preprocessing pipeline.
+The base foundry with paragraphs, sentences, and the text element are mandatory for
+L<Krill|https://github.com/KorAP/Krill>.
+
+=over2
+
+=item B<Base>
+
+=over 4
+
+=item Paragraphs
+
+=item Sentences
+
+=back
+
+=item B<Connexor>
+
+=over 4
+
+=item Morpho
+
+=item Phrase
+
+=item Sentences
+
+=item Syntax
+
+=back
+
+=item B<CoreNLP>
+
+=over 4
+
+=item Constituency
+
+=item Morpho
+
+=item NamedEntities
+
+=item Sentences
+
+=back
+
+=item B<DeReKo>
+
+=over 4
+
+=item Structure
+
+=back
+
+=item B<Glemm>
+
+=over 4
+
+=item Morpho
+
+=back
+
+=item B<Mate>
+
+=over 4
+
+=item Dependency
+
+=item Morpho
+
+=back
+
+=item B<OpenNLP>
+
+=over 4
+
+=item Morpho
+
+=item Sentences
+
+=back
+
+=item B<Sgbr>
+
+=over 4
+
+=item Lemma
+
+=item Morpho
+
+=back
+
+=item B<TreeTagger>
+
+=over 4
+
+=item Morpho
+
+=item Sentences
+
+=back
+
+=item B<XIP>
+
+=over 4
+
+=item Constituency
+
+=item Morpho
+
+=item Sentences
+
+=back
+
+=back
+
+More importers are in preparation.
+New annotation importers can be defined in the C<KorAP::XML::Annotation> namespace.
+See the built-in annotation importers as examples.
+
+=head1 AVAILABILITY
+
+  https://github.com/KorAP/KorAP-XML-Krill
+
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2015-2016, L<IDS Mannheim|http://www.ids-mannheim.de/>
+Author: L<Nils Diewald|http://nils-diewald.de/>
+
+L<KorAP::XML::Krill> is developed as part of the L<KorAP|http://korap.ids-mannheim.de/>
+Corpus Analysis Platform at the
+L<Institute for the German Language (IDS)|http://ids-mannheim.de/>,
+member of the
+L<Leibniz-Gemeinschaft|http://www.leibniz-gemeinschaft.de/en/about-us/leibniz-competition/projekte-2011/2011-funding-line-2/>.
+
+This program is free software published under the
+L<BSD-2 License|https://raw.githubusercontent.com/KorAP/KorAP-XML-Krill/master/LICENSE>.
+
+=cut
