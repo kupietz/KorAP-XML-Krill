@@ -503,7 +503,7 @@ __END__
 
 =head1 NAME
 
-korapxml2krill - Merge KorapXML data and create Krill friendly documents
+korapxml2krill - Merge KorapXML data and create Krill documents
 
 
 =head1 SYNOPSIS
@@ -517,7 +517,7 @@ korapxml2krill - Merge KorapXML data and create Krill friendly documents
 
 L<KorAP::XML::Krill> is a library to convert KorAP-XML documents to files
 compatible with the L<Krill|https://github.com/KorAP/Krill> indexer.
-THe C<korapxml2krill> command line tool is a simple wrapper to the library.
+The C<korapxml2krill> command line tool is a simple wrapper to the library.
 
 
 =head1 INSTALLATION
@@ -527,7 +527,7 @@ The preferred way to install L<KorAP::XML::Krill> is to use L<cpanm|App::cpanmin
   $ cpanm https://github.com/KorAP/KorAP-XML-Krill
 
 In case everything went well, the C<korapxml2krill> tool will
-be available on your command line.
+be available on your command line immediately.
 
 
 =head1 ARGUMENTS
@@ -551,13 +551,14 @@ Extract KorAP-XML files from a Zip-file.
 
 =item B<--input|-i> <directory|file>
 
-Directory or archive file of documents to index.
+Directory or archive file of documents to convert.
 
 =item B<--output|-o> <directory|file>
 
 Output folder for archive processing or
 document name for single output (optional),
-writes to C<STDOUT> by default.
+writes to C<STDOUT> by default
+(in case C<output> is not mandatory due to further options).
 
 =item B<--overwrite|-w>
 
@@ -571,33 +572,35 @@ of the layer-file. Defaults to C<OpenNLP#tokens>.
 
 =item B<--skip|-s> <foundry>[#<layer>]
 
-Skip specific foundries by specifying the name
-or specific layers by defining the name
-with a # in front of the foundry,
-e.g. Mate#Morpho. Alternatively you can skip C<#ALL>.
+Skip specific annotations by specifying the foundry
+(and optionally the layer with a C<#>-prefix),
+e.g. C<Mate> or C<Mate#Morpho>. Alternatively you can skip C<#ALL>.
 Can be set multiple times.
 
 =item B<--anno|-a> <foundry>#<layer>
 
-Allow specific annotion foundries and layers by defining them
-combining the foundry name with a C<#> and the layer name.
+Convert specific annotations by specifying the foundry
+(and optionally the layer with a C<#>-prefix),
+e.g. C<Mate> or C<Mate#Morpho>.
+Can be set multiple times.
 
 =item B<--primary|-p>
 
 Output primary data or not. Defaults to C<true>.
-Can be flagged using --no-primary as well.
-This is deprecated.
+Can be flagged using C<--no-primary> as well.
+This is I<deprecated>.
 
 =item B<--jobs|-j>
 
 Define the number of concurrent jobs in seperated forks
-for archive processing, defaults to C<0>.
-This is experimental!
+for archive processing.
+Defaults to C<0>.
+This is I<experimental>.
 
 =item B<--human|-m>
 
 Represent the data in an alternative human readible format.
-This is deprecated.
+This is I<deprecated>.
 
 =item B<--pretty|-y>
 
@@ -605,13 +608,14 @@ Pretty print JSON output. Defaults to C<false>.
 
 =item B<--gzip|-z>
 
-Compress the output (expects a defined output file in single processing).
+Compress the output.
+Expects a defined C<output> file in single processing.
 
 =item B<--sigle|-sg>
 
 Extract the given text sigles.
-Currently only supported on C<extract>.
 Can be set multiple times.
+I<Currently only supported on C<extract>.>
 
 =item B<--log|-l>
 
@@ -634,15 +638,15 @@ developed in the KorAP project that are part of the KorAP preprocessing pipeline
 The base foundry with paragraphs, sentences, and the text element are mandatory for
 L<Krill|https://github.com/KorAP/Krill>.
 
-=over2
+=over 2
 
 =item B<Base>
 
 =over 4
 
-=item Paragraphs
+=item #Paragraphs
 
-=item Sentences
+=item #Sentences
 
 =back
 
@@ -650,13 +654,13 @@ L<Krill|https://github.com/KorAP/Krill>.
 
 =over 4
 
-=item Morpho
+=item #Morpho
 
-=item Phrase
+=item #Phrase
 
-=item Sentences
+=item #Sentences
 
-=item Syntax
+=item #Syntax
 
 =back
 
@@ -664,13 +668,13 @@ L<Krill|https://github.com/KorAP/Krill>.
 
 =over 4
 
-=item Constituency
+=item #Constituency
 
-=item Morpho
+=item #Morpho
 
-=item NamedEntities
+=item #NamedEntities
 
-=item Sentences
+=item #Sentences
 
 =back
 
@@ -678,7 +682,7 @@ L<Krill|https://github.com/KorAP/Krill>.
 
 =over 4
 
-=item Structure
+=item #Structure
 
 =back
 
@@ -686,7 +690,7 @@ L<Krill|https://github.com/KorAP/Krill>.
 
 =over 4
 
-=item Morpho
+=item #Morpho
 
 =back
 
@@ -694,9 +698,9 @@ L<Krill|https://github.com/KorAP/Krill>.
 
 =over 4
 
-=item Dependency
+=item #Dependency
 
-=item Morpho
+=item #Morpho
 
 =back
 
@@ -704,9 +708,9 @@ L<Krill|https://github.com/KorAP/Krill>.
 
 =over 4
 
-=item Morpho
+=item #Morpho
 
-=item Sentences
+=item #Sentences
 
 =back
 
@@ -714,9 +718,9 @@ L<Krill|https://github.com/KorAP/Krill>.
 
 =over 4
 
-=item Lemma
+=item #Lemma
 
-=item Morpho
+=item #Morpho
 
 =back
 
@@ -724,9 +728,9 @@ L<Krill|https://github.com/KorAP/Krill>.
 
 =over 4
 
-=item Morpho
+=item #Morpho
 
-=item Sentences
+=item #Sentences
 
 =back
 
@@ -734,11 +738,11 @@ L<Krill|https://github.com/KorAP/Krill>.
 
 =over 4
 
-=item Constituency
+=item #Constituency
 
-=item Morpho
+=item #Morpho
 
-=item Sentences
+=item #Sentences
 
 =back
 
@@ -756,6 +760,7 @@ See the built-in annotation importers as examples.
 =head1 COPYRIGHT AND LICENSE
 
 Copyright (C) 2015-2016, L<IDS Mannheim|http://www.ids-mannheim.de/>
+
 Author: L<Nils Diewald|http://nils-diewald.de/>
 
 L<KorAP::XML::Krill> is developed as part of the L<KorAP|http://korap.ids-mannheim.de/>
