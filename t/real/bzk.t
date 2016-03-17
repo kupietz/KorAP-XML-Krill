@@ -25,45 +25,46 @@ is($doc->text_sigle, 'BZK_D59.00001', 'Correct text sigle');
 is($doc->doc_sigle, 'BZK_D59', 'Correct document sigle');
 is($doc->corpus_sigle, 'BZK', 'Correct corpus sigle');
 
-is($doc->title, 'Unser gemeinsames Werk wird siegreich sein', 'Title');
-ok(!$doc->sub_title, 'No SubTitle');
-ok(!$doc->author, 'Author');
-ok(!$doc->editor, 'Editor');
-is($doc->pub_place, 'Berlin', 'PubPlace');
-ok(!$doc->publisher, 'Publisher');
+my $meta = $doc->meta;
+is($meta->{title}, 'Unser gemeinsames Werk wird siegreich sein', 'Title');
+ok(!$meta->{sub_title}, 'No SubTitle');
+ok(!$meta->{author}, 'Author');
+ok(!$meta->{editor}, 'Editor');
+is($meta->{pub_place}, 'Berlin', 'PubPlace');
+ok(!$meta->{publisher}, 'Publisher');
 
-is($doc->text_type, 'Zeitung: Tageszeitung', 'Correct Text Type');
+is($meta->{text_type}, 'Zeitung: Tageszeitung', 'Correct Text Type');
 
-ok(!$doc->text_type_art, 'Correct Text Type Art');
-is($doc->text_type_ref, 'Tageszeitung', 'Correct Text Type Ref');
-is($doc->text_domain, 'Politik', 'Correct Text Domain');
-is($doc->text_column, 'POLITIK', 'Correct Text Column');
-is($doc->text_class->[0], 'politik', 'Correct Text Class');
-is($doc->text_class->[1], 'ausland', 'Correct Text Class');
-ok(!$doc->text_class->[2], 'Correct Text Class');
+ok(!$meta->{text_type_art}, 'Correct Text Type Art');
+is($meta->{text_type_ref}, 'Tageszeitung', 'Correct Text Type Ref');
+is($meta->{text_domain}, 'Politik', 'Correct Text Domain');
+is($meta->{text_column}, 'POLITIK', 'Correct Text Column');
+is($meta->{text_class}->[0], 'politik', 'Correct Text Class');
+is($meta->{text_class}->[1], 'ausland', 'Correct Text Class');
+ok(!$meta->{text_class}->[2], 'Correct Text Class');
 
-is($doc->pub_date, '19590101', 'Creation date');
-is($doc->creation_date, '19590101', 'Creation date');
-is($doc->license, 'ACA-NC-LC', 'License');
-ok(!$doc->pages, 'Pages');
+is($meta->{pub_date}, '19590101', 'Creation date');
+is($meta->{creation_date}, '19590101', 'Creation date');
+is($meta->{license}, 'ACA-NC-LC', 'License');
+ok(!$meta->{pages}, 'Pages');
 
-ok(!$doc->file_edition_statement, 'File Statement');
-ok(!$doc->bibl_edition_statement, 'Bibl Statement');
+ok(!$meta->{file_edition_statement}, 'File Statement');
+ok(!$meta->{bibl_edition_statement}, 'Bibl Statement');
 
-is($doc->reference . "\n", <<'REF', 'Reference');
+is($meta->{reference} . "\n", <<'REF', 'Reference');
 Neues Deutschland, [Tageszeitung], 01.01.1959, Jg. 14, Berliner Ausgabe, S. 1. - Sachgebiet: Politik, Originalressort: POLITIK; Unser gemeinsames Werk wird siegreich sein
 REF
-is($doc->language, 'de', 'Language');
+is($meta->{language}, 'de', 'Language');
 
-is($doc->corpus_title, 'Bonner Zeitungskorpus', 'Correct Corpus title');
-ok(!$doc->corpus_sub_title, 'Correct Corpus sub title');
-ok(!$doc->corpus_author, 'Correct Corpus author');
-ok(!$doc->corpus_editor, 'Correct Corpus editor');
+is($meta->{corpus_title}, 'Bonner Zeitungskorpus', 'Correct Corpus title');
+ok(!$meta->{corpus_sub_title}, 'Correct Corpus sub title');
+ok(!$meta->{corpus_author}, 'Correct Corpus author');
+ok(!$meta->{corpus_editor}, 'Correct Corpus editor');
 
-is($doc->doc_title, 'Neues Deutschland', 'Correct Doc title');
-is($doc->doc_sub_title, 'Organ des Zentralkomitees der Sozialistischen Einheitspartei Deutschlands', 'Correct Doc sub title');
-ok(!$doc->doc_author, 'Correct Doc author');
-ok(!$doc->doc_editor, 'Correct doc editor');
+is($meta->{doc_title}, 'Neues Deutschland', 'Correct Doc title');
+is($meta->{doc_sub_title}, 'Organ des Zentralkomitees der Sozialistischen Einheitspartei Deutschlands', 'Correct Doc sub title');
+ok(!$meta->{doc_author}, 'Correct Doc author');
+ok(!$meta->{doc_editor}, 'Correct doc editor');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');

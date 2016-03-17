@@ -18,53 +18,11 @@ use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 #       Due to the kind of processing, processed metadata may be stored in
 #       a multiprocess cache instead.
 
-our $VERSION = '0.14';
-
-our @ATTR = qw/text_sigle
-	       doc_sigle
-	       corpus_sigle
-	       title
-	       pub_date
-	       sub_title
-	       pub_place
-	       author/;
-
-our @ADVANCED_ATTR = qw/publisher
-			editor
-			text_type
-			text_type_art
-			text_type_ref
-			text_column
-			text_domain
-			creation_date
-			license
-			pages
-			file_edition_statement
-			bibl_edition_statement
-			reference
-			language
-
-			doc_title
-			doc_sub_title
-			doc_editor
-			doc_author
-
-			corpus_author
-			corpus_title
-			corpus_sub_title
-			corpus_editor
-
-			availability
-			pub_place_key
-			/;
-# Separate: text_class, keywords
-
-# Removed:    coll_title, coll_sub_title, coll_author, coll_editor
-# Introduced: doc_title, doc_sub_title, corpus_editor, doc_editor, corpus_author, doc_author
-
+our $VERSION = '0.15';
 
 has 'path';
-has [@ATTR, @ADVANCED_ATTR];
+has [qw/text_sigle doc_sigle corpus_sigle/];
+has 'meta_type' => 'I5';
 
 has log => sub {
   if(Log::Log4perl->initialized()) {
@@ -73,7 +31,6 @@ has log => sub {
   state $log = KorAP::XML::Log->new;
   return $log;
 };
-
 
 sub new {
   my $class = shift;
@@ -87,9 +44,11 @@ sub new {
   return $self;
 };
 
-# parse document
+
+# Parse document (primary data and metadata)
 sub parse {
   my $self = shift;
+  my $meta_data_type = $self->meta_type;
 
   my $data_xml = $self->path . 'data.xml';
 
@@ -97,6 +56,7 @@ sub parse {
 
   my $unable = 'Unable to parse document ' . $self->path;
 
+  # No primary data found
   unless (-e $data_xml) {
     $self->log->warn($unable . ' - no data.xml found');
     $error = 1;
@@ -104,6 +64,7 @@ sub parse {
 
   else {
 
+    # Load file
     $file = b($data_xml)->slurp;
 
     try {
@@ -148,11 +109,29 @@ sub parse {
   my @path = grep { $_ } splitdir($self->path);
   my @header;
 
-  # Parse the corpus file, the doc file, and the text file for meta information
+  # Parse the corpus file, the doc file,
+  # and the text file for meta information
   foreach (0..2) {
     unshift @header, '/' . catfile(@path, 'header.xml');
     pop @path;
   };
+
+
+  my $meta_class = 'KorAP::XML::Meta::' . $meta_data_type;
+  my $meta;
+
+  if ($meta_class->can('new') || eval("require $meta_class; 1;")) {
+    $meta = $meta_class->new(
+      log => $self->log,
+      corpus_sigle => $self->corpus_sigle,
+      doc_sigle    => $self->doc_sigle,
+      text_sigle   => $self->text_sigle
+    );
+
+    $self->{meta} = $meta;
+  };
+
+  return unless $meta;
 
   my @type = qw/corpus doc text/;
   foreach (@header) {
@@ -161,19 +140,22 @@ sub parse {
 
     next unless -e $_;
 
+    # Slurp data and probably decode
     my $slurp = b($_)->slurp;
-    $slurp =~ /^[^>]+encoding\s*=\s*(["'])([^\1]+?)\1/;
+    $slurp =~ /^[^>]+encoding\s*=\s*(["'])([^\1]+?)\1/o;
     my $file = $slurp->decode($2 // 'UTF-8');
 
     # Get DOM
     my $dom = Mojo::DOM->new($file);
 
-    if ($dom->at('idsHeader') || $dom->at('idsheader')) {
-      $self->_parse_meta_i5($dom, $type);
-    }
-    else {
-      $self->_parse_meta_tei($dom, $type);
-    };
+    # Choose which metadata parser to use
+#    if ($dom->at('idsHeader') || $dom->at('idsheader')) {
+#      $self->_parse_meta_i5($dom, $type);
+#    }
+#    else {
+#      $self->_parse_meta_tei($dom, $type);
+#    };
+    $meta->parse($dom, $type);
   };
 
   return $self;
@@ -241,405 +223,66 @@ sub primary {
   $_[0]->{pd};
 };
 
-#sub author {
-#  my $self = shift;
-#
-#  # Set authors
-#  if ($_[0]) {
-#    return $self->{authors} = [
-#      grep { $_ !~ m{^\s*u\.a\.\s*$} } split(/;\s+/, shift())
-#    ];
-#  }
-#  return ($self->{authors} // []);
-#};
-
-sub text_class {
-  my $self = shift;
-  if ($_[0]) {
-    return $self->{topics} = [ @_ ];
-  };
-  return ($self->{topics} //= []);
+sub meta {
+  return $_[0]->{meta};
 };
 
-sub text_class_string {
-  return join ' ', @{shift->text_class};
-}
-
-sub keywords {
+sub to_hash {
   my $self = shift;
-  if ($_[0]) {
-    return $self->{keywords} = [ @_ ];
-  };
-  return ($self->{keywords} //= []);
-};
 
-sub keywords_string {
-  return join ' ', @{shift->keywords};
-}
+  $self->parse unless $self->text_sigle;
 
-sub _remove_prefix {
-#   return $_[0];
+  my %hash;
 
-  # This may render some titles wrong, e.g. 'VDI nachrichten 2014' ...
-  my $title = shift;
-  my $prefix = shift;
-  $prefix =~ tr!_!/!;
-  if (index($title, $prefix) == 0) {
-    $title = substr($title, length($prefix));
-    $title =~ s/^\s+//;
-    $title =~ s/\s+$//;
-  };
-  return $title;
-};
+  # Get meta object
+  my $meta = $self->meta;
+  foreach (keys %$meta) {
 
+    # Ignore private keys
+    next if index($_, '_') == 0;
 
-sub _parse_meta_tei {
-  my $self = shift;
-  my $dom = shift;
-  my $type = shift;
-
-  my $stmt;
-  if ($type eq 'text') {
-
-    # Publisher
-    try {
-      $self->publisher($dom->at('publisher')->all_text);
-    };
-
-    # Date of publication
-    try {
-      my $date = $dom->at('date')->all_text;
-      $self->store(sgbrDate => $date);
-      if ($date =~ s!^\s*(\d{4})-(\d{2})-(\d{2}).*$!$1$2$3!) {
-	$self->pub_date($date);
-      }
-      else {
-	$self->log->warn('"' . $date . '" is not a compatible pubDate');
-      };
-    };
-
-    # Publication place
-    try {
-      my $pp = $dom->at('pubPlace');
-      if ($pp) {
-	$self->pub_place($pp->all_text) if $pp->all_text;
-      };
-      if ($pp->attr('ref')) {
-	$self->reference($pp->attr('ref'));
-      };
-    };
-
-    if ($stmt = $dom->at('titleStmt')) {
-      # Title
-      try {
-	$stmt->find('title')->each(
-	  sub {
-	    my $type = $_->attr('type') || 'main';
-	    $self->title($_->all_text) if $type eq 'main';
-
-	    # Only support the first subtitle
-	    $self->sub_title($_->all_text) if $type eq 'sub' && !$self->sub_title;
-	  }
-	);
-      };
-
-      # Author
-      try {
-	my $author = $stmt->at('author')->attr('ref');
-
-	$author = $self->{ref_author}->{$author};
-
-	if ($author) {
-	  my $array = $self->keywords;
-	  $self->author($author->{name} // $author->{id});
-
-	  if ($author->{age}) {
-	    $self->store('sgbrAuthorAgeClass' => $author->{age});
-	    push @$array, 'sgbrAuthorAgeClass:' . $author->{age};
-	  };
-	  if ($author->{sex}) {
-	    $self->store('sgbrAuthorSex' => $author->{sex});
-	    push @$array, 'sgbrAuthorSex:' . $author->{sex};
-	  };
-	};
-      };
-    };
-
-    try {
-      my $kodex = $dom->at('item[rend]')->attr('rend');
-      if ($kodex) {
-	my $array = $self->keywords;
-	$self->store('sgbrKodex' => $kodex);
-	push @$array, 'sgbrKodex:' . $kodex;
-      };
-    };
-  }
-
-  elsif ($type eq 'doc') {
-    try {
-      $dom->find('particDesc person')->each(
-	sub {
-
-	  my $hash = $self->{ref_author}->{'#' . $_->attr('xml:id')} = {
-	    age => $_->attr('age'),
-	    sex => $_->attr('sex'),
-	    id => $_->attr('xml:id')
-	  };
-
-	  # Get name
-	  if ($_->at('persName')) {
-	    $hash->{name} = $_->at('persName')->all_text;
-	  };
-	});
-    };
-
-    try {
-      my $lang = $dom->at('language[ident]')->attr('ident');
-      $self->language($lang);
-    };
-
-    try {
-      $self->store('funder', $dom->at('funder > orgName')->all_text);
-    };
-
-    try {
-      $stmt = $dom->find('fileDesc > titleStmt > title')->each(
-	sub {
-	  my $type = $_->attr('type') || 'main';
-	  $self->doc_title($_->all_text) if $type eq 'main';
-	  if ($type eq 'sub') {
-	    my $sub_title = $self->doc_sub_title;
-	    $self->doc_sub_title(
-	      ($sub_title ? $sub_title . ', ' : '') . $_->all_text
-	    );
-	  };
-	}
-      );
-    };
-  };
-  return;
-};
-
-
-
-sub _parse_meta_i5 {
-  my $self = shift;
-  my $dom = shift;
-  my $type = shift;
-
-  my $analytic = $dom->at('analytic') || $dom->at('monogr');
-
-  # There is an analytic element
-  if ($analytic) {
-
-    # Get title, subtitle, author, editor
-    my $title     = $analytic->at('h\.title[type=main]');
-    my $sub_title = $analytic->at('h\.title[type=sub]');
-    my $author    = $analytic->at('h\.author');
-    my $editor    = $analytic->at('editor');
-
-    $title     = $title     ? $title->all_text     : undef;
-    $sub_title = $sub_title ? $sub_title->all_text : undef;
-    $author    = $author    ? $author->all_text    : undef;
-    $editor    = $editor    ? $editor->all_text    : undef;
-
-    if ($type eq 'text') {
-      $self->title(_remove_prefix($title, $self->text_sigle)) if $title;
-      $self->sub_title($sub_title) if $sub_title;
-      $self->editor($editor)       if $editor;
-      $self->author($author)       if $author;
+    my $v = $meta->{$_};
+    if (ref $v) {
+      $hash{_k($_)} = $meta->keywords($_);
     }
-    elsif ($type eq 'doc') {
-      $self->doc_title(_remove_prefix($title, $self->doc_sigle)) if $title;
-      $self->doc_sub_title($sub_title) if $sub_title;
-      $self->doc_author($author)       if $author;
-      $self->doc_editor($editor)       if $editor;
-    }
-    elsif ($type eq 'corpus') {
-      $self->corpus_title(_remove_prefix($title, $self->corpus_sigle)) if $title;
-      $self->corpus_sub_title($sub_title) if $sub_title;
-      $self->corpus_author($author)       if $author;
-      $self->corpus_editor($editor)       if $editor;
+    else {
+      $v =~ s/\n/ /g;
+      $v =~ s/\s\s+/ /g;
+      $hash{_k($_)} = $v;
     };
   };
 
-  # Not in analytic
-  if ($type eq 'corpus') {
-    unless ($self->corpus_title) {
-      if (my $title = $dom->at('fileDesc > titleStmt > c\.title')) {
-	$self->corpus_title(_remove_prefix($title->all_text, $self->corpus_sigle))
-	  if $title->all_text;
-      };
-    };
-  }
-
-  # doc title
-  elsif ($type eq 'doc') {
-    unless ($self->doc_title) {
-      if (my $title = $dom->at('fileDesc > titleStmt > d\.title')) {
-	$self->doc_title(_remove_prefix($title->all_text, $self->doc_sigle))
-	  if $title->all_text;
-      };
-    };
-  }
-
-  # text title
-  elsif ($type eq 'text') {
-    unless ($self->title) {
-      if (my $title = $dom->at('fileDesc > titleStmt > t\.title')) {
-	$self->title(_remove_prefix($title->all_text, $self->text_sigle))
-	  if $title->all_text;
-      }
-    };
+  foreach (qw/corpus doc text/) {
+    $hash{$_ . 'Sigle'} = $self->{$_ . '_sigle'};
   };
 
-  # Get PubPlace
-  if (my $place = $dom->at('pubPlace')) {
-    $self->pub_place($place->all_text) if $place->all_text;
-    $self->pub_place_key($place->attr('key')) if $place->attr('key');
-  };
-
-  # Get Publisher
-  if (my $publisher = $dom->at('imprint publisher')) {
-    $self->publisher($publisher->all_text) if $publisher->all_text;
-  };
-
-  # Get text type
-  my $text_desc = $dom->at('textDesc');
-
-  if ($text_desc) {
-    if (my $text_type = $text_desc->at('textType')) {
-      $self->text_type($text_type->all_text) if $text_type->all_text;
-    };
-
-    # Get text domain
-    if (my $text_domain = $text_desc->at('textDomain')) {
-      $self->text_domain($text_domain->all_text) if $text_domain->all_text;
-    };
-
-    # Get text type art
-    if (my $text_type_art = $text_desc->at('textTypeArt')) {
-      $self->text_type_art($text_type_art->all_text) if $text_type_art->all_text;
-    };
-
-    # Get text type art
-    if (my $text_type_ref = $text_desc->at('textTypeRef')) {
-      $self->text_type_ref($text_type_ref->all_text) if $text_type_ref->all_text;
-    };
-  };
-
-  # Availability
-  try {
-    $self->availability(
-      $dom->at('availability')->all_text
-    );
-  };
-
-  # Get pubDate
-  my $pub_date = $dom->find('pubDate[type=year]');
-  $pub_date->each(
-    sub {
-      my $x = shift->parent;
-      my $year = $x->at("pubDate[type=year]");
-      return unless $year;
-
-      $year = $year ? $year->text : 0;
-      my $month = $x->at("pubDate[type=month]");
-      $month = $month ? $month->text : 0;
-      my $day = $x->at("pubDate[type=day]");
-      $day = $day ? $day->text : 0;
-
-      $year  = 0 if $year  !~ /^\d+$/;
-      $month = 0 if $month !~ /^\d+$/;
-      $day   = 0 if $day   !~ /^\d+$/;
-
-      my $date = $year ? ($year < 100 ? '20' . $year : $year) : '0000';
-      $date .= length($month) == 1 ? '0' . $month : $month;
-      $date .= length($day) == 1 ? '0' . $day : $day;
-      $self->pub_date($date);
-    });
-
-  # creatDate
-  my $create_date = $dom->at('creatDate');
-  if ($create_date && $create_date->text) {
-    $create_date = $create_date->all_text;
-    if (index($create_date, '-') > -1) {
-      $self->log->warn("Creation date ranges are not supported");
-      ($create_date) = split /\s*-\s*/, $create_date;
-    }
-
-    $create_date =~ s{^(\d{4})$}{$1\.00};
-    $create_date =~ s{^(\d{4})\.(\d{2})$}{$1\.$2\.00};
-    if ($create_date =~ /^\d{4}\.\d{2}\.\d{2}$/) {
-      $create_date =~ tr/\.//d;
-      $self->creation_date($create_date);
-    };
-  };
-
-  my $text_class = $dom->at('textClass');
-  if ($text_class) {
-    # Get textClasses
-    my @topic;
-
-    $text_class->find("catRef")->each(
-      sub {
-	my ($ign, @ttopic) = split('\.', $_->attr('target'));
-	push(@topic, @ttopic);
-      }
-    );
-    $self->text_class(@topic) if @topic > 0;
-
-    my $kws = $self->keywords;
-    my @keywords = $text_class->find("h\.keywords > keyTerm")->each;
-    push(@$kws, @keywords) if @keywords > 0;
-  };
-
-  if (my $edition_statement = $dom->at('biblFull editionStmt')) {
-    $self->bibl_edition_statement($edition_statement->all_text)
-      if $edition_statement->text;
-  };
-
-  if (my $edition_statement = $dom->at('fileDescl editionStmt')) {
-    $self->file_edition_statement($edition_statement->all_text)
-      if $edition_statement->text;
-  };
-
-  if (my $file_desc = $dom->at('fileDesc')) {
-    if (my $availability = $file_desc->at('publicationStmt > availability')) {
-      $self->license($availability->all_text);
-    };
-  };
-
-  # Some meta data only available in the corpus
-  if ($type eq 'corpus') {
-    if (my $language = $dom->at('profileDesc > langUsage > language[id]')) {
-      $self->language($language->attr('id'));
-    };
-  }
-
-  # Some meta data only reevant from the text
-  elsif ($type eq 'text') {
-
-    if (my $reference = $dom->at('sourceDesc reference[type=complete]')) {
-      if (my $ref_text = $reference->all_text) {
-	$ref_text =~ s!^[a-zA-Z0-9]+\/[a-zA-Z0-9]+\.\d+[\s:]\s*!!;
-	$self->reference($ref_text);
-      };
-    };
-
-    my $column = $dom->at('textDesc > column');
-    $self->text_column($column->all_text) if $column;
-
-    if (my $pages = $dom->at('biblStruct biblScope[type="pp"]')) {
-      $pages = $pages->all_text;
-      if ($pages && $pages =~ m/(\d+)\s*-\s*(\d+)/) {
-	$self->pages($1 . '-' . $2);
-      };
-    };
-  };
+  return \%hash;
 };
 
 
+sub _k {
+  my $x = $_[0];
+  $x =~ s/_(\w)/\U$1\E/g;
+  $x =~ s/id$/ID/gi;
+  return $x;
+};
+
+
+sub to_json {
+  my $self = shift;
+  unless ($self->{tokenizer}) {
+    $self->log->warn('No tokenizer defined');
+    return;
+  };
+
+  return $self->{tokenizer}->to_json;
+};
+
+
+1;
+
+
+__END__
 
 sub to_string {
   my $self = shift;
@@ -660,38 +303,6 @@ sub to_string {
   return $string;
 };
 
-sub _k {
-  my $x = $_[0];
-  $x =~ s/_(\w)/\U$1\E/g;
-  $x =~ s/id$/ID/gi;
-  return $x;
-};
-
-
-sub to_hash {
-  my $self = shift;
-
-  $self->parse unless $self->text_sigle;
-
-  my %hash;
-
-  foreach (@ATTR, @ADVANCED_ATTR, 'store') {
-    if (my $att = $self->$_) {
-      $att =~ s/\n/ /g;
-      $att =~ s/\s\s+/ /g;
-      $hash{_k($_)} = $att;
-    };
-  };
-
-  for (qw/text_class keywords/) {
-    my @array = @{ $self->$_ };
-    next unless @array;
-    $hash{_k($_)} = join(' ', @array);
-  };
-
-  return \%hash;
-};
-
 # Todo: Make this a KoralQuery serializer
 sub to_koral_query {
   my $self = shift;
@@ -700,17 +311,6 @@ sub to_koral_query {
   $hash->{'@type'} = 'koral:corpus';
 #  $hash->{'text'} = $self->primary->data;
 #  my $hash = $self->to_hash;
-};
-
-
-sub to_json {
-  my $self = shift;
-  unless ($self->{tokenizer}) {
-    $self->log->warn('No tokenizer defined');
-    return;
-  };
-
-  return $self->{tokenizer}->to_json;
 };
 
 

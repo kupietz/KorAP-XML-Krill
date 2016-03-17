@@ -13,6 +13,9 @@ lib/KorAP/XML/Index/MultiTerm.pm
 lib/KorAP/XML/Index/MultiTermToken.pm
 lib/KorAP/XML/Index/MultiTermTokenStream.pm
 lib/KorAP/XML/Document/Primary.pm
+lib/KorAP/XML/Meta/Base.pm
+lib/KorAP/XML/Meta/I5.pm
+lib/KorAP/XML/Meta/Sgbr.pm
 lib/KorAP/XML/Annotation/Base.pm
 lib/KorAP/XML/Annotation/Base/Paragraphs.pm
 lib/KorAP/XML/Annotation/Base/Sentences.pm
@@ -76,6 +79,7 @@ t/annotation/xip_dependency.t
 t/annotation/xip_morpho.t
 t/annotation/xip_sentences.t
 t/annotation/koralquery.t
+t/benchmark/parse_document.t
 t/real/bzk.t
 t/real/bzk_2.t
 t/real/goethe.t

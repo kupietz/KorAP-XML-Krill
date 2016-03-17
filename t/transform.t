@@ -80,19 +80,21 @@ like($doc->path, qr!$path/$!, 'Path');
 ok($doc->parse, 'Parse document');
 
 # Metdata
-is($doc->title, 'A', 'title');
-ok(!$doc->sub_title, 'subTitle');
+my $meta = $doc->meta;
+is($meta->{title}, 'A', 'title');
+ok(!$meta->{sub_title}, 'subTitle');
 
 is($doc->text_sigle, 'WPD_AAA.00001', 'ID');
 is($doc->corpus_sigle, 'WPD', 'corpusID');
-is($doc->pub_date, '20050328', 'pubDate');
-is($doc->pub_place, 'URL:http://de.wikipedia.org', 'pubPlace');
-is($doc->text_class->[0], 'freizeit-unterhaltung', 'TextClass');
-is($doc->text_class->[1], 'reisen', 'TextClass');
-is($doc->text_class->[2], 'wissenschaft', 'TextClass');
-is($doc->text_class->[3], 'populaerwissenschaft', 'TextClass');
-ok(!$doc->text_class->[4], 'TextClass');
-is($doc->author, 'Ruru; Jens.Ol; Aglarech; u.a.', 'author');
+
+is($meta->{pub_date}, '20050328', 'pubDate');
+is($meta->{pub_place}, 'URL:http://de.wikipedia.org', 'pubPlace');
+is($meta->{text_class}->[0], 'freizeit-unterhaltung', 'TextClass');
+is($meta->{text_class}->[1], 'reisen', 'TextClass');
+is($meta->{text_class}->[2], 'wissenschaft', 'TextClass');
+is($meta->{text_class}->[3], 'populaerwissenschaft', 'TextClass');
+ok(!$meta->{text_class}->[4], 'TextClass');
+is($meta->{author}, 'Ruru; Jens.Ol; Aglarech; u.a.', 'author');
 
 # Get tokens
 use_ok('KorAP::XML::Tokenizer');

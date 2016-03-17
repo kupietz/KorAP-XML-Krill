@@ -98,14 +98,16 @@ for archive processing.
 Defaults to C<0>.
 This is I<experimental>.
 
-=item B<--human|-m>
+=item B<--meta|-m>
 
-Represent the data in an alternative human readible format.
-This is I<deprecated>.
+Define the metadata parser to use. Defaults to C<I5>.
+Metadata parsers can be defined in the C<KorAP::XML::Meta> namespace.
+This is I<experimental>.
 
 =item B<--pretty|-y>
 
 Pretty print JSON output. Defaults to C<false>.
+This is I<deprecated>.
 
 =item B<--gzip|-z>
 

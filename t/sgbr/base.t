@@ -14,7 +14,7 @@ ok(my $doc = KorAP::XML::Krill->new(
   path => $path . '/'
 ), 'Create Document');
 
-ok($doc->parse, 'Parse document');
+ok($doc->parse('Sgbr'), 'Parse document');
 
 ok(my $tokens = KorAP::XML::Tokenizer->new(
   path => $doc->path,

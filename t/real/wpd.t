@@ -27,19 +27,20 @@ is($doc->text_sigle, 'WPD_AAA.00001', 'Correct text sigle');
 is($doc->doc_sigle, 'WPD_AAA', 'Correct document sigle');
 is($doc->corpus_sigle, 'WPD', 'Correct corpus sigle');
 
-is($doc->title, 'A', 'Title');
-is($doc->pub_place, 'URL:http://de.wikipedia.org', 'PubPlace');
-is($doc->pub_date, '20050328', 'Creation Date');
-ok(!$doc->sub_title, 'SubTitle');
-is($doc->author, 'Ruru; Jens.Ol; Aglarech; u.a.', 'Author');
+my $meta = $doc->meta;
+is($meta->{title}, 'A', 'Title');
+is($meta->{pub_place}, 'URL:http://de.wikipedia.org', 'PubPlace');
+is($meta->{pub_date}, '20050328', 'Creation Date');
+ok(!$meta->{sub_title}, 'SubTitle');
+is($meta->{author}, 'Ruru; Jens.Ol; Aglarech; u.a.', 'Author');
 
-ok(!$doc->doc_title, 'Correct Doc title');
-ok(!$doc->doc_sub_title, 'Correct Doc Sub title');
-ok(!$doc->doc_author, 'Correct Doc author');
-ok(!$doc->doc_editor, 'Correct Doc editor');
+ok(!$meta->{doc_title}, 'Correct Doc title');
+ok(!$meta->{doc_sub_title}, 'Correct Doc Sub title');
+ok(!$meta->{doc_author}, 'Correct Doc author');
+ok(!$meta->{doc_editor}, 'Correct Doc editor');
 
-ok(!$doc->corpus_title, 'Correct Corpus title');
-ok(!$doc->corpus_sub_title, 'Correct Corpus Sub title');
+ok(!$meta->{corpus_title}, 'Correct Corpus title');
+ok(!$meta->{corpus_sub_title}, 'Correct Corpus Sub title');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');

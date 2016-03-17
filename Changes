@@ -1,7 +1,13 @@
+0.15 2016-03-17
+        - Modularized metadata handling.
+        - Simplified metadata handling.
+	- Added --meta option to script.
+	- Removed deprecated --human option from script.
+
 0.14 2016-03-15
         - Renamed ::Index to ::Annotate and ::Field to ::Index.
 	- Renamed 'allow' to 'anno' as parameters of the script. 
-	- Added readme
+	- Added readme.
 
 0.13 2016-03-10
         - Removed korapxml2krill_dir.

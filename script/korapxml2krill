@@ -46,9 +46,12 @@ use Parallel::ForkManager;
 #
 # 2016/02/27
 # - Added extract function
+#
+# 2016/03/17
+# - Added meta switch
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2016/03/02';
+our $LAST_CHANGE = '2016/03/17';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -63,13 +66,15 @@ if ($ARGV[0] && index($ARGV[0], '-') != 0) {
 };
 
 my (@skip, @sigle);
+my $text;
 
 # Parse options from the command line
 GetOptions(
   'input|i=s'   => \(my $input),
   'output|o=s'  => \(my $output),
   'overwrite|w' => \(my $overwrite),
-  'human|m'     => \(my $text),
+#  'human|m'     => \(my $text),
+  'meta|m=s'    => \(my $meta),
   'token|t=s'   => \(my $token_base),
   'gzip|z'      => \(my $gzip),
   'skip|s=s'    => \@skip,
@@ -136,7 +141,8 @@ sub write_file {
   my $call = 'perl ' . $LOCAL . '/korapxml2krill -i ' .
     $anno . ' -o ' . $output . '/' . $file . '.json';
   $call .= '.gz -z' if $gzip;
-  $call .= ' -m' if $text;
+#  $call .= ' -m' if $text;
+  $call .= ' -m ' . $meta if $meta;
   $call .= ' -w' if $overwrite;
   $call .= ' -t ' . $token_base if $token_base;
   $call .= ' -l ' . $log_level if $log_level;
@@ -185,7 +191,10 @@ unless ($cmd) {
 
   # Create and parse new document
   $input =~ s{([^/])$}{$1/};
-  my $doc = KorAP::XML::Krill->new( path => $input );
+  my $doc = KorAP::XML::Krill->new(
+    path => $input,
+    meta_type => ($meta // 'I5')
+  );
 
   unless ($doc->parse) {
     $log->warn($output . " can't be processed - no document data");
@@ -278,9 +287,7 @@ unless ($cmd) {
   };
 
   my $file;
-
-  my $print_text = $text ? $tokens->to_string($primary) :
-    ($pretty ? $tokens->to_pretty_json($primary) : $tokens->to_json($primary));
+  my $print_text = ($pretty ? $tokens->to_pretty_json($primary) : $tokens->to_json($primary));
 
   if ($output) {
 
@@ -597,14 +604,16 @@ for archive processing.
 Defaults to C<0>.
 This is I<experimental>.
 
-=item B<--human|-m>
+=item B<--meta|-m>
 
-Represent the data in an alternative human readible format.
-This is I<deprecated>.
+Define the metadata parser to use. Defaults to C<I5>.
+Metadata parsers can be defined in the C<KorAP::XML::Meta> namespace.
+This is I<experimental>.
 
 =item B<--pretty|-y>
 
 Pretty print JSON output. Defaults to C<false>.
+This is I<deprecated>.
 
 =item B<--gzip|-z>
 
