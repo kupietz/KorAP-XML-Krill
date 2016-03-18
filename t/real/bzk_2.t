@@ -46,7 +46,7 @@ ok(!$meta->{text_class}->[2], 'Correct Text Class');
 
 
 is($meta->{creation_date}, '19590219', 'Creation date');
-is($meta->{license}, 'ACA-NC-LC', 'License');
+is($meta->{availability}, 'ACA-NC-LC', 'License');
 ok(!$meta->{pages}, 'Pages');
 
 ok(!$meta->{file_edition_statement}, 'File Statement');
@@ -112,7 +112,7 @@ is($output->{textDomain}, 'Politik', 'Correct Text Domain');
 is($output->{textClass}, 'politik ausland', 'Correct Text Domain');
 
 is($output->{creationDate}, '19590219', 'Creation date');
-is($output->{license}, 'ACA-NC-LC', 'License');
+is($output->{availability}, 'ACA-NC-LC', 'License');
 ok(!exists $output->{pages}, 'Pages');
 ok(!exists $output->{fileEditionStatement}, 'File Statement');
 ok(!exists $output->{biblEditionStatement}, 'Bibl Statement');

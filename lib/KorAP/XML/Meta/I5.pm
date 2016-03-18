@@ -4,9 +4,7 @@ use Try::Tiny;
 
 # Parse meta data
 sub parse {
-  my $self = shift;
-  my $dom = shift;
-  my $type = shift;
+  my ($self, $dom, $type) = @_;
 
   my $analytic = $dom->at('analytic') || $dom->at('monogr');
 
@@ -24,18 +22,23 @@ sub parse {
     $author    = $author    ? $author->all_text    : undef;
     $editor    = $editor    ? $editor->all_text    : undef;
 
+    # Text meta data
     if ($type eq 'text') {
       $self->{title} =_remove_prefix($title, $self->text_sigle) if $title;
       $self->{sub_title} = $sub_title if $sub_title;
       $self->{editor} = $editor       if $editor;
       $self->{author} = $author       if $author;
     }
+
+    # Doc meta data
     elsif ($type eq 'doc') {
       $self->{doc_title} = _remove_prefix($title, $self->doc_sigle) if $title;
       $self->{doc_sub_title} = $sub_title if $sub_title;
       $self->{doc_author} = $author       if $author;
       $self->{doc_editor} = $editor       if $editor;
     }
+
+    # Corpus meta data
     elsif ($type eq 'corpus') {
       $self->{corpus_title} = _remove_prefix($title, $self->corpus_sigle) if $title;
       $self->{corpus_sub_title} = $sub_title if $sub_title;
@@ -45,11 +48,17 @@ sub parse {
   };
 
   # Not in analytic
+  my $title;
   if ($type eq 'corpus') {
+
+    # Corpus title not yet given
     unless ($self->{corpus_title}) {
-      if (my $title = $dom->at('fileDesc > titleStmt > c\.title')) {
-	$self->{corpus_title} = _remove_prefix($title->all_text, $self->corpus_sigle)
-	  if $title->all_text;
+      if ($title = $dom->at('fileDesc > titleStmt > c\.title')) {
+	$title = $title->all_text;
+
+	if ($title) {
+	  $self->{corpus_title} = _remove_prefix($title, $self->corpus_sigle);
+	};
       };
     };
   }
@@ -57,9 +66,12 @@ sub parse {
   # doc title
   elsif ($type eq 'doc') {
     unless ($self->{doc_title}) {
-      if (my $title = $dom->at('fileDesc > titleStmt > d\.title')) {
-	$self->{doc_title} = _remove_prefix($title->all_text, $self->doc_sigle)
-	  if $title->all_text;
+      if ($title = $dom->at('fileDesc > titleStmt > d\.title')) {
+	$title = $title->all_text;
+
+	if ($title) {
+	  $self->{doc_title} = _remove_prefix($title, $self->doc_sigle);
+	};
       };
     };
   }
@@ -67,70 +79,78 @@ sub parse {
   # text title
   elsif ($type eq 'text') {
     unless ($self->{title}) {
-      if (my $title = $dom->at('fileDesc > titleStmt > t\.title')) {
-	$self->{title} = _remove_prefix($title->all_text, $self->text_sigle)
-	  if $title->all_text;
+      if ($title = $dom->at('fileDesc > titleStmt > t\.title')) {
+	$title = $title->all_text;
+	if ($title) {
+	  $self->{title} = _remove_prefix($title, $self->text_sigle);
+	};
       }
     };
   };
 
+  my $temp;
+
   # Get PubPlace
-  if (my $place = $dom->at('pubPlace')) {
-    $self->{pub_place} = $place->all_text if $place->all_text;
-    $self->{pub_place_key} = $place->attr('key') if $place->attr('key');
+  if ($temp = $dom->at('pubPlace')) {
+    my $place_attr = $temp->attr('key');
+    $self->{pub_place_key} = $place_attr if $place_attr;
+    $temp = $temp->all_text;
+    $self->{pub_place} = $temp if $temp;
   };
 
   # Get Publisher
-  if (my $publisher = $dom->at('imprint publisher')) {
-    $self->{publisher} = $publisher->all_text if $publisher->all_text;
+  if ($temp = $dom->at('imprint publisher')) {
+    $temp = $temp->all_text;
+    $self->{publisher} = $temp if $temp;
   };
 
   # Get text type
-  my $text_desc = $dom->at('textDesc');
+  $temp = $dom->at('textDesc');
+  my $temp_2;
 
-  if ($text_desc) {
-    if (my $text_type = $text_desc->at('textType')) {
-      $self->{text_type} = $text_type->all_text if $text_type->all_text;
+  if ($temp) {
+    if ($temp_2 = $temp->at('textType')) {
+      $temp_2 = $temp_2->all_text;
+      $self->{text_type} = $temp_2 if $temp_2;
     };
 
     # Get text domain
-    if (my $text_domain = $text_desc->at('textDomain')) {
-      $self->{text_domain} = $text_domain->all_text if $text_domain->all_text;
+    if ($temp_2 = $temp->at('textDomain')) {
+      $temp_2 = $temp_2->all_text;
+      $self->{text_domain} = $temp_2 if $temp_2;
     };
 
     # Get text type art
-    if (my $text_type_art = $text_desc->at('textTypeArt')) {
-      $self->{text_type_art} = $text_type_art->all_text if $text_type_art->all_text;
+    if ($temp_2 = $temp->at('textTypeArt')) {
+      $temp_2 = $temp_2->all_text;
+      $self->{text_type_art} = $temp_2 if $temp_2;
     };
 
-    # Get text type art
-    if (my $text_type_ref = $text_desc->at('textTypeRef')) {
-      $self->{text_type_ref} = $text_type_ref->all_text if $text_type_ref->all_text;
+    # Get text type ref
+    if ($temp_2 = $temp->at('textTypeRef')) {
+      $temp_2 = $temp_2->all_text;
+      $self->{text_type_ref} = $temp_2 if $temp_2;
     };
   };
 
-  # Availability
-  try {
-    $self->{availability} = $dom->at('availability')->all_text;
-  };
+  state $NR_RE = qr/^\d+$/;
+  state $REF_RE = qr!^[a-zA-Z0-9]+\/[a-zA-Z0-9]+\.\d+[\s:]\s*!;
 
   # Get pubDate
   my $pub_date = $dom->find('pubDate[type=year]');
   $pub_date->each(
     sub {
       my $x = shift->parent;
-      my $year = $x->at("pubDate[type=year]");
-      return unless $year;
-
+      my $year = $x->at('pubDate[type=year]') or return;
       $year = $year ? $year->text : 0;
-      my $month = $x->at("pubDate[type=month]");
+      my $month = $x->at('pubDate[type=month]');
       $month = $month ? $month->text : 0;
-      my $day = $x->at("pubDate[type=day]");
+      my $day = $x->at('pubDate[type=day]');
       $day = $day ? $day->text : 0;
 
-      $year  = 0 if $year  !~ /^\d+$/;
-      $month = 0 if $month !~ /^\d+$/;
-      $day   = 0 if $day   !~ /^\d+$/;
+      $year  = 0 if $year  !~ $NR_RE;
+      $month = 0 if $month !~ $NR_RE;
+      $day   = 0 if $day   !~ $NR_RE;
 
       my $date = $year ? ($year < 100 ? '20' . $year : $year) : '0000';
       $date .= length($month) == 1 ? '0' . $month : $month;
@@ -145,22 +165,24 @@ sub parse {
     if (index($create_date, '-') > -1) {
       $self->log->warn("Creation date ranges are not supported");
       ($create_date) = split /\s*-\s*/, $create_date;
-    }
-
-    $create_date =~ s{^(\d{4})$}{$1\.00};
-    $create_date =~ s{^(\d{4})\.(\d{2})$}{$1\.$2\.00};
-    if ($create_date =~ /^\d{4}\.\d{2}\.\d{2}$/) {
+    };
+    unless ($create_date =~ s{^(\d{4})$}{$1\.00\.00}) {
+      unless ($create_date =~ s{^(\d{4})\.(\d{2})$}{$1\.$2\.00}) {
+	$create_date =~ /^\d{4}\.\d{2}\.\d{2}$/;
+      };
+    };
+    if ($create_date =~ /^\d{4}(?:\.\d{2}(?:\.\d{2})?)?$/) {
       $create_date =~ tr/\.//d;
       $self->{creation_date} = $create_date;
     };
   };
 
-  my $text_class = $dom->at('textClass');
-  if ($text_class) {
+  $temp = $dom->at('textClass');
+  if ($temp) {
     # Get textClasses
     my @topic;
 
-    $text_class->find("catRef")->each(
+    $temp->find("catRef")->each(
       sub {
 	my ($ign, @ttopic) = split('\.', $_->attr('target'));
 	push(@topic, @ttopic);
@@ -169,49 +191,52 @@ sub parse {
     $self->{text_class} = [@topic] if @topic > 0;
 
     my $kws = $self->{keywords};
-    my @keywords = $text_class->find("h\.keywords > keyTerm")->each;
+    my @keywords = $temp->find("h\.keywords > keyTerm")->each;
     push(@$kws, @keywords) if @keywords > 0;
   };
 
-  if (my $edition_statement = $dom->at('biblFull editionStmt')) {
-    $self->{bibl_edition_statement} = $edition_statement->all_text
-      if $edition_statement->text;
+  if ($temp = $dom->at('biblFull editionStmt')) {
+    $temp = $temp->all_text;
+    $self->{bibl_edition_statement} = $temp if $temp;
   };
 
-  if (my $edition_statement = $dom->at('fileDescl editionStmt')) {
-    $self->{file_edition_statement} = $edition_statement->all_text
-      if $edition_statement->text;
+  if ($temp = $dom->at('fileDescl editionStmt')) {
+    $temp = $temp->all_text;
+    $self->{file_edition_statement} = $temp if $temp;
   };
 
-  if (my $file_desc = $dom->at('fileDesc')) {
-    if (my $availability = $file_desc->at('publicationStmt > availability')) {
-      $self->{license} = $availability->all_text;
+  if ($temp = $dom->at('fileDesc')) {
+    if (my $availability = $temp->at('publicationStmt > availability')) {
+      $temp = $availability->all_text;
+      $self->{availability} = $temp if $temp;
     };
   };
 
   # Some meta data only available in the corpus
   if ($type eq 'corpus') {
-    if (my $language = $dom->at('profileDesc > langUsage > language[id]')) {
-      $self->{language} = $language->attr('id');
+    if ($temp = $dom->at('profileDesc > langUsage > language[id]')) {
+      $self->{language} = $temp->attr('id') if $temp->attr('id');
     };
   }
 
   # Some meta data only reevant from the text
   elsif ($type eq 'text') {
 
-    if (my $reference = $dom->at('sourceDesc reference[type=complete]')) {
-      if (my $ref_text = $reference->all_text) {
-	$ref_text =~ s!^[a-zA-Z0-9]+\/[a-zA-Z0-9]+\.\d+[\s:]\s*!!;
+    if ($temp = $dom->at('sourceDesc reference[type=complete]')) {
+      if (my $ref_text = $temp->all_text) {
+	$ref_text =~ s!$REF_RE!!;
 	$self->{reference} = $ref_text;
       };
     };
 
-    my $column = $dom->at('textDesc > column');
-    $self->{text_column} = $column->all_text if $column;
+    $temp = $dom->at('textDesc > column');
+    if ($temp && ($temp = $temp->all_text)) {
+      $self->{text_column} = $temp;
+    };
 
-    if (my $pages = $dom->at('biblStruct biblScope[type="pp"]')) {
-      $pages = $pages->all_text;
-      if ($pages && $pages =~ m/(\d+)\s*-\s*(\d+)/) {
+    if ($temp = $dom->at('biblStruct biblScope[type=pp]')) {
+      $temp = $temp->all_text;
+      if ($temp && $temp =~ m/(\d+)\s*-\s*(\d+)/) {
 	$self->{pages} = $1 . '-' . $2;
       };
     };
@@ -220,55 +245,19 @@ sub parse {
 
 
 sub _remove_prefix {
-#   return $_[0];
-
   # This may render some titles wrong, e.g. 'VDI nachrichten 2014' ...
-  my $title = shift;
-  my $prefix = shift or return $title;
+  return $_[0] unless $_[1];
+
+  my ($title, $prefix) = @_;
   $prefix =~ tr!_!/!;
   if (index($title, $prefix) == 0) {
     $title = substr($title, length($prefix));
     $title =~ s/^\s+//;
     $title =~ s/\s+$//;
   };
+
   return $title;
 };
-
-
-#sub author {
-#  my $self = shift;
-#
-#  # Set authors
-#  if ($_[0]) {
-#    return $self->{authors} = [
-#      grep { $_ !~ m{^\s*u\.a\.\s*$} } split(/;\s+/, shift())
-#    ];
-#  }
-#  return ($self->{authors} // []);
-#};
-#sub text_class {
-#  my $self = shift;
-#  if ($_[0]) {
-#    return $self->{topics} = [ @_ ];
-#  };
-#  return ($self->{topics} //= []);
-#};
-
-#sub text_class_string {
-#  return join ' ', @{shift->text_class};
-#}
-
-#sub keywords {
-#  my $self = shift;
-#  if ($_[0]) {
-#    return $self->{keywords} = [ @_ ];
-#  };
-#  return ($self->{keywords} //= []);
-#};
-
-#sub keywords_string {
-#  return join ' ', @{shift->keywords};
-#}
 
 
 1;

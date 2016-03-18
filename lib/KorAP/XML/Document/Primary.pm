@@ -13,7 +13,7 @@ our $QUOT_RE = qr/[„“”]/;
 # Constructor
 sub new {
   my $class = shift;
-  bless [shift()], $class;
+  bless [$_[0]], $class;
 };
 
 
@@ -21,15 +21,14 @@ sub new {
 sub data {
   my ($self, $from, $to) = @_;
 
+  # Get range data from primary
   return substr($self->[0], $from) if $from && !$to;
 
+  # Get full data
   return $self->[0] unless $to;
 
-  my $substr = substr($self->[0], $from, $to - $from);
-
-  return $substr if defined $substr;
-
-  return;
+  # Return substring
+  return (substr($self->[0], $from, $to - $from) // undef);
 };
 
 
@@ -95,8 +94,7 @@ sub xip2chars {
 # Calculate character offsets
 sub _calc_chars {
   use bytes;
-  my $self = shift;
-  my $text = shift;
+  my ($self, $text) = @_;
 
   tie my @array, 'Packed::Array';
 

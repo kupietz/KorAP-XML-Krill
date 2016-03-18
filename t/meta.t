@@ -310,7 +310,7 @@ ok(!$meta->{text_type_ref}, 'text type ref');
 ok(!$meta->{text_column}, 'text column');
 ok(!$meta->{text_domain}, 'text domain');
 ok(!$meta->{creation_date}, 'creation date');
-ok(!$meta->{license}, 'License');
+ok(!$meta->{availability}, 'License');
 ok(!$meta->{pages}, 'Pages');
 ok(!$meta->{file_edition_statement}, 'file edition statement');
 ok(!$meta->{bibl_edition_statement}, 'bibl edition statement');
@@ -360,7 +360,7 @@ ok(!$meta->{text_column}, 'text column');
 ok(!$meta->{text_domain}, 'text domain');
 
 is($meta->{creation_date}, '20070707', 'creation date');
-is($meta->{license}, 'CC-BY-SA', 'License');
+is($meta->{availability}, 'CC-BY-SA', 'License');
 ok(!$meta->{pages}, 'Pages');
 ok(!$meta->{file_edition_statement}, 'file edition statement');
 ok(!$meta->{bibl_edition_statement}, 'bibl edition statement');

@@ -32,9 +32,12 @@ has log => sub {
   return $log;
 };
 
+# Constructor
 sub new {
   my $class = shift;
   my $self = bless { @_ }, $class;
+
+  # Path is defined
   if (exists $self->{path}) {
     $self->{path} = rel2abs($self->{path});
     if ($self->{path} !~ m!\/$!) {
@@ -50,8 +53,10 @@ sub parse {
   my $self = shift;
   my $meta_data_type = $self->meta_type;
 
-  my $data_xml = $self->path . 'data.xml';
+  state $ENC_RE = qr/^[^>]+encoding\s*=\s*(["'])([^\1]+?)\1/o;
 
+  # Path to primary
+  my $data_xml = $self->path . 'data.xml';
   my ($rt, $error, $file);
 
   my $unable = 'Unable to parse document ' . $self->path;
@@ -99,12 +104,11 @@ sub parse {
 
   # Get primary data
   my $pd = $rt->{text};
-  if ($pd) {
-    $self->{pd} = KorAP::XML::Document::Primary->new($pd);
-  }
-  else {
-    croak $unable;
-  };
+
+  croak $unable unless $pd;
+
+  # Associate primary data
+  $self->{pd} = KorAP::XML::Document::Primary->new($pd);
 
   my @path = grep { $_ } splitdir($self->path);
   my @header;
@@ -116,22 +120,27 @@ sub parse {
     pop @path;
   };
 
-
+  # Get metadata class and create an object
   my $meta_class = 'KorAP::XML::Meta::' . $meta_data_type;
   my $meta;
 
   if ($meta_class->can('new') || eval("require $meta_class; 1;")) {
     $meta = $meta_class->new(
-      log => $self->log,
+      log          => $self->log,
       corpus_sigle => $self->corpus_sigle,
       doc_sigle    => $self->doc_sigle,
       text_sigle   => $self->text_sigle
     );
 
+    # Associate meta object
     $self->{meta} = $meta;
   };
 
-  return unless $meta;
+  unless ($meta) {
+    $self->log->warn(
+      "Metadata object for $meta_data_type not initializable"
+    );
+  };
 
   my @type = qw/corpus doc text/;
   foreach (@header) {
@@ -142,19 +151,13 @@ sub parse {
 
     # Slurp data and probably decode
     my $slurp = b($_)->slurp;
-    $slurp =~ /^[^>]+encoding\s*=\s*(["'])([^\1]+?)\1/o;
+    $slurp =~ $ENC_RE;
     my $file = $slurp->decode($2 // 'UTF-8');
 
     # Get DOM
     my $dom = Mojo::DOM->new($file);
 
-    # Choose which metadata parser to use
-#    if ($dom->at('idsHeader') || $dom->at('idsheader')) {
-#      $self->_parse_meta_i5($dom, $type);
-#    }
-#    else {
-#      $self->_parse_meta_tei($dom, $type);
-#    };
+    # Parse object based on DOM
     $meta->parse($dom, $type);
   };
 
