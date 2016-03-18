@@ -95,7 +95,7 @@ This is I<deprecated>.
 
 Define the number of concurrent jobs in seperated forks
 for archive processing.
-Defaults to C<0>.
+Defaults to C<0> (everything runs in a single process).
 This is I<experimental>.
 
 =item B<--meta|-m>
@@ -113,6 +113,27 @@ This is I<deprecated>.
 
 Compress the output.
 Expects a defined C<output> file in single processing.
+
+=item B<--cache|-c>
+
+File to mmap a cache (using L<Cache::FastMmap>).
+Defaults to C<korapxml2krill.cache> in the calling directory.
+
+=item B<--cache-size|-cs>
+
+Size of the cache. Defaults to C<50m>.
+
+=item B<--cache-init|-ci>
+
+Initialize cache file.
+Can be flagged using C<--no-cache-init> as well.
+Defaults to C<true>.
+
+=item B<--cache-delete|-cd>
+
+Delete cache file after processing.
+Can be flagged using C<--no-cache-delete> as well.
+Defaults to C<true>.
 
 =item B<--sigle|-sg>
 

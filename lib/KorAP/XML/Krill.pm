@@ -10,6 +10,7 @@ use KorAP::XML::Document::Primary;
 use KorAP::XML::Tokenizer;
 use Log::Log4perl;
 use KorAP::XML::Log;
+use Cache::FastMmap;
 use Mojo::DOM;
 use Data::Dumper;
 use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
@@ -18,11 +19,12 @@ use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 #       Due to the kind of processing, processed metadata may be stored in
 #       a multiprocess cache instead.
 
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 has 'path';
 has [qw/text_sigle doc_sigle corpus_sigle/];
 has 'meta_type' => 'I5';
+has 'cache';
 
 has log => sub {
   if(Log::Log4perl->initialized()) {
@@ -129,7 +131,8 @@ sub parse {
       log          => $self->log,
       corpus_sigle => $self->corpus_sigle,
       doc_sigle    => $self->doc_sigle,
-      text_sigle   => $self->text_sigle
+      text_sigle   => $self->text_sigle,
+      cache        => $self->cache
     );
 
     # Associate meta object
@@ -147,6 +150,9 @@ sub parse {
     # Get corpus, doc and text meta data
     my $type = shift(@type);
 
+    # Check for cache
+    next if $meta->is_cached($type);
+
     next unless -e $_;
 
     # Slurp data and probably decode
@@ -159,6 +165,7 @@ sub parse {
 
     # Parse object based on DOM
     $meta->parse($dom, $type);
+    $meta->do_cache($type);
   };
 
   return $self;
@@ -239,10 +246,7 @@ sub to_hash {
 
   # Get meta object
   my $meta = $self->meta;
-  foreach (keys %$meta) {
-
-    # Ignore private keys
-    next if index($_, '_') == 0;
+  foreach ($meta->keys) {
 
     my $v = $meta->{$_};
     if (ref $v) {

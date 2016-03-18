@@ -33,11 +33,15 @@ sub text_sigle {
   $_[0]->{_text_sigle};
 };
 
+sub cache {
+  $_[0]->{_cache};
+}
+
 sub new {
   my $class = shift;
   my %hash = @_;
   my $copy = {};
-  foreach (qw/log corpus_sigle doc_sigle text_sigle/) {
+  foreach (qw/log cache corpus_sigle doc_sigle text_sigle/) {
     $copy->{'_' . $_} = $hash{$_};
   };
 
@@ -49,5 +53,60 @@ sub keywords {
   return join(' ', @{$self->{$_[0]} // []});
 };
 
+# Check if cached
+sub is_cached {
+  my ($self, $type) = @_;
+
+  return if $type eq 'text';
+  return unless $self->cache;
+
+  my $value;
+  my $cache = $self->cache;
+  if ($type eq 'corpus') {
+    $value = $cache->get($self->corpus_sigle);
+  }
+  elsif ($type eq 'doc') {
+    $value = $cache->get($self->doc_sigle);
+  };
+
+  if ($value) {
+    foreach (grep {index($_, '_') != 0 } keys %$value) {
+      $self->{$_} = $value->{$_};
+    };
+    return 1;
+  };
+
+  return;
+};
+
+sub keys {
+  my $self = shift;
+  return grep {index($_, '_') != 0 } keys %$self;
+};
+
+sub do_cache {
+  my ($self, $type) = @_;
+
+  return if $type eq 'text';
+  return unless $self->cache;
+
+  my %value;
+  foreach ($self->keys) {
+    $value{$_} = $self->{$_};
+  };
+
+  my $cache = $self->cache;
+
+  if ($type eq 'corpus') {
+    $cache->set($self->corpus_sigle, \%value);
+    return 1;
+  }
+  elsif ($type eq 'doc') {
+    $cache->set($self->doc_sigle, \%value);
+    return 1;
+  };
+
+  return 0;
+};
 
 1;

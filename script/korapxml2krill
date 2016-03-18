@@ -9,6 +9,7 @@ use Benchmark qw/:hireswallclock/;
 use IO::Compress::Gzip qw/$GzipError/;
 use Log::Log4perl;
 use Pod::Usage;
+use Cache::FastMmap;
 use Directory::Iterator;
 use KorAP::XML::Krill;
 use KorAP::XML::Archive;
@@ -49,6 +50,9 @@ use Parallel::ForkManager;
 #
 # 2016/03/17
 # - Added meta switch
+#
+# 2016/03/18
+# - Added meta data caching
 # ----------------------------------------------------------
 
 our $LAST_CHANGE = '2016/03/17';
@@ -73,12 +77,15 @@ GetOptions(
   'input|i=s'   => \(my $input),
   'output|o=s'  => \(my $output),
   'overwrite|w' => \(my $overwrite),
-#  'human|m'     => \(my $text),
   'meta|m=s'    => \(my $meta),
   'token|t=s'   => \(my $token_base),
   'gzip|z'      => \(my $gzip),
   'skip|s=s'    => \@skip,
   'sigle|sg=s'  => \@sigle,
+  'cache|c=s'   => \(my $cache_file = 'korapxml2krill.cache'),
+  'cache-size|cs=s'   => \(my $cache_size = '50m'),
+  'cache-delete|cd!' => \(my $cache_delete = 1),
+  'cache-init|ci!'   => \(my $cache_init = 1),
   'log|l=s'     => \(my $log_level = 'ERROR'),
   'anno|a=s'    => \(my @anno),
   'primary|p!'  => \(my $primary),
@@ -141,11 +148,14 @@ sub write_file {
   my $call = 'perl ' . $LOCAL . '/korapxml2krill -i ' .
     $anno . ' -o ' . $output . '/' . $file . '.json';
   $call .= '.gz -z' if $gzip;
-#  $call .= ' -m' if $text;
   $call .= ' -m ' . $meta if $meta;
   $call .= ' -w' if $overwrite;
   $call .= ' -t ' . $token_base if $token_base;
   $call .= ' -l ' . $log_level if $log_level;
+  $call .= ' -c ' . $cache_file;
+  $call .= ' -cs ' . $cache_size;
+  $call .= ' --no-cache-delete'; # Don't delete the cache
+  $call .= ' --no-cache-init'; # Don't initialize the cache
   $call .= ' --no-primary ' if $primary;
   $call .= ' -y ' . $pretty if $pretty;
   $call .= ' -a ' . $_ foreach @anno;
@@ -166,7 +176,6 @@ unless ($cmd) {
 
   my %skip;
   $skip{lc($_)} = 1 foreach @skip;
-
 
   # Ignore processing
   if (!$overwrite && $output && -e $output) {
@@ -193,7 +202,12 @@ unless ($cmd) {
   $input =~ s{([^/])$}{$1/};
   my $doc = KorAP::XML::Krill->new(
     path => $input,
-    meta_type => ($meta // 'I5')
+    meta_type => ($meta // 'I5'),
+    cache => Cache::FastMmap->new(
+      share_file => $cache_file,
+      cache_size => $cache_size,
+      init_file => $cache_init
+    )
   );
 
   unless ($doc->parse) {
@@ -306,6 +320,9 @@ unless ($cmd) {
     print $print_text . "\n";
   };
 
+  # Delete cache file
+  unlink($cache_file) if $cache_delete;
+
   stop_time;
 }
 
@@ -374,6 +391,15 @@ elsif ($cmd eq 'archive') {
 
   my $t;
   print "Reading data ...\n";
+
+  unless (Cache::FastMmap->new(
+    share_file => $cache_file,
+    cache_size => $cache_size,
+    init_file => $cache_init
+  )) {
+    print "Unable to intialize cache '$cache_file'\n\n";
+    exit(1);
+  };
 
   # Input is a directory
   if (-d $input) {
@@ -492,6 +518,9 @@ elsif ($cmd eq 'archive') {
 
   $pool->wait_all_children;
 
+  # Delete cache file
+  unlink($cache_file) if $cache_delete;
+
   print "Done.\n";
   print timestr(timediff(Benchmark->new, $t))."\n\n";
 }
@@ -601,7 +630,7 @@ This is I<deprecated>.
 
 Define the number of concurrent jobs in seperated forks
 for archive processing.
-Defaults to C<0>.
+Defaults to C<0> (everything runs in a single process).
 This is I<experimental>.
 
 =item B<--meta|-m>
@@ -619,6 +648,27 @@ This is I<deprecated>.
 
 Compress the output.
 Expects a defined C<output> file in single processing.
+
+=item B<--cache|-c>
+
+File to mmap a cache (using L<Cache::FastMmap>).
+Defaults to C<korapxml2krill.cache> in the calling directory.
+
+=item B<--cache-size|-cs>
+
+Size of the cache. Defaults to C<50m>.
+
+=item B<--cache-init|-ci>
+
+Initialize cache file.
+Can be flagged using C<--no-cache-init> as well.
+Defaults to C<true>.
+
+=item B<--cache-delete|-cd>
+
+Delete cache file after processing.
+Can be flagged using C<--no-cache-delete> as well.
+Defaults to C<true>.
 
 =item B<--sigle|-sg>
 
