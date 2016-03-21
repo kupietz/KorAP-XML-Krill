@@ -19,8 +19,8 @@ ok($doc->parse, 'Parse document');
 like($doc->path, qr!$path/!, 'Path');
 
 # Metdata
-is($doc->text_sigle, 'Corpus_Doc.0001', 'ID-text');
-is($doc->doc_sigle, 'Corpus_Doc', 'ID-doc');
+is($doc->text_sigle, 'Corpus/Doc/0001', 'ID-text');
+is($doc->doc_sigle, 'Corpus/Doc', 'ID-doc');
 is($doc->corpus_sigle, 'Corpus', 'ID-corpus');
 
 my $meta = $doc->meta;

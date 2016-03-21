@@ -20,8 +20,8 @@ ok($doc->parse, 'Parse document');
 like($doc->path, qr!$path/!, 'Path');
 
 # Metdata
-is($doc->text_sigle, 'PRO-DUD_BSP-2013-01.32', 'ID-text');
-is($doc->doc_sigle, 'PRO-DUD_BSP-2013-01', 'ID-doc');
+is($doc->text_sigle, 'PRO-DUD/BSP-2013-01/32', 'ID-text');
+is($doc->doc_sigle, 'PRO-DUD/BSP-2013-01', 'ID-doc');
 is($doc->corpus_sigle, 'PRO-DUD', 'ID-corpus');
 
 my $meta = $doc->meta;

@@ -23,8 +23,8 @@ my $path = catdir(dirname(__FILE__), '../corpus/GOE/AGA/03828');
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 
-is($doc->text_sigle, 'GOE_AGA.03828', 'Correct text sigle');
-is($doc->doc_sigle, 'GOE_AGA', 'Correct document sigle');
+is($doc->text_sigle, 'GOE/AGA/03828', 'Correct text sigle');
+is($doc->doc_sigle, 'GOE/AGA', 'Correct document sigle');
 is($doc->corpus_sigle, 'GOE', 'Correct corpus sigle');
 
 my $meta = $doc->meta;
@@ -89,8 +89,8 @@ is($output->{data}->{foundries}, '', 'Foundries');
 is($output->{data}->{layerInfos}, '', 'layerInfos');
 is($output->{data}->{stream}->[0]->[4], 's:Autobiographische', 'data');
 
-is($output->{textSigle}, 'GOE_AGA.03828', 'Correct text sigle');
-is($output->{docSigle}, 'GOE_AGA', 'Correct document sigle');
+is($output->{textSigle}, 'GOE/AGA/03828', 'Correct text sigle');
+is($output->{docSigle}, 'GOE/AGA', 'Correct document sigle');
 is($output->{corpusSigle}, 'GOE', 'Correct corpus sigle');
 
 is($output->{author}, 'Goethe, Johann Wolfgang von', 'Author');

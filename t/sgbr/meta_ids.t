@@ -20,9 +20,9 @@ ok($doc->parse, 'Parse document');
 like($doc->path, qr!$path/!, 'Path');
 
 # Metdata
-is($doc->text_sigle, 'CMC-TSK_2014-09.2843', 'ID-text');
+is($doc->text_sigle, 'CMC-TSK/2014-09/2843', 'ID-text');
 
-is($doc->doc_sigle, 'CMC-TSK_2014-09', 'ID-doc');
+is($doc->doc_sigle, 'CMC-TSK/2014-09', 'ID-doc');
 is($doc->corpus_sigle, 'CMC-TSK', 'ID-corpus');
 
 my $meta = $doc->meta;
@@ -88,9 +88,9 @@ ok($doc->parse, 'Parse document');
 like($doc->path, qr!$path/!, 'Path');
 
 # Metdata
-is($doc->text_sigle, 'CMC-TSK_2014-09.3401', 'ID-text');
+is($doc->text_sigle, 'CMC-TSK/2014-09/3401', 'ID-text');
 
-is($doc->doc_sigle, 'CMC-TSK_2014-09', 'ID-doc');
+is($doc->doc_sigle, 'CMC-TSK/2014-09', 'ID-doc');
 is($doc->corpus_sigle, 'CMC-TSK', 'ID-corpus');
 
 

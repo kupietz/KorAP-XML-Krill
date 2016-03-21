@@ -21,8 +21,8 @@ my $path = catdir(dirname(__FILE__), '../corpus/BZK/D59/00001');
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 
-is($doc->text_sigle, 'BZK_D59.00001', 'Correct text sigle');
-is($doc->doc_sigle, 'BZK_D59', 'Correct document sigle');
+is($doc->text_sigle, 'BZK/D59/00001', 'Correct text sigle');
+is($doc->doc_sigle, 'BZK/D59', 'Correct document sigle');
 is($doc->corpus_sigle, 'BZK', 'Correct corpus sigle');
 
 my $meta = $doc->meta;
@@ -92,8 +92,8 @@ is($output->{data}->{foundries}, '', 'Foundries');
 is($output->{data}->{layerInfos}, '', 'layerInfos');
 is($output->{data}->{stream}->[0]->[4], 's:unser', 'data');
 
-is($output->{textSigle}, 'BZK_D59.00001', 'Correct text sigle');
-is($output->{docSigle}, 'BZK_D59', 'Correct document sigle');
+is($output->{textSigle}, 'BZK/D59/00001', 'Correct text sigle');
+is($output->{docSigle}, 'BZK/D59', 'Correct document sigle');
 is($output->{corpusSigle}, 'BZK', 'Correct corpus sigle');
 
 is($output->{title}, 'Unser gemeinsames Werk wird siegreich sein', 'Title');

@@ -1,3 +1,6 @@
+0.17 2016-03-22
+        - Rewrite siglen to use slashes as separators.
+
 0.16 2016-03-18
         - Added caching mechanism for
 	  metadata.

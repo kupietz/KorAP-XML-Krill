@@ -18,13 +18,12 @@ use_ok('KorAP::XML::Krill');
 
 # GOE/AGA/03828
 my $path = catdir(dirname(__FILE__), '../corpus/WPD/00001');
-# my $path = '/home/ndiewald/Repositories/korap/KorAP-sandbox/KorAP-lucene-indexer/t/GOE/AGA/03828';
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 
-is($doc->text_sigle, 'WPD_AAA.00001', 'Correct text sigle');
-is($doc->doc_sigle, 'WPD_AAA', 'Correct document sigle');
+is($doc->text_sigle, 'WPD/AAA/00001', 'Correct text sigle');
+is($doc->doc_sigle, 'WPD/AAA', 'Correct document sigle');
 is($doc->corpus_sigle, 'WPD', 'Correct corpus sigle');
 
 my $meta = $doc->meta;

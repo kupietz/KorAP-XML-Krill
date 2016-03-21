@@ -1,6 +1,4 @@
 #!/usr/bin/env perl
-# source ~/perl5/perlbrew/etc/bashrc
-# perlbrew switch perl-blead@korap
 use strict;
 use warnings;
 use utf8;
@@ -84,7 +82,7 @@ my $meta = $doc->meta;
 is($meta->{title}, 'A', 'title');
 ok(!$meta->{sub_title}, 'subTitle');
 
-is($doc->text_sigle, 'WPD_AAA.00001', 'ID');
+is($doc->text_sigle, 'WPD/AAA/00001', 'ID');
 is($doc->corpus_sigle, 'WPD', 'corpusID');
 
 is($meta->{pub_date}, '20050328', 'pubDate');
@@ -110,7 +108,7 @@ ok($tokens->parse, 'Parse');
 
 like($tokens->path, qr!$path/$!, 'Path');
 is($tokens->foundry, 'OpenNLP', 'Foundry');
-is($tokens->doc->text_sigle, 'WPD_AAA.00001', 'Doc id');
+is($tokens->doc->text_sigle, 'WPD/AAA/00001', 'Doc id');
 is($tokens->should, 1068, 'Should');
 is($tokens->have, 923, 'Have');
 is($tokens->name, 'tokens', 'Name');

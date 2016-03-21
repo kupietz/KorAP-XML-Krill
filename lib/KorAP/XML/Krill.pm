@@ -19,7 +19,7 @@ use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 #       Due to the kind of processing, processed metadata may be stored in
 #       a multiprocess cache instead.
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 has 'path';
 has [qw/text_sigle doc_sigle corpus_sigle/];
@@ -91,10 +91,10 @@ sub parse {
 
   # Get document id and corpus id
   if ($rt && $rt->{'-docid'}) {
-    $self->text_sigle($rt->{'-docid'});
-    if ($self->text_sigle =~ /^(([^_]+)_[^\._]+?)\..+?$/) {
-      $self->corpus_sigle($2);
-      $self->doc_sigle($1);
+    if ($rt->{'-docid'} =~ /^([^_]+)_([^\._]+?)\.(.+?)$/) {
+      $self->text_sigle(join('/', $1, $2, $3));
+      $self->doc_sigle(join('/', $1, $2));
+      $self->corpus_sigle($1);
     }
     else {
       croak $unable . ': ID not parseable';

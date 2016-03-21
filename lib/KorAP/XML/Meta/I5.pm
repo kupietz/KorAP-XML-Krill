@@ -249,7 +249,8 @@ sub _remove_prefix {
   return $_[0] unless $_[1];
 
   my ($title, $prefix) = @_;
-  $prefix =~ tr!_!/!;
+  # $prefix =~ tr!_!/!;
+  $prefix =~ s!^([^/]+?/[^/]+?)/!$1\.!;
   if (index($title, $prefix) == 0) {
     $title = substr($title, length($prefix));
     $title =~ s/^\s+//;

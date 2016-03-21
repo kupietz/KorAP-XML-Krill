@@ -22,8 +22,8 @@ my $path = catdir(dirname(__FILE__), '../corpus/WDD/G27/38989');
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 
-is($doc->text_sigle, 'WDD11_G27.38989', 'Correct text sigle');
-is($doc->doc_sigle, 'WDD11_G27', 'Correct document sigle');
+is($doc->text_sigle, 'WDD11/G27/38989', 'Correct text sigle');
+is($doc->doc_sigle, 'WDD11/G27', 'Correct document sigle');
 is($doc->corpus_sigle, 'WDD11', 'Correct corpus sigle');
 
 my $meta = $doc->meta;
@@ -84,8 +84,8 @@ is($output->{data}->{foundries}, '', 'Foundries');
 is($output->{data}->{layerInfos}, '', 'layerInfos');
 is($output->{data}->{stream}->[0]->[4], 's:{War', 'data');
 
-is($output->{textSigle}, 'WDD11_G27.38989', 'Correct text sigle');
-is($output->{docSigle}, 'WDD11_G27', 'Correct document sigle');
+is($output->{textSigle}, 'WDD11/G27/38989', 'Correct text sigle');
+is($output->{docSigle}, 'WDD11/G27', 'Correct document sigle');
 is($output->{corpusSigle}, 'WDD11', 'Correct corpus sigle');
 
 is($output->{title}, 'Diskussion:Gunter A. Pilz', 'Title');

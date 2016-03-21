@@ -21,7 +21,7 @@ like($doc->path, qr!$path/$!, 'Path');
 ok($doc->parse, 'Parse document');
 
 # Metdata
-is($doc->text_sigle, 'WPD_AAA.00001', 'ID');
+is($doc->text_sigle, 'WPD/AAA/00001', 'ID');
 
 my $meta = $doc->meta;
 is($meta->{title}, 'A', 'title');
@@ -67,7 +67,7 @@ $meta = $doc->meta;
 is($meta->{title}, 'Fischer und Kolp im Sonnenhügel', 'title');
 
 ok(!$meta->{sub_title}, 'subTitle');
-is($doc->text_sigle, 'A01_APR.13047', 'ID');
+is($doc->text_sigle, 'A01/APR/13047', 'ID');
 is($doc->corpus_sigle, 'A01', 'corpusID');
 is($meta->{pub_date}, '20010402', 'pubDate');
 ok(!$meta->{pub_place}, 'pubPlace');
@@ -98,7 +98,7 @@ is($meta->{title}, 'Amtsblatt des Landesbezirks Baden [diverse Erlasse]', 'title
 # MK2/ERL.00001
 
 ok(!$meta->{sub_title}, 'subTitle');
-is($doc->text_sigle, 'MK2_ERL.00001', 'ID');
+is($doc->text_sigle, 'MK2/ERL/00001', 'ID');
 is($doc->corpus_sigle, 'MK2', 'corpusID');
 is($meta->{pub_date}, '00000000', 'pubDate');
 is($meta->{pub_place}, 'Karlsruhe', 'pubPlace');
@@ -133,7 +133,7 @@ $meta = $doc->meta;
 
 is($meta->{title}, 'St. Galler Tagblatt, 11.01.2000, Ressort: TB-RSP (Abk.)', 'title'); # A00/JAN.02035
 ok(!$meta->{sub_title}, 'subTitle');
-is($doc->text_sigle, 'A00_JAN.02035', 'ID');
+is($doc->text_sigle, 'A00/JAN/02035', 'ID');
 is($doc->corpus_sigle, 'A00', 'corpusID');
 is($meta->{pub_date}, '20000111', 'pubDate');
 ok(!$meta->{pub_place}, 'pubPlace');
@@ -161,7 +161,7 @@ $meta = $doc->meta;
 
 is($meta->{title}, 'Tradition und Moderne', 'title');
 ok(!$meta->{sub_title}, 'subTitle');
-is($doc->text_sigle, 'A00_JAN.02873', 'ID');
+is($doc->text_sigle, 'A00/JAN/02873', 'ID');
 is($doc->corpus_sigle, 'A00', 'corpusID');
 is($meta->{pub_date}, '20000113', 'pubDate');
 ok(!$meta->{pub_place}, 'pubPlace');
@@ -191,7 +191,7 @@ $meta = $doc->meta;
 
 is($meta->{title}, 'Mehr Arbeitslose im Dezember', 'title');
 ok(!$meta->{sub_title}, 'subTitle');
-is($doc->text_sigle, 'A00_JAN.05663', 'ID');
+is($doc->text_sigle, 'A00/JAN/05663', 'ID');
 is($doc->corpus_sigle, 'A00', 'corpusID');
 is($meta->{pub_date}, '20000124', 'pubDate');
 ok(!$meta->{pub_place}, 'pubPlace');
@@ -220,7 +220,7 @@ $meta = $doc->meta;
 
 is($meta->{title}, 'Wil im Dezember 1999', 'title');
 ok(!$meta->{sub_title}, 'subTitle');
-is($doc->text_sigle, 'A00_JAN.07452', 'ID');
+is($doc->text_sigle, 'A00/JAN/07452', 'ID');
 is($doc->corpus_sigle, 'A00', 'corpusID');
 is($meta->{pub_date}, '20000129', 'pubDate');
 ok(!$meta->{pub_place}, 'pubPlace');
@@ -255,7 +255,7 @@ $meta = $doc->meta;
 # Metdata
 is($meta->{title}, 'Artificial Title', 'title');
 is($meta->{sub_title}, 'Artificial Subtitle', 'subTitle');
-is($doc->text_sigle, 'ART_ABC.00001', 'ID');
+is($doc->text_sigle, 'ART/ABC/00001', 'ID');
 is($doc->corpus_sigle, 'ART', 'corpusID');
 is($meta->{pub_date}, '20010402', 'pubDate');
 is($meta->{pub_place}, 'Mannheim', 'pubPlace');
@@ -291,8 +291,8 @@ like($doc->path, qr!$path/$!, 'Path');
 ok($doc->parse, 'Parse document');
 $meta = $doc->meta;
 
-is($doc->text_sigle, 'VDI14_JAN.00001', 'text sigle');
-is($doc->doc_sigle, 'VDI14_JAN', 'doc sigle');
+is($doc->text_sigle, 'VDI14/JAN/00001', 'text sigle');
+is($doc->doc_sigle, 'VDI14/JAN', 'doc sigle');
 is($meta->corpus_sigle, 'VDI14', 'corpus sigle');
 
 is($meta->{title}, '10- Zz mit Zahl', 'title');
@@ -340,8 +340,8 @@ like($doc->path, qr!$path/!, 'Path');
 ok($doc->parse, 'Parse document');
 $meta = $doc->meta;
 
-is($doc->text_sigle, 'WDD11_G27.38989', 'text sigle');
-is($doc->doc_sigle, 'WDD11_G27', 'doc sigle');
+is($doc->text_sigle, 'WDD11/G27/38989', 'text sigle');
+is($doc->doc_sigle, 'WDD11/G27', 'doc sigle');
 is($doc->corpus_sigle, 'WDD11', 'corpus sigle');
 
 is($meta->{title}, 'Diskussion:Gunter A. Pilz', 'title');
