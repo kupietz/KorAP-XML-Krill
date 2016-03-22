@@ -1,5 +1,7 @@
 0.17 2016-03-22
         - Rewrite siglen to use slashes as separators.
+	- Zip listing optimized. Does no longer work with primary data
+	  in text.xml files.
 
 0.16 2016-03-18
         - Added caching mechanism for

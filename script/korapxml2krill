@@ -345,8 +345,6 @@ elsif ($cmd eq 'extract') {
       exit(1);
     };
 
-    # Test will be skipped
-
     # Iterate over all given sigles and extract
     foreach (@sigle) {
       print "$_ ";
@@ -448,11 +446,6 @@ elsif ($cmd eq 'archive') {
   elsif (-f($input) && (my $archive = KorAP::XML::Archive->new($input))) {
     unless ($archive->test_unzip) {
       print "Unzip is not installed or incompatible.\n\n";
-      exit(1);
-    };
-
-    unless ($archive->test) {
-      print "Zip archive not compatible.\n\n";
       exit(1);
     };
 

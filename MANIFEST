@@ -80,6 +80,7 @@ t/annotation/xip_morpho.t
 t/annotation/xip_sentences.t
 t/annotation/koralquery.t
 t/benchmark/parse_document.t
+t/benchmark/list_archive_texts.t
 t/real/bzk.t
 t/real/bzk_2.t
 t/real/goethe.t

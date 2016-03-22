@@ -33,20 +33,18 @@ sub test {
 # List all text paths contained in the file
 sub list_texts {
   my $self = shift;
-  my $file = $$self;
-  my %texts;
-  foreach (`unzip -l $file *.xml`) {
-    if ($_ =~ m![\t\s]
-		((?:\./)?
-		  [^\t\s/\.]+?/ # Corpus
-		  [^\t\s/]+?/   # Document
-		  [^\t\s/]+?    # Text
-		)/(?:[^/]+?)\.xml$!x) {
-      $texts{$1} = 1;
+  my @texts;
+  foreach (`unzip -l -UU -qq $$self "*/data.xml"`) {
+    if (m![\t\s]
+      ((?:\./)?
+	[^\t\s/\.]+?/ # Corpus
+	[^\t\s/]+?/   # Document
+	[^\t\s/]+?    # Text
+      )/data\.xml$!x) {
+      push @texts, $1;
     };
   };
-
-  return sort {$a cmp $b} keys %texts;
+  return @texts;
 };
 
 

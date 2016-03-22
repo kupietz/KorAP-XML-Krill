@@ -21,7 +21,7 @@ like($archive->path, qr/archive\.zip$/, 'Archive path');
 my @list = $archive->list_texts;
 is(scalar @list, 10, 'Found all tests');
 is($list[0], './TEST/BSP/1', 'First document');
-is($list[-1], './TEST/BSP/9', 'First document');
+is($list[-1], './TEST/BSP/10', 'First document');
 
 my @path = $archive->split_path('./TEST/BSP/9');
 is($path[0],'.', 'Prefix');
