@@ -16,6 +16,7 @@ use KorAP::XML::Archive;
 use KorAP::XML::Tokenizer;
 use Parallel::ForkManager;
 # TODO: use Parallel::Loops
+# TODO: make output files
 
 # CHANGES:
 # ----------------------------------------------------------
@@ -69,12 +70,12 @@ if ($ARGV[0] && index($ARGV[0], '-') != 0) {
   $cmd = shift @ARGV;
 };
 
-my (@skip, @sigle);
+my (@skip, @sigle, @input);
 my $text;
 
 # Parse options from the command line
 GetOptions(
-  'input|i=s'   => \(my $input),
+  'input|i=s'   => \@input,
   'output|o=s'  => \(my $output),
   'overwrite|w' => \(my $overwrite),
   'meta|m=s'    => \(my $meta),
@@ -114,7 +115,7 @@ my %ERROR_HASH = (
 );
 
 # Input has to be defined
-pod2usage(%ERROR_HASH) unless $input;
+pod2usage(%ERROR_HASH) unless @input;
 
 
 # Initialize log4perl object
@@ -130,8 +131,9 @@ my $log = Log::Log4perl->get_logger('main');
 
 # Get file name based on path information
 sub get_file_name ($) {
+  my $i = $input[0];
   my $file = shift;
-  $file =~ s/^?\/?$input//;
+  $file =~ s/^?\/?$i//;
   $file =~ tr/\//-/;
   $file =~ s{^-+}{};
   return $file;
@@ -145,8 +147,9 @@ sub write_file {
 
   # TODO: This should be done directly with a data structure! KorAP::XML::Wrap
 
-  my $call = 'perl ' . $LOCAL . '/korapxml2krill -i ' .
-    $anno . ' -o ' . $output . '/' . $file . '.json';
+  my $call = 'perl ' . $LOCAL . '/korapxml2krill';
+  $call .= ' -i ' . $anno;
+  $call .= ' -o ' . $output . '/' . $file . '.json';
   $call .= '.gz -z' if $gzip;
   $call .= ' -m ' . $meta if $meta;
   $call .= ' -w' if $overwrite;
@@ -170,6 +173,7 @@ s!^\s*([^_]+?)_([^\.]+?)\.(.+?)\s*$!$1/$2/$3! foreach @sigle;
 
 # Process a single file
 unless ($cmd) {
+  my $input = $input[0];
 
   # Can't print gzip to STDOUT
   pod2usage(%ERROR_HASH) if $gzip && !$output;
@@ -329,6 +333,8 @@ unless ($cmd) {
 # Extract XML files
 elsif ($cmd eq 'extract') {
 
+  my $input = $input[0];
+
   pod2usage(%ERROR_HASH) unless $output;
 
   # TODO: Support sigles and full archives
@@ -337,6 +343,8 @@ elsif ($cmd eq 'extract') {
     print "Directory '$output' does not exist.\n\n";
     exit(0);
   };
+
+#TODOOOOOO
 
   if (-f($input) && (my $archive = KorAP::XML::Archive->new($input))) {
 
@@ -380,7 +388,7 @@ elsif ($cmd eq 'archive') {
     sub {
       my ($pid, $code) = shift;
       my $data = pop;
-      print 'Convert ['. ($jobs > 0 ? "$pid:" : '') .
+      print 'Convert ['. ($jobs > 0 ? "\$$pid:" : '') .
 	($iter++) . "/$count]" .
 	  ($code ? " $code" : '') .
 	    " $$data\n";
@@ -400,8 +408,8 @@ elsif ($cmd eq 'archive') {
   };
 
   # Input is a directory
-  if (-d $input) {
-    my $it = Directory::Iterator->new($input);
+  if (-d $input[0]) {
+    my $it = Directory::Iterator->new($input[0]);
     my @dirs;
     my $dir;
 
@@ -443,11 +451,14 @@ elsif ($cmd eq 'archive') {
   }
 
   # Input is a file
-  elsif (-f($input) && (my $archive = KorAP::XML::Archive->new($input))) {
+  elsif (-f($input[0]) && (my $archive = KorAP::XML::Archive->new(shift @input))) {
     unless ($archive->test_unzip) {
       print "Unzip is not installed or incompatible.\n\n";
       exit(1);
     };
+
+    # Add further annotation archived
+    # $doc->attach($_) foreach @input;
 
     print "Start processing ...\n";
     $t = Benchmark->new;
@@ -485,7 +496,7 @@ elsif ($cmd eq 'archive') {
       if ($archive->extract($dirs[$i], $temp)) {
 
 	# Create corpus directory
-	$input = catdir("$temp", $corpus);
+	my $input = catdir("$temp", $corpus);
 
 	# Temporary directory
 	my $dir = catdir($input, $doc, $text);

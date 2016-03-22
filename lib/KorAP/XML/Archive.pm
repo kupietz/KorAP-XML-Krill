@@ -7,8 +7,8 @@ use warnings;
 # Convert new archive helper
 sub new {
   my $class = shift;
-  my $file = shift or return;
-  bless \$file, $class;
+  my @file = @_ or return;
+  bless \@file, $class;
 };
 
 
@@ -21,12 +21,13 @@ sub test_unzip {
 # Check the compressed archive
 sub test {
   my $self = shift;
-  my $file = $$self;
-  my $out = `unzip -t $file`;
-  if ($out =~ /no errors/i) {
-    return 1;
+  foreach (@$self) {
+    my $out = `unzip -t $_`;
+    if ($out !~ /no errors/i) {
+      return 0;
+    };
   };
-  return 0;
+  return 1;
 };
 
 
@@ -34,7 +35,8 @@ sub test {
 sub list_texts {
   my $self = shift;
   my @texts;
-  foreach (`unzip -l -UU -qq $$self "*/data.xml"`) {
+  my $file = $self->[0];
+  foreach (`unzip -l -UU -qq $file "*/data.xml"`) {
     if (m![\t\s]
       ((?:\./)?
 	[^\t\s/\.]+?/ # Corpus
@@ -75,14 +77,27 @@ sub split_path {
   };
 
   # Text has not the expected pattern
-  carp $text_path . ' is not a well-formed text path in ' . $$self;
+  carp $text_path . ' is not a well-formed text path in ' . $self->[0];
   return;
 };
 
 
 # Get the archives path
+# Deprecated
 sub path {
-  return rel2abs(${$_[0]});
+  my $self = shift;
+  my $archive = shift // 0;
+  return rel2abs($self->[$archive]);
+};
+
+
+sub attach {
+  my $self = shift;
+  if (-e $_[0]) {
+    push @$self, $_[0];
+    return 1;
+  };
+  return 0;
 };
 
 
@@ -92,29 +107,40 @@ sub extract {
   my $text_path = shift;
   my $target_dir = shift;
 
-  my @cmd = (
+  my $first = 1;
+
+  my @init_cmd = (
     'unzip',           # Use unzip program
     '-qo',             # quietly overwrite all existing files
     '-d', $target_dir # Extract into target directory
   );
 
-  push(@cmd, $$self); # Extract from zip
+  foreach (@$self) {
+    my @cmd = @init_cmd;
+    push(@cmd, $_); # Extract from zip
 
-  my ($prefix, $corpus, $doc, $text) = $self->split_path($text_path) or return;
+    my ($prefix, $corpus, $doc, $text) = $self->split_path($text_path) or return;
 
-  # Add some interesting files for extraction
-  # Can't use catfile(), as this removes the '.' prefix
-  push(@cmd, join('/', $prefix, $corpus, 'header.xml'));
-  push(@cmd, join('/', $prefix, $corpus, $doc, 'header.xml'));
-  push(@cmd, join('/', $prefix, $corpus, $doc, $text, '*'));
+    # Add some interesting files for extraction
+    # Can't use catfile(), as this removes the '.' prefix
+    if ($first) {
+      # Only extract from first file
+      push(@cmd, join('/', $prefix, $corpus, 'header.xml'));
+      push(@cmd, join('/', $prefix, $corpus, $doc, 'header.xml'));
+      $first = 0;
+    };
 
-  # Run system call
-  system(@cmd);
+    # With prefix
+    push(@cmd, join('/', $prefix, $corpus, $doc, $text, '*'));
 
-  # Check for return code
-  if ($? != 0) {
-    carp("System call '" . join(' ', @cmd) . "' errors " . $?);
-    return;
+    # Run system call
+    system(@cmd);
+
+    # Check for return code
+    if ($? != 0) {
+      carp("System call '" . join(' ', @cmd) . "' errors " . $?);
+      return;
+    };
   };
 
   # Fine

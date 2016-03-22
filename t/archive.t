@@ -16,7 +16,7 @@ unless ($archive->test_unzip) {
 };
 
 ok($archive->test, 'Test archive');
-like($archive->path, qr/archive\.zip$/, 'Archive path');
+like($archive->path(0), qr/archive\.zip$/, 'Archive path');
 
 my @list = $archive->list_texts;
 is(scalar @list, 10, 'Found all tests');
@@ -40,6 +40,8 @@ ok(-d catdir($dir, 'TEST'), 'Test corpus directory exists');
 ok(-f catdir($dir, 'TEST', 'header.xml'), 'Test corpus header exists');
 ok(-d catdir($dir, 'TEST', 'BSP'), 'Test doc directory exists');
 ok(-f catdir($dir, 'TEST', 'BSP', 'header.xml'), 'Test doc header exists');
+
+
 
 
 done_testing;
