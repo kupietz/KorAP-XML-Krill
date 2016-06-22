@@ -84,7 +84,9 @@ t/benchmark/list_archive_texts.t
 t/real/bzk.t
 t/real/bzk_2.t
 t/real/goethe.t
+t/real/rei.t
 t/real/wdd.t
+t/real/wpd.t
 t/sgbr/lemma.t
 t/sgbr/meta.t
 t/sgbr/meta_duden.t
@@ -96,6 +98,7 @@ t/corpus/BZK/header.xml
 t/corpus/GOE/header.xml
 t/corpus/VDI/header.xml
 t/corpus/WDD/header.xml
+t/corpus/REI/header.xml
 t/corpus/artificial/data.xml
 t/corpus/artificial/header.xml
 t/corpus/artificial/metadata.xml
@@ -123,6 +126,7 @@ t/corpus/ERL/00001/header.xml
 t/corpus/ERL/00001/text.txt
 t/corpus/GOE/AGA/header.xml
 t/corpus/GOE/AGX/header.xml
+t/corpus/REI/BNG/header.xml
 t/corpus/VDI/JAN/header.xml
 t/corpus/WDD/G27/header.xml
 t/corpus/WPD/00001/data.xml
@@ -338,6 +342,13 @@ t/corpus/GOE/AGA/03828/text.txt
 t/corpus/GOE/AGX/00006/data.xml
 t/corpus/GOE/AGX/00006/header.xml
 t/corpus/GOE/AGX/00006/text.txt
+t/corpus/REI/BNG/00128/data.xml
+t/corpus/REI/BNG/00128/header.xml
+t/corpus/REI/BNG/00128/base/paragraph.xml
+t/corpus/REI/BNG/00128/base/sentences.xml
+t/corpus/REI/BNG/00128/base/tokens_aggr.xml
+t/corpus/REI/BNG/00128/base/tokens_conservative.xml
+t/corpus/REI/BNG/00128/struct/structure.xml
 t/corpus/VDI/JAN/00001/data.xml
 t/corpus/VDI/JAN/00001/header.xml
 t/corpus/VDI/JAN/00001/text.txt

@@ -1,3 +1,6 @@
+0.18 2016-06-22
+        - Added REI test.
+
 0.17 2016-03-22
         - Rewrite siglen to use slashes as separators.
 	- Zip listing optimized. Does no longer work with primary data
