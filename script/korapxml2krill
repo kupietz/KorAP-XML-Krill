@@ -451,14 +451,14 @@ elsif ($cmd eq 'archive') {
   }
 
   # Input is a file
-  elsif (-f($input[0]) && (my $archive = KorAP::XML::Archive->new(shift @input))) {
+  elsif (-f($input[0]) && (my $archive = KorAP::XML::Archive->new($input[0]))) {
     unless ($archive->test_unzip) {
       print "Unzip is not installed or incompatible.\n\n";
       exit(1);
     };
 
     # Add further annotation archived
-    # $doc->attach($_) foreach @input;
+    $archive->attach($_) foreach @input;
 
     print "Start processing ...\n";
     $t = Benchmark->new;
