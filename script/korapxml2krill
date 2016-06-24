@@ -54,6 +54,10 @@ use Parallel::ForkManager;
 #
 # 2016/03/18
 # - Added meta data caching
+#
+# 2016/06/24
+# - Added multi archive support
+# - Added prefix negation support
 # ----------------------------------------------------------
 
 our $LAST_CHANGE = '2016/03/17';
@@ -589,9 +593,21 @@ Extract KorAP-XML files from a Zip-file.
 
 =over 2
 
-=item B<--input|-i> <directory|file>
+=item B<--input|-i> <directory|file|files>
 
 Directory or archive file of documents to convert.
+
+Multiple input archives are supported for archiving,
+with the constraint,
+that the first archive listed contains all primary data files
+and all meta data files.
+The directory structure follows the base directory format,
+starting with a C<.> root folder.
+In case an attached archive has no C<.> root folder,
+the archive path should start with a hash.
+
+  -i file/news.zip -i file/news.malt.zip -i #file/news.tt.zip
+
 
 =item B<--output|-o> <directory|file>
 

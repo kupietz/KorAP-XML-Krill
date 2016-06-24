@@ -7,7 +7,15 @@ use warnings;
 # Convert new archive helper
 sub new {
   my $class = shift;
-  my @file = @_ or return;
+  my @file;
+
+  foreach (@_) {
+    my $file = _file_to_array($_) or return;
+    push(@file, $file);
+  };
+
+  return unless @file;
+
   bless \@file, $class;
 };
 
@@ -22,7 +30,8 @@ sub test_unzip {
 sub test {
   my $self = shift;
   foreach (@$self) {
-    my $out = `unzip -t $_`;
+    my $x = $_->[0];
+    my $out = `unzip -t $x`;
     if ($out !~ /no errors/i) {
       return 0;
     };
@@ -35,7 +44,7 @@ sub test {
 sub list_texts {
   my $self = shift;
   my @texts;
-  my $file = $self->[0];
+  my $file = $self->[0]->[0];
   foreach (`unzip -l -UU -qq $file "*/data.xml"`) {
     if (m![\t\s]
       ((?:\./)?
@@ -77,7 +86,7 @@ sub split_path {
   };
 
   # Text has not the expected pattern
-  carp $text_path . ' is not a well-formed text path in ' . $self->[0];
+  carp $text_path . ' is not a well-formed text path in ' . $self->[0]->[0];
   return;
 };
 
@@ -87,18 +96,36 @@ sub split_path {
 sub path {
   my $self = shift;
   my $archive = shift // 0;
-  return rel2abs($self->[$archive]);
+  return rel2abs($self->[$archive]->[0]);
 };
 
 
+# Attach another archive
 sub attach {
   my $self = shift;
-  if (-e $_[0]) {
-    push @$self, $_[0];
-    return 1;
-  };
-  return 0;
+  my $file = _file_to_array(shift()) or return;
+  push @$self, $file;
+  return 1;
 };
+
+
+# Check attached file for prefix negation
+sub _file_to_array {
+  my $file = shift;
+  my $prefix = 1;
+
+  # Should the archive support prefixes
+  if (index($file, '#') == 0) {
+    $file = substr($file, 1);
+    $prefix = 0;
+  };
+
+  # The archive is a valid file
+  if (-e $file) {
+    return [$file, $prefix]
+  };
+};
+
 
 
 # Extract files to a directory
@@ -115,11 +142,14 @@ sub extract {
     '-d', $target_dir # Extract into target directory
   );
 
-  foreach (@$self) {
-    my @cmd = @init_cmd;
-    push(@cmd, $_); # Extract from zip
+  my ($prefix, $corpus, $doc, $text) = $self->split_path($text_path) or return;
 
-    my ($prefix, $corpus, $doc, $text) = $self->split_path($text_path) or return;
+  # Iterate over all attached archives
+  foreach my $archive (@$self) {
+
+    # $_ is the zip
+    my @cmd = @init_cmd;
+    push(@cmd, $archive->[0]); # Extract from zip
 
     # Add some interesting files for extraction
     # Can't use catfile(), as this removes the '.' prefix
@@ -131,7 +161,12 @@ sub extract {
     };
 
     # With prefix
-    push(@cmd, join('/', $prefix, $corpus, $doc, $text, '*'));
+    my @path = ($corpus, $doc, $text, '*');
+
+    # If the prefix is not forbidden - prefix!
+    unshift @path, $prefix if $archive->[1];
+
+    push(@cmd, join('/', @path));
 
     # Run system call
     system(@cmd);
@@ -161,6 +196,8 @@ C<KorAP::XML::Archive> expects the unzip tool to be installed.
 =head1 new
 
 =head1 test
+
+=head1 attach
 
 =head1 list_texts
 
