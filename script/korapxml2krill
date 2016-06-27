@@ -138,6 +138,7 @@ my $log = Log::Log4perl->get_logger('main');
 sub get_file_name ($) {
   my $i = $input[0];
   my $file = shift;
+  $file =~ s!^/?tmp/[^/]+!!;
   $file =~ s/^?\/?$i//;
   $file =~ tr/\//-/;
   $file =~ s{^-+}{};
@@ -477,9 +478,14 @@ elsif ($cmd eq 'archive') {
       my ($prefix, $corpus, $doc, $text) = $archive->split_path($dirs[$i]);
 
       unless ($overwrite) {
+
+	# This is not correct!!
 	my $filename = catfile(
 	  $output,
-	  get_file_name(catdir($doc, $text)) . '.json' . ($gzip ? '.gz' : '')
+	  get_file_name(
+	    catfile($corpus, $doc, $text)
+	      . '.json' . ($gzip ? '.gz' : '')
+	    )
 	);
 
 	if (-e $filename) {
