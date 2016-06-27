@@ -42,7 +42,7 @@ ok(-d catdir($dir, 'TEST', 'BSP'), 'Test doc directory exists');
 ok(-f catdir($dir, 'TEST', 'BSP', 'header.xml'), 'Test doc header exists');
 
 
-
+# TODO: Test attaching!
 
 done_testing;
 

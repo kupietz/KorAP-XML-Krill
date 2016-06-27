@@ -1,0 +1,3566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer docid="REI_BNG.00128" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+<spanList>
+<span id="s1_n1" from="0" to="8">
+<rel label="ROOT">
+<span from="0" to="82"/>
+</rel>
+</span>
+<span id="s1_n2" from="9" to="17">
+<rel label="APP">
+<span from="0" to="8"/>
+</rel>
+</span>
+<span id="s1_n3" from="17" to="18">
+<rel label="-PUNCT-">
+<span from="9" to="17"/>
+</rel>
+</span>
+<span id="s1_n4" from="19" to="36">
+<rel label="APP">
+<span from="9" to="17"/>
+</rel>
+</span>
+<span id="s1_n5" from="37" to="40">
+<rel label="DET">
+<span from="51" to="78"/>
+</rel>
+</span>
+<span id="s1_n6" from="41" to="50">
+<rel label="ATTR">
+<span from="51" to="78"/>
+</rel>
+</span>
+<span id="s1_n7" from="51" to="78">
+<rel label="GMOD">
+<span from="19" to="36"/>
+</rel>
+</span>
+<span id="s1_n8" from="79" to="81">
+<rel label="APP">
+<span from="51" to="78"/>
+</rel>
+</span>
+<span id="s1_n9" from="81" to="82">
+<rel label="-PUNCT-">
+<span from="79" to="81"/>
+</rel>
+</span>
+<span id="s2_n1" from="83" to="87">
+<rel label="ROOT">
+<span from="83" to="127"/>
+</rel>
+</span>
+<span id="s2_n2" from="88" to="92">
+<rel label="ATTR">
+<span from="93" to="108"/>
+</rel>
+</span>
+<span id="s2_n3" from="93" to="108">
+<rel label="APP">
+<span from="83" to="87"/>
+</rel>
+</span>
+<span id="s2_n4" from="109" to="112">
+<rel label="APP">
+<span from="93" to="108"/>
+</rel>
+</span>
+<span id="s2_n5" from="113" to="118">
+<rel label="APP">
+<span from="109" to="112"/>
+</rel>
+</span>
+<span id="s2_n6" from="119" to="126">
+<rel label="APP">
+<span from="113" to="118"/>
+</rel>
+</span>
+<span id="s2_n7" from="126" to="127">
+<rel label="-PUNCT-">
+<span from="119" to="126"/>
+</rel>
+</span>
+<span id="s3_n1" from="128" to="131">
+<rel label="DET">
+<span from="132" to="136"/>
+</rel>
+</span>
+<span id="s3_n2" from="132" to="136">
+<rel label="SUBJ">
+<span from="137" to="140"/>
+</rel>
+</span>
+<span id="s3_n3" from="137" to="140">
+<rel label="ROOT">
+<span from="128" to="181"/>
+</rel>
+</span>
+<span id="s3_n4" from="141" to="146">
+<rel label="ROOT">
+<span from="128" to="181"/>
+</rel>
+</span>
+<span id="s3_n5" from="147" to="150">
+<rel label="DET">
+<span from="151" to="162"/>
+</rel>
+</span>
+<span id="s3_n6" from="151" to="162">
+<rel label="ROOT">
+<span from="128" to="181"/>
+</rel>
+</span>
+<span id="s3_n7" from="163" to="171">
+<rel label="APP">
+<span from="151" to="162"/>
+</rel>
+</span>
+<span id="s3_n8" from="172" to="180">
+<rel label="APP">
+<span from="163" to="171"/>
+</rel>
+</span>
+<span id="s3_n9" from="180" to="181">
+<rel label="-PUNCT-">
+<span from="172" to="180"/>
+</rel>
+</span>
+<span id="s4_n1" from="182" to="190">
+<rel label="ROOT">
+<span from="182" to="224"/>
+</rel>
+</span>
+<span id="s4_n2" from="191" to="199">
+<rel label="APP">
+<span from="182" to="190"/>
+</rel>
+</span>
+<span id="s4_n3" from="200" to="201">
+<rel label="-PUNCT-">
+<span from="201" to="208"/>
+</rel>
+</span>
+<span id="s4_n4" from="201" to="208">
+<rel label="APP">
+<span from="191" to="199"/>
+</rel>
+</span>
+<span id="s4_n5" from="209" to="215">
+<rel label="OBJA">
+<span from="216" to="222"/>
+</rel>
+</span>
+<span id="s4_n6" from="216" to="222">
+<rel label="APP">
+<span from="201" to="208"/>
+</rel>
+</span>
+<span id="s4_n7" from="222" to="223">
+<rel label="-PUNCT-">
+<span from="216" to="222"/>
+</rel>
+</span>
+<span id="s4_n8" from="223" to="224">
+<rel label="-PUNCT-">
+<span from="216" to="222"/>
+</rel>
+</span>
+<span id="s5_n1" from="225" to="229">
+<rel label="ROOT">
+<span from="225" to="242"/>
+</rel>
+</span>
+<span id="s5_n2" from="230" to="241">
+<rel label="APP">
+<span from="225" to="229"/>
+</rel>
+</span>
+<span id="s5_n3" from="241" to="242">
+<rel label="-PUNCT-">
+<span from="230" to="241"/>
+</rel>
+</span>
+<span id="s6_n1" from="243" to="248">
+<rel label="ATTR">
+<span from="249" to="260"/>
+</rel>
+</span>
+<span id="s6_n2" from="249" to="260">
+<rel label="ROOT">
+<span from="243" to="274"/>
+</rel>
+</span>
+<span id="s6_n3" from="261" to="264">
+<rel label="KON">
+<span from="249" to="260"/>
+</rel>
+</span>
+<span id="s6_n4" from="265" to="273">
+<rel label="CJ">
+<span from="261" to="264"/>
+</rel>
+</span>
+<span id="s6_n5" from="273" to="274">
+<rel label="-PUNCT-">
+<span from="265" to="273"/>
+</rel>
+</span>
+<span id="s7_n1" from="275" to="278">
+<rel label="SUBJ">
+<span from="279" to="287"/>
+</rel>
+</span>
+<span id="s7_n2" from="279" to="287">
+<rel label="ROOT">
+<span from="275" to="342"/>
+</rel>
+</span>
+<span id="s7_n3" from="288" to="300">
+<rel label="ADV">
+<span from="279" to="287"/>
+</rel>
+</span>
+<span id="s7_n4" from="301" to="304">
+<rel label="DET">
+<span from="305" to="322"/>
+</rel>
+</span>
+<span id="s7_n5" from="305" to="322">
+<rel label="OBJA">
+<span from="279" to="287"/>
+</rel>
+</span>
+<span id="s7_n6" from="322" to="323">
+<rel label="-PUNCT-">
+<span from="305" to="322"/>
+</rel>
+</span>
+<span id="s7_n7" from="324" to="327">
+<rel label="ROOT">
+<span from="275" to="342"/>
+</rel>
+</span>
+<span id="s7_n8" from="328" to="334">
+<rel label="ROOT">
+<span from="275" to="342"/>
+</rel>
+</span>
+<span id="s7_n9" from="335" to="338">
+<rel label="ROOT">
+<span from="275" to="342"/>
+</rel>
+</span>
+<span id="s7_n10" from="339" to="341">
+<rel label="PN">
+<span from="335" to="338"/>
+</rel>
+</span>
+<span id="s7_n11" from="341" to="342">
+<rel label="-PUNCT-">
+<span from="339" to="341"/>
+</rel>
+</span>
+<span id="s8_n1" from="343" to="346">
+<rel label="ADV">
+<span from="347" to="357"/>
+</rel>
+</span>
+<span id="s8_n2" from="347" to="357">
+<rel label="AUX">
+<span from="358" to="361"/>
+</rel>
+</span>
+<span id="s8_n3" from="358" to="361">
+<rel label="ROOT">
+<span from="343" to="493"/>
+</rel>
+</span>
+<span id="s8_n4" from="362" to="365">
+<rel label="KON">
+<span from="358" to="361"/>
+</rel>
+</span>
+<span id="s8_n5" from="366" to="368">
+<rel label="ROOT">
+<span from="343" to="493"/>
+</rel>
+</span>
+<span id="s8_n6" from="369" to="372">
+<rel label="ROOT">
+<span from="343" to="493"/>
+</rel>
+</span>
+<span id="s8_n7" from="373" to="377">
+<rel label="ROOT">
+<span from="343" to="493"/>
+</rel>
+</span>
+<span id="s8_n8" from="378" to="381">
+<rel label="DET">
+<span from="404" to="422"/>
+</rel>
+</span>
+<span id="s8_n9" from="382" to="388">
+<rel label="ATTR">
+<span from="404" to="422"/>
+</rel>
+</span>
+<span id="s8_n10" from="389" to="403">
+<rel label="ATTR">
+<span from="404" to="422"/>
+</rel>
+</span>
+<span id="s8_n11" from="404" to="422">
+<rel label="ROOT">
+<span from="343" to="493"/>
+</rel>
+</span>
+<span id="s8_n12" from="423" to="426">
+<rel label="KON">
+<span from="404" to="422"/>
+</rel>
+</span>
+<span id="s8_n13" from="427" to="430">
+<rel label="DET">
+<span from="431" to="439"/>
+</rel>
+</span>
+<span id="s8_n14" from="431" to="439">
+<rel label="CJ">
+<span from="423" to="426"/>
+</rel>
+</span>
+<span id="s8_n15" from="440" to="443">
+<rel label="PP">
+<span from="431" to="439"/>
+</rel>
+</span>
+<span id="s8_n16" from="444" to="455">
+<rel label="PN">
+<span from="440" to="443"/>
+</rel>
+</span>
+<span id="s8_n17" from="456" to="459">
+<rel label="KON">
+<span from="444" to="455"/>
+</rel>
+</span>
+<span id="s8_n18" from="460" to="467">
+<rel label="CJ">
+<span from="456" to="459"/>
+</rel>
+</span>
+<span id="s8_n19" from="468" to="476">
+<rel label="ADV">
+<span from="477" to="486"/>
+</rel>
+</span>
+<span id="s8_n20" from="477" to="486">
+<rel label="AUX">
+<span from="487" to="492"/>
+</rel>
+</span>
+<span id="s8_n21" from="487" to="492">
+<rel label="ROOT">
+<span from="343" to="493"/>
+</rel>
+</span>
+<span id="s8_n22" from="492" to="493">
+<rel label="-PUNCT-">
+<span from="487" to="492"/>
+</rel>
+</span>
+<span id="s9_n1" from="494" to="497">
+<rel label="DET">
+<span from="498" to="507"/>
+</rel>
+</span>
+<span id="s9_n2" from="498" to="507">
+<rel label="SUBJ">
+<span from="508" to="515"/>
+</rel>
+</span>
+<span id="s9_n3" from="508" to="515">
+<rel label="ROOT">
+<span from="494" to="696"/>
+</rel>
+</span>
+<span id="s9_n4" from="516" to="519">
+<rel label="DET">
+<span from="520" to="533"/>
+</rel>
+</span>
+<span id="s9_n5" from="520" to="533">
+<rel label="OBJA">
+<span from="508" to="515"/>
+</rel>
+</span>
+<span id="s9_n6" from="534" to="541">
+<rel label="DET">
+<span from="570" to="586"/>
+</rel>
+</span>
+<span id="s9_n7" from="542" to="554">
+<rel label="ATTR">
+<span from="570" to="586"/>
+</rel>
+</span>
+<span id="s9_n8" from="555" to="558">
+<rel label="KON">
+<span from="542" to="554"/>
+</rel>
+</span>
+<span id="s9_n9" from="559" to="569">
+<rel label="CJ">
+<span from="555" to="558"/>
+</rel>
+</span>
+<span id="s9_n10" from="570" to="586">
+<rel label="GMOD">
+<span from="520" to="533"/>
+</rel>
+</span>
+<span id="s9_n11" from="586" to="587">
+<rel label="-PUNCT-">
+<span from="570" to="586"/>
+</rel>
+</span>
+<span id="s9_n12" from="588" to="591">
+<rel label="SUBJ">
+<span from="689" to="695"/>
+</rel>
+</span>
+<span id="s9_n13" from="592" to="596">
+<rel label="OBJA">
+<span from="689" to="695"/>
+</rel>
+</span>
+<span id="s9_n14" from="597" to="600">
+<rel label="PP">
+<span from="689" to="695"/>
+</rel>
+</span>
+<span id="s9_n15" from="601" to="604">
+<rel label="DET">
+<span from="642" to="659"/>
+</rel>
+</span>
+<span id="s9_n16" from="605" to="614">
+<rel label="ATTR">
+<span from="642" to="659"/>
+</rel>
+</span>
+<span id="s9_n17" from="615" to="618">
+<rel label="KON">
+<span from="605" to="614"/>
+</rel>
+</span>
+<span id="s9_n18" from="619" to="641">
+<rel label="CJ">
+<span from="615" to="618"/>
+</rel>
+</span>
+<span id="s9_n19" from="642" to="659">
+<rel label="PN">
+<span from="597" to="600"/>
+</rel>
+</span>
+<span id="s9_n20" from="660" to="662">
+<rel label="PP">
+<span from="642" to="659"/>
+</rel>
+</span>
+<span id="s9_n21" from="663" to="669">
+<rel label="ATTR">
+<span from="670" to="676"/>
+</rel>
+</span>
+<span id="s9_n22" from="670" to="676">
+<rel label="PN">
+<span from="660" to="662"/>
+</rel>
+</span>
+<span id="s9_n23" from="677" to="688">
+<rel label="ADV">
+<span from="689" to="695"/>
+</rel>
+</span>
+<span id="s9_n24" from="689" to="695">
+<rel label="OBJI">
+<span from="508" to="515"/>
+</rel>
+</span>
+<span id="s9_n25" from="695" to="696">
+<rel label="-PUNCT-">
+<span from="689" to="695"/>
+</rel>
+</span>
+<span id="s10_n1" from="697" to="700">
+<rel label="SUBJ">
+<span from="701" to="704"/>
+</rel>
+</span>
+<span id="s10_n2" from="701" to="704">
+<rel label="ROOT">
+<span from="697" to="836"/>
+</rel>
+</span>
+<span id="s10_n3" from="705" to="707">
+<rel label="PP">
+<span from="817" to="835"/>
+</rel>
+</span>
+<span id="s10_n4" from="708" to="711">
+<rel label="DET">
+<span from="776" to="782"/>
+</rel>
+</span>
+<span id="s10_n5" from="712" to="724">
+<rel label="ATTR">
+<span from="776" to="782"/>
+</rel>
+</span>
+<span id="s10_n6" from="725" to="728">
+<rel label="KON">
+<span from="712" to="724"/>
+</rel>
+</span>
+<span id="s10_n7" from="729" to="733">
+<rel label="ADV">
+<span from="734" to="736"/>
+</rel>
+</span>
+<span id="s10_n8" from="734" to="736">
+<rel label="CJ">
+<span from="725" to="728"/>
+</rel>
+</span>
+<span id="s10_n9" from="737" to="740">
+<rel label="DET">
+<span from="759" to="769"/>
+</rel>
+</span>
+<span id="s10_n10" from="741" to="758">
+<rel label="ATTR">
+<span from="759" to="769"/>
+</rel>
+</span>
+<span id="s10_n11" from="759" to="769">
+<rel label="PN">
+<span from="734" to="736"/>
+</rel>
+</span>
+<span id="s10_n12" from="770" to="771">
+<rel label="-PUNCT-">
+<span from="759" to="769"/>
+</rel>
+</span>
+<span id="s10_n13" from="772" to="775">
+<rel label="SUBJ">
+<span from="776" to="782"/>
+</rel>
+</span>
+<span id="s10_n14" from="776" to="782">
+<rel label="PN">
+<span from="705" to="707"/>
+</rel>
+</span>
+<span id="s10_n15" from="783" to="785">
+<rel label="PP">
+<span from="776" to="782"/>
+</rel>
+</span>
+<span id="s10_n16" from="786" to="794">
+<rel label="PN">
+<span from="783" to="785"/>
+</rel>
+</span>
+<span id="s10_n17" from="795" to="798">
+<rel label="APP">
+<span from="786" to="794"/>
+</rel>
+</span>
+<span id="s10_n18" from="799" to="800">
+<rel label="-PUNCT-">
+<span from="795" to="798"/>
+</rel>
+</span>
+<span id="s10_n19" from="801" to="803">
+<rel label="PP">
+<span from="817" to="835"/>
+</rel>
+</span>
+<span id="s10_n20" from="804" to="810">
+<rel label="DET">
+<span from="811" to="816"/>
+</rel>
+</span>
+<span id="s10_n21" from="811" to="816">
+<rel label="PN">
+<span from="801" to="803"/>
+</rel>
+</span>
+<span id="s10_n22" from="817" to="835">
+<rel label="PRED">
+<span from="701" to="704"/>
+</rel>
+</span>
+<span id="s10_n23" from="835" to="836">
+<rel label="-PUNCT-">
+<span from="817" to="835"/>
+</rel>
+</span>
+<span id="s11_n1" from="837" to="850">
+<rel label="PRED">
+<span from="851" to="854"/>
+</rel>
+</span>
+<span id="s11_n2" from="851" to="854">
+<rel label="ROOT">
+<span from="837" to="958"/>
+</rel>
+</span>
+<span id="s11_n3" from="854" to="855">
+<rel label="-PUNCT-">
+<span from="851" to="854"/>
+</rel>
+</span>
+<span id="s11_n4" from="856" to="860">
+<rel label="ROOT">
+<span from="837" to="958"/>
+</rel>
+</span>
+<span id="s11_n5" from="861" to="864">
+<rel label="DET">
+<span from="870" to="897"/>
+</rel>
+</span>
+<span id="s11_n6" from="865" to="869">
+<rel label="ATTR">
+<span from="870" to="897"/>
+</rel>
+</span>
+<span id="s11_n7" from="870" to="897">
+<rel label="ROOT">
+<span from="837" to="958"/>
+</rel>
+</span>
+<span id="s11_n8" from="898" to="900">
+<rel label="PP">
+<span from="951" to="957"/>
+</rel>
+</span>
+<span id="s11_n9" from="901" to="906">
+<rel label="DET">
+<span from="942" to="950"/>
+</rel>
+</span>
+<span id="s11_n10" from="907" to="909">
+<rel label="PP">
+<span from="930" to="941"/>
+</rel>
+</span>
+<span id="s11_n11" from="910" to="922">
+<rel label="ATTR">
+<span from="923" to="929"/>
+</rel>
+</span>
+<span id="s11_n12" from="923" to="929">
+<rel label="PN">
+<span from="907" to="909"/>
+</rel>
+</span>
+<span id="s11_n13" from="930" to="941">
+<rel label="ATTR">
+<span from="942" to="950"/>
+</rel>
+</span>
+<span id="s11_n14" from="942" to="950">
+<rel label="PN">
+<span from="898" to="900"/>
+</rel>
+</span>
+<span id="s11_n15" from="951" to="957">
+<rel label="ROOT">
+<span from="837" to="958"/>
+</rel>
+</span>
+<span id="s11_n16" from="957" to="958">
+<rel label="-PUNCT-">
+<span from="951" to="957"/>
+</rel>
+</span>
+<span id="s12_n1" from="959" to="962">
+<rel label="PP">
+<span from="1013" to="1019"/>
+</rel>
+</span>
+<span id="s12_n2" from="963" to="967">
+<rel label="DET">
+<span from="968" to="980"/>
+</rel>
+</span>
+<span id="s12_n3" from="968" to="980">
+<rel label="PN">
+<span from="959" to="962"/>
+</rel>
+</span>
+<span id="s12_n4" from="980" to="981">
+<rel label="-PUNCT-">
+<span from="968" to="980"/>
+</rel>
+</span>
+<span id="s12_n5" from="982" to="985">
+<rel label="DET">
+<span from="986" to="1001"/>
+</rel>
+</span>
+<span id="s12_n6" from="986" to="1001">
+<rel label="PRED">
+<span from="1002" to="1006"/>
+</rel>
+</span>
+<span id="s12_n7" from="1002" to="1006">
+<rel label="AUX">
+<span from="1007" to="1011"/>
+</rel>
+</span>
+<span id="s12_n8" from="1007" to="1011">
+<rel label="REL">
+<span from="968" to="980"/>
+</rel>
+</span>
+<span id="s12_n9" from="1011" to="1012">
+<rel label="-PUNCT-">
+<span from="1007" to="1011"/>
+</rel>
+</span>
+<span id="s12_n10" from="1013" to="1019">
+<rel label="ROOT">
+<span from="959" to="1103"/>
+</rel>
+</span>
+<span id="s12_n11" from="1020" to="1023">
+<rel label="DET">
+<span from="1024" to="1041"/>
+</rel>
+</span>
+<span id="s12_n12" from="1024" to="1041">
+<rel label="SUBJ">
+<span from="1013" to="1019"/>
+</rel>
+</span>
+<span id="s12_n13" from="1042" to="1048">
+<rel label="OBJA">
+<span from="1013" to="1019"/>
+</rel>
+</span>
+<span id="s12_n14" from="1049" to="1051">
+<rel label="PP">
+<span from="1042" to="1048"/>
+</rel>
+</span>
+<span id="s12_n15" from="1052" to="1062">
+<rel label="ATTR">
+<span from="1063" to="1074"/>
+</rel>
+</span>
+<span id="s12_n16" from="1063" to="1074">
+<rel label="PN">
+<span from="1049" to="1051"/>
+</rel>
+</span>
+<span id="s12_n17" from="1075" to="1078">
+<rel label="KON">
+<span from="1063" to="1074"/>
+</rel>
+</span>
+<span id="s12_n18" from="1079" to="1091">
+<rel label="ATTR">
+<span from="1092" to="1102"/>
+</rel>
+</span>
+<span id="s12_n19" from="1092" to="1102">
+<rel label="CJ">
+<span from="1075" to="1078"/>
+</rel>
+</span>
+<span id="s12_n20" from="1102" to="1103">
+<rel label="-PUNCT-">
+<span from="1092" to="1102"/>
+</rel>
+</span>
+<span id="s13_n1" from="1104" to="1107">
+<rel label="DET">
+<span from="1117" to="1123"/>
+</rel>
+</span>
+<span id="s13_n2" from="1108" to="1116">
+<rel label="ATTR">
+<span from="1117" to="1123"/>
+</rel>
+</span>
+<span id="s13_n3" from="1117" to="1123">
+<rel label="SUBJ">
+<span from="1172" to="1176"/>
+</rel>
+</span>
+<span id="s13_n4" from="1124" to="1125">
+<rel label="-PUNCT-">
+<span from="1117" to="1123"/>
+</rel>
+</span>
+<span id="s13_n5" from="1126" to="1129">
+<rel label="SUBJ">
+<span from="1130" to="1133"/>
+</rel>
+</span>
+<span id="s13_n6" from="1130" to="1133">
+<rel label="PAR">
+<span from="1117" to="1123"/>
+</rel>
+</span>
+<span id="s13_n7" from="1134" to="1140">
+<rel label="ADV">
+<span from="1156" to="1162"/>
+</rel>
+</span>
+<span id="s13_n8" from="1141" to="1146">
+<rel label="ADV">
+<span from="1156" to="1162"/>
+</rel>
+</span>
+<span id="s13_n9" from="1147" to="1155">
+<rel label="ADV">
+<span from="1156" to="1162"/>
+</rel>
+</span>
+<span id="s13_n10" from="1156" to="1162">
+<rel label="AUX">
+<span from="1163" to="1169"/>
+</rel>
+</span>
+<span id="s13_n11" from="1163" to="1169">
+<rel label="AUX">
+<span from="1130" to="1133"/>
+</rel>
+</span>
+<span id="s13_n12" from="1170" to="1171">
+<rel label="-PUNCT-">
+<span from="1163" to="1169"/>
+</rel>
+</span>
+<span id="s13_n13" from="1172" to="1176">
+<rel label="ROOT">
+<span from="1104" to="1254"/>
+</rel>
+</span>
+<span id="s13_n14" from="1177" to="1180">
+<rel label="ADV">
+<span from="1249" to="1253"/>
+</rel>
+</span>
+<span id="s13_n15" from="1181" to="1184">
+<rel label="DET">
+<span from="1192" to="1199"/>
+</rel>
+</span>
+<span id="s13_n16" from="1185" to="1191">
+<rel label="ATTR">
+<span from="1192" to="1199"/>
+</rel>
+</span>
+<span id="s13_n17" from="1192" to="1199">
+<rel label="PRED">
+<span from="1249" to="1253"/>
+</rel>
+</span>
+<span id="s13_n18" from="1200" to="1203">
+<rel label="PP">
+<span from="1192" to="1199"/>
+</rel>
+</span>
+<span id="s13_n19" from="1204" to="1222">
+<rel label="PN">
+<span from="1200" to="1203"/>
+</rel>
+</span>
+<span id="s13_n20" from="1223" to="1226">
+<rel label="PP">
+<span from="1204" to="1222"/>
+</rel>
+</span>
+<span id="s13_n21" from="1227" to="1230">
+<rel label="DET">
+<span from="1231" to="1248"/>
+</rel>
+</span>
+<span id="s13_n22" from="1231" to="1248">
+<rel label="PN">
+<span from="1223" to="1226"/>
+</rel>
+</span>
+<span id="s13_n23" from="1249" to="1253">
+<rel label="AUX">
+<span from="1172" to="1176"/>
+</rel>
+</span>
+<span id="s13_n24" from="1253" to="1254">
+<rel label="-PUNCT-">
+<span from="1249" to="1253"/>
+</rel>
+</span>
+<span id="s14_n1" from="1255" to="1257">
+<rel label="PP">
+<span from="1268" to="1273"/>
+</rel>
+</span>
+<span id="s14_n2" from="1258" to="1263">
+<rel label="PN">
+<span from="1255" to="1257"/>
+</rel>
+</span>
+<span id="s14_n3" from="1263" to="1264">
+<rel label="-PUNCT-">
+<span from="1258" to="1263"/>
+</rel>
+</span>
+<span id="s14_n4" from="1265" to="1267">
+<rel label="ADV">
+<span from="1268" to="1273"/>
+</rel>
+</span>
+<span id="s14_n5" from="1268" to="1273">
+<rel label="ROOT">
+<span from="1255" to="1405"/>
+</rel>
+</span>
+<span id="s14_n6" from="1274" to="1277">
+<rel label="SUBJ">
+<span from="1268" to="1273"/>
+</rel>
+</span>
+<span id="s14_n7" from="1277" to="1278">
+<rel label="-PUNCT-">
+<span from="1274" to="1277"/>
+</rel>
+</span>
+<span id="s14_n8" from="1279" to="1284">
+<rel label="ROOT">
+<span from="1255" to="1405"/>
+</rel>
+</span>
+<span id="s14_n9" from="1285" to="1288">
+<rel label="DET">
+<span from="1289" to="1306"/>
+</rel>
+</span>
+<span id="s14_n10" from="1289" to="1306">
+<rel label="SUBJ">
+<span from="1279" to="1284"/>
+</rel>
+</span>
+<span id="s14_n11" from="1307" to="1310">
+<rel label="PP">
+<span from="1279" to="1284"/>
+</rel>
+</span>
+<span id="s14_n12" from="1311" to="1316">
+<rel label="DET">
+<span from="1317" to="1332"/>
+</rel>
+</span>
+<span id="s14_n13" from="1317" to="1332">
+<rel label="PN">
+<span from="1307" to="1310"/>
+</rel>
+</span>
+<span id="s14_n14" from="1333" to="1336">
+<rel label="DET">
+<span from="1337" to="1344"/>
+</rel>
+</span>
+<span id="s14_n15" from="1337" to="1344">
+<rel label="GMOD">
+<span from="1317" to="1332"/>
+</rel>
+</span>
+<span id="s14_n16" from="1345" to="1348">
+<rel label="KON">
+<span from="1307" to="1310"/>
+</rel>
+</span>
+<span id="s14_n17" from="1349" to="1352">
+<rel label="CJ">
+<span from="1345" to="1348"/>
+</rel>
+</span>
+<span id="s14_n18" from="1353" to="1358">
+<rel label="DET">
+<span from="1359" to="1371"/>
+</rel>
+</span>
+<span id="s14_n19" from="1359" to="1371">
+<rel label="PN">
+<span from="1349" to="1352"/>
+</rel>
+</span>
+<span id="s14_n20" from="1372" to="1375">
+<rel label="DET">
+<span from="1376" to="1390"/>
+</rel>
+</span>
+<span id="s14_n21" from="1376" to="1390">
+<rel label="GMOD">
+<span from="1359" to="1371"/>
+</rel>
+</span>
+<span id="s14_n22" from="1391" to="1394">
+<rel label="DET">
+<span from="1395" to="1404"/>
+</rel>
+</span>
+<span id="s14_n23" from="1395" to="1404">
+<rel label="GMOD">
+<span from="1376" to="1390"/>
+</rel>
+</span>
+<span id="s14_n24" from="1404" to="1405">
+<rel label="-PUNCT-">
+<span from="1395" to="1404"/>
+</rel>
+</span>
+<span id="s15_n1" from="1406" to="1408">
+<rel label="ROOT">
+<span from="1406" to="1713"/>
+</rel>
+</span>
+<span id="s15_n2" from="1409" to="1421">
+<rel label="ATTR">
+<span from="1422" to="1432"/>
+</rel>
+</span>
+<span id="s15_n3" from="1422" to="1432">
+<rel label="ROOT">
+<span from="1406" to="1713"/>
+</rel>
+</span>
+<span id="s15_n4" from="1433" to="1436">
+<rel label="DET">
+<span from="1437" to="1448"/>
+</rel>
+</span>
+<span id="s15_n5" from="1437" to="1448">
+<rel label="SUBJ">
+<span from="1462" to="1466"/>
+</rel>
+</span>
+<span id="s15_n6" from="1449" to="1461">
+<rel label="PRED">
+<span from="1462" to="1466"/>
+</rel>
+</span>
+<span id="s15_n7" from="1462" to="1466">
+<rel label="ROOT">
+<span from="1406" to="1713"/>
+</rel>
+</span>
+<span id="s15_n8" from="1466" to="1467">
+<rel label="-PUNCT-">
+<span from="1462" to="1466"/>
+</rel>
+</span>
+<span id="s15_n9" from="1468" to="1470">
+<rel label="ADV">
+<span from="1512" to="1521"/>
+</rel>
+</span>
+<span id="s15_n10" from="1471" to="1489">
+<rel label="SUBJ">
+<span from="1512" to="1521"/>
+</rel>
+</span>
+<span id="s15_n11" from="1490" to="1492">
+<rel label="PP">
+<span from="1512" to="1521"/>
+</rel>
+</span>
+<span id="s15_n12" from="1493" to="1511">
+<rel label="PN">
+<span from="1490" to="1492"/>
+</rel>
+</span>
+<span id="s15_n13" from="1512" to="1521">
+<rel label="ROOT">
+<span from="1406" to="1713"/>
+</rel>
+</span>
+<span id="s15_n14" from="1521" to="1522">
+<rel label="-PUNCT-">
+<span from="1512" to="1521"/>
+</rel>
+</span>
+<span id="s15_n15" from="1523" to="1525">
+<rel label="ROOT">
+<span from="1406" to="1713"/>
+</rel>
+</span>
+<span id="s15_n16" from="1526" to="1545">
+<rel label="ROOT">
+<span from="1406" to="1713"/>
+</rel>
+</span>
+<span id="s15_n17" from="1546" to="1551">
+<rel label="PP">
+<span from="1620" to="1628"/>
+</rel>
+</span>
+<span id="s15_n18" from="1552" to="1566">
+<rel label="ATTR">
+<span from="1567" to="1576"/>
+</rel>
+</span>
+<span id="s15_n19" from="1567" to="1576">
+<rel label="PN">
+<span from="1546" to="1551"/>
+</rel>
+</span>
+<span id="s15_n20" from="1577" to="1579">
+<rel label="PP">
+<span from="1567" to="1576"/>
+</rel>
+</span>
+<span id="s15_n21" from="1580" to="1585">
+<rel label="DET">
+<span from="1586" to="1590"/>
+</rel>
+</span>
+<span id="s15_n22" from="1586" to="1590">
+<rel label="PN">
+<span from="1577" to="1579"/>
+</rel>
+</span>
+<span id="s15_n23" from="1591" to="1594">
+<rel label="KON">
+<span from="1577" to="1579"/>
+</rel>
+</span>
+<span id="s15_n24" from="1595" to="1597">
+<rel label="CJ">
+<span from="1591" to="1594"/>
+</rel>
+</span>
+<span id="s15_n25" from="1598" to="1603">
+<rel label="DET">
+<span from="1604" to="1607"/>
+</rel>
+</span>
+<span id="s15_n26" from="1604" to="1607">
+<rel label="PN">
+<span from="1595" to="1597"/>
+</rel>
+</span>
+<span id="s15_n27" from="1608" to="1610">
+<rel label="OBJP">
+<span from="1620" to="1628"/>
+</rel>
+</span>
+<span id="s15_n28" from="1611" to="1619">
+<rel label="PN">
+<span from="1608" to="1610"/>
+</rel>
+</span>
+<span id="s15_n29" from="1620" to="1628">
+<rel label="AUX">
+<span from="1629" to="1635"/>
+</rel>
+</span>
+<span id="s15_n30" from="1629" to="1635">
+<rel label="ROOT">
+<span from="1406" to="1713"/>
+</rel>
+</span>
+<span id="s15_n31" from="1635" to="1636">
+<rel label="-PUNCT-">
+<span from="1629" to="1635"/>
+</rel>
+</span>
+<span id="s15_n32" from="1637" to="1639">
+<rel label="KONJ">
+<span from="1640" to="1644"/>
+</rel>
+</span>
+<span id="s15_n33" from="1640" to="1644">
+<rel label="ROOT">
+<span from="1406" to="1713"/>
+</rel>
+</span>
+<span id="s15_n34" from="1645" to="1648">
+<rel label="DET">
+<span from="1649" to="1656"/>
+</rel>
+</span>
+<span id="s15_n35" from="1649" to="1656">
+<rel label="SUBJ">
+<span from="1640" to="1644"/>
+</rel>
+</span>
+<span id="s15_n36" from="1657" to="1659">
+<rel label="PP">
+<span from="1704" to="1712"/>
+</rel>
+</span>
+<span id="s15_n37" from="1660" to="1663">
+<rel label="DET">
+<span from="1680" to="1691"/>
+</rel>
+</span>
+<span id="s15_n38" from="1664" to="1679">
+<rel label="ATTR">
+<span from="1680" to="1691"/>
+</rel>
+</span>
+<span id="s15_n39" from="1680" to="1691">
+<rel label="PN">
+<span from="1657" to="1659"/>
+</rel>
+</span>
+<span id="s15_n40" from="1692" to="1695">
+<rel label="OBJA">
+<span from="1704" to="1712"/>
+</rel>
+</span>
+<span id="s15_n41" from="1696" to="1699">
+<rel label="KON">
+<span from="1692" to="1695"/>
+</rel>
+</span>
+<span id="s15_n42" from="1700" to="1703">
+<rel label="CJ">
+<span from="1696" to="1699"/>
+</rel>
+</span>
+<span id="s15_n43" from="1704" to="1712">
+<rel label="AUX">
+<span from="1640" to="1644"/>
+</rel>
+</span>
+<span id="s15_n44" from="1712" to="1713">
+<rel label="-PUNCT-">
+<span from="1704" to="1712"/>
+</rel>
+</span>
+<span id="s16_n1" from="1714" to="1718">
+<rel label="SUBJ">
+<span from="1719" to="1723"/>
+</rel>
+</span>
+<span id="s16_n2" from="1719" to="1723">
+<rel label="ROOT">
+<span from="1714" to="1802"/>
+</rel>
+</span>
+<span id="s16_n3" from="1724" to="1725">
+<rel label="-PUNCT-">
+<span from="1719" to="1723"/>
+</rel>
+</span>
+<span id="s16_n4" from="1726" to="1730">
+<rel label="ROOT">
+<span from="1714" to="1802"/>
+</rel>
+</span>
+<span id="s16_n5" from="1731" to="1735">
+<rel label="ROOT">
+<span from="1714" to="1802"/>
+</rel>
+</span>
+<span id="s16_n6" from="1736" to="1739">
+<rel label="ROOT">
+<span from="1714" to="1802"/>
+</rel>
+</span>
+<span id="s16_n7" from="1740" to="1745">
+<rel label="DET">
+<span from="1754" to="1759"/>
+</rel>
+</span>
+<span id="s16_n8" from="1746" to="1753">
+<rel label="DET">
+<span from="1754" to="1759"/>
+</rel>
+</span>
+<span id="s16_n9" from="1754" to="1759">
+<rel label="PN">
+<span from="1736" to="1739"/>
+</rel>
+</span>
+<span id="s16_n10" from="1760" to="1761">
+<rel label="-PUNCT-">
+<span from="1754" to="1759"/>
+</rel>
+</span>
+<span id="s16_n11" from="1762" to="1766">
+<rel label="DET">
+<span from="1767" to="1771"/>
+</rel>
+</span>
+<span id="s16_n12" from="1767" to="1771">
+<rel label="ROOT">
+<span from="1714" to="1802"/>
+</rel>
+</span>
+<span id="s16_n13" from="1772" to="1775">
+<rel label="DET">
+<span from="1776" to="1790"/>
+</rel>
+</span>
+<span id="s16_n14" from="1776" to="1790">
+<rel label="GMOD">
+<span from="1767" to="1771"/>
+</rel>
+</span>
+<span id="s16_n15" from="1791" to="1794">
+<rel label="PP">
+<span from="1776" to="1790"/>
+</rel>
+</span>
+<span id="s16_n16" from="1795" to="1801">
+<rel label="PN">
+<span from="1791" to="1794"/>
+</rel>
+</span>
+<span id="s16_n17" from="1801" to="1802">
+<rel label="-PUNCT-">
+<span from="1795" to="1801"/>
+</rel>
+</span>
+<span id="s17_n1" from="1803" to="1806">
+<rel label="DET">
+<span from="1807" to="1821"/>
+</rel>
+</span>
+<span id="s17_n2" from="1807" to="1821">
+<rel label="SUBJ">
+<span from="1839" to="1843"/>
+</rel>
+</span>
+<span id="s17_n3" from="1822" to="1825">
+<rel label="KON">
+<span from="1807" to="1821"/>
+</rel>
+</span>
+<span id="s17_n4" from="1826" to="1829">
+<rel label="DET">
+<span from="1830" to="1838"/>
+</rel>
+</span>
+<span id="s17_n5" from="1830" to="1838">
+<rel label="CJ">
+<span from="1822" to="1825"/>
+</rel>
+</span>
+<span id="s17_n6" from="1839" to="1843">
+<rel label="ROOT">
+<span from="1803" to="1919"/>
+</rel>
+</span>
+<span id="s17_n7" from="1844" to="1853">
+<rel label="AUX">
+<span from="1839" to="1843"/>
+</rel>
+</span>
+<span id="s17_n8" from="1853" to="1854">
+<rel label="-PUNCT-">
+<span from="1844" to="1853"/>
+</rel>
+</span>
+<span id="s17_n9" from="1855" to="1867">
+<rel label="ADV">
+<span from="1911" to="1918"/>
+</rel>
+</span>
+<span id="s17_n10" from="1868" to="1871">
+<rel label="DET">
+<span from="1872" to="1880"/>
+</rel>
+</span>
+<span id="s17_n11" from="1872" to="1880">
+<rel label="OBJA">
+<span from="1911" to="1918"/>
+</rel>
+</span>
+<span id="s17_n12" from="1881" to="1884">
+<rel label="DET">
+<span from="1901" to="1907"/>
+</rel>
+</span>
+<span id="s17_n13" from="1885" to="1900">
+<rel label="ATTR">
+<span from="1901" to="1907"/>
+</rel>
+</span>
+<span id="s17_n14" from="1901" to="1907">
+<rel label="GMOD">
+<span from="1872" to="1880"/>
+</rel>
+</span>
+<span id="s17_n15" from="1908" to="1910">
+<rel label="PART">
+<span from="1911" to="1918"/>
+</rel>
+</span>
+<span id="s17_n16" from="1911" to="1918">
+<rel label="NEB">
+<span from="1839" to="1843"/>
+</rel>
+</span>
+<span id="s17_n17" from="1918" to="1919">
+<rel label="-PUNCT-">
+<span from="1911" to="1918"/>
+</rel>
+</span>
+<span id="s18_n1" from="1920" to="1923">
+<rel label="OBJA">
+<span from="1924" to="1929"/>
+</rel>
+</span>
+<span id="s18_n2" from="1924" to="1929">
+<rel label="ROOT">
+<span from="1920" to="2011"/>
+</rel>
+</span>
+<span id="s18_n3" from="1930" to="1933">
+<rel label="DET">
+<span from="1934" to="1942"/>
+</rel>
+</span>
+<span id="s18_n4" from="1934" to="1942">
+<rel label="SUBJ">
+<span from="1924" to="1929"/>
+</rel>
+</span>
+<span id="s18_n5" from="1943" to="1946">
+<rel label="KON">
+<span from="1934" to="1942"/>
+</rel>
+</span>
+<span id="s18_n6" from="1947" to="1950">
+<rel label="DET">
+<span from="1951" to="1965"/>
+</rel>
+</span>
+<span id="s18_n7" from="1951" to="1965">
+<rel label="CJ">
+<span from="1943" to="1946"/>
+</rel>
+</span>
+<span id="s18_n8" from="1966" to="1972">
+<rel label="ADV">
+<span from="1924" to="1929"/>
+</rel>
+</span>
+<span id="s18_n9" from="1973" to="1976">
+<rel label="KON">
+<span from="1924" to="1929"/>
+</rel>
+</span>
+<span id="s18_n10" from="1977" to="1980">
+<rel label="ROOT">
+<span from="1920" to="2011"/>
+</rel>
+</span>
+<span id="s18_n11" from="1981" to="1987">
+<rel label="ROOT">
+<span from="1920" to="2011"/>
+</rel>
+</span>
+<span id="s18_n12" from="1988" to="1991">
+<rel label="SUBJ">
+<span from="1981" to="1987"/>
+</rel>
+</span>
+<span id="s18_n13" from="1992" to="1996">
+<rel label="ADV">
+<span from="2007" to="2010"/>
+</rel>
+</span>
+<span id="s18_n14" from="1997" to="2006">
+<rel label="ADV">
+<span from="2007" to="2010"/>
+</rel>
+</span>
+<span id="s18_n15" from="2007" to="2010">
+<rel label="AUX">
+<span from="1981" to="1987"/>
+</rel>
+</span>
+<span id="s18_n16" from="2010" to="2011">
+<rel label="-PUNCT-">
+<span from="2007" to="2010"/>
+</rel>
+</span>
+<span id="s19_n1" from="2012" to="2015">
+<rel label="DET">
+<span from="2016" to="2033"/>
+</rel>
+</span>
+<span id="s19_n2" from="2016" to="2033">
+<rel label="SUBJ">
+<span from="2034" to="2039"/>
+</rel>
+</span>
+<span id="s19_n3" from="2034" to="2039">
+<rel label="ROOT">
+<span from="2012" to="2150"/>
+</rel>
+</span>
+<span id="s19_n4" from="2040" to="2047">
+<rel label="ROOT">
+<span from="2012" to="2150"/>
+</rel>
+</span>
+<span id="s19_n5" from="2048" to="2054">
+<rel label="ADV">
+<span from="2040" to="2047"/>
+</rel>
+</span>
+<span id="s19_n6" from="2055" to="2058">
+<rel label="ROOT">
+<span from="2012" to="2150"/>
+</rel>
+</span>
+<span id="s19_n7" from="2059" to="2064">
+<rel label="DET">
+<span from="2078" to="2092"/>
+</rel>
+</span>
+<span id="s19_n8" from="2065" to="2067">
+<rel label="ADV">
+<span from="2068" to="2077"/>
+</rel>
+</span>
+<span id="s19_n9" from="2068" to="2077">
+<rel label="ATTR">
+<span from="2078" to="2092"/>
+</rel>
+</span>
+<span id="s19_n10" from="2078" to="2092">
+<rel label="PN">
+<span from="2055" to="2058"/>
+</rel>
+</span>
+<span id="s19_n11" from="2093" to="2096">
+<rel label="DET">
+<span from="2097" to="2108"/>
+</rel>
+</span>
+<span id="s19_n12" from="2097" to="2108">
+<rel label="GMOD">
+<span from="2078" to="2092"/>
+</rel>
+</span>
+<span id="s19_n13" from="2109" to="2119">
+<rel label="APP">
+<span from="2097" to="2108"/>
+</rel>
+</span>
+<span id="s19_n14" from="2120" to="2122">
+<rel label="PP">
+<span from="2078" to="2092"/>
+</rel>
+</span>
+<span id="s19_n15" from="2123" to="2126">
+<rel label="DET">
+<span from="2137" to="2149"/>
+</rel>
+</span>
+<span id="s19_n16" from="2127" to="2136">
+<rel label="ATTR">
+<span from="2137" to="2149"/>
+</rel>
+</span>
+<span id="s19_n17" from="2137" to="2149">
+<rel label="PN">
+<span from="2120" to="2122"/>
+</rel>
+</span>
+<span id="s19_n18" from="2149" to="2150">
+<rel label="-PUNCT-">
+<span from="2137" to="2149"/>
+</rel>
+</span>
+<span id="s20_n1" from="2151" to="2153">
+<rel label="PP">
+<span from="2221" to="2227"/>
+</rel>
+</span>
+<span id="s20_n2" from="2154" to="2157">
+<rel label="DET">
+<span from="2158" to="2175"/>
+</rel>
+</span>
+<span id="s20_n3" from="2158" to="2175">
+<rel label="PN">
+<span from="2151" to="2153"/>
+</rel>
+</span>
+<span id="s20_n4" from="2175" to="2176">
+<rel label="-PUNCT-">
+<span from="2158" to="2175"/>
+</rel>
+</span>
+<span id="s20_n5" from="2177" to="2180">
+<rel label="KONJ">
+<span from="2216" to="2219"/>
+</rel>
+</span>
+<span id="s20_n6" from="2181" to="2184">
+<rel label="SUBJ">
+<span from="2216" to="2219"/>
+</rel>
+</span>
+<span id="s20_n7" from="2185" to="2187">
+<rel label="PP">
+<span from="2206" to="2215"/>
+</rel>
+</span>
+<span id="s20_n8" from="2188" to="2205">
+<rel label="PN">
+<span from="2185" to="2187"/>
+</rel>
+</span>
+<span id="s20_n9" from="2206" to="2215">
+<rel label="AUX">
+<span from="2216" to="2219"/>
+</rel>
+</span>
+<span id="s20_n10" from="2216" to="2219">
+<rel label="OBJC">
+<span from="2158" to="2175"/>
+</rel>
+</span>
+<span id="s20_n11" from="2219" to="2220">
+<rel label="-PUNCT-">
+<span from="2216" to="2219"/>
+</rel>
+</span>
+<span id="s20_n12" from="2221" to="2227">
+<rel label="ROOT">
+<span from="2151" to="2255"/>
+</rel>
+</span>
+<span id="s20_n13" from="2228" to="2231">
+<rel label="SUBJ">
+<span from="2221" to="2227"/>
+</rel>
+</span>
+<span id="s20_n14" from="2232" to="2238">
+<rel label="DET">
+<span from="2239" to="2251"/>
+</rel>
+</span>
+<span id="s20_n15" from="2239" to="2251">
+<rel label="OBJA">
+<span from="2221" to="2227"/>
+</rel>
+</span>
+<span id="s20_n16" from="2252" to="2254">
+<rel label="AVZ">
+<span from="2221" to="2227"/>
+</rel>
+</span>
+<span id="s20_n17" from="2254" to="2255">
+<rel label="-PUNCT-">
+<span from="2252" to="2254"/>
+</rel>
+</span>
+<span id="s21_n1" from="2256" to="2266">
+<rel label="ADV">
+<span from="2267" to="2278"/>
+</rel>
+</span>
+<span id="s21_n2" from="2267" to="2278">
+<rel label="ROOT">
+<span from="2256" to="2411"/>
+</rel>
+</span>
+<span id="s21_n3" from="2279" to="2282">
+<rel label="DET">
+<span from="2283" to="2300"/>
+</rel>
+</span>
+<span id="s21_n4" from="2283" to="2300">
+<rel label="SUBJ">
+<span from="2267" to="2278"/>
+</rel>
+</span>
+<span id="s21_n5" from="2301" to="2304">
+<rel label="DET">
+<span from="2305" to="2313"/>
+</rel>
+</span>
+<span id="s21_n6" from="2305" to="2313">
+<rel label="OBJA">
+<span from="2267" to="2278"/>
+</rel>
+</span>
+<span id="s21_n7" from="2314" to="2317">
+<rel label="PP">
+<span from="2305" to="2313"/>
+</rel>
+</span>
+<span id="s21_n8" from="2318" to="2322">
+<rel label="PN">
+<span from="2314" to="2317"/>
+</rel>
+</span>
+<span id="s21_n9" from="2322" to="2323">
+<rel label="-PUNCT-">
+<span from="2318" to="2322"/>
+</rel>
+</span>
+<span id="s21_n10" from="2324" to="2328">
+<rel label="KON">
+<span from="2305" to="2313"/>
+</rel>
+</span>
+<span id="s21_n11" from="2328" to="2329">
+<rel label="-PUNCT-">
+<span from="2324" to="2328"/>
+</rel>
+</span>
+<span id="s21_n12" from="2330" to="2332">
+<rel label="PP">
+<span from="2305" to="2313"/>
+</rel>
+</span>
+<span id="s21_n13" from="2333" to="2343">
+<rel label="PN">
+<span from="2330" to="2332"/>
+</rel>
+</span>
+<span id="s21_n14" from="2344" to="2347">
+<rel label="KON">
+<span from="2333" to="2343"/>
+</rel>
+</span>
+<span id="s21_n15" from="2348" to="2353">
+<rel label="CJ">
+<span from="2344" to="2347"/>
+</rel>
+</span>
+<span id="s21_n16" from="2354" to="2357">
+<rel label="KON">
+<span from="2267" to="2278"/>
+</rel>
+</span>
+<span id="s21_n17" from="2358" to="2363">
+<rel label="CJ">
+<span from="2354" to="2357"/>
+</rel>
+</span>
+<span id="s21_n18" from="2364" to="2369">
+<rel label="DET">
+<span from="2370" to="2378"/>
+</rel>
+</span>
+<span id="s21_n19" from="2370" to="2378">
+<rel label="OBJA">
+<span from="2358" to="2363"/>
+</rel>
+</span>
+<span id="s21_n20" from="2379" to="2391">
+<rel label="ADV">
+<span from="2392" to="2410"/>
+</rel>
+</span>
+<span id="s21_n21" from="2392" to="2410">
+<rel label="PRED">
+<span from="2358" to="2363"/>
+</rel>
+</span>
+<span id="s21_n22" from="2410" to="2411">
+<rel label="-PUNCT-">
+<span from="2392" to="2410"/>
+</rel>
+</span>
+<span id="s22_n1" from="2412" to="2424">
+<rel label="ADV">
+<span from="2425" to="2431"/>
+</rel>
+</span>
+<span id="s22_n2" from="2425" to="2431">
+<rel label="ROOT">
+<span from="2412" to="2512"/>
+</rel>
+</span>
+<span id="s22_n3" from="2432" to="2435">
+<rel label="PP">
+<span from="2425" to="2431"/>
+</rel>
+</span>
+<span id="s22_n4" from="2436" to="2439">
+<rel label="PN">
+<span from="2432" to="2435"/>
+</rel>
+</span>
+<span id="s22_n5" from="2440" to="2443">
+<rel label="DET">
+<span from="2444" to="2454"/>
+</rel>
+</span>
+<span id="s22_n6" from="2444" to="2454">
+<rel label="SUBJ">
+<span from="2425" to="2431"/>
+</rel>
+</span>
+<span id="s22_n7" from="2455" to="2462">
+<rel label="APP">
+<span from="2444" to="2454"/>
+</rel>
+</span>
+<span id="s22_n8" from="2463" to="2466">
+<rel label="DET">
+<span from="2505" to="2511"/>
+</rel>
+</span>
+<span id="s22_n9" from="2467" to="2476">
+<rel label="ADV">
+<span from="2477" to="2490"/>
+</rel>
+</span>
+<span id="s22_n10" from="2477" to="2490">
+<rel label="ATTR">
+<span from="2505" to="2511"/>
+</rel>
+</span>
+<span id="s22_n11" from="2491" to="2494">
+<rel label="KON">
+<span from="2477" to="2490"/>
+</rel>
+</span>
+<span id="s22_n12" from="2495" to="2504">
+<rel label="CJ">
+<span from="2491" to="2494"/>
+</rel>
+</span>
+<span id="s22_n13" from="2505" to="2511">
+<rel label="GMOD">
+<span from="2455" to="2462"/>
+</rel>
+</span>
+<span id="s22_n14" from="2511" to="2512">
+<rel label="-PUNCT-">
+<span from="2505" to="2511"/>
+</rel>
+</span>
+<span id="s23_n1" from="2513" to="2515">
+<rel label="PP">
+<span from="2559" to="2563"/>
+</rel>
+</span>
+<span id="s23_n2" from="2516" to="2522">
+<rel label="PN">
+<span from="2513" to="2515"/>
+</rel>
+</span>
+<span id="s23_n3" from="2523" to="2526">
+<rel label="PP">
+<span from="2516" to="2522"/>
+</rel>
+</span>
+<span id="s23_n4" from="2527" to="2529">
+<rel label="ADV">
+<span from="2530" to="2539"/>
+</rel>
+</span>
+<span id="s23_n5" from="2530" to="2539">
+<rel label="ATTR">
+<span from="2540" to="2558"/>
+</rel>
+</span>
+<span id="s23_n6" from="2540" to="2558">
+<rel label="PN">
+<span from="2523" to="2526"/>
+</rel>
+</span>
+<span id="s23_n7" from="2559" to="2563">
+<rel label="ROOT">
+<span from="2513" to="2691"/>
+</rel>
+</span>
+<span id="s23_n8" from="2564" to="2566">
+<rel label="SUBJ">
+<span from="2559" to="2563"/>
+</rel>
+</span>
+<span id="s23_n9" from="2567" to="2572">
+<rel label="ADV">
+<span from="2593" to="2599"/>
+</rel>
+</span>
+<span id="s23_n10" from="2573" to="2577">
+<rel label="ADV">
+<span from="2593" to="2599"/>
+</rel>
+</span>
+<span id="s23_n11" from="2578" to="2581">
+<rel label="DET">
+<span from="2593" to="2599"/>
+</rel>
+</span>
+<span id="s23_n12" from="2582" to="2592">
+<rel label="ATTR">
+<span from="2593" to="2599"/>
+</rel>
+</span>
+<span id="s23_n13" from="2593" to="2599">
+<rel label="PRED">
+<span from="2559" to="2563"/>
+</rel>
+</span>
+<span id="s23_n14" from="2599" to="2600">
+<rel label="-PUNCT-">
+<span from="2593" to="2599"/>
+</rel>
+</span>
+<span id="s23_n15" from="2601" to="2603">
+<rel label="ADV">
+<span from="2559" to="2563"/>
+</rel>
+</span>
+<span id="s23_n16" from="2604" to="2607">
+<rel label="ROOT">
+<span from="2513" to="2691"/>
+</rel>
+</span>
+<span id="s23_n17" from="2608" to="2610">
+<rel label="ROOT">
+<span from="2513" to="2691"/>
+</rel>
+</span>
+<span id="s23_n18" from="2611" to="2614">
+<rel label="ROOT">
+<span from="2513" to="2691"/>
+</rel>
+</span>
+<span id="s23_n19" from="2615" to="2623">
+<rel label="PN">
+<span from="2611" to="2614"/>
+</rel>
+</span>
+<span id="s23_n20" from="2624" to="2627">
+<rel label="DET">
+<span from="2641" to="2649"/>
+</rel>
+</span>
+<span id="s23_n21" from="2628" to="2640">
+<rel label="ATTR">
+<span from="2641" to="2649"/>
+</rel>
+</span>
+<span id="s23_n22" from="2641" to="2649">
+<rel label="ROOT">
+<span from="2513" to="2691"/>
+</rel>
+</span>
+<span id="s23_n23" from="2650" to="2652">
+<rel label="PP">
+<span from="2672" to="2684"/>
+</rel>
+</span>
+<span id="s23_n24" from="2653" to="2658">
+<rel label="DET">
+<span from="2659" to="2671"/>
+</rel>
+</span>
+<span id="s23_n25" from="2659" to="2671">
+<rel label="PN">
+<span from="2650" to="2652"/>
+</rel>
+</span>
+<span id="s23_n26" from="2672" to="2684">
+<rel label="AUX">
+<span from="2685" to="2690"/>
+</rel>
+</span>
+<span id="s23_n27" from="2685" to="2690">
+<rel label="ROOT">
+<span from="2513" to="2691"/>
+</rel>
+</span>
+<span id="s23_n28" from="2690" to="2691">
+<rel label="-PUNCT-">
+<span from="2685" to="2690"/>
+</rel>
+</span>
+<span id="s24_n1" from="2692" to="2696">
+<rel label="KONJ">
+<span from="2766" to="2769"/>
+</rel>
+</span>
+<span id="s24_n2" from="2697" to="2700">
+<rel label="DET">
+<span from="2701" to="2711"/>
+</rel>
+</span>
+<span id="s24_n3" from="2701" to="2711">
+<rel label="SUBJ">
+<span from="2766" to="2769"/>
+</rel>
+</span>
+<span id="s24_n4" from="2712" to="2715">
+<rel label="PP">
+<span from="2766" to="2769"/>
+</rel>
+</span>
+<span id="s24_n5" from="2716" to="2719">
+<rel label="PN">
+<span from="2712" to="2715"/>
+</rel>
+</span>
+<span id="s24_n6" from="2720" to="2724">
+<rel label="DET">
+<span from="2734" to="2751"/>
+</rel>
+</span>
+<span id="s24_n7" from="2725" to="2733">
+<rel label="ATTR">
+<span from="2734" to="2751"/>
+</rel>
+</span>
+<span id="s24_n8" from="2734" to="2751">
+<rel label="PRED">
+<span from="2766" to="2769"/>
+</rel>
+</span>
+<span id="s24_n9" from="2752" to="2757">
+<rel label="PP">
+<span from="2734" to="2751"/>
+</rel>
+</span>
+<span id="s24_n10" from="2758" to="2765">
+<rel label="PN">
+<span from="2752" to="2757"/>
+</rel>
+</span>
+<span id="s24_n11" from="2766" to="2769">
+<rel label="NEB">
+<span from="2771" to="2776"/>
+</rel>
+</span>
+<span id="s24_n12" from="2769" to="2770">
+<rel label="-PUNCT-">
+<span from="2766" to="2769"/>
+</rel>
+</span>
+<span id="s24_n13" from="2771" to="2776">
+<rel label="ROOT">
+<span from="2692" to="2842"/>
+</rel>
+</span>
+<span id="s24_n14" from="2777" to="2780">
+<rel label="SUBJ">
+<span from="2771" to="2776"/>
+</rel>
+</span>
+<span id="s24_n15" from="2781" to="2784">
+<rel label="DET">
+<span from="2785" to="2804"/>
+</rel>
+</span>
+<span id="s24_n16" from="2785" to="2804">
+<rel label="OBJA">
+<span from="2771" to="2776"/>
+</rel>
+</span>
+<span id="s24_n17" from="2805" to="2808">
+<rel label="KON">
+<span from="2771" to="2776"/>
+</rel>
+</span>
+<span id="s24_n18" from="2809" to="2815">
+<rel label="CJ">
+<span from="2805" to="2808"/>
+</rel>
+</span>
+<span id="s24_n19" from="2816" to="2821">
+<rel label="OBJA">
+<span from="2809" to="2815"/>
+</rel>
+</span>
+<span id="s24_n20" from="2822" to="2826">
+<rel label="ADV">
+<span from="2827" to="2836"/>
+</rel>
+</span>
+<span id="s24_n21" from="2827" to="2836">
+<rel label="ADV">
+<span from="2809" to="2815"/>
+</rel>
+</span>
+<span id="s24_n22" from="2837" to="2841">
+<rel label="AVZ">
+<span from="2809" to="2815"/>
+</rel>
+</span>
+<span id="s24_n23" from="2841" to="2842">
+<rel label="-PUNCT-">
+<span from="2837" to="2841"/>
+</rel>
+</span>
+<span id="s25_n1" from="2843" to="2850">
+<rel label="AVZ">
+<span from="2851" to="2862"/>
+</rel>
+</span>
+<span id="s25_n2" from="2851" to="2862">
+<rel label="ROOT">
+<span from="2843" to="3001"/>
+</rel>
+</span>
+<span id="s25_n3" from="2863" to="2866">
+<rel label="SUBJ">
+<span from="2851" to="2862"/>
+</rel>
+</span>
+<span id="s25_n4" from="2867" to="2870">
+<rel label="OBJA">
+<span from="2851" to="2862"/>
+</rel>
+</span>
+<span id="s25_n5" from="2871" to="2876">
+<rel label="DET">
+<span from="2877" to="2890"/>
+</rel>
+</span>
+<span id="s25_n6" from="2877" to="2890">
+<rel label="SUBJ">
+<span from="2851" to="2862"/>
+</rel>
+</span>
+<span id="s25_n7" from="2891" to="2894">
+<rel label="KON">
+<span from="2877" to="2890"/>
+</rel>
+</span>
+<span id="s25_n8" from="2895" to="2900">
+<rel label="DET">
+<span from="2917" to="2943"/>
+</rel>
+</span>
+<span id="s25_n9" from="2901" to="2910">
+<rel label="ADV">
+<span from="2911" to="2916"/>
+</rel>
+</span>
+<span id="s25_n10" from="2911" to="2916">
+<rel label="ATTR">
+<span from="2917" to="2943"/>
+</rel>
+</span>
+<span id="s25_n11" from="2917" to="2943">
+<rel label="CJ">
+<span from="2891" to="2894"/>
+</rel>
+</span>
+<span id="s25_n12" from="2944" to="2947">
+<rel label="PP">
+<span from="2917" to="2943"/>
+</rel>
+</span>
+<span id="s25_n13" from="2948" to="2962">
+<rel label="PN">
+<span from="2944" to="2947"/>
+</rel>
+</span>
+<span id="s25_n14" from="2963" to="2972">
+<rel label="PP">
+<span from="2948" to="2962"/>
+</rel>
+</span>
+<span id="s25_n15" from="2973" to="2985">
+<rel label="PN">
+<span from="2963" to="2972"/>
+</rel>
+</span>
+<span id="s25_n16" from="2986" to="2989">
+<rel label="DET">
+<span from="2990" to="3000"/>
+</rel>
+</span>
+<span id="s25_n17" from="2990" to="3000">
+<rel label="GMOD">
+<span from="2973" to="2985"/>
+</rel>
+</span>
+<span id="s25_n18" from="3000" to="3001">
+<rel label="-PUNCT-">
+<span from="2990" to="3000"/>
+</rel>
+</span>
+<span id="s26_n1" from="3002" to="3005">
+<rel label="DET">
+<span from="3006" to="3023"/>
+</rel>
+</span>
+<span id="s26_n2" from="3006" to="3023">
+<rel label="SUBJ">
+<span from="3024" to="3030"/>
+</rel>
+</span>
+<span id="s26_n3" from="3024" to="3030">
+<rel label="ROOT">
+<span from="3002" to="3206"/>
+</rel>
+</span>
+<span id="s26_n4" from="3031" to="3037">
+<rel label="ADV">
+<span from="3038" to="3045"/>
+</rel>
+</span>
+<span id="s26_n5" from="3038" to="3045">
+<rel label="ADV">
+<span from="3024" to="3030"/>
+</rel>
+</span>
+<span id="s26_n6" from="3046" to="3049">
+<rel label="DET">
+<span from="3050" to="3063"/>
+</rel>
+</span>
+<span id="s26_n7" from="3050" to="3063">
+<rel label="OBJA">
+<span from="3024" to="3030"/>
+</rel>
+</span>
+<span id="s26_n8" from="3064" to="3075">
+<rel label="ATTR">
+<span from="3076" to="3094"/>
+</rel>
+</span>
+<span id="s26_n9" from="3076" to="3094">
+<rel label="GMOD">
+<span from="3050" to="3063"/>
+</rel>
+</span>
+<span id="s26_n10" from="3094" to="3095">
+<rel label="-PUNCT-">
+<span from="3076" to="3094"/>
+</rel>
+</span>
+<span id="s26_n11" from="3096" to="3098">
+<rel label="PP">
+<span from="3024" to="3030"/>
+</rel>
+</span>
+<span id="s26_n12" from="3099" to="3104">
+<rel label="PN">
+<span from="3096" to="3098"/>
+</rel>
+</span>
+<span id="s26_n13" from="3105" to="3108">
+<rel label="DET">
+<span from="3109" to="3120"/>
+</rel>
+</span>
+<span id="s26_n14" from="3109" to="3120">
+<rel label="GMOD">
+<span from="3099" to="3104"/>
+</rel>
+</span>
+<span id="s26_n15" from="3121" to="3124">
+<rel label="DET">
+<span from="3133" to="3143"/>
+</rel>
+</span>
+<span id="s26_n16" from="3125" to="3132">
+<rel label="ATTR">
+<span from="3133" to="3143"/>
+</rel>
+</span>
+<span id="s26_n17" from="3133" to="3143">
+<rel label="GMOD">
+<span from="3109" to="3120"/>
+</rel>
+</span>
+<span id="s26_n18" from="3144" to="3151">
+<rel label="OBJA">
+<span from="3152" to="3157"/>
+</rel>
+</span>
+<span id="s26_n19" from="3152" to="3157">
+<rel label="OBJC">
+<span from="3024" to="3030"/>
+</rel>
+</span>
+<span id="s26_n20" from="3158" to="3161">
+<rel label="KON">
+<span from="3152" to="3157"/>
+</rel>
+</span>
+<span id="s26_n21" from="3162" to="3169">
+<rel label="SUBJ">
+<span from="3199" to="3205"/>
+</rel>
+</span>
+<span id="s26_n22" from="3170" to="3174">
+<rel label="ADV">
+<span from="3175" to="3181"/>
+</rel>
+</span>
+<span id="s26_n23" from="3175" to="3181">
+<rel label="ADV">
+<span from="3182" to="3191"/>
+</rel>
+</span>
+<span id="s26_n24" from="3182" to="3191">
+<rel label="AUX">
+<span from="3192" to="3198"/>
+</rel>
+</span>
+<span id="s26_n25" from="3192" to="3198">
+<rel label="AUX">
+<span from="3199" to="3205"/>
+</rel>
+</span>
+<span id="s26_n26" from="3199" to="3205">
+<rel label="CJ">
+<span from="3158" to="3161"/>
+</rel>
+</span>
+<span id="s26_n27" from="3205" to="3206">
+<rel label="-PUNCT-">
+<span from="3199" to="3205"/>
+</rel>
+</span>
+<span id="s27_n1" from="3207" to="3210">
+<rel label="DET">
+<span from="3220" to="3233"/>
+</rel>
+</span>
+<span id="s27_n2" from="3211" to="3219">
+<rel label="ATTR">
+<span from="3220" to="3233"/>
+</rel>
+</span>
+<span id="s27_n3" from="3220" to="3233">
+<rel label="SUBJ">
+<span from="3254" to="3258"/>
+</rel>
+</span>
+<span id="s27_n4" from="3234" to="3235">
+<rel label="-PUNCT-">
+<span from="3220" to="3233"/>
+</rel>
+</span>
+<span id="s27_n5" from="3236" to="3239">
+<rel label="PP">
+<span from="3254" to="3258"/>
+</rel>
+</span>
+<span id="s27_n6" from="3240" to="3243">
+<rel label="DET">
+<span from="3244" to="3253"/>
+</rel>
+</span>
+<span id="s27_n7" from="3244" to="3253">
+<rel label="PN">
+<span from="3236" to="3239"/>
+</rel>
+</span>
+<span id="s27_n8" from="3254" to="3258">
+<rel label="ROOT">
+<span from="3207" to="3362"/>
+</rel>
+</span>
+<span id="s27_n9" from="3259" to="3262">
+<rel label="DET">
+<span from="3278" to="3285"/>
+</rel>
+</span>
+<span id="s27_n10" from="3263" to="3277">
+<rel label="ATTR">
+<span from="3278" to="3285"/>
+</rel>
+</span>
+<span id="s27_n11" from="3278" to="3285">
+<rel label="ROOT">
+<span from="3207" to="3362"/>
+</rel>
+</span>
+<span id="s27_n12" from="3286" to="3291">
+<rel label="ADV">
+<span from="3301" to="3308"/>
+</rel>
+</span>
+<span id="s27_n13" from="3292" to="3300">
+<rel label="ADV">
+<span from="3301" to="3308"/>
+</rel>
+</span>
+<span id="s27_n14" from="3301" to="3308">
+<rel label="AUX">
+<span from="3309" to="3315"/>
+</rel>
+</span>
+<span id="s27_n15" from="3309" to="3315">
+<rel label="ROOT">
+<span from="3207" to="3362"/>
+</rel>
+</span>
+<span id="s27_n16" from="3316" to="3317">
+<rel label="-PUNCT-">
+<span from="3309" to="3315"/>
+</rel>
+</span>
+<span id="s27_n17" from="3318" to="3322">
+<rel label="ROOT">
+<span from="3207" to="3362"/>
+</rel>
+</span>
+<span id="s27_n18" from="3323" to="3327">
+<rel label="ADV">
+<span from="3355" to="3361"/>
+</rel>
+</span>
+<span id="s27_n19" from="3328" to="3338">
+<rel label="ADV">
+<span from="3355" to="3361"/>
+</rel>
+</span>
+<span id="s27_n20" from="3339" to="3342">
+<rel label="KOM">
+<span from="3355" to="3361"/>
+</rel>
+</span>
+<span id="s27_n21" from="3343" to="3354">
+<rel label="CJ">
+<span from="3339" to="3342"/>
+</rel>
+</span>
+<span id="s27_n22" from="3355" to="3361">
+<rel label="AUX">
+<span from="3318" to="3322"/>
+</rel>
+</span>
+<span id="s27_n23" from="3361" to="3362">
+<rel label="-PUNCT-">
+<span from="3355" to="3361"/>
+</rel>
+</span>
+<span id="s28_n1" from="3363" to="3366">
+<rel label="SUBJ">
+<span from="3367" to="3372"/>
+</rel>
+</span>
+<span id="s28_n2" from="3367" to="3372">
+<rel label="ROOT">
+<span from="3363" to="3599"/>
+</rel>
+</span>
+<span id="s28_n3" from="3373" to="3377">
+<rel label="OBJA">
+<span from="3367" to="3372"/>
+</rel>
+</span>
+<span id="s28_n4" from="3378" to="3382">
+<rel label="ADV">
+<span from="3367" to="3372"/>
+</rel>
+</span>
+<span id="s28_n5" from="3383" to="3398">
+<rel label="ADV">
+<span from="3367" to="3372"/>
+</rel>
+</span>
+<span id="s28_n6" from="3398" to="3399">
+<rel label="-PUNCT-">
+<span from="3383" to="3398"/>
+</rel>
+</span>
+<span id="s28_n7" from="3400" to="3404">
+<rel label="ROOT">
+<span from="3363" to="3599"/>
+</rel>
+</span>
+<span id="s28_n8" from="3405" to="3408">
+<rel label="DET">
+<span from="3409" to="3424"/>
+</rel>
+</span>
+<span id="s28_n9" from="3409" to="3424">
+<rel label="ROOT">
+<span from="3363" to="3599"/>
+</rel>
+</span>
+<span id="s28_n10" from="3425" to="3428">
+<rel label="KON">
+<span from="3409" to="3424"/>
+</rel>
+</span>
+<span id="s28_n11" from="3429" to="3432">
+<rel label="DET">
+<span from="3433" to="3442"/>
+</rel>
+</span>
+<span id="s28_n12" from="3433" to="3442">
+<rel label="CJ">
+<span from="3425" to="3428"/>
+</rel>
+</span>
+<span id="s28_n13" from="3443" to="3446">
+<rel label="PP">
+<span from="3540" to="3548"/>
+</rel>
+</span>
+<span id="s28_n14" from="3447" to="3453">
+<rel label="DET">
+<span from="3454" to="3458"/>
+</rel>
+</span>
+<span id="s28_n15" from="3454" to="3458">
+<rel label="PN">
+<span from="3443" to="3446"/>
+</rel>
+</span>
+<span id="s28_n16" from="3459" to="3462">
+<rel label="DET">
+<span from="3476" to="3491"/>
+</rel>
+</span>
+<span id="s28_n17" from="3463" to="3475">
+<rel label="ATTR">
+<span from="3476" to="3491"/>
+</rel>
+</span>
+<span id="s28_n18" from="3476" to="3491">
+<rel label="GMOD">
+<span from="3454" to="3458"/>
+</rel>
+</span>
+<span id="s28_n19" from="3492" to="3502">
+<rel label="ADV">
+<span from="3540" to="3548"/>
+</rel>
+</span>
+<span id="s28_n20" from="3503" to="3508">
+<rel label="ADV">
+<span from="3540" to="3548"/>
+</rel>
+</span>
+<span id="s28_n21" from="3509" to="3514">
+<rel label="ADV">
+<span from="3540" to="3548"/>
+</rel>
+</span>
+<span id="s28_n22" from="3515" to="3522">
+<rel label="OBJA">
+<span from="3540" to="3548"/>
+</rel>
+</span>
+<span id="s28_n23" from="3523" to="3527">
+<rel label="ADV">
+<span from="3515" to="3522"/>
+</rel>
+</span>
+<span id="s28_n24" from="3528" to="3531">
+<rel label="OBJP">
+<span from="3540" to="3548"/>
+</rel>
+</span>
+<span id="s28_n25" from="3532" to="3535">
+<rel label="DET">
+<span from="3536" to="3539"/>
+</rel>
+</span>
+<span id="s28_n26" from="3536" to="3539">
+<rel label="PN">
+<span from="3528" to="3531"/>
+</rel>
+</span>
+<span id="s28_n27" from="3540" to="3548">
+<rel label="AUX">
+<span from="3549" to="3554"/>
+</rel>
+</span>
+<span id="s28_n28" from="3549" to="3554">
+<rel label="ROOT">
+<span from="3363" to="3599"/>
+</rel>
+</span>
+<span id="s28_n29" from="3554" to="3555">
+<rel label="-PUNCT-">
+<span from="3549" to="3554"/>
+</rel>
+</span>
+<span id="s28_n30" from="3556" to="3559">
+<rel label="KONJ">
+<span from="3593" to="3598"/>
+</rel>
+</span>
+<span id="s28_n31" from="3560" to="3562">
+<rel label="PP">
+<span from="3593" to="3598"/>
+</rel>
+</span>
+<span id="s28_n32" from="3563" to="3569">
+<rel label="DET">
+<span from="3570" to="3579"/>
+</rel>
+</span>
+<span id="s28_n33" from="3570" to="3579">
+<rel label="PN">
+<span from="3560" to="3562"/>
+</rel>
+</span>
+<span id="s28_n34" from="3580" to="3583">
+<rel label="OBJP">
+<span from="3593" to="3598"/>
+</rel>
+</span>
+<span id="s28_n35" from="3584" to="3592">
+<rel label="PN">
+<span from="3580" to="3583"/>
+</rel>
+</span>
+<span id="s28_n36" from="3593" to="3598">
+<rel label="ROOT">
+<span from="3363" to="3599"/>
+</rel>
+</span>
+<span id="s28_n37" from="3598" to="3599">
+<rel label="-PUNCT-">
+<span from="3593" to="3598"/>
+</rel>
+</span>
+<span id="s29_n1" from="3600" to="3602">
+<rel label="ROOT">
+<span from="3600" to="3776"/>
+</rel>
+</span>
+<span id="s29_n2" from="3603" to="3609">
+<rel label="ROOT">
+<span from="3600" to="3776"/>
+</rel>
+</span>
+<span id="s29_n3" from="3610" to="3613">
+<rel label="PP">
+<span from="3663" to="3673"/>
+</rel>
+</span>
+<span id="s29_n4" from="3614" to="3622">
+<rel label="PN">
+<span from="3610" to="3613"/>
+</rel>
+</span>
+<span id="s29_n5" from="3623" to="3633">
+<rel label="ADV">
+<span from="3610" to="3613"/>
+</rel>
+</span>
+<span id="s29_n6" from="3634" to="3646">
+<rel label="ADV">
+<span from="3663" to="3673"/>
+</rel>
+</span>
+<span id="s29_n7" from="3647" to="3650">
+<rel label="DET">
+<span from="3651" to="3662"/>
+</rel>
+</span>
+<span id="s29_n8" from="3651" to="3662">
+<rel label="OBJA">
+<span from="3663" to="3673"/>
+</rel>
+</span>
+<span id="s29_n9" from="3663" to="3673">
+<rel label="AUX">
+<span from="3603" to="3609"/>
+</rel>
+</span>
+<span id="s29_n10" from="3673" to="3674">
+<rel label="-PUNCT-">
+<span from="3663" to="3673"/>
+</rel>
+</span>
+<span id="s29_n11" from="3675" to="3678">
+<rel label="PP">
+<span from="3695" to="3698"/>
+</rel>
+</span>
+<span id="s29_n12" from="3679" to="3688">
+<rel label="ATTR">
+<span from="3689" to="3694"/>
+</rel>
+</span>
+<span id="s29_n13" from="3689" to="3694">
+<rel label="PN">
+<span from="3675" to="3678"/>
+</rel>
+</span>
+<span id="s29_n14" from="3695" to="3698">
+<rel label="PP">
+<span from="3663" to="3673"/>
+</rel>
+</span>
+<span id="s29_n15" from="3699" to="3701">
+<rel label="PP">
+<span from="3695" to="3698"/>
+</rel>
+</span>
+<span id="s29_n16" from="3702" to="3705">
+<rel label="DET">
+<span from="3714" to="3724"/>
+</rel>
+</span>
+<span id="s29_n17" from="3706" to="3713">
+<rel label="ATTR">
+<span from="3714" to="3724"/>
+</rel>
+</span>
+<span id="s29_n18" from="3714" to="3724">
+<rel label="PN">
+<span from="3699" to="3701"/>
+</rel>
+</span>
+<span id="s29_n19" from="3725" to="3728">
+<rel label="PP">
+<span from="3714" to="3724"/>
+</rel>
+</span>
+<span id="s29_n20" from="3729" to="3744">
+<rel label="ATTR">
+<span from="3745" to="3762"/>
+</rel>
+</span>
+<span id="s29_n21" from="3745" to="3762">
+<rel label="PN">
+<span from="3725" to="3728"/>
+</rel>
+</span>
+<span id="s29_n22" from="3763" to="3775">
+<rel label="ROOT">
+<span from="3600" to="3776"/>
+</rel>
+</span>
+<span id="s29_n23" from="3775" to="3776">
+<rel label="-PUNCT-">
+<span from="3763" to="3775"/>
+</rel>
+</span>
+<span id="s30_n1" from="3777" to="3779">
+<rel label="PP">
+<span from="3797" to="3803"/>
+</rel>
+</span>
+<span id="s30_n2" from="3780" to="3783">
+<rel label="DET">
+<span from="3784" to="3796"/>
+</rel>
+</span>
+<span id="s30_n3" from="3784" to="3796">
+<rel label="PN">
+<span from="3777" to="3779"/>
+</rel>
+</span>
+<span id="s30_n4" from="3797" to="3803">
+<rel label="ROOT">
+<span from="3777" to="3856"/>
+</rel>
+</span>
+<span id="s30_n5" from="3804" to="3807">
+<rel label="SUBJ">
+<span from="3797" to="3803"/>
+</rel>
+</span>
+<span id="s30_n6" from="3808" to="3816">
+<rel label="AUX">
+<span from="3797" to="3803"/>
+</rel>
+</span>
+<span id="s30_n7" from="3816" to="3817">
+<rel label="-PUNCT-">
+<span from="3808" to="3816"/>
+</rel>
+</span>
+<span id="s30_n8" from="3818" to="3822">
+<rel label="KONJ">
+<span from="3850" to="3852"/>
+</rel>
+</span>
+<span id="s30_n9" from="3823" to="3825">
+<rel label="PP">
+<span from="3850" to="3852"/>
+</rel>
+</span>
+<span id="s30_n10" from="3826" to="3829">
+<rel label="DET">
+<span from="3843" to="3848"/>
+</rel>
+</span>
+<span id="s30_n11" from="3830" to="3842">
+<rel label="ATTR">
+<span from="3843" to="3848"/>
+</rel>
+</span>
+<span id="s30_n12" from="3843" to="3848">
+<rel label="PN">
+<span from="3823" to="3825"/>
+</rel>
+</span>
+<span id="s30_n13" from="3848" to="3849">
+<rel label="-PUNCT-">
+<span from="3843" to="3848"/>
+</rel>
+</span>
+<span id="s30_n14" from="3850" to="3852">
+<rel label="ROOT">
+<span from="3777" to="3856"/>
+</rel>
+</span>
+<span id="s30_n15" from="3853" to="3855">
+<rel label="PN">
+<span from="3850" to="3852"/>
+</rel>
+</span>
+<span id="s30_n16" from="3855" to="3856">
+<rel label="-PUNCT-">
+<span from="3853" to="3855"/>
+</rel>
+</span>
+<span id="s31_n1" from="3857" to="3861">
+<rel label="ROOT">
+<span from="3857" to="3943"/>
+</rel>
+</span>
+<span id="s31_n2" from="3861" to="3862">
+<rel label="-PUNCT-">
+<span from="3857" to="3861"/>
+</rel>
+</span>
+<span id="s31_n3" from="3863" to="3866">
+<rel label="DET">
+<span from="3867" to="3874"/>
+</rel>
+</span>
+<span id="s31_n4" from="3867" to="3874">
+<rel label="ROOT">
+<span from="3857" to="3943"/>
+</rel>
+</span>
+<span id="s31_n5" from="3875" to="3878">
+<rel label="PP">
+<span from="3867" to="3874"/>
+</rel>
+</span>
+<span id="s31_n6" from="3879" to="3893">
+<rel label="ATTR">
+<span from="3894" to="3911"/>
+</rel>
+</span>
+<span id="s31_n7" from="3894" to="3911">
+<rel label="PN">
+<span from="3875" to="3878"/>
+</rel>
+</span>
+<span id="s31_n8" from="3912" to="3914">
+<rel label="PP">
+<span from="3894" to="3911"/>
+</rel>
+</span>
+<span id="s31_n9" from="3915" to="3921">
+<rel label="PN">
+<span from="3912" to="3914"/>
+</rel>
+</span>
+<span id="s31_n10" from="3922" to="3930">
+<rel label="ROOT">
+<span from="3857" to="3943"/>
+</rel>
+</span>
+<span id="s31_n11" from="3931" to="3937">
+<rel label="ROOT">
+<span from="3857" to="3943"/>
+</rel>
+</span>
+<span id="s31_n12" from="3938" to="3942">
+<rel label="ROOT">
+<span from="3857" to="3943"/>
+</rel>
+</span>
+<span id="s31_n13" from="3942" to="3943">
+<rel label="-PUNCT-">
+<span from="3938" to="3942"/>
+</rel>
+</span>
+<span id="s32_n1" from="3944" to="3947">
+<rel label="SUBJ">
+<span from="3974" to="3979"/>
+</rel>
+</span>
+<span id="s32_n2" from="3948" to="3954">
+<rel label="ADV">
+<span from="3961" to="3973"/>
+</rel>
+</span>
+<span id="s32_n3" from="3955" to="3960">
+<rel label="ADV">
+<span from="3961" to="3973"/>
+</rel>
+</span>
+<span id="s32_n4" from="3961" to="3973">
+<rel label="AUX">
+<span from="3974" to="3979"/>
+</rel>
+</span>
+<span id="s32_n5" from="3974" to="3979">
+<rel label="ROOT">
+<span from="3944" to="3980"/>
+</rel>
+</span>
+<span id="s32_n6" from="3979" to="3980">
+<rel label="-PUNCT-">
+<span from="3974" to="3979"/>
+</rel>
+</span>
+<span id="s33_n1" from="3981" to="3984">
+<rel label="DET">
+<span from="3985" to="4000"/>
+</rel>
+</span>
+<span id="s33_n2" from="3985" to="4000">
+<rel label="SUBJ">
+<span from="4047" to="4052"/>
+</rel>
+</span>
+<span id="s33_n3" from="4001" to="4004">
+<rel label="DET">
+<span from="4015" to="4024"/>
+</rel>
+</span>
+<span id="s33_n4" from="4005" to="4014">
+<rel label="ATTR">
+<span from="4015" to="4024"/>
+</rel>
+</span>
+<span id="s33_n5" from="4015" to="4024">
+<rel label="GMOD">
+<span from="3985" to="4000"/>
+</rel>
+</span>
+<span id="s33_n6" from="4025" to="4028">
+<rel label="KON">
+<span from="4015" to="4024"/>
+</rel>
+</span>
+<span id="s33_n7" from="4029" to="4046">
+<rel label="CJ">
+<span from="4025" to="4028"/>
+</rel>
+</span>
+<span id="s33_n8" from="4047" to="4052">
+<rel label="ROOT">
+<span from="3981" to="4130"/>
+</rel>
+</span>
+<span id="s33_n9" from="4053" to="4056">
+<rel label="PP">
+<span from="4118" to="4129"/>
+</rel>
+</span>
+<span id="s33_n10" from="4057" to="4060">
+<rel label="DET">
+<span from="4061" to="4069"/>
+</rel>
+</span>
+<span id="s33_n11" from="4061" to="4069">
+<rel label="PN">
+<span from="4053" to="4056"/>
+</rel>
+</span>
+<span id="s33_n12" from="4070" to="4073">
+<rel label="DET">
+<span from="4084" to="4092"/>
+</rel>
+</span>
+<span id="s33_n13" from="4074" to="4083">
+<rel label="ATTR">
+<span from="4084" to="4092"/>
+</rel>
+</span>
+<span id="s33_n14" from="4084" to="4092">
+<rel label="GMOD">
+<span from="4061" to="4069"/>
+</rel>
+</span>
+<span id="s33_n15" from="4093" to="4110">
+<rel label="APP">
+<span from="4084" to="4092"/>
+</rel>
+</span>
+<span id="s33_n16" from="4111" to="4117">
+<rel label="ADV">
+<span from="4118" to="4129"/>
+</rel>
+</span>
+<span id="s33_n17" from="4118" to="4129">
+<rel label="AUX">
+<span from="4047" to="4052"/>
+</rel>
+</span>
+<span id="s33_n18" from="4129" to="4130">
+<rel label="-PUNCT-">
+<span from="4118" to="4129"/>
+</rel>
+</span>
+<span id="s34_n1" from="4131" to="4136">
+<rel label="SUBJ">
+<span from="4137" to="4142"/>
+</rel>
+</span>
+<span id="s34_n2" from="4137" to="4142">
+<rel label="ROOT">
+<span from="4131" to="4213"/>
+</rel>
+</span>
+<span id="s34_n3" from="4143" to="4146">
+<rel label="DET">
+<span from="4159" to="4176"/>
+</rel>
+</span>
+<span id="s34_n4" from="4147" to="4158">
+<rel label="ATTR">
+<span from="4159" to="4176"/>
+</rel>
+</span>
+<span id="s34_n5" from="4159" to="4176">
+<rel label="PRED">
+<span from="4137" to="4142"/>
+</rel>
+</span>
+<span id="s34_n6" from="4177" to="4180">
+<rel label="PP">
+<span from="4159" to="4176"/>
+</rel>
+</span>
+<span id="s34_n7" from="4181" to="4185">
+<rel label="DET">
+<span from="4194" to="4203"/>
+</rel>
+</span>
+<span id="s34_n8" from="4186" to="4193">
+<rel label="ATTR">
+<span from="4194" to="4203"/>
+</rel>
+</span>
+<span id="s34_n9" from="4194" to="4203">
+<rel label="PN">
+<span from="4177" to="4180"/>
+</rel>
+</span>
+<span id="s34_n10" from="4204" to="4212">
+<rel label="KON">
+<span from="4137" to="4142"/>
+</rel>
+</span>
+<span id="s34_n11" from="4212" to="4213">
+<rel label="-PUNCT-">
+<span from="4204" to="4212"/>
+</rel>
+</span>
+<span id="s35_n1" from="4214" to="4223">
+<rel label="ADV">
+<span from="4224" to="4231"/>
+</rel>
+</span>
+<span id="s35_n2" from="4224" to="4231">
+<rel label="NEB">
+<span from="4233" to="4237"/>
+</rel>
+</span>
+<span id="s35_n3" from="4231" to="4232">
+<rel label="-PUNCT-">
+<span from="4224" to="4231"/>
+</rel>
+</span>
+<span id="s35_n4" from="4233" to="4237">
+<rel label="ROOT">
+<span from="4214" to="4293"/>
+</rel>
+</span>
+<span id="s35_n5" from="4238" to="4244">
+<rel label="DET">
+<span from="4245" to="4254"/>
+</rel>
+</span>
+<span id="s35_n6" from="4245" to="4254">
+<rel label="SUBJ">
+<span from="4233" to="4237"/>
+</rel>
+</span>
+<span id="s35_n7" from="4255" to="4258">
+<rel label="PP">
+<span from="4245" to="4254"/>
+</rel>
+</span>
+<span id="s35_n8" from="4259" to="4262">
+<rel label="PN">
+<span from="4255" to="4258"/>
+</rel>
+</span>
+<span id="s35_n9" from="4263" to="4269">
+<rel label="APP">
+<span from="4245" to="4254"/>
+</rel>
+</span>
+<span id="s35_n10" from="4270" to="4273">
+<rel label="PP">
+<span from="4263" to="4269"/>
+</rel>
+</span>
+<span id="s35_n11" from="4274" to="4287">
+<rel label="PN">
+<span from="4270" to="4273"/>
+</rel>
+</span>
+<span id="s35_n12" from="4288" to="4292">
+<rel label="AUX">
+<span from="4233" to="4237"/>
+</rel>
+</span>
+<span id="s35_n13" from="4292" to="4293">
+<rel label="-PUNCT-">
+<span from="4288" to="4292"/>
+</rel>
+</span>
+<span id="s36_n1" from="4294" to="4296">
+<rel label="SUBJ">
+<span from="4297" to="4300"/>
+</rel>
+</span>
+<span id="s36_n2" from="4297" to="4300">
+<rel label="ROOT">
+<span from="4294" to="4681"/>
+</rel>
+</span>
+<span id="s36_n3" from="4301" to="4304">
+<rel label="PRED">
+<span from="4297" to="4300"/>
+</rel>
+</span>
+<span id="s36_n4" from="4305" to="4310">
+<rel label="DET">
+<span from="4311" to="4319"/>
+</rel>
+</span>
+<span id="s36_n5" from="4311" to="4319">
+<rel label="PN">
+<span from="4301" to="4304"/>
+</rel>
+</span>
+<span id="s36_n6" from="4320" to="4323">
+<rel label="KON">
+<span from="4297" to="4300"/>
+</rel>
+</span>
+<span id="s36_n7" from="4324" to="4327">
+<rel label="KONJ">
+<span from="4332" to="4338"/>
+</rel>
+</span>
+<span id="s36_n8" from="4328" to="4331">
+<rel label="SUBJ">
+<span from="4332" to="4338"/>
+</rel>
+</span>
+<span id="s36_n9" from="4332" to="4338">
+<rel label="NEB">
+<span from="4513" to="4520"/>
+</rel>
+</span>
+<span id="s36_n10" from="4338" to="4339">
+<rel label="-PUNCT-">
+<span from="4332" to="4338"/>
+</rel>
+</span>
+<span id="s36_n11" from="4340" to="4343">
+<rel label="PP">
+<span from="4363" to="4371"/>
+</rel>
+</span>
+<span id="s36_n12" from="4344" to="4352">
+<rel label="PN">
+<span from="4340" to="4343"/>
+</rel>
+</span>
+<span id="s36_n13" from="4353" to="4362">
+<rel label="ADV">
+<span from="4363" to="4371"/>
+</rel>
+</span>
+<span id="s36_n14" from="4363" to="4371">
+<rel label="ADV">
+<span from="4377" to="4387"/>
+</rel>
+</span>
+<span id="s36_n15" from="4372" to="4376">
+<rel label="DET">
+<span from="4377" to="4387"/>
+</rel>
+</span>
+<span id="s36_n16" from="4377" to="4387">
+<rel label="PAR">
+<span from="4332" to="4338"/>
+</rel>
+</span>
+<span id="s36_n17" from="4387" to="4388">
+<rel label="-PUNCT-">
+<span from="4377" to="4387"/>
+</rel>
+</span>
+<span id="s36_n18" from="4389" to="4392">
+<rel label="OBJA">
+<span from="4441" to="4448"/>
+</rel>
+</span>
+<span id="s36_n19" from="4393" to="4402">
+<rel label="ADV">
+<span from="4441" to="4448"/>
+</rel>
+</span>
+<span id="s36_n20" from="4403" to="4405">
+<rel label="OBJP">
+<span from="4441" to="4448"/>
+</rel>
+</span>
+<span id="s36_n21" from="4406" to="4410">
+<rel label="DET">
+<span from="4422" to="4437"/>
+</rel>
+</span>
+<span id="s36_n22" from="4411" to="4421">
+<rel label="ATTR">
+<span from="4422" to="4437"/>
+</rel>
+</span>
+<span id="s36_n23" from="4422" to="4437">
+<rel label="PN">
+<span from="4403" to="4405"/>
+</rel>
+</span>
+<span id="s36_n24" from="4438" to="4440">
+<rel label="PART">
+<span from="4441" to="4448"/>
+</rel>
+</span>
+<span id="s36_n25" from="4441" to="4448">
+<rel label="OBJI">
+<span from="4332" to="4338"/>
+</rel>
+</span>
+<span id="s36_n26" from="4448" to="4449">
+<rel label="-PUNCT-">
+<span from="4441" to="4448"/>
+</rel>
+</span>
+<span id="s36_n27" from="4450" to="4453">
+<rel label="DET">
+<span from="4495" to="4512"/>
+</rel>
+</span>
+<span id="s36_n28" from="4454" to="4458">
+<rel label="ATTR">
+<span from="4495" to="4512"/>
+</rel>
+</span>
+<span id="s36_n29" from="4459" to="4471">
+<rel label="ATTR">
+<span from="4495" to="4512"/>
+</rel>
+</span>
+<span id="s36_n30" from="4472" to="4475">
+<rel label="KON">
+<span from="4459" to="4471"/>
+</rel>
+</span>
+<span id="s36_n31" from="4476" to="4494">
+<rel label="CJ">
+<span from="4472" to="4475"/>
+</rel>
+</span>
+<span id="s36_n32" from="4495" to="4512">
+<rel label="SUBJ">
+<span from="4513" to="4520"/>
+</rel>
+</span>
+<span id="s36_n33" from="4513" to="4520">
+<rel label="CJ">
+<span from="4320" to="4323"/>
+</rel>
+</span>
+<span id="s36_n34" from="4521" to="4524">
+<rel label="KON">
+<span from="4513" to="4520"/>
+</rel>
+</span>
+<span id="s36_n35" from="4525" to="4528">
+<rel label="SUBJ">
+<span from="4672" to="4680"/>
+</rel>
+</span>
+<span id="s36_n36" from="4529" to="4533">
+<rel label="OBJA">
+<span from="4672" to="4680"/>
+</rel>
+</span>
+<span id="s36_n37" from="4534" to="4537">
+<rel label="PP">
+<span from="4672" to="4680"/>
+</rel>
+</span>
+<span id="s36_n38" from="4538" to="4543">
+<rel label="DET">
+<span from="4544" to="4549"/>
+</rel>
+</span>
+<span id="s36_n39" from="4544" to="4549">
+<rel label="PN">
+<span from="4534" to="4537"/>
+</rel>
+</span>
+<span id="s36_n40" from="4550" to="4553">
+<rel label="PP">
+<span from="4544" to="4549"/>
+</rel>
+</span>
+<span id="s36_n41" from="4554" to="4557">
+<rel label="DET">
+<span from="4558" to="4567"/>
+</rel>
+</span>
+<span id="s36_n42" from="4558" to="4567">
+<rel label="PN">
+<span from="4550" to="4553"/>
+</rel>
+</span>
+<span id="s36_n43" from="4568" to="4571">
+<rel label="KON">
+<span from="4558" to="4567"/>
+</rel>
+</span>
+<span id="s36_n44" from="4572" to="4582">
+<rel label="CJ">
+<span from="4568" to="4571"/>
+</rel>
+</span>
+<span id="s36_n45" from="4583" to="4586">
+<rel label="PP">
+<span from="4572" to="4582"/>
+</rel>
+</span>
+<span id="s36_n46" from="4587" to="4592">
+<rel label="PN">
+<span from="4583" to="4586"/>
+</rel>
+</span>
+<span id="s36_n47" from="4593" to="4596">
+<rel label="KON">
+<span from="4587" to="4592"/>
+</rel>
+</span>
+<span id="s36_n48" from="4597" to="4603">
+<rel label="CJ">
+<span from="4593" to="4596"/>
+</rel>
+</span>
+<span id="s36_n49" from="4604" to="4609">
+<rel label="KON">
+<span from="4583" to="4586"/>
+</rel>
+</span>
+<span id="s36_n50" from="4610" to="4613">
+<rel label="CJ">
+<span from="4604" to="4609"/>
+</rel>
+</span>
+<span id="s36_n51" from="4614" to="4617">
+<rel label="DET">
+<span from="4629" to="4639"/>
+</rel>
+</span>
+<span id="s36_n52" from="4618" to="4628">
+<rel label="ATTR">
+<span from="4629" to="4639"/>
+</rel>
+</span>
+<span id="s36_n53" from="4629" to="4639">
+<rel label="PN">
+<span from="4610" to="4613"/>
+</rel>
+</span>
+<span id="s36_n54" from="4640" to="4643">
+<rel label="KON">
+<span from="4610" to="4613"/>
+</rel>
+</span>
+<span id="s36_n55" from="4644" to="4647">
+<rel label="CJ">
+<span from="4640" to="4643"/>
+</rel>
+</span>
+<span id="s36_n56" from="4648" to="4653">
+<rel label="DET">
+<span from="4664" to="4671"/>
+</rel>
+</span>
+<span id="s36_n57" from="4654" to="4663">
+<rel label="ATTR">
+<span from="4664" to="4671"/>
+</rel>
+</span>
+<span id="s36_n58" from="4664" to="4671">
+<rel label="PN">
+<span from="4644" to="4647"/>
+</rel>
+</span>
+<span id="s36_n59" from="4672" to="4680">
+<rel label="CJ">
+<span from="4521" to="4524"/>
+</rel>
+</span>
+<span id="s36_n60" from="4680" to="4681">
+<rel label="-PUNCT-">
+<span from="4672" to="4680"/>
+</rel>
+</span>
+<span id="s37_n1" from="4682" to="4687">
+<rel label="ROOT">
+<span from="4682" to="4694"/>
+</rel>
+</span>
+<span id="s37_n2" from="4688" to="4693">
+<rel label="-UNKNOWN-">
+<span from="4682" to="4687"/>
+</rel>
+</span>
+<span id="s37_n3" from="4693" to="4694">
+<rel label="-PUNCT-">
+<span from="4688" to="4693"/>
+</rel>
+</span>
+<span id="s38_n1" from="4695" to="4696">
+<rel label="-PUNCT-">
+<span from="4696" to="4703"/>
+</rel>
+</span>
+<span id="s38_n2" from="4696" to="4703">
+<rel label="ROOT">
+<span from="4695" to="711"/>
+</rel>
+</span>
+<span id="s38_n3" from="4704" to="4708">
+<rel label="PP">
+<span from="4696" to="4703"/>
+</rel>
+</span>
+<span id="s38_n4" from="4709" to="4716">
+<rel label="PN">
+<span from="4704" to="4708"/>
+</rel>
+</span>
+<span id="s38_n5" from="4717" to="4723">
+<rel label="OBJA">
+<span from="4724" to="4730"/>
+</rel>
+</span>
+<span id="s38_n6" from="4724" to="4730">
+<rel label="OBJI">
+<span from="4696" to="4703"/>
+</rel>
+</span>
+<span id="s38_n7" from="4731" to="4734">
+<rel label="KON">
+<span from="4724" to="4730"/>
+</rel>
+</span>
+<span id="s38_n8" from="4735" to="4738">
+<rel label="PP">
+<span from="4749" to="4756"/>
+</rel>
+</span>
+<span id="s38_n9" from="4739" to="4742">
+<rel label="DET">
+<span from="4743" to="4746"/>
+</rel>
+</span>
+<span id="s38_n10" from="4743" to="4746">
+<rel label="PN">
+<span from="4735" to="4738"/>
+</rel>
+</span>
+<span id="s38_n11" from="4746" to="4747">
+<rel label="-PUNCT-">
+<span from="4743" to="4746"/>
+</rel>
+</span>
+<span id="s38_n12" from="4748" to="4749">
+<rel label="-PUNCT-">
+<span from="4749" to="4756"/>
+</rel>
+</span>
+<span id="s38_n13" from="4749" to="4756">
+<rel label="SUBJ">
+<span from="4777" to="4783"/>
+</rel>
+</span>
+<span id="s38_n14" from="4757" to="4761">
+<rel label="PP">
+<span from="4749" to="4756"/>
+</rel>
+</span>
+<span id="s38_n15" from="4762" to="4769">
+<rel label="PN">
+<span from="4757" to="4761"/>
+</rel>
+</span>
+<span id="s38_n16" from="4770" to="4776">
+<rel label="OBJA">
+<span from="4777" to="4783"/>
+</rel>
+</span>
+<span id="s38_n17" from="4777" to="4783">
+<rel label="CJ">
+<span from="4731" to="4734"/>
+</rel>
+</span>
+<span id="s38_n18" from="4784" to="4787">
+<rel label="KON">
+<span from="4777" to="4783"/>
+</rel>
+</span>
+<span id="s38_n19" from="4788" to="4791">
+<rel label="ROOT">
+<span from="4695" to="711"/>
+</rel>
+</span>
+<span id="s38_n20" from="4792" to="4795">
+<rel label="DET">
+<span from="4796" to="4799"/>
+</rel>
+</span>
+<span id="s38_n21" from="4796" to="4799">
+<rel label="PN">
+<span from="4788" to="4791"/>
+</rel>
+</span>
+<span id="s38_n22" from="4799" to="4800">
+<rel label="-PUNCT-">
+<span from="4796" to="4799"/>
+</rel>
+</span>
+</spanList>
+</layer>

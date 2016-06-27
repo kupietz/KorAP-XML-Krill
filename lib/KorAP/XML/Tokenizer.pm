@@ -33,7 +33,7 @@ has [qw/path foundry doc stream should have name/];
 has layer => 'Tokens';
 
 has log => sub {
-  if(Log::Log4perl->initialized()) {
+  if (Log::Log4perl->initialized()) {
     state $log = Log::Log4perl->get_logger(__PACKAGE__);
   };
   state $log = KorAP::XML::Log->new;
@@ -396,6 +396,7 @@ sub add {
   my $mod = 'KorAP::XML::Annotation::' . $foundry . '::' . $layer;
 
   if ($mod->can('new') || eval("require $mod; 1;")) {
+
     if (my $retval = $mod->new($self)->parse(@_)) {
 
       # This layer is supported

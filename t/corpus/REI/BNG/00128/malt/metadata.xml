@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="metadata.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<metadata docid="REI_BNG.00128" type="foundry" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <doc file="../data.xml" />
+  <foundry name="malt">
+    <layer info="rel" file="dependency.xml" name="malt" id="l1" />
+  </foundry>
+</metadata>

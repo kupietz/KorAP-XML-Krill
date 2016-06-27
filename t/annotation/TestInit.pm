@@ -8,6 +8,7 @@ use KorAP::XML::Krill;
 
 sub tokens {
   my $file = shift;
+  my $token_foundry = shift;
   my $path = catdir(dirname(__FILE__), 'corpus', 'doc', $file);
 
   my $doc = KorAP::XML::Krill->new(
@@ -19,7 +20,7 @@ sub tokens {
   my $tokens = KorAP::XML::Tokenizer->new(
     path => $doc->path,
     doc => $doc,
-    foundry => 'OpenNLP',
+    foundry => ($token_foundry // 'OpenNLP'),
     layer => 'Tokens',
     name => 'tokens'
   ) or return;

@@ -55,9 +55,10 @@ use Parallel::ForkManager;
 # 2016/03/18
 # - Added meta data caching
 #
-# 2016/06/24
+# 2016/06/27
 # - Added multi archive support
 # - Added prefix negation support
+# - Added Malt#Dependency support
 # ----------------------------------------------------------
 
 our $LAST_CHANGE = '2016/03/17';
@@ -266,7 +267,7 @@ unless ($cmd) {
   push(@layers, ['Glemm', 'Morpho']);
 
   # Malt
-  # push(@layers, ['Malt', 'Dependency']);
+  push(@layers, ['Malt', 'Dependency']);
 
   # Mate
   push(@layers, ['Mate', 'Morpho']);

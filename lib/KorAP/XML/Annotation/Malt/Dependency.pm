@@ -1,5 +1,7 @@
 package KorAP::XML::Annotation::Malt::Dependency;
 use KorAP::XML::Annotation::Base;
+use strict;
+use warnings;
 
 sub parse {
   my $self = shift;
@@ -28,33 +30,69 @@ sub parse {
       foreach (@$rel) {
 	my $label = $_->{-label};
 
+	#my $target = $stream->tui($source->pos);
+	my $from = $_->{span}->{-from};
+	my $to   = $_->{span}->{-to};
 
-	  #my $target = $stream->tui($source->pos);
+	# Target
+	my $target = $tokens->token($from, $to);
+
+	# Relation is term-to-term with a found target!
+	if ($target) {
 
 	  # Unary means, it refers to itself!
 	  $mtt->add(
-	    term => 'mate/d:' . $label
-	  );
+	    term => '>:malt/d:' . $label,
+	    pti => 32, # term-to-term relation
+	    payload =>
+	      '<i>' . $target->pos # . # right part token position
+		# '<s>0' . # $source_term->tui . # left part tui
+		# '<s>0' # . $target_term->tui # right part tui
+	    );
 
-#	  $mtt->add(
-#	    term => '>:mate/d:' . $label,
-#	  );
+	  my $target_mtt = $stream->pos($target->pos);
 
+	  $target_mtt->add(
+	    term => '<:malt/d:' . $label,
+	    pti => 32, # term-to-term relation
+	    payload =>
+	      '<i>' . $source->pos # . # left part token position
+		# '<s>0' . # $source_term->tui . # left part tui
+		# '<s>0' # . $target_term->tui # right part tui
+	    );
+	}
 
-	  my $from = $_->{span}->{-from};
-	  my $to   = $_->{span}->{-to};
-
-	  my $rel_token = $tokens->token($from, $to) or next;
-
+	# Relation is possibly term-to-element with a found target!
+	elsif ($target = $tokens->span($from, $to)) {
 	  $mtt->add(
-	    term => '>:mate/d:' . $label,
-	    payload => '<i>' . $rel_token->pos
-	  );
+	    term => '>:malt/d:' . $label,
+	    pti => 33, # term-to-element relation
+	    payload =>
+	      '<i>' . $target->o_start . # end position
+		'<i>' . $target->o_end . # end position
+		  '<i>' . $target->p_start . # right part start position
+		    '<i>' . $target->p_end # . # right part end position
+		      # '<s>0' . # $source_term->tui . # left part tui
+		      # '<s>0' # . $target_span->tui # right part tui
+	    );
 
-	  $stream->pos($rel_token->pos)->add(
-	    term => '<:mate/d:' . $label,
-	    payload => '<i>' . $token->pos
-	  );
+	  my $target_mtt = $stream->pos($target->p_start);
+	  $target_mtt->add(
+	    term => '<:malt/d:' . $label,
+	    pti => 34, # element-to-term relation
+	    payload =>
+	      '<i>' . $target->o_start . # end position
+		'<i>' . $target->o_end . # end position
+		  '<i>' . $target->p_end . # right part end position
+		    '<i>' . $source->pos # . # left part token position
+		      #	'<s>0' . # $source_term->tui . # left part tui
+		      # '<s>0' # . $target_span->tui # right part tui
+
+	    );
+	}
+	else {
+	  use Data::Dumper;
+	  $tokens->log->warn('Relation currently not supported: ' . Dumper($content));
 	};
       };
     }) or return;
@@ -63,7 +101,7 @@ sub parse {
 };
 
 sub layer_info {
-  ['mate/d=rels']
+  ['malt/d=rels']
 };
 
 
