@@ -604,17 +604,16 @@ Extract KorAP-XML files from a Zip-file.
 
 Directory or archive file of documents to convert.
 
-Multiple input archives are supported for archiving,
-with the constraint,
+Archiving supports multiple input archives with the constraint,
 that the first archive listed contains all primary data files
 and all meta data files.
-The directory structure follows the base directory format,
-starting with a C<.> root folder.
-In case an attached archive has no C<.> root folder,
-the archive path should start with a hash.
 
   -i file/news.zip -i file/news.malt.zip -i #file/news.tt.zip
 
+(The directory structure follows the base directory format,
+that may include a C<.> root folder.
+In this case further archives lacking a C<.> root folder
+need to be passed with a hash sign in front of the archive's name.)
 
 =item B<--output|-o> <directory|file>
 

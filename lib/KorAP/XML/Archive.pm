@@ -4,7 +4,7 @@ use File::Spec::Functions qw(rel2abs);
 use strict;
 use warnings;
 
-# Convert new archive helper
+# Construct new archive helper
 sub new {
   my $class = shift;
   my @file;
@@ -137,8 +137,8 @@ sub extract {
   my $first = 1;
 
   my @init_cmd = (
-    'unzip',           # Use unzip program
-    '-qo',             # quietly overwrite all existing files
+    'unzip',          # Use unzip program
+    '-qo',            # quietly overwrite all existing files
     '-d', $target_dir # Extract into target directory
   );
 
@@ -153,20 +153,22 @@ sub extract {
 
     # Add some interesting files for extraction
     # Can't use catfile(), as this removes the '.' prefix
+    my @breadcrumbs = ($corpus);
+
+    # If the prefix is not forbidden - prefix!
+    unshift @breadcrumbs, $prefix if ($prefix && $archive->[1]);
+
     if ($first) {
       # Only extract from first file
-      push(@cmd, join('/', $prefix, $corpus, 'header.xml'));
-      push(@cmd, join('/', $prefix, $corpus, $doc, 'header.xml'));
+      push(@cmd, join('/', @breadcrumbs, 'header.xml'));
+      push(@cmd, join('/', @breadcrumbs, $doc, 'header.xml'));
       $first = 0;
     };
 
     # With prefix
-    my @path = ($corpus, $doc, $text, '*');
+    push @breadcrumbs, $doc, $text, '*';
 
-    # If the prefix is not forbidden - prefix!
-    unshift @path, $prefix if $archive->[1];
-
-    push(@cmd, join('/', @path));
+    push(@cmd, join('/', @breadcrumbs));
 
     # Run system call
     system(@cmd);

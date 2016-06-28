@@ -46,6 +46,7 @@ lib/KorAP/XML/Annotation/XIP/Morpho.pm
 lib/KorAP/XML/Annotation/XIP/Sentences.pm
 t/archive.t
 t/meta.t
+t/multiple_archives.t
 t/primary.t
 t/range.t
 t/sort_tokens.t
@@ -120,6 +121,13 @@ t/corpus/A01/13047/data.xml
 t/corpus/A01/13047/header.xml
 t/corpus/A01/13047/metadata.xml
 t/corpus/A01/13047/text.txt
+t/corpus/archives/fake.zip
+t/corpus/archives/wpd15-single.corenlp.zip
+t/corpus/archives/wpd15-single.malt.zip
+t/corpus/archives/wpd15-single.mdparser.zip
+t/corpus/archives/wpd15-single.opennlp.zip
+t/corpus/archives/wpd15-single.tree_tagger.zip
+t/corpus/archives/wpd15-single.zip
 t/corpus/BZK/D59/header.xml
 t/corpus/ERL/00001/data.xml
 t/corpus/ERL/00001/header.xml
