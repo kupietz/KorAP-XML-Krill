@@ -2,24 +2,24 @@
 <?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
 <idsHeader type="document" pattern="text" status="new" version="1.1" TEIform="teiHeader">
-      <fileDesc>
-        <titleStmt>
-          <dokumentSigle>REI/BNG</dokumentSigle>
-          <d.title>Reden der Bundestagsfraktion Bündnis 90/DIE GRÜNEN, (2002-2006)</d.title>
-        </titleStmt>
-        <publicationStmt>
-          <distributor/>
-          <pubAddress/>
-          <availability region="world">CC-BY-SA</availability>
-          <pubDate/>
-        </publicationStmt>
-        <sourceDesc>
-          <biblStruct>
-            <monogr>
-              <h.title type="main"/>
-              <imprint/>
-            </monogr>
-          </biblStruct>
-        </sourceDesc>
-      </fileDesc>
-    </idsHeader>
+   <fileDesc>
+    <titleStmt>
+     <dokumentSigle>REI/BNG</dokumentSigle>
+     <d.title>Reden der Bundestagsfraktion Bündnis 90/DIE GRÜNEN, (2002-2006)</d.title>
+    </titleStmt>
+    <publicationStmt>
+     <distributor/>
+     <pubAddress/>
+     <availability region="world">CC-BY-SA</availability>
+     <pubDate/>
+    </publicationStmt>
+    <sourceDesc>
+     <biblStruct>
+      <monogr>
+       <h.title type="main"/>
+       <imprint/>
+      </monogr>
+     </biblStruct>
+    </sourceDesc>
+   </fileDesc>
+  </idsHeader>

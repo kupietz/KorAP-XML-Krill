@@ -339,35 +339,38 @@ unless ($cmd) {
 # Extract XML files
 elsif ($cmd eq 'extract') {
 
-  my $input = $input[0];
-
   pod2usage(%ERROR_HASH) unless $output;
-
-  # TODO: Support sigles and full archives
 
   if ($output && (!-e $output || !-d $output)) {
     print "Directory '$output' does not exist.\n\n";
     exit(0);
   };
 
-#TODOOOOOO
+  # TODO: Support sigles and full archives
 
-  if (-f($input) && (my $archive = KorAP::XML::Archive->new($input))) {
+  if (-f($input[0]) && (my $archive = KorAP::XML::Archive->new($input[0]))) {
 
     unless ($archive->test_unzip) {
       print "Unzip is not installed or incompatible.\n\n";
       exit(1);
     };
 
+    # Add further annotation archived
+    $archive->attach($_) foreach @input;
+
     # Iterate over all given sigles and extract
     foreach (@sigle) {
       print "$_ ";
-      print '' . ($archive->extract('./'. $_, $output) ? '' : 'not ');
+#      print '' . ($archive->extract('./'. $_, $output) ? '' : 'not ');
+      print '' . ($archive->extract('./' . $_, $output) ? '' : 'not ');
       print "extracted.\n";
     };
 
     print "\n";
     exit(1);
+  }
+  else {
+    $log->error('Unable to extract from primary archive ' . $input[0]);
   };
 }
 
@@ -701,6 +704,7 @@ Defaults to C<true>.
 Extract the given text sigles.
 Can be set multiple times.
 I<Currently only supported on C<extract>.>
+Sigles have the structure C<Corpus>/C<Document>/C<Text>.
 
 =item B<--log|-l>
 
