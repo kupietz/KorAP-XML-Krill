@@ -376,7 +376,7 @@ The L<KorAP::XML::Document::Primary> object containing the primary data.
 
 =head2 annotate
 
-  $doc->add('Mate', 'Morpho');
+  $doc->annotate('Mate', 'Morpho');
 
 Add annotation layer to conversion process.
 

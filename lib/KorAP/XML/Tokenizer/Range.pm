@@ -6,7 +6,7 @@ use Carp 'carp';
 
 our $SPAN_RE = qr/!([-+]?\d+):([-+]?\d+)$/;
 
-our $debug = 1;
+our $debug = 0;
 
 sub new {
   my $range = Array::IntSpan->new;

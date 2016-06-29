@@ -3,6 +3,7 @@
 	- Added multiple archive support to korapxml2krill.
 	- Added support for prefix negation in korapxml2krill.
 	- Added support for Malt#Dependency.
+	- Improved test suite for caching and REI.
 
 0.17 2016-03-22
         - Rewrite siglen to use slashes as separators.

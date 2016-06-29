@@ -50,9 +50,20 @@ Extract KorAP-XML files from a Zip-file.
 
 =over 2
 
-=item B<--input|-i> <directory|file>
+=item B<--input|-i> <directory|file|files>
 
 Directory or archive file of documents to convert.
+
+Archiving supports multiple input archives with the constraint,
+that the first archive listed contains all primary data files
+and all meta data files.
+
+  -i file/news.zip -i file/news.malt.zip -i #file/news.tt.zip
+
+(The directory structure follows the base directory format,
+that may include a C<.> root folder.
+In this case further archives lacking a C<.> root folder
+need to be passed with a hash sign in front of the archive's name.)
 
 =item B<--output|-o> <directory|file>
 
@@ -140,6 +151,7 @@ Defaults to C<true>.
 Extract the given text sigles.
 Can be set multiple times.
 I<Currently only supported on C<extract>.>
+Sigles have the structure C<Corpus>/C<Document>/C<Text>.
 
 =item B<--log|-l>
 

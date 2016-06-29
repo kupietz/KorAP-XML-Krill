@@ -35,6 +35,7 @@ has layer => 'Tokens';
 has log => sub {
   if (Log::Log4perl->initialized()) {
     state $log = Log::Log4perl->get_logger(__PACKAGE__);
+    return $log;
   };
   state $log = KorAP::XML::Log->new;
   return $log;

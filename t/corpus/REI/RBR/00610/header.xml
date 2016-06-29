@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+    <fileDesc>
+     <titleStmt>
+      <textSigle>REI/RBR.00610</textSigle>
+      <t.title assemblage="external">REI/RBR.00610 Joschka Fischer: Rede von Bundesaußenminister Fischer auf der 40. Münchener Konferenz für Sicherheitspolitik, Hrsg: Presse- und Informationsamt der Bundesregierung</t.title>
+     </titleStmt>
+     <publicationStmt>
+      <distributor/>
+      <pubAddress/>
+      <availability region="world">CC-BY-SA</availability>
+      <pubDate/>
+     </publicationStmt>
+     <sourceDesc>
+      <biblStruct>
+       <monogr>
+        <h.title type="main">Rede von Bundesaußenminister Fischer auf der 40. Münchener Konferenz für Sicherheitspolitik</h.title>
+        <h.title type="sub"/>
+        <h.title type="abbr" level="m"/>
+        <h.author>Joschka Fischer</h.author>
+        <editor/>
+        <edition>
+         <further/>
+         <kind>aus: Adrien Barbaresi (2012): German Political Speeches, Corpus and Visualization. 2. Version, ENS Lyon, http://purl.org/corpus/german-speeches</kind>
+         <appearance/>
+        </edition>
+        <imprint>
+         <publisher/>
+         <pubDate type="year">2004</pubDate>
+         <pubDate type="month">02</pubDate>
+         <pubDate type="day">07</pubDate>
+         <pubPlace key="DE">Berlin</pubPlace>
+        </imprint>
+        <biblScope type="subsume"/>
+        <biblScope type="pp"/>
+        <biblScope type="vol"/>
+        <biblScope type="volume-title"/>
+       </monogr>
+      </biblStruct>
+      <reference type="complete" assemblage="regular">REI/RBR.00610 Joschka Fischer: Rede von Bundesaußenminister Fischer auf der 40. Münchener Konferenz für Sicherheitspolitik, Hrsg: Presse- und Informationsamt der Bundesregierung [Ausführliche Zitierung nicht verfügbar]</reference>
+      <reference type="short" assemblage="regular">REI/RBR.00610 Joschka Fischer: Rede von Bundesaußenminister Fischer auf der 40. Münchener Konferenz für Sicherheitspolitik, Hrsg: Presse- und Informationsamt der Bundesregierung [Kurzzitierung nicht verfügbar]</reference>
+     </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+     <samplingDecl/>
+     <tagsDecl>
+      <tagUsage gi="ptr" occurs="1"/>
+      <tagUsage gi="p" occurs="30"/>
+      <tagUsage gi="s" occurs="168"/>
+     </tagsDecl>
+    </encodingDesc>
+    <profileDesc>
+     <creation>
+      <creatDate>2004.02.07</creatDate>
+      <creatRef/>
+      <creatRefShort/>
+     </creation>
+     <textClass>
+      <catRef n="1" target="topic.politik.ausland" scheme="topic"/>
+     </textClass>
+     <textDesc>
+      <textDomain/>
+     </textDesc>
+    </profileDesc>
+   </idsHeader>

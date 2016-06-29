@@ -92,7 +92,7 @@ sub parse {
 	}
 	else {
 	  use Data::Dumper;
-	  $tokens->log->warn('Relation currently not supported: ' . Dumper($content));
+	  $$self->log->warn('Relation currently not supported: ' . Dumper($content));
 	};
       };
     }) or return;

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+    <fileDesc>
+     <titleStmt>
+      <textSigle>REI/BNG.00071</textSigle>
+      <t.title assemblage="external">REI/BNG.00071 Scheel, Christine: aktuelle Stunde Länderhaushalt. Rede im Deutschen Bundestag am 06.06.2002, Hrsg: Bundestagsfraktion Bündnis 90/DIE GRÜNEN</t.title>
+     </titleStmt>
+     <publicationStmt>
+      <distributor/>
+      <pubAddress/>
+      <availability region="world">CC-BY-SA</availability>
+      <pubDate/>
+     </publicationStmt>
+     <sourceDesc>
+      <biblStruct>
+       <monogr>
+        <h.title type="main">aktuelle Stunde Länderhaushalt</h.title>
+        <h.title type="sub">Rede im Deutschen Bundestag am 06.06.2002</h.title>
+        <h.title type="abbr" level="m"/>
+        <h.author>Scheel, Christine</h.author>
+        <editor/>
+        <edition>
+         <further/>
+         <kind/>
+         <appearance/>
+        </edition>
+        <imprint>
+         <publisher/>
+         <pubDate type="year">2002</pubDate>
+         <pubDate type="month">06</pubDate>
+         <pubDate type="day">06</pubDate>
+         <pubPlace key="DE">Berlin</pubPlace>
+        </imprint>
+        <biblScope type="subsume"/>
+        <biblScope type="pp"/>
+        <biblScope type="vol"/>
+        <biblScope type="volume-title"/>
+       </monogr>
+      </biblStruct>
+      <reference type="complete" assemblage="regular">REI/BNG.00071 Scheel, Christine: aktuelle Stunde Länderhaushalt. Rede im Deutschen Bundestag am 06.06.2002, Hrsg: Bundestagsfraktion Bündnis 90/DIE GRÜNEN [Ausführliche Zitierung nicht verfügbar]</reference>
+      <reference type="short" assemblage="regular">REI/BNG.00071 Scheel, Christine: aktuelle Stunde Länderhaushalt. Rede im Deutschen Bundestag am 06.06.2002, Hrsg: Bundestagsfraktion Bündnis 90/DIE GRÜNEN [Kurzzitierung nicht verfügbar]</reference>
+     </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+     <samplingDecl/>
+     <tagsDecl>
+      <tagUsage gi="ptr" occurs="17"/>
+      <tagUsage gi="note" occurs="16"/>
+      <tagUsage gi="p" occurs="40"/>
+      <tagUsage gi="s" occurs="73"/>
+     </tagsDecl>
+    </encodingDesc>
+    <profileDesc>
+     <creation>
+      <creatDate>2002.06.06</creatDate>
+      <creatRef/>
+      <creatRefShort/>
+     </creation>
+     <textClass>
+      <catRef n="1" target="topic.politik.inland" scheme="topic"/>
+     </textClass>
+     <textDesc>
+      <textDomain/>
+     </textDesc>
+    </profileDesc>
+   </idsHeader>
