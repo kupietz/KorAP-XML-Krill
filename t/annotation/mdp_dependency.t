@@ -63,7 +63,19 @@ like($data->{layerInfos}, qr!mdp/d=rels!, 'foundries');
 
 my $stream = $data->{stream};
 
-# diag Dumper $stream->[0];
+is($stream->[0]->[0], '-:tokens$<i>3555', 'Token count');
+
+# Term-to-term
+is($stream->[0]->[1], '<:mdp/d:NMOD$<b>32<i>5', 'Term-to-Term');
+is($stream->[5]->[0], '>:mdp/d:NMOD$<b>32<i>0', 'Term-to-Term');
+
+# Element-to-term
+is($stream->[0]->[8], '<:mdp/d:ROOT$<b>34<i>0<i>317<i>40<i>0', 'Element-to-Term');
+is($stream->[0]->[10], '>:mdp/d:ROOT$<b>33<i>0<i>317<i>0<i>40', 'Term-to-Element');
+
+
+is($stream->[-1]->[0], '>:mdp/d:ROOT$<b>33<i>26130<i>26153<i>3553<i>3554', 'Term-to-Element');
+is($stream->[3553]->[1], '<:mdp/d:ROOT$<b>34<i>26130<i>26153<i>3554<i>3553', 'Element-to-Term');
 
 done_testing;
 __END__

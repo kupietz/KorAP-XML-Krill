@@ -51,13 +51,3 @@ is($stream->[0]->[4], '<>:base/s:t$<b>64<i>0<i>238<i>30<b>0', 'Text element');
 
 done_testing;
 __END__
-
-diag $data;
-
-
-
-
-is($data->{stream}->[0]->[2], '<>:xip/s:s$<b>64<i>0<i>129<i>17<b>0', 'Text');
-is($data->{stream}->[0]->[3], '_0$<i>0<i>3', 'Position');
-is($data->{stream}->[-1]->[0], '_17$<i>124<i>128', 'Position');
-

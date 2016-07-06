@@ -33,6 +33,7 @@ lib/KorAP/XML/Annotation/Malt/Dependency.pm
 lib/KorAP/XML/Annotation/Mate/Dependency.pm
 lib/KorAP/XML/Annotation/Mate/Morpho.pm
 lib/KorAP/XML/Annotation/Mate/MorphoAttr.pm
+lib/KorAP/XML/Annotation/MDParser/Dependency.pm
 lib/KorAP/XML/Annotation/OpenNLP/Morpho.pm
 lib/KorAP/XML/Annotation/OpenNLP/Sentences.pm
 lib/KorAP/XML/Annotation/OpenNLP/Morpho.pm
@@ -66,6 +67,7 @@ t/annotation/corenlp_morpho.t
 t/annotation/corenlp_sentences.t
 t/annotation/dereko_struct.t
 t/annotation/glemm_morpho.t
+t/annotation/mdp_dependency.t
 t/annotation/malt_dependency.t
 t/annotation/mate_dependency.t
 t/annotation/mate_morpho.t
@@ -81,8 +83,6 @@ t/annotation/xip_dependency.t
 t/annotation/xip_morpho.t
 t/annotation/xip_sentences.t
 t/annotation/koralquery.t
-t/benchmark/parse_document.t
-t/benchmark/list_archive_texts.t
 t/real/bzk.t
 t/real/bzk_2.t
 t/real/goethe.t
