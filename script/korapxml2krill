@@ -59,9 +59,12 @@ use Parallel::ForkManager;
 # - Added multi archive support
 # - Added prefix negation support
 # - Added Malt#Dependency support
+#
+# 2016/07/06
+# - Added MDParser#Dependency
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2016/03/17';
+our $LAST_CHANGE = '2016/07/06';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -269,6 +272,9 @@ unless ($cmd) {
 
   # Malt
   push(@layers, ['Malt', 'Dependency']);
+
+  # MDParser
+  push(@layers, ['MDParser', 'Dependency']);
 
   # Mate
   push(@layers, ['Mate', 'Morpho']);
