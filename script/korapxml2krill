@@ -14,6 +14,7 @@ use Directory::Iterator;
 use KorAP::XML::Krill;
 use KorAP::XML::Archive;
 use KorAP::XML::Tokenizer;
+use KorAP::XML::ProcessFile;
 use Parallel::ForkManager;
 # TODO: use Parallel::Loops
 # TODO: make output files
@@ -367,7 +368,6 @@ elsif ($cmd eq 'extract') {
     # Iterate over all given sigles and extract
     foreach (@sigle) {
       print "$_ ";
-#      print '' . ($archive->extract('./'. $_, $output) ? '' : 'not ');
       print '' . ($archive->extract('./' . $_, $output) ? '' : 'not ');
       print "extracted.\n";
     };
