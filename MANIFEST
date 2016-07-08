@@ -1,6 +1,7 @@
 lib/KorAP/XML/Krill.pm
 lib/KorAP/XML/Log.pm
 lib/KorAP/XML/Archive.pm
+lib/KorAP/XML/Batch/File.pm
 lib/KorAP/XML/Tokenizer.pm
 lib/KorAP/XML/Tokenizer/Match.pm
 lib/KorAP/XML/Tokenizer/Range.pm
@@ -46,6 +47,7 @@ lib/KorAP/XML/Annotation/XIP/Dependency.pm
 lib/KorAP/XML/Annotation/XIP/Morpho.pm
 lib/KorAP/XML/Annotation/XIP/Sentences.pm
 t/archive.t
+t/batch_file.t
 t/meta.t
 t/meta_caching.t
 t/multiple_archives.t

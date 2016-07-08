@@ -14,7 +14,6 @@ use Directory::Iterator;
 use KorAP::XML::Krill;
 use KorAP::XML::Archive;
 use KorAP::XML::Tokenizer;
-use KorAP::XML::ProcessFile;
 use Parallel::ForkManager;
 # TODO: use Parallel::Loops
 # TODO: make output files

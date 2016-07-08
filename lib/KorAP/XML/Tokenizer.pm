@@ -517,7 +517,7 @@ sub to_string {
 sub to_data {
   my $self = shift;
   my $primary = defined $_[0] ? $_[0] : 1;
-  my $legacy =  defined $_[1] ? $_[1] : 0;
+  my $legacy  = defined $_[1] ? $_[1] : 0;
 
   my %data = %{$self->doc->to_hash};
   my @fields;
@@ -538,6 +538,7 @@ sub to_data {
 
   else {
     my $tokens = $self->to_hash;
+
     $tokens->{text} = $self->doc->primary->data if $primary;
     $data{data} = $tokens;
     $data{version} = '0.03';
