@@ -97,6 +97,7 @@ t/sgbr/meta_duden.t
 t/sgbr/meta_ids.t
 t/sgbr/pos.t
 t/sgbr/token.t
+t/script/single.t
 t/corpus/archive.zip
 t/corpus/BZK/header.xml
 t/corpus/GOE/header.xml
