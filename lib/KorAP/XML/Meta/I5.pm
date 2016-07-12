@@ -1,12 +1,44 @@
 package KorAP::XML::Meta::I5;
 use KorAP::XML::Meta::Base;
-use Try::Tiny;
+
+our $SIGLE_RE = qr/^([^_\/]+)(?:[_\/]([^\._\/]+?)(?:\.(.+?))?)?$/;
 
 # Parse meta data
 sub parse {
   my ($self, $dom, $type) = @_;
 
   my $analytic = $dom->at('analytic') || $dom->at('monogr');
+
+  # Parse text sigle
+  if ($type eq 'text' && !$self->text_sigle) {
+    my $v = $dom->at('textSigle');
+    if ($v) {
+      $self->{_text_sigle} = $v->text;
+      if ($self->{_text_sigle} =~ $SIGLE_RE) {
+	$self->{_text_sigle} = join('/', $1, $2, $3);
+	$self->{_doc_sigle} = join('/', $1, $2);
+	$self->{_corpus_sigle} = $1;
+      };
+    }
+  }
+
+  # Parse document sigle
+  elsif ($type eq 'doc' && !$self->doc_sigle) {
+    my $v = $dom->at('dokumentSigle');
+    if ($v) {
+      $self->{_doc_sigle} = $v->text;
+      if ($self->{_doc_sigle} =~ $SIGLE_RE) {
+	$self->{_doc_sigle} = join('/', $1, $2);
+	$self->{_corpus_sigle} = $1;
+      };
+    }
+  }
+
+  # Parse corpus sigle
+  elsif ($type eq 'corpus' && !$self->corpus_sigle) {
+    my $v = $dom->at('korpusSigle');
+    $self->{_corpus_sigle} = $v->text if $v;
+  };
 
   # There is an analytic element
   if ($analytic) {
@@ -241,6 +273,8 @@ sub parse {
       };
     };
   };
+
+  return 1;
 };
 
 

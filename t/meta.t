@@ -3,6 +3,9 @@ use warnings;
 use utf8;
 use Test::More;
 use Benchmark ':hireswallclock';
+use Mojo::DOM;
+use Mojo::ByteStream 'b';
+use Data::Dumper;
 use lib 'lib', '../lib';
 
 use File::Basename 'dirname';
@@ -383,6 +386,53 @@ is($meta->keywords('text_class'), '', 'Text class');
 
 is($meta->{availability}, 'CC-BY-SA', 'Availability');
 
+use_ok('KorAP::XML::Meta::I5');
+
+$path = catdir(dirname(__FILE__), 'corpus', 'I5', 'rei-example.i5');
+ok($meta = KorAP::XML::Meta::I5->new, 'Construct meta object');
+my $dom = Mojo::DOM->new->parse(b($path)->slurp);
+ok($meta->parse($dom->at('idsHeader'), 'corpus'), 'Parse corpus header');
+
+my $hash = $meta->to_hash;
+is($hash->{availability}, 'CC-BY-SA', 'Availability');
+is($hash->{language}, 'de', 'Language');
+is($hash->{corpus_title}, 'Reden und Interviews', 'Corpus title');
+is($hash->{corpus_sigle}, 'REI', 'Corpus Sigle');
+
+ok($meta->parse($dom->find('idsHeader')->[1], 'doc'), 'Parse corpus header');
+
+$hash = $meta->to_hash;
+is($hash->{availability}, 'CC-BY-SA', 'Availability');
+is($hash->{language}, 'de', 'Language');
+is($hash->{corpus_title}, 'Reden und Interviews', 'Corpus title');
+is($hash->{corpus_sigle}, 'REI', 'Corpus Sigle');
+is($hash->{doc_sigle}, 'REI/BNG', 'Document Sigle');
+is($hash->{doc_title}, 'Reden der Bundestagsfraktion Bündnis 90/DIE GRÜNEN, (2002-2006)', 'Document Sigle');
+
+ok($meta->parse($dom->find('idsHeader')->[2], 'text'), 'Parse corpus header');
+
+$hash = $meta->to_hash;
+is($hash->{availability}, 'CC-BY-SA', 'Availability');
+is($hash->{language}, 'de', 'Language');
+is($hash->{corpus_title}, 'Reden und Interviews', 'Corpus title');
+is($hash->{corpus_sigle}, 'REI', 'Corpus Sigle');
+is($hash->{doc_sigle}, 'REI/BNG', 'Document Sigle');
+is($hash->{doc_title}, 'Reden der Bundestagsfraktion Bündnis 90/DIE GRÜNEN, (2002-2006)', 'Document Sigle');
+
+is($hash->{text_sigle}, 'REI/BNG/00001');
+is($hash->{title}, 'Energiewirtschaft');
+is($hash->{sub_title}, 'Rede im Deutschen Bundestag am 19.01.2002');
+is($hash->{creation_date}, '20020119');
+is($hash->{pub_date}, '20020119');
+is($hash->{pub_place_key}, 'DE');
+is($hash->{reference}, 'Hustedt, Michaele: Energiewirtschaft. Rede im Deutschen Bundestag am 19.01.2002, Hrsg: Bundestagsfraktion Bündnis 90/DIE GRÜNEN [Ausführliche Zitierung nicht verfügbar]');
+is($hash->{text_class}->[0], 'politik');
+is($hash->{text_class}->[1], 'inland');
+is($hash->{author}, 'Hustedt, Michaele');
+is($hash->{pub_place}, 'Berlin');
 
 done_testing;
 __END__
+
+
+

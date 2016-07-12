@@ -1,4 +1,4 @@
-0.18 2016-07-08
+0.18 2016-07-12
         - Added REI test.
 	- Added multiple archive support to korapxml2krill.
 	- Added support for prefix negation in korapxml2krill.
@@ -6,6 +6,7 @@
 	- Improved test suite for caching and REI.
 	- Added support for MDParser annotation.
 	- Added batch processing class for documents.
+	- Added test for direct I5 support.
 
 0.17 2016-03-22
         - Rewrite siglen to use slashes as separators.

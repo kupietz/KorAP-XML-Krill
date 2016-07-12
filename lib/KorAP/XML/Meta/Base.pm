@@ -1,4 +1,5 @@
 package KorAP::XML::Meta::Base;
+use Mojo::Log;
 use strict;
 use warnings;
 
@@ -18,7 +19,8 @@ sub import {
 };
 
 sub log {
-  return $_[0]->{_log};
+  return $_[0]->{_log} if $_[0]->{_log};
+  $_[0]->{_log} = Mojo::Log->new;
 };
 
 sub corpus_sigle {
@@ -54,6 +56,7 @@ sub keywords {
 };
 
 # Check if cached
+# Cache differently!
 sub is_cached {
   my ($self, $type) = @_;
 
@@ -77,6 +80,24 @@ sub is_cached {
   };
 
   return;
+};
+
+sub to_hash {
+  my $self = shift;
+  my %new;
+  foreach ($self->keys) {
+    $new{$_} = $self->{$_};
+  };
+  if ($self->corpus_sigle) {
+    $new{corpus_sigle} = $self->corpus_sigle;
+    if ($self->doc_sigle) {
+      $new{doc_sigle} = $self->doc_sigle;
+      if ($self->text_sigle) {
+	$new{text_sigle} = $self->text_sigle;
+      }
+    }
+  };
+  return \%new;
 };
 
 sub keys {

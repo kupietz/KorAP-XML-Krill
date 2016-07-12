@@ -107,6 +107,7 @@ t/corpus/REI/header.xml
 t/corpus/artificial/data.xml
 t/corpus/artificial/header.xml
 t/corpus/artificial/metadata.xml
+t/corpus/I5/rei-example.i5
 t/annotation/corpus/header.xml
 t/sgbr/TEST/header.xml
 t/corpus/A00/02035-substring/data.xml
