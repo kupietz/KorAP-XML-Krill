@@ -3,6 +3,15 @@ use KorAP::XML::Meta::Base;
 
 our $SIGLE_RE = qr/^([^_\/]+)(?:[_\/]([^\._\/]+?)(?:\.(.+?))?)?$/;
 
+sub _squish ($) {
+  for ($_[0]) {
+    s!\s\s+! !g;
+    s!^\s*!!;
+    s!\s*$!!;
+  };
+  $_[0];
+};
+
 # Parse meta data
 sub parse {
   my ($self, $dom, $type) = @_;
@@ -13,7 +22,7 @@ sub parse {
   if ($type eq 'text' && !$self->text_sigle) {
     my $v = $dom->at('textSigle');
     if ($v) {
-      $self->{_text_sigle} = $v->text;
+      $self->{_text_sigle} = _squish $v->text;
       if ($self->{_text_sigle} =~ $SIGLE_RE) {
 	$self->{_text_sigle} = join('/', $1, $2, $3);
 	$self->{_doc_sigle} = join('/', $1, $2);
@@ -49,10 +58,10 @@ sub parse {
     my $author    = $analytic->at('h\.author');
     my $editor    = $analytic->at('editor');
 
-    $title     = $title     ? $title->all_text     : undef;
-    $sub_title = $sub_title ? $sub_title->all_text : undef;
-    $author    = $author    ? $author->all_text    : undef;
-    $editor    = $editor    ? $editor->all_text    : undef;
+    $title     = $title     ? _squish $title->all_text     : undef;
+    $sub_title = $sub_title ? _squish $sub_title->all_text : undef;
+    $author    = $author    ? _squish $author->all_text    : undef;
+    $editor    = $editor    ? _squish $editor->all_text    : undef;
 
     # Text meta data
     if ($type eq 'text') {
@@ -127,13 +136,13 @@ sub parse {
   if ($temp = $dom->at('pubPlace')) {
     my $place_attr = $temp->attr('key');
     $self->{pub_place_key} = $place_attr if $place_attr;
-    $temp = $temp->all_text;
+    $temp = _squish $temp->all_text;
     $self->{pub_place} = $temp if $temp;
   };
 
   # Get Publisher
   if ($temp = $dom->at('imprint publisher')) {
-    $temp = $temp->all_text;
+    $temp = _squish $temp->all_text;
     $self->{publisher} = $temp if $temp;
   };
 
@@ -143,25 +152,25 @@ sub parse {
 
   if ($temp) {
     if ($temp_2 = $temp->at('textType')) {
-      $temp_2 = $temp_2->all_text;
+      $temp_2 = _squish $temp_2->all_text;
       $self->{text_type} = $temp_2 if $temp_2;
     };
 
     # Get text domain
     if ($temp_2 = $temp->at('textDomain')) {
-      $temp_2 = $temp_2->all_text;
+      $temp_2 = _squish $temp_2->all_text;
       $self->{text_domain} = $temp_2 if $temp_2;
     };
 
     # Get text type art
     if ($temp_2 = $temp->at('textTypeArt')) {
-      $temp_2 = $temp_2->all_text;
+      $temp_2 = _squish $temp_2->all_text;
       $self->{text_type_art} = $temp_2 if $temp_2;
     };
 
     # Get text type ref
     if ($temp_2 = $temp->at('textTypeRef')) {
-      $temp_2 = $temp_2->all_text;
+      $temp_2 = _squish $temp_2->all_text;
       $self->{text_type_ref} = $temp_2 if $temp_2;
     };
   };
@@ -194,7 +203,7 @@ sub parse {
   # creatDate
   my $create_date = $dom->at('creatDate');
   if ($create_date && $create_date->text) {
-    $create_date = $create_date->all_text;
+    $create_date = _squish $create_date->all_text;
     if (index($create_date, '-') > -1) {
       $self->log->warn("Creation date ranges are not supported");
       ($create_date) = split /\s*-\s*/, $create_date;
@@ -229,18 +238,18 @@ sub parse {
   };
 
   if ($temp = $dom->at('biblFull editionStmt')) {
-    $temp = $temp->all_text;
+    $temp = _squish $temp->all_text;
     $self->{bibl_edition_statement} = $temp if $temp;
   };
 
   if ($temp = $dom->at('fileDescl editionStmt')) {
-    $temp = $temp->all_text;
+    $temp = _squish $temp->all_text;
     $self->{file_edition_statement} = $temp if $temp;
   };
 
   if ($temp = $dom->at('fileDesc')) {
     if (my $availability = $temp->at('publicationStmt > availability')) {
-      $temp = $availability->all_text;
+      $temp = _squish $availability->all_text;
       $self->{availability} = $temp if $temp;
     };
   };
@@ -256,19 +265,19 @@ sub parse {
   elsif ($type eq 'text') {
 
     if ($temp = $dom->at('sourceDesc reference[type=complete]')) {
-      if (my $ref_text = $temp->all_text) {
+      if (my $ref_text = _squish $temp->all_text) {
 	$ref_text =~ s!$REF_RE!!;
 	$self->{reference} = $ref_text;
       };
     };
 
     $temp = $dom->at('textDesc > column');
-    if ($temp && ($temp = $temp->all_text)) {
+    if ($temp && ($temp = _squish $temp->all_text)) {
       $self->{text_column} = $temp;
     };
 
     if ($temp = $dom->at('biblStruct biblScope[type=pp]')) {
-      $temp = $temp->all_text;
+      $temp = _squish $temp->all_text;
       if ($temp && $temp =~ m/(\d+)\s*-\s*(\d+)/) {
 	$self->{pages} = $1 . '-' . $2;
       };
@@ -288,11 +297,9 @@ sub _remove_prefix {
   $prefix =~ s!^([^/]+?/[^/]+?)/!$1\.!;
   if (index($title, $prefix) == 0) {
     $title = substr($title, length($prefix));
-    $title =~ s/^\s+//;
-    $title =~ s/\s+$//;
   };
 
-  return $title;
+  return _squish $title;
 };
 
 
