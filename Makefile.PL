@@ -13,6 +13,7 @@ WriteMakefile(
   PREREQ_PM => {
     'Mojolicious'     => 6.11,
     'Packed::Array'   => 0.01,
+    'Test::Output'    => 0,
     'Log::Log4perl'   => 1.42,
     'JSON::XS'        => 3.01,
     'Set::Scalar'     => 1.26,

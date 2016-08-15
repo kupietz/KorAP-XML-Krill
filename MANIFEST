@@ -48,6 +48,7 @@ lib/KorAP/XML/Annotation/XIP/Morpho.pm
 lib/KorAP/XML/Annotation/XIP/Sentences.pm
 t/archive.t
 t/batch_file.t
+t/script.t
 t/meta.t
 t/meta_caching.t
 t/multiple_archives.t
