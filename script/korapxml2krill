@@ -220,20 +220,21 @@ my ($token_base_foundry, $token_base_layer) = split(/#/, $token_base) if ($token
 my $cache = Cache::FastMmap->new(
   share_file => $cache_file,
   cache_size => $cache_size,
-  init_file => $cache_init
+  init_file  => $cache_init
 );
 
+# Create batch object
 my $batch_file = KorAP::XML::Batch::File->new(
-  cache => $cache,
+  cache     => $cache,
   meta_type => $meta,
   overwrite => $overwrite,
-  foundry => $token_base_foundry,
-  layer => $token_base_layer,
-  gzip => $gzip,
-  log => $log,
-  primary => $primary,
-  pretty => $pretty,
-  anno => \@filtered_anno
+  foundry   => $token_base_foundry,
+  layer     => $token_base_layer,
+  gzip      => $gzip,
+  log       => $log,
+  primary   => $primary,
+  pretty    => $pretty,
+  anno      => \@filtered_anno
 );
 
 
@@ -313,13 +314,10 @@ unless ($cmd) {
 # Extract XML files
 elsif ($cmd eq 'extract') {
 
-warn '!!!!!!!!!!!!!------------> ';
-
-if ($output && (!-e $output || !-d $output)) {
-  print "Directory '$output' does not exist.\n\n";
-  exit(0);
-};
-
+  if ($output && (!-e $output || !-d $output)) {
+    print "Directory '$output' does not exist.\n\n";
+    exit(0);
+  };
 
   # TODO: Support sigles and full archives
 
@@ -333,9 +331,24 @@ if ($output && (!-e $output || !-d $output)) {
     # Add further annotation archived
     $archive->attach($_) foreach @input;
 
+    # No sigles given
+    unless (@sigle) {
+
+      # Get files
+      foreach ($archive->list_texts) {
+
+        # Split path information
+        my ($prefix, $corpus, $doc, $text) = $archive->split_path($_);
+
+        # TODO: Make this OS independent
+        push @sigle, join '/', $corpus, $doc, $text;
+      };
+    };
+
     # Iterate over all given sigles and extract
     foreach (@sigle) {
       print "$_ ";
+      # TODO: Make this OS independent
       print '' . ($archive->extract('./' . $_, $output) ? '' : 'not ');
       print "extracted.\n";
     };

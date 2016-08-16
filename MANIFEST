@@ -99,6 +99,7 @@ t/sgbr/pos.t
 t/sgbr/token.t
 t/script/single.t
 t/script/usage.t
+t/script/extract.t
 t/corpus/archive.zip
 t/corpus/BZK/header.xml
 t/corpus/GOE/header.xml

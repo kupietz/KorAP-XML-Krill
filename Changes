@@ -12,6 +12,7 @@
         - Fixed setting multiple annotations in
           script.
         - Fixed output of version and help messages.
+        - Added extraction test.
 
 0.17 2016-03-22
         - Rewrite siglen to use slashes as separators.

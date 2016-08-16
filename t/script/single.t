@@ -203,8 +203,6 @@ is($json->{docSubTitle}, 'Subkorpus Ortsblatt, Jahrgang 2013, Monat Januar', 'do
 is($json->{keywords}, 'sgbrKodex:T', 'keywords');
 is($json->{publisher}, 'Dorfblatt GmbH', 'publisher');
 
-# Test sigle!
-
 done_testing;
 __END__
 
