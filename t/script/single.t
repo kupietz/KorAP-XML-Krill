@@ -13,13 +13,6 @@ use Data::Dumper;
 
 my $f = dirname(__FILE__);
 my $script = catfile($f, '..', '..', 'script', 'korapxml2krill');
-ok(-f $script, 'Script found');
-
-stdout_like(
-  sub { system('perl', $script) },
-  qr!Usage.+?korapxml2krill!s,
-  'Usage output'
-);
 
 my $input = catdir($f, '..', 'annotation', 'corpus', 'doc', '0001');
 ok(-d $input, 'Input directory found');
@@ -127,12 +120,42 @@ is($json->{data}->{foundries}, 'dereko dereko/structure mate mate/dependency', '
 like($json->{data}->{text}, qr/^Zum letzten kulturellen/, 'Foundries');
 is($json->{data}->{stream}->[0]->[0], '-:tokens$<i>20', 'Tokens');
 
-# Test overwrite!!!
+
+# Check overwrite
+$call = join(
+  ' ',
+  'perl', $script,
+  '--input' => $input,
+  '--output' => $output,
+  '-t' => 'CoreNLP#Tokens',
+  '-s' => '#all',
+  '-a' => 'DeReKo#Structure',
+  '-a' => 'Mate#Dependency',
+  '-l' => 'DEBUG'
+);
+
+ok(-f $output, 'Output does exist');
+stderr_like(
+  sub {
+    system($call);
+  },
+  qr!already exists!,
+  $call
+);
+
+$call .= ' -w ';
+
+stderr_unlike(
+  sub {
+    system($call);
+  },
+  qr!already exists!,
+  $call
+);
+
+
 # Test meta
 # Test sigle!
-# Test help
-# Test version
-
 
 done_testing;
 __END__

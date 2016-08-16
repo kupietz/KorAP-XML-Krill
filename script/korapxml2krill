@@ -105,12 +105,14 @@ GetOptions(
       -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
       -verbose => 99,
       -msg => $VERSION_MSG,
+      -output => '-'
     );
   },
   'version|v'   => sub {
     pod2usage(
       -verbose => 0,
-      -msg => $VERSION_MSG
+      -msg => $VERSION_MSG,
+      -output => '-'
     )
   }
 );
@@ -119,6 +121,7 @@ my %ERROR_HASH = (
   -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
   -verbose => 99,
   -msg => $VERSION_MSG,
+  -output => '-',
   -exit => 1
 );
 

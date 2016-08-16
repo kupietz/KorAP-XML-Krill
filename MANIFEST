@@ -48,7 +48,6 @@ lib/KorAP/XML/Annotation/XIP/Morpho.pm
 lib/KorAP/XML/Annotation/XIP/Sentences.pm
 t/archive.t
 t/batch_file.t
-t/script.t
 t/meta.t
 t/meta_caching.t
 t/multiple_archives.t
@@ -99,6 +98,7 @@ t/sgbr/meta_ids.t
 t/sgbr/pos.t
 t/sgbr/token.t
 t/script/single.t
+t/script/usage.t
 t/corpus/archive.zip
 t/corpus/BZK/header.xml
 t/corpus/GOE/header.xml
