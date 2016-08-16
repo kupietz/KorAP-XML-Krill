@@ -320,7 +320,6 @@ elsif ($cmd eq 'extract') {
   };
 
   # TODO: Support sigles and full archives
-
   if (-f($input[0]) && (my $archive = KorAP::XML::Archive->new($input[0]))) {
 
     unless ($archive->test_unzip) {
@@ -331,6 +330,8 @@ elsif ($cmd eq 'extract') {
     # Add further annotation archived
     $archive->attach($_) foreach @input;
 
+    my $prefix = 1;
+
     # No sigles given
     unless (@sigle) {
 
@@ -338,7 +339,7 @@ elsif ($cmd eq 'extract') {
       foreach ($archive->list_texts) {
 
         # Split path information
-        my ($prefix, $corpus, $doc, $text) = $archive->split_path($_);
+        ($prefix, my ($corpus, $doc, $text)) = $archive->split_path($_);
 
         # TODO: Make this OS independent
         push @sigle, join '/', $corpus, $doc, $text;
@@ -349,7 +350,11 @@ elsif ($cmd eq 'extract') {
     foreach (@sigle) {
       print "$_ ";
       # TODO: Make this OS independent
-      print '' . ($archive->extract('./' . $_, $output) ? '' : 'not ');
+      print '' . (
+        $archive->extract(
+          ($prefix ? './' : '') . $_, $output
+        ) ? '' : 'not '
+      );
       print "extracted.\n";
     };
 
@@ -379,7 +384,7 @@ if ($output && (!-e $output || !-d $output)) {
     exit(0);
   };
 
-  # Zero means: everything runs in the parent process
+# Zero means: everything runs in the parent process
   my $pool = Parallel::ForkManager->new($jobs);
 
   my $count = 0; # Texts to process
@@ -391,9 +396,9 @@ if ($output && (!-e $output || !-d $output)) {
       my ($pid, $code) = shift;
       my $data = pop;
       print 'Convert ['. ($jobs > 0 ? "\$$pid:" : '') .
-	($iter++) . "/$count]" .
-	  ($code ? " $code" : '') .
-	    " $$data\n";
+        ($iter++) . "/$count]" .
+        ($code ? " $code" : '') .
+        " $$data\n";
     }
   );
 
@@ -593,6 +598,8 @@ and all meta data files.
 that may include a C<.> root folder.
 In this case further archives lacking a C<.> root folder
 need to be passed with a hash sign in front of the archive's name.)
+
+B<The root folder switch is experimental and may vanish in future versions.>
 
 =item B<--output|-o> <directory|file>
 

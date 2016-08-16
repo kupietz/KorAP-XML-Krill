@@ -99,15 +99,36 @@ ok(!-d catdir($output2, 'TEST', 'BSP', '3'), 'Directory created');
 ok(-d catdir($output2, 'TEST', 'BSP', '4'), 'Directory created');
 ok(!-d catdir($output2, 'TEST', 'BSP', '5'), 'Directory created');
 
+# Check multiple archives
+$output = tempdir(CLEANUP => 1);
+ok(-d $output, 'Output directory exists');
+
+$call = join(
+  ' ',
+  'perl', $script,
+  'extract',
+  '-i' => catfile($f, '..', 'corpus', 'archives', 'wpd15-single.zip'),
+  '-i' => catfile($f, '..', 'corpus', 'archives', 'wpd15-single.tree_tagger.zip'),
+  '-i' => catfile($f, '..', 'corpus', 'archives', 'wpd15-single.opennlp.zip'),
+  '--output' => $output
+);
+
+# Test with sigle
+stdout_like(
+  sub {
+    system($call);
+  },
+  qr!WPD15/A00/00081 extracted.!s,
+  $call
+);
+
+ok(-d catdir($output, 'WPD15', 'A00', '00081'), 'Directory created');
+ok(-f catfile($output, 'WPD15', 'A00', 'header.xml'), 'Header file created');
+ok(-d catdir($output, 'WPD15', 'A00', '00081', 'base'), 'Directory created');
+
+ok(-f catfile($output, 'WPD15', 'A00', '00081', 'tree_tagger', 'morpho.xml'), 'New archive');
+ok(-f catfile($output, 'WPD15', 'A00', '00081', 'opennlp', 'morpho.xml'), 'New archive');
+
 
 done_testing;
 __END__
-
-
-
-
-
-# Test sigle!
-# Test multiple archives
-
-

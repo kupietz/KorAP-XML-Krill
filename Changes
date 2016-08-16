@@ -1,4 +1,4 @@
-0.18 2016-08-15
+0.18 2016-08-16
         - Added REI test.
 	      - Added multiple archive support to korapxml2krill.
         - Added support for prefix negation in korapxml2krill.
@@ -13,6 +13,8 @@
           script.
         - Fixed output of version and help messages.
         - Added extraction test.
+        - Fixed extraction with multiple archives and prefix
+          negation support.
 
 0.17 2016-03-22
         - Rewrite siglen to use slashes as separators.
