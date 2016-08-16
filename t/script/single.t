@@ -8,45 +8,132 @@ use Mojo::Util qw/slurp/;
 use Mojo::JSON qw/decode_json/;
 use IO::Uncompress::Gunzip;
 use Test::More;
+use Test::Output;
+use Data::Dumper;
 
 my $f = dirname(__FILE__);
 my $script = catfile($f, '..', '..', 'script', 'korapxml2krill');
-my $input = catdir($f, '..', 'annotation', 'corpus', 'doc', '0001');
-my $output = tmpnam();
-
 ok(-f $script, 'Script found');
+
+stdout_like(
+  sub { system('perl', $script) },
+  qr!Usage.+?korapxml2krill!s,
+  'Usage output'
+);
+
+my $input = catdir($f, '..', 'annotation', 'corpus', 'doc', '0001');
 ok(-d $input, 'Input directory found');
 
-my $call = 'perl ';
-$call .= $script . ' ';
-$call .= "--input $input ";
-$call .= "--output $output ";
-$call .= '-t OpenNLP#Tokens ';
+my $output = tmpnam();
 
-system($call);
+ok(!-f $output, 'Output does not exist');
 
-ok(my $file = slurp $output, 'Slurp data');
-ok(my $json = decode_json $file, 'decode json');
+my $call = join(
+  ' ',
+  'perl', $script,
+  '--input' => $input,
+  '--output' => $output,
+  '-t' => 'OpenNLP#Tokens',
+  '-l' => 'INFO'
+);
+
+# Test without compression
+stderr_like(
+  sub {
+    system($call);
+  },
+  qr!The code took!,
+  $call
+);
+
+ok(-f $output, 'Output does exist');
+ok((my $file = slurp $output), 'Slurp data');
+ok((my $json = decode_json $file), 'decode json');
 is($json->{textType}, 'Zeitung: Tageszeitung', 'text type');
 is($json->{title}, 'Beispiel Text', 'Title');
 is($json->{data}->{tokenSource}, 'opennlp#tokens', 'Title');
 is($json->{data}->{foundries}, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/constituency corenlp/morpho corenlp/sentences dereko dereko/structure glemm glemm/morpho mate mate/dependency mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/morpho xip/sentences', 'Foundries');
 like($json->{data}->{text}, qr/^Zum letzten kulturellen/, 'Foundries');
 is($json->{data}->{stream}->[0]->[0], '-:base/paragraphs$<i>1', 'Paragraphs');
+is($json->{data}->{tokenSource}, 'opennlp#tokens', 'TokenSource');
 
-system($call . ' -z');
+# Delete output
+unlink $output;
+ok(!-f $output, 'Output does not exist');
 
-my $gz = IO::Uncompress::Gunzip->new($output);
-ok($gz->read($file), 'Uncompress');
+$call .= ' -z';
 
-ok($json = decode_json $file, 'decode json');
+# Test with compression
+stderr_like(
+  sub { system($call); },
+  qr!The code took!,
+  $call
+);
+
+ok(-f $output, 'Output does exist');
+
+# Uncompress the data using a buffer
+my $gz = IO::Uncompress::Gunzip->new($output, Transparent => 0);
+($file, my $buffer) = '';
+while ($gz->read($buffer)) {
+  $file .= $buffer;
+};
+
+ok($json = decode_json($file), 'decode json');
+
 is($json->{textType}, 'Zeitung: Tageszeitung', 'text type');
 is($json->{title}, 'Beispiel Text', 'Title');
-is($json->{data}->{tokenSource}, 'opennlp#tokens', 'Title');
+is($json->{data}->{tokenSource}, 'opennlp#tokens', 'TokenSource');
 is($json->{data}->{foundries}, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/constituency corenlp/morpho corenlp/sentences dereko dereko/structure glemm glemm/morpho mate mate/dependency mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/morpho xip/sentences', 'Foundries');
 like($json->{data}->{text}, qr/^Zum letzten kulturellen/, 'Foundries');
 is($json->{data}->{stream}->[0]->[0], '-:base/paragraphs$<i>1', 'Paragraphs');
+
+# Delete output
+unlink $output;
+ok(!-f $output, 'Output does not exist');
+
+# Use a different token source and skip all annotations,
+# except for DeReKo#Structure and Mate#Dependency
+$call = join(
+  ' ',
+  'perl', $script,
+  '--input' => $input,
+  '--output' => $output,
+  '-t' => 'CoreNLP#Tokens',
+  '-s' => '#all',
+  '-a' => 'DeReKo#Structure',
+  '-a' => 'Mate#Dependency',
+  '-l' => 'INFO'
+);
+
+stderr_like(
+  sub {
+    system($call);
+  },
+  qr!The code took!,
+  $call
+);
+
+ok(-f $output, 'Output does exist');
+ok(($file = slurp $output), 'Slurp data');
+ok(($json = decode_json $file), 'decode json');
+
+is($json->{textType}, 'Zeitung: Tageszeitung', 'text type');
+
+is($json->{title}, 'Beispiel Text', 'Title');
+is($json->{data}->{tokenSource}, 'corenlp#tokens', 'TokenSource');
+is($json->{data}->{foundries}, 'dereko dereko/structure mate mate/dependency', 'Foundries');
+
+like($json->{data}->{text}, qr/^Zum letzten kulturellen/, 'Foundries');
+is($json->{data}->{stream}->[0]->[0], '-:tokens$<i>20', 'Tokens');
+
+# Test overwrite!!!
+# Test meta
+# Test sigle!
+# Test help
+# Test version
 
 
 done_testing;
 __END__
+

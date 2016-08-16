@@ -9,39 +9,41 @@
         - Added test for direct I5 support.
         - Fixed support for Mojolicious 7.
         - Added script test.
+        - Fixed setting multiple annotations in
+          script.
 
 0.17 2016-03-22
         - Rewrite siglen to use slashes as separators.
-	- Zip listing optimized. Does no longer work with primary data
-	  in text.xml files.
+	      - Zip listing optimized. Does no longer work with primary data
+	        in text.xml files.
 
 0.16 2016-03-18
         - Added caching mechanism for
-	  metadata.
+	        metadata.
 
 0.15 2016-03-17
         - Modularized metadata handling.
         - Simplified metadata handling.
-	- Added --meta option to script.
-	- Removed deprecated --human option from script.
+	      - Added --meta option to script.
+        - Removed deprecated --human option from script.
 
 0.14 2016-03-15
         - Renamed ::Index to ::Annotate and ::Field to ::Index.
-	- Renamed 'allow' to 'anno' as parameters of the script. 
-	- Added readme.
+        - Renamed 'allow' to 'anno' as parameters of the script. 
+        - Added readme.
 
 0.13 2016-03-10
         - Removed korapxml2krill_dir.
-	- Renamed dependency nodes.
-	- Made dependency relations more effective (trimmed down TUIs)
-	  ! This is currently very slow !
+	      - Renamed dependency nodes.
+        - Made dependency relations more effective (trimmed down TUIs)
+	        ! This is currently very slow !
 
 0.12 2016-02-28
         - Added extract method to korapxml2krill.
-	- Fixed Mate/Dependency.
-	- Fixed skip flag in korapxml2krill.
-	- Ignore spans outside the token range
-	  (i.e. character offsets end before tokens have started).
+        - Fixed Mate/Dependency.
+        - Fixed skip flag in korapxml2krill.
+        - Ignore spans outside the token range
+          (i.e. character offsets end before tokens have started).
 
 0.11 2016-02-23
         - Merged korapxml2krill and korapxml2krill_dir.
@@ -51,43 +53,43 @@
 
 0.09 2016-02-15
         - Fixed temporary directory handling in scripts.
-	- Improved skipping for archive handling in scripts.
+        - Improved skipping for archive handling in scripts.
 
 0.08 2016-02-14
         - Added support for archive streaming.
-	- Improved scripts.
+        - Improved scripts.
 
 0.07 2016-02-13
         - Improved support for Schreibgebrauch meta data
-	  (IDS flavour).
+          (IDS flavour).
 
 0.06 2016-02-11
         - Improved support for Schreibgebrauch meta data
-	  (Duden flavour).
+          (Duden flavour).
 
 0.05 2016-02-04
         - Changed KorAP::Document to KorAP::XML::Krill.
-	- Renamed "Schreibgebrauch" to "Sgbr".
-	- Preparation for GitHub release.
+        - Renamed "Schreibgebrauch" to "Sgbr".
+        - Preparation for GitHub release.
 
 0.04 2016-01-28
         - Added PTI to all payloads.
-	- Added support for empty elements.
-	- Added support for element attributes in struct.
-	- Added meta data support for Schreibgebrauch.
-	- Fixed test suite for meta data.
+        - Added support for empty elements.
+        - Added support for element attributes in struct.
+        - Added meta data support for Schreibgebrauch.
+        - Fixed test suite for meta data.
 
 0.03 2014-11-03
         - Added new metadata scheme.
-	- Fixed a minor bug in the constituency tree building.
-	- Sorted terms in tokens a priori.
+        - Fixed a minor bug in the constituency tree building.
+        - Sorted terms in tokens a priori.
 
 0.02 2014-07-21
         - Sentence annotations for all providing foundries
-	- Starting subtokenization 
+        - Starting subtokenization 
 
 0.01 2014-04-15
-	- [bugfix] for first token annotations
+        - [bugfix] for first token annotations
         - Sentences are now available from all foundries that have it
         - <>:p is now <>:base/para
-	- Added <>:base/text
+        - Added <>:base/text

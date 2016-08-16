@@ -27,9 +27,7 @@ sub new {
 
 # Process a file
 sub process {
-  my $self = shift;
-  my $input = shift;
-  my $output = shift;
+  my ($self, $input, $output) = @_;
 
   if (!$self->{overwrite} && $output && -e $output) {
     $self->{log}->debug($output . ' already exists');
@@ -71,18 +69,29 @@ sub process {
 
   my $file;
   my $print_text = ($self->{pretty} ? $tokens->to_pretty_json($self->{primary}) : $tokens->to_json($self->{primary}));
+
+  # There is an output file given
   if ($output) {
+
     if ($self->{gzip}) {
-      $file = IO::Compress::Gzip->new($output, Minimal => 1);
+      $file = IO::Compress::Gzip->new($output, TextFlag => 1, Minimal => 1);
     }
     else {
       $file = IO::File->new($output, "w");
     };
 
-    $file->print($print_text);
+    # Write to output
+    unless ($file->print($print_text)) {
+      $self->{log}->error('Unable to write to ' . $file);
+    };
+
+    # Flush pending data
+    # $file->flush if $self->{gzip};
+
     $file->close;
   }
 
+  # Direct output to STDOUT
   else {
     print $print_text . "\n";
   };

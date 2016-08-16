@@ -408,7 +408,7 @@ sub add {
       return $retval;
     }
     else {
-      $self->log->warn('Unable to parse '.$mod);
+      $self->log->debug('Unable to parse '.$mod);
     };
   }
   else {

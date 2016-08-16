@@ -65,7 +65,7 @@ use Parallel::ForkManager;
 # - Added MDParser#Dependency
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2016/07/06';
+our $LAST_CHANGE = '2016/08/16';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -78,7 +78,7 @@ if ($ARGV[0] && index($ARGV[0], '-') != 0) {
   $cmd = shift @ARGV;
 };
 
-my (@skip, @sigle, @input);
+my (@skip, @sigle, @anno, @input);
 my $text;
 
 # Parse options from the command line
@@ -96,7 +96,7 @@ GetOptions(
   'cache-delete|cd!' => \(my $cache_delete = 1),
   'cache-init|ci!'   => \(my $cache_init = 1),
   'log|l=s'     => \(my $log_level = 'ERROR'),
-  'anno|a=s'    => \(my @anno),
+  'anno|a=s'    => \@anno,
   'primary|p!'  => \(my $primary),
   'pretty|y'    => \(my $pretty),
   'jobs|j=i'    => \(my $jobs = 0),
@@ -288,11 +288,11 @@ unless ($cmd) {
 
   sub stop_time {
     my $new = Benchmark->new;
-    $log->trace(
+    $log->info(
       'The code took: '.
-	timestr(timediff($new, $main::LAST_STOP)) .
-	  ' (overall: ' . timestr(timediff($new, $main::TIME)) . ')'
-	);
+        timestr(timediff($new, $main::LAST_STOP)) .
+        ' (overall: ' . timestr(timediff($new, $main::TIME)) . ')'
+      );
     $main::LAST_STOP = $new;
   };
 
@@ -304,7 +304,7 @@ unless ($cmd) {
   # Delete cache file
   unlink($cache_file) if $cache_delete;
 
-#  stop_time;
+  stop_time;
 }
 
 # Extract XML files

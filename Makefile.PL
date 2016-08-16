@@ -40,9 +40,10 @@ WriteMakefile(
   test => {
     TESTS =>
       't/*.t '.
-	't/annotation/*.t ' .
-	  't/sgbr/*.t ' .
-	    't/real/*.t'
+      't/annotation/*.t ' .
+      't/sgbr/*.t ' .
+      't/real/*.t ' .
+      't/script/*.t '
 	  },
   EXE_FILES => ['script/korapxml2krill']
 );
