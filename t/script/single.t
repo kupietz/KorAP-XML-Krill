@@ -10,6 +10,7 @@ use IO::Uncompress::Gunzip;
 use Test::More;
 use Test::Output;
 use Data::Dumper;
+use utf8;
 
 my $f = dirname(__FILE__);
 my $script = catfile($f, '..', '..', 'script', 'korapxml2krill');
@@ -153,8 +154,55 @@ stderr_unlike(
   $call
 );
 
+# Check meta data switch
 
-# Test meta
+# Delete output
+unlink $output;
+ok(!-f $output, 'Output does not exist');
+
+$input = catdir($f, '..', 'sgbr', 'PRO-DUD', 'BSP-2013-01', '32');
+
+# Use a different token source and skip all annotations,
+# except for DeReKo#Structure and Mate#Dependency
+$call = join(
+  ' ',
+  'perl', $script,
+  '--input' => $input,
+  '--output' => $output,
+  '-m' => 'Sgbr',
+  '-t' => 'Base#Tokens_aggr',
+  '-l' => 'INFO'
+);
+
+stderr_like(
+  sub {
+    system($call);
+  },
+  qr!The code took!,
+  $call
+);
+
+ok(-f $output, 'Output does exist');
+ok(($file = slurp $output), 'Slurp data');
+ok(($json = decode_json $file), 'decode json');
+
+is($json->{data}->{text}, 'Selbst ist der Jeck', 'Text');
+is($json->{data}->{tokenSource}, 'base#tokens_aggr', 'TokenSource');
+is($json->{pubPlace}, 'Stadtingen', 'pubPlace');
+is($json->{textSigle}, 'PRO-DUD/BSP-2013-01/32', 'textSigle');
+is($json->{docSigle}, 'PRO-DUD/BSP-2013-01', 'docSigle');
+is($json->{corpusSigle}, 'PRO-DUD', 'corpusSigle');
+is($json->{sgbrKodex}, 'T', 'sgbrKodex');
+is($json->{author}, 'unbekannt', 'Author');
+is($json->{language}, 'de', 'Language');
+is($json->{docTitle}, 'Korpus zur Beobachtung des Schreibgebrauchs im Deutschen', 'docTitle');
+is($json->{funder}, 'Bundesministerium für Bildung und Forschung', 'docTitle');
+is($json->{title}, 'Nur Platt, kein Deutsch', 'title');
+is($json->{pubDate}, '20130126', 'pubDate');
+is($json->{docSubTitle}, 'Subkorpus Ortsblatt, Jahrgang 2013, Monat Januar', 'docSubTitle');
+is($json->{keywords}, 'sgbrKodex:T', 'keywords');
+is($json->{publisher}, 'Dorfblatt GmbH', 'publisher');
+
 # Test sigle!
 
 done_testing;
