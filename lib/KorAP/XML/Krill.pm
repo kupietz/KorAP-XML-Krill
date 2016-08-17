@@ -5,7 +5,7 @@ use Mojo::Util qw/encode/;
 use Scalar::Util qw/weaken/;
 use XML::Fast;
 use Try::Tiny;
-use Carp qw/croak/;
+use Carp qw/croak carp/;
 use KorAP::XML::Document::Primary;
 use KorAP::XML::Tokenizer;
 use Log::Log4perl;
@@ -73,11 +73,11 @@ sub parse {
 
     # Load file
     $file = b($data_xml)->slurp;
-
     try {
       local $SIG{__WARN__} = sub {
-	$error = 1;
+        $error = 1;
       };
+
       $rt = xml2hash($file, text => '#text', attr => '-')->{raw_text};
     } catch  {
       $self->log->warn($unable);
@@ -97,17 +97,22 @@ sub parse {
       $self->corpus_sigle($1);
     }
     else {
-      croak $unable . ': ID not parseable';
+      $self->log->warn($unable . ': ID not parseable');
+      return;
     };
   }
   else {
-    croak $unable . ': No raw_text found or no ID';
+    $self->log->warn($unable . ': No raw_text found or no ID');
+    return;
   };
 
   # Get primary data
   my $pd = $rt->{text};
 
-  croak $unable unless $pd;
+  unless ($pd) {
+    $self->log->warn($unable . ': No primary data found');
+    return;
+  };
 
   # Associate primary data
   $self->{pd} = KorAP::XML::Document::Primary->new($pd);

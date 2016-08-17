@@ -92,37 +92,37 @@ GetOptions(
   'skip|s=s'    => \@skip,
   'sigle|sg=s'  => \@sigle,
   'cache|c=s'   => \(my $cache_file = 'korapxml2krill.cache'),
-  'cache-size|cs=s'   => \(my $cache_size = '50m'),
-  'cache-delete|cd!' => \(my $cache_delete = 1),
-  'cache-init|ci!'   => \(my $cache_init = 1),
   'log|l=s'     => \(my $log_level = 'ERROR'),
   'anno|a=s'    => \@anno,
   'primary|p!'  => \(my $primary),
   'pretty|y'    => \(my $pretty),
   'jobs|j=i'    => \(my $jobs = 0),
+  'cache-size|cs=s'  => \(my $cache_size = '50m'),
+  'cache-delete|cd!' => \(my $cache_delete = 1),
+  'cache-init|ci!'   => \(my $cache_init = 1),
   'help|h'      => sub {
     pod2usage(
       -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
-      -verbose => 99,
-      -msg => $VERSION_MSG,
-      -output => '-'
+      -verbose  => 99,
+      -msg      => $VERSION_MSG,
+      -output   => '-'
     );
   },
   'version|v'   => sub {
     pod2usage(
-      -verbose => 0,
-      -msg => $VERSION_MSG,
-      -output => '-'
+      -verbose  => 0,
+      -msg      => $VERSION_MSG,
+      -output   => '-'
     )
   }
 );
 
 my %ERROR_HASH = (
   -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
-  -verbose => 99,
-  -msg => $VERSION_MSG,
-  -output => '-',
-  -exit => 1
+  -verbose  => 99,
+  -msg      => $VERSION_MSG,
+  -output   => '-',
+  -exit     => 1
 );
 
 # Input has to be defined
@@ -281,6 +281,14 @@ sub get_file_name ($) {
 # Convert sigle to path construct
 s!^\s*([^_]+?)_([^\.]+?)\.(.+?)\s*$!$1/$2/$3! foreach @sigle;
 
+if ($cmd) {
+  if ($output && (!-e $output || !-d $output)) {
+    print "Directory '$output' does not exist.\n\n";
+    exit(0);
+  };
+};
+
+
 # Process a single file
 unless ($cmd) {
   my $input = $input[0];
@@ -303,6 +311,7 @@ unless ($cmd) {
   # Create and parse new document
   $input =~ s{([^/])$}{$1/};
 
+  # Process file
   $batch_file->process($input, $output);
 
   # Delete cache file
@@ -314,14 +323,10 @@ unless ($cmd) {
 # Extract XML files
 elsif ($cmd eq 'extract') {
 
-  if ($output && (!-e $output || !-d $output)) {
-    print "Directory '$output' does not exist.\n\n";
-    exit(0);
-  };
-
-  # TODO: Support sigles and full archives
+  # Create new archive object
   if (-f($input[0]) && (my $archive = KorAP::XML::Archive->new($input[0]))) {
 
+    # Check zip capabilities
     unless ($archive->test_unzip) {
       print "Unzip is not installed or incompatible.\n\n";
       exit(1);
@@ -349,6 +354,7 @@ elsif ($cmd eq 'extract') {
     # Iterate over all given sigles and extract
     foreach (@sigle) {
       print "$_ ";
+
       # TODO: Make this OS independent
       print '' . (
         $archive->extract(
@@ -361,6 +367,8 @@ elsif ($cmd eq 'extract') {
     print "\n";
     exit(1);
   }
+
+  # Can't create archive object
   else {
     $log->error('Unable to extract from primary archive ' . $input[0]);
   };
@@ -369,32 +377,20 @@ elsif ($cmd eq 'extract') {
 # Process an archive
 elsif ($cmd eq 'archive') {
 
-warn '!!!!!!!!!!!!!------------> ';
-
-if ($output && (!-e $output || !-d $output)) {
-  print "Directory '$output' does not exist.\n\n";
-  exit(0);
-};
-
-
   # TODO: Support sigles
 
-  if ($output && (!-e $output || !-d $output)) {
-    print "Directory '$output' does not exist.\n\n";
-    exit(0);
-  };
-
-# Zero means: everything runs in the parent process
+  # Zero means: everything runs in the parent process
   my $pool = Parallel::ForkManager->new($jobs);
 
-  my $count = 0; # Texts to process
+  my $count = 0;  # Texts to process
   my $iter  = 1;  # Current text in process
 
   # Report on fork message
   $pool->run_on_finish (
     sub {
-      my ($pid, $code) = shift;
+      my ($pid, $code) = @_;
       my $data = pop;
+
       print 'Convert ['. ($jobs > 0 ? "\$$pid:" : '') .
         ($iter++) . "/$count]" .
         ($code ? " $code" : '') .
@@ -403,16 +399,17 @@ if ($output && (!-e $output || !-d $output)) {
   );
 
   my $t;
+  my $temp;
   print "Reading data ...\n";
 
-#  unless (Cache::FastMmap->new(
-#    share_file => $cache_file,
-#    cache_size => $cache_size,
-#    init_file => $cache_init
-#  )) {
-#    print "Unable to intialize cache '$cache_file'\n\n";
-#    exit(1);
-#  };
+  #  unless (Cache::FastMmap->new(
+  #    share_file => $cache_file,
+  #    cache_size => $cache_size,
+  #    init_file => $cache_init
+  #  )) {
+  #    print "Unable to intialize cache '$cache_file'\n\n";
+  #    exit(1);
+  #  };
 
   # Input is a directory
   if (-d $input[0]) {
@@ -420,10 +417,11 @@ if ($output && (!-e $output || !-d $output)) {
     my @dirs;
     my $dir;
 
+    # Todo: Make a DO WHILE
     while (1) {
       if (!$it->is_directory && ($dir = $it->get) && $dir =~ s{/data\.xml$}{}) {
-	push @dirs, $dir;
-	$it->prune;
+        push @dirs, $dir;
+        $it->prune;
       };
       last unless $it->next;
     };
@@ -436,15 +434,13 @@ if ($output && (!-e $output || !-d $output)) {
     for (my $i = 0; $i < $count; $i++) {
 
       my $filename = catfile(
-	$output,
-	get_file_name($dirs[$i]) . '.json' . ($gzip ? '.gz' : '')
+        $output,
+        get_file_name($dirs[$i]) . '.json' . ($gzip ? '.gz' : '')
       );
 
       # Get the next fork
-      my $pid = $pool->start and next DIRECTORY_LOOP;
-      my $msg;
-
-      $msg = $batch_file->process($dirs[$i] => $filename);
+      $pool->start and next DIRECTORY_LOOP;
+      my $msg = $batch_file->process($dirs[$i] => $filename);
       $pool->finish(0, \$msg);
     };
   }
@@ -465,6 +461,9 @@ if ($output && (!-e $output || !-d $output)) {
     my @dirs = $archive->list_texts;
     $count = scalar @dirs;
 
+    # Create temporary file
+    $temp = File::Temp->newdir;
+
   ARCHIVE_LOOP:
     for (my $i = 0; $i < $count; $i++) {
 
@@ -472,41 +471,41 @@ if ($output && (!-e $output || !-d $output)) {
       my ($prefix, $corpus, $doc, $text) = $archive->split_path($dirs[$i]);
 
       my $filename = catfile(
-	$output,
-	get_file_name(
-	  catfile($corpus, $doc, $text)
-	    . '.json' . ($gzip ? '.gz' : '')
-	  )
+        $output,
+        get_file_name(
+          catfile($corpus, $doc, $text)
+            . '.json' . ($gzip ? '.gz' : '')
+          )
       );
 
       # Get the next fork
-      my $pid = $pool->start and next ARCHIVE_LOOP;
-
-      # Create temporary file
-      my $temp = File::Temp->newdir;
+      $pool->start and next ARCHIVE_LOOP;
 
       my $msg;
 
       # Extract from archive
       if ($archive->extract($dirs[$i], $temp)) {
 
-	# Create corpus directory
-	my $input = catdir("$temp", $corpus);
+        # Create corpus directory
+        my $input = catdir("$temp", $corpus);
 
-	# Temporary directory
-	my $dir = catdir($input, $doc, $text);
+        # Temporary directory
+        my $dir = catdir($input, $doc, $text);
 
-	# Write file
-	$msg = $batch_file->process($dir => $output);
-
-	$temp = undef;
-	$pool->finish(0, \$msg);
+        # Write file
+        if ($batch_file->process($dir => $filename)) {
+          $pool->finish(0, \("Processed " . $filename));
+        }
+        else {
+          $pool->finish(1, \("Unable to process " . $dir));
+        };
       }
+
+      # Unable to extract
       else {
 
-	$temp = undef;
-	$msg = "Unable to extract " . $dirs[$i] . "\n";
-	$pool->finish(1, \$msg);
+        $msg = "Unable to extract " . $dirs[$i] . "\n";
+        $pool->finish(1, \$msg);
       };
     };
   }
@@ -516,6 +515,9 @@ if ($output && (!-e $output || !-d $output)) {
   };
 
   $pool->wait_all_children;
+
+  # Delete temporary file
+  $temp = undef;
 
   # Delete cache file
   unlink($cache_file) if $cache_delete;
