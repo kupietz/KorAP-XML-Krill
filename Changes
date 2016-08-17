@@ -1,11 +1,4 @@
-0.18 2016-08-17
-        - Added REI test.
-	      - Added multiple archive support to korapxml2krill.
-        - Added support for prefix negation in korapxml2krill.
-        - Added support for Malt#Dependency.
-        - Improved test suite for caching and REI.
-        - Added support for MDParser annotation.
-        - Added batch processing class for documents.
+0.19 2016-08-17
         - Added test for direct I5 support.
         - Fixed support for Mojolicious 7.
         - Added script test.
@@ -16,6 +9,15 @@
         - Fixed extraction with multiple archives and prefix
           negation support.
         - Added script test for archives.
+
+0.18 2016-07-08
+        - Added REI test.
+	      - Added multiple archive support to korapxml2krill.
+        - Added support for prefix negation in korapxml2krill.
+        - Added support for Malt#Dependency.
+        - Improved test suite for caching and REI.
+        - Added support for MDParser annotation.
+        - Added batch processing class for documents.
 
 0.17 2016-03-22
         - Rewrite siglen to use slashes as separators.
