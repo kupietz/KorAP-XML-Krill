@@ -241,42 +241,18 @@ my $batch_file = KorAP::XML::Batch::File->new(
 # Get file name based on path information
 sub get_file_name ($) {
   my $i = $input[0];
+  if (-d $i) {
+    $i =~ s![^\/]+$!!;
+  };
   my $file = shift;
+
+  # Remove temp dir fragments
   $file =~ s!^/?tmp/[^/]+!!;
   $file =~ s/^?\/?$i//;
   $file =~ tr/\//-/;
   $file =~ s{^-+}{};
   return $file;
 };
-
-
-# Write file
-#sub write_file {
-#  my $anno = shift;
-#  my $file = get_file_name $anno;
-#
-#  # TODO: This should be done directly with a data structure! KorAP::XML::Wrap
-#
-#  my $call = 'perl ' . $LOCAL . '/korapxml2krill';
-#  $call .= ' -i ' . $anno;
-#  $call .= ' -o ' . $output . '/' . $file . '.json';
-#  $call .= '.gz -z' if $gzip;
-#  $call .= ' -m ' . $meta if $meta;
-#  $call .= ' -w' if $overwrite;
-#  $call .= ' -t ' . $token_base if $token_base;
-#  $call .= ' -l ' . $log_level if $log_level;
-#  $call .= ' -c ' . $cache_file;
-#  $call .= ' -cs ' . $cache_size;
-#  $call .= ' --no-cache-delete'; # Don't delete the cache
-#  $call .= ' --no-cache-init'; # Don't initialize the cache
-#  $call .= ' --no-primary ' if $primary;
-#  $call .= ' -y ' . $pretty if $pretty;
-#  $call .= ' -a ' . $_ foreach @anno;
-#  $call .= ' -s ' . $_ foreach @skip;
-#  system($call);
-#  return "$file";
-#};
-
 
 # Convert sigle to path construct
 s!^\s*([^_]+?)_([^\.]+?)\.(.+?)\s*$!$1/$2/$3! foreach @sigle;
@@ -440,8 +416,13 @@ elsif ($cmd eq 'archive') {
 
       # Get the next fork
       $pool->start and next DIRECTORY_LOOP;
-      my $msg = $batch_file->process($dirs[$i] => $filename);
-      $pool->finish(0, \$msg);
+
+      if ($batch_file->process($dirs[$i] => $filename)) {
+        $pool->finish(0, \("Processed " . $filename));
+      }
+      else {
+        $pool->finish(1, \("Unable to process " . $dirs[$i]));
+      };
     };
   }
 
@@ -481,8 +462,6 @@ elsif ($cmd eq 'archive') {
       # Get the next fork
       $pool->start and next ARCHIVE_LOOP;
 
-      my $msg;
-
       # Extract from archive
       if ($archive->extract($dirs[$i], $temp)) {
 
@@ -503,9 +482,7 @@ elsif ($cmd eq 'archive') {
 
       # Unable to extract
       else {
-
-        $msg = "Unable to extract " . $dirs[$i] . "\n";
-        $pool->finish(1, \$msg);
+        $pool->finish(1, \("Unable to extract " . $dirs[$i]));
       };
     };
   }

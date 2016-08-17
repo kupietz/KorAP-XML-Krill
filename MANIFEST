@@ -650,6 +650,7 @@ t/annotation/corpus/doc/0001/opennlp/tokens.xml
 t/annotation/corpus/doc/0001/struct/structure.xml
 t/annotation/corpus/doc/0001/tree_tagger/morpho.xml
 t/annotation/corpus/doc/0001/tree_tagger/sentences.xml
+t/annotation/corpus/doc/0001/tree_tagger/tokens.xml
 t/annotation/corpus/doc/0001/xip/constituency.xml
 t/annotation/corpus/doc/0001/xip/dependency.xml
 t/annotation/corpus/doc/0001/xip/morpho.xml
