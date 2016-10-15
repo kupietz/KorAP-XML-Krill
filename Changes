@@ -1,3 +1,6 @@
+0.20 2016-10-15
+        - Fixed treatment of temporary folders in script
+
 0.19 2016-08-17
         - Added test for direct I5 support.
         - Fixed support for Mojolicious 7.

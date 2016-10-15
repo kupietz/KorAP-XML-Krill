@@ -63,9 +63,13 @@ use Parallel::ForkManager;
 #
 # 2016/07/06
 # - Added MDParser#Dependency
+#
+# 2016/10/15
+# - Fixed temporary path issue in script.
+#
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2016/08/16';
+our $LAST_CHANGE = '2016/10/15';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -370,7 +374,8 @@ elsif ($cmd eq 'archive') {
       print 'Convert ['. ($jobs > 0 ? "\$$pid:" : '') .
         ($iter++) . "/$count]" .
         ($code ? " $code" : '') .
-        " $$data\n";
+        ' ' . $data->[0] . "\n";
+      $data->[1] = undef if $data->[1];
     }
   );
 
@@ -418,10 +423,10 @@ elsif ($cmd eq 'archive') {
       $pool->start and next DIRECTORY_LOOP;
 
       if ($batch_file->process($dirs[$i] => $filename)) {
-        $pool->finish(0, \("Processed " . $filename));
+        $pool->finish(0, ["Processed " . $filename]);
       }
       else {
-        $pool->finish(1, \("Unable to process " . $dirs[$i]));
+        $pool->finish(1, ["Unable to process " . $dirs[$i]]);
       };
     };
   }
@@ -442,9 +447,6 @@ elsif ($cmd eq 'archive') {
     my @dirs = $archive->list_texts;
     $count = scalar @dirs;
 
-    # Create temporary file
-    $temp = File::Temp->newdir;
-
   ARCHIVE_LOOP:
     for (my $i = 0; $i < $count; $i++) {
 
@@ -462,6 +464,9 @@ elsif ($cmd eq 'archive') {
       # Get the next fork
       $pool->start and next ARCHIVE_LOOP;
 
+      # Create temporary file
+      $temp = File::Temp->newdir;
+
       # Extract from archive
       if ($archive->extract($dirs[$i], $temp)) {
 
@@ -473,16 +478,18 @@ elsif ($cmd eq 'archive') {
 
         # Write file
         if ($batch_file->process($dir => $filename)) {
-          $pool->finish(0, \("Processed " . $filename));
+          # Delete temporary file
+          $pool->finish(0, ["Processed " . $filename, $temp]);
         }
         else {
-          $pool->finish(1, \("Unable to process " . $dir));
+          # Delete temporary file
+          $pool->finish(1, ["Unable to process " . $dir, $temp]);
         };
       }
 
       # Unable to extract
       else {
-        $pool->finish(1, \("Unable to extract " . $dirs[$i]));
+        $pool->finish(1, ["Unable to extract " . $dirs[$i], $temp]);
       };
     };
   }
@@ -492,9 +499,6 @@ elsif ($cmd eq 'archive') {
   };
 
   $pool->wait_all_children;
-
-  # Delete temporary file
-  $temp = undef;
 
   # Delete cache file
   unlink($cache_file) if $cache_delete;
