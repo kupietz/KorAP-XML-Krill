@@ -467,6 +467,9 @@ elsif ($cmd eq 'archive') {
       # Create temporary file
       $temp = File::Temp->newdir;
 
+      # TODO: Check if $filename exist at the beginning,
+      # because extraction can be horrible slow!
+
       # Extract from archive
       if ($archive->extract($dirs[$i], $temp)) {
 
