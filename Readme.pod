@@ -30,6 +30,7 @@ The preferred way to install L<KorAP::XML::Krill> is to use L<cpanm|App::cpanmin
 In case everything went well, the C<korapxml2krill> tool will
 be available on your command line immediately.
 Minimum requirement for L<KorAP::XML::Krill> is Perl 5.14.
+In addition to work with zip archives, the C<unzip> tool needs to be present.
 
 =head1 ARGUMENTS
 
@@ -64,6 +65,11 @@ and all meta data files.
 that may include a C<.> root folder.
 In this case further archives lacking a C<.> root folder
 need to be passed with a hash sign in front of the archive's name.)
+
+B<To support zip files, a version of C<unzip> needs to be installed that is
+compatible with the archive file.>
+
+B<The root folder switch is experimental and may vanish in future versions.>
 
 =item B<--output|-o> <directory|file>
 
