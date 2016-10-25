@@ -31,7 +31,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!archive.+?Process an!s,
+  qr!archive.+?Processes an!s,
   $call
 );
 

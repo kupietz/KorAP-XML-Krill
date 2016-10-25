@@ -31,7 +31,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!extract.+?Extract KorAP-XML files!s,
+  qr!extract.+?Extracts KorAP-XML files!s,
   $call
 );
 

@@ -533,8 +533,8 @@ korapxml2krill - Merge KorapXML data and create Krill documents
 =head1 SYNOPSIS
 
   $ korapxml2krill -z --input <directory> --output <filename>
-  $ korapxml2krill archive -z --input <directory> --output <directory>
-  $ korapxml2krill extract --input <directory> --output <filename> --sigle <SIGLE>
+  $ korapxml2krill archive -z --input <directory|archive> --output <directory>
+  $ korapxml2krill extract --input <directory|archive> --output <filename> --sigle <SIGLE>
 
 
 =head1 DESCRIPTION
@@ -557,15 +557,17 @@ In addition to work with zip archives, the C<unzip> tool needs to be present.
 
 =head1 ARGUMENTS
 
+Without arguments, C<korapxml2krill> processes a directory of a single KorAP-XML document.
+
 =over 2
 
 =item B<archive>
 
-Process an archive as a Zip-file or a folder of KorAP-XML documents.
+Processes an archive as a Zip-file or a folder of KorAP-XML documents.
 
 =item B<extract>
 
-Extract KorAP-XML files from a Zip-file.
+Extracts KorAP-XML files from a Zip-file.
 
 =back
 
@@ -578,21 +580,26 @@ Extract KorAP-XML files from a Zip-file.
 
 Directory or archive file of documents to convert.
 
-Archiving supports multiple input archives with the constraint,
+Without arguments, C<korapxml2krill> expects a folder of a single KorAP-XML
+document, while C<archive> and C<extract> support zip archives as well.
+
+C<archive> supports multiple input archives with the constraint,
 that the first archive listed contains all primary data files
 and all meta data files.
 
-  -i file/news.zip -i file/news.malt.zip -i #file/news.tt.zip
+  -i file/news.zip -i file/news.malt.zip -i "#file/news.tt.zip"
 
 (The directory structure follows the base directory format,
 that may include a C<.> root folder.
 In this case further archives lacking a C<.> root folder
-need to be passed with a hash sign in front of the archive's name.)
+need to be passed with a hash sign in front of the archive's name.
+This may require to quote the parameter.)
 
-B<To support zip files, a version of C<unzip> needs to be installed that is
-compatible with the archive file.>
+To support zip files, a version of C<unzip> needs to be installed that is
+compatible with the archive file.
 
-B<The root folder switch is experimental and may vanish in future versions.>
+B<The root folder switch using the hash sign is experimental and
+may vanish in future versions.>
 
 =item B<--output|-o> <directory|file>
 
