@@ -1,7 +1,8 @@
 0.22 2016-10-26
         - Added support for document extraction
+        - Fixed archive naming
 
-0.21 2016-10-14
+0.21 2016-10-24
         - Improved Windows support
 
 0.20 2016-10-15

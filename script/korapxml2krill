@@ -70,6 +70,9 @@ use Parallel::ForkManager;
 # 2016/10/24
 # - Improved Windows support
 #
+# 2016/10/24
+# - Added support for document extraction
+#
 # ----------------------------------------------------------
 
 our $LAST_CHANGE = '2016/10/24';
@@ -258,6 +261,7 @@ sub get_file_name ($) {
   $file =~ s/^?\/?$i//;
   $file =~ tr/\//-/;
   $file =~ s{^-+}{};
+  $file =~ s/^.*?-(.+?-.+?-.+?)$/$1/;
   return $file;
 };
 
