@@ -102,6 +102,7 @@ t/script/usage.t
 t/script/extract.t
 t/script/archive.t
 t/corpus/archive.zip
+t/corpus/archive_rei.zip
 t/corpus/BZK/header.xml
 t/corpus/GOE/header.xml
 t/corpus/VDI/header.xml

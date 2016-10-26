@@ -104,6 +104,42 @@ ok(!-d catdir($output2, 'TEST', 'BSP', '3'), 'Directory created');
 ok(-d catdir($output2, 'TEST', 'BSP', '4'), 'Directory created');
 ok(!-d catdir($output2, 'TEST', 'BSP', '5'), 'Directory created');
 
+
+# Test with document sigle
+my $input_rei = catdir($f, '..', 'corpus', 'archive_rei.zip');
+ok(-f $input_rei, 'Input archive found');
+
+$call = join(
+  ' ',
+  'perl', $script,
+  'extract',
+  '--input' => $input_rei,
+  '--output' => $output2,
+  '-sg' => 'REI/BNG'
+);
+
+# Test with sigle
+stdout_like(
+  sub {
+    system($call);
+  },
+  qr!REI/BNG extracted!s,
+  $call
+);
+
+# Test with sigle
+stdout_unlike(
+  sub {
+    system($call);
+  },
+  qr!REI/RBR extracted!s,
+  $call
+);
+
+ok(-d catdir($output2, 'REI', 'BNG', '00071'), 'Directory created');
+ok(-d catdir($output2, 'REI', 'BNG', '00128'), 'Directory created');
+ok(!-d catdir($output2, 'REI', 'RBR', '00610'), 'Directory not created');
+
 # Check multiple archives
 $output = tempdir(CLEANUP => 1);
 ok(-d $output, 'Output directory exists');

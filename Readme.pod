@@ -10,8 +10,8 @@ korapxml2krill - Merge KorapXML data and create Krill documents
 =head1 SYNOPSIS
 
   $ korapxml2krill -z --input <directory> --output <filename>
+  $ korapxml2krill extract --input <archive> --output <directory> --sigle <SIGLE>
   $ korapxml2krill archive -z --input <directory|archive> --output <directory>
-  $ korapxml2krill extract --input <directory|archive> --output <filename> --sigle <SIGLE>
 
 
 =head1 DESCRIPTION
@@ -161,10 +161,11 @@ Defaults to C<true>.
 
 =item B<--sigle|-sg>
 
-Extract the given text sigles.
+Extract the given texts.
 Can be set multiple times.
 I<Currently only supported on C<extract>.>
 Sigles have the structure C<Corpus>/C<Document>/C<Text>.
+In case the C<Text> path is omitted, the whole document will be extracted.
 
 =item B<--log|-l>
 

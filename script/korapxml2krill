@@ -332,6 +332,40 @@ elsif ($cmd eq 'extract') {
         # TODO: Make this OS independent
         push @sigle, join '/', $corpus, $doc, $text;
       };
+    }
+
+    # Check sigle for doc sigles
+    else {
+      my @new_sigle;
+
+      my $prefix_check = 0;
+
+      # Iterate over all sigle
+      foreach (@sigle) {
+
+        # Sigle is a doc sigle
+        if ($_ =~ m!^(?:\.[/\\])?[^/\\]+?[/\\][^/\\]+?$!) {
+          print "$_ ";
+
+          # Check if a prefix is needed
+          unless ($prefix_check) {
+            $prefix = $archive->check_prefix;
+            $prefix_check = 1;
+          };
+
+          # TODO: Make this OS independent
+          print '' . (
+            $archive->extract_doc(
+              ($prefix ? './' : '') . $_, $output
+            ) ? '' : 'not '
+          );
+          print "extracted.\n";
+        }
+        else {
+          push @new_sigle, $_;
+        };
+      };
+      @sigle = @new_sigle;
     };
 
     # Iterate over all given sigles and extract
@@ -340,7 +374,7 @@ elsif ($cmd eq 'extract') {
 
       # TODO: Make this OS independent
       print '' . (
-        $archive->extract(
+        $archive->extract_text(
           ($prefix ? './' : '') . $_, $output
         ) ? '' : 'not '
       );
@@ -474,7 +508,7 @@ elsif ($cmd eq 'archive') {
       # because extraction can be horrible slow!
 
       # Extract from archive
-      if ($archive->extract($dirs[$i], $temp)) {
+      if ($archive->extract_text($dirs[$i], $temp)) {
 
         # Create corpus directory
         my $input = catdir("$temp", $corpus);
@@ -533,8 +567,8 @@ korapxml2krill - Merge KorapXML data and create Krill documents
 =head1 SYNOPSIS
 
   $ korapxml2krill -z --input <directory> --output <filename>
+  $ korapxml2krill extract --input <archive> --output <directory> --sigle <SIGLE>
   $ korapxml2krill archive -z --input <directory|archive> --output <directory>
-  $ korapxml2krill extract --input <directory|archive> --output <filename> --sigle <SIGLE>
 
 
 =head1 DESCRIPTION
@@ -684,10 +718,11 @@ Defaults to C<true>.
 
 =item B<--sigle|-sg>
 
-Extract the given text sigles.
+Extract the given texts.
 Can be set multiple times.
 I<Currently only supported on C<extract>.>
 Sigles have the structure C<Corpus>/C<Document>/C<Text>.
+In case the C<Text> path is omitted, the whole document will be extracted.
 
 =item B<--log|-l>
 

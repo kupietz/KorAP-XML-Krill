@@ -59,6 +59,16 @@ sub list_texts {
 };
 
 
+# Check, if the archive has a prefix
+sub check_prefix {
+  my $self = shift;
+  my $nr = shift // 0;
+  my $file = $self->[$nr]->[0];
+  my ($header) = `unzip -l -UU -qq $file "*/header.xml"`;
+  return $header =~ m![\s\t]\.[/\\]! ? 1 : 0;
+};
+
+
 # Split a text path to prefix, corpus, document, text
 sub split_path {
   my $self = shift;
@@ -76,12 +86,12 @@ sub split_path {
   };
 
   # Unix form
-  if ($text_path =~ m!^([^/]+?)/([^/]+?)/([^/]+?)$!) {
+  if ($text_path =~ m!^([^/]+?)/([^/]+?)[\\/]([^/]+?)$!) {
     return ($prefix, $1, $2, $3);
   }
 
   # Windows form
-  elsif ($text_path =~ m!^([^\\]+?)\\([^\\]+?)\\([^\\]+?)$!) {
+  elsif ($text_path =~ m!^([^\\]+?)\\([^\\]+?)[\\/]([^\\]+?)$!) {
     return ($prefix, $1, $2, $3);
   };
 
@@ -127,9 +137,65 @@ sub _file_to_array {
 };
 
 
+# Extract document files to a directory
+sub extract_doc {
+  my $self = shift;
+  my $doc_path = shift;
+  my $target_dir = shift;
 
-# Extract files to a directory
-sub extract {
+  my $first = 1;
+
+  my @init_cmd = (
+    'unzip',          # Use unzip program
+    '-qo',            # quietly overwrite all existing files
+    '-d', $target_dir # Extract into target directory
+  );
+
+  my ($prefix, $corpus, $doc) = $self->split_path($doc_path . '/UNKNOWN' ) or return;
+
+  # Iterate over all attached archives
+  foreach my $archive (@$self) {
+
+    # $_ is the zip
+    my @cmd = @init_cmd;
+    push(@cmd, $archive->[0]); # Extract from zip
+
+    # Add some interesting files for extraction
+    # Can't use catfile(), as this removes the '.' prefix
+    my @breadcrumbs = ($corpus);
+
+    # If the prefix is not forbidden - prefix!
+    unshift @breadcrumbs, $prefix if ($prefix && $archive->[1]);
+
+    if ($first) {
+      # Only extract from first file
+      push(@cmd, join('/', @breadcrumbs, 'header.xml'));
+      # push(@cmd, join('/', @breadcrumbs, $doc, 'header.xml'));
+      $first = 0;
+    };
+
+    # With prefix
+    push @breadcrumbs, $doc, '*';
+
+    push(@cmd, join('/', @breadcrumbs));
+
+    # Run system call
+    system(@cmd);
+
+    # Check for return code
+    if ($? != 0) {
+      carp("System call '" . join(' ', @cmd) . "' errors " . $?);
+      return;
+    };
+  };
+
+  # Fine
+  return 1;
+};
+
+
+# Extract text files to a directory
+sub extract_text {
   my $self = shift;
   my $text_path = shift;
   my $target_dir = shift;
@@ -201,12 +267,14 @@ C<KorAP::XML::Archive> expects the unzip tool to be installed.
 
 =head1 attach
 
+=head1 check_prefix
+
 =head1 list_texts
 
 Returns all texts found in the zip file
 
-=head1 extract
+=head1 extract_text
 
-  $archive->extract('./GOE/AGU/0004', '~/temp');
+  $archive->extract_text('./GOE/AGU/0004', '~/temp');
 
 Extract all files for the named text to a certain directory.

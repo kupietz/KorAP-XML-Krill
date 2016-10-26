@@ -18,6 +18,8 @@ unless ($archive->test_unzip) {
 ok($archive->test, 'Test archive');
 like($archive->path(0), qr/archive\.zip$/, 'Archive path');
 
+ok($archive->check_prefix, 'Archive has dot prefix');
+
 my @list = $archive->list_texts;
 is(scalar @list, 10, 'Found all tests');
 is($list[0], './TEST/BSP/1', 'First document');
@@ -33,13 +35,17 @@ my $dir = tempdir(CLEANUP => 1);
 
 {
   local $SIG{__WARN__} = sub {};
-  ok($archive->extract('./TEST/BSP/8', $dir), 'Wrong path');
+  ok($archive->extract_text('./TEST/BSP/8', $dir), 'Wrong path');
 };
 
 ok(-d catdir($dir, 'TEST'), 'Test corpus directory exists');
 ok(-f catdir($dir, 'TEST', 'header.xml'), 'Test corpus header exists');
 ok(-d catdir($dir, 'TEST', 'BSP'), 'Test doc directory exists');
 ok(-f catdir($dir, 'TEST', 'BSP', 'header.xml'), 'Test doc header exists');
+
+$file = catfile(dirname(__FILE__), 'corpus','archive_rei.zip');
+$archive = KorAP::XML::Archive->new($file);
+ok(!$archive->check_prefix, 'Archive has no prefix');
 
 
 # TODO: Test attaching!
