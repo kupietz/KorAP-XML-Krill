@@ -1,3 +1,6 @@
+0.23 2016-10-27
+        - Added wildcard support for document extraction
+
 0.22 2016-10-26
         - Added support for document extraction
         - Fixed archive naming

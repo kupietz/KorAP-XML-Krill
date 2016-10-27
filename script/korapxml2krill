@@ -73,9 +73,11 @@ use Parallel::ForkManager;
 # 2016/10/24
 # - Added support for document extraction
 #
+# 1016/10/27
+# - Added wildcard support for document extraction
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2016/10/24';
+our $LAST_CHANGE = '2016/10/27';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -572,6 +574,7 @@ korapxml2krill - Merge KorapXML data and create Krill documents
 
   korapxml2krill [archive|extract] --input <directory|archive> [options]
 
+
 =head1 DESCRIPTION
 
 L<KorAP::XML::Krill> is a library to convert KorAP-XML documents to files
@@ -595,7 +598,7 @@ In addition to work with zip archives, the C<unzip> tool needs to be present.
   $ korapxml2krill -z --input <directory> --output <filename>
 
 Without arguments, C<korapxml2krill> converts a directory of a single KorAP-XML document.
-Expects the input to point to the text level folder.
+It expects the input to point to the text level folder.
 
 =over 2
 
@@ -603,8 +606,8 @@ Expects the input to point to the text level folder.
 
   $ korapxml2krill archive -z --input <directory|archive> --output <directory>
 
-Converts an archive of KorAP-XML documents. Expects a directory
-(pointing to the text level folder) or one or more zip files as input.
+Converts an archive of KorAP-XML documents. It expects a directory
+(pointing to the corpus level folder) or one or more zip files as input.
 
 =item B<extract>
 
@@ -732,6 +735,7 @@ Can be set multiple times.
 I<Currently only supported on C<extract>.>
 Sigles have the structure C<Corpus>/C<Document>/C<Text>.
 In case the C<Text> path is omitted, the whole document will be extracted.
+On the document level, the postfix wildcard C<*> is supported.
 
 =item B<--log|-l>
 

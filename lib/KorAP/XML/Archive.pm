@@ -174,8 +174,15 @@ sub extract_doc {
       $first = 0;
     };
 
-    # With prefix
-    push @breadcrumbs, $doc, '*';
+    # With wildcard
+    if (index($doc, '*') > 0) {
+      push @breadcrumbs, $doc;
+    }
+
+    # As a folder sigle
+    else {
+      push @breadcrumbs, $doc, '*';
+    }
 
     push(@cmd, join('/', @breadcrumbs));
 
