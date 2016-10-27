@@ -9,10 +9,7 @@ korapxml2krill - Merge KorapXML data and create Krill documents
 
 =head1 SYNOPSIS
 
-  $ korapxml2krill -z --input <directory> --output <filename>
-  $ korapxml2krill extract --input <archive> --output <directory> --sigle <SIGLE>
-  $ korapxml2krill archive -z --input <directory|archive> --output <directory>
-
+  korapxml2krill [archive|extract] --input <directory|archive> [options]
 
 =head1 DESCRIPTION
 
@@ -34,17 +31,25 @@ In addition to work with zip archives, the C<unzip> tool needs to be present.
 
 =head1 ARGUMENTS
 
-Without arguments, C<korapxml2krill> processes a directory of a single KorAP-XML document.
+  $ korapxml2krill -z --input <directory> --output <filename>
+
+Without arguments, C<korapxml2krill> converts a directory of a single KorAP-XML document.
+Expects the input to point to the text level folder.
 
 =over 2
 
 =item B<archive>
 
-Processes an archive as a Zip-file or a folder of KorAP-XML documents.
+  $ korapxml2krill archive -z --input <directory|archive> --output <directory>
+
+Converts an archive of KorAP-XML documents. Expects a directory
+(pointing to the text level folder) or one or more zip files as input.
 
 =item B<extract>
 
-Extracts KorAP-XML files from a Zip-file.
+  $ korapxml2krill extract --input <archive> --output <directory> --sigle <SIGLE>
+
+Extracts KorAP-XML documents from a zip file.
 
 =back
 
@@ -53,14 +58,14 @@ Extracts KorAP-XML files from a Zip-file.
 
 =over 2
 
-=item B<--input|-i> <directory|file|files>
+=item B<--input|-i> <directory|zip file>
 
-Directory or archive file of documents to convert.
+Directory or zip file(s) of documents to convert.
 
 Without arguments, C<korapxml2krill> expects a folder of a single KorAP-XML
-document, while C<archive> and C<extract> support zip archives as well.
+document, while C<archive> and C<extract> support zip files as well.
 
-C<archive> supports multiple input archives with the constraint,
+C<archive> supports multiple input zip files with the constraint,
 that the first archive listed contains all primary data files
 and all meta data files.
 
@@ -312,6 +317,7 @@ See the built-in annotation importers as examples.
 Copyright (C) 2015-2016, L<IDS Mannheim|http://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|http://nils-diewald.de/>
+Contributor: Eliza Margaretha
 
 L<KorAP::XML::Krill> is developed as part of the L<KorAP|http://korap.ids-mannheim.de/>
 Corpus Analysis Platform at the

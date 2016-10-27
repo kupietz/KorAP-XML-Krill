@@ -31,7 +31,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!archive.+?Processes an!s,
+  qr!archive.+?\$ korapxml2krill!s,
   $call
 );
 
