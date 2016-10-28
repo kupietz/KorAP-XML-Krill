@@ -49,12 +49,14 @@ $call = join(
   '--output' => $output,
 );
 
+my $sep = qr!\.\.\.[\n\r]+?\.\.\.!;
+
 # Test without compression
 stdout_like(
   sub {
     system($call);
   },
-  qr!TEST/BSP/1 extracted.!s,
+  qr!TEST/BSP/1 $sep extracted.!s,
   $call
 );
 
@@ -85,7 +87,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!TEST/BSP/4 extracted.!s,
+  qr!TEST/BSP/4 $sep extracted.!s,
   $call
 );
 
@@ -94,7 +96,7 @@ stdout_unlike(
   sub {
     system($call);
   },
-  qr!TEST/BSP/5 extracted.!s,
+  qr!TEST/BSP/5 $sep extracted.!s,
   $call
 );
 
@@ -123,7 +125,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!REI/BNG extracted!s,
+  qr!REI/BNG $sep extracted!s,
   $call
 );
 
@@ -132,7 +134,7 @@ stdout_unlike(
   sub {
     system($call);
   },
-  qr!REI/RBR extracted!s,
+  qr!REI/RBR $sep extracted!s,
   $call
 );
 
@@ -159,7 +161,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!REI/BN\* extracted!s,
+  qr!REI/BN\* $sep extracted!s,
   $call
 );
 
@@ -168,7 +170,7 @@ stdout_unlike(
   sub {
     system($call);
   },
-  qr!REI/RBR extracted!s,
+  qr!REI/RBR $sep extracted!s,
   $call
 );
 
@@ -201,7 +203,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!WPD15/A00/00081 extracted.!s,
+  qr!WPD15/A00/00081 $sep extracted.!s,
   $call
 );
 

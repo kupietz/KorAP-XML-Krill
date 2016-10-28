@@ -140,8 +140,7 @@ sub _file_to_array {
 # Extract document files to a directory
 sub extract_doc {
   my $self = shift;
-  my $doc_path = shift;
-  my $target_dir = shift;
+  my ($doc_path, $target_dir, $jobs) = @_;
 
   my $first = 1;
 
@@ -152,6 +151,7 @@ sub extract_doc {
   );
 
   my ($prefix, $corpus, $doc) = $self->split_path($doc_path . '/UNKNOWN' ) or return;
+  my @cmds;
 
   # Iterate over all attached archives
   foreach my $archive (@$self) {
@@ -170,7 +170,6 @@ sub extract_doc {
     if ($first) {
       # Only extract from first file
       push(@cmd, join('/', @breadcrumbs, 'header.xml'));
-      # push(@cmd, join('/', @breadcrumbs, $doc, 'header.xml'));
       $first = 0;
     };
 
@@ -187,13 +186,41 @@ sub extract_doc {
     push(@cmd, join('/', @breadcrumbs));
 
     # Run system call
-    system(@cmd);
+    push @cmds, \@cmd;
+  };
 
-    # Check for return code
-    if ($? != 0) {
-      carp("System call '" . join(' ', @cmd) . "' errors " . $?);
-      return;
+  if (!$jobs || $jobs == 1) {
+    foreach (@cmds) {
+      system(@$_);
+
+      # Check for return code
+      if ($? != 0) {
+        carp("System call '" . join(' ', @$_) . "' errors " . $?);
+        return;
+      };
     };
+  }
+
+  # Extract annotations in parallel
+  else {
+    my $pool = Parallel::ForkManager->new($jobs);
+    $pool->run_on_finish(
+      sub {
+        my ($pid, $code) = @_;
+        my $data = pop;
+        print "Extract [\$$pid] " .
+          ($code ? " $code" : '') . " $$data\n";
+      }
+    );
+
+  ARCHIVE_LOOP:
+    foreach my $cmd (@cmds) {
+      my $pid = $pool->start and next ARCHIVE_LOOP;
+      system(@$cmd);
+      my $last = $cmd->[4];
+      $pool->finish($?, \"$last");
+    };
+    $pool->wait_all_children;
   };
 
   # Fine

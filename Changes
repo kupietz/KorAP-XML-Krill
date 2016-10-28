@@ -1,5 +1,7 @@
-0.23 2016-10-27
+0.23 2016-10-28
         - Added wildcard support for document extraction
+        - Fixed archive iteration to not duplicate the first archive
+        - Added parallel extraction for document sigles
 
 0.22 2016-10-26
         - Added support for document extraction
