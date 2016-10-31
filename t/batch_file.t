@@ -117,7 +117,7 @@ like($file, qr/^\{[\n\s]+"/, 'No pretty printing');
 # Check overwriting
 $bf->{overwrite} = 0;
 
-ok(!$bf->process($path => $output), 'Process file');
+is($bf->process($path => $output), -1, 'Process file');
 
 done_testing;
 __END__

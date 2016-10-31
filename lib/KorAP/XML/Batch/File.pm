@@ -31,7 +31,7 @@ sub process {
 
   if (!$self->{overwrite} && $output && -e $output) {
     $self->{log}->debug($output . ' already exists');
-    return;
+    return -1;
   };
 
   # Create and parse new document

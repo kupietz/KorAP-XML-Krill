@@ -468,8 +468,11 @@ elsif ($cmd eq 'archive') {
       # Get the next fork
       $pool->start and next DIRECTORY_LOOP;
 
-      if ($batch_file->process($dirs[$i] => $filename)) {
-        $pool->finish(0, ["Processed " . $filename]);
+      if (my $return = $batch_file->process($dirs[$i] => $filename)) {
+        $pool->finish(
+          0,
+          ["Processed " . $filename . ($return == -1 ? " - already existing" : '')]
+        );
       }
       else {
         $pool->finish(1, ["Unable to process " . $dirs[$i]]);
@@ -526,9 +529,13 @@ elsif ($cmd eq 'archive') {
         my $dir = catdir($input, $doc, $text);
 
         # Write file
-        if ($batch_file->process($dir => $filename)) {
+        if (my $return = $batch_file->process($dir => $filename)) {
           # Delete temporary file
-          $pool->finish(0, ["Processed " . $filename, $temp]);
+          $pool->finish(
+            0,
+            ["Processed " . $filename . ($return == -1 ? " - already existing" : ''), $temp]
+          );
+          #$pool->finish(0, ["Processed " . $filename, $temp]);
         }
         else {
           # Delete temporary file
