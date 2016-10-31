@@ -4,68 +4,310 @@
 
 =head1 NAME
 
-KorAP::XML::Krill - Preprocess KorAP XML documents for Krill
+korapxml2krill - Merge KorapXML data and create Krill documents
 
 
 =head1 SYNOPSIS
 
-  # Create Converter Object
-  my $doc = KorAP::XML::Krill->new(
-    path => 'mydoc-1/'
-  );
-
-  # Convert to krill json
-  print $doc->parse->tokenize->annotate('Mate', 'Morpho')->to_json;
+  korapxml2krill [archive|extract] --input <directory|archive> [options]
 
 
 =head1 DESCRIPTION
 
-Parse the primary and meta data of a KorAP-XML document.
+L<KorAP::XML::Krill> is a library to convert KorAP-XML documents to files
+compatible with the L<Krill|https://github.com/KorAP/Krill> indexer.
+The C<korapxml2krill> command line tool is a simple wrapper to the library.
 
 
-=head1 ATTRIBUTES
+=head1 INSTALLATION
 
-=head2 log
+The preferred way to install L<KorAP::XML::Krill> is to use L<cpanm|App::cpanminus>.
 
-L<Log::Log4perl> object for logging.
+  $ cpanm https://github.com/KorAP/KorAP-XML-Krill.git
 
-=head2 path
+In case everything went well, the C<korapxml2krill> tool will
+be available on your command line immediately.
+Minimum requirement for L<KorAP::XML::Krill> is Perl 5.14.
+In addition to work with zip archives, the C<unzip> tool needs to be present.
 
-  $doc->path("example-004/");
-  print $doc->path;
+=head1 ARGUMENTS
 
-The path of the document.
+  $ korapxml2krill -z --input <directory> --output <filename>
 
+Without arguments, C<korapxml2krill> converts a directory of a single KorAP-XML document.
+It expects the input to point to the text level folder.
 
-=head2 primary
+=over 2
 
-  print $doc->primary->data(0,20);
+=item B<archive>
 
-The L<KorAP::XML::Document::Primary> object containing the primary data.
+  $ korapxml2krill archive -z --input <directory|archive> --output <directory>
 
+Converts an archive of KorAP-XML documents. It expects a directory
+(pointing to the corpus level folder) or one or more zip files as input.
 
-=head1 METHODS
+=item B<extract>
 
-=head2 annotate
+  $ korapxml2krill extract --input <archive> --output <directory> --sigle <SIGLE>
 
-  $doc->annotate('Mate', 'Morpho');
+Extracts KorAP-XML documents from a zip file.
 
-Add annotation layer to conversion process.
-
-
-=head2 parse
-
-  $doc = $doc->parse;
-
-Run the meta parsing process of the document.
+=back
 
 
-=head2 tokenize
+=head1 OPTIONS
 
-  $doc = $doc->tokenize('OpenNLP', 'Tokens');
+=over 2
 
-Accept the tokenization based on a given foundry and a given layer.
+=item B<--input|-i> <directory|zip file>
 
+Directory or zip file(s) of documents to convert.
+
+Without arguments, C<korapxml2krill> expects a folder of a single KorAP-XML
+document, while C<archive> and C<extract> support zip files as well.
+
+C<archive> supports multiple input zip files with the constraint,
+that the first archive listed contains all primary data files
+and all meta data files.
+
+  -i file/news.zip -i file/news.malt.zip -i "#file/news.tt.zip"
+
+(The directory structure follows the base directory format,
+that may include a C<.> root folder.
+In this case further archives lacking a C<.> root folder
+need to be passed with a hash sign in front of the archive's name.
+This may require to quote the parameter.)
+
+To support zip files, a version of C<unzip> needs to be installed that is
+compatible with the archive file.
+
+B<The root folder switch using the hash sign is experimental and
+may vanish in future versions.>
+
+=item B<--output|-o> <directory|file>
+
+Output folder for archive processing or
+document name for single output (optional),
+writes to C<STDOUT> by default
+(in case C<output> is not mandatory due to further options).
+
+=item B<--overwrite|-w>
+
+Overwrite files that already exist.
+
+=item B<--token|-t> <foundry>[#<file>]
+
+Define the default tokenization by specifying
+the name of the foundry and optionally the name
+of the layer-file. Defaults to C<OpenNLP#tokens>.
+
+=item B<--skip|-s> <foundry>[#<layer>]
+
+Skip specific annotations by specifying the foundry
+(and optionally the layer with a C<#>-prefix),
+e.g. C<Mate> or C<Mate#Morpho>. Alternatively you can skip C<#ALL>.
+Can be set multiple times.
+
+=item B<--anno|-a> <foundry>#<layer>
+
+Convert specific annotations by specifying the foundry
+(and optionally the layer with a C<#>-prefix),
+e.g. C<Mate> or C<Mate#Morpho>.
+Can be set multiple times.
+
+=item B<--primary|-p>
+
+Output primary data or not. Defaults to C<true>.
+Can be flagged using C<--no-primary> as well.
+This is I<deprecated>.
+
+=item B<--jobs|-j>
+
+Define the number of concurrent jobs in seperated forks
+for archive processing.
+Defaults to C<0> (everything runs in a single process).
+This is I<experimental>.
+
+=item B<--meta|-m>
+
+Define the metadata parser to use. Defaults to C<I5>.
+Metadata parsers can be defined in the C<KorAP::XML::Meta> namespace.
+This is I<experimental>.
+
+=item B<--pretty|-y>
+
+Pretty print JSON output. Defaults to C<false>.
+This is I<deprecated>.
+
+=item B<--gzip|-z>
+
+Compress the output.
+Expects a defined C<output> file in single processing.
+
+=item B<--cache|-c>
+
+File to mmap a cache (using L<Cache::FastMmap>).
+Defaults to C<korapxml2krill.cache> in the calling directory.
+
+=item B<--cache-size|-cs>
+
+Size of the cache. Defaults to C<50m>.
+
+=item B<--cache-init|-ci>
+
+Initialize cache file.
+Can be flagged using C<--no-cache-init> as well.
+Defaults to C<true>.
+
+=item B<--cache-delete|-cd>
+
+Delete cache file after processing.
+Can be flagged using C<--no-cache-delete> as well.
+Defaults to C<true>.
+
+=item B<--sigle|-sg>
+
+Extract the given texts.
+Can be set multiple times.
+I<Currently only supported on C<extract>.>
+Sigles have the structure C<Corpus>/C<Document>/C<Text>.
+In case the C<Text> path is omitted, the whole document will be extracted.
+On the document level, the postfix wildcard C<*> is supported.
+
+=item B<--log|-l>
+
+The L<Log4perl> log level, defaults to C<ERROR>.
+
+=item B<--help|-h>
+
+Print this document.
+
+=item B<--version|-v>
+
+Print version information.
+
+=back
+
+=head1 ANNOTATION SUPPORT
+
+L<KorAP::XML::Krill> has built-in importer for some annotation foundries and layers
+developed in the KorAP project that are part of the KorAP preprocessing pipeline.
+The base foundry with paragraphs, sentences, and the text element are mandatory for
+L<Krill|https://github.com/KorAP/Krill>.
+
+=over 2
+
+=item B<Base>
+
+=over 4
+
+=item #Paragraphs
+
+=item #Sentences
+
+=back
+
+=item B<Connexor>
+
+=over 4
+
+=item #Morpho
+
+=item #Phrase
+
+=item #Sentences
+
+=item #Syntax
+
+=back
+
+=item B<CoreNLP>
+
+=over 4
+
+=item #Constituency
+
+=item #Morpho
+
+=item #NamedEntities
+
+=item #Sentences
+
+=back
+
+=item B<DeReKo>
+
+=over 4
+
+=item #Structure
+
+=back
+
+=item B<Glemm>
+
+=over 4
+
+=item #Morpho
+
+=back
+
+=item B<Mate>
+
+=over 4
+
+=item #Dependency
+
+=item #Morpho
+
+=back
+
+=item B<OpenNLP>
+
+=over 4
+
+=item #Morpho
+
+=item #Sentences
+
+=back
+
+=item B<Sgbr>
+
+=over 4
+
+=item #Lemma
+
+=item #Morpho
+
+=back
+
+=item B<TreeTagger>
+
+=over 4
+
+=item #Morpho
+
+=item #Sentences
+
+=back
+
+=item B<XIP>
+
+=over 4
+
+=item #Constituency
+
+=item #Morpho
+
+=item #Sentences
+
+=back
+
+=back
+
+More importers are in preparation.
+New annotation importers can be defined in the C<KorAP::XML::Annotation> namespace.
+See the built-in annotation importers as examples.
 
 =head1 AVAILABILITY
 
@@ -75,19 +317,17 @@ Accept the tokenization based on a given foundry and a given layer.
 =head1 COPYRIGHT AND LICENSE
 
 Copyright (C) 2015-2016, L<IDS Mannheim|http://www.ids-mannheim.de/>
-Author: L<Nils Diewald|http://nils-diewald.de/>
 
-KorAP::XML::Krill is developed as part of the
-L<KorAP|http://korap.ids-mannheim.de/>
+Author: L<Nils Diewald|http://nils-diewald.de/>
+Contributor: Eliza Margaretha
+
+L<KorAP::XML::Krill> is developed as part of the L<KorAP|http://korap.ids-mannheim.de/>
 Corpus Analysis Platform at the
 L<Institute for the German Language (IDS)|http://ids-mannheim.de/>,
 member of the
-L<Leibniz-Gemeinschaft|http://www.leibniz-gemeinschaft.de/en/about-us/leibniz-competition/projekte-2011/2011-funding-line-2/>
-and supported by the L<KobRA|http://www.kobra.tu-dortmund.de> project,
-funded by the
-L<Federal Ministry of Education and Research (BMBF)|http://www.bmbf.de/en/>.
+L<Leibniz-Gemeinschaft|http://www.leibniz-gemeinschaft.de/en/about-us/leibniz-competition/projekte-2011/2011-funding-line-2/>.
 
-KorAP::XML::Krill is free software published under the
+This program is free software published under the
 L<BSD-2 License|https://raw.githubusercontent.com/KorAP/KorAP-XML-Krill/master/LICENSE>.
 
 =cut
