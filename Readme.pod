@@ -64,7 +64,9 @@ Extracts KorAP-XML documents from a zip file.
 Directory or zip file(s) of documents to convert.
 
 Without arguments, C<korapxml2krill> expects a folder of a single KorAP-XML
-document, while C<archive> and C<extract> support zip files as well.
+document, while C<archive> expects a KorAP-XML corpus folder or a zip
+file to batch process multiple files.
+C<extract> expects zip files only.
 
 C<archive> supports multiple input zip files with the constraint,
 that the first archive listed contains all primary data files
