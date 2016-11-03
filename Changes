@@ -1,8 +1,9 @@
-0.23 2016-10-31
+0.23 2016-11-03
         - Added wildcard support for document extraction
         - Fixed archive iteration to not duplicate the first archive
         - Added parallel extraction for document sigles
         - Improved return value for existing files
+        - Don't warn on recursion in CoreNLP/Constituency.
 
 0.22 2016-10-26
         - Added support for document extraction

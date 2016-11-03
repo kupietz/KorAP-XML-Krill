@@ -45,6 +45,8 @@ sub parse {
 
   my $add_const;
 
+  no warnings 'recursion';
+
   $add_const = sub {
     my $span = shift;
     my $level = shift;
@@ -77,6 +79,8 @@ sub parse {
     foreach (@$rel) {
       next if $_->{-label} ne 'dominates' || !$_->{-target};
       my $subspan = delete $corenlp_const{$_->{-target}} or return;
+
+      # This will be called recursively
       $this->($subspan, $level + 1);
     };
   };

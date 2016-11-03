@@ -151,6 +151,11 @@ t/corpus/WPD/00001/data.xml
 t/corpus/WPD/00001/header.xml
 t/corpus/WPD/00001/metadata.xml
 t/corpus/WPD/00001/text.txt
+t/corpus/WPD15/W28/header.xml
+t/corpus/WPD15/W28/65631/header.xml
+t/corpus/WPD15/W28/65631/data.xml
+t/corpus/WPD15/W28/65631/base/tokens_aggr.xml
+t/corpus/WPD15/W28/65631/corenlp/constituency.xml
 t/corpus/artificial/base/paragraph.xml
 t/corpus/artificial/base/sentences.xml
 t/corpus/artificial/connexor/morpho.xml

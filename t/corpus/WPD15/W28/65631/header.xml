@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.0" TEIform="teiHeader">
+    <fileDesc>
+     <titleStmt>
+      <textSigle>WPD15/W28.65631</textSigle>
+      <t.title assemblage="external">WPD15/W28.65631: Wolfgang Krebs (Schauspieler), In: Wikipedia - URL:http://de.wikipedia.org/wiki/Wolfgang_Krebs_(Schauspieler): Wikipedia, 2015</t.title>
+     </titleStmt>
+     <editionStmt version="0"></editionStmt>
+     <publicationStmt>
+      <distributor></distributor>
+      <pubAddress></pubAddress>
+      <availability region="world" Default="n" status="unknown">CC-BY-SA</availability>
+      <pubDate></pubDate>
+     </publicationStmt>
+     <sourceDesc Default="n">
+      <biblStruct Default="n" status="draft">
+       <analytic>
+        <h.title type="main">Wolfgang Krebs (Schauspieler)</h.title>
+        <h.title type="sub"></h.title>
+        <h.title type="abbr" level="m"></h.title>
+        <h.title type="abbr" level="a"></h.title>
+        <h.author>Graphikus, u.a.</h.author>
+        <editor></editor>
+        <imprint></imprint>
+        <biblScope type="subsume"></biblScope>
+        <biblScope type="pp"></biblScope>
+        <biblNote n="1"></biblNote>
+       </analytic>
+       <monogr>
+        <h.title type="main"></h.title>
+        <editor>wikipedia.org</editor>
+        <edition>
+         <further> Dump file "dewiki-20150501-pages-meta-current.xml" retrieved from http://dumps.wikimedia.org </further>
+         <kind></kind>
+         <appearance></appearance>
+        </edition>
+        <imprint>
+         <pubDate type="year">2015</pubDate>
+         <pubDate type="month">05</pubDate>
+         <pubDate type="day">01</pubDate>
+        </imprint>
+        <biblScope type="vol"></biblScope>
+        <biblScope type="volume-title"></biblScope>
+       </monogr>
+      </biblStruct>
+      <reference type="complete" assemblage="non-automatic">WPD15/W28.65631: Wolfgang Krebs (Schauspieler), In: Wikipedia - URL:http://de.wikipedia.org/wiki/Wolfgang_Krebs_(Schauspieler): Wikipedia, 2015</reference>
+      <reference type="short" assemblage="regular">WPD15/W28.65631 Wikipedia; Wolfgang Krebs (Schauspieler), (Letzte Änderung 18.2.2015 ) 1.5.2015</reference>
+     </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+     <samplingDecl Default="n"></samplingDecl>
+     <editorialDecl Default="n">
+      <pagination type="no"></pagination>
+     </editorialDecl>
+    </encodingDesc>
+    <profileDesc>
+     <creation>
+      <creatDate>2015.02.18</creatDate>
+      <creatRef>(Letzte Änderung 18.2.2015)</creatRef>
+      <creatRefShort>(Letzte Änderung 18.2.2015)</creatRefShort>
+     </creation>
+     <textDesc Default="n">
+      <textTypeArt>Enzyklopädie-Artikel</textTypeArt>
+      <textDomain></textDomain>
+     </textDesc>
+    </profileDesc>
+   </idsHeader>
