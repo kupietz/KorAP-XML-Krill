@@ -107,6 +107,7 @@ t/corpus/BZK/header.xml
 t/corpus/GOE/header.xml
 t/corpus/VDI/header.xml
 t/corpus/WDD/header.xml
+t/corpus/WDD15/header.xml
 t/corpus/REI/header.xml
 t/corpus/artificial/data.xml
 t/corpus/artificial/header.xml
@@ -147,6 +148,7 @@ t/corpus/REI/BNG/header.xml
 t/corpus/REI/RBR/header.xml
 t/corpus/VDI/JAN/header.xml
 t/corpus/WDD/G27/header.xml
+t/corpus/WDD15/A79/header.xml
 t/corpus/WPD/00001/data.xml
 t/corpus/WPD/00001/header.xml
 t/corpus/WPD/00001/metadata.xml
@@ -425,6 +427,9 @@ t/corpus/VDI/JAN/00001/text.txt
 t/corpus/WDD/G27/38989/data.xml
 t/corpus/WDD/G27/38989/header.xml
 t/corpus/WDD/G27/38989/text.txt
+t/corpus/WDD15/A79/83946/header.xml
+t/corpus/WDD15/A79/83946/data.xml
+t/corpus/WDD15/A79/83946/opennlp/tokens.xml
 t/corpus/WPD/00001/base/metadata.xml
 t/corpus/WPD/00001/base/paragraph.xml
 t/corpus/WPD/00001/base/sentences.xml

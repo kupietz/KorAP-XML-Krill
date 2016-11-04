@@ -107,15 +107,6 @@ ok($tokens->parse, 'Token parsing is fine');
 is($tokens->foundry, 'Base', 'Foundry');
 is($tokens->layer, 'tokens_aggr', 'Layer');
 
-
-# Initialize log4perl object
-Log::Log4perl->init({
-  'log4perl.rootLogger' => 'DEBUG, STDERR',
-  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
-  'log4perl.appender.STDERR.layout' => 'PatternLayout',
-  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
-});
-
 ok($tokens->add('CoreNLP', 'Constituency'), 'Add Structure');
 
 $output = $tokens->to_data;

@@ -177,6 +177,8 @@ sub parse {
     $have++;
   };
 
+  return if $have == 0;
+
   # Add token count
   $mtts->add_meta('tokens', '<i>' . $have);
 

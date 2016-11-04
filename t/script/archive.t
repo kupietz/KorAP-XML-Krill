@@ -128,6 +128,24 @@ my ($json_1, $json_2);
 };
 
 ok(-d $output, 'Ouput directory exists');
+
+
+$input = catfile($f, '..', 'corpus', 'WDD15', 'A79', '83946');
+$call = join(
+  ' ',
+  'perl', $script,
+  '--input' => $input
+);
+
+# Test without compression
+{
+  local $SIG{__WARN__} = sub {};
+  my $out = stderr_from(sub { system($call); });
+
+  like($out, qr!no base tokenization!s, $call);
+};
+
+
 unlink($output);
 
 done_testing;

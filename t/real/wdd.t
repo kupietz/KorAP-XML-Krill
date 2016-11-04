@@ -265,5 +265,35 @@ like($output->{data}->{layerInfos}, qr!xip/c=spans!, 'layerInfos');
 
 # diag "No test for xip dependency";
 
+$path = catdir(dirname(__FILE__), '../corpus/WDD15/A79/83946');
+
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc->parse, 'Parse document');
+
+is($doc->text_sigle, 'WDD15/A79/83946', 'Correct text sigle');
+is($doc->doc_sigle, 'WDD15/A79', 'Correct document sigle');
+is($doc->corpus_sigle, 'WDD15', 'Correct corpus sigle');
+
+# Get tokenization
+$tokens = KorAP::XML::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => $token_base_foundry,
+  layer => $token_base_layer,
+  name => 'tokens'
+);
+ok($tokens, 'Token Object is fine');
+
+# Initialize log4perl object
+Log::Log4perl->init({
+  'log4perl.rootLogger' => 'DEBUG, STDERR',
+  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
+  'log4perl.appender.STDERR.layout' => 'PatternLayout',
+  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
+});
+
+ok(!$tokens->parse, 'Token parsing is fine');
+
+
 done_testing;
 __END__

@@ -60,7 +60,8 @@ sub get_node {
 
 sub add_meta {
   my $self = shift;
-  my $mt = $self->pos(0)->add('-:' . shift);
+  my $pos_0 = $self->pos(0) or return;
+  my $mt = $pos_0->add('-:' . shift);
   $mt->payload(shift);
   $mt->store_offsets(0);
 };
