@@ -128,18 +128,31 @@ ok(!exists $output->{docAuthor}, 'Correct Text Type');
 ok(!exists $output->{docEditor}, 'Correct Text Type');
 
 ## Base
-$tokens->add('DeReKo', 'Structure');
+$tokens->add('DeReKo', 'Structure', 'base_sentences_paragraphs');
 
 $output = $tokens->to_data;
 
-is($output->{data}->{foundries}, 'dereko dereko/structure', 'Foundries');
+is($output->{data}->{foundries}, 'dereko dereko/structure dereko/structure/base_sentences_paragraphs', 'Foundries');
 is($output->{data}->{layerInfos}, 'dereko/s=spans', 'layerInfos');
 my $first_token = join('||', @{$output->{data}->{stream}->[0]});
 like($first_token, qr/s:Autobiographische/, 'data');
 like($first_token, qr/_0\$<i>0<i>17/, 'data');
 like($first_token, qr!<>:dereko/s:s\$<b>64<i>0<i>30<i>2<b>4!, 'data');
-#like($first_token, qr!<>:base/s:s\$<b>64<i>0<i>30<i>2<b>4!, 'data');
-#like($first_token, qr!<>:base\/s:t\$<b>64<i>0<i>35199<i>5226<b>0!, 'data');
+like($first_token, qr!<>:base\/s:t\$<b>64<i>0<i>35250<i>5233<b>0!, 'data');
+like($first_token, qr!<>:base/s:s\$<b>64<i>0<i>30<i>2<b>2!, 'data');
+like($first_token, qr!-:base\/paragraphs\$\<i\>14!, 'data');
+like($first_token, qr!-:base\/sentences\$\<i\>215!, 'data');
+
+# Check paragraph
+$first_token = join('||', @{$output->{data}->{stream}->[4]});
+like($first_token, qr/s:immer/, 'data');
+like($first_token, qr!<>:base\/s:s\$<b>64<i>53<i>254<i>32<b>2!, 'data');
+like($first_token, qr!<>:dereko\/s:s\$<b>64<i>53<i>254<i>32<b>5<s>1!, 'data');
+like($first_token, qr!<>:base/s:p\$\<b>64<i>53<i>3299<i>504<b>1!, 'data');
+like($first_token, qr!<>:dereko/s:p\$\<b>64<i>53<i>3299<i>504<b>4!, 'data');
+
+$first_token = join('||', @{$output->{data}->{stream}->[180]});
+like($first_token, qr/i:geschäften/, 'data');
 
 done_testing;
 __END__

@@ -128,8 +128,8 @@ sub to_string {
       '<i>' . $_[0]->[4];
   };
 
-#  my $pl = $_[0]->[1] ?
-#    $_[0]->[1] - 1 : $_[0]->[0];
+  #  my $pl = $_[0]->[1] ?
+  #    $_[0]->[1] - 1 : $_[0]->[0];
 
   if ($_[0]->[2] || $_[0]->[0]) {
 
@@ -139,10 +139,10 @@ sub to_string {
     };
     if ($_[0]->[0]) {
       if (index($_[0]->[0], '<') == 0) {
-	$pre .= $_[0]->[0];
+        $pre .= $_[0]->[0];
       }
       else {
-	$pre .= '<?>' . $_[0]->[0];
+        $pre .= '<?>' . $_[0]->[0];
       };
     };
   };
@@ -150,6 +150,11 @@ sub to_string {
   $string . ($pre ? '$' . $pre : '');
 };
 
+
+sub clone {
+  my $self = shift;
+  bless [@$self], __PACKAGE__;
+};
 
 sub to_string_2 {
   my $self = shift;
@@ -166,10 +171,10 @@ sub to_string_2 {
     };
     if ($self->payload) {
       if (index($self->payload, '<') == 0) {
-	$string .= $self->payload;
+        $string .= $self->payload;
       }
       else {
-	$string .= '<?>' . $self->payload;
+        $string .= '<?>' . $self->payload;
       };
     };
   };

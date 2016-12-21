@@ -1,5 +1,6 @@
 package KorAP::XML::Index::MultiTermToken;
 use KorAP::XML::Index::MultiTerm;
+use Scalar::Util qw/blessed/;
 use List::MoreUtils 'uniq';
 use Carp qw/carp croak/;
 use strict;
@@ -16,8 +17,9 @@ sub new {
 
 sub add {
   my $self = shift;
+
   my $mt;
-  unless (ref $_[0] eq 'MultiTerm') {
+  unless (blessed $_[0]) {
     if (@_ == 1) {
       $mt = KorAP::XML::Index::MultiTerm->new(term => $_[0]);
     }

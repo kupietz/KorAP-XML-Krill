@@ -73,12 +73,15 @@ use Parallel::ForkManager;
 # 2016/10/24
 # - Added support for document extraction
 #
-# 1016/10/27
+# 2016/10/27
 # - Added wildcard support for document extraction
+#
+# 2016/12/21
+# - added support for base-sentences and base-tokenizations
 #
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2016/10/27';
+our $LAST_CHANGE = '2016/12/21';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -101,6 +104,8 @@ GetOptions(
   'overwrite|w' => \(my $overwrite),
   'meta|m=s'    => \(my $meta),
   'token|t=s'   => \(my $token_base = 'OpenNLP#tokens'),
+  'base-sentences|bs=s' => \(my $base_sentences = ''),
+  'base-paragraphs|bp=s' => \(my $base_paragraphs = ''),
   'gzip|z'      => \(my $gzip),
   'skip|s=s'    => \@skip,
   'sigle|sg=s'  => \@sigle,
@@ -130,6 +135,9 @@ GetOptions(
   }
 );
 
+$base_sentences = lc $base_sentences;
+$base_paragraphs = lc $base_paragraphs;
+
 my %ERROR_HASH = (
   -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
   -verbose  => 99,
@@ -158,8 +166,8 @@ my %skip;
 $skip{lc($_)} = 1 foreach @skip;
 
 my @layers;
-push(@layers, ['Base', 'Sentences']);
-push(@layers, ['Base', 'Paragraphs']);
+push(@layers, ['Base', 'Sentences']) unless $base_sentences;
+push(@layers, ['Base', 'Paragraphs']) unless $base_paragraphs;
 
 # Connexor
 push(@layers, ['Connexor', 'Morpho']);
@@ -173,8 +181,20 @@ push(@layers, ['CoreNLP', 'Sentences']);
 push(@layers, ['CoreNLP', 'Morpho']);
 push(@layers, ['CoreNLP', 'Constituency']);
 
+
 # DeReKo
-push(@layers, ['DeReKo', 'Structure']);
+if ($base_sentences eq 'dereko#structure' && $base_paragraphs eq 'dereko#structure') {
+  push(@layers, ['DeReKo', 'Structure', 'base-sentences-paragraphs']);
+}
+elsif ($base_sentences eq 'dereko#structure') {
+  push(@layers, ['DeReKo', 'Structure', 'base-sentences']);
+}
+elsif ($base_paragraphs eq 'dereko#structure') {
+  push(@layers, ['DeReKo', 'Structure', 'base-paragraphs']);
+}
+else {
+  push(@layers, ['DeReKo', 'Structure']);
+};
 
 # Glemm
 push(@layers, ['Glemm', 'Morpho']);
@@ -670,11 +690,30 @@ writes to C<STDOUT> by default
 
 Overwrite files that already exist.
 
-=item B<--token|-t> <foundry>[#<file>]
+=item B<--token|-t> <foundry>#<file>
 
 Define the default tokenization by specifying
 the name of the foundry and optionally the name
 of the layer-file. Defaults to C<OpenNLP#tokens>.
+
+
+=item B<--base-sentences|-bs> <foundry>#<layer>
+
+Define the layer for base sentences.
+If given, this will be used instead of using C<Base#Sentences>.
+Currently C<DeReKo#Structure> is the only additional layer supported.
+
+ Defaults to unset.
+
+
+=item B<--base-paragraphs|-bp> <foundry>#<layer>
+
+Define the layer for base paragraphs.
+If given, this will be used instead of using C<Base#Paragraphs>.
+Currently C<DeReKo#Structure> is the only additional layer supported.
+
+ Defaults to unset.
+
 
 =item B<--skip|-s> <foundry>[#<layer>]
 
