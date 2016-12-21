@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>GOE/AGA.03828</textSigle>
+            <t.title assemblage="regular">GOE/AGA.03828 Goethe: Autobiographische Einzelheiten, (Geschr. bis 1832), In: Goethes Werke, Bd. 10. - München, 1982</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world">QAO-NC</availability>
+            <pubDate/>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <h.title type="main">Autobiographische Einzelheiten</h.title>
+                <h.title type="sub"/>
+                <h.title type="abbr" level="m">Goethe, Werke; Autobiograph. Einzelheiten</h.title>
+                <h.title type="abbr" level="a">Goethe: Autobiographische Einzelheiten, (Geschr. bis 1832)</h.title>
+                <h.author>Goethe, Johann Wolfgang von</h.author>
+                <editor/>
+                <imprint/>
+                <biblScope type="subsume"/>
+                <biblScope type="pp">S. 529-547</biblScope>
+              </analytic>
+              <monogr>
+                <h.title type="main"/>
+                <imprint/>
+              </monogr>
+            </biblStruct>
+            <reference type="complete" assemblage="regular">GOE/AGA.03828 Goethe, Johann Wolfgang von: Autobiographische Einzelheiten, (Geschrieben bis 1832), In: Goethe, Johann Wolfgang von: Goethes Werke, Bd. 10, Autobiographische Schriften II, Hrsg.: Trunz, Erich. München: Verlag C. H. Beck, 1982, S. 529-547</reference>
+            <reference type="short" assemblage="regular">GOE/AGA.03828 Goethe, Werke; Autobiograph. Einzelheiten, (Geschr. bis 1832), 1982, Bd. 10</reference>
+          </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+          <samplingDecl/>
+          <tagsDecl>
+            <tagUsage gi="pb" occurs="19"/>
+            <tagUsage gi="s" occurs="215"/>
+            <tagUsage gi="orig" occurs="4"/>
+          </tagsDecl>
+        </encodingDesc>
+        <profileDesc>
+          <textClass/>
+          <textDesc>
+            <textDomain/>
+          </textDesc>
+        </profileDesc>
+      </idsHeader>
