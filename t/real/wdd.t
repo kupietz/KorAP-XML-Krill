@@ -30,7 +30,7 @@ my $meta = $doc->meta;
 is($meta->{title}, 'Diskussion:Gunter A. Pilz', 'Title');
 ok(!$meta->{sub_title}, 'No SubTitle');
 is($meta->{author}, '€pa, u.a.', 'Author');
-ok(!$meta->{editor}, 'Publisher');
+is($meta->{editor}, 'wikipedia.org', 'Editor');
 
 is($meta->{pub_place}, 'URL:http://de.wikipedia.org', 'PubPlace');
 is($meta->{publisher}, 'Wikipedia', 'Publisher');
@@ -91,7 +91,7 @@ is($output->{corpusSigle}, 'WDD11', 'Correct corpus sigle');
 is($output->{title}, 'Diskussion:Gunter A. Pilz', 'Title');
 ok(!$output->{subTitle}, 'No SubTitle');
 is($output->{author}, '€pa, u.a.', 'Author');
-ok(!$output->{editor}, 'Editor');
+is($output->{editor}, 'wikipedia.org', 'Editor');
 
 is($output->{pubPlace}, 'URL:http://de.wikipedia.org', 'PubPlace');
 is($output->{publisher}, 'Wikipedia', 'Publisher');

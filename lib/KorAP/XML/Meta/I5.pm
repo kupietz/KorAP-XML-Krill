@@ -16,8 +16,6 @@ sub _squish ($) {
 sub parse {
   my ($self, $dom, $type) = @_;
 
-  my $analytic = $dom->at('analytic') || $dom->at('monogr');
-
   # Parse text sigle
   if ($type eq 'text' && !$self->text_sigle) {
     my $v = $dom->at('textSigle');
@@ -49,8 +47,10 @@ sub parse {
     $self->{_corpus_sigle} = $v->text if $v;
   };
 
-  # There is an analytic element
-  if ($analytic) {
+  # TODO: May have analytic AND monogr
+  foreach my $analytic ($dom->at('analytic'), $dom->at('monogr')) {
+    next unless $analytic;
+    # There is an analytic element
 
     # Get title, subtitle, author, editor
     my $title     = $analytic->at('h\.title[type=main]');
@@ -65,26 +65,32 @@ sub parse {
 
     # Text meta data
     if ($type eq 'text') {
-      $self->{title} =_remove_prefix($title, $self->text_sigle) if $title;
-      $self->{sub_title} = $sub_title if $sub_title;
-      $self->{editor} = $editor       if $editor;
-      $self->{author} = $author       if $author;
+      unless ($self->{title} || $self->{sub_title}) {
+        $self->{title} = _remove_prefix($title, $self->text_sigle) if $title;
+        $self->{sub_title} = $sub_title if $sub_title;
+      };
+      $self->{editor} //= $editor       if $editor;
+      $self->{author} //= $author       if $author;
     }
 
     # Doc meta data
     elsif ($type eq 'doc') {
-      $self->{doc_title} = _remove_prefix($title, $self->doc_sigle) if $title;
-      $self->{doc_sub_title} = $sub_title if $sub_title;
-      $self->{doc_author} = $author       if $author;
-      $self->{doc_editor} = $editor       if $editor;
+      unless ($self->{doc_title} || $self->{doc_sub_title}) {
+        $self->{doc_title} //= _remove_prefix($title, $self->doc_sigle) if $title;
+        $self->{doc_sub_title} //= $sub_title if $sub_title;
+      };
+      $self->{doc_author} //= $author       if $author;
+      $self->{doc_editor} //= $editor       if $editor;
     }
 
     # Corpus meta data
     elsif ($type eq 'corpus') {
-      $self->{corpus_title} = _remove_prefix($title, $self->corpus_sigle) if $title;
-      $self->{corpus_sub_title} = $sub_title if $sub_title;
-      $self->{corpus_author} = $author       if $author;
-      $self->{corpus_editor} = $editor       if $editor;
+      unless ($self->{corpus_title} || $self->{corpus_sub_title}) {
+        $self->{corpus_title} //= _remove_prefix($title, $self->corpus_sigle) if $title;
+        $self->{corpus_sub_title} //= $sub_title if $sub_title;
+      };
+      $self->{corpus_author} //= $author       if $author;
+      $self->{corpus_editor} //= $editor       if $editor;
     };
   };
 

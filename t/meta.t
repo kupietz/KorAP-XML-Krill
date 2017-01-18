@@ -48,7 +48,7 @@ is($meta->{author}, 'Ruru; Jens.Ol; Aglarech; u.a.', 'author');
 #ok(!$doc->author->[3], 'author');
 
 # Additional information
-ok(!$meta->{editor}, 'Editor');
+is($meta->{editor}, 'wikipedia.org', 'Editor');
 is($meta->{publisher}, 'Wikipedia', 'Publisher');
 is($meta->{creation_date}, '20050000', 'Creation date');
 ok(!$meta->{text_type}, 'No text_type');
@@ -357,7 +357,7 @@ is($meta->{pub_place}, 'URL:http://de.wikipedia.org', 'pubplace');
 
 is($meta->{author}, '€pa, u.a.', 'author');
 is($meta->{publisher}, 'Wikipedia', 'publisher');
-ok(!$meta->{editor}, 'editor');
+is($meta->{editor}, 'wikipedia.org', 'Editor');
 
 is($meta->{text_type}, 'Diskussionen zu Enzyklopädie-Artikeln', 'text type');
 ok(!$meta->{text_type_art}, 'text type art');

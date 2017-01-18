@@ -29,7 +29,10 @@ my $meta = $doc->meta;
 is($meta->{title}, 'A', 'Title');
 is($meta->{pub_place}, 'URL:http://de.wikipedia.org', 'PubPlace');
 is($meta->{pub_date}, '20050328', 'Creation Date');
-ok(!$meta->{sub_title}, 'SubTitle');
+SKIP: {
+  skip 'Failure because corpus is no longer supported', 1;
+  ok(!$meta->{sub_title}, 'SubTitle');
+};
 is($meta->{author}, 'Ruru; Jens.Ol; Aglarech; u.a.', 'Author');
 
 ok(!$meta->{doc_title}, 'Correct Doc title');
@@ -113,6 +116,7 @@ $output = $tokens->to_data;
 
 is($output->{data}->{foundries}, 'corenlp corenlp/constituency', 'Foundries');
 is($output->{data}->{layerInfos}, 'corenlp/c=spans', 'layerInfos');
+is($doc->meta->{editor}, 'wikipedia.org', 'Editor');
 
 done_testing;
 __END__
