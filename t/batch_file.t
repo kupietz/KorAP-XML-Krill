@@ -5,7 +5,7 @@ use Test::More;
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 use File::Temp qw/ :POSIX /;
-use Mojo::Util qw/slurp/;
+use Mojo::File;
 use Mojo::JSON qw/decode_json/;
 use IO::Uncompress::Gunzip;
 use Data::Dumper;
@@ -25,7 +25,7 @@ ok($bf->process($path => $output), 'Process file');
 
 ok(-f $output, 'File exists');
 
-ok(my $file = slurp $output, 'Slurp data');
+ok(my $file = Mojo::File->new($output)->slurp, 'Slurp data');
 
 ok(my $json = decode_json $file, 'decode json');
 
@@ -66,7 +66,7 @@ $bf->{anno} = [
 ];
 $output = tmpnam();
 ok($bf->process($path => $output), 'Process file');
-ok($file = slurp $output, 'Slurp data');
+ok($file = Mojo::File->new($output)->slurp, 'Slurp data');
 ok($json = decode_json $file, 'decode json');
 
 is($json->{textType}, 'Zeitung: Tageszeitung', 'text type');
@@ -99,7 +99,7 @@ $bf->{layer} = 'Tokens';
 
 ok($bf->process($path => $output), 'Process file');
 ok(-f $output, 'File exists');
-ok($file = slurp $output, 'Slurp data');
+ok($file = Mojo::File->new($output)->slurp, 'Slurp data');
 ok($json = decode_json $file, 'decode json');
 
 ok(!$json->{data}->{text}, 'No Primary text');
@@ -111,7 +111,7 @@ like($file, qr/^\{"/, 'No pretty printing');
 $bf->{pretty} = 1;
 ok($bf->process($path => $output), 'Process file');
 ok(-f $output, 'File exists');
-ok($file = slurp $output, 'Slurp data');
+ok($file = Mojo::File->new($output)->slurp, 'Slurp data');
 like($file, qr/^\{[\n\s]+"/, 'No pretty printing');
 
 # Check overwriting

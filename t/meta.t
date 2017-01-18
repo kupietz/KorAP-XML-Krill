@@ -4,6 +4,7 @@ use utf8;
 use Test::More;
 use Benchmark ':hireswallclock';
 use Mojo::DOM;
+use Mojo::File;
 use Mojo::ByteStream 'b';
 use Data::Dumper;
 use lib 'lib', '../lib';
@@ -392,7 +393,7 @@ use_ok('KorAP::XML::Meta::I5');
 
 $path = catdir(dirname(__FILE__), 'corpus', 'I5', 'rei-example.i5');
 ok($meta = KorAP::XML::Meta::I5->new, 'Construct meta object');
-my $dom = Mojo::DOM->new->parse(b($path)->slurp);
+my $dom = Mojo::DOM->new->parse(Mojo::File->new($path)->slurp);
 ok($meta->parse($dom->at('idsHeader'), 'corpus'), 'Parse corpus header');
 
 my $hash = $meta->to_hash;

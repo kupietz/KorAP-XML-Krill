@@ -2,6 +2,7 @@ package KorAP::XML::Krill;
 use Mojo::Base -base;
 use Mojo::ByteStream 'b';
 use Mojo::Util qw/encode/;
+use Mojo::File;
 use Scalar::Util qw/weaken/;
 use XML::Fast;
 use Try::Tiny;
@@ -67,7 +68,7 @@ sub parse {
 
   else {
     # Load file
-    $file = b($data_xml)->slurp;
+    $file = b(Mojo::File->new($data_xml)->slurp);
     try {
       local $SIG{__WARN__} = sub {
         $error = 1;
@@ -159,7 +160,7 @@ sub parse {
     next unless -e $_;
 
     # Slurp data and probably decode
-    my $slurp = b($_)->slurp;
+    my $slurp = b(Mojo::File->new($_)->slurp);
     $slurp =~ $ENC_RE;
     my $file = $slurp->decode($2 // 'UTF-8');
 
@@ -405,7 +406,7 @@ Accept the tokenization based on a given foundry and a given layer.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2016, L<IDS Mannheim|http://www.ids-mannheim.de/>
+Copyright (C) 2015-2017, L<IDS Mannheim|http://www.ids-mannheim.de/>
 Author: L<Nils Diewald|http://nils-diewald.de/>
 
 KorAP::XML::Krill is developed as part of the

@@ -4,7 +4,7 @@ use warnings;
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
 use File::Temp qw/ :POSIX /;
-use Mojo::Util qw/slurp/;
+use Mojo::File;
 use Mojo::JSON qw/decode_json/;
 use IO::Uncompress::Gunzip;
 use Test::More;
@@ -43,7 +43,7 @@ stderr_like(
 );
 
 ok(-f $output, 'Output does exist');
-ok((my $file = slurp $output), 'Slurp data');
+ok((my $file = Mojo::File->new($output)->slurp), 'Slurp data');
 ok((my $json = decode_json $file), 'decode json');
 is($json->{textType}, 'Autobiographie', 'text type');
 is($json->{title}, 'Autobiographische Einzelheiten', 'Title');

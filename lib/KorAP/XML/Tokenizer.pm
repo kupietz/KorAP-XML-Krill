@@ -1,6 +1,7 @@
 package KorAP::XML::Tokenizer;
 use Mojo::Base -base;
 use Mojo::ByteStream 'b';
+use Mojo::File;
 use XML::Fast;
 use Try::Tiny;
 use Carp qw/croak/;
@@ -54,7 +55,7 @@ sub parse {
     return;
   };
 
-  my $file = b($path)->slurp;
+  my $file = b(Mojo::File->new($path)->slurp);
 
   my $doc = $self->doc;
 

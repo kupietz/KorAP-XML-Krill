@@ -1,6 +1,7 @@
 package KorAP::XML::Tokenizer::Tokens;
 use Mojo::Base 'KorAP::XML::Tokenizer::Units';
 use Mojo::ByteStream 'b';
+use Mojo::File;
 use KorAP::XML::Tokenizer::Token;
 use Carp qw/croak carp/;
 use File::Spec::Functions qw/catdir catfile/;
@@ -32,7 +33,7 @@ sub parse {
     };
   };
 
-  my $file = b($path)->slurp;
+  my $file = b(Mojo::File->new($path)->slurp);
 
   # Bug workaround
   if ($self->foundry eq 'glemm') {

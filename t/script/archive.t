@@ -4,7 +4,7 @@ use warnings;
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
 use File::Temp qw/tempdir/;
-use Mojo::Util qw/slurp/;
+use Mojo::File;
 use Mojo::JSON qw/decode_json/;
 use IO::Uncompress::Gunzip;
 use Test::More;
@@ -66,7 +66,7 @@ my $json;
 };
 
 ok(-f $json, 'Json file exists');
-ok((my $file = slurp $json), 'Slurp data');
+ok((my $file = Mojo::File->new($json)->slurp), 'Slurp data');
 ok(($json = decode_json $file), 'decode json');
 
 is($json->{data}->{tokenSource}, 'base#tokens_aggr', 'Title');
@@ -111,7 +111,7 @@ my ($json_1, $json_2);
   my $json_2 = catfile($output, 'corpus-doc-0002.json');
   ok(-f $json_2, 'Json file exists 2');
 
-  ok(($file = slurp $json_1), 'Slurp data');
+  ok(($file = Mojo::File->new($json_1)->slurp), 'Slurp data');
   ok(($json_1 = decode_json $file), 'decode json');
 
   is($json_1->{data}->{tokenSource}, 'tree_tagger#tokens', 'TokenSource');
@@ -119,7 +119,7 @@ my ($json_1, $json_2);
   is($json_1->{textSigle}, 'Corpus/Doc/0001', 'Sigle');
 
   ok(-f $json_2, 'Json file exists');
-  ok(($file = slurp $json_2), 'Slurp data');
+  ok(($file = Mojo::File->new($json_2)->slurp), 'Slurp data');
   ok(($json_2 = decode_json $file), 'decode json');
 
   is($json_2->{data}->{tokenSource}, 'tree_tagger#tokens', 'TokenSource');

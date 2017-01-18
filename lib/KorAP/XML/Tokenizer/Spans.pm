@@ -4,6 +4,7 @@ use warnings;
 use KorAP::XML::Log;
 use Data::Dumper;
 use Mojo::Base 'KorAP::XML::Tokenizer::Units';
+use Mojo::File;
 use KorAP::XML::Tokenizer::Span;
 use Mojo::ByteStream 'b';
 use XML::Fast;
@@ -30,7 +31,7 @@ sub parse {
     return;
   };
 
-  my $file = b($path)->slurp;
+  my $file = b(Mojo::File->new($path)->slurp);
 
   my ($spans, $error);
   try {
