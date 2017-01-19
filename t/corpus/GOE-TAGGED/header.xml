@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="corpus" pattern="allesaußerZtg/Zschr" status="new" version="1.1" TEIform="teiHeader">
+    <fileDesc>
+      <titleStmt>
+        <korpusSigle>GOE</korpusSigle>
+        <c.title>Goethe-Korpus</c.title>
+      </titleStmt>
+      <publicationStmt>
+        <distributor>  Institut für Deutsche Sprache  </distributor>
+        <pubAddress>  Postfach 10 16 21, D-68016 Mannheim </pubAddress>
+        <telephone>  +49 (0)621 1581 0   </telephone>
+        <availability region="world" status="unknown"/>
+        <pubDate/>
+      </publicationStmt>
+      <sourceDesc>
+        <biblFull>
+          <titleStmt>
+            <x.title/>
+          </titleStmt>
+          <editionStmt/>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world" status="unknown"/>
+            <pubDate/>
+          </publicationStmt>
+        </biblFull>
+        <biblStruct>
+          <monogr>
+            <h.title type="main">Goethes Werke</h.title>
+            <h.title type="sub"/>
+            <h.author>Goethe, Johann Wolfgang von</h.author>
+            <editor>Trunz, Erich</editor>
+            <edition>
+              <further/>
+              <kind>Hamburger Ausgabe in 14 Bänden</kind>
+              <appearance/>
+            </edition>
+            <imprint>
+              <publisher>Verlag C. H. Beck</publisher>
+              <pubDate type="year">1982</pubDate>
+              <pubDate type="month"/>
+              <pubDate type="day"/>
+              <pubPlace>München</pubPlace>
+            </imprint>
+          </monogr>
+        </biblStruct>
+        <reference type="super" assemblage="non-automatic">GOE Goethe, Johann Wolfgang von: Goethes Werke, Hamburger Ausgabe in 14 Bänden, Bde. 6 - 14, Hrsg.: Trunz, Erich. - München: Verlag C. H. Beck, Auflagen von 1982</reference>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc/>
+      <samplingDecl>  In der BOT-Vorlage Abrückung aller Satzzeichen vom vorhergehenden oder nachfolgenden Wort,
+  was bei der anschließenden Konvertierung so weit wie möglich beseitigt wurde.
+  Kleinschreibung von Wörtern am Satzanfang, wenn sie auch im Satzinnern kleingeschrieben werden.
+  Expansion bzw. Alternativschreibung bei Wörtern mit Klammerung im Wortinnern (sog. Sparschreibung).
+  Alternativschreibung bei Wörtern mit klammernden Apostrophen/Anführungszeichen im Wortinnern.
+  Erweitertes Markup ohne Verwendung der gedruckten Vorlage:
+  - Umfangreiche Korrekturen am Markup der BOT-Vorlage
+  - Markierung von Listen, Tabellen, Quellen- und Verfasserangaben, Gesprächssequenzen
+  - Markierung von Textkomponenten, die den Textfluss unterbrechen, wie Fußnoten, Anmerkungen, Randtexte, Captions, Bildunterschriften
+  - Expansion der Ergänzungen durch Unterstrich bei Wortgruppen mit Ergänzungsbindestrich
+  - Markierung von Kardinal- und Ordinalzahlen in römischen Ziffern</samplingDecl>
+      <editorialDecl>
+        <transduction>  TraDuCES - Korpus-Transformationscompiler, Version 3.6.2,
+  Eric Seubert, IDS Mannheim, 28. September 2009
+  Optionen bei der Konvertierung:
+  - Dubletten-Modus:
+    Entfernung aller als Dubletten klassifizierten Texte.
+  - Indexierungsmodus für COSMAS II:
+    Erzeugung von übergeordneten Dokument-Referenzen, falls die
+    jeweiligen Dokumente nur einen einzigen selbstständigen Text enthalten.
+    Entfernung aller Deklarationen für Dubletten.
+    Entfernung von Texten mit Sperrvermerken.
+    Entfernung von Texten mit minimalem Inhalt.</transduction>
+        <transduction>$Id: fixPreXCES.l 1194 2008-04-30 14:16:53Z kupietz $</transduction>
+        <transduction>$Id: idsces2idsxces 1197 2008-05-13 14:43:33Z kupietz $</transduction>
+        <pagination type="yes"/>
+      </editorialDecl>
+      <tagsDecl>
+        <tagUsage gi="pb"/>
+        <tagUsage gi="date"/>
+        <tagUsage gi="measure"/>
+        <tagUsage gi="num"/>
+        <tagUsage gi="orig"/>
+        <tagUsage gi="time"/>
+      </tagsDecl>
+      <classDecl>
+        <taxonomy id="topic">
+          <h.bibl>Thementaxonomie (siehe http://www.ids-mannheim.de/kl/projekte/methoden/te.html)</h.bibl>
+          <category id="topic.fiktion">
+            <catDesc>Fiktion</catDesc>
+            <category id="topic.fiktion.vermischtes">
+              <catDesc>Fiktion:Vermischtes</catDesc>
+            </category>
+          </category>
+          <category id="topic.freizeit-unterhaltung">
+            <catDesc>Freizeit_Unterhaltung</catDesc>
+            <category id="topic.freizeit-unterhaltung.reisen">
+              <catDesc>Freizeit_Unterhaltung:Reisen</catDesc>
+            </category>
+            <category id="topic.freizeit-unterhaltung.rundfunk">
+              <catDesc>Freizeit_Unterhaltung:Rundfunk</catDesc>
+            </category>
+            <category id="topic.freizeit-unterhaltung.vereine-veranstaltungen">
+              <catDesc>Freizeit_Unterhaltung:Vereine_Veranstaltungen</catDesc>
+            </category>
+          </category>
+          <category id="topic.gesundheit-ernaehrung">
+            <catDesc>Gesundheit_Ernaehrung</catDesc>
+            <category id="topic.gesundheit-ernaehrung.ernaehrung">
+              <catDesc>Gesundheit_Ernaehrung:Ernaehrung</catDesc>
+            </category>
+            <category id="topic.gesundheit-ernaehrung.gesundheit">
+              <catDesc>Gesundheit_Ernaehrung:Gesundheit</catDesc>
+            </category>
+          </category>
+          <category id="topic.kultur">
+            <catDesc>Kultur</catDesc>
+            <category id="topic.kultur.bildende-kunst">
+              <catDesc>Kultur:Bildende Kunst</catDesc>
+            </category>
+            <category id="topic.kultur.darstellende-kunst">
+              <catDesc>Kultur:Darstellende Kunst</catDesc>
+            </category>
+            <category id="topic.kultur.film">
+              <catDesc>Kultur:Film</catDesc>
+            </category>
+            <category id="topic.kultur.literatur">
+              <catDesc>Kultur:Literatur</catDesc>
+            </category>
+            <category id="topic.kultur.mode">
+              <catDesc>Kultur:Mode</catDesc>
+            </category>
+            <category id="topic.kultur.musik">
+              <catDesc>Kultur:Musik</catDesc>
+            </category>
+          </category>
+          <category id="topic.natur-umwelt">
+            <catDesc>Natur_Umwelt</catDesc>
+            <category id="topic.natur-umwelt.garten">
+              <catDesc>Natur_Umwelt:Garten</catDesc>
+            </category>
+            <category id="topic.natur-umwelt.tiere">
+              <catDesc>Natur_Umwelt:Tiere</catDesc>
+            </category>
+            <category id="topic.natur-umwelt.wetter-klima">
+              <catDesc>Natur_Umwelt:Wetter_Klima</catDesc>
+            </category>
+          </category>
+          <category id="topic.politik">
+            <catDesc>Politik</catDesc>
+            <category id="topic.politik.ausland">
+              <catDesc>Politik:Ausland</catDesc>
+            </category>
+            <category id="topic.politik.inland">
+              <catDesc>Politik:Inland</catDesc>
+            </category>
+            <category id="topic.politik.kommunalpolitik">
+              <catDesc>Politik:Kommunalpolitik</catDesc>
+            </category>
+          </category>
+          <category id="topic.schrott">
+            <catDesc>Schrott</catDesc>
+            <category id="topic.schrott.boersenkurse">
+              <catDesc>Schrott:boersenkurse</catDesc>
+            </category>
+            <category id="topic.schrott.geburt-tod-heirat">
+              <catDesc>Schrott:geburt_tod_heirat</catDesc>
+            </category>
+            <category id="topic.schrott.impressum">
+              <catDesc>Schrott:impressum</catDesc>
+            </category>
+            <category id="topic.schrott.inhaltsverzeichnisse">
+              <catDesc>Schrott:inhaltsverzeichnisse</catDesc>
+            </category>
+            <category id="topic.schrott.ligatabellen">
+              <catDesc>Schrott:ligatabellen</catDesc>
+            </category>
+            <category id="topic.schrott.tabellen">
+              <catDesc>Schrott:tabellen</catDesc>
+            </category>
+            <category id="topic.schrott.veranstaltungshinweise">
+              <catDesc>Schrott:veranstaltungshinweise</catDesc>
+            </category>
+          </category>
+          <category id="topic.sport">
+            <catDesc>Sport</catDesc>
+            <category id="topic.sport.ballsport">
+              <catDesc>Sport:Ballsport</catDesc>
+            </category>
+            <category id="topic.sport.fussball">
+              <catDesc>Sport:Fussball</catDesc>
+            </category>
+            <category id="topic.sport.motorsport">
+              <catDesc>Sport:Motorsport</catDesc>
+            </category>
+            <category id="topic.sport.radsport">
+              <catDesc>Sport:Radsport</catDesc>
+            </category>
+            <category id="topic.sport.tennis">
+              <catDesc>Sport:Tennis</catDesc>
+            </category>
+            <category id="topic.sport.vermischtes">
+              <catDesc>Sport:Vermischtes</catDesc>
+            </category>
+            <category id="topic.sport.wintersport">
+              <catDesc>Sport:Wintersport</catDesc>
+            </category>
+          </category>
+          <category id="topic.staat-gesellschaft">
+            <catDesc>Staat_Gesellschaft</catDesc>
+            <category id="topic.staat-gesellschaft.arbeit-und-beruf">
+              <catDesc>Staat_Gesellschaft:Arbeit_und_Beruf</catDesc>
+            </category>
+            <category id="topic.staat-gesellschaft.bildung">
+              <catDesc>Staat_Gesellschaft:Bildung</catDesc>
+            </category>
+            <category id="topic.staat-gesellschaft.biographien-interviews">
+              <catDesc>Staat_Gesellschaft:Biographien_Interviews</catDesc>
+            </category>
+            <category id="topic.staat-gesellschaft.drittes-reich-rechtsextremismus">
+              <catDesc>Staat_Gesellschaft:Drittes_Reich_Rechtsextremismus</catDesc>
+            </category>
+            <category id="topic.staat-gesellschaft.familie-geschlecht">
+              <catDesc>Staat_Gesellschaft:Familie_Geschlecht</catDesc>
+            </category>
+            <category id="topic.staat-gesellschaft.kirche">
+              <catDesc>Staat_Gesellschaft:Kirche</catDesc>
+            </category>
+            <category id="topic.staat-gesellschaft.recht">
+              <catDesc>Staat_Gesellschaft:Recht</catDesc>
+            </category>
+            <category id="topic.staat-gesellschaft.tod">
+              <catDesc>Staat_Gesellschaft:Tod</catDesc>
+            </category>
+            <category id="topic.staat-gesellschaft.verbrechen">
+              <catDesc>Staat_Gesellschaft:Verbrechen</catDesc>
+            </category>
+          </category>
+          <category id="topic.technik-industrie">
+            <catDesc>Technik_Industrie</catDesc>
+            <category id="topic.technik-industrie.edv-elektronik">
+              <catDesc>Technik_Industrie:EDV_Elektronik</catDesc>
+            </category>
+            <category id="topic.technik-industrie.kfz">
+              <catDesc>Technik_Industrie:Kfz</catDesc>
+            </category>
+            <category id="topic.technik-industrie.transport-verkehr">
+              <catDesc>Technik_Industrie:Transport_Verkehr</catDesc>
+            </category>
+            <category id="topic.technik-industrie.umweltschutz">
+              <catDesc>Technik_Industrie:Umweltschutz</catDesc>
+            </category>
+            <category id="topic.technik-industrie.unfaelle">
+              <catDesc>Technik_Industrie:Unfaelle</catDesc>
+            </category>
+          </category>
+          <category id="topic.wirtschaft-finanzen">
+            <catDesc>Wirtschaft_Finanzen</catDesc>
+            <category id="topic.wirtschaft-finanzen.banken">
+              <catDesc>Wirtschaft_Finanzen:Banken</catDesc>
+            </category>
+            <category id="topic.wirtschaft-finanzen.bilanzen">
+              <catDesc>Wirtschaft_Finanzen:Bilanzen</catDesc>
+            </category>
+            <category id="topic.wirtschaft-finanzen.oeffentliche-finanzen">
+              <catDesc>Wirtschaft_Finanzen:Oeffentliche_Finanzen</catDesc>
+            </category>
+            <category id="topic.wirtschaft-finanzen.sozialprodukt">
+              <catDesc>Wirtschaft_Finanzen:Sozialprodukt</catDesc>
+            </category>
+            <category id="topic.wirtschaft-finanzen.waehrung">
+              <catDesc>Wirtschaft_Finanzen:Waehrung</catDesc>
+            </category>
+          </category>
+          <category id="topic.wissenschaft">
+            <catDesc>Wissenschaft</catDesc>
+            <category id="topic.wissenschaft.populaerwissenschaft">
+              <catDesc>Wissenschaft:Populaerwissenschaft</catDesc>
+            </category>
+          </category>
+          <category id="topic.unklassifizierbar">
+            <catDesc>Text ist thematisch nicht klassifizierbar.</catDesc>
+          </category>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language id="de" usage="100">Deutsch</language>
+      </langUsage>
+      <textDesc/>
+    </profileDesc>
+  </idsHeader>

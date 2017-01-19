@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="document" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+      <fileDesc>
+        <titleStmt>
+          <dokumentSigle>GOE/AGA</dokumentSigle>
+          <d.title>Goethe: Autobiographische Schriften II, (1817-1825, 1832)</d.title>
+        </titleStmt>
+        <publicationStmt>
+          <distributor/>
+          <pubAddress/>
+          <availability region="world" status="unknown"/>
+          <pubDate/>
+        </publicationStmt>
+        <sourceDesc>
+          <biblStruct>
+            <monogr>
+              <h.title type="main"/>
+              <edition>
+                <further/>
+                <kind/>
+                <appearance/>
+              </edition>
+              <imprint/>
+              <biblNote n="1">Zur Entstehungszeit siehe Bd. 9, Nachwort, S. 621</biblNote>
+            </monogr>
+          </biblStruct>
+        </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+        <creation>
+          <creatDate>1820-1822</creatDate>
+          <creatRef>(Geschrieben: 1820-1822)</creatRef>
+          <creatRefShort>(Geschr. 1820-1822)</creatRefShort>
+        </creation>
+        <textDesc>
+          <textType>Autobiographie</textType>
+          <textTypeRef/>
+        </textDesc>
+      </profileDesc>
+    </idsHeader>
