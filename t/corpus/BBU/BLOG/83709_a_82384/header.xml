@@ -17,7 +17,7 @@
             <biblStruct>
               <monogr>
                 <h.author>Dragoș Bucurenci</h.author>
-                <editor role="translator">-</editor>
+                <!-- <editor role="translator">-</editor> -->
                 <imprint>
                   <pubDate type="year">2013</pubDate>
                   <pubDate type="month">10</pubDate>

@@ -38,6 +38,7 @@ is($meta->{author}, 'Dragoș Bucurenci', 'Author');
 
 ok(!$meta->{publisher}, 'Publisher');
 ok(!$meta->{editor}, 'Editor');
+is($meta->{translator}, '[TRANSLATOR]', 'Translator');
 #is($meta->{text_type}, 'Autobiographie', 'Correct Text Type');
 ok(!$meta->{text_type_art}, 'Correct Text Type Art');
 # is($meta->{text_type_ref}, '', 'Correct Text Type Ref');

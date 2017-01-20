@@ -59,10 +59,20 @@ sub parse {
     my $author    = $analytic->at('h\.author');
     my $editor    = $analytic->at('editor');
 
+    # Editor contains translator
+    my $translator;
+    if ($editor && $editor->attr('role') && $editor->attr('role') eq 'translator') {
+      # Translator is only supported on the text level currently
+      $self->{translator} = _squish $editor->all_text;
+      $editor = undef;
+    }
+    else {
+      $editor = $editor ? _squish $editor->all_text : undef;
+    };
+
     $title     = $title     ? _squish $title->all_text     : undef;
     $sub_title = $sub_title ? _squish $sub_title->all_text : undef;
     $author    = $author    ? _squish $author->all_text    : undef;
-    $editor    = $editor    ? _squish $editor->all_text    : undef;
 
     # Text meta data
     if ($type eq 'text') {
