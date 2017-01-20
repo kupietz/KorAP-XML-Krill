@@ -215,7 +215,7 @@ sub parse {
     };
     unless ($create_date =~ s{^(\d{4})$}{$1\.00\.00}) {
       unless ($create_date =~ s{^(\d{4})\.(\d{2})$}{$1\.$2\.00}) {
-  $create_date =~ /^\d{4}\.\d{2}\.\d{2}$/;
+        $create_date =~ /^\d{4}\.\d{2}\.\d{2}$/;
       };
     };
     if ($create_date =~ /^\d{4}(?:\.\d{2}(?:\.\d{2})?)?$/) {
@@ -231,8 +231,8 @@ sub parse {
 
     $temp->find("catRef")->each(
       sub {
-  my ($ign, @ttopic) = split('\.', $_->attr('target'));
-  push(@topic, @ttopic);
+        my ($ign, @ttopic) = split('\.', $_->attr('target'));
+        push(@topic, @ttopic);
       }
     );
     $self->{text_class} = [@topic] if @topic > 0;
@@ -271,8 +271,8 @@ sub parse {
 
     if ($temp = $dom->at('sourceDesc reference[type=complete]')) {
       if (my $ref_text = _squish $temp->all_text) {
-  $ref_text =~ s!$REF_RE!!;
-  $self->{reference} = $ref_text;
+        $ref_text =~ s!$REF_RE!!;
+        $self->{reference} = $ref_text;
       };
     };
 
@@ -284,7 +284,7 @@ sub parse {
     if ($temp = $dom->at('biblStruct biblScope[type=pp]')) {
       $temp = _squish $temp->all_text;
       if ($temp && $temp =~ m/(\d+)\s*-\s*(\d+)/) {
-  $self->{pages} = $1 . '-' . $2;
+        $self->{pages} = $1 . '-' . $2;
       };
     };
   };

@@ -24,7 +24,7 @@ sub parse {
         }
 
         # ana tag
-        elsif ($f->{-name} eq 'ana' &&
+        elsif ($f->{-name} eq 'msd' &&
                  ($found = $f->{'#text'})) {
           my ($pos, $msd) = split(/ /, $found);
           if ($msd) {

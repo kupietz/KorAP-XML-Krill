@@ -139,29 +139,8 @@ is($output->{data}->{layerInfos}, 'dereko/s=spans drukola/l=tokens drukola/m=tok
 
 my $token = join('||', @{$output->{data}->{stream}->[7]});
 
-diag 'Example data invalid';
-
-#like($token, qr/s:Autobiographische/, 'data');
-#like($token, qr/_0\$<i>0<i>17/, 'data');
-#like($token, qr!<>:dereko/s:s\$<b>64<i>0<i>30<i>2<b>4!, 'data');
-#like($token, qr!<>:base\/s:t\$<b>64<i>0<i>35250<i>5233<b>0!, 'data');
-#like($token, qr!<>:base/s:s\$<b>64<i>0<i>30<i>2<b>2!, 'data');
-#like($token, qr!-:base\/paragraphs\$\<i\>14!, 'data');
-#like($token, qr!-:base\/sentences\$\<i\>215!, 'data');
-
-done_testing;
-__END__
-
-# Check paragraph
-$first_token = join('||', @{$output->{data}->{stream}->[4]});
-like($first_token, qr/s:immer/, 'data');
-like($first_token, qr!<>:base\/s:s\$<b>64<i>53<i>254<i>32<b>2!, 'data');
-like($first_token, qr!<>:dereko\/s:s\$<b>64<i>53<i>254<i>32<b>5<s>1!, 'data');
-like($first_token, qr!<>:base/s:p\$\<b>64<i>53<i>3299<i>504<b>1!, 'data');
-like($first_token, qr!<>:dereko/s:p\$\<b>64<i>53<i>3299<i>504<b>4!, 'data');
-
-$first_token = join('||', @{$output->{data}->{stream}->[180]});
-like($first_token, qr/i:geschäften/, 'data');
+like($token, qr!drukola/p:ADV!, 'data');
+like($token, qr!drukola/m:\@ADVL!, 'data');
 
 done_testing;
 __END__
