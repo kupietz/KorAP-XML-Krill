@@ -79,9 +79,12 @@ use Parallel::ForkManager;
 # 2016/12/21
 # - added support for base-sentences and base-tokenizations
 #
+# 2017/01/20
+# - added support for DRuKoLa annotations
+#
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2016/12/21';
+our $LAST_CHANGE = '2017/01/20';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -226,6 +229,10 @@ push(@layers, ['XIP', 'Morpho']);
 push(@layers, ['XIP', 'Constituency']);
 push(@layers, ['XIP', 'Sentences']);
 push(@layers, ['XIP', 'Dependency']);
+
+# DRuKoLa
+push(@layers, ['DRuKoLa', 'Morpho']);
+
 
 # Check filters
 my @filtered_anno;
@@ -890,6 +897,14 @@ L<Krill|https://github.com/KorAP/Krill>.
 =over 4
 
 =item #Lemma
+
+=item #Morpho
+
+=back
+
+=item B<DRuKoLa>
+
+=over 4
 
 =item #Morpho
 
