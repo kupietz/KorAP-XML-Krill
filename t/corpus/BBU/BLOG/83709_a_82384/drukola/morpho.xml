@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="BBU_BLOG.83709_a_82384" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="7" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">schimba</f>
+            <f name="pos">VERB</f>
+            <f name="msd">msd=Vmis3s|number=singular|type=predicative|person=third|tense=past|mood=indicative</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s1" from="8" to="13" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">vorbă</f>
+            <f name="pos">NOUN</f>
+            <f name="msd">msd=Ncfsry|case=Ncfsry|definiteness=yes|gender=feminine|number=singular|type=common</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s2" from="14" to="20" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">dragoș</f>
+            <f name="pos">NOUN</f>
+            <f name="msd">msd=Np|type=proper</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s3" from="21" to="30" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">bucurenci</f>
+            <f name="pos">NOUN</f>
+            <f name="msd">msd=Np|type=proper</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s4" from="31" to="33" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">cu</f>
+            <f name="pos">ADPOSITION</f>
+            <f name="msd">msd=Sp</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s5" from="34" to="40" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">lucian</f>
+            <f name="pos">NOUN</f>
+            <f name="msd">msd=Np|type=proper</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s6" from="41" to="49" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">mândruț</f>
+            <f name="pos">ADJECTIVE</f>
+            <f name="msd">msd=Afpfsrn|case=Afpfsrn|definiteness=no|gender=feminine|number=singular</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s7" from="50" to="52" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">la</f>
+            <f name="pos">ADPOSITION</f>
+            <f name="msd">msd=Sp</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s8" from="53" to="54" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">“</f>
+            <f name="pos">NOUN</f>
+            <f name="msd">msd=Np|type=proper</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s9" from="55" to="61" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">schimba</f>
+            <f name="pos">VERB</f>
+            <f name="msd">msd=Vmis3s|number=singular|type=predicative|person=third|tense=past|mood=indicative</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s10" from="62" to="67" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">vorbă</f>
+            <f name="pos">NOUN</f>
+            <f name="msd">msd=Ncfsry|case=Ncfsry|definiteness=yes|gender=feminine|number=singular|type=common</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s11" from="68" to="68" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">”</f>
+            <f name="pos">PUNCTUATION</f>
+            <f name="msd"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s12" from="69" to="71" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">pe</f>
+            <f name="pos">ADPOSITION</f>
+            <f name="msd">msd=Sp</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s13" from="72" to="78" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">gând</f>
+            <f name="pos">NOUN</f>
+            <f name="msd">msd=Ncmsry|case=Ncmsry|definiteness=yes|gender=masculine|number=singular|type=common</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s14" from="79" to="83" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Live</f>
+            <f name="pos">NOUN</f>
+            <f name="msd">msd=Np|type=proper</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s15" from="84" to="84" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">.</f>
+            <f name="pos">PUNCTUATION</f>
+            <f name="msd"></f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

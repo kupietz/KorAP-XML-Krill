@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>BBU/BLOG.83709_a_82384</textSigle>
+            <t.title>Schimbă vorba</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world">QAO-NC</availability>
+            <pubDate/>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <monogr>
+                <h.author>Dragoș Bucurenci</h.author>
+                <editor role="translator">-</editor>
+                <imprint>
+                  <pubDate type="year">2013</pubDate>
+                  <pubDate type="month">10</pubDate>
+                  <pubDate type="day">5</pubDate>
+                  <pubPlace>URL:http://www.bucurenci.ro</pubPlace>
+                </imprint>
+              </monogr>
+            </biblStruct>
+          </sourceDesc>
+        </fileDesc>
+      </idsHeader>
