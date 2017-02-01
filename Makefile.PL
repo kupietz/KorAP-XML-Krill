@@ -11,7 +11,7 @@ WriteMakefile(
   VERSION_FROM => 'lib/KorAP/XML/Krill.pm',
   LICENSE      => 'bsd_2',
   PREREQ_PM => {
-    'Mojolicious'     => 6.11,
+    'Mojolicious'     => 7.23,
     'Packed::Array'   => 0.01,
     'Test::Output'    => 0,
     'Log::Log4perl'   => 1.42,
