@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>Corola-Bucurenci/Blog.83701_a_82376</textSigle>
+            <t.title>Confesiunile unui misogin</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world">QAO-NC</availability>
+            <pubDate/>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <monogr>
+                <h.author>Dragoș Bucurenci</h.author>
+                <editor role="translator">-</editor>
+                <imprint>
+                  <pubDate type="year">2013</pubDate>
+                  <pubDate type="month">11</pubDate>
+                  <pubDate type="day">18</pubDate>
+                  <pubPlace>URL:http://www.bucurenci.ro</pubPlace>
+                </imprint>
+              </monogr>
+            </biblStruct>
+          </sourceDesc>
+        </fileDesc>
+         <profileDesc>
+             <textDesc>
+                 <textType>-.-</textType>
+             <textClass>
+                 <catRef target="-.-" scheme="topic"/>
+             </textClass>
+         </profileDesc>
+      </idsHeader>

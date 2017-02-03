@@ -63,7 +63,8 @@ sub parse {
     my $translator;
     if ($editor && $editor->attr('role') && $editor->attr('role') eq 'translator') {
       # Translator is only supported on the text level currently
-      $self->{translator} = _squish $editor->all_text;
+      $translator = _squish $editor->all_text;
+      $self->{translator} = $translator if $translator;
       $editor = undef;
     }
     else {
@@ -112,7 +113,7 @@ sub parse {
     # Corpus title not yet given
     unless ($self->{corpus_title}) {
       if ($title = $dom->at('fileDesc > titleStmt > c\.title')) {
-        $title = $title->all_text;
+        $title = _squish($title->all_text);
 
         if ($title) {
           $self->{corpus_title} = _remove_prefix($title, $self->corpus_sigle);
@@ -125,7 +126,7 @@ sub parse {
   elsif ($type eq 'doc') {
     unless ($self->{doc_title}) {
       if ($title = $dom->at('fileDesc > titleStmt > d\.title')) {
-        $title = $title->all_text;
+        $title = _squish($title->all_text);
 
         if ($title) {
           $self->{doc_title} = _remove_prefix($title, $self->doc_sigle);
@@ -138,7 +139,7 @@ sub parse {
   elsif ($type eq 'text') {
     unless ($self->{title}) {
       if ($title = $dom->at('fileDesc > titleStmt > t\.title')) {
-        $title = $title->all_text;
+        $title = _squish($title->all_text);
         if ($title) {
           $self->{title} = _remove_prefix($title, $self->text_sigle);
         };
@@ -242,14 +243,14 @@ sub parse {
 
     $temp->find("catRef")->each(
       sub {
-        my ($ign, @ttopic) = split('\.', $_->attr('target'));
+        my ($ign, @ttopic) = grep { $_ } map { _squish($_) } split('\.', $_->attr('target'));
         push(@topic, @ttopic);
       }
     );
     $self->{text_class} = [@topic] if @topic > 0;
 
     my $kws = $self->{keywords};
-    my @keywords = $temp->find("h\.keywords > keyTerm")->each;
+    my @keywords = $temp->find("h\.keywords > keyTerm")->map(sub {_squish($_) })->grep(sub { $_ })->each;
     push(@$kws, @keywords) if @keywords > 0;
   };
 

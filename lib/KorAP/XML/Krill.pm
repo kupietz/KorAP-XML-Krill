@@ -69,12 +69,14 @@ sub parse {
   else {
     # Load file
     $file = b(Mojo::File->new($data_xml)->slurp);
+
     try {
       local $SIG{__WARN__} = sub {
         $error = 1;
       };
 
       $rt = xml2hash($file, text => '#text', attr => '-')->{raw_text};
+
     } catch  {
       $self->log->warn($unable);
       $error = 1;

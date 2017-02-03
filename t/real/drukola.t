@@ -106,5 +106,23 @@ like($token, qr!drukola/m:definiteness:yes!, 'data');
 like($token, qr!drukola/m:gender:feminine!, 'data');
 like($token, qr!drukola/p:NOUN!, 'data');
 
+
+# New
+# BBU2/BLOG/83709_a_82384
+$path = catdir(dirname(__FILE__), '../corpus/BBU2/Blog/83701_a_82376');
+
+
+
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc->parse, 'Parse document');
+
+$meta = $doc->meta;
+
+ok(!exists $meta->{doc_title}, 'No doc title');
+ok(!exists $meta->{translator}, 'No translator');
+
+ok(!exists $meta->{text_class}, 'No translator');
+
+
 done_testing;
 __END__
