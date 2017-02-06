@@ -47,11 +47,11 @@ sub list_texts {
   my $file = $self->[0]->[0];
   foreach (`unzip -l -UU -qq $file "*/data.xml"`) {
     if (m![\t\s]
-      ((?:\./)?
-	[^\t\s/\.]+?/ # Corpus
-	[^\t\s/]+?/   # Document
-	[^\t\s/]+?    # Text
-      )/data\.xml$!x) {
+          ((?:\./)?
+            [^\s\t/\.]+?/ # Corpus
+            [^\/]+?/   # Document
+            [^/]+?    # Text
+          )/data\.xml$!x) {
       push @texts, $1;
     };
   };

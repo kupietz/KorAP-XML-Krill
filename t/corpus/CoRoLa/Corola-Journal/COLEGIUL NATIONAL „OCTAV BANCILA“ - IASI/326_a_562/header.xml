@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>Corola-Journal/COLEGIUL NATIONAL „OCTAV BANCILA“ - IASI.326_a_562</textSigle>
+            <t.title>APOGEUL ARHITECTURĂ ȘI DESIGN</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world">QAO-NC</availability>
+            <pubDate/>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <monogr>
+                <h.author>COLEGIUL NATIONAL „OCTAV BANCILA“ - IASI</h.author>
+                <editor role="translator">-</editor>
+                <imprint>
+                </imprint>
+              </monogr>
+            </biblStruct>
+          </sourceDesc>
+        </fileDesc>
+         <profileDesc>
+             <textDesc>
+                 <textType>Journalistic.-</textType>
+             <textClass>
+                 <catRef target="Art And Culture.Others" scheme="topic"/>
+             </textClass>
+         </profileDesc>
+      </idsHeader>
