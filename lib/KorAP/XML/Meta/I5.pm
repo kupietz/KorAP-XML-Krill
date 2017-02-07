@@ -314,6 +314,7 @@ sub _remove_prefix {
   $prefix =~ s!^([^/]+?/[^/]+?)/!$1\.!;
   if (index($title, $prefix) == 0) {
     $title = substr($title, length($prefix));
+    $title =~ s!^\s*[-;:,]\s*!!;
   };
 
   return _squish $title;

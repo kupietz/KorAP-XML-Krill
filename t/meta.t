@@ -434,6 +434,22 @@ is($hash->{text_class}->[1], 'inland');
 is($hash->{author}, 'Hustedt, Michaele');
 is($hash->{pub_place}, 'Berlin');
 
+
+# UMB45/D38/00001
+$path = catdir(dirname(__FILE__), 'corpus','UMB45','D38','00001');
+ok($doc = KorAP::XML::Krill->new( path => $path), 'Load Korap::Document');
+like($doc->path, qr!\Q$path\E/!, 'Path');
+
+ok($doc->parse, 'Parse document');
+$meta = $doc->meta;
+
+is($doc->text_sigle, 'UMB45/D38/00001', 'text sigle');
+is($doc->doc_sigle, 'UMB45/D38', 'doc sigle');
+is($doc->corpus_sigle, 'UMB45', 'corpus sigle');
+
+is($meta->{title}, 'In: Über Schuld und Aufgabe der geistigen Führungsschicht im deutschen politischen Leben der Gegenwart. - Göttingen, 1955', 'title');
+
+
 done_testing;
 __END__
 

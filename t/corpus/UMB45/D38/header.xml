@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="document" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+      <fileDesc>
+        <titleStmt>
+          <dokumentSigle>UMB45/D38</dokumentSigle>
+          <d.title>Koellreutter, Otto: Über Schuld und Aufgabe der geistigen Führungsschicht im deutschen politischen Leben der Gegenwart, 1955</d.title>
+        </titleStmt>
+        <publicationStmt>
+          <distributor/>
+          <pubAddress/>
+          <availability region="world">QAO-NC</availability>
+          <pubDate/>
+        </publicationStmt>
+        <sourceDesc>
+          <biblStruct>
+            <monogr>
+              <h.title type="main">Über Schuld und Aufgabe der geistigen Führungsschicht im deutschen politischen Leben der Gegenwart</h.title>
+              <h.title type="sub"/>
+              <h.author>Koellreutter, Otto</h.author>
+              <editor/>
+              <edition>
+                <further/>
+                <kind/>
+                <appearance/>
+              </edition>
+              <imprint>
+                <publisher>Göttinger Verlags-Anstalt</publisher>
+                <pubDate type="year">1955</pubDate>
+                <pubDate type="month"/>
+                <pubDate type="day"/>
+       <pubPlace key="DE">Göttingen</pubPlace>
+              </imprint>
+              <biblScope type="vol"/>
+              <biblScope type="volume-title"/>
+            </monogr>
+          </biblStruct>
+          <reference type="super" assemblage="regular">UMB45/D38 Koellreutter, Otto: Über Schuld und Aufgabe der geistigen Führungsschicht im deutschen politischen Leben der Gegenwart. Göttingen: Göttinger Verlags-Anstalt, 1955</reference>
+        </sourceDesc>
+      </fileDesc>
+    </idsHeader>

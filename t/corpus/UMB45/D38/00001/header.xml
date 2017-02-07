@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>UMB45/D38.00001</textSigle>
+            <t.title assemblage="regular">UMB45/D38.00001, In: Über Schuld und Aufgabe der geistigen Führungsschicht im deutschen politischen Leben der Gegenwart. - Göttingen, 1955</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world">QAO-NC</availability>
+            <pubDate/>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <h.title type="main"/>
+                <h.title type="sub"/>
+                <h.title type="abbr" level="m"/>
+                <h.title type="abbr" level="a"/>
+                <h.author/>
+                <editor/>
+                <imprint/>
+                <biblScope type="subsume"/>
+                <biblScope type="pp">S. 5</biblScope>
+                <biblNote n="1"/>
+              </analytic>
+              <monogr>
+                <h.title type="main"/>
+                <imprint/>
+              </monogr>
+            </biblStruct>
+            <reference type="complete" assemblage="non-automatic">UMB45/D38.00001 In: Koellreutter, Otto: Über Schuld und Aufgabe der geistigen Führungsschicht im deutschen politischen Leben der Gegenwart, Göttingen: Göttinger Verlags-Anstalt, 1955, S. 5</reference>
+            <reference type="short" assemblage="regular">UMB45/D38.00001 In: Koellreutter, Otto: Über Schuld und Aufgabe der geistigen Führungsschicht im deutschen politischen Leben der Gegenwart, Göttingen: Göttinger Verlags-Anstalt, 1955, S. 5 [Kurzzitierung nicht verfügbar]</reference>
+          </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+          <samplingDecl/>
+          <tagsDecl>
+            <tagUsage gi="pb" occurs="1"/>
+            <tagUsage gi="p" occurs="1"/>
+            <tagUsage gi="s" occurs="6"/>
+          </tagsDecl>
+        </encodingDesc>
+        <profileDesc>
+          <creation>
+            <creatDate>1955</creatDate>
+            <creatRef/>
+            <creatRefShort/>
+          </creation>
+          <textClass/>
+          <textDesc>
+            <textType/>
+            <textTypeRef/>
+            <textDomain>Gesellschaft/Politik</textDomain>
+          </textDesc>
+        </profileDesc>
+      </idsHeader>
