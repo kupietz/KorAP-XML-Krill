@@ -10,7 +10,7 @@ use Data::Dumper;
 
 ok(my $tokens = TestInit::tokens('0001'), 'Parse tokens');
 
-ok($tokens->add('DeReKo', 'Structure'), 'Add Structure');
+ok($tokens->add('DeReKo', 'Structure', 'pagebreaks'), 'Add Structure');
 
 my $data = $tokens->to_data->{data};
 
@@ -38,8 +38,6 @@ is($data->{stream}->[0]->[13],
    '@:dereko/s:version:1.1$<b>17<s>2',
    'Attribute of idsHeader');
 
-
-
 is($data->{stream}->[0]->[14],
    '@:dereko/s:pattern:text$<b>17<s>2',
    'Attribute of idsHeader');
@@ -54,6 +52,10 @@ is($data->{stream}->[4]->[2],
 
 is($data->{stream}->[6]->[0],
    '<>:dereko/s:pb$<b>65<i>42<i>42<i>6<b>6<s>1',
+   'Pagebreak element');
+
+is($data->{stream}->[6]->[-1],
+   '~:base/s:pb$<i>2<i>42',
    'Pagebreak element');
 
 done_testing;

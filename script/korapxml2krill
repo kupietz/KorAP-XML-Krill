@@ -82,9 +82,12 @@ use Parallel::ForkManager;
 # 2017/01/20
 # - added support for DRuKoLa annotations
 #
+# 2017/02/08
+# - added support for pagebreak annotations
+#
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2017/01/20';
+our $LAST_CHANGE = '2017/02/08';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -109,6 +112,7 @@ GetOptions(
   'token|t=s'   => \(my $token_base = 'OpenNLP#tokens'),
   'base-sentences|bs=s' => \(my $base_sentences = ''),
   'base-paragraphs|bp=s' => \(my $base_paragraphs = ''),
+  'base-pagebreaks|bpb=s' => \(my $base_pagebreaks = ''),
   'gzip|z'      => \(my $gzip),
   'skip|s=s'    => \@skip,
   'sigle|sg=s'  => \@sigle,
@@ -186,14 +190,19 @@ push(@layers, ['CoreNLP', 'Constituency']);
 
 
 # DeReKo
-if ($base_sentences eq 'dereko#structure' && $base_paragraphs eq 'dereko#structure') {
-  push(@layers, ['DeReKo', 'Structure', 'base-sentences-paragraphs']);
-}
-elsif ($base_sentences eq 'dereko#structure') {
-  push(@layers, ['DeReKo', 'Structure', 'base-sentences']);
-}
-elsif ($base_paragraphs eq 'dereko#structure') {
-  push(@layers, ['DeReKo', 'Structure', 'base-paragraphs']);
+my @dereko_attr = ();
+if ($base_sentences eq 'dereko#structure') {
+  push @dereko_attr, 'sentences';
+};
+if ($base_paragraphs eq 'dereko#structure') {
+  push @dereko_attr, 'paragraphs';
+};
+if ($base_pagebreaks eq 'dereko#structure') {
+  push @dereko_attr, 'pagebreaks';
+};
+
+if ($dereko_attr[0]) {
+  push(@layers, ['DeReKo', 'Structure', 'base-' . join('-', @dereko_attr)]);
 }
 else {
   push(@layers, ['DeReKo', 'Structure']);
@@ -718,6 +727,14 @@ Currently C<DeReKo#Structure> is the only additional layer supported.
 Define the layer for base paragraphs.
 If given, this will be used instead of using C<Base#Paragraphs>.
 Currently C<DeReKo#Structure> is the only additional layer supported.
+
+ Defaults to unset.
+
+
+=item B<--base-pagebreaks|-bpb> <foundry>#<layer>
+
+Define the layer for base pagebreaks.
+Currently C<DeReKo#Structure> is the only layer supported.
 
  Defaults to unset.
 

@@ -1,5 +1,7 @@
 package KorAP::XML::Annotation::DeReKo::Structure;
 use KorAP::XML::Annotation::Base;
+use List::Util qw/first/;
+use Scalar::Util qw/looks_like_number/;
 
 sub parse {
   my $self = shift;
@@ -55,23 +57,39 @@ sub parse {
       };
 
       # Use sentence and paragraph elements for base
-      if ($as_base && ($name eq 's' || $name eq 'p')) {
-
-        # Clone Multiterm
-        my $mt2 = $mt->clone;
-        $mt2->term('<>:base/s:' . $name);
+      if ($as_base && ($name eq 's' || $name eq 'p' || $name eq 'pb')) {
 
         if ($name eq 's' && index($as_base, 'sentences') >= 0) {
+          # Clone Multiterm
+          my $mt2 = $mt->clone;
+          $mt2->term('<>:base/s:' . $name);
           $mt2->payload('<b>2');
           $sentences++;
+
+          # Add to stream
+          $mtt->add($mt2);
         }
         elsif ($name eq 'p' && index($as_base, 'paragraphs') >= 0) {
+          # Clone Multiterm
+          my $mt2 = $mt->clone;
+          $mt2->term('<>:base/s:' . $name);
           $mt2->payload('<b>1');
           $paragraphs++;
-        };
 
-        # Add to stream
-        $mtt->add($mt2);
+          # Add to stream
+          $mtt->add($mt2);
+        }
+
+        # Add pagebreaks
+        elsif ($name eq 'pb' && index($as_base, 'pagebreaks') >= 0) {
+          if (my $nr = first { $_->{-name} eq 'n' } @$attrs) {
+            if (($nr = $nr->{'#text'}) && looks_like_number($nr)) {
+              my $mt2 = $mtt->add('~:base/s:pb');
+              $mt2->payload('<i>' . $nr . '<i>' . $span->o_start);
+              $mt2->store_offsets(0);
+            };
+          };
+        };
       };
 
       # Add attributes
