@@ -144,6 +144,7 @@ GetOptions(
 
 $base_sentences = lc $base_sentences;
 $base_paragraphs = lc $base_paragraphs;
+$base_pagebreaks = lc $base_pagebreaks;
 
 my %ERROR_HASH = (
   -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
@@ -197,6 +198,7 @@ if ($base_sentences eq 'dereko#structure') {
 if ($base_paragraphs eq 'dereko#structure') {
   push @dereko_attr, 'paragraphs';
 };
+
 if ($base_pagebreaks eq 'dereko#structure') {
   push @dereko_attr, 'pagebreaks';
 };

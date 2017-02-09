@@ -204,6 +204,42 @@ is($json->{docSubTitle}, 'Subkorpus Ortsblatt, Jahrgang 2013, Monat Januar', 'do
 is($json->{keywords}, 'sgbrKodex:T', 'keywords');
 is($json->{publisher}, 'Dorfblatt GmbH', 'publisher');
 
+
+
+# AGA with base info
+unlink $output;
+ok(!-f $output, 'Output does not exist');
+$input = catdir($f, '..', 'corpus', 'GOE2', 'AGA', '03828');
+ok(-d $input, 'Input directory found');
+
+ok(!-f $output, 'Output does not exist');
+
+$call = join(
+  ' ',
+  'perl', $script,
+  '--input' => $input,
+  '--output' => $output,
+  '-t' => 'base#tokens_aggr',
+  '-bs' => 'DeReKo#Structure',
+  '-bp' => 'DeReKo#Structure',
+  '-bpb' => 'DeReKo#Structure',
+  '-l' => 'INFO'
+);
+
+stderr_like(
+  sub {
+    system($call);
+  },
+  qr!The code took!,
+  $call
+);
+ok(-f $output, 'Output does exist');
+ok(($file = Mojo::File->new($output)->slurp), 'Slurp data');
+ok(($json = decode_json $file), 'decode json');
+
+is($json->{title}, 'Autobiographische Einzelheiten', 'title');
+is($json->{data}->{stream}->[0]->[-1], '~:base/s:pb$<i>529<i>0', 'Pagebreak annotation');
+
 done_testing;
 __END__
 
