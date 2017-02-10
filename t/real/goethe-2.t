@@ -128,11 +128,11 @@ ok(!exists $output->{docAuthor}, 'Correct Text Type');
 ok(!exists $output->{docEditor}, 'Correct Text Type');
 
 ## Base
-$tokens->add('DeReKo', 'Structure', 'base_sentences_paragraphs');
+$tokens->add('DeReKo', 'Structure', 'base_sentences_paragraphs_pagebreaks');
 
 $output = $tokens->to_data;
 
-is($output->{data}->{foundries}, 'dereko dereko/structure dereko/structure/base_sentences_paragraphs', 'Foundries');
+is($output->{data}->{foundries}, 'dereko dereko/structure dereko/structure/base_sentences_paragraphs_pagebreaks', 'Foundries');
 is($output->{data}->{layerInfos}, 'dereko/s=spans', 'layerInfos');
 my $first_token = join('||', @{$output->{data}->{stream}->[0]});
 like($first_token, qr/s:Autobiographische/, 'data');
@@ -142,6 +142,9 @@ like($first_token, qr!<>:base\/s:t\$<b>64<i>0<i>35250<i>5233<b>0!, 'data');
 like($first_token, qr!<>:base/s:s\$<b>64<i>0<i>30<i>2<b>2!, 'data');
 like($first_token, qr!-:base\/paragraphs\$\<i\>14!, 'data');
 like($first_token, qr!-:base\/sentences\$\<i\>215!, 'data');
+
+# $output->{data}->{stream}->[378];
+diag 'BUG: Expected a missing pagebreak';
 
 # Check paragraph
 $first_token = join('||', @{$output->{data}->{stream}->[4]});
