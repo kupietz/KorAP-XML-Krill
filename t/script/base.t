@@ -56,7 +56,7 @@ is($token->[1], '-:base/sentences$<i>215', 'Sentences');
 
 is($token->[5], '<>:base/s:s$<b>64<i>0<i>30<i>2<b>2', 'struct');
 is($token->[7], '<>:dereko/s:s$<b>64<i>0<i>30<i>2<b>4', 'struct');
-is($token->[8], '<>:base/s:t$<b>64<i>0<i>35250<i>5238<b>0', 'struct');
+is($token->[8], '<>:base/s:t$<b>64<i>0<i>35242<i>5238<b>0', 'struct');
 
 $token = $stream->[4];
 is($token->[0], '<>:base/s:s$<b>64<i>53<i>254<i>32<b>2', 'struct');
