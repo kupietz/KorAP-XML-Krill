@@ -296,7 +296,7 @@ sub parse {
     if ($temp = $dom->at('biblStruct biblScope[type=pp]')) {
       $temp = _squish $temp->all_text;
       if ($temp && $temp =~ m/(\d+)\s*-\s*(\d+)/) {
-        $self->{pages} = $1 . '-' . $2;
+        $self->{src_pages} = $1 . '-' . $2;
       };
     };
   };
