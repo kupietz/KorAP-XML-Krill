@@ -1,4 +1,4 @@
-0.25 2017-02-16
+0.25 2017-02-17
         - Updated to Mojolicious 7.20
         - Fixed meta treatment in case analytic and monogr
           are available
@@ -7,6 +7,7 @@
           compliant with CoRoLa.
         - Added support for pagebreak annotations.
         - Renamed "pages" to "srcPages".
+        - Fixed handling of prefixes for text sigles.
 
 0.24 2016-12-21
         - Added --base-sentences and --base-paragraphs options

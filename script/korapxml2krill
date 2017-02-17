@@ -391,12 +391,17 @@ elsif ($cmd eq 'extract') {
         # Sigle is a doc sigle
         if ($_ =~ m!^(?:\.[/\\])?[^/\\]+?[/\\][^/\\]+?$!) {
 
-          print "$_ ...\n";
+          print "$_ ...";
           # Check if a prefix is needed
           unless ($prefix_check) {
-            $prefix = $archive->check_prefix;
+
+            if ($prefix = $archive->check_prefix) {
+              print " with prefix ...";
+            };
             $prefix_check = 1;
           };
+
+          print "\n";
 
           # TODO: Make this OS independent
           my $path = ($prefix ? './' : '') . $_;
@@ -408,8 +413,18 @@ elsif ($cmd eq 'extract') {
           );
           print "extracted.\n";
         }
+
+        # Sigle is a text sigle
         else {
           push @new_sigle, $_;
+
+          unless ($prefix_check) {
+
+            if ($prefix = $archive->check_prefix) {
+              print " with prefix ...";
+            };
+            $prefix_check = 1;
+          };
         };
       };
       @sigle = @new_sigle;
@@ -417,10 +432,12 @@ elsif ($cmd eq 'extract') {
 
     # Iterate over all given sigles and extract
     foreach (@sigle) {
+
       print "$_ ...\n";
 
       # TODO: Make this OS independent
       print '... ' . (
+
         $archive->extract_text(
           ($prefix ? './' : '') . $_, $output
         ) ? '' : 'not '

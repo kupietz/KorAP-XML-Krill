@@ -215,5 +215,30 @@ ok(-f catfile($output, 'WPD15', 'A00', '00081', 'tree_tagger', 'morpho.xml'), 'N
 ok(-f catfile($output, 'WPD15', 'A00', '00081', 'opennlp', 'morpho.xml'), 'New archive');
 
 
+# With quotes:
+# Test with document sigle
+my $input_quotes = catfile($f, '..', 'corpus', 'archive_quotes.zip');
+ok(-f $input, 'Input archive found');
+$output2 = undef;
+$output2 = tempdir(CLEANUP => 1);
+
+$call = join(
+  ' ',
+  'perl', $script,
+  'extract',
+  '--input' => $input_quotes,
+  '--output' => $output2,
+  '-sg' => '"TEST/BSP \"Example\"/1"'
+);
+
+# Test with sigle
+stdout_like(
+  sub {
+    system($call);
+  },
+  qr!TEST/BSP "Example"\/1 $sep extracted!s,
+  $call
+);
+
 done_testing;
 __END__

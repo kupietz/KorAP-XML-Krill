@@ -1,5 +1,6 @@
 package KorAP::XML::Archive;
 use Carp qw/carp/;
+use Mojo::Util qw/quote/;
 use File::Spec::Functions qw(rel2abs);
 use strict;
 use warnings;
@@ -259,6 +260,7 @@ sub extract_text {
     unshift @breadcrumbs, $prefix if ($prefix && $archive->[1]);
 
     if ($first) {
+
       # Only extract from first file
       push(@cmd, join('/', @breadcrumbs, 'header.xml'));
       push(@cmd, join('/', @breadcrumbs, $doc, 'header.xml'));

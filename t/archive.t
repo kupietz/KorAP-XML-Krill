@@ -47,8 +47,10 @@ $file = catfile(dirname(__FILE__), 'corpus','archive_rei.zip');
 $archive = KorAP::XML::Archive->new($file);
 ok(!$archive->check_prefix, 'Archive has no prefix');
 
-
-# TODO: Test attaching!
+# No leading '.'
+$file = catfile(dirname(__FILE__), 'corpus','archive_rei.zip');
+$archive = KorAP::XML::Archive->new($file);
+ok(!$archive->check_prefix, 'Archive has no dot prefix');
 
 done_testing;
 
