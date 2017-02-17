@@ -145,6 +145,25 @@ $call = join(
   like($out, qr!no base tokenization!s, $call);
 };
 
+my $input_quotes = catfile($f, '..', 'corpus', 'archive_quotes.zip');
+$call = join(
+  ' ',
+  'perl', $script,
+  'archive',
+  '--input' => $input_quotes,
+  '--output' => $output,
+  '-t' => 'Base#tokens_aggr'
+);
+
+# Test without parameters
+stdout_like(
+  sub {
+    system($call);
+  },
+  qr!Done\.!is,
+  $call
+);
+
 
 unlink($output);
 
