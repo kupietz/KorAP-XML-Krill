@@ -244,6 +244,9 @@ push(@layers, ['XIP', 'Dependency']);
 # DRuKoLa
 push(@layers, ['DRuKoLa', 'Morpho']);
 
+# Marmot
+push(@layers, ['MarMoT', 'Morpho']);
+
 
 # Check filters
 my @filtered_anno;

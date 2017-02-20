@@ -48,7 +48,7 @@ ok((my $json = decode_json $file), 'decode json');
 is($json->{textType}, 'Autobiographie', 'text type');
 is($json->{title}, 'Autobiographische Einzelheiten', 'Title');
 is($json->{data}->{tokenSource}, 'base#tokens_aggr', 'Title');
-is($json->{data}->{foundries}, 'dereko dereko/structure dereko/structure/base-sentences-paragraphs', 'Foundries');
+is($json->{data}->{foundries}, 'dereko dereko/structure dereko/structure/base-sentences-paragraphs marmot marmot/morpho', 'Foundries');
 my $stream = $json->{data}->{stream};
 my $token = $stream->[0];
 is($token->[0], '-:base/paragraphs$<i>14', 'Paragraphs');
