@@ -7,6 +7,7 @@ use File::Spec::Functions qw/catfile catdir/;
 use Getopt::Long qw/GetOptions :config no_auto_abbrev/;
 use Benchmark qw/:hireswallclock/;
 use IO::Compress::Gzip qw/$GzipError/;
+use POSIX qw/ceil/;
 use Log::Log4perl;
 use Pod::Usage;
 use Cache::FastMmap;
@@ -16,8 +17,15 @@ use KorAP::XML::Archive;
 use KorAP::XML::Tokenizer;
 use KorAP::XML::Batch::File;
 use Parallel::ForkManager;
+use v5.10;
+use Sys::Info;
+use Sys::Info::Constants qw( :device_cpu );
+
+# use KorAP::XML::ForkPool;
 # TODO: use Parallel::Loops
 # TODO: make output files
+
+# TODO: Use KorAP::XML::ForkPool!
 
 # CHANGES:
 # ----------------------------------------------------------
@@ -103,6 +111,7 @@ if ($ARGV[0] && index($ARGV[0], '-') != 0) {
 my (@skip, @sigle, @anno, @input);
 my $text;
 
+
 # Parse options from the command line
 GetOptions(
   'input|i=s'   => \@input,
@@ -169,6 +178,13 @@ Log::Log4perl->init({
 });
 
 my $log = Log::Log4perl->get_logger('main');
+
+
+if ($jobs == -1) {
+  state $cores = Sys::Info->new->device('CPU')->count;
+  $jobs = ceil(5 * $cores);
+  $log->info("Run using $jobs jobs");
+};
 
 my %skip;
 $skip{lc($_)} = 1 foreach @skip;
@@ -786,6 +802,8 @@ This is I<deprecated>.
 Define the number of concurrent jobs in seperated forks
 for archive processing.
 Defaults to C<0> (everything runs in a single process).
+Pass -1, and the value will be set automatically to 5
+times the number of available cores.
 This is I<experimental>.
 
 =item B<--meta|-m>

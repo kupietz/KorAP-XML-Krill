@@ -2,7 +2,9 @@ package KorAP::XML::ForkPool;
 use strict;
 use warnings;
 use Parallel::ForkManager;
-
+use v5.10;
+use Sys::Info;
+use Sys::Info::Constants qw( :device_cpu );
 
 # Construct a new fork pool
 sub new {
@@ -31,7 +33,7 @@ sub new_pool {
       my $data = pop;
 
       print 'Convert [' . ($self->{jobs} > 0 ? "\$$pid:" : '') .
-	($self->{iter}++) . '/' . $self->{count} . ']';
+        ($self->{iter}++) . '/' . $self->{count} . ']';
       print ($code ? " $code" : '') . " $$data\n";
     }
   );
@@ -66,14 +68,14 @@ sub process_directory {
 
     unless ($self->{overwrite}) {
       my $filename = catfile(
-	$output,
-	get_file_name($dirs[$i]) . '.json' . ($gzip ? '.gz' : '')
+        $output,
+        get_file_name($dirs[$i]) . '.json' . ($gzip ? '.gz' : '')
       );
 
       if (-e $filename) {
-	$iter++;
-	print "Skip $filename\n";
-	next;
+        $iter++;
+        print "Skip $filename\n";
+        next;
       };
     };
 
@@ -121,17 +123,17 @@ sub process_archive {
     unless ($self->{overwrite}) {
 
       my $filename = catfile(
-	$output,
-	get_file_name(
-	  catfile($corpus, $doc, $text)
-	    . '.json' . ($gzip ? '.gz' : '')
-	  )
+        $output,
+        get_file_name(
+          catfile($corpus, $doc, $text)
+            . '.json' . ($gzip ? '.gz' : '')
+          )
       );
 
       if (-e $filename) {
-	$iter++;
-	print "Skip $filename\n";
-	next;
+        $iter++;
+        print "Skip $filename\n";
+        next;
       };
     };
 
