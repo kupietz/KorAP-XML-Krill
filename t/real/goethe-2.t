@@ -157,5 +157,20 @@ like($first_token, qr!<>:dereko/s:p\$\<b>64<i>53<i>3299<i>504<b>4!, 'data');
 $first_token = join('||', @{$output->{data}->{stream}->[180]});
 like($first_token, qr/i:geschäften/, 'data');
 
+## MarMoT
+ok($tokens->add('MarMoT', 'Morpho'), 'Add marmot');
+
+$output = $tokens->to_data;
+
+is($output->{data}->{foundries}, 'dereko dereko/structure dereko/structure/base_sentences_paragraphs_pagebreaks marmot marmot/morpho', 'Foundries');
+
+is($output->{data}->{layerInfos}, 'dereko/s=spans marmot/m=tokens marmot/p=tokens', 'layerInfos');
+$first_token = join('||', @{$output->{data}->{stream}->[0]});
+like($first_token, qr!marmot/m:case:nom!, 'Marmot case');
+like($first_token, qr!marmot/m:degree:pos!, 'Marmot degree');
+like($first_token, qr!marmot/m:gender:fem!, 'Marmot gender');
+like($first_token, qr!marmot/m:number:pl!, 'Marmot number');
+like($first_token, qr!marmot/p:ADJA!, 'Marmot part of speech');
+
 done_testing;
 __END__
