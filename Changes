@@ -10,6 +10,7 @@
         - Fixed handling of prefixes for text sigles.
         - Support for MarMoT.
         - Fix case insensitivity.
+        - Added preliminary support for diacritic insensitivity.
 
 0.24 2016-12-21
         - Added --base-sentences and --base-paragraphs options

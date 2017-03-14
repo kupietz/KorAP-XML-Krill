@@ -12,6 +12,7 @@ use KorAP::XML::Tokenizer::Spans;
 use KorAP::XML::Tokenizer::Tokens;
 use KorAP::XML::Index::MultiTermTokenStream;
 use Unicode::CaseFold;
+use Unicode::Normalize qw/getCombinClass normalize/;
 use List::MoreUtils 'uniq';
 use JSON::XS;
 use Log::Log4perl;
@@ -577,6 +578,20 @@ sub to_pretty_json {
 };
 
 
+# Remove diacritics from a unicode string
+sub remove_diacritics {
+  use utf8;
+  my $norm = normalize('D',$_[0]);
+
+  # Remove character properties
+  $norm =~ s/\p{InCombiningDiacriticalMarks}//g;
+
+  # Deal with some special cases ...
+  $norm =~ tr/ıŁłđĐÐØø/iLldDDOo/;
+  return normalize('C', $norm);
+}
+
+
 1;
 
 
@@ -759,5 +774,19 @@ An optional parameter C<encoding> may indicate that the token offsets
 are either refering to C<bytes> or C<utf-8> offsets.
 
 An optional parameter C<skip> allows for skipping the process.
+
+
+=head1 FUNCTIONS
+
+=head2 remove_diacritics
+
+  # Returns 'aOu'
+  remove_diacritics('äÖü');
+
+Remove diacritic symbols from a string.
+This uses a two step approach: First it normalizes to combination
+characters (Unicode normalization format D), then it deals with a list of
+non-combining arguable diacritics.
+It returns the string in unicode normalization C.
 
 =cut
