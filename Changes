@@ -1,4 +1,4 @@
-0.25 2017-02-20
+0.25 2017-03-14
         - Updated to Mojolicious 7.20
         - Fixed meta treatment in case analytic and monogr
           are available
@@ -9,6 +9,7 @@
         - Renamed "pages" to "srcPages".
         - Fixed handling of prefixes for text sigles.
         - Support for MarMoT.
+        - Fix case insensitivity.
 
 0.24 2016-12-21
         - Added --base-sentences and --base-paragraphs options

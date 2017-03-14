@@ -28,6 +28,7 @@ WriteMakefile(
     'File::Temp'      => 0,
     'Directory::Iterator' => 0,
     'Benchmark'       => 0,
+    'Unicode::CaseFold' => 1.00,
     'Carp'            => 0,
     'strict'          => 0,
     'warnings'        => 0,

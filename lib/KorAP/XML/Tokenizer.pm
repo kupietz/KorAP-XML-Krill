@@ -11,6 +11,7 @@ use KorAP::XML::Tokenizer::Match;
 use KorAP::XML::Tokenizer::Spans;
 use KorAP::XML::Tokenizer::Tokens;
 use KorAP::XML::Index::MultiTermTokenStream;
+use Unicode::CaseFold;
 use List::MoreUtils 'uniq';
 use JSON::XS;
 use Log::Log4perl;
@@ -156,7 +157,7 @@ sub parse {
     $mtt->add('s:' . $token);
 
     # Add case insensitive term
-    $mtt->add('i:' . lc $token);
+    $mtt->add('i:' . fc $token);
 
     # Add offset information
     $mtt->o_start($from);
