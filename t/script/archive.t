@@ -5,6 +5,7 @@ use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
 use File::Temp qw/tempdir/;
 use Mojo::File;
+use Mojo::Util qw/quote/;
 use Mojo::JSON qw/decode_json/;
 use IO::Uncompress::Gunzip;
 use Test::More;
@@ -47,7 +48,7 @@ $call = join(
   ' ',
   'perl', $script,
   'archive',
-  '--input' => $input,
+  '--input' => '' . $input,
   '--output' => $output,
   '-t' => 'Base#tokens_aggr',
   '-m' => 'Sgbr'
@@ -166,6 +167,27 @@ stdout_like(
 
 
 unlink($output);
+
+
+$input_quotes = "'".catfile($f, '..', 'corpus', 'archives', 'wpd15*.zip') . "'";
+
+$call = join(
+  ' ',
+  'perl', $script,
+  'archive',
+  '--input' => $input_quotes,
+  '--output' => $output,
+  '-t' => 'Base#tokens_aggr'
+);
+
+# Test without parameters
+stdout_like(
+  sub {
+    system($call);
+  },
+  qr!Input rewritten to .+?wpd15-single\.zip,.+?wpd15-single\.malt\.zip,.+?wpd15-single\.corenlp\.zip,.+?wpd15-single\.opennlp\.zip,.+?wpd15-single\.mdparser\.zip,.+?wpd15-single\.tree_tagger\.zip!is,
+  $call
+);
 
 done_testing;
 __END__

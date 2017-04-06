@@ -20,6 +20,7 @@ use Parallel::ForkManager;
 use v5.10;
 use Sys::Info;
 use Sys::Info::Constants qw( :device_cpu );
+use File::Glob ':bsd_glob';
 
 # use KorAP::XML::ForkPool;
 # TODO: use Parallel::Loops
@@ -93,9 +94,12 @@ use Sys::Info::Constants qw( :device_cpu );
 # 2017/02/08
 # - added support for pagebreak annotations
 #
+# 2017/04/06
+# - added support for wildcards in input
+#
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2017/02/08';
+our $LAST_CHANGE = '2017/04/06';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -110,7 +114,6 @@ if ($ARGV[0] && index($ARGV[0], '-') != 0) {
 
 my (@skip, @sigle, @anno, @input);
 my $text;
-
 
 # Parse options from the command line
 GetOptions(
@@ -151,7 +154,7 @@ GetOptions(
   }
 );
 
-$base_sentences = lc $base_sentences;
+$base_sentences  = lc $base_sentences;
 $base_paragraphs = lc $base_paragraphs;
 $base_pagebreaks = lc $base_pagebreaks;
 
@@ -185,6 +188,7 @@ if ($jobs == -1) {
   $jobs = ceil(5 * $cores);
   $log->info("Run using $jobs jobs");
 };
+
 
 my %skip;
 $skip{lc($_)} = 1 foreach @skip;
@@ -332,6 +336,22 @@ if ($cmd) {
   if ($output && (!-e $output || !-d $output)) {
     print "Directory '$output' does not exist.\n\n";
     exit(0);
+  };
+};
+
+
+# Glob files
+if (@input) {
+  my @new_input = ();
+
+  # Iterate over all inputs
+  foreach (@input) {
+    push (@new_input, bsd_glob($_));
+  };
+
+  if (scalar(@new_input) > scalar(@input)) {
+    @input = sort { length($a) <=> length($b) } @new_input;
+    print 'Input rewritten to ' . join(',', @input);
   };
 };
 
@@ -721,6 +741,13 @@ and all meta data files.
 
   -i file/news.zip -i file/news.malt.zip -i "#file/news.tt.zip"
 
+Input may also be defined using BSD glob wildcards.
+
+  -i 'file/news*.zip'
+
+The extended input array will be sorted in length order, so the shortest
+path needs to contain all primary data files and all meta data files.
+
 (The directory structure follows the base directory format,
 that may include a C<.> root folder.
 In this case further archives lacking a C<.> root folder
@@ -873,123 +900,61 @@ developed in the KorAP project that are part of the KorAP preprocessing pipeline
 The base foundry with paragraphs, sentences, and the text element are mandatory for
 L<Krill|https://github.com/KorAP/Krill>.
 
-=over 2
+  Base
+    #Paragraphs
+    #Sentences
 
-=item B<Base>
+  Connexor
+    #Morpho
+    #Phrase
+    #Sentences
+    #Syntax
 
-=over 4
+  CoreNLP
+    #Constituency
+    #Morpho
+    #NamedEntities
+    #Sentences
 
-=item #Paragraphs
+  DeReKo
+    #Structure
 
-=item #Sentences
+  DRuKoLa
+    #Morpho
 
-=back
+  Glemm
+    #Morpho
 
-=item B<Connexor>
+  Malt
+    #Dependency
 
-=over 4
+  MarMoT
+    #Morpho
 
-=item #Morpho
+  Mate
+    #Dependency
+    #Morpho
 
-=item #Phrase
+  MDParser
+    #Dependency
 
-=item #Sentences
+  OpenNLP
+    #Morpho
+    #Sentences
 
-=item #Syntax
+  Sgbr
+    #Lemma
+    #Morpho
 
-=back
+  TreeTagger
+    #Morpho
+    #Sentences
 
-=item B<CoreNLP>
+  XIP
+    #Constituency
+    #Morpho
+    #Sentences
 
-=over 4
-
-=item #Constituency
-
-=item #Morpho
-
-=item #NamedEntities
-
-=item #Sentences
-
-=back
-
-=item B<DeReKo>
-
-=over 4
-
-=item #Structure
-
-=back
-
-=item B<Glemm>
-
-=over 4
-
-=item #Morpho
-
-=back
-
-=item B<Mate>
-
-=over 4
-
-=item #Dependency
-
-=item #Morpho
-
-=back
-
-=item B<OpenNLP>
-
-=over 4
-
-=item #Morpho
-
-=item #Sentences
-
-=back
-
-=item B<Sgbr>
-
-=over 4
-
-=item #Lemma
-
-=item #Morpho
-
-=back
-
-=item B<DRuKoLa>
-
-=over 4
-
-=item #Morpho
-
-=back
-
-=item B<TreeTagger>
-
-=over 4
-
-=item #Morpho
-
-=item #Sentences
-
-=back
-
-=item B<XIP>
-
-=over 4
-
-=item #Constituency
-
-=item #Morpho
-
-=item #Sentences
-
-=back
-
-=back
 
 More importers are in preparation.
 New annotation importers can be defined in the C<KorAP::XML::Annotation> namespace.
