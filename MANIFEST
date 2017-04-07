@@ -101,6 +101,8 @@ t/script/single.t
 t/script/usage.t
 t/script/extract.t
 t/script/archive.t
+t/script/config.t
+t/script/base.t
 t/corpus/archive.zip
 t/corpus/archive_rei.zip
 t/corpus/BZK/header.xml

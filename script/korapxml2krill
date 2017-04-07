@@ -16,6 +16,7 @@ use KorAP::XML::Krill;
 use KorAP::XML::Archive;
 use KorAP::XML::Tokenizer;
 use KorAP::XML::Batch::File;
+use Config::Simple;
 use Parallel::ForkManager;
 use v5.10;
 use Sys::Info;
@@ -97,9 +98,12 @@ use File::Glob ':bsd_glob';
 # 2017/04/06
 # - added support for wildcards in input
 #
+# 2017/04/07
+# - support configuration option
+#
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2017/04/06';
+our $LAST_CHANGE = '2017/04/07';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -121,22 +125,23 @@ GetOptions(
   'output|o=s'  => \(my $output),
   'overwrite|w' => \(my $overwrite),
   'meta|m=s'    => \(my $meta),
-  'token|t=s'   => \(my $token_base = 'OpenNLP#tokens'),
-  'base-sentences|bs=s' => \(my $base_sentences = ''),
-  'base-paragraphs|bp=s' => \(my $base_paragraphs = ''),
-  'base-pagebreaks|bpb=s' => \(my $base_pagebreaks = ''),
+  'token|t=s'   => \(my $token_base),
+  'base-sentences|bs=s'   => \(my $base_sentences),
+  'base-paragraphs|bp=s'  => \(my $base_paragraphs),
+  'base-pagebreaks|bpb=s' => \(my $base_pagebreaks),
   'gzip|z'      => \(my $gzip),
   'skip|s=s'    => \@skip,
   'sigle|sg=s'  => \@sigle,
-  'cache|c=s'   => \(my $cache_file = 'korapxml2krill.cache'),
-  'log|l=s'     => \(my $log_level = 'ERROR'),
+  'cache|c=s'   => \(my $cache_file),
+  'config|cfg=s' => \(my $cfg_file),
+  'log|l=s'     => \(my $log_level),
   'anno|a=s'    => \@anno,
   'primary|p!'  => \(my $primary),
   'pretty|y'    => \(my $pretty),
-  'jobs|j=i'    => \(my $jobs = 0),
-  'cache-size|cs=s'  => \(my $cache_size = '50m'),
-  'cache-delete|cd!' => \(my $cache_delete = 1),
-  'cache-init|ci!'   => \(my $cache_init = 1),
+  'jobs|j=i'    => \(my $jobs),
+  'cache-size|cs=s'  => \(my $cache_size),
+  'cache-delete|cd!' => \(my $cache_delete),
+  'cache-init|ci!'   => \(my $cache_init),
   'help|h'      => sub {
     pod2usage(
       -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
@@ -153,6 +158,113 @@ GetOptions(
     )
   }
 );
+
+# Load from configuration
+if ($cfg_file && -e $cfg_file) {
+
+  print "Reading config from $cfg_file\n";
+
+  my %config;
+
+  Config::Simple->import_from($cfg_file, \%config);
+
+  # Overwrite
+  if (!defined($overwrite) && defined $config{overwrite}) {
+    $overwrite = $config{overwrite};
+  };
+
+  # Gzip
+  if (!defined($gzip) && defined $config{gzip}) {
+    $gzip = $config{gzip};
+  };
+
+  # Jobs
+  if (!defined($jobs) && defined $config{jobs}) {
+    $jobs = $config{jobs};
+  };
+
+  # Token base
+  if (!defined($token_base) && defined $config{token}) {
+    $token_base = $config{token};
+  };
+
+  # Cache file
+  if (!defined($cache_file) && defined $config{cache}) {
+    $cache_file = $config{cache};
+  };
+
+  # Cache size
+  if (!defined($cache_size) && defined $config{'cache-size'}) {
+    $cache_size = $config{'cache-size'};
+  };
+
+  # Cache delete
+  if (!defined($cache_delete) && defined $config{'cache-delete'}) {
+    $cache_delete = $config{'cache-delete'} ;
+  };
+
+  # Cache init
+  if (!(defined $cache_init) && defined $config{'cache-init'}) {
+    $cache_init = $config{'cache-init'} ;
+  };
+
+  # Meta
+  if (!(defined $meta) && defined $config{'meta'}) {
+    $meta = $config{'meta'} ;
+  };
+
+  # Output
+  if (!(defined $output) && defined $config{'output'}) {
+    $output = $config{'output'} ;
+  };
+
+  # Base-sentences
+  if (!(defined $base_sentences) && defined $config{'base-sentences'}) {
+    $base_sentences = $config{'base-sentences'} ;
+  };
+
+  # Base-paragraphs
+  if (!(defined $base_paragraphs) && defined $config{'base-paragraphs'}) {
+    $base_paragraphs = $config{'base-paragraphs'} ;
+  };
+
+  # Base-pagebreaks
+  if (!(defined $base_pagebreaks) && defined $config{'base-pagebreaks'}) {
+    $base_pagebreaks = $config{'base-pagebreaks'} ;
+  };
+
+  # Log
+  if (!(defined $log_level) && defined $config{'log'}) {
+    $log_level = $config{'log'} ;
+  };
+
+  # Skip
+  if (!scalar(@skip) && defined $config{'skip'}) {
+    @skip = split /\s*;\s*/, $config{'skip'} ;
+  };
+
+  # Sigle
+  if (!scalar(@sigle) && defined $config{'sigle'}) {
+    @sigle = split /\s*;\s*/, $config{'sigle'} ;
+  };
+
+  # Anno
+  if (!scalar(@anno) && defined $config{'anno'}) {
+    @anno = split /\s*;\s*/, $config{'anno'} ;
+  };
+};
+
+# Set default token base
+$token_base      //= 'OpenNLP#tokens';
+$cache_file      //= 'korapxml2krill.cache';
+$cache_size      //= '50m';
+$jobs            //= 0;
+$cache_delete    //= 1;
+$cache_init      //= 1;
+$log_level       //= 'ERROR';
+$base_sentences  //= '';
+$base_paragraphs //= '';
+$base_pagebreaks //= '';
 
 $base_sentences  = lc $base_sentences;
 $base_paragraphs = lc $base_paragraphs;
@@ -183,10 +295,10 @@ Log::Log4perl->init({
 my $log = Log::Log4perl->get_logger('main');
 
 
-if ($jobs == -1) {
+if ($jobs eq '-1') {
   state $cores = Sys::Info->new->device('CPU')->count;
   $jobs = ceil(5 * $cores);
-  $log->info("Run using $jobs jobs");
+  $log->info("Run using $jobs jobs on $cores cores");
 };
 
 
@@ -351,7 +463,7 @@ if (@input) {
 
   if (scalar(@new_input) > scalar(@input)) {
     @input = sort { length($a) <=> length($b) } @new_input;
-    print 'Input rewritten to ' . join(',', @input);
+    print 'Input rewritten to ' . join(', ', @input)."\n";
   };
 };
 
@@ -869,6 +981,23 @@ Defaults to C<true>.
 Delete cache file after processing.
 Can be flagged using C<--no-cache-delete> as well.
 Defaults to C<true>.
+
+=item B<--config|-cfg>
+
+Configure the parameters of your call in a file
+of key-value pairs with whitespace separator
+
+  overwrite 1
+  token     DeReKo#Structure
+  ...
+
+Supported parameters are:
+C<overwrite>, C<gzip>, C<jobs>,
+C<token>, C<log>, C<cache>, C<cache-size>, C<cache-delete>, C<meta>,
+C<output>, C<base-sentences>, C<base-paragraphs>,
+C<base-pagebreaks>, C<skip> (semicolon separated), C<sigle>
+(semicolon separated), C<anno> (semicolon separated).
+
 
 =item B<--sigle|-sg>
 
