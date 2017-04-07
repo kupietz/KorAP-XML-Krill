@@ -215,10 +215,21 @@ of key-value pairs with whitespace separator
 Supported parameters are:
 C<overwrite>, C<gzip>, C<jobs>,
 C<token>, C<log>, C<cache>, C<cache-size>, C<cache-delete>, C<meta>,
-C<output>, C<base-sentences>, C<base-paragraphs>,
+C<output>, C<base-sentences>, C<temp-extract>, C<base-paragraphs>,
 C<base-pagebreaks>, C<skip> (semicolon separated), C<sigle>
 (semicolon separated), C<anno> (semicolon separated).
 
+=item B<--temporary-extract|-te>
+
+Only valid for the C<archive> command.
+
+This will first extract all files into a
+directory and then will archive.
+If the directory is given as C<:temp:>,
+a temporary directory is used.
+This is especially useful to avoid
+massive unzipping and potential
+network latency.
 
 =item B<--sigle|-sg>
 
@@ -320,6 +331,7 @@ See the built-in annotation importers as examples.
 Copyright (C) 2015-2017, L<IDS Mannheim|http://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|http://nils-diewald.de/>
+
 Contributor: Eliza Margaretha
 
 L<KorAP::XML::Krill> is developed as part of the L<KorAP|http://korap.ids-mannheim.de/>

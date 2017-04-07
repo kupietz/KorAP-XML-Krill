@@ -1,5 +1,6 @@
 0.27 2017-04-07
         - Support configuration files.
+        - Support temporary extraction.
 
 0.26 2017-04-06
         - Support wildcards on input.

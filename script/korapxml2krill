@@ -22,6 +22,8 @@ use v5.10;
 use Sys::Info;
 use Sys::Info::Constants qw( :device_cpu );
 use File::Glob ':bsd_glob';
+use File::Temp qw/tempdir/;
+
 
 # use KorAP::XML::ForkPool;
 # TODO: use Parallel::Loops
@@ -100,6 +102,7 @@ use File::Glob ':bsd_glob';
 #
 # 2017/04/07
 # - support configuration option
+# - support for temporary extraction
 #
 # ----------------------------------------------------------
 
@@ -130,6 +133,7 @@ GetOptions(
   'base-paragraphs|bp=s'  => \(my $base_paragraphs),
   'base-pagebreaks|bpb=s' => \(my $base_pagebreaks),
   'gzip|z'      => \(my $gzip),
+  'temporary-extract|te=s' => \(my $extract_dir),
   'skip|s=s'    => \@skip,
   'sigle|sg=s'  => \@sigle,
   'cache|c=s'   => \(my $cache_file),
@@ -181,6 +185,11 @@ if ($cfg_file && -e $cfg_file) {
   # Jobs
   if (!defined($jobs) && defined $config{jobs}) {
     $jobs = $config{jobs};
+  };
+
+  # temporary-extract
+  if (!defined($extract_dir) && defined $config{'temporary-extract'}) {
+    $extract_dir = $config{'temporary-extract'};
   };
 
   # Token base
@@ -451,7 +460,6 @@ if ($cmd) {
   };
 };
 
-
 # Glob files
 if (@input) {
   my @new_input = ();
@@ -497,10 +505,12 @@ unless ($cmd) {
   unlink($cache_file) if $cache_delete;
 
   stop_time;
-}
+  exit(1);
+};
+
 
 # Extract XML files
-elsif ($cmd eq 'extract') {
+if ($cmd eq 'extract') {
 
   # Create new archive object
   if (-f($input[0]) && (my $archive = KorAP::XML::Archive->new($input[0]))) {
@@ -508,7 +518,7 @@ elsif ($cmd eq 'extract') {
     # Check zip capabilities
     unless ($archive->test_unzip) {
       print "Unzip is not installed or incompatible.\n\n";
-      exit(1);
+      exit(0);
     };
 
     # Add further annotation archived
@@ -597,17 +607,58 @@ elsif ($cmd eq 'extract') {
     };
 
     print "\n";
-    exit(1);
+    # exit(1);
   }
 
   # Can't create archive object
   else {
     $log->error('Unable to extract from primary archive ' . $input[0]);
+    exit(1);
   };
 }
 
+
 # Process an archive
 elsif ($cmd eq 'archive') {
+
+  my $archive_output;
+
+  # First extract, then archive
+  if (defined $extract_dir) {
+
+    # Create new archive object
+    if (-f($input[0]) && (my $archive = KorAP::XML::Archive->new($input[0]))) {
+
+      # Check zip capabilities
+      unless ($archive->test_unzip) {
+        print "Unzip is not installed or incompatible.\n\n";
+        exit(0);
+      };
+
+      # Add further annotation archived
+      $archive->attach($_) foreach @input[1..$#input];
+
+      # Create a temporary directory
+      if ($extract_dir eq ':temp:') {
+        $extract_dir = tempdir(CLEANUP => 1);
+      };
+
+      if ($archive->extract_all($extract_dir, $jobs)) {
+        @input = ($extract_dir);
+      }
+      else {
+        $log->error('Unable to extract from primary archive ' . $input[0] .
+                      ' to ' . $extract_dir);
+        exit(1);
+      };
+    }
+
+    # Can't create archive object
+    else {
+      $log->error('Unable to extract from primary archive ' . $input[0]);
+      exit(1);
+    };
+  };
 
   # TODO: Support sigles
 
@@ -767,13 +818,8 @@ elsif ($cmd eq 'archive') {
 
   print "Done.\n";
   print timestr(timediff(Benchmark->new, $t))."\n\n";
-}
+};
 
-# Unknown command
-else {
-  warn "Unknown command '$cmd'.\n\n";
-  pod2usage(%ERROR_HASH);
-}
 
 __END__
 
@@ -994,10 +1040,21 @@ of key-value pairs with whitespace separator
 Supported parameters are:
 C<overwrite>, C<gzip>, C<jobs>,
 C<token>, C<log>, C<cache>, C<cache-size>, C<cache-delete>, C<meta>,
-C<output>, C<base-sentences>, C<base-paragraphs>,
+C<output>, C<base-sentences>, C<temp-extract>, C<base-paragraphs>,
 C<base-pagebreaks>, C<skip> (semicolon separated), C<sigle>
 (semicolon separated), C<anno> (semicolon separated).
 
+=item B<--temporary-extract|-te>
+
+Only valid for the C<archive> command.
+
+This will first extract all files into a
+directory and then will archive.
+If the directory is given as C<:temp:>,
+a temporary directory is used.
+This is especially useful to avoid
+massive unzipping and potential
+network latency.
 
 =item B<--sigle|-sg>
 
@@ -1099,6 +1156,7 @@ See the built-in annotation importers as examples.
 Copyright (C) 2015-2017, L<IDS Mannheim|http://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|http://nils-diewald.de/>
+
 Contributor: Eliza Margaretha
 
 L<KorAP::XML::Krill> is developed as part of the L<KorAP|http://korap.ids-mannheim.de/>

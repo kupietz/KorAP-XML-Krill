@@ -138,6 +138,76 @@ sub _file_to_array {
 };
 
 
+sub extract_all {
+  my $self = shift;
+  my ($target_dir, $jobs) = @_;
+
+  my @init_cmd = (
+    'unzip',          # Use unzip program
+    '-qo',            # quietly overwrite all existing files
+    '-d', $target_dir # Extract into target directory
+  );
+
+  # Iterate over all attached archives
+  my @cmds;
+  foreach my $archive (@$self) {
+
+    # $_ is the zip
+    my @cmd = @init_cmd;
+    push(@cmd, $archive->[0]); # Extract from zip
+
+    # Run system call
+    push @cmds, \@cmd;
+  };
+
+  $self->_extract($jobs, @cmds);
+};
+
+
+sub _extract {
+  my ($self, $jobs, @cmds) = @_;
+
+  # Only single call
+  if (!$jobs || $jobs == 1) {
+    foreach (@cmds) {
+      system(@$_);
+
+      # Check for return code
+      if ($? != 0) {
+        carp("System call '" . join(' ', @$_) . "' errors " . $?);
+        return;
+      };
+    };
+  }
+
+  # Extract annotations in parallel
+  else {
+    my $pool = Parallel::ForkManager->new($jobs);
+    $pool->run_on_finish(
+      sub {
+        my ($pid, $code) = @_;
+        my $data = pop;
+        print "Extract [\$$pid] " .
+          ($code ? " $code" : '') . " $$data\n";
+      }
+    );
+
+  ARCHIVE_LOOP:
+    foreach my $cmd (@cmds) {
+      my $pid = $pool->start and next ARCHIVE_LOOP;
+      system(@$cmd);
+      my $last = $cmd->[4];
+      $pool->finish($?, \"$last");
+    };
+    $pool->wait_all_children;
+  };
+
+  # Fine
+  return 1;
+};
+
+
+
 # Extract document files to a directory
 sub extract_doc {
   my $self = shift;
@@ -190,42 +260,7 @@ sub extract_doc {
     push @cmds, \@cmd;
   };
 
-  if (!$jobs || $jobs == 1) {
-    foreach (@cmds) {
-      system(@$_);
-
-      # Check for return code
-      if ($? != 0) {
-        carp("System call '" . join(' ', @$_) . "' errors " . $?);
-        return;
-      };
-    };
-  }
-
-  # Extract annotations in parallel
-  else {
-    my $pool = Parallel::ForkManager->new($jobs);
-    $pool->run_on_finish(
-      sub {
-        my ($pid, $code) = @_;
-        my $data = pop;
-        print "Extract [\$$pid] " .
-          ($code ? " $code" : '') . " $$data\n";
-      }
-    );
-
-  ARCHIVE_LOOP:
-    foreach my $cmd (@cmds) {
-      my $pid = $pool->start and next ARCHIVE_LOOP;
-      system(@$cmd);
-      my $last = $cmd->[4];
-      $pool->finish($?, \"$last");
-    };
-    $pool->wait_all_children;
-  };
-
-  # Fine
-  return 1;
+  $self->_extract($jobs, @cmds);
 };
 
 
