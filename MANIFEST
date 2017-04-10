@@ -98,6 +98,7 @@ t/sgbr/meta_ids.t
 t/sgbr/pos.t
 t/sgbr/token.t
 t/script/single.t
+t/script/serial.t
 t/script/usage.t
 t/script/extract.t
 t/script/archive.t

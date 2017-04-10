@@ -23,7 +23,9 @@ use Sys::Info;
 use Sys::Info::Constants qw( :device_cpu );
 use File::Glob ':bsd_glob';
 use File::Temp qw/tempdir/;
-
+use File::Path qw(remove_tree make_path);
+use Mojo::Collection 'c';
+use String::Random qw(random_string);
 
 # use KorAP::XML::ForkPool;
 # TODO: use Parallel::Loops
@@ -104,6 +106,9 @@ use File::Temp qw/tempdir/;
 # - support configuration option
 # - support for temporary extraction
 #
+# 2017/04/10
+# - support serial processing
+# - support input root
 # ----------------------------------------------------------
 
 our $LAST_CHANGE = '2017/04/07';
@@ -112,12 +117,17 @@ our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
 VERSION
 
+# Prototypes
+sub get_file_name_from_glob($);
+sub get_file_name($);
+
 # Parse comand
 my $cmd;
 our @ARGV;
 if ($ARGV[0] && index($ARGV[0], '-') != 0) {
   $cmd = shift @ARGV;
 };
+my @keep_argv = @ARGV;
 
 my (@skip, @sigle, @anno, @input);
 my $text;
@@ -125,6 +135,7 @@ my $text;
 # Parse options from the command line
 GetOptions(
   'input|i=s'   => \@input,
+  'input-base|ib=s' => \(my $input_base),
   'output|o=s'  => \(my $output),
   'overwrite|w' => \(my $overwrite),
   'meta|m=s'    => \(my $meta),
@@ -163,11 +174,9 @@ GetOptions(
   }
 );
 
+
 # Load from configuration
 if ($cfg_file && -e $cfg_file) {
-
-  print "Reading config from $cfg_file\n";
-
   my %config;
 
   Config::Simple->import_from($cfg_file, \%config);
@@ -185,6 +194,11 @@ if ($cfg_file && -e $cfg_file) {
   # Jobs
   if (!defined($jobs) && defined $config{jobs}) {
     $jobs = $config{jobs};
+  };
+
+  # Input root base directory
+  if (!defined($input_base) && defined $config{'input-base'}) {
+    $input_base = $config{'input-base'};
   };
 
   # temporary-extract
@@ -263,6 +277,7 @@ if ($cfg_file && -e $cfg_file) {
   };
 };
 
+
 # Set default token base
 $token_base      //= 'OpenNLP#tokens';
 $cache_file      //= 'korapxml2krill.cache';
@@ -279,6 +294,21 @@ $base_sentences  = lc $base_sentences;
 $base_paragraphs = lc $base_paragraphs;
 $base_pagebreaks = lc $base_pagebreaks;
 
+
+# Initialize log4perl object
+Log::Log4perl->init({
+  'log4perl.rootLogger' => uc($log_level) . ', STDERR',
+  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
+  'log4perl.appender.STDERR.layout' => 'PatternLayout',
+  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
+});
+
+my $log = Log::Log4perl->get_logger('main');
+
+
+print "Reading config from $cfg_file\n" if $cfg_file;
+
+
 my %ERROR_HASH = (
   -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
   -verbose  => 99,
@@ -293,16 +323,6 @@ pod2usage(%ERROR_HASH) unless @input;
 # Gzip has no effect, if no output is given
 pod2usage(%ERROR_HASH) if $gzip && !$output;
 
-# Initialize log4perl object
-Log::Log4perl->init({
-  'log4perl.rootLogger' => uc($log_level) . ', STDERR',
-  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
-  'log4perl.appender.STDERR.layout' => 'PatternLayout',
-  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
-});
-
-my $log = Log::Log4perl->get_logger('main');
-
 
 if ($jobs eq '-1') {
   state $cores = Sys::Info->new->device('CPU')->count;
@@ -310,6 +330,58 @@ if ($jobs eq '-1') {
   $log->info("Run using $jobs jobs on $cores cores");
 };
 
+
+# Start serial processing
+if ($cmd eq 'serial') {
+
+  if ($output && (!-e $output || !-d $output)) {
+    print "Directory '$output' does not exist.\n\n";
+    exit(0);
+  };
+
+  # Remove all inputs
+  my $remove_next = 0;
+  @keep_argv = @{c(@keep_argv)->grep(
+    sub {
+      # Input flag
+      if ($_ eq '-i' || $_ eq '--input' || $_ eq '--output' || $_ eq '-o') {
+        $remove_next = 1;
+        return 0;
+      }
+
+      # input value
+      elsif ($remove_next) {
+        $remove_next = 0;
+        return 0;
+      };
+
+      # Pass parameter
+      return 1;
+    }
+  )->to_array};
+
+
+  # Iterate over all inputs
+  foreach (@input) {
+
+    my $new_out = catdir($output, get_file_name_from_glob($_));
+
+    # Create new path
+    unless (make_path($new_out)) {
+      $log->error("Can\'t create path $new_out");
+      exit(0);
+    };
+
+    # Create archive command
+    my @archive_cmd = ($^X, $0, 'archive', @keep_argv, '-i', $_, '-o', $new_out);
+    print "Start serial processing of $_ to $new_out\n";
+
+    # Start archiving
+    system @archive_cmd;
+  };
+
+  exit(0);
+};
 
 my %skip;
 $skip{lc($_)} = 1 foreach @skip;
@@ -432,7 +504,6 @@ my $batch_file = KorAP::XML::Batch::File->new(
   anno      => \@filtered_anno
 );
 
-
 # Get file name based on path information
 sub get_file_name ($) {
   my $i = $input[0];
@@ -450,6 +521,21 @@ sub get_file_name ($) {
   return $file;
 };
 
+
+sub get_file_name_from_glob ($) {
+  my $glob = shift;
+  $glob =~ s/\.zip$//;          # Remove file extension
+  $glob =~ s{\/([^\/]+?)$}{$1}; # Remove path unix style
+  $glob =~ s{\\([^\\]+?)$}{$1}; # Remove path windows style
+  $glob =~ s/[\*\?]//g;         # Remove arbitrary fills
+  $glob =~ s/[\{\}\[\]]/-/g;    # Remove class and multiple brackets
+  $glob =~ s/\-\-+/-/g;         # Remove sequences of binding characters
+  $glob =~ s/^-//;              # Clean beginning
+  $glob =~ s/-$//;              # Clean end
+  return $glob;
+};
+
+
 # Convert sigle to path construct
 s!^\s*([^_]+?)_([^\.]+?)\.(.+?)\s*$!$1/$2/$3! foreach @sigle;
 
@@ -460,19 +546,25 @@ if ($cmd) {
   };
 };
 
-# Glob files
+
+# Glob and prefix files
 if (@input) {
+
   my @new_input = ();
 
   # Iterate over all inputs
-  foreach (@input) {
-    push (@new_input, bsd_glob($_));
+  foreach my $wild_card (@input) {
+
+    # Prefix with input root
+    $wild_card = $input_base ? catfile($input_base, $wild_card) : $wild_card;
+
+    push (@new_input, bsd_glob($wild_card));
   };
 
-  if (scalar(@new_input) > scalar(@input)) {
-    @input = sort { length($a) <=> length($b) } @new_input;
-    print 'Input rewritten to ' . join(', ', @input)."\n";
-  };
+  # Sort files by length
+  @input = sort { length($a) <=> length($b) } @new_input;
+
+  print 'Input is ' . join(', ', @input)."\n";
 };
 
 
@@ -605,9 +697,6 @@ if ($cmd eq 'extract') {
       );
       print "extracted.\n";
     };
-
-    print "\n";
-    # exit(1);
   }
 
   # Can't create archive object
@@ -640,9 +729,14 @@ elsif ($cmd eq 'archive') {
 
       # Create a temporary directory
       if ($extract_dir eq ':temp:') {
-        $extract_dir = tempdir(CLEANUP => 1);
+        $extract_dir = tempdir(CLEANUP => 0);
+        print "Temporarily extract to $extract_dir\n";
       };
 
+      # Add some random extra to avoid clashes with multiple archives
+      $extract_dir = catdir($extract_dir, random_string('cccccc'));
+
+      # Extract to temprary directory
       if ($archive->extract_all($extract_dir, $jobs)) {
         @input = ($extract_dir);
       }
@@ -816,10 +910,19 @@ elsif ($cmd eq 'archive') {
   # Delete cache file
   unlink($cache_file) if $cache_delete;
 
+  print timestr(timediff(Benchmark->new, $t))."\n";
   print "Done.\n";
-  print timestr(timediff(Benchmark->new, $t))."\n\n";
 };
 
+
+# Cleanup temporary extraction directory
+if ($extract_dir) {
+  my $objects = remove_tree($extract_dir, { safe => 1 });
+  print "Removed directory $extract_dir with $objects objects.\n";
+};
+
+
+print "\n";
 
 __END__
 
@@ -877,6 +980,16 @@ Converts an archive of KorAP-XML documents. It expects a directory
 
 Extracts KorAP-XML documents from a zip file.
 
+=item B<serial>
+
+  $ korapxml2krill serial -i <archive1> -i <archive2> -o <directory> -cfg <config-file>
+
+Convert archives sequentially. The inputs are not merged but treated
+as they are (so they may be premerged or globs).
+the C<--out> directory is treated as the base directory where subdirectories
+are created based on the archive name.
+
+
 =back
 
 
@@ -917,6 +1030,11 @@ compatible with the archive file.
 
 B<The root folder switch using the hash sign is experimental and
 may vanish in future versions.>
+
+=item B<--input-base|-ib> <directory>
+
+The base directory for inputs.
+
 
 =item B<--output|-o> <directory|file>
 
@@ -1038,7 +1156,7 @@ of key-value pairs with whitespace separator
   ...
 
 Supported parameters are:
-C<overwrite>, C<gzip>, C<jobs>,
+C<overwrite>, C<gzip>, C<jobs>, C<input-base>,
 C<token>, C<log>, C<cache>, C<cache-size>, C<cache-delete>, C<meta>,
 C<output>, C<base-sentences>, C<temp-extract>, C<base-paragraphs>,
 C<base-pagebreaks>, C<skip> (semicolon separated), C<sigle>

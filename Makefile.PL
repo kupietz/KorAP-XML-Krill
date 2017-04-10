@@ -38,7 +38,9 @@ WriteMakefile(
     'Pod::Usage'      => 0,
     'Cache::FastMmap' => 1.40,
     'Sys::Info'       => 0.78,
-    'Config::Simple'  => 4.58
+    'Config::Simple'  => 4.58,
+    'String::Random'  => 0.29,
+    'File::Path'      => 2.12
   },
   MIN_PERL_VERSION => '5.014',
   test => {

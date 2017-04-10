@@ -1,6 +1,8 @@
-0.27 2017-04-07
+0.27 2017-04-10
         - Support configuration files.
         - Support temporary extraction.
+        - Support serial conversion.
+        - Support input-base.
 
 0.26 2017-04-06
         - Support wildcards on input.
