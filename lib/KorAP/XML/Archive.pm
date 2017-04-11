@@ -27,6 +27,7 @@ sub test_unzip {
   return;
 };
 
+
 # Check the compressed archive
 sub test {
   my $self = shift;
@@ -145,6 +146,7 @@ sub extract_all {
   my @init_cmd = (
     'unzip',          # Use unzip program
     '-qo',            # quietly overwrite all existing files
+    '-o',
     '-d', $target_dir # Extract into target directory
   );
 
@@ -218,6 +220,7 @@ sub extract_doc {
   my @init_cmd = (
     'unzip',          # Use unzip program
     '-qo',            # quietly overwrite all existing files
+    '-o',
     '-d', $target_dir # Extract into target directory
   );
 
@@ -275,6 +278,7 @@ sub extract_text {
   my @init_cmd = (
     'unzip',          # Use unzip program
     '-qo',            # quietly overwrite all existing files
+    '-o',
     '-d', $target_dir # Extract into target directory
   );
 
