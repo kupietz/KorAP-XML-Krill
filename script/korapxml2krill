@@ -367,7 +367,7 @@ if ($cmd eq 'serial') {
     my $new_out = catdir($output, get_file_name_from_glob($_));
 
     # Create new path
-    unless (make_path($new_out)) {
+    if (make_path($new_out) == 0 && !-d $new_out) {
       $log->error("Can\'t create path $new_out");
       exit(0);
     };
@@ -525,8 +525,7 @@ sub get_file_name ($) {
 sub get_file_name_from_glob ($) {
   my $glob = shift;
   $glob =~ s/\.zip$//;          # Remove file extension
-  $glob =~ s{\/([^\/]+?)$}{$1}; # Remove path unix style
-  $glob =~ s{\\([^\\]+?)$}{$1}; # Remove path windows style
+  $glob =~ s![\\\/]!-!g;        # Transform paths
   $glob =~ s/[\*\?]//g;         # Remove arbitrary fills
   $glob =~ s/[\{\}\[\]]/-/g;    # Remove class and multiple brackets
   $glob =~ s/\-\-+/-/g;         # Remove sequences of binding characters
