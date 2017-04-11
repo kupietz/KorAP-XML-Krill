@@ -146,7 +146,7 @@ sub extract_all {
   my @init_cmd = (
     'unzip',          # Use unzip program
     '-qo',            # quietly overwrite all existing files
-    '-u',
+    '-uo',
     '-d', $target_dir # Extract into target directory
   );
 
@@ -222,7 +222,7 @@ sub extract_doc {
   my @init_cmd = (
     'unzip',          # Use unzip program
     '-qo',            # quietly overwrite all existing files
-    '-u',
+    '-uo',
     '-d', $target_dir # Extract into target directory
   );
 
@@ -280,7 +280,7 @@ sub extract_text {
   my @init_cmd = (
     'unzip',          # Use unzip program
     '-qo',            # quietly overwrite all existing files
-    '-u',
+    '-uo',
     '-d', $target_dir # Extract into target directory
   );
 
