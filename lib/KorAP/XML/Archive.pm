@@ -146,7 +146,7 @@ sub extract_all {
   my @init_cmd = (
     'unzip',          # Use unzip program
     '-qo',            # quietly overwrite all existing files
-    '-o',
+    '-u',
     '-d', $target_dir # Extract into target directory
   );
 
@@ -172,6 +172,7 @@ sub _extract {
   # Only single call
   if (!$jobs || $jobs == 1) {
     foreach (@cmds) {
+
       system(@$_);
 
       # Check for return code
@@ -198,8 +199,9 @@ sub _extract {
     foreach my $cmd (@cmds) {
       my $pid = $pool->start and next ARCHIVE_LOOP;
       system(@$cmd);
+      my $code = $?;
       my $last = $cmd->[4];
-      $pool->finish($?, \"$last");
+      $pool->finish($code, \"$last");
     };
     $pool->wait_all_children;
   };
@@ -220,7 +222,7 @@ sub extract_doc {
   my @init_cmd = (
     'unzip',          # Use unzip program
     '-qo',            # quietly overwrite all existing files
-    '-o',
+    '-u',
     '-d', $target_dir # Extract into target directory
   );
 
@@ -278,7 +280,7 @@ sub extract_text {
   my @init_cmd = (
     'unzip',          # Use unzip program
     '-qo',            # quietly overwrite all existing files
-    '-o',
+    '-u',
     '-d', $target_dir # Extract into target directory
   );
 

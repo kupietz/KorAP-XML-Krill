@@ -1,3 +1,6 @@
+0.28 2017-04-11
+        - Improved overwriting behaviour for unzip.
+
 0.27 2017-04-10
         - Support configuration files.
         - Support temporary extraction.
