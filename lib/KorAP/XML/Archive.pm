@@ -176,10 +176,10 @@ sub _extract {
       system(@$_);
 
       # Check for return code
-      if ($? != 0) {
-        carp("System call '" . join(' ', @$_) . "' errors " . $?);
-        return;
-      };
+      my $code = $?;
+
+      print "Extract" .
+        ($code ? " $code" : '') . " " . join(' ', @$_) . "\n";
     };
   }
 

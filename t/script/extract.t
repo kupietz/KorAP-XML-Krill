@@ -56,7 +56,8 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!TEST/BSP/1 $sep extracted.!s,
+  qr!TEST/BSP/1 $sep extracted!s,
+#  qr!TEST/BSP/1 $sep extracted.!s,
   $call
 );
 
@@ -125,7 +126,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!REI/BNG $sep extracted!s,
+  qr!Extract .+? REI/BNG!s,
   $call
 );
 
@@ -134,7 +135,7 @@ stdout_unlike(
   sub {
     system($call);
   },
-  qr!REI/RBR $sep extracted!s,
+  qr!Extract .+? REI/RBR!s,
   $call
 );
 
@@ -161,7 +162,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!REI/BN\* $sep extracted!s,
+  qr!Extract .+? REI/BN\*!s,
   $call
 );
 
@@ -203,7 +204,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!WPD15/A00/00081 $sep extracted.!s,
+  qr!WPD15/A00/00081 $sep extracted!s,
   $call
 );
 
@@ -237,6 +238,7 @@ stdout_like(
     system($call);
   },
   qr!TEST/BSP "Example"\/1 $sep extracted!s,
+  # qr!Extract .+? TEST/BSP "Example"\/1!s,
   $call
 );
 

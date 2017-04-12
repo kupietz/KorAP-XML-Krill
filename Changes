@@ -1,5 +1,6 @@
-0.28 2017-04-11
+0.28 2017-04-12
         - Improved overwriting behaviour for unzip.
+        - Introduced --sequential-extraction flag.
 
 0.27 2017-04-10
         - Support configuration files.

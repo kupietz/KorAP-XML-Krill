@@ -106,12 +106,13 @@ use String::Random qw(random_string);
 # - support configuration option
 # - support for temporary extraction
 #
-# 2017/04/10
+# 2017/04/12
 # - support serial processing
 # - support input root
+# - introduced --sequential-extraction flag
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2017/04/07';
+our $LAST_CHANGE = '2017/04/12';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -154,6 +155,7 @@ GetOptions(
   'primary|p!'  => \(my $primary),
   'pretty|y'    => \(my $pretty),
   'jobs|j=i'    => \(my $jobs),
+  'sequential-extraction|se' => \(my $sequential_extraction),
   'cache-size|cs=s'  => \(my $cache_size),
   'cache-delete|cd!' => \(my $cache_delete),
   'cache-init|ci!'   => \(my $cache_init),
@@ -231,6 +233,11 @@ if ($cfg_file && -e $cfg_file) {
     $cache_init = $config{'cache-init'} ;
   };
 
+  # Jobs for extraction
+  if (!(defined $sequential_extraction) && defined $config{'sequential-extraction'}) {
+    $sequential_extraction = $config{'sequential-extraction'} ;
+  };
+
   # Meta
   if (!(defined $meta) && defined $config{'meta'}) {
     $meta = $config{'meta'} ;
@@ -279,16 +286,17 @@ if ($cfg_file && -e $cfg_file) {
 
 
 # Set default token base
-$token_base      //= 'OpenNLP#tokens';
-$cache_file      //= 'korapxml2krill.cache';
-$cache_size      //= '50m';
-$jobs            //= 0;
-$cache_delete    //= 1;
-$cache_init      //= 1;
-$log_level       //= 'ERROR';
-$base_sentences  //= '';
-$base_paragraphs //= '';
-$base_pagebreaks //= '';
+$token_base          //= 'OpenNLP#tokens';
+$cache_file          //= 'korapxml2krill.cache';
+$cache_size          //= '50m';
+$jobs                //= 0;
+$cache_delete        //= 1;
+$cache_init          //= 1;
+$sequential_extraction //= 0;
+$log_level           //= 'ERROR';
+$base_sentences      //= '';
+$base_paragraphs     //= '';
+$base_pagebreaks     //= '';
 
 $base_sentences  = lc $base_sentences;
 $base_paragraphs = lc $base_paragraphs;
@@ -524,13 +532,13 @@ sub get_file_name ($) {
 
 sub get_file_name_from_glob ($) {
   my $glob = shift;
-  $glob =~ s/\.zip$//;          # Remove file extension
   $glob =~ s![\\\/]!-!g;        # Transform paths
   $glob =~ s/[\*\?]//g;         # Remove arbitrary fills
   $glob =~ s/[\{\}\[\]]/-/g;    # Remove class and multiple brackets
   $glob =~ s/\-\-+/-/g;         # Remove sequences of binding characters
   $glob =~ s/^-//;              # Clean beginning
   $glob =~ s/-$//;              # Clean end
+  $glob =~ s/\.zip$//;          # Remove file extension
   return $glob;
 };
 
@@ -660,7 +668,7 @@ if ($cmd eq 'extract') {
 
           print '... ' . (
             $archive->extract_doc(
-              $path, $output, $jobs
+              $path, $output, $sequential_extraction ? 1 : $jobs
             ) ? '' : 'not '
           );
           print "extracted.\n";
@@ -736,7 +744,7 @@ elsif ($cmd eq 'archive') {
       $extract_dir = catdir($extract_dir, random_string('cccccc'));
 
       # Extract to temprary directory
-      if ($archive->extract_all($extract_dir, $jobs)) {
+      if ($archive->extract_all($extract_dir, $sequential_extraction ? 1: $jobs)) {
         @input = ($extract_dir);
       }
       else {
@@ -1104,9 +1112,21 @@ This is I<deprecated>.
 Define the number of concurrent jobs in seperated forks
 for archive processing.
 Defaults to C<0> (everything runs in a single process).
+
+If C<sequential-extraction> is not set to false, this will
+also apply to extraction.
+
 Pass -1, and the value will be set automatically to 5
 times the number of available cores.
 This is I<experimental>.
+
+=item B<--sequential-extraction|-se>
+
+Flag to indicate, if the C<jobs> value also applies to extraction.
+Some systems may have problems with extracting multiple archives
+to the same folder at the same time.
+Can be flagged using C<--no-sequential-extraction> as well.
+Defaults to C<false>.
 
 =item B<--meta|-m>
 
@@ -1157,8 +1177,11 @@ of key-value pairs with whitespace separator
 Supported parameters are:
 C<overwrite>, C<gzip>, C<jobs>, C<input-base>,
 C<token>, C<log>, C<cache>, C<cache-size>, C<cache-delete>, C<meta>,
-C<output>, C<base-sentences>, C<temp-extract>, C<base-paragraphs>,
-C<base-pagebreaks>, C<skip> (semicolon separated), C<sigle>
+C<output>,
+C<temp-extract>, C<sequential-extraction>,
+C<base-sentences>, C<base-paragraphs>,
+C<base-pagebreaks>,
+C<skip> (semicolon separated), C<sigle>
 (semicolon separated), C<anno> (semicolon separated).
 
 =item B<--temporary-extract|-te>
