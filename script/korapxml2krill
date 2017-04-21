@@ -26,6 +26,8 @@ use File::Temp qw/tempdir/;
 use File::Path qw(remove_tree make_path);
 use Mojo::Collection 'c';
 use String::Random qw(random_string);
+use IO::File;
+use Archive::Tar::Builder;
 
 # use KorAP::XML::ForkPool;
 # TODO: use Parallel::Loops
@@ -155,6 +157,7 @@ GetOptions(
   'primary|p!'  => \(my $primary),
   'pretty|y'    => \(my $pretty),
   'jobs|j=i'    => \(my $jobs),
+  'to-tar=s'       => \(my $to_tar),
   'sequential-extraction|se' => \(my $sequential_extraction),
   'cache-size|cs=s'  => \(my $cache_size),
   'cache-delete|cd!' => \(my $cache_delete),
@@ -261,6 +264,11 @@ if ($cfg_file && -e $cfg_file) {
   # Base-pagebreaks
   if (!(defined $base_pagebreaks) && defined $config{'base-pagebreaks'}) {
     $base_pagebreaks = $config{'base-pagebreaks'} ;
+  };
+
+  # Write to tar
+  if (!(defined $to_tar) && defined $config{'to-tar'}) {
+    $to_tar = $config{'to-tar'} ;
   };
 
   # Log
@@ -372,12 +380,15 @@ if ($cmd eq 'serial') {
   # Iterate over all inputs
   foreach (@input) {
 
+    # This will create a directory
     my $new_out = catdir($output, get_file_name_from_glob($_));
 
     # Create new path
-    if (make_path($new_out) == 0 && !-d $new_out) {
-      $log->error("Can\'t create path $new_out");
-      exit(0);
+    unless ($to_tar) {
+      if (make_path($new_out) == 0 && !-d $new_out) {
+        $log->error("Can\'t create path $new_out");
+        exit(0);
+      };
     };
 
     # Create archive command
@@ -815,11 +826,31 @@ elsif ($cmd eq 'archive') {
     $t = Benchmark->new;
     $count = scalar @dirs;
 
+    my $tar_archive;
+    my $output_dir = $output;
+    if ($to_tar) {
+      $tar_archive = Archive::Tar::Builder->new(
+        ignore_errors => 1
+      );
+
+      # Set output name
+      my $tar_file = $output;
+      unless ($tar_file =~ /\.tar$/) {
+        $tar_file .= '.tar';
+      };
+      my $fh = IO::File->new($tar_file, 'w');
+      $fh->binmode(1);
+
+      # Set handle
+      $tar_archive->set_handle($fh);
+      $output_dir = File::Temp->newdir;
+    };
+
   DIRECTORY_LOOP:
     for (my $i = 0; $i < $count; $i++) {
 
       my $filename = catfile(
-        $output,
+        $output_dir,
         get_file_name($dirs[$i]) . '.json' . ($gzip ? '.gz' : '')
       );
 
@@ -831,6 +862,12 @@ elsif ($cmd eq 'archive') {
           0,
           ["Processed " . $filename . ($return == -1 ? " - already existing" : '')]
         );
+
+        # Add to tar archive
+        if ($to_tar) {
+          $tar_archive->archive($filename);
+          unlink $filename;
+        };
       }
       else {
         $pool->finish(1, ["Unable to process " . $dirs[$i]]);
@@ -976,7 +1013,7 @@ It expects the input to point to the text level folder.
 
 =item B<archive>
 
-  $ korapxml2krill archive -z --input <directory|archive> --output <directory>
+  $ korapxml2krill archive -z --input <directory|archive> --output <directory|tar>
 
 Converts an archive of KorAP-XML documents. It expects a directory
 (pointing to the corpus level folder) or one or more zip files as input.
@@ -994,7 +1031,8 @@ Extracts KorAP-XML documents from a zip file.
 Convert archives sequentially. The inputs are not merged but treated
 as they are (so they may be premerged or globs).
 the C<--out> directory is treated as the base directory where subdirectories
-are created based on the archive name.
+are created based on the archive name. In case the C<--to-tar> flag is given,
+the output will be a tar file.
 
 
 =back
