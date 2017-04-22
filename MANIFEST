@@ -102,6 +102,7 @@ t/script/serial.t
 t/script/usage.t
 t/script/extract.t
 t/script/archive.t
+t/script/archive_tar.t
 t/script/config.t
 t/script/base.t
 t/corpus/archive.zip

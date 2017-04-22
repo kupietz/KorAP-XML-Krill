@@ -157,7 +157,7 @@ GetOptions(
   'primary|p!'  => \(my $primary),
   'pretty|y'    => \(my $pretty),
   'jobs|j=i'    => \(my $jobs),
-  'to-tar=s'       => \(my $to_tar),
+  'to-tar'      => \(my $to_tar),
   'sequential-extraction|se' => \(my $sequential_extraction),
   'cache-size|cs=s'  => \(my $cache_size),
   'cache-delete|cd!' => \(my $cache_delete),
@@ -350,7 +350,7 @@ if ($jobs eq '-1') {
 # Start serial processing
 if ($cmd eq 'serial') {
 
-  if ($output && (!-e $output || !-d $output)) {
+  if ($output && (!defined($to_tar)) && (!-e $output || !-d $output)) {
     print "Directory '$output' does not exist.\n\n";
     exit(0);
   };
@@ -383,7 +383,7 @@ if ($cmd eq 'serial') {
     # This will create a directory
     my $new_out = catdir($output, get_file_name_from_glob($_));
 
-    # Create new path
+    # Create new path, in case the output is not meant to be tarred
     unless ($to_tar) {
       if (make_path($new_out) == 0 && !-d $new_out) {
         $log->error("Can\'t create path $new_out");
@@ -558,7 +558,7 @@ sub get_file_name_from_glob ($) {
 s!^\s*([^_]+?)_([^\.]+?)\.(.+?)\s*$!$1/$2/$3! foreach @sigle;
 
 if ($cmd) {
-  if ($output && (!-e $output || !-d $output)) {
+  if ($output && (!defined($to_tar)) && (!-e $output || !-d $output)) {
     print "Directory '$output' does not exist.\n\n";
     exit(0);
   };
@@ -807,6 +807,34 @@ elsif ($cmd eq 'archive') {
   #    exit(1);
   #  };
 
+  my $tar_archive;
+  my $output_dir = $output;
+
+  # Initialize tar archive
+  if ($to_tar) {
+    $tar_archive = Archive::Tar::Builder->new(
+      ignore_errors => 1
+    );
+
+    # Set output name
+    my $tar_file = $output;
+    unless ($tar_file =~ /\.tar$/) {
+      $tar_file .= '.tar';
+    };
+
+    # Initiate the tar file
+    print "Writing to file $tar_file\n";
+    my $fh = IO::File->new($tar_file, 'w');
+    $fh->binmode(1);
+
+    # Set handle
+    $tar_archive->set_handle($fh);
+
+    # Output to temporary directory
+    $output_dir = File::Temp->newdir;
+  };
+
+
   # Input is a directory
   if (-d $input[0]) {
     my $it = Directory::Iterator->new($input[0]);
@@ -826,26 +854,6 @@ elsif ($cmd eq 'archive') {
     $t = Benchmark->new;
     $count = scalar @dirs;
 
-    my $tar_archive;
-    my $output_dir = $output;
-    if ($to_tar) {
-      $tar_archive = Archive::Tar::Builder->new(
-        ignore_errors => 1
-      );
-
-      # Set output name
-      my $tar_file = $output;
-      unless ($tar_file =~ /\.tar$/) {
-        $tar_file .= '.tar';
-      };
-      my $fh = IO::File->new($tar_file, 'w');
-      $fh->binmode(1);
-
-      # Set handle
-      $tar_archive->set_handle($fh);
-      $output_dir = File::Temp->newdir;
-    };
-
   DIRECTORY_LOOP:
     for (my $i = 0; $i < $count; $i++) {
 
@@ -858,16 +866,17 @@ elsif ($cmd eq 'archive') {
       $pool->start and next DIRECTORY_LOOP;
 
       if (my $return = $batch_file->process($dirs[$i] => $filename)) {
-        $pool->finish(
-          0,
-          ["Processed " . $filename . ($return == -1 ? " - already existing" : '')]
-        );
 
         # Add to tar archive
         if ($to_tar) {
           $tar_archive->archive($filename);
           unlink $filename;
         };
+
+        $pool->finish(
+          0,
+          ["Processed " . $filename . ($return == -1 ? " - already existing" : '')]
+        );
       }
       else {
         $pool->finish(1, ["Unable to process " . $dirs[$i]]);
@@ -898,7 +907,7 @@ elsif ($cmd eq 'archive') {
       my ($prefix, $corpus, $doc, $text) = $archive->split_path($dirs[$i]);
 
       my $filename = catfile(
-        $output,
+        $output_dir,
         get_file_name(
           catfile($corpus, $doc, $text)
             . '.json' . ($gzip ? '.gz' : '')
@@ -925,6 +934,13 @@ elsif ($cmd eq 'archive') {
 
         # Write file
         if (my $return = $batch_file->process($dir => $filename)) {
+
+          # Add to tar archive
+          if ($to_tar) {
+            $tar_archive->archive($filename);
+            unlink $filename;
+          };
+
           # Delete temporary file
           $pool->finish(
             0,
