@@ -28,6 +28,7 @@ use Mojo::Collection 'c';
 use String::Random qw(random_string);
 use IO::File;
 use Archive::Tar::Builder;
+use Fcntl qw(:flock SEEK_END);
 
 # use KorAP::XML::ForkPool;
 # TODO: use Parallel::Loops
@@ -780,6 +781,34 @@ elsif ($cmd eq 'archive') {
   my $count = 0;  # Texts to process
   my $iter  = 1;  # Current text in process
 
+  my $tar_archive;
+  my $output_dir = $output;
+  my $tar_fh;
+
+  # Initialize tar archive
+  if ($to_tar) {
+    $tar_archive = Archive::Tar::Builder->new(
+      ignore_errors => 1
+    );
+
+    # Set output name
+    my $tar_file = $output;
+    unless ($tar_file =~ /\.tar$/) {
+      $tar_file .= '.tar';
+    };
+
+    # Initiate the tar file
+    print "Writing to file $tar_file\n";
+    $tar_fh = IO::File->new($tar_file, 'w');
+    $tar_fh->binmode(1);
+
+    # Set handle
+    $tar_archive->set_handle($tar_fh);
+
+    # Output to temporary directory
+    $output_dir = File::Temp->newdir;
+  };
+
   # Report on fork message
   $pool->run_on_finish (
     sub {
@@ -790,6 +819,25 @@ elsif ($cmd eq 'archive') {
         ($iter++) . "/$count]" .
         ($code ? " $code" : '') .
         ' ' . $data->[0] . "\n";
+
+      if (!$code && $to_tar && $data->[2]) {
+        my $filename = $data->[2];
+
+        # Lock filehandle
+        if (flock($tar_fh, LOCK_EX)) {
+
+          # Archive and remove file
+          $tar_archive->archive($filename);
+          unlink $filename;
+
+          # Unlock filehandle
+          flock($tar_fh, LOCK_UN);
+        }
+        else {
+          $log->warn("Unable to add $filename to archive");
+        };
+      };
+
       $data->[1] = undef if $data->[1];
     }
   );
@@ -806,33 +854,6 @@ elsif ($cmd eq 'archive') {
   #    print "Unable to intialize cache '$cache_file'\n\n";
   #    exit(1);
   #  };
-
-  my $tar_archive;
-  my $output_dir = $output;
-
-  # Initialize tar archive
-  if ($to_tar) {
-    $tar_archive = Archive::Tar::Builder->new(
-      ignore_errors => 1
-    );
-
-    # Set output name
-    my $tar_file = $output;
-    unless ($tar_file =~ /\.tar$/) {
-      $tar_file .= '.tar';
-    };
-
-    # Initiate the tar file
-    print "Writing to file $tar_file\n";
-    my $fh = IO::File->new($tar_file, 'w');
-    $fh->binmode(1);
-
-    # Set handle
-    $tar_archive->set_handle($fh);
-
-    # Output to temporary directory
-    $output_dir = File::Temp->newdir;
-  };
 
 
   # Input is a directory
@@ -866,16 +887,13 @@ elsif ($cmd eq 'archive') {
       $pool->start and next DIRECTORY_LOOP;
 
       if (my $return = $batch_file->process($dirs[$i] => $filename)) {
-
-        # Add to tar archive
-        if ($to_tar) {
-          $tar_archive->archive($filename);
-          unlink $filename;
-        };
-
         $pool->finish(
           0,
-          ["Processed " . $filename . ($return == -1 ? " - already existing" : '')]
+          [
+            "Processed " . $filename . ($return == -1 ? " - already existing" : ''),
+            undef,
+            $filename
+          ]
         );
       }
       else {
@@ -935,16 +953,14 @@ elsif ($cmd eq 'archive') {
         # Write file
         if (my $return = $batch_file->process($dir => $filename)) {
 
-          # Add to tar archive
-          if ($to_tar) {
-            $tar_archive->archive($filename);
-            unlink $filename;
-          };
-
           # Delete temporary file
           $pool->finish(
             0,
-            ["Processed " . $filename . ($return == -1 ? " - already existing" : ''), $temp]
+            [
+              "Processed " . $filename . ($return == -1 ? " - already existing" : ''),
+              $temp,
+              $filename
+            ]
           );
           #$pool->finish(0, ["Processed " . $filename, $temp]);
         }
@@ -969,6 +985,13 @@ elsif ($cmd eq 'archive') {
 
   # Delete cache file
   unlink($cache_file) if $cache_delete;
+
+  # Close tar filehandle
+  if ($to_tar && $tar_fh) {
+    $tar_archive->finish;
+    $tar_fh->close;
+    print "Wrote to tar archive.\n";
+  };
 
   print timestr(timediff(Benchmark->new, $t))."\n";
   print "Done.\n";

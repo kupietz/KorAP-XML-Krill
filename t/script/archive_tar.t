@@ -58,9 +58,10 @@ $call = join(
 # Test without parameters
 my $combined = combined_from( sub { system($call) });
 
-diag $combined;
+like($combined, qr!Input is .+?wpd15-single\.zip,.+?wpd15-single\.malt\.zip,.+?wpd15-single\.corenlp\.zip,.+?wpd15-single\.opennlp\.zip,.+?wpd15-single\.mdparser\.zip,.+?wpd15-single\.tree_tagger\.zip!is, 'Input is fine');
 
-#qr!Input is .+?wpd15-single\.zip,.+?wpd15-single\.malt\.zip,.+?wpd15-single\.corenlp\.zip,.+?wpd15-single\.opennlp\.zip,.+?wpd15-single\.mdparser\.zip,.+?wpd15-single\.tree_tagger\.zip!is,
+like($combined, qr!Writing to file .+?\.tar!, 'Write out');
+like($combined, qr!Wrote to tar archive!, 'Write out');
 
 
 
