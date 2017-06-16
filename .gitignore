@@ -14,6 +14,8 @@ MYMETA*
 Makefile
 pm_to_blib
 t/corpus/BRZ13
+t/corpus/DCK
+t/real/dck.t
 nytprof.out
 nytprof
 \#*#

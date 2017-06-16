@@ -59,6 +59,16 @@ sub parse {
     my $author    = $analytic->at('h\.author');
     my $editor    = $analytic->at('editor');
 
+    #if ($analytic->find('editor')->size > 1) {
+    #  warn 'Mehr als ein Editor!';
+    #  warn $analytic->find('editor')->join("\n");
+    #};
+
+    #if ($analytic->find('author')->size > 1) {
+    #  warn 'Mehr als ein Autor!';
+    #  warn $analytic->find('author')->join("\n");
+    #};
+
     # Editor contains translator
     my $translator;
     if ($editor && $editor->attr('role') && $editor->attr('role') eq 'translator') {
