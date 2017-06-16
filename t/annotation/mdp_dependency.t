@@ -71,6 +71,8 @@ my $stream = $data->{stream};
 
 is($stream->[0]->[0], '-:tokens$<i>3555', 'Token count');
 
+is($stream->[-1]->[-1], 's:978-3-89487-607-4', 'Last token');
+
 # Term-to-term
 is($stream->[0]->[1], '<:mdp/d:NMOD$<b>32<i>5', 'Term-to-Term');
 is($stream->[5]->[0], '>:mdp/d:NMOD$<b>32<i>0', 'Term-to-Term');

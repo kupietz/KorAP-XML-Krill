@@ -1,7 +1,7 @@
 package KorAP::XML::Krill;
 use Mojo::Base -base;
 use Mojo::ByteStream 'b';
-use Mojo::Util qw/encode/;
+use Mojo::Util qw/encode html_unescape/;
 use Mojo::File;
 use Scalar::Util qw/weaken/;
 use XML::Fast;
@@ -104,8 +104,14 @@ sub parse {
     return;
   };
 
-  # Get primary data
-  my $pd = $rt->{text};
+  # Get primary data (was my "$pd = $rt->{text};" before)
+  # Unfortunately xml2hash removes spaces at the start and at
+  # the end of a text node, making it impossible to deal with cmc data.
+  $file =~ $ENC_RE;
+  $file = $file->decode($2 // 'UTF-8');
+  my $start = index($file, '<text>') + 6;
+  my $end = index($file, '</text>');
+  my $pd = html_unescape substr($file, $start, $end - $start);
 
   unless ($pd) {
     $self->log->warn($unable . ': No primary data found');
