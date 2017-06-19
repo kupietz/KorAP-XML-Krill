@@ -47,8 +47,8 @@ $call = join(
   'perl', $script,
   'extract',
   '--input' => $input,
-  '--cache' => $cache,
   '--output' => $output,
+  '--cache' => $cache
 );
 
 my $sep = qr!\.\.\.[\n\r]+?\.\.\.!;
@@ -185,11 +185,6 @@ ok(-d catdir($output2, 'REI', 'BNG', '00128'), 'Directory created');
 ok(!-d catdir($output2, 'REI', 'RBR', '00610'), 'Directory not created');
 
 
-
-
-
-
-
 # Check multiple archives
 $output = tempdir(CLEANUP => 1);
 ok(-d $output, 'Output directory exists');
@@ -201,7 +196,8 @@ $call = join(
   '-i' => catfile($f, '..', 'corpus', 'archives', 'wpd15-single.zip'),
   '-i' => catfile($f, '..', 'corpus', 'archives', 'wpd15-single.tree_tagger.zip'),
   '-i' => catfile($f, '..', 'corpus', 'archives', 'wpd15-single.opennlp.zip'),
-  '--output' => $output
+  '--output' => $output,
+  '--cache' => $cache
 );
 
 # Test with sigle
