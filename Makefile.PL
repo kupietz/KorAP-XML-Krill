@@ -36,7 +36,7 @@ WriteMakefile(
     'utf8'            => 0,
     'bytes'           => 0,
     'Pod::Usage'      => 0,
-    'Cache::FastMmap' => 1.40,
+    'Cache::FastMmap' => 1.45,
     'Sys::Info'       => 0.78,
     'Config::Simple'  => 4.58,
     'String::Random'  => 0.29,

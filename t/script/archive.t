@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
-use File::Temp qw/tempdir/;
+use File::Temp qw/:POSIX/;
 use Mojo::File;
 use Mojo::Util qw/quote/;
 use Mojo::JSON qw/decode_json/;
@@ -42,6 +42,9 @@ ok(-f $input, 'Input archive found');
 my $output = File::Temp->newdir(CLEANUP => 0);
 $output->unlink_on_destroy(0);
 
+my $cache = tmpnam();
+
+
 ok(-d $output, 'Output directory exists');
 
 $call = join(
@@ -50,6 +53,7 @@ $call = join(
   'archive',
   '--input' => '' . $input,
   '--output' => $output,
+  '--cache' => $cache,
   '-t' => 'Base#tokens_aggr',
   '-m' => 'Sgbr'
 );
@@ -84,6 +88,7 @@ $call = join(
   'archive',
   '--input' => $input,
   '--output' => $output,
+  '--cache' => $cache,
   '-t' => 'Tree_Tagger#Tokens',
   '-j' => 4 # 4 jobs!
 );
@@ -135,7 +140,8 @@ $input = catfile($f, '..', 'corpus', 'WDD15', 'A79', '83946');
 $call = join(
   ' ',
   'perl', $script,
-  '--input' => $input
+  '--input' => $input,
+  '--cache' => $cache
 );
 
 # Test without compression
@@ -153,6 +159,7 @@ $call = join(
   'archive',
   '--input' => $input_quotes,
   '--output' => $output,
+  '--cache' => $cache,
   '-t' => 'Base#tokens_aggr'
 );
 
@@ -177,6 +184,7 @@ $call = join(
   'archive',
   '--input' => $input_quotes,
   '--output' => $output,
+  '--cache' => $cache,
   '-t' => 'Base#tokens_aggr'
 );
 

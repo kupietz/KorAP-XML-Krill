@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
-use File::Temp qw/ :POSIX /;
+use File::Temp qw/:POSIX/;
 use Mojo::File;
 use Mojo::JSON qw/decode_json/;
 use IO::Uncompress::Gunzip;
@@ -19,6 +19,8 @@ my $input = catdir($f, '..', 'annotation', 'corpus', 'doc', '0001');
 ok(-d $input, 'Input directory found');
 
 my $output = tmpnam();
+my $cache = tmpnam();
+
 
 ok(!-f $output, 'Output does not exist');
 
@@ -27,6 +29,7 @@ my $call = join(
   'perl', $script,
   '--input' => $input,
   '--output' => $output,
+  '--cache' => $cache,
   '-t' => 'OpenNLP#Tokens',
   '-l' => 'INFO'
 );
@@ -94,6 +97,7 @@ $call = join(
   'perl', $script,
   '--input' => $input,
   '--output' => $output,
+  '--cache' => $cache,
   '-t' => 'CoreNLP#Tokens',
   '-s' => '#all',
   '-a' => 'DeReKo#Structure',
@@ -129,6 +133,7 @@ $call = join(
   'perl', $script,
   '--input' => $input,
   '--output' => $output,
+  '--cache' => $cache,
   '-t' => 'CoreNLP#Tokens',
   '-s' => '#all',
   '-a' => 'DeReKo#Structure',
@@ -170,6 +175,7 @@ $call = join(
   'perl', $script,
   '--input' => $input,
   '--output' => $output,
+  '--cache' => $cache,
   '-m' => 'Sgbr',
   '-t' => 'Base#Tokens_aggr',
   '-l' => 'INFO'
@@ -219,6 +225,7 @@ $call = join(
   'perl', $script,
   '--input' => $input,
   '--output' => $output,
+  '--cache' => $cache,
   '-t' => 'base#tokens_aggr',
   '-bs' => 'DeReKo#Structure',
   '-bp' => 'DeReKo#Structure',

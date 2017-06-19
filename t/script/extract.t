@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
-use File::Temp qw/tempdir/;
+use File::Temp qw/:POSIX tempdir/;
 use Mojo::Util qw/slurp/;
 use Mojo::JSON qw/decode_json/;
 use IO::Uncompress::Gunzip;
@@ -41,11 +41,14 @@ ok(-f $input, 'Input archive found');
 my $output = tempdir(CLEANUP => 1);
 ok(-d $output, 'Output directory exists');
 
+my $cache = tmpnam();
+
 $call = join(
   ' ',
   'perl', $script,
   'extract',
   '--input' => $input,
+  '--cache' => $cache,
   '--output' => $output,
 );
 
@@ -80,6 +83,7 @@ $call = join(
   'extract',
   '--input' => $input,
   '--output' => $output2,
+  '--cache' => $cache,
   '-sg' => 'TEST/BSP/4'
 );
 
@@ -118,6 +122,7 @@ $call = join(
   'extract',
   '--input' => $input_rei,
   '--output' => $output2,
+  '--cache' => $cache,
   '-sg' => 'REI/BNG'
 );
 
@@ -154,6 +159,7 @@ $call = join(
   'extract',
   '--input' => $input_rei,
   '--output' => $output2,
+  '--cache' => $cache,
   '-sg' => 'REI/BN*'
 );
 
@@ -229,6 +235,7 @@ $call = join(
   'extract',
   '--input' => $input_quotes,
   '--output' => $output2,
+  '--cache' => $cache,
   '-sg' => '"TEST/BSP \"Example\"/1"'
 );
 
