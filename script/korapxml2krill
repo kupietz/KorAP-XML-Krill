@@ -113,9 +113,12 @@ use Fcntl qw(:flock SEEK_END);
 # - support serial processing
 # - support input root
 # - introduced --sequential-extraction flag
+#
+# 2017/06/19
+# - added support for DCK
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2017/04/12';
+our $LAST_CHANGE = '2017/06/19';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -422,6 +425,8 @@ push(@layers, ['CoreNLP', 'Sentences']);
 push(@layers, ['CoreNLP', 'Morpho']);
 push(@layers, ['CoreNLP', 'Constituency']);
 
+# CMC
+push(@layers, ['CMC', 'Morpho']);
 
 # DeReKo
 my @dereko_attr = ();
@@ -1318,6 +1323,9 @@ L<Krill|https://github.com/KorAP/Krill>.
     #Morpho
     #NamedEntities
     #Sentences
+
+  CMC
+    #Morpho
 
   DeReKo
     #Structure

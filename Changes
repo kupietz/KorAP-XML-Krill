@@ -1,6 +1,6 @@
 0.30 2017-06-19
         - Fixed permission handling in test suite.
-        - Added preliminary DCK support.
+        - Added preliminary CMC support.
 
 0.29 2017-04-23
         - support --to-tar flag.
