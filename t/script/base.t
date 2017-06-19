@@ -19,6 +19,7 @@ my $input = catdir($f, '..', 'corpus', 'GOE2', 'AGA', '03828');
 ok(-d $input, 'Input directory found');
 
 my $output = tmpnam();
+my $cache = tmpnam();
 
 ok(!-f $output, 'Output does not exist');
 
@@ -27,6 +28,7 @@ my $call = join(
   'perl', $script,
   '--input' => $input,
   '--output' => $output,
+  '--cache' => $cache,
   '-t' => 'Base#tokens_aggr',
   '-bs' => 'DeReKo#Structure',
   '-bp' => 'DeReKo#Structure',

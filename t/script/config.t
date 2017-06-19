@@ -1,10 +1,9 @@
 #/usr/bin/env perl
 use strict;
 use warnings;
-
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
-use File::Temp qw/ :POSIX tempfile/;
+use File::Temp qw/:POSIX tempfile/;
 use Mojo::File;
 use Test::More;
 use Test::Output qw/combined_from/;
@@ -40,13 +39,16 @@ my $input = "'".catfile('wpd15*.zip') . "'";
 # Temporary output
 my $output = File::Temp->newdir(CLEANUP => 0);
 
+my $cache = tmpnam();
+
 my $call = join(
   ' ',
   'perl', $script,
   'archive',
   '--config' => $cfg_file,
   '--input' => $input,
-  '--output' => $output
+  '--output' => $output,
+  '--cache' => $cache
 );
 
 like($call, qr!config!, 'Call string');

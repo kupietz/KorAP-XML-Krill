@@ -4,7 +4,7 @@ use Test::More;
 use Test::Output qw/stdout_from/;
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
-use File::Temp qw/tempdir/;
+use File::Temp qw/:POSIX/;
 
 my $f = dirname(__FILE__);
 my $script = catfile($f, '..', '..', 'script', 'korapxml2krill');
@@ -14,6 +14,8 @@ my $input_base = catdir($f, '..', 'corpus');
 # Temporary output
 my $output = File::Temp->newdir(CLEANUP => 0);
 
+my $cache = tmpnam();
+
 my $call = join(
   ' ',
   'perl', $script,
@@ -21,6 +23,7 @@ my $call = join(
   '-t' => 'Base#tokens_aggr',
   '-i' => '"archive.zip"',
   '-i' => '"archives/wpd15*.zip"',
+  '--cache' => $cache,
   '-ib' => $input_base,
   '-o' => $output
 );

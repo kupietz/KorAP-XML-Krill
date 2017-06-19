@@ -3,7 +3,7 @@ use strict;
 use warnings;
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
-use File::Temp qw/tempdir/;
+use File::Temp qw/:POSIX tempdir/;
 use Mojo::File;
 use Mojo::Util qw/quote/;
 use Mojo::JSON qw/decode_json/;
@@ -45,12 +45,15 @@ ok(-f $output, 'Output directory exists');
 
 my $input_quotes = "'".catfile($f, '..', 'corpus', 'archives', 'wpd15*.zip') . "'";
 
+my $cache = tmpnam();
+
 $call = join(
   ' ',
   'perl', $script,
   'archive',
   '--input' => $input_quotes,
   '--output' => $output . '.tar',
+  '--cache' => $cache,
   '-t' => 'Base#tokens_aggr',
   '--to-tar'
 );

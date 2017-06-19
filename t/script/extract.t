@@ -4,7 +4,6 @@ use warnings;
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
 use File::Temp qw/:POSIX tempdir/;
-use Mojo::Util qw/slurp/;
 use Mojo::JSON qw/decode_json/;
 use IO::Uncompress::Gunzip;
 use Test::More;
