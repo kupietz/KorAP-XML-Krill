@@ -73,6 +73,7 @@ sub parse {
 
   # TODO: Reuse the following code from Spans.pm and Tokens.pm
   my ($tokens, $error);
+
   try {
     local $SIG{__WARN__} = sub {
       $error = 1;
@@ -84,6 +85,7 @@ sub parse {
       attr => '-'
     )->{layer}->{spanList};
   } catch {
+
     $self->log->warn('Token error in ' . $path . ($_ ? ': ' . $_ : ''));
     $error = 1;
   };
