@@ -13,7 +13,7 @@ sub parse {
 
       my $content = $token->hash->{fs}->{f};
 
-      my $array = $content->{fs}->{f};
+      my $array = $content->{fs}->{f} or return;
 
       # In case there is only a lemma/pos ...
       $array = ref $array ne 'ARRAY' ? [$array] : $array;
@@ -21,6 +21,8 @@ sub parse {
       my $found;
 
       foreach my $f (@$array) {
+
+        next unless $f->{-name};
 
         # pos tag
         if (($f->{-name} eq 'pos') &&
