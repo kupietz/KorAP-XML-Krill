@@ -1,3 +1,6 @@
+0.31 2017-06-29
+        - Fixed exit codes in script.
+
 0.30 2017-06-19
         - Fixed permission handling in test suite.
         - Added preliminary CMC support.

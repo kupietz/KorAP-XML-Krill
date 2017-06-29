@@ -116,9 +116,12 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2017/06/19
 # - added support for DCK
+#
+# 2017/06/29
+# - Fixed exit codes
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2017/06/19';
+our $LAST_CHANGE = '2017/06/29';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -355,8 +358,8 @@ if ($jobs eq '-1') {
 if ($cmd eq 'serial') {
 
   if ($output && (!defined($to_tar)) && (!-e $output || !-d $output)) {
-    print "Directory '$output' does not exist.\n\n";
-    exit(0);
+    $log->error("Directory '$output' does not exist.");
+    exit 1;
   };
 
   # Remove all inputs
@@ -391,7 +394,7 @@ if ($cmd eq 'serial') {
     unless ($to_tar) {
       if (make_path($new_out) == 0 && !-d $new_out) {
         $log->error("Can\'t create path $new_out");
-        exit(0);
+        exit 1;
       };
     };
 
@@ -403,7 +406,7 @@ if ($cmd eq 'serial') {
     system @archive_cmd;
   };
 
-  exit(0);
+  exit;
 };
 
 my %skip;
@@ -565,8 +568,8 @@ s!^\s*([^_]+?)_([^\.]+?)\.(.+?)\s*$!$1/$2/$3! foreach @sigle;
 
 if ($cmd) {
   if ($output && (!defined($to_tar)) && (!-e $output || !-d $output)) {
-    print "Directory '$output' does not exist.\n\n";
-    exit(0);
+    $log->error("Directory '$output' does not exist.");
+    exit 1;
   };
 };
 
@@ -621,7 +624,7 @@ unless ($cmd) {
   unlink($cache_file) if $cache_delete;
 
   stop_time;
-  exit(1);
+  exit;
 };
 
 
@@ -633,8 +636,8 @@ if ($cmd eq 'extract') {
 
     # Check zip capabilities
     unless ($archive->test_unzip) {
-      print "Unzip is not installed or incompatible.\n\n";
-      exit(0);
+      $log->error("Unzip is not installed or incompatible.");
+      exit 1;
     };
 
     # Add further annotation archived
@@ -726,7 +729,7 @@ if ($cmd eq 'extract') {
   # Can't create archive object
   else {
     $log->error('Unable to extract from primary archive ' . $input[0]);
-    exit(1);
+    exit 1;
   };
 }
 
@@ -744,8 +747,8 @@ elsif ($cmd eq 'archive') {
 
       # Check zip capabilities
       unless ($archive->test_unzip) {
-        print "Unzip is not installed or incompatible.\n\n";
-        exit(0);
+        $log->error("Unzip is not installed or incompatible.");
+        exit 1;
       };
 
       # Add further annotation archived
@@ -767,14 +770,14 @@ elsif ($cmd eq 'archive') {
       else {
         $log->error('Unable to extract from primary archive ' . $input[0] .
                       ' to ' . $extract_dir);
-        exit(1);
+        exit 1;
       };
     }
 
     # Can't create archive object
     else {
       $log->error('Unable to extract from primary archive ' . $input[0]);
-      exit(1);
+      exit 1;
     };
   };
 
@@ -911,8 +914,8 @@ elsif ($cmd eq 'archive') {
   elsif (-f($input[0]) && (my $archive = KorAP::XML::Archive->new($input[0]))) {
 
     unless ($archive->test_unzip) {
-      print "Unzip is not installed or incompatible.\n\n";
-      exit(1);
+      $log->error("Unzip is not installed or incompatible.");
+      exit 1;
     };
 
     # Add further annotation archived
