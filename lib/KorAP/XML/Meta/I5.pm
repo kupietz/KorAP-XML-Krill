@@ -246,6 +246,7 @@ sub parse {
     };
   };
 
+
   $temp = $dom->at('textClass');
   if ($temp) {
     # Get textClasses
