@@ -1,5 +1,6 @@
 package KorAP::XML::Tokenizer;
 use Mojo::Base -base;
+use feature 'fc';
 use Mojo::ByteStream 'b';
 use Mojo::File;
 use XML::Fast;
@@ -11,7 +12,6 @@ use KorAP::XML::Tokenizer::Match;
 use KorAP::XML::Tokenizer::Spans;
 use KorAP::XML::Tokenizer::Tokens;
 use KorAP::XML::Index::MultiTermTokenStream;
-use Unicode::CaseFold;
 use Unicode::Normalize qw/getCombinClass normalize/;
 use List::MoreUtils 'uniq';
 use JSON::XS;
