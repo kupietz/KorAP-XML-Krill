@@ -24,6 +24,7 @@ use Sys::Info::Constants qw( :device_cpu );
 use File::Glob ':bsd_glob';
 use File::Temp qw/tempdir/;
 use File::Path qw(remove_tree make_path);
+use File::Basename;
 use Mojo::Collection 'c';
 use String::Random qw(random_string);
 use IO::File;
@@ -119,6 +120,9 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2017/06/29
 # - Fixed exit codes
+#
+# 2017/07/04
+# - Fixed tar building process
 # ----------------------------------------------------------
 
 our $LAST_CHANGE = '2017/06/29';
@@ -834,8 +838,10 @@ elsif ($cmd eq 'archive') {
         # Lock filehandle
         if (flock($tar_fh, LOCK_EX)) {
 
+          my $clean_file = fileparse($filename);
+
           # Archive and remove file
-          $tar_archive->archive($filename);
+          $tar_archive->archive_as($filename => $clean_file);
           unlink $filename;
 
           # Unlock filehandle

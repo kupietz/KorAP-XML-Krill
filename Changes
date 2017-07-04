@@ -1,3 +1,6 @@
+0.32 2017-07-04
+        - Fixed tar building process in script.
+
 0.31 2017-06-30
         - Fixed exit codes in script.
         - Use CORE::fc for case folding.

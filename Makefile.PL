@@ -40,7 +40,8 @@ WriteMakefile(
     'Config::Simple'  => 4.58,
     'String::Random'  => 0.29,
     'File::Path'      => 2.12,
-    'Archive::Tar::Builder' => 2.5002
+    'Archive::Tar::Builder' => 2.5002,
+    'Archive::Tar'    => 2.24
   },
   MIN_PERL_VERSION => '5.014',
   test => {
