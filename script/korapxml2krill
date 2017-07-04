@@ -635,6 +635,9 @@ unless ($cmd) {
 # Extract XML files
 if ($cmd eq 'extract') {
 
+  # Output is required
+  pod2usage(%ERROR_HASH) unless $output;
+
   # Create new archive object
   if (-f($input[0]) && (my $archive = KorAP::XML::Archive->new($input[0]))) {
 
