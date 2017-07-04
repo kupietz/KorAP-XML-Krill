@@ -101,7 +101,7 @@ sub parse {
           # Add attributes
           $mtt->add(
             term =>
-              '@:dereko/s:' . $_->{'-name'} . ':' . $_->{'#text'},
+              '@:dereko/s:' . $_->{'-name'} . ($_->{'#text'} ? ':' . $_->{'#text'} : ''),
             p_start => $p_start,
             pti     => 17,
             payload => '<s>' . $tui .
