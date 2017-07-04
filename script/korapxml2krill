@@ -359,7 +359,7 @@ if ($jobs eq '-1') {
 
 
 # Start serial processing
-if ($cmd eq 'serial') {
+if ($cmd && $cmd eq 'serial') {
 
   if ($output && (!defined($to_tar)) && (!-e $output || !-d $output)) {
     $log->error("Directory '$output' does not exist.");
