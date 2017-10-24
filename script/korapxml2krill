@@ -513,7 +513,10 @@ else {
 };
 
 # Get tokenization basis
-my ($token_base_foundry, $token_base_layer) = split(/#/, $token_base) if ($token_base);
+my ($token_base_foundry, $token_base_layer) = split(/#/, $token_base) if $token_base;
+
+# Remove file extension
+$token_base_layer =~ s/\.xml$//i;
 
 # TODO: This should not be initialized for batch
 my $cache = Cache::FastMmap->new(

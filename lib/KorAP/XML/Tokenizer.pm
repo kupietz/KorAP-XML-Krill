@@ -48,9 +48,15 @@ has log => sub {
 sub parse {
   my $self = shift;
 
+  my $layer_file = lc($self->layer);
+
+  if (index($layer_file, '.') < 0) {
+    $layer_file .= '.xml';
+  };
+
   # Create new token stream
   my $mtts = KorAP::XML::Index::MultiTermTokenStream->new;
-  my $path = $self->path . lc($self->foundry) . '/' . lc($self->layer) . '.xml';
+  my $path = $self->path . lc($self->foundry) . '/' . $layer_file;
 
   unless (-e $path) {
     $self->log->warn('Unable to load base tokenization: ' . $path);

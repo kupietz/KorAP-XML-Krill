@@ -1,5 +1,6 @@
-0.32 2017-07-04
+0.32 2017-10-24
         - Fixed tar building process in script.
+        - Support file extensions in base tokenization parameter.
 
 0.31 2017-06-30
         - Fixed exit codes in script.
