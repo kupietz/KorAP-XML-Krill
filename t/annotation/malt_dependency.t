@@ -37,10 +37,14 @@ is($stream->[0]->[0], '-:tokens$<i>31', 'Number of paragraphs');
 
 # Term2Term relation
 is($stream->[0]->[1], '<:malt/d:KON$<b>32<i>1', 'Term2Term relation');
+is($stream->[0]->[-1], 's:Maximen', 'Surface');
+
 is($stream->[1]->[0], '>:malt/d:KON$<b>32<i>0', 'Term2Term relation');
+is($stream->[1]->[-1], 's:und', 'Surface');
 
 is($stream->[0]->[2], '<:malt/d:KON$<b>32<i>3', 'Term2Term relation');
 is($stream->[3]->[0], '>:malt/d:KON$<b>32<i>0', 'Term2Term relation');
+is($stream->[3]->[-1], 's:Religion', 'Term2Term relation');
 
 # Term2Element and Element2Term relation
 is($stream->[0]->[3], '<:malt/d:ROOT$<b>34<i>0<i>49<i>6<i>0', 'Term2Term relation');
