@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.0" TEIform="teiHeader">
+    <fileDesc>
+     <titleStmt>
+      <textSigle>WPD15/U43.34816</textSigle>
+      <t.title assemblage="external">WPD15/U43.34816: Universitätsbibliothek Augsburg, In: Wikipedia - URL:http://de.wikipedia.org/wiki/Universitätsbibliothek_Augsburg: Wikipedia, 2015</t.title>
+     </titleStmt>
+     <editionStmt version="0"/>
+     <publicationStmt>
+      <distributor/>
+      <pubAddress/>
+      <availability region="world" Default="n" status="unknown">CC-BY-SA</availability>
+      <pubDate/>
+     </publicationStmt>
+     <sourceDesc Default="n">
+      <biblStruct Default="n" status="draft">
+       <analytic>
+        <h.title type="main">Universitätsbibliothek Augsburg</h.title>
+        <h.title type="sub"/>
+        <h.title type="abbr" level="m"/>
+        <h.title type="abbr" level="a"/>
+        <h.author>Enzian44, u.a.</h.author>
+        <editor/>
+        <imprint/>
+        <biblScope type="subsume"/>
+        <biblScope type="pp"/>
+        <biblNote n="1"/>
+       </analytic>
+       <monogr>
+        <h.title type="main"/>
+        <editor>wikipedia.org</editor>
+        <edition>
+         <further> Dump file "dewiki-20150501-pages-meta-current.xml" retrieved from http://dumps.wikimedia.org </further>
+         <kind/>
+         <appearance/>
+        </edition>
+        <imprint>
+         <pubDate type="year">2015</pubDate>
+         <pubDate type="month">05</pubDate>
+         <pubDate type="day">01</pubDate>
+        </imprint>
+        <biblScope type="vol"/>
+        <biblScope type="volume-title"/>
+       </monogr>
+      </biblStruct>
+      <reference type="complete" assemblage="non-automatic">WPD15/U43.34816: Universitätsbibliothek Augsburg, In: Wikipedia - URL:http://de.wikipedia.org/wiki/Universitätsbibliothek_Augsburg: Wikipedia, 2015</reference>
+      <reference type="short" assemblage="regular">WPD15/U43.34816 Wikipedia; Universitätsbibliothek Augsburg, (Letzte Änderung 7.6.2014 ) 1.5.2015</reference>
+     </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+     <samplingDecl Default="n"/>
+     <editorialDecl Default="n">
+      <pagination type="no"/>
+     </editorialDecl>
+    </encodingDesc>
+    <profileDesc>
+     <creation>
+      <creatDate>2014.06.07</creatDate>
+      <creatRef>(Letzte Änderung 7.6.2014)</creatRef>
+      <creatRefShort>(Letzte Änderung 7.6.2014)</creatRefShort>
+     </creation>
+     <textDesc Default="n">
+      <textTypeArt>Enzyklopädie-Artikel</textTypeArt>
+      <textDomain/>
+     </textDesc>
+    </profileDesc>
+   </idsHeader>

@@ -118,6 +118,36 @@ is($output->{data}->{foundries}, 'corenlp corenlp/constituency', 'Foundries');
 is($output->{data}->{layerInfos}, 'corenlp/c=spans', 'layerInfos');
 is($doc->meta->{editor}, 'wikipedia.org', 'Editor');
 
+
+# Check offset problem
+$path = catdir(dirname(__FILE__), '../corpus/WPD15/U43/34816');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc->parse, 'Parse document');
+
+is($doc->text_sigle, 'WPD15/U43/34816', 'Correct text sigle');
+
+# Tokenization
+use_ok('KorAP::XML::Tokenizer');
+
+$token_base_foundry = 'Base';
+
+# Get tokenization
+$tokens = KorAP::XML::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => $token_base_foundry,
+  layer => $token_base_layer,
+  name => 'tokens'
+);
+ok($tokens, 'Token Object is fine');
+ok($tokens->parse, 'Token parsing is fine');
+
+$output = $tokens->to_data;
+$stream = $tokens->to_data->{data}->{stream};
+
+is($stream->[420]->[-1], 's:online', 'online');
+is($stream->[421]->[-1], 's:verfügbar', 'verfügbar');
+
 done_testing;
 __END__
 
