@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer docid="WPD17_060.18486" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+<spanList>
+<span id="s1_n1" from="0" to="2">
+<rel label="SUBJ">
+<span from="3" to="8"/>
+</rel>
+</span>
+<span id="s1_n2" from="3" to="8">
+<rel label="ROOT">
+<span from="0" to="13"/>
+</rel>
+</span>
+<span id="s1_n3" from="9" to="12">
+<rel label="OBJP">
+<span from="3" to="8"/>
+</rel>
+</span>
+<span id="s1_n4" from="12" to="13">
+<rel label="-PUNCT-">
+<span from="9" to="12"/>
+</rel>
+</span>
+<span id="s2_n1" from="16" to="23">
+<rel label="ROOT">
+<span from="16" to="10"/>
+</rel>
+</span>
+<span id="s2_n2" from="24" to="26">
+<rel label="APP">
+<span from="16" to="23"/>
+</rel>
+</span>
+<span id="s2_n3" from="27" to="29">
+<rel label="APP">
+<span from="24" to="26"/>
+</rel>
+</span>
+<span id="s2_n4" from="30" to="32">
+<rel label="APP">
+<span from="27" to="29"/>
+</rel>
+</span>
+<span id="s2_n5" from="32" to="33">
+<rel label="-PUNCT-">
+<span from="30" to="32"/>
+</rel>
+</span>
+<span id="s2_n6" from="34" to="37">
+<rel label="DET">
+<span from="38" to="56"/>
+</rel>
+</span>
+<span id="s2_n7" from="38" to="56">
+<rel label="ROOT">
+<span from="16" to="10"/>
+</rel>
+</span>
+</spanList>
+</layer>

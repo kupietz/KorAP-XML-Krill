@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.0" TEIform="teiHeader">
+    <fileDesc>
+     <titleStmt>
+      <textSigle>WPD17/000.22053</textSigle>
+      <t.title assemblage="external">WPD17/000.22053 0er, In: Wikipedia - URL:http://de.wikipedia.org/wiki/0er: Wikipedia, 2017</t.title>
+     </titleStmt>
+     <editionStmt version="0"/>
+     <publicationStmt>
+      <distributor/>
+      <pubAddress/>
+      <availability region="world" Default="n" status="unknown">CC-BY-SA</availability>
+      <pubDate/>
+     </publicationStmt>
+     <sourceDesc Default="n">
+      <biblStruct Default="n" status="draft">
+       <analytic>
+        <h.title type="main">0er</h.title>
+        <h.title type="sub"/>
+        <h.title type="abbr" level="m"/>
+        <h.title type="abbr" level="a"/>
+        <h.author>Rogi.Official, u.a.</h.author>
+        <editor/>
+        <imprint/>
+        <biblScope type="subsume"/>
+        <biblScope type="pp"/>
+        <biblNote n="1"/>
+       </analytic>
+       <monogr>
+        <h.title type="main"/>
+        <editor>wikipedia.org</editor>
+        <edition>
+         <further> Dump file "dewiki-20170701-pages-meta-current.xml" retrieved from http://dumps.wikimedia.org </further>
+         <kind/>
+         <appearance/>
+        </edition>
+        <imprint>
+         <pubDate type="year">2017</pubDate>
+         <pubDate type="month">07</pubDate>
+         <pubDate type="day">01</pubDate>
+        </imprint>
+        <biblScope type="vol"/>
+        <biblScope type="volume-title"/>
+       </monogr>
+       <relatedItem type="langlink">
+        <ref target="https://tt.wikipedia.org/wiki/0-еллар" xml:lang="key">0-еллар</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ast.wikipedia.org/wiki/Década_del_0" xml:lang="key">Década del 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://pt.wikipedia.org/wiki/Década_de_0" xml:lang="key">Década de 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://hr.wikipedia.org/wiki/0-ih" xml:lang="key">0-ih</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://simple.wikipedia.org/wiki/0s" xml:lang="key">0s</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://hu.wikipedia.org/wiki/1-es_évek" xml:lang="key">1-es évek</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://bar.wikipedia.org/wiki/0a" xml:lang="key">0a</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://nah.wikipedia.org/wiki/0_xihuitl" xml:lang="key">0 xihuitl</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://uk.wikipedia.org/wiki/0-ві" xml:lang="key">0-ві</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://yo.wikipedia.org/wiki/Ẹ̀wádún_0" xml:lang="key">Ẹ̀wádún 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://id.wikipedia.org/wiki/0-an" xml:lang="key">0-an</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://mk.wikipedia.org/wiki/0-ти" xml:lang="key">0-ти</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://new.wikipedia.org/wiki/१" xml:lang="key">१</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://qu.wikipedia.org/wiki/0_watakuna" xml:lang="key">0 watakuna</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://mr.wikipedia.org/wiki/इ.स.चे_०_चे_दशक" xml:lang="key">इ.स.चे ० चे दशक</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://uz.wikipedia.org/wiki/0-lar" xml:lang="key">0-lar</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ms.wikipedia.org/wiki/0-an" xml:lang="key">0-an</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://als.wikipedia.org/wiki/0er" xml:lang="key">0er</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://en.wikipedia.org/wiki/0s" xml:lang="key">0s</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://eo.wikipedia.org/wiki/0-aj_jaroj" xml:lang="key">0-aj jaroj</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://it.wikipedia.org/wiki/Anni_0" xml:lang="key">Anni 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://an.wikipedia.org/wiki/Anyos_0" xml:lang="key">Anyos 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://es.wikipedia.org/wiki/Años_0" xml:lang="key">Años 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://zh.wikipedia.org/wiki/0年代" xml:lang="key">0年代</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://cdo.wikipedia.org/wiki/0_nièng-dâi" xml:lang="key">0 nièng-dâi</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://et.wikipedia.org/wiki/0._aastad" xml:lang="key">0. aastad</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://eu.wikipedia.org/wiki/0ko_hamarkada" xml:lang="key">0ko hamarkada</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ar.wikipedia.org/wiki/عقد_0" xml:lang="key">عقد 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://vi.wikipedia.org/wiki/Thập_niên_0" xml:lang="key">Thập niên 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://mhr.wikipedia.org/wiki/0_ийла" xml:lang="key">0 ийла</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ja.wikipedia.org/wiki/0年代" xml:lang="key">0年代</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://fa.wikipedia.org/wiki/دهه_۰_(میلادی)" xml:lang="key">دهه ۰ (میلادی)</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://zh-min-nan.wikipedia.org/wiki/0_nî-tāi" xml:lang="key">0 nî-tāi</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ro.wikipedia.org/wiki/Primul_deceniu_d.Hr." xml:lang="key">Primul deceniu d.Hr.</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://nl.wikipedia.org/wiki/1-9" xml:lang="key">1-9</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://no.wikipedia.org/wiki/0-årene" xml:lang="key">0-årene</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://be.wikipedia.org/wiki/0-я" xml:lang="key">0-я</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://fi.wikipedia.org/wiki/Ensimmäinen_vuosikymmen" xml:lang="key">Ensimmäinen vuosikymmen</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ru.wikipedia.org/wiki/0-е_годы" xml:lang="key">0-е годы</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://fo.wikipedia.org/wiki/0-árini" xml:lang="key">0-árini</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://be-x-old.wikipedia.org/wiki/0-я" xml:lang="key">0-я</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://nso.wikipedia.org/wiki/0s" xml:lang="key">0s</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://fr.wikipedia.org/wiki/Années_0" xml:lang="key">Années 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://br.wikipedia.org/wiki/Bloavezhioù_0" xml:lang="key">Bloavezhioù 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://bs.wikipedia.org/wiki/0te" xml:lang="key">0te</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sh.wikipedia.org/wiki/0-e" xml:lang="key">0-e</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://zh-yue.wikipedia.org/wiki/0年代" xml:lang="key">0年代</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ka.wikipedia.org/wiki/0-იანები" xml:lang="key">0-იანები</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sk.wikipedia.org/wiki/0._roky_1._storočia" xml:lang="key">0. roky 1. storočia</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sl.wikipedia.org/wiki/0." xml:lang="key">0.</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ga.wikipedia.org/wiki/0í" xml:lang="key">0í</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sah.wikipedia.org/wiki/0-с" xml:lang="key">0-с</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://gd.wikipedia.org/wiki/Roinn-seòrsa:0an" xml:lang="key">Roinn-seòrsa:0an</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ca.wikipedia.org/wiki/Dècada_del_0" xml:lang="key">Dècada del 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sr.wikipedia.org/wiki/0е" xml:lang="key">0е</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://su.wikipedia.org/wiki/0-an" xml:lang="key">0-an</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sv.wikipedia.org/wiki/00-talet" xml:lang="key">00-talet</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ko.wikipedia.org/wiki/0년대" xml:lang="key">0년대</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sw.wikipedia.org/wiki/Miaka_ya_0" xml:lang="key">Miaka ya 0</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://war.wikipedia.org/wiki/0_nga_dekada" xml:lang="key">0 nga dekada</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://kv.wikipedia.org/wiki/0-ӧд_вояс" xml:lang="key">0-ӧд вояс</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ta.wikipedia.org/wiki/0கள்" xml:lang="key">0கள்</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://cy.wikipedia.org/wiki/0au" xml:lang="key">0au</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://tk.wikipedia.org/wiki/0ýý" xml:lang="key">0ýý</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://da.wikipedia.org/wiki/0'erne" xml:lang="key">0'erne</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://tr.wikipedia.org/wiki/0'lar" xml:lang="key">0'lar</ref>
+       </relatedItem>
+      </biblStruct>
+      <reference type="complete" assemblage="non-automatic">WPD17/000.22053 0er, In: Wikipedia - URL:http://de.wikipedia.org/wiki/0er: Wikipedia, 2017</reference>
+      <reference type="short" assemblage="regular">WPD17/000.22053 Wikipedia; 0er, (Letzte Änderung 11.5.2015 ) 1.7.2017</reference>
+     </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+     <samplingDecl Default="n"/>
+     <editorialDecl Default="n">
+      <pagination type="no"/>
+     </editorialDecl>
+    </encodingDesc>
+    <profileDesc>
+     <creation>
+      <creatDate>2015.05.11</creatDate>
+      <creatRef>(Letzte Änderung 11.5.2015)</creatRef>
+      <creatRefShort>(Letzte Änderung 11.5.2015)</creatRefShort>
+     </creation>
+     <textClass Default="n">
+      <classCode scheme="https://en.wikipedia.org/wiki/Portal:Contents/Categories"/>
+      <catRef n="0.99474" target="topic.freizeit-unterhaltung.reisen" scheme="topic"/>
+      <catRef n="0.00353723" target="topic.kultur.literatur" scheme="topic"/>
+     </textClass>
+     <textDesc Default="n">
+      <textTypeArt>Enzyklopädie-Artikel</textTypeArt>
+      <textDomain/>
+     </textDesc>
+    </profileDesc>
+   </idsHeader>

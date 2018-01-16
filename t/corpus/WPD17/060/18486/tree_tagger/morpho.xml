@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="WPD17_060.18486">
+ <spanList>
+  <span id="t_0" from="0" to="2">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">@card@</f>
+      <f name="certainty">0.993826</f>
+      <f name="ctag">CARD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_1" from="3" to="8">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">stehen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_2" from="9" to="12">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">für</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_3" from="12" to="13">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">:</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_4" from="16" to="23">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Pistole</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_5" from="24" to="26">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">@card@</f>
+      <f name="certainty">0.980489</f>
+      <f name="ctag">CARD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_6" from="27" to="29">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">MG</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_7" from="30" to="32">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">@card@</f>
+      <f name="certainty">0.994623</f>
+      <f name="ctag">CARD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_8" from="32" to="33">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_9" from="34" to="37">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">eine</f>
+      <f name="certainty">0.998519</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_10" from="38" to="56">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+ </spanList>
+</layer>

@@ -16,7 +16,7 @@ use Mojo::DOM;
 use Data::Dumper;
 use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 
-our $VERSION = '0.32';
+our $VERSION = '0.33';
 
 has 'path';
 has [qw/text_sigle doc_sigle corpus_sigle/];
@@ -414,7 +414,7 @@ Accept the tokenization based on a given foundry and a given layer.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2017, L<IDS Mannheim|http://www.ids-mannheim.de/>
+Copyright (C) 2015-2018, L<IDS Mannheim|http://www.ids-mannheim.de/>
 Author: L<Nils Diewald|http://nils-diewald.de/>
 
 KorAP::XML::Krill is developed as part of the

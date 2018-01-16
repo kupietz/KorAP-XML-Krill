@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.0" TEIform="teiHeader">
+    <fileDesc>
+     <titleStmt>
+      <textSigle>WPD17/060.18486</textSigle>
+      <t.title assemblage="external">WPD17/060.18486 08, In: Wikipedia - URL:http://de.wikipedia.org/wiki/08: Wikipedia, 2017</t.title>
+     </titleStmt>
+     <editionStmt version="0"/>
+     <publicationStmt>
+      <distributor/>
+      <pubAddress/>
+      <availability region="world" Default="n" status="unknown">CC-BY-SA</availability>
+      <pubDate/>
+     </publicationStmt>
+     <sourceDesc Default="n">
+      <biblStruct Default="n" status="draft">
+       <analytic>
+        <h.title type="main">08</h.title>
+        <h.title type="sub"/>
+        <h.title type="abbr" level="m"/>
+        <h.title type="abbr" level="a"/>
+        <h.author>EmausBot, u.a.</h.author>
+        <editor/>
+        <imprint/>
+        <biblScope type="subsume"/>
+        <biblScope type="pp"/>
+        <biblNote n="1"/>
+       </analytic>
+       <monogr>
+        <h.title type="main"/>
+        <editor>wikipedia.org</editor>
+        <edition>
+         <further> Dump file "dewiki-20170701-pages-meta-current.xml" retrieved from http://dumps.wikimedia.org </further>
+         <kind/>
+         <appearance/>
+        </edition>
+        <imprint>
+         <pubDate type="year">2017</pubDate>
+         <pubDate type="month">07</pubDate>
+         <pubDate type="day">01</pubDate>
+        </imprint>
+        <biblScope type="vol"/>
+        <biblScope type="volume-title"/>
+       </monogr>
+       <relatedItem type="langlink">
+        <ref target="https://ru.wikipedia.org/wiki/08" xml:lang="key">08</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://vi.wikipedia.org/wiki/08" xml:lang="key">08</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ko.wikipedia.org/wiki/08" xml:lang="key">08</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ja.wikipedia.org/wiki/08" xml:lang="key">08</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://en.wikipedia.org/wiki/08" xml:lang="key">08</ref>
+       </relatedItem>
+      </biblStruct>
+      <reference type="complete" assemblage="non-automatic">WPD17/060.18486 08, In: Wikipedia - URL:http://de.wikipedia.org/wiki/08: Wikipedia, 2017</reference>
+      <reference type="short" assemblage="regular">WPD17/060.18486 Wikipedia; 08, (Letzte Änderung 4.4.2013 ) 1.7.2017</reference>
+     </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+     <samplingDecl Default="n"/>
+     <editorialDecl Default="n">
+      <pagination type="no"/>
+     </editorialDecl>
+    </encodingDesc>
+    <profileDesc>
+     <creation>
+      <creatDate>2013.04.04</creatDate>
+      <creatRef>(Letzte Änderung 4.4.2013)</creatRef>
+      <creatRefShort>(Letzte Änderung 4.4.2013)</creatRefShort>
+     </creation>
+     <textClass Default="n">
+      <classCode scheme="https://en.wikipedia.org/wiki/Portal:Contents/Categories"/>
+      <catRef n="0.503211" target="topic.staat-gesellschaft.verbrechen" scheme="topic"/>
+      <catRef n="0.180474" target="topic.gesundheit-ernaehrung.gesundheit" scheme="topic"/>
+     </textClass>
+     <textDesc Default="n">
+      <textTypeArt>Enzyklopädie-Artikel</textTypeArt>
+      <textDomain/>
+     </textDesc>
+    </profileDesc>
+   </idsHeader>

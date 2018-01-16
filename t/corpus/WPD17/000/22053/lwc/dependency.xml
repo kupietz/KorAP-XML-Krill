@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer docid="WPD17_000.22053" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+<spanList>
+<span id="s0_n394" from="1" to="11">
+<rel label="NK">
+<span from="1" to="62"/>
+</rel>
+</span>
+<span id="s0_n395" from="13" to="20">
+<rel label="NK">
+<span from="1" to="62"/>
+</rel>
+</span>
+<span id="s0_n396" from="21" to="24">
+<rel label="NK">
+<span from="1" to="62"/>
+</rel>
+</span>
+<span id="s0_n397" from="25" to="28">
+<rel label="AG">
+<span from="1" to="62"/>
+</rel>
+</span>
+<span id="s0_n398" from="29" to="35">
+<rel label="NK">
+<span from="1" to="62"/>
+</rel>
+</span>
+<span id="s0_n399" from="36" to="44">
+<rel label="--">
+<span from="1" to="62"/>
+</rel>
+</span>
+<span id="s0_n400" from="45" to="55">
+<rel label="--">
+<span from="1" to="62"/>
+</rel>
+</span>
+<span id="s0_n401" from="56" to="61">
+<rel label="NK">
+<span from="1" to="62"/>
+</rel>
+</span>
+<span id="s0_n402" from="61" to="62">
+<rel label="PNC">
+<span from="1" to="62"/>
+</rel>
+</span>
+<span id="s0_n403" from="64" to="66">
+<rel label="NK">
+<span from="1" to="76"/>
+</rel>
+</span>
+<span id="s0_n404" from="67" to="73">
+<rel label="--">
+<span from="1" to="76"/>
+</rel>
+</span>
+<span id="s0_n405" from="74" to="75">
+<rel label="NK">
+<span from="1" to="76"/>
+</rel>
+</span>
+<span id="s0_n406" from="75" to="76">
+<rel label="--">
+<span from="1" to="76"/>
+</rel>
+</span>
+<span id="s0_n407" from="77" to="83">
+<rel label="--">
+<span from="1" to="147"/>
+</rel>
+</span>
+<span id="s0_n0" from="84" to="87">
+<rel label="SB">
+<span from="92" to="104"/>
+</rel>
+</span>
+<span id="s1_n1" from="88" to="91">
+<rel label="--">
+<span from="88" to="147"/>
+</rel>
+</span>
+<span id="s1_n2" from="92" to="104">
+<rel label="NK">
+<span from="126" to="129"/>
+</rel>
+</span>
+<span id="s1_n3" from="105" to="117">
+<rel label="NK">
+<span from="126" to="129"/>
+</rel>
+</span>
+<span id="s1_n4" from="117" to="118">
+<rel label="NK">
+<span from="126" to="129"/>
+</rel>
+</span>
+<span id="s1_n5" from="119" to="125">
+<rel label="PD">
+<span from="92" to="104"/>
+</rel>
+</span>
+<span id="s1_n6" from="126" to="129">
+<rel label="--">
+<span from="92" to="104"/>
+</rel>
+</span>
+<span id="s1_n7" from="130" to="132">
+<rel label="--">
+<span from="88" to="147"/>
+</rel>
+</span>
+<span id="s1_n8" from="133" to="145">
+<rel label="PNC">
+<span from="105" to="117"/>
+</rel>
+</span>
+<span id="s1_n9" from="146" to="147">
+<rel label="NK">
+<span from="88" to="91"/>
+</rel>
+</span>
+<span id="s1_n10" from="149" to="150">
+<rel label="NK">
+<span from="119" to="125"/>
+</rel>
+</span>
+<span id="s1_n11" from="150" to="151">
+<rel label="NK">
+<span from="88" to="91"/>
+</rel>
+</span>
+<span id="s1_n12" from="152" to="154">
+<rel label="--">
+<span from="130" to="132"/>
+</rel>
+</span>
+<span id="s1_n13" from="155" to="160">
+<rel label="PAR">
+<span from="119" to="125"/>
+</rel>
+</span>
+<span id="s1_n14" from="160" to="161">
+<rel label="--">
+<span from="130" to="132"/>
+</rel>
+</span>
+<span id="s1_n15" from="161" to="167">
+<rel label="--">
+<span from="150" to="151"/>
+</rel>
+</span>
+<span id="s1_n16" from="168" to="172">
+<rel label="NK">
+<span from="150" to="151"/>
+</rel>
+</span>
+<span id="s1_n17" from="173" to="176">
+<rel label="PAR">
+<span from="119" to="125"/>
+</rel>
+</span>
+<span id="s1_n18" from="177" to="182">
+<rel label="--">
+<span from="150" to="151"/>
+</rel>
+</span>
+<span id="s1_n19" from="183" to="188">
+<rel label="--">
+<span from="119" to="125"/>
+</rel>
+</span>
+<span id="s1_n20" from="189" to="199">
+<rel label="CJ">
+<span from="119" to="125"/>
+</rel>
+</span>
+<span id="s1_n21" from="200" to="205">
+<rel label="CD">
+<span from="160" to="161"/>
+</rel>
+</span>
+<span id="s1_n22" from="206" to="208">
+<rel label="CJ">
+<span from="161" to="167"/>
+</rel>
+</span>
+<span id="s1_n23" from="209" to="216">
+<rel label="MNR">
+<span from="160" to="161"/>
+</rel>
+</span>
+<span id="s1_n24" from="217" to="221">
+<rel label="NK">
+<span from="173" to="176"/>
+</rel>
+</span>
+<span id="s1_n25" from="222" to="228">
+<rel label="NK">
+<span from="189" to="199"/>
+</rel>
+</span>
+<span id="s1_n26" from="228" to="229">
+<rel label="CJ">
+<span from="160" to="161"/>
+</rel>
+</span>
+<span id="s1_n27" from="230" to="231">
+<rel label="PG">
+<span from="189" to="199"/>
+</rel>
+</span>
+<span id="s1_n28" from="231" to="232">
+<rel label="NK">
+<span from="200" to="205"/>
+</rel>
+</span>
+<span id="s1_n29" from="233" to="235">
+<rel label="--">
+<span from="217" to="221"/>
+</rel>
+</span>
+<span id="s1_n30" from="236" to="241">
+<rel label="PAR">
+<span from="206" to="208"/>
+</rel>
+</span>
+<span id="s1_n31" from="242" to="248">
+<rel label="NK">
+<span from="217" to="221"/>
+</rel>
+</span>
+<span id="s1_n32" from="249" to="252">
+<rel label="--">
+<span from="217" to="221"/>
+</rel>
+</span>
+<span id="s1_n33" from="253" to="258">
+<rel label="--">
+<span from="119" to="125"/>
+</rel>
+</span>
+<span id="s1_n34" from="259" to="271">
+<rel label="CJ">
+<span from="189" to="199"/>
+</rel>
+</span>
+<span id="s1_n35" from="272" to="284">
+<rel label="PG">
+<span from="231" to="232"/>
+</rel>
+</span>
+<span id="s1_n36" from="285" to="290">
+<rel label="NK">
+<span from="233" to="235"/>
+</rel>
+</span>
+<span id="s1_n37" from="290" to="291">
+<rel label="NK">
+<span from="249" to="252"/>
+</rel>
+</span>
+<span id="s1_n38" from="292" to="295">
+<rel label="AG">
+<span from="231" to="232"/>
+</rel>
+</span>
+<span id="s1_n39" from="296" to="302">
+<rel label="PG">
+<span from="231" to="232"/>
+</rel>
+</span>
+<span id="s1_n40" from="303" to="307">
+<rel label="AG">
+<span from="285" to="290"/>
+</rel>
+</span>
+<span id="s1_n41" from="308" to="324">
+<rel label="--">
+<span from="285" to="290"/>
+</rel>
+</span>
+<span id="s1_n42" from="325" to="328">
+<rel label="NK">
+<span from="253" to="258"/>
+</rel>
+</span>
+<span id="s1_n43" from="329" to="331">
+<rel label="PG">
+<span from="285" to="290"/>
+</rel>
+</span>
+<span id="s1_n44" from="332" to="341">
+<rel label="NK">
+<span from="290" to="291"/>
+</rel>
+</span>
+<span id="s1_n45" from="341" to="342">
+<rel label="--">
+<span from="119" to="125"/>
+</rel>
+</span>
+<span id="s1_n46" from="343" to="344">
+<rel label="SB">
+<span from="161" to="167"/>
+</rel>
+</span>
+<span id="s1_n47" from="344" to="345">
+<rel label="NK">
+<span from="88" to="91"/>
+</rel>
+</span>
+<span id="s1_n48" from="346" to="362">
+<rel label="PNC">
+<span from="117" to="118"/>
+</rel>
+</span>
+<span id="s1_n49" from="363" to="369">
+<rel label="NK">
+<span from="88" to="91"/>
+</rel>
+</span>
+<span id="s1_n50" from="370" to="379">
+<rel label="--">
+<span from="88" to="91"/>
+</rel>
+</span>
+<span id="s1_n51" from="380" to="391">
+<rel label="APP">
+<span from="88" to="91"/>
+</rel>
+</span>
+<span id="s1_n52" from="391" to="392">
+<rel label="PG">
+<span from="126" to="129"/>
+</rel>
+</span>
+<span id="s1_n53" from="393" to="399">
+<rel label="AG">
+<span from="146" to="147"/>
+</rel>
+</span>
+<span id="s1_n54" from="399" to="400">
+<rel label="NK">
+<span from="130" to="132"/>
+</rel>
+</span>
+<span id="s1_n55" from="401" to="412">
+<rel label="--">
+<span from="152" to="154"/>
+</rel>
+</span>
+<span id="s1_n56" from="413" to="416">
+<rel label="NK">
+<span from="152" to="154"/>
+</rel>
+</span>
+<span id="s1_n57" from="417" to="425">
+<rel label="NK">
+<span from="146" to="147"/>
+</rel>
+</span>
+<span id="s1_n58" from="426" to="428">
+<rel label="--">
+<span from="152" to="154"/>
+</rel>
+</span>
+<span id="s1_n59" from="429" to="435">
+<rel label="--">
+<span from="161" to="167"/>
+</rel>
+</span>
+<span id="s1_n60" from="436" to="441">
+<rel label="--">
+<span from="88" to="454"/>
+</rel>
+</span>
+<span id="s1_n61" from="442" to="443">
+<rel label="MO">
+<span from="161" to="167"/>
+</rel>
+</span>
+<span id="s1_n62" from="443" to="452">
+<rel label="NK">
+<span from="177" to="182"/>
+</rel>
+</span>
+<span id="s1_n63" from="452" to="453">
+<rel label="OA">
+<span from="161" to="167"/>
+</rel>
+</span>
+<span id="s1_n64" from="453" to="454">
+<rel label="--">
+<span from="161" to="167"/>
+</rel>
+</span>
+<span id="s1_n65" from="455" to="456">
+<rel label="--">
+<span from="88" to="457"/>
+</rel>
+</span>
+<span id="s1_n66" from="456" to="457">
+<rel label="NK">
+<span from="126" to="129"/>
+</rel>
+</span>
+<span id="s1_n67" from="458" to="464">
+<rel label="SBP">
+<span from="119" to="125"/>
+</rel>
+</span>
+<span id="s1_n68" from="465" to="468">
+<rel label="NK">
+<span from="105" to="117"/>
+</rel>
+</span>
+<span id="s1_n69" from="469" to="481">
+<rel label="NK">
+<span from="126" to="129"/>
+</rel>
+</span>
+<span id="s1_n70" from="482" to="492">
+<rel label="DA">
+<span from="88" to="91"/>
+</rel>
+</span>
+<span id="s1_n71" from="492" to="493">
+<rel label="NK">
+<span from="146" to="147"/>
+</rel>
+</span>
+<span id="s1_n72" from="494" to="509">
+<rel label="NK">
+<span from="146" to="147"/>
+</rel>
+</span>
+<span id="s1_n73" from="510" to="515">
+<rel label="OA">
+<span from="88" to="91"/>
+</rel>
+</span>
+<span id="s1_n74" from="516" to="519">
+<rel label="MO">
+<span from="150" to="151"/>
+</rel>
+</span>
+<span id="s1_n75" from="520" to="522">
+<rel label="PNC">
+<span from="152" to="154"/>
+</rel>
+</span>
+<span id="s1_n76" from="523" to="527">
+<rel label="SB">
+<span from="88" to="91"/>
+</rel>
+</span>
+<span id="s1_n77" from="528" to="530">
+<rel label="--">
+<span from="152" to="154"/>
+</rel>
+</span>
+<span id="s1_n78" from="531" to="532">
+<rel label="NK">
+<span from="168" to="172"/>
+</rel>
+</span>
+<span id="s1_n79" from="532" to="533">
+<rel label="NK">
+<span from="168" to="172"/>
+</rel>
+</span>
+<span id="s1_n80" from="534" to="539">
+<rel label="APP">
+<span from="152" to="154"/>
+</rel>
+</span>
+<span id="s1_n81" from="540" to="544">
+<rel label="NK">
+<span from="168" to="172"/>
+</rel>
+</span>
+<span id="s1_n82" from="545" to="556">
+<rel label="--">
+<span from="152" to="154"/>
+</rel>
+</span>
+<span id="s1_n83" from="557" to="559">
+<rel label="NK">
+<span from="189" to="199"/>
+</rel>
+</span>
+<span id="s1_n84" from="560" to="569">
+<rel label="APP">
+<span from="152" to="154"/>
+</rel>
+</span>
+<span id="s1_n85" from="569" to="570">
+<rel label="NK">
+<span from="189" to="199"/>
+</rel>
+</span>
+<span id="s1_n86" from="571" to="572">
+<rel label="--">
+<span from="189" to="199"/>
+</rel>
+</span>
+<span id="s1_n87" from="572" to="573">
+<rel label="NK">
+<span from="217" to="221"/>
+</rel>
+</span>
+<span id="s1_n88" from="574" to="587">
+<rel label="SB">
+<span from="233" to="235"/>
+</rel>
+</span>
+<span id="s1_n89" from="587" to="588">
+<rel label="NK">
+<span from="228" to="229"/>
+</rel>
+</span>
+<span id="s1_n90" from="590" to="596">
+<rel label="AG">
+<span from="217" to="221"/>
+</rel>
+</span>
+<span id="s1_n91" from="599" to="600">
+<rel label="MNR">
+<span from="228" to="229"/>
+</rel>
+</span>
+<span id="s1_n92" from="600" to="601">
+<rel label="NK">
+<span from="230" to="231"/>
+</rel>
+</span>
+<span id="s1_n93" from="602" to="606">
+<rel label="--">
+<span from="88" to="636"/>
+</rel>
+</span>
+<span id="s1_n94" from="607" to="615">
+<rel label="MO">
+<span from="233" to="235"/>
+</rel>
+</span>
+<span id="s1_n95" from="616" to="621">
+<rel label="OA">
+<span from="233" to="235"/>
+</rel>
+</span>
+<span id="s1_n0" from="622" to="635">
+<rel label="SB">
+<span from="638" to="646"/>
+</rel>
+</span>
+<span id="s2_n1" from="635" to="636">
+<rel label="--">
+<span from="635" to="636"/>
+</rel>
+</span>
+<span id="s2_n3" from="638" to="646">
+<rel label="PD">
+<span from="635" to="636"/>
+</rel>
+</span>
+</spanList>
+</layer>

@@ -123,9 +123,12 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2017/07/04
 # - Fixed tar building process
+#
+# 2018/01/16
+# - Added LWC support
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2017/06/29';
+our $LAST_CHANGE = '2018/01/16';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -457,6 +460,9 @@ else {
 
 # Glemm
 push(@layers, ['Glemm', 'Morpho']);
+
+# LWC
+push(@layers, ['LWC', 'Dependency']);
 
 # Malt
 push(@layers, ['Malt', 'Dependency']);
@@ -1351,6 +1357,9 @@ L<Krill|https://github.com/KorAP/Krill>.
   Glemm
     #Morpho
 
+  LWC
+    #Dependency
+
   Malt
     #Dependency
 
@@ -1393,7 +1402,7 @@ See the built-in annotation importers as examples.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2017, L<IDS Mannheim|http://www.ids-mannheim.de/>
+Copyright (C) 2015-2018, L<IDS Mannheim|http://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|http://nils-diewald.de/>
 

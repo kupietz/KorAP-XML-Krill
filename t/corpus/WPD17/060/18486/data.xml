@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="text.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<raw_text docid="WPD17_060.18486" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <metadata file="metadata.xml" />
+  <text>08 steht für:   Pistole 08 MG 08, ein Maschinengewehrtyp </text>
+</raw_text>
