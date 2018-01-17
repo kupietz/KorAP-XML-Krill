@@ -2,59 +2,59 @@
 <?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <layer docid="WPD17_060.18486" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
 <spanList>
-<span id="s0_n40" from="0" to="2">
-<rel label="--">
-<span from="0" to="13"/>
-</rel>
-</span>
-<span id="s0_n41" from="3" to="8">
-<rel label="MO">
-<span from="0" to="13"/>
-</rel>
-</span>
-<span id="s0_n42" from="9" to="12">
-<rel label="NK">
-<span from="0" to="13"/>
-</rel>
-</span>
-<span id="s0_n43" from="12" to="13">
+<span id="s1_n1" from="0" to="2">
 <rel label="SB">
+<span from="3" to="8"/>
+</rel>
+</span>
+<span id="s1_n2" from="3" to="8">
+<rel label="--">
 <span from="0" to="13"/>
 </rel>
 </span>
-<span id="s0_n44" from="16" to="23">
+<span id="s1_n3" from="9" to="12">
+<rel label="SVP">
+<span from="3" to="8"/>
+</rel>
+</span>
+<span id="s1_n4" from="12" to="13">
 <rel label="--">
-<span from="0" to="10"/>
+<span from="3" to="8"/>
 </rel>
 </span>
-<span id="s0_n45" from="24" to="26">
-<rel label="PD">
-<span from="0" to="10"/>
-</rel>
-</span>
-<span id="s0_n46" from="27" to="29">
-<rel label="AG">
-<span from="0" to="10"/>
-</rel>
-</span>
-<span id="s0_n47" from="30" to="32">
-<rel label="MNR">
-<span from="0" to="10"/>
-</rel>
-</span>
-<span id="s0_n48" from="32" to="33">
-<rel label="NK">
-<span from="0" to="10"/>
-</rel>
-</span>
-<span id="s0_n49" from="34" to="37">
-<rel label="NK">
-<span from="0" to="10"/>
-</rel>
-</span>
-<span id="s0_n50" from="38" to="56">
+<span id="s2_n1" from="16" to="23">
 <rel label="--">
-<span from="0" to="10"/>
+<span from="16" to="10"/>
+</rel>
+</span>
+<span id="s2_n2" from="24" to="26">
+<rel label="NK">
+<span from="16" to="23"/>
+</rel>
+</span>
+<span id="s2_n3" from="27" to="29">
+<rel label="NK">
+<span from="16" to="23"/>
+</rel>
+</span>
+<span id="s2_n4" from="30" to="32">
+<rel label="NK">
+<span from="27" to="29"/>
+</rel>
+</span>
+<span id="s2_n5" from="32" to="33">
+<rel label="--">
+<span from="16" to="23"/>
+</rel>
+</span>
+<span id="s2_n6" from="34" to="37">
+<rel label="NK">
+<span from="38" to="56"/>
+</rel>
+</span>
+<span id="s2_n7" from="38" to="56">
+<rel label="CJ">
+<span from="16" to="23"/>
 </rel>
 </span>
 </spanList>

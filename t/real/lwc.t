@@ -96,12 +96,12 @@ is($output->{data}->{layerInfos}, 'dereko/s=spans lwc/d=rels', 'layerInfos');
 
 my $token = join('||', @{$output->{data}->{stream}->[7]});
 
-like($token, qr!>:lwc/d:NK\$<b>33<i>1<i>62<i>0<i>8!, 'data');
+like($token, qr!>:lwc/d:SVP\$<b>32<i>4!, 'data');
 like($token, qr!i:statt!, 'data');
 
 $token = join('||', @{$output->{data}->{stream}->[9]});
 
-like($token, qr!>:lwc/d:--\$<b>33<i>1<i>76<i>0<i>11!, 'data');
+like($token, qr!>:lwc/d:--\$<b>33<i>64<i>76<i>8<i>11!, 'data');
 like($token, qr!s:Januar!, 'data');
 
 
@@ -142,7 +142,7 @@ $output = decode_json( $tokens->to_json );
 
 $token = join('||', @{$output->{data}->{stream}->[2]});
 
-like($token, qr!>:lwc/d:NK\$<b>33<i>0<i>13<i>0<i>3!, 'data');
+like($token, qr!>:lwc/d:SVP\$<b>32<i>1!, 'data');
 like($token, qr!s:für!, 'data');
 
 
