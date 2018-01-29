@@ -161,9 +161,9 @@ my $s =
   '<>:cnx/c:np$<b>64<i>0<i>1<i>1<b>0|'.
   '<>:cnx/s:s$<b>64<i>0<i>74<i>13<b>0|'.
   '-:cnx/sentences$<i>63|'.
-  'tt/l:A$<b>129<b>199|'.
+  'tt/l:A|'.
   'tt/p:NN$<b>129<b>199|'.
-  'tt/l:A$<b>129<b>54|'.
+  'tt/l:A|'.
   'tt/p:FM$<b>129<b>54|'.
   '<>:tt/s:s$<b>64<i>0<i>6083<i>923<b>0|'.
   '-:tt/sentences$<i>1|'.

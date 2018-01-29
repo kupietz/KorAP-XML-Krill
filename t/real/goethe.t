@@ -178,9 +178,9 @@ is($output->{data}->{foundries},
 
 is($output->{data}->{layerInfos}, 'base/s=spans opennlp/p=tokens opennlp/s=spans tt/l=tokens tt/p=tokens tt/s=spans', 'layerInfos');
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!tt/l:autobiographisch\$<b>129<b>165!, 'data');
+like($first_token, qr!tt/l:autobiographisch!, 'data');
 like($first_token, qr!tt/p:ADJA\$<b>129<b>165!, 'data');
-like($first_token, qr!tt/l:Autobiographische\$<b>129<b>89!, 'data');
+like($first_token, qr!tt/l:Autobiographische!, 'data');
 like($first_token, qr!tt/p:NN\$<b>129<b>89!, 'data');
 
 ## CoreNLP

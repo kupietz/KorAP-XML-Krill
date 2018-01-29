@@ -220,7 +220,7 @@ is('corenlp/p:NN', $first->[25]);
 is('i:rede', $first->[26]);
 is('opennlp/p:NN', $first->[27]);
 is('s:Rede', $first->[28]);
-is('tt/l:Rede$<b>129<b>253', $first->[29]);
+is('tt/l:Rede', $first->[29]);
 is('tt/p:NN$<b>129<b>253', $first->[30]);
 
 my $last = $output->{data}->{stream}->[-1];
@@ -233,7 +233,7 @@ is('corenlp/p:NE', $last->[4]);
 is("i:schr\x{f6}der", $last->[5]);
 is('opennlp/p:NE', $last->[6]);
 is("s:Schr\x{f6}der", $last->[7]);
-is("tt/l:Schr\x{f6}der\$<b>129<b>255", $last->[8]);
+is("tt/l:Schr\x{f6}der", $last->[8]);
 is('tt/p:NE$<b>129<b>255', $last->[9]);
 
 
@@ -308,7 +308,7 @@ is('corenlp/p:NE', $first->[27]);
 is('i:christine', $first->[28]);
 is('opennlp/p:NE', $first->[29]);
 is('s:Christine', $first->[30]);
-is('tt/l:Christine$<b>129<b>255', $first->[31]);
+is('tt/l:Christine', $first->[31]);
 is('tt/p:NE$<b>129<b>255', $first->[32]);
 
 $last = $output->{data}->{stream}->[-1];

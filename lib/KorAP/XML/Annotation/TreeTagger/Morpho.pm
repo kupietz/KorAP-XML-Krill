@@ -19,48 +19,51 @@ sub parse {
       $content = ref $content ne 'ARRAY' ? [$content] : $content;
 
       foreach my $fs (@$content) {
-	$content = $fs->{fs}->{f};
+        $content = $fs->{fs}->{f};
 
-	my @val;
-	my $certainty = 0;
-	foreach (@$content) {
-	  if ($_->{-name} eq 'certainty') {
-	    $certainty = floor(($_->{'#text'} * 255));
-	    $certainty = $certainty if $certainty;
-	  }
-	  else {
-	    push @val, $_
-	  };
-	};
+        my @val;
+        my $certainty = 0;
+        foreach (@$content) {
+          if ($_->{-name} eq 'certainty') {
+            $certainty = floor(($_->{'#text'} * 255));
+            $certainty = $certainty if $certainty;
+          }
+          else {
+            push @val, $_
+          };
+        };
 
-	foreach (@val) {
-	  # lemma
-	  if (($_->{-name} eq 'lemma') &&
-		($found = $_->{'#text'}) &&
-		  ($found ne 'UNKNOWN') &&
-		    ($found ne '?')) {
-	    my %term = (
-	      term => 'tt/l:' . $found
-	    );
-	    if ($certainty) {
-	      $term{pti} = 129;
-	      $term{payload} = '<b>' . $certainty;
-	    };
-	    $mtt->add(%term);
-	  };
+        # Iterate over values
+        foreach (@val) {
+          # lemma
+          if (($_->{-name} eq 'lemma') &&
+                ($found = $_->{'#text'}) &&
+                ($found ne 'UNKNOWN') &&
+                ($found ne '?')) {
+            my %term = (
+              term => 'tt/l:' . $found
+            );
 
-	  # pos
-	  if (($_->{-name} eq 'ctag') && ($found = $_->{'#text'})) {
-	    my %term = (
-	      term => 'tt/p:' . $found
-	    );
-	    if ($certainty) {
-	      $term{pti} = 129;
-	      $term{payload} = '<b>' . $certainty;
-	    };
-	    $mtt->add(%term);
-	  };
-	};
+            # Ignore certainty for lemma
+            # if ($certainty) {
+            #   $term{pti} = 129;
+            #   $term{payload} = '<b>' . $certainty;
+            # };
+            $mtt->add(%term);
+          };
+
+          # pos
+          if (($_->{-name} eq 'ctag') && ($found = $_->{'#text'})) {
+            my %term = (
+              term => 'tt/p:' . $found
+            );
+            if ($certainty) {
+              $term{pti} = 129;
+              $term{payload} = '<b>' . $certainty;
+            };
+            $mtt->add(%term);
+          };
+        };
       };
     }) or return;
 

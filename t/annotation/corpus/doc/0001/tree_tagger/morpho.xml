@@ -144,6 +144,15 @@
             <f name="ctag">KOUS</f>
           </fs>
         </f>
+
+        <!-- This is just to test different certainties  -->
+        <f name="lex">
+          <fs>
+            <f name="lemma">bevor</f>
+            <f name="certainty">0.225048</f>
+            <f name="ctag">PTKVZ</f>
+          </fs>
+        </f>
       </fs>
     </span>
     <span from="85" id="s_20" to="88">
