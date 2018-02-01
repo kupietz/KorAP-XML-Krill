@@ -18,6 +18,9 @@ sub parse {
 
       $content = ref $content ne 'ARRAY' ? [$content] : $content;
 
+      my (%lemma, %pos) = ();
+
+      # Iterate over feature structures
       foreach my $fs (@$content) {
         $content = $fs->{fs}->{f};
 
@@ -25,8 +28,7 @@ sub parse {
         my $certainty = 0;
         foreach (@$content) {
           if ($_->{-name} eq 'certainty') {
-            $certainty = floor(($_->{'#text'} * 255));
-            $certainty = $certainty if $certainty;
+            $certainty = $_->{'#text'};
           }
           else {
             push @val, $_
@@ -40,31 +42,42 @@ sub parse {
                 ($found = $_->{'#text'}) &&
                 ($found ne 'UNKNOWN') &&
                 ($found ne '?')) {
-            my %term = (
-              term => 'tt/l:' . $found
-            );
-
-            # Ignore certainty for lemma
-            # if ($certainty) {
-            #   $term{pti} = 129;
-            #   $term{payload} = '<b>' . $certainty;
-            # };
-            $mtt->add(%term);
+            $lemma{$found} += $certainty // 1;
           };
 
           # pos
           if (($_->{-name} eq 'ctag') && ($found = $_->{'#text'})) {
-            my %term = (
-              term => 'tt/p:' . $found
-            );
-            if ($certainty) {
-              $term{pti} = 129;
-              $term{payload} = '<b>' . $certainty;
-            };
-            $mtt->add(%term);
+
+            $pos{$found} += $certainty // 1;
           };
         };
       };
+
+      my %term;
+      foreach (keys %lemma) {
+        if ($lemma{$_} < 1) {
+          $mtt->add(
+            term => 'tt/l:' . $_,
+            pti => 129,
+            payload => '<b>' . floor(($lemma{$_} * 255))
+          );
+        } else {
+          $mtt->add(term => 'tt/l:' . $_);
+        };
+      };
+
+      foreach (keys %pos) {
+        if ($pos{$_} < 1) {
+          $mtt->add(
+            term => 'tt/p:' . $_,
+            pti => 129,
+            payload => '<b>' . floor(($pos{$_} * 255))
+          );
+        } else {
+          $mtt->add(term => 'tt/p:' . $_);
+        };
+      };
+
     }) or return;
 
   return 1;

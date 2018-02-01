@@ -1,5 +1,6 @@
-0.33 2018-01-16
+0.33 2018-02-01
         - Added LWC support.
+        - Fixed TreeTagger certainties.
 
 0.32 2017-10-24
         - Fixed tar building process in script.
