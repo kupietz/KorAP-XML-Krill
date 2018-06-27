@@ -41,7 +41,7 @@ It expects the input to point to the text level folder.
 
 =item B<archive>
 
-  $ korapxml2krill archive -z --input <directory|archive> --output <directory>
+  $ korapxml2krill archive -z --input <directory|archive> --output <directory|tar>
 
 Converts an archive of KorAP-XML documents. It expects a directory
 (pointing to the corpus level folder) or one or more zip files as input.
@@ -59,7 +59,8 @@ Extracts KorAP-XML documents from a zip file.
 Convert archives sequentially. The inputs are not merged but treated
 as they are (so they may be premerged or globs).
 the C<--out> directory is treated as the base directory where subdirectories
-are created based on the archive name.
+are created based on the archive name. In case the C<--to-tar> flag is given,
+the output will be a tar file.
 
 
 =back
@@ -103,6 +104,7 @@ compatible with the archive file.
 B<The root folder switch using the hash sign is experimental and
 may vanish in future versions.>
 
+
 =item B<--input-base|-ib> <directory>
 
 The base directory for inputs.
@@ -118,6 +120,7 @@ writes to C<STDOUT> by default
 =item B<--overwrite|-w>
 
 Overwrite files that already exist.
+
 
 =item B<--token|-t> <foundry>#<file>
 
@@ -159,6 +162,7 @@ Skip specific annotations by specifying the foundry
 e.g. C<Mate> or C<Mate#Morpho>. Alternatively you can skip C<#ALL>.
 Can be set multiple times.
 
+
 =item B<--anno|-a> <foundry>#<layer>
 
 Convert specific annotations by specifying the foundry
@@ -166,20 +170,36 @@ Convert specific annotations by specifying the foundry
 e.g. C<Mate> or C<Mate#Morpho>.
 Can be set multiple times.
 
+
 =item B<--primary|-p>
 
 Output primary data or not. Defaults to C<true>.
 Can be flagged using C<--no-primary> as well.
 This is I<deprecated>.
 
+
 =item B<--jobs|-j>
 
 Define the number of concurrent jobs in seperated forks
 for archive processing.
 Defaults to C<0> (everything runs in a single process).
+
+If C<sequential-extraction> is not set to false, this will
+also apply to extraction.
+
 Pass -1, and the value will be set automatically to 5
 times the number of available cores.
 This is I<experimental>.
+
+
+=item B<--sequential-extraction|-se>
+
+Flag to indicate, if the C<jobs> value also applies to extraction.
+Some systems may have problems with extracting multiple archives
+to the same folder at the same time.
+Can be flagged using C<--no-sequential-extraction> as well.
+Defaults to C<false>.
+
 
 =item B<--meta|-m>
 
@@ -187,24 +207,29 @@ Define the metadata parser to use. Defaults to C<I5>.
 Metadata parsers can be defined in the C<KorAP::XML::Meta> namespace.
 This is I<experimental>.
 
+
 =item B<--pretty|-y>
 
 Pretty print JSON output. Defaults to C<false>.
 This is I<deprecated>.
+
 
 =item B<--gzip|-z>
 
 Compress the output.
 Expects a defined C<output> file in single processing.
 
+
 =item B<--cache|-c>
 
 File to mmap a cache (using L<Cache::FastMmap>).
 Defaults to C<korapxml2krill.cache> in the calling directory.
 
+
 =item B<--cache-size|-cs>
 
 Size of the cache. Defaults to C<50m>.
+
 
 =item B<--cache-init|-ci>
 
@@ -212,11 +237,13 @@ Initialize cache file.
 Can be flagged using C<--no-cache-init> as well.
 Defaults to C<true>.
 
+
 =item B<--cache-delete|-cd>
 
 Delete cache file after processing.
 Can be flagged using C<--no-cache-delete> as well.
 Defaults to C<true>.
+
 
 =item B<--config|-cfg>
 
@@ -230,9 +257,16 @@ of key-value pairs with whitespace separator
 Supported parameters are:
 C<overwrite>, C<gzip>, C<jobs>, C<input-base>,
 C<token>, C<log>, C<cache>, C<cache-size>, C<cache-delete>, C<meta>,
-C<output>, C<base-sentences>, C<temp-extract>, C<base-paragraphs>,
-C<base-pagebreaks>, C<skip> (semicolon separated), C<sigle>
+C<output>,
+C<temp-extract>, C<sequential-extraction>,
+C<base-sentences>, C<base-paragraphs>,
+C<base-pagebreaks>,
+C<skip> (semicolon separated), C<sigle>
 (semicolon separated), C<anno> (semicolon separated).
+
+Configuration parameters will always be overwritten by
+passed parameters.
+
 
 =item B<--temporary-extract|-te>
 
@@ -246,6 +280,7 @@ This is especially useful to avoid
 massive unzipping and potential
 network latency.
 
+
 =item B<--sigle|-sg>
 
 Extract the given texts.
@@ -255,19 +290,23 @@ Sigles have the structure C<Corpus>/C<Document>/C<Text>.
 In case the C<Text> path is omitted, the whole document will be extracted.
 On the document level, the postfix wildcard C<*> is supported.
 
+
 =item B<--log|-l>
 
 The L<Log4perl> log level, defaults to C<ERROR>.
 
+
 =item B<--help|-h>
 
 Print this document.
+
 
 =item B<--version|-v>
 
 Print version information.
 
 =back
+
 
 =head1 ANNOTATION SUPPORT
 
@@ -292,6 +331,9 @@ L<Krill|https://github.com/KorAP/Krill>.
     #NamedEntities
     #Sentences
 
+  CMC
+    #Morpho
+
   DeReKo
     #Structure
 
@@ -300,6 +342,9 @@ L<Krill|https://github.com/KorAP/Krill>.
 
   Glemm
     #Morpho
+
+  LWC
+    #Dependency
 
   Malt
     #Dependency
@@ -336,6 +381,7 @@ More importers are in preparation.
 New annotation importers can be defined in the C<KorAP::XML::Annotation> namespace.
 See the built-in annotation importers as examples.
 
+
 =head1 AVAILABILITY
 
   https://github.com/KorAP/KorAP-XML-Krill
@@ -343,7 +389,7 @@ See the built-in annotation importers as examples.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2017, L<IDS Mannheim|http://www.ids-mannheim.de/>
+Copyright (C) 2015-2018, L<IDS Mannheim|http://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|http://nils-diewald.de/>
 

@@ -1141,6 +1141,7 @@ compatible with the archive file.
 B<The root folder switch using the hash sign is experimental and
 may vanish in future versions.>
 
+
 =item B<--input-base|-ib> <directory>
 
 The base directory for inputs.
@@ -1156,6 +1157,7 @@ writes to C<STDOUT> by default
 =item B<--overwrite|-w>
 
 Overwrite files that already exist.
+
 
 =item B<--token|-t> <foundry>#<file>
 
@@ -1197,6 +1199,7 @@ Skip specific annotations by specifying the foundry
 e.g. C<Mate> or C<Mate#Morpho>. Alternatively you can skip C<#ALL>.
 Can be set multiple times.
 
+
 =item B<--anno|-a> <foundry>#<layer>
 
 Convert specific annotations by specifying the foundry
@@ -1204,11 +1207,13 @@ Convert specific annotations by specifying the foundry
 e.g. C<Mate> or C<Mate#Morpho>.
 Can be set multiple times.
 
+
 =item B<--primary|-p>
 
 Output primary data or not. Defaults to C<true>.
 Can be flagged using C<--no-primary> as well.
 This is I<deprecated>.
+
 
 =item B<--jobs|-j>
 
@@ -1223,6 +1228,7 @@ Pass -1, and the value will be set automatically to 5
 times the number of available cores.
 This is I<experimental>.
 
+
 =item B<--sequential-extraction|-se>
 
 Flag to indicate, if the C<jobs> value also applies to extraction.
@@ -1231,30 +1237,36 @@ to the same folder at the same time.
 Can be flagged using C<--no-sequential-extraction> as well.
 Defaults to C<false>.
 
+
 =item B<--meta|-m>
 
 Define the metadata parser to use. Defaults to C<I5>.
 Metadata parsers can be defined in the C<KorAP::XML::Meta> namespace.
 This is I<experimental>.
 
+
 =item B<--pretty|-y>
 
 Pretty print JSON output. Defaults to C<false>.
 This is I<deprecated>.
+
 
 =item B<--gzip|-z>
 
 Compress the output.
 Expects a defined C<output> file in single processing.
 
+
 =item B<--cache|-c>
 
 File to mmap a cache (using L<Cache::FastMmap>).
 Defaults to C<korapxml2krill.cache> in the calling directory.
 
+
 =item B<--cache-size|-cs>
 
 Size of the cache. Defaults to C<50m>.
+
 
 =item B<--cache-init|-ci>
 
@@ -1262,11 +1274,13 @@ Initialize cache file.
 Can be flagged using C<--no-cache-init> as well.
 Defaults to C<true>.
 
+
 =item B<--cache-delete|-cd>
 
 Delete cache file after processing.
 Can be flagged using C<--no-cache-delete> as well.
 Defaults to C<true>.
+
 
 =item B<--config|-cfg>
 
@@ -1287,6 +1301,10 @@ C<base-pagebreaks>,
 C<skip> (semicolon separated), C<sigle>
 (semicolon separated), C<anno> (semicolon separated).
 
+Configuration parameters will always be overwritten by
+passed parameters.
+
+
 =item B<--temporary-extract|-te>
 
 Only valid for the C<archive> command.
@@ -1299,6 +1317,7 @@ This is especially useful to avoid
 massive unzipping and potential
 network latency.
 
+
 =item B<--sigle|-sg>
 
 Extract the given texts.
@@ -1308,19 +1327,23 @@ Sigles have the structure C<Corpus>/C<Document>/C<Text>.
 In case the C<Text> path is omitted, the whole document will be extracted.
 On the document level, the postfix wildcard C<*> is supported.
 
+
 =item B<--log|-l>
 
 The L<Log4perl> log level, defaults to C<ERROR>.
 
+
 =item B<--help|-h>
 
 Print this document.
+
 
 =item B<--version|-v>
 
 Print version information.
 
 =back
+
 
 =head1 ANNOTATION SUPPORT
 
@@ -1394,6 +1417,7 @@ L<Krill|https://github.com/KorAP/Krill>.
 More importers are in preparation.
 New annotation importers can be defined in the C<KorAP::XML::Annotation> namespace.
 See the built-in annotation importers as examples.
+
 
 =head1 AVAILABILITY
 
