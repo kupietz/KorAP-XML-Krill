@@ -14,6 +14,7 @@ sub _squish ($) {
 };
 
 # Parse meta data
+# This will normally be parsed in the order corpus, doc, text
 sub parse {
   my ($self, $dom, $type) = @_;
 
@@ -282,15 +283,18 @@ sub parse {
     };
   };
 
+  if ($temp = $dom->at('profileDesc > langUsage > language[id]')) {
+    $self->{language} = $temp->attr('id') if $temp->attr('id');
+  };
+
+
   # Some meta data only available in the corpus
-  if ($type eq 'corpus') {
-    if ($temp = $dom->at('profileDesc > langUsage > language[id]')) {
-      $self->{language} = $temp->attr('id') if $temp->attr('id');
-    };
-  }
+  #if ($type eq 'corpus') {
+  #}
 
   # Some meta data only reevant from the text
-  elsif ($type eq 'text') {
+  #els
+  if ($type eq 'text') {
 
     if ($temp = $dom->at('sourceDesc reference[type=complete]')) {
       if (my $ref_text = _squish $temp->all_text) {

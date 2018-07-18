@@ -410,7 +410,7 @@ sub add {
 
   if ($mod->can('new') || eval("require $mod; 1;")) {
       my $obj = $mod->new($self);
-      
+
       if (my $retval = $obj->parse(@_)) {
 
       # This layer is supported

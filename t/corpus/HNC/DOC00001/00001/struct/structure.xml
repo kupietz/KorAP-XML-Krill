@@ -1,0 +1,1649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="HNC_DOC00001.00001" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="4368" l="1">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">text</f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="0" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">opener</f>
+      </fs>
+    </span>
+    <span id="s2" from="0" to="0" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">dateline</f>
+      </fs>
+    </span>
+    <span id="s3" from="0" to="0" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s4" from="0" to="0" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">date</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="ISO8601">2013-03-02T14:36:02Z</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s5" from="0" to="6" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">byline</f>
+      </fs>
+    </span>
+    <span id="s6" from="0" to="6" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s7" from="0" to="6" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">docAuthor</f>
+      </fs>
+    </span>
+    <span id="s9" from="6" to="37" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">BO</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s10" from="6" to="37" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s15" from="37" to="537" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s16" from="37" to="239" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s22" from="71" to="72" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">(</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s27" from="91" to="92" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">)</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s28" from="93" to="94" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s40" from="174" to="175" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s50" from="238" to="239" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s51" from="239" to="472" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s60" from="301" to="302" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s63" from="322" to="323" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s71" from="379" to="380" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s77" from="421" to="422" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">;</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s85" from="471" to="472" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s86" from="472" to="537" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s96" from="536" to="537" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s97" from="537" to="853" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s98" from="537" to="853" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s102" from="555" to="556" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">-</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s107" from="590" to="592" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">-,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s113" from="625" to="626" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">(</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s117" from="643" to="644" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">)</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s121" from="669" to="670" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s123" from="679" to="680" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s129" from="717" to="718" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s137" from="757" to="758" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">-</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s143" from="785" to="786" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">-</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s147" from="816" to="817" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s151" from="852" to="853" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s152" from="853" to="874" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s153" from="853" to="874" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s156" from="874" to="1452" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s157" from="874" to="1070" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s165" from="930" to="931" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s174" from="1000" to="1001" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">(</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s177" from="1021" to="1022" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">)</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s178" from="1023" to="1024" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s183" from="1069" to="1070" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s184" from="1070" to="1201" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s199" from="1163" to="1164" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s205" from="1200" to="1201" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s206" from="1201" to="1452" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s209" from="1211" to="1212" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s212" from="1230" to="1231" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s218" from="1263" to="1264" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s221" from="1291" to="1292" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s226" from="1320" to="1321" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s228" from="1327" to="1328" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s230" from="1339" to="1340" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s244" from="1451" to="1452" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s245" from="1452" to="1897" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s246" from="1452" to="1810" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s253" from="1500" to="1501" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">:</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s257" from="1530" to="1531" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">(</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s260" from="1551" to="1552" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">)</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s261" from="1553" to="1554" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s272" from="1628" to="1629" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s278" from="1666" to="1667" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">(</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s282" from="1686" to="1687" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s286" from="1705" to="1706" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">)</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s287" from="1707" to="1708" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s295" from="1759" to="1760" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s301" from="1792" to="1793" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">(</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s304" from="1807" to="1808" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">)</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s305" from="1809" to="1810" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s306" from="1810" to="1897" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s312" from="1837" to="1838" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s321" from="1896" to="1897" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s322" from="1897" to="2076" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s323" from="1897" to="2076" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s334" from="1974" to="1975" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s348" from="2076" to="2097" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s349" from="2076" to="2097" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s352" from="2097" to="2486" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s353" from="2097" to="2399" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s361" from="2150" to="2151" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s367" from="2189" to="2190" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">(</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s377" from="2241" to="2242" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">)</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s378" from="2243" to="2244" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s383" from="2273" to="2274" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s390" from="2326" to="2327" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s400" from="2398" to="2399" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s401" from="2399" to="2486" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s402" from="2400" to="2401" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">(</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s414" from="2483" to="2484" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s415" from="2485" to="2486" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">)</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s416" from="2486" to="2495" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s417" from="2486" to="2495" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s419" from="2495" to="2908" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s420" from="2495" to="2699" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s430" from="2551" to="2552" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">:</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s438" from="2617" to="2618" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s449" from="2698" to="2699" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s450" from="2699" to="2908" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s455" from="2725" to="2726" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s467" from="2803" to="2804" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s481" from="2907" to="2908" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s482" from="2908" to="3336" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s483" from="2908" to="3183" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s486" from="2918" to="2919" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s496" from="2977" to="2978" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">"</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s499" from="2990" to="2991" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">"</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s504" from="3022" to="3023" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s515" from="3099" to="3100" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">;</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s527" from="3182" to="3183" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s528" from="3183" to="3336" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s534" from="3225" to="3226" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s544" from="3297" to="3298" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">(</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s548" from="3312" to="3313" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">)</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s551" from="3335" to="3336" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s552" from="3336" to="3622" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s553" from="3336" to="3481" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s562" from="3386" to="3387" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s572" from="3480" to="3481" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s573" from="3481" to="3622" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s581" from="3523" to="3524" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s596" from="3621" to="3622" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s597" from="3622" to="3641" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s598" from="3622" to="3641" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s602" from="3641" to="4152" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s603" from="3641" to="3781" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s611" from="3682" to="3683" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">;</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s614" from="3692" to="3693" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s619" from="3726" to="3727" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s622" from="3740" to="3741" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s627" from="3780" to="3781" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s628" from="3781" to="3969" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s641" from="3879" to="3880" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">(</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s647" from="3924" to="3925" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">)</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s653" from="3968" to="3969" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s654" from="3969" to="4152" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s670" from="4066" to="4067" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s679" from="4113" to="4114" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">,</f>
+            <f name="ana">WPUNCT __NA__</f>
+            <f name="tokentype">WPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s684" from="4151" to="4152" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">c</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="lemma">.</f>
+            <f name="ana">SPUNCT __NA__</f>
+            <f name="tokentype">SPUNCT</f>
+            <f name="anatype">nma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s685" from="4152" to="4161" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s686" from="4152" to="4161" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s689" from="4161" to="4165" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s690" from="4161" to="4165" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s692" from="4165" to="4170" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s693" from="4165" to="4170" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s695" from="4170" to="4176" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s696" from="4170" to="4176" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s698" from="4176" to="4193" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s699" from="4176" to="4193" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s702" from="4193" to="4202" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s703" from="4193" to="4202" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s705" from="4202" to="4217" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s706" from="4202" to="4217" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s710" from="4217" to="4259" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s711" from="4217" to="4259" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s719" from="4259" to="4304" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s720" from="4259" to="4304" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s730" from="4304" to="4325" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s731" from="4304" to="4325" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s736" from="4325" to="4338" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s737" from="4325" to="4338" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s739" from="4338" to="4354" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s740" from="4338" to="4354" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s743" from="4354" to="4368" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s744" from="4354" to="4368" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+  </spanList>
+</layer>
