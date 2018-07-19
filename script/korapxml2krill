@@ -464,6 +464,9 @@ else {
 # Glemm
 push(@layers, ['Glemm', 'Morpho']);
 
+# HNC
+push(@layers, ['HNC', 'Morpho']);
+
 # LWC
 push(@layers, ['LWC', 'Dependency']);
 
@@ -1381,6 +1384,9 @@ L<Krill|https://github.com/KorAP/Krill>.
     #Morpho
 
   Glemm
+    #Morpho
+
+  HNC
     #Morpho
 
   LWC
