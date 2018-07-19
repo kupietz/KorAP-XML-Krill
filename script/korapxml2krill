@@ -126,9 +126,12 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2018/01/16
 # - Added LWC support
+#
+# 2018/07/19
+# - Preliminary support for HNC.
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2018/01/16';
+our $LAST_CHANGE = '2018/07/19';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
