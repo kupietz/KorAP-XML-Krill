@@ -1070,7 +1070,7 @@ The preferred way to install L<KorAP::XML::Krill> is to use L<cpanm|App::cpanmin
 
 In case everything went well, the C<korapxml2krill> tool will
 be available on your command line immediately.
-Minimum requirement for L<KorAP::XML::Krill> is Perl 5.14.
+Minimum requirement for L<KorAP::XML::Krill> is Perl 5.16.
 In addition to work with zip archives, the C<unzip> tool needs to be present.
 
 =head1 ARGUMENTS

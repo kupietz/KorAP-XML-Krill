@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-use v5.14;
+use v5.16;
 use strict;
 use warnings;
 use ExtUtils::MakeMaker;
@@ -9,7 +9,7 @@ WriteMakefile(
   AUTHOR       => 'Nils Diewald',
   ABSTRACT     => 'Preprocess KorAP XML Documents for Krill',
   VERSION_FROM => 'lib/KorAP/XML/Krill.pm',
-  LICENSE      => 'bsd_2',
+  LICENSE      => 'freebsd',
   PREREQ_PM => {
     'Mojolicious'     => 7.23,
     'Packed::Array'   => 0.01,
@@ -43,7 +43,7 @@ WriteMakefile(
     'Archive::Tar::Builder' => 2.5002,
     'Archive::Tar'    => 2.24
   },
-  MIN_PERL_VERSION => '5.014',
+  MIN_PERL_VERSION => '5.016',
   test => {
     TESTS =>
       't/*.t '.

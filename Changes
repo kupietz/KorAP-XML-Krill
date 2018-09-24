@@ -1,3 +1,7 @@
+0.35 2018-09-24
+        - Lift minimum version of Perl to 5.16 as for
+          "fc"-feature.
+
 0.34 2018-07-19
         - Preliminary support for HNC.
 
