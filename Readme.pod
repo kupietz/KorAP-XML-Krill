@@ -275,8 +275,8 @@ of key-value pairs with whitespace separator
 Supported parameters are:
 C<overwrite>, C<gzip>, C<jobs>, C<input-base>,
 C<token>, C<log>, C<cache>, C<cache-size>, C<cache-delete>, C<meta>,
-C<output>,
-C<temp-extract>, C<sequential-extraction>,
+C<output>, C<koral>,
+C<tempary-extract>, C<sequential-extraction>,
 C<base-sentences>, C<base-paragraphs>,
 C<base-pagebreaks>,
 C<skip> (semicolon separated), C<sigle>
@@ -354,6 +354,9 @@ L<Krill|https://github.com/KorAP/Krill>.
 
   DeReKo
     #Structure
+
+  DGD
+    #Morpho
 
   DRuKoLa
     #Morpho

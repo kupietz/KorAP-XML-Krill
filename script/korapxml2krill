@@ -131,6 +131,7 @@ use Fcntl qw(:flock SEEK_END);
 # - Preliminary support for HNC.
 #
 # 2019/01/22
+# - Preliminary support for DGD.
 # - Support for non-word tokens.
 #
 # 2019/02/13
@@ -485,6 +486,12 @@ else {
   push(@layers, ['DeReKo', 'Structure']);
 };
 
+# DGD
+push(@layers, ['DGD', 'Morpho']);
+
+# DRuKoLa
+push(@layers, ['DRuKoLa', 'Morpho']);
+
 # Glemm
 push(@layers, ['Glemm', 'Morpho']);
 
@@ -497,12 +504,15 @@ push(@layers, ['LWC', 'Dependency']);
 # Malt
 push(@layers, ['Malt', 'Dependency']);
 
-# MDParser
-push(@layers, ['MDParser', 'Dependency']);
+# Marmot
+push(@layers, ['MarMoT', 'Morpho']);
 
 # Mate
 push(@layers, ['Mate', 'Morpho']);
 push(@layers, ['Mate', 'Dependency']);
+
+# MDParser
+push(@layers, ['MDParser', 'Dependency']);
 
 # OpenNLP
 push(@layers, ['OpenNLP', 'Morpho']);
@@ -521,12 +531,6 @@ push(@layers, ['XIP', 'Morpho']);
 push(@layers, ['XIP', 'Constituency']);
 push(@layers, ['XIP', 'Sentences']);
 push(@layers, ['XIP', 'Dependency']);
-
-# DRuKoLa
-push(@layers, ['DRuKoLa', 'Morpho']);
-
-# Marmot
-push(@layers, ['MarMoT', 'Morpho']);
 
 
 # Check filters
@@ -1504,6 +1508,9 @@ L<Krill|https://github.com/KorAP/Krill>.
 
   DeReKo
     #Structure
+
+  DGD
+    #Morpho
 
   DRuKoLa
     #Morpho

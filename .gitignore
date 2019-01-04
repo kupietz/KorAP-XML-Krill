@@ -30,6 +30,5 @@ nytprof
 # Protected checks
 t/corpus/BRZ13
 t/corpus/DCK
-t/corpus/AGD
+t/corpus/AGD-orig
 t/real/dck.t
-t/real/agd.t
