@@ -178,6 +178,13 @@ Can be flagged using C<--no-primary> as well.
 This is I<deprecated>.
 
 
+=item B<--non-word-tokens|-nwt>
+
+Tokenize non-word tokens like word tokens (defined as matching
+C</[\d\w]/>). Useful to treat punctuations as tokens.
+
+ Defaults to unset.
+
 =item B<--jobs|-j>
 
 Define the number of concurrent jobs in seperated forks
@@ -343,6 +350,9 @@ L<Krill|https://github.com/KorAP/Krill>.
   Glemm
     #Morpho
 
+  HNC
+    #Morpho
+
   LWC
     #Dependency
 
@@ -389,7 +399,7 @@ See the built-in annotation importers as examples.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2018, L<IDS Mannheim|http://www.ids-mannheim.de/>
+Copyright (C) 2015-2019, L<IDS Mannheim|http://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|http://nils-diewald.de/>
 

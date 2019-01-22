@@ -12,16 +12,17 @@ sub new {
   my %param = @_;
 
   bless {
-    cache     => $param{cache}     // undef,
-    meta_type => $param{meta_type} || 'I5',
-    overwrite => $param{overwrite},
-    foundry   => $param{foundry}   || 'Base',
-    layer     => $param{layer}     || 'Tokens',
-    anno      => $param{anno}      || [[]],
-    log       => $param{log}       || Mojo::Log->new(level => 'fatal'),
-    primary   => $param{primary},
-    pretty    => $param{pretty},
-    gzip      => $param{gzip}      // 0
+    cache           => $param{cache}     // undef,
+    meta_type       => $param{meta_type} || 'I5',
+    overwrite       => $param{overwrite},
+    foundry         => $param{foundry}   || 'Base',
+    layer           => $param{layer}     || 'Tokens',
+    anno            => $param{anno}      || [[]],
+    log             => $param{log}       || Mojo::Log->new(level => 'fatal'),
+    primary         => $param{primary},
+    non_word_tokens => $param{non_word_tokens},
+    pretty          => $param{pretty},
+    gzip            => $param{gzip}      // 0
   }, $class;
 };
 
@@ -54,7 +55,8 @@ sub process {
     doc => $doc,
     foundry => $self->{foundry},
     layer => $self->{layer},
-    name => 'tokens'
+    name => 'tokens',
+    non_word_tokens => $self->{non_word_tokens}
   );
 
   # Unable to process base tokenization

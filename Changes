@@ -1,3 +1,6 @@
+0.36 2019-01-22
+        - Support for non-word tokens (fixes #5).
+
 0.35 2018-09-24
         - Lift minimum version of Perl to 5.16 as for
           "fc"-feature.

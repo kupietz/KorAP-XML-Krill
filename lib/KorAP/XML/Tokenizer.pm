@@ -34,6 +34,7 @@ use Log::Log4perl;
 
 has [qw/path foundry doc stream should have name/];
 has layer => 'Tokens';
+has non_word_tokens => 0;
 
 has log => sub {
   if (Log::Log4perl->initialized()) {
@@ -131,7 +132,7 @@ sub parse {
     $should++;
 
     # Ignore non-word and non-number tokens (sorry!)
-    if ($token !~ /[\w\d]/) {
+    if (!$self->non_word_tokens && $token !~ /[\w\d]/) {
 
       # TODO: Recognize punctuations!
       #	if ($mtt) {

@@ -129,9 +129,12 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2018/07/19
 # - Preliminary support for HNC.
+#
+# 2019/01/22
+# - Support for non-word tokens.
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2018/07/19';
+our $LAST_CHANGE = '2019/01/22';
 our $LOCAL = $FindBin::Bin;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
@@ -175,6 +178,7 @@ GetOptions(
   'pretty|y'    => \(my $pretty),
   'jobs|j=i'    => \(my $jobs),
   'to-tar'      => \(my $to_tar),
+  'non-word-tokens|nwt' => \(my $non_word_tokens),
   'sequential-extraction|se' => \(my $sequential_extraction),
   'cache-size|cs=s'  => \(my $cache_size),
   'cache-delete|cd!' => \(my $cache_delete),
@@ -231,6 +235,11 @@ if ($cfg_file && -e $cfg_file) {
   # Token base
   if (!defined($token_base) && defined $config{token}) {
     $token_base = $config{token};
+  };
+
+  # temporary-extract
+  if (!defined($non_word_tokens) && defined $config{'non-word-tokens'}) {
+    $non_word_tokens = $config{'non-word-tokens'};
   };
 
   # Cache file
@@ -322,6 +331,7 @@ $log_level           //= 'ERROR';
 $base_sentences      //= '';
 $base_paragraphs     //= '';
 $base_pagebreaks     //= '';
+$non_word_tokens     //= 0;
 
 $base_sentences  = lc $base_sentences;
 $base_paragraphs = lc $base_paragraphs;
@@ -548,7 +558,8 @@ my $batch_file = KorAP::XML::Batch::File->new(
   log       => $log,
   primary   => $primary,
   pretty    => $pretty,
-  anno      => \@filtered_anno
+  anno      => \@filtered_anno,
+  non_word_tokens => $non_word_tokens
 );
 
 # Get file name based on path information
@@ -1221,6 +1232,13 @@ Can be flagged using C<--no-primary> as well.
 This is I<deprecated>.
 
 
+=item B<--non-word-tokens|-nwt>
+
+Tokenize non-word tokens like word tokens (defined as matching
+C</[\d\w]/>). Useful to treat punctuations as tokens.
+
+ Defaults to unset.
+
 =item B<--jobs|-j>
 
 Define the number of concurrent jobs in seperated forks
@@ -1435,7 +1453,7 @@ See the built-in annotation importers as examples.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2018, L<IDS Mannheim|http://www.ids-mannheim.de/>
+Copyright (C) 2015-2019, L<IDS Mannheim|http://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|http://nils-diewald.de/>
 
