@@ -13,9 +13,6 @@ blib
 MYMETA*
 Makefile
 pm_to_blib
-t/corpus/BRZ13
-t/corpus/DCK
-t/real/dck.t
 nytprof.out
 nytprof
 \#*#
@@ -29,3 +26,10 @@ nytprof
 *.cache
 .*
 !.gitignore
+
+# Protected checks
+t/corpus/BRZ13
+t/corpus/DCK
+t/corpus/AGD
+t/real/dck.t
+t/real/agd.t
