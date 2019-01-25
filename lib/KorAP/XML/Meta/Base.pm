@@ -130,4 +130,112 @@ sub do_cache {
   return 0;
 };
 
+
+# Generate koral_fields
+sub to_koral_fields {
+  my $self = shift;
+  my @fields = ();
+
+  if ($self->corpus_sigle) {
+    push @fields, _string_field('corpusSigle', $self->corpus_sigle);
+    if ($self->doc_sigle) {
+      push @fields, _string_field('docSigle', $self->doc_sigle);
+      if ($self->text_sigle) {
+        push @fields, _string_field('textSigle', $self->text_sigle);
+      }
+    }
+  };
+
+  # Iterate over all keys
+  foreach (sort {$a cmp $b } $self->keys) {
+    if (index($_, 'D_') == 0) {
+      push @fields, _date_field(_k($_), $self->{$_});
+    }
+    elsif (index($_, 'S_') == 0) {
+      push @fields, _string_field(_k($_), $self->{$_});
+    }
+    elsif (index($_, 'T_') == 0) {
+      push @fields, _text_field(_k($_), $self->{$_});
+    }
+    # elsif (index($_, 'I_') == 0) {
+    #  _int_field(_k($_), $self->{$_});
+    # }
+    elsif (index($_, 'A_') == 0) {
+      push @fields, _attachement_field(_k($_), $self->{$_});
+    }
+    elsif (index($_, 'K_') == 0) {
+      push @fields, _keywords_field(_k($_), $self->{$_});
+    }
+    else {
+      warn 'Unknown field type: ' . $_;
+    }
+  };
+
+  return \@fields;
+};
+
+sub _k {
+  my $x = substr($_[0], 2);
+  $x =~ s/_(\w)/\U$1\E/g;
+  $x =~ s/id$/ID/gi;
+  return $x;
+};
+
+
+sub _string_field {
+  return {
+    '@type' => 'koral:field',
+    type    => 'type:string',
+    key     => $_[0],
+    value   => $_[1]
+  };
+};
+
+sub _text_field {
+  return {
+    '@type' => 'koral:field',
+    type    => 'type:text',
+    key     => $_[0],
+    value   => $_[1]
+  };
+};
+
+sub _date_field {
+  my ($key, $value) = @_;
+  my $new_value;
+  if ($value =~ /^(\d\d\d\d)(\d\d)(\d\d)$/) {
+    $new_value = "$1";
+    if ($2 ne '00') {
+      $new_value .= "-$2";
+      if ($3 ne '00') {
+        $new_value .= "-$3";
+      };
+    };
+  };
+  return {
+    '@type' => 'koral:field',
+    type    => 'type:date',
+    key     => $key,
+    value   => $new_value
+  };
+};
+
+sub _keywords_field {
+  return {
+    '@type' => 'koral:field',
+    type    => 'type:keywords',
+    key     => $_[0],
+    value   => $_[1]
+  };
+};
+
+sub _attachement_field {
+  return {
+    '@type' => 'koral:field',
+    type    => 'type:attachement',
+    key     => $_[0],
+    value   => 'data:,' . $_[1]
+  };
+};
+
 1;

@@ -27,36 +27,36 @@ is($doc->doc_sigle, 'WDD11/G27', 'Correct document sigle');
 is($doc->corpus_sigle, 'WDD11', 'Correct corpus sigle');
 
 my $meta = $doc->meta;
-is($meta->{title}, 'Diskussion:Gunter A. Pilz', 'Title');
-ok(!$meta->{sub_title}, 'No SubTitle');
-is($meta->{author}, '€pa, u.a.', 'Author');
-is($meta->{editor}, 'wikipedia.org', 'Editor');
+is($meta->{T_title}, 'Diskussion:Gunter A. Pilz', 'Title');
+ok(!$meta->{T_sub_title}, 'No SubTitle');
+is($meta->{T_author}, '€pa, u.a.', 'Author');
+is($meta->{A_editor}, 'wikipedia.org', 'Editor');
 
-is($meta->{pub_place}, 'URL:http://de.wikipedia.org', 'PubPlace');
-is($meta->{publisher}, 'Wikipedia', 'Publisher');
-is($meta->{text_type}, 'Diskussionen zu Enzyklopädie-Artikeln', 'Correct Text Type');
-ok(!$meta->{text_type_art}, 'Correct Text Type Art');
-ok(!$meta->{text_type_ref}, 'Correct Text Type Ref');
-ok(!$meta->{text_domain}, 'Correct Text Domain');
-is($meta->{creation_date}, '20070707', 'Creation date');
-is($meta->{availability}, 'CC-BY-SA', 'License');
+is($meta->{S_pub_place}, 'URL:http://de.wikipedia.org', 'PubPlace');
+is($meta->{A_publisher}, 'Wikipedia', 'Publisher');
+is($meta->{S_text_type}, 'Diskussionen zu Enzyklopädie-Artikeln', 'Correct Text Type');
+ok(!$meta->{S_text_type_art}, 'Correct Text Type Art');
+ok(!$meta->{S_text_type_ref}, 'Correct Text Type Ref');
+ok(!$meta->{S_text_domain}, 'Correct Text Domain');
+is($meta->{D_creation_date}, '20070707', 'Creation date');
+is($meta->{S_availability}, 'CC-BY-SA', 'License');
 ok(!$meta->{pages}, 'Pages');
-ok(!$meta->{file_edition_statement}, 'File Statement');
-ok(!$meta->{bibl_edition_statement}, 'Bibl Statement');
-is($meta->{reference} . "\n", <<'REF', 'Reference');
+ok(!$meta->{A_file_edition_statement}, 'File Statement');
+ok(!$meta->{A_bibl_edition_statement}, 'Bibl Statement');
+is($meta->{A_reference} . "\n", <<'REF', 'Reference');
 Diskussion:Gunter A. Pilz, In: Wikipedia - URL:http://de.wikipedia.org/wiki/Diskussion:Gunter_A._Pilz: Wikipedia, 2007
 REF
-is($meta->{language}, 'de', 'Language');
+is($meta->{S_language}, 'de', 'Language');
 
-is($meta->{corpus_title}, 'Wikipedia', 'Correct Corpus title');
-ok(!$meta->{corpus_sub_title}, 'Correct Corpus sub title');
-ok(!$meta->{corpus_author}, 'Correct Corpus author');
-is($meta->{corpus_editor}, 'wikipedia.org', 'Correct Corpus editor');
+is($meta->{T_corpus_title}, 'Wikipedia', 'Correct Corpus title');
+ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus sub title');
+ok(!$meta->{T_corpus_author}, 'Correct Corpus author');
+is($meta->{A_corpus_editor}, 'wikipedia.org', 'Correct Corpus editor');
 
-is($meta->{doc_title}, 'Wikipedia, Diskussionen zu Artikeln mit Anfangsbuchstabe G, Teil 27', 'Correct Doc title');
-ok(!$meta->{doc_sub_title}, 'Correct Doc sub title');
-ok(!$meta->{doc_author}, 'Correct Doc author');
-ok(!$meta->{doc_editor}, 'Correct doc editor');
+is($meta->{T_doc_title}, 'Wikipedia, Diskussionen zu Artikeln mit Anfangsbuchstabe G, Teil 27', 'Correct Doc title');
+ok(!$meta->{T_doc_sub_title}, 'Correct Doc sub title');
+ok(!$meta->{T_doc_author}, 'Correct Doc author');
+ok(!$meta->{A_doc_editor}, 'Correct doc editor');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');

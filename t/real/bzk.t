@@ -34,45 +34,45 @@ is($doc->doc_sigle, 'BZK/D59', 'Correct document sigle');
 is($doc->corpus_sigle, 'BZK', 'Correct corpus sigle');
 
 my $meta = $doc->meta;
-is($meta->{title}, 'Unser gemeinsames Werk wird siegreich sein', 'Title');
-ok(!$meta->{sub_title}, 'No SubTitle');
-ok(!$meta->{author}, 'Author');
-ok(!$meta->{editor}, 'Editor');
-is($meta->{pub_place}, 'Berlin', 'PubPlace');
-ok(!$meta->{publisher}, 'Publisher');
+is($meta->{T_title}, 'Unser gemeinsames Werk wird siegreich sein', 'Title');
+ok(!$meta->{T_sub_title}, 'No SubTitle');
+ok(!$meta->{T_author}, 'Author');
+ok(!$meta->{A_editor}, 'Editor');
+is($meta->{S_pub_place}, 'Berlin', 'PubPlace');
+ok(!$meta->{A_publisher}, 'Publisher');
 
-is($meta->{text_type}, 'Zeitung: Tageszeitung', 'Correct Text Type');
+is($meta->{S_text_type}, 'Zeitung: Tageszeitung', 'Correct Text Type');
 
-ok(!$meta->{text_type_art}, 'Correct Text Type Art');
-is($meta->{text_type_ref}, 'Tageszeitung', 'Correct Text Type Ref');
-is($meta->{text_domain}, 'Politik', 'Correct Text Domain');
-is($meta->{text_column}, 'POLITIK', 'Correct Text Column');
-is($meta->{text_class}->[0], 'politik', 'Correct Text Class');
-is($meta->{text_class}->[1], 'ausland', 'Correct Text Class');
-ok(!$meta->{text_class}->[2], 'Correct Text Class');
+ok(!$meta->{S_text_type_art}, 'Correct Text Type Art');
+is($meta->{S_text_type_ref}, 'Tageszeitung', 'Correct Text Type Ref');
+is($meta->{S_text_domain}, 'Politik', 'Correct Text Domain');
+is($meta->{S_text_column}, 'POLITIK', 'Correct Text Column');
+is($meta->{K_text_class}->[0], 'politik', 'Correct Text Class');
+is($meta->{K_text_class}->[1], 'ausland', 'Correct Text Class');
+ok(!$meta->{K_text_class}->[2], 'Correct Text Class');
 
-is($meta->{pub_date}, '19590101', 'Creation date');
-is($meta->{creation_date}, '19590101', 'Creation date');
-is($meta->{availability}, 'ACA-NC-LC', 'License');
+is($meta->{D_pub_date}, '19590101', 'Creation date');
+is($meta->{D_creation_date}, '19590101', 'Creation date');
+is($meta->{S_availability}, 'ACA-NC-LC', 'License');
 ok(!$meta->{pages}, 'Pages');
 
-ok(!$meta->{file_edition_statement}, 'File Statement');
-ok(!$meta->{bibl_edition_statement}, 'Bibl Statement');
+ok(!$meta->{A_file_edition_statement}, 'File Statement');
+ok(!$meta->{A_bibl_edition_statement}, 'Bibl Statement');
 
-is($meta->{reference} . "\n", <<'REF', 'Reference');
+is($meta->{A_reference} . "\n", <<'REF', 'Reference');
 Neues Deutschland, [Tageszeitung], 01.01.1959, Jg. 14, Berliner Ausgabe, S. 1. - Sachgebiet: Politik, Originalressort: POLITIK; Unser gemeinsames Werk wird siegreich sein
 REF
-is($meta->{language}, 'de', 'Language');
+is($meta->{S_language}, 'de', 'Language');
 
-is($meta->{corpus_title}, 'Bonner Zeitungskorpus', 'Correct Corpus title');
-ok(!$meta->{corpus_sub_title}, 'Correct Corpus sub title');
-ok(!$meta->{corpus_author}, 'Correct Corpus author');
-ok(!$meta->{corpus_editor}, 'Correct Corpus editor');
+is($meta->{T_corpus_title}, 'Bonner Zeitungskorpus', 'Correct Corpus title');
+ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus sub title');
+ok(!$meta->{T_corpus_author}, 'Correct Corpus author');
+ok(!$meta->{A_corpus_editor}, 'Correct Corpus editor');
 
-is($meta->{doc_title}, 'Neues Deutschland', 'Correct Doc title');
-is($meta->{doc_sub_title}, 'Organ des Zentralkomitees der Sozialistischen Einheitspartei Deutschlands', 'Correct Doc sub title');
-ok(!$meta->{doc_author}, 'Correct Doc author');
-ok(!$meta->{doc_editor}, 'Correct doc editor');
+is($meta->{T_doc_title}, 'Neues Deutschland', 'Correct Doc title');
+is($meta->{T_doc_sub_title}, 'Organ des Zentralkomitees der Sozialistischen Einheitspartei Deutschlands', 'Correct Doc sub title');
+ok(!$meta->{T_doc_author}, 'Correct Doc author');
+ok(!$meta->{A_doc_editor}, 'Correct doc editor');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');
@@ -110,7 +110,7 @@ ok(!exists $output->{author}, 'Author');
 ok(!exists $output->{editor}, 'Publisher');
 
 is($output->{pubPlace}, 'Berlin', 'PubPlace');
-ok(!exists $output->{publisher}, 'Publisher');
+ok(!exists $output->{A_publisher}, 'Publisher');
 
 is($output->{textType}, 'Zeitung: Tageszeitung', 'Correct Text Type');
 ok(!exists $output->{textTypeArt}, 'Correct Text Type Art');

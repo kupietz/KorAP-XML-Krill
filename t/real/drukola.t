@@ -30,38 +30,38 @@ is($doc->doc_sigle, 'BBU/BLOG', 'Correct document sigle');
 is($doc->corpus_sigle, 'BBU', 'Correct corpus sigle');
 
 my $meta = $doc->meta;
-is($meta->{title}, 'Schimbă vorba', 'Title');
-is($meta->{pub_place}, 'URL:http://www.bucurenci.ro', 'PubPlace');
-is($meta->{pub_date}, '20131005', 'Creation Date');
-ok(!$meta->{sub_title}, 'SubTitle');
-is($meta->{author}, 'Dragoș Bucurenci', 'Author');
+is($meta->{T_title}, 'Schimbă vorba', 'Title');
+is($meta->{S_pub_place}, 'URL:http://www.bucurenci.ro', 'PubPlace');
+is($meta->{D_pub_date}, '20131005', 'Creation Date');
+ok(!$meta->{T_sub_title}, 'SubTitle');
+is($meta->{T_author}, 'Dragoș Bucurenci', 'Author');
 
-ok(!$meta->{publisher}, 'Publisher');
-ok(!$meta->{editor}, 'Editor');
-is($meta->{translator}, '[TRANSLATOR]', 'Translator');
-#is($meta->{text_type}, 'Autobiographie', 'Correct Text Type');
-ok(!$meta->{text_type_art}, 'Correct Text Type Art');
-# is($meta->{text_type_ref}, '', 'Correct Text Type Ref');
-ok(!$meta->{text_column}, 'Correct Text Column');
-ok(!$meta->{text_domain}, 'Correct Text Domain');
-ok(!$meta->{creation_date}, 'Creation Date');
+ok(!$meta->{A_publisher}, 'Publisher');
+ok(!$meta->{A_editor}, 'Editor');
+is($meta->{A_translator}, '[TRANSLATOR]', 'Translator');
+#is($meta->{S_text_type}, 'Autobiographie', 'Correct Text Type');
+ok(!$meta->{S_text_type_art}, 'Correct Text Type Art');
+# is($meta->{S_text_type_ref}, '', 'Correct Text Type Ref');
+ok(!$meta->{S_text_column}, 'Correct Text Column');
+ok(!$meta->{S_text_domain}, 'Correct Text Domain');
+ok(!$meta->{D_creation_date}, 'Creation Date');
 
 ok(!$meta->{pages}, 'Pages');
-ok(!$meta->{file_edition_statement}, 'File Ed Statement');
-ok(!$meta->{bibl_edition_statement}, 'Bibl Ed Statement');
-ok(!$meta->{reference}, 'Reference');
-is($meta->{language}, 'ro', 'Language');
+ok(!$meta->{A_file_edition_statement}, 'File Ed Statement');
+ok(!$meta->{A_bibl_edition_statement}, 'Bibl Ed Statement');
+ok(!$meta->{A_reference}, 'Reference');
+is($meta->{S_language}, 'ro', 'Language');
 
-#is($meta->{corpus_title}, 'Goethes Werke', 'Correct Corpus title');
-ok(!$meta->{corpus_sub_title}, 'Correct Corpus Sub title');
-#is($meta->{corpus_author}, 'Goethe, Johann Wolfgang von', 'Correct Corpus author');
-#is($meta->{corpus_editor}, 'Trunz, Erich', 'Correct Corpus editor');
+#is($meta->{T_corpus_title}, 'Goethes Werke', 'Correct Corpus title');
+ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus Sub title');
+#is($meta->{T_corpus_author}, 'Goethe, Johann Wolfgang von', 'Correct Corpus author');
+#is($meta->{A_corpus_editor}, 'Trunz, Erich', 'Correct Corpus editor');
 
-#is($meta->{doc_title}, 'Goethe: Autobiographische Schriften II, (1817-1825, 1832)',
+#is($meta->{T_doc_title}, 'Goethe: Autobiographische Schriften II, (1817-1825, 1832)',
 #   'Correct Doc title');
-ok(!$meta->{doc_sub_title}, 'Correct Doc Sub title');
-ok(!$meta->{doc_author}, 'Correct Doc author');
-ok(!$meta->{doc_editor}, 'Correct Doc editor');
+ok(!$meta->{T_doc_sub_title}, 'Correct Doc Sub title');
+ok(!$meta->{T_doc_author}, 'Correct Doc author');
+ok(!$meta->{A_doc_editor}, 'Correct Doc editor');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');
@@ -116,10 +116,10 @@ ok($doc->parse, 'Parse document');
 
 $meta = $doc->meta;
 
-ok(!exists $meta->{doc_title}, 'No doc title');
+ok(!exists $meta->{T_doc_title}, 'No doc title');
 ok(!exists $meta->{translator}, 'No translator');
 
-ok(!exists $meta->{text_class}, 'No translator');
+ok(!exists $meta->{K_text_class}, 'No translator');
 
 
 
@@ -131,7 +131,7 @@ $meta = $doc->meta;
 is($meta->text_sigle, 'Corola-Journal/-/247_a_537', 'Text Sigle');
 is($meta->doc_sigle, 'Corola-Journal/-', 'Doc Sigle');
 is($meta->corpus_sigle, 'Corola-Journal', 'Corpus Sigle');
-is($meta->{text_class}->[0], 'Sport', 'Text class');
+is($meta->{K_text_class}->[0], 'Sport', 'Text class');
 
 
 $path = catdir(dirname(__FILE__), '../corpus/CoRoLa/Corola-Journal/COLEGIUL NATIONAL „OCTAV BANCILA“ - IASI/326_a_562');
@@ -142,7 +142,7 @@ $meta = $doc->meta;
 is($meta->text_sigle, 'Corola-Journal/COLEGIUL NATIONAL „OCTAV BANCILA“ - IASI/326_a_562', 'Text Sigle');
 is($meta->doc_sigle, 'Corola-Journal/COLEGIUL NATIONAL „OCTAV BANCILA“ - IASI', 'Doc Sigle');
 is($meta->corpus_sigle, 'Corola-Journal', 'Corpus Sigle');
-is($meta->{title}, 'APOGEUL ARHITECTURĂ ȘI DESIGN', 'Title');
+is($meta->{T_title}, 'APOGEUL ARHITECTURĂ ȘI DESIGN', 'Title');
 
 done_testing;
 __END__

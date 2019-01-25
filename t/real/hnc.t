@@ -29,43 +29,43 @@ is($doc->doc_sigle, 'HNC/DOC00001', 'Correct document sigle');
 is($doc->corpus_sigle, 'HNC', 'Correct corpus sigle');
 
 my $meta = $doc->meta;
-is($meta->{title}, 'GNU Free Documentation License', 'Title');
-is($meta->{pub_place}, 'H_PUBPLACE', 'PubPlace');
+is($meta->{T_title}, 'GNU Free Documentation License', 'Title');
+is($meta->{S_pub_place}, 'H_PUBPLACE', 'PubPlace');
 
 # Defined on document level as
 # idsHeader > fileDesc > publicationStmt > pubDate == 2005/08/16
 # idsHeader > fileDesc > biblFull > publicationStmt > pubDate == 2003/07/08-2014/05/03
 # idsHeader > fileDesc > biblFull > publicationStmt > sourceDesc > biblStruct > monogr > imprint > pubDate == 2003/07/08-2014/05/03
-# is($meta->{pub_date}, '20030708', 'Publication date');
-ok(!$meta->{sub_title}, 'SubTitle');
-is($meta->{author}, 'Addbot', 'Author');
+# is($meta->{D_pub_date}, '20030708', 'Publication date');
+ok(!$meta->{T_sub_title}, 'SubTitle');
+is($meta->{T_author}, 'Addbot', 'Author');
 
-is($meta->{publisher}, 'H_PUBLISHER', 'Publisher');
-ok(!$meta->{editor}, 'Editor');
+is($meta->{A_publisher}, 'H_PUBLISHER', 'Publisher');
+ok(!$meta->{A_editor}, 'Editor');
 ok(!$meta->{translator}, 'Translator');
 
-ok(!$meta->{text_type}, 'Correct Text Type');
-ok(!$meta->{text_type_art}, 'Correct Text Type Art');
-ok(!$meta->{text_type_ref}, 'Correct Text Type Ref');
-ok(!$meta->{text_column}, 'Correct Text Column');
-ok(!$meta->{text_domain}, 'Correct Text Domain');
-is($meta->{creation_date}, '20130302', 'Creation Date');
+ok(!$meta->{S_text_type}, 'Correct Text Type');
+ok(!$meta->{S_text_type_art}, 'Correct Text Type Art');
+ok(!$meta->{S_text_type_ref}, 'Correct Text Type Ref');
+ok(!$meta->{S_text_column}, 'Correct Text Column');
+ok(!$meta->{S_text_domain}, 'Correct Text Domain');
+is($meta->{D_creation_date}, '20130302', 'Creation Date');
 
 ok(!$meta->{pages}, 'Pages');
-ok(!$meta->{file_edition_statement}, 'File Ed Statement');
-ok(!$meta->{bibl_edition_statement}, 'Bibl Ed Statement');
-ok(!$meta->{reference}, 'Reference');
-is($meta->{language}, 'hu', 'Language');
+ok(!$meta->{A_file_edition_statement}, 'File Ed Statement');
+ok(!$meta->{A_bibl_edition_statement}, 'Bibl Ed Statement');
+ok(!$meta->{A_reference}, 'Reference');
+is($meta->{S_language}, 'hu', 'Language');
 
-ok(!$meta->{corpus_title}, 'Correct Corpus title');
-ok(!$meta->{corpus_sub_title}, 'Correct Corpus Sub title');
-ok(!$meta->{corpus_author}, 'Correct Corpus author');
-ok(!$meta->{corpus_editor}, 'Correct Corpus editor');
+ok(!$meta->{T_corpus_title}, 'Correct Corpus title');
+ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus Sub title');
+ok(!$meta->{T_corpus_author}, 'Correct Corpus author');
+ok(!$meta->{A_corpus_editor}, 'Correct Corpus editor');
 
-is($meta->{doc_title}, 'MNSZ hivatalos korpusz: Wikipédia cikkek', 'Correct Doc title');
-ok(!$meta->{doc_sub_title}, 'Correct Doc Sub title');
-ok(!$meta->{doc_author}, 'Correct Doc author');
-ok(!$meta->{doc_editor}, 'Correct Doc editor');
+is($meta->{T_doc_title}, 'MNSZ hivatalos korpusz: Wikipédia cikkek', 'Correct Doc title');
+ok(!$meta->{T_doc_sub_title}, 'Correct Doc Sub title');
+ok(!$meta->{T_doc_author}, 'Correct Doc author');
+ok(!$meta->{A_doc_editor}, 'Correct Doc editor');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');

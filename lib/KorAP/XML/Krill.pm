@@ -280,7 +280,7 @@ sub to_hash {
 
 
 sub _k {
-  my $x = $_[0];
+  my $x = substr($_[0], 2);
   $x =~ s/_(\w)/\U$1\E/g;
   $x =~ s/id$/ID/gi;
   return $x;

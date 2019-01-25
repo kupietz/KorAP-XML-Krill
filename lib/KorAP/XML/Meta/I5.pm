@@ -3,6 +3,53 @@ use KorAP::XML::Meta::Base;
 
 our $SIGLE_RE = qr/^([^_\/]+)(?:[_\/]([^\._\/]+?)(?:\.(.+?))?)?$/;
 
+# STRING:
+#   "pubPlace",
+#   "textSigle",
+#   "docSigle",
+#   "corpusSigle",
+#   "textType",
+#   "textTypeArt",
+#   "textTypeRef",
+#   "textColumn",
+#   "textDomain",
+#   "availability",
+#   "language",
+#   "corpusID", // Deprecated!
+#   "ID"        // Deprecated!
+#
+# TEXT:
+#   "author",
+#   "title",
+#   "subTitle",
+#   "corpusTitle",
+#   "corpusSubTitle",
+#   "corpusAuthor",
+#   "docTitle",
+#   "docSubTitle",
+#   "docAuthor"
+#
+# KEYWORDS:
+#   "textClass",
+#   "foundries",
+#   "keywords"
+#
+# STORE:
+#   "docEditor",
+#   "tokenSource",
+#   "layerInfos",
+#   "publisher",
+#   "editor",
+#   "fileEditionStatement",
+#   "biblEditionStatement",
+#   "reference",
+#   "corpusEditor"
+#
+# DATE:
+#   "pubDate",
+#   "creationDate"
+
+
 sub _squish ($) {
   for ($_[0]) {
     s!\s\s+! !g;
@@ -75,7 +122,7 @@ sub parse {
     if ($editor && $editor->attr('role') && $editor->attr('role') eq 'translator') {
       # Translator is only supported on the text level currently
       $translator = _squish $editor->all_text;
-      $self->{translator} = $translator if $translator;
+      $self->{A_translator} = $translator if $translator;
       $editor = undef;
     }
     else {
@@ -88,32 +135,32 @@ sub parse {
 
     # Text meta data
     if ($type eq 'text') {
-      unless ($self->{title} || $self->{sub_title}) {
-        $self->{title} = _remove_prefix($title, $self->text_sigle) if $title;
-        $self->{sub_title} = $sub_title if $sub_title;
+      unless ($self->{T_title} || $self->{T_sub_title}) {
+        $self->{T_title} = _remove_prefix($title, $self->text_sigle) if $title;
+        $self->{T_sub_title} = $sub_title if $sub_title;
       };
-      $self->{editor} //= $editor       if $editor;
-      $self->{author} //= $author       if $author;
+      $self->{A_editor} //= $editor       if $editor;
+      $self->{T_author} //= $author       if $author;
     }
 
     # Doc meta data
     elsif ($type eq 'doc') {
-      unless ($self->{doc_title} || $self->{doc_sub_title}) {
-        $self->{doc_title} //= _remove_prefix($title, $self->doc_sigle) if $title;
-        $self->{doc_sub_title} //= $sub_title if $sub_title;
+      unless ($self->{T_doc_title} || $self->{T_doc_sub_title}) {
+        $self->{T_doc_title} //= _remove_prefix($title, $self->doc_sigle) if $title;
+        $self->{T_doc_sub_title} //= $sub_title if $sub_title;
       };
-      $self->{doc_author} //= $author       if $author;
-      $self->{doc_editor} //= $editor       if $editor;
+      $self->{T_doc_author} //= $author       if $author;
+      $self->{A_doc_editor} //= $editor       if $editor;
     }
 
     # Corpus meta data
     elsif ($type eq 'corpus') {
-      unless ($self->{corpus_title} || $self->{corpus_sub_title}) {
-        $self->{corpus_title} //= _remove_prefix($title, $self->corpus_sigle) if $title;
-        $self->{corpus_sub_title} //= $sub_title if $sub_title;
+      unless ($self->{T_corpus_title} || $self->{T_corpus_sub_title}) {
+        $self->{T_corpus_title} //= _remove_prefix($title, $self->corpus_sigle) if $title;
+        $self->{T_corpus_sub_title} //= $sub_title if $sub_title;
       };
-      $self->{corpus_author} //= $author       if $author;
-      $self->{corpus_editor} //= $editor       if $editor;
+      $self->{T_corpus_author} //= $author       if $author;
+      $self->{A_corpus_editor} //= $editor       if $editor;
     };
   };
 
@@ -122,12 +169,12 @@ sub parse {
   if ($type eq 'corpus') {
 
     # Corpus title not yet given
-    unless ($self->{corpus_title}) {
+    unless ($self->{T_corpus_title}) {
       if ($title = $dom->at('fileDesc > titleStmt > c\.title')) {
         $title = _squish($title->all_text);
 
         if ($title) {
-          $self->{corpus_title} = _remove_prefix($title, $self->corpus_sigle);
+          $self->{T_corpus_title} = _remove_prefix($title, $self->corpus_sigle);
         };
       };
     };
@@ -135,12 +182,12 @@ sub parse {
 
   # doc title
   elsif ($type eq 'doc') {
-    unless ($self->{doc_title}) {
+    unless ($self->{T_doc_title}) {
       if ($title = $dom->at('fileDesc > titleStmt > d\.title')) {
         $title = _squish($title->all_text);
 
         if ($title) {
-          $self->{doc_title} = _remove_prefix($title, $self->doc_sigle);
+          $self->{T_doc_title} = _remove_prefix($title, $self->doc_sigle);
         };
       };
     };
@@ -148,11 +195,11 @@ sub parse {
 
   # text title
   elsif ($type eq 'text') {
-    unless ($self->{title}) {
+    unless ($self->{T_title}) {
       if ($title = $dom->at('fileDesc > titleStmt > t\.title')) {
         $title = _squish($title->all_text);
         if ($title) {
-          $self->{title} = _remove_prefix($title, $self->text_sigle);
+          $self->{T_title} = _remove_prefix($title, $self->text_sigle);
         };
       }
     };
@@ -163,15 +210,15 @@ sub parse {
   # Get PubPlace
   if ($temp = $dom->at('pubPlace')) {
     my $place_attr = $temp->attr('key');
-    $self->{pub_place_key} = $place_attr if $place_attr;
+    $self->{S_pub_place_key} = $place_attr if $place_attr;
     $temp = _squish $temp->all_text;
-    $self->{pub_place} = $temp if $temp;
+    $self->{S_pub_place} = $temp if $temp;
   };
 
   # Get Publisher
   if ($temp = $dom->at('imprint publisher')) {
     $temp = _squish $temp->all_text;
-    $self->{publisher} = $temp if $temp;
+    $self->{A_publisher} = $temp if $temp;
   };
 
   # Get text type
@@ -181,25 +228,25 @@ sub parse {
   if ($temp) {
     if ($temp_2 = $temp->at('textType')) {
       $temp_2 = _squish $temp_2->all_text;
-      $self->{text_type} = $temp_2 if $temp_2;
+      $self->{S_text_type} = $temp_2 if $temp_2;
     };
 
     # Get text domain
     if ($temp_2 = $temp->at('textDomain')) {
       $temp_2 = _squish $temp_2->all_text;
-      $self->{text_domain} = $temp_2 if $temp_2;
+      $self->{S_text_domain} = $temp_2 if $temp_2;
     };
 
     # Get text type art
     if ($temp_2 = $temp->at('textTypeArt')) {
       $temp_2 = _squish $temp_2->all_text;
-      $self->{text_type_art} = $temp_2 if $temp_2;
+      $self->{S_text_type_art} = $temp_2 if $temp_2;
     };
 
     # Get text type ref
     if ($temp_2 = $temp->at('textTypeRef')) {
       $temp_2 = _squish $temp_2->all_text;
-      $self->{text_type_ref} = $temp_2 if $temp_2;
+      $self->{S_text_type_ref} = $temp_2 if $temp_2;
     };
   };
 
@@ -225,7 +272,7 @@ sub parse {
       my $date = $year ? ($year < 100 ? '20' . $year : $year) : '0000';
       $date .= length($month) == 1 ? '0' . $month : $month;
       $date .= length($day) == 1 ? '0' . $day : $day;
-      $self->{pub_date} = $date;
+      $self->{D_pub_date} = $date;
     });
 
   # creatDate
@@ -243,7 +290,7 @@ sub parse {
     };
     if ($create_date =~ /^\d{4}(?:\.\d{2}(?:\.\d{2})?)?$/) {
       $create_date =~ tr/\.//d;
-      $self->{creation_date} = $create_date;
+      $self->{D_creation_date} = $create_date;
     };
   };
 
@@ -259,32 +306,32 @@ sub parse {
         push(@topic, @ttopic);
       }
     );
-    $self->{text_class} = [@topic] if @topic > 0;
+    $self->{K_text_class} = [@topic] if @topic > 0;
 
-    my $kws = $self->{keywords};
+    my $kws = $self->{K_keywords};
     my @keywords = $temp->find("h\.keywords > keyTerm")->map(sub {_squish($_) })->grep(sub { $_ })->each;
     push(@$kws, @keywords) if @keywords > 0;
   };
 
   if ($temp = $dom->at('biblFull editionStmt')) {
     $temp = _squish $temp->all_text;
-    $self->{bibl_edition_statement} = $temp if $temp;
+    $self->{A_bibl_edition_statement} = $temp if $temp;
   };
 
   if ($temp = $dom->at('fileDescl editionStmt')) {
     $temp = _squish $temp->all_text;
-    $self->{file_edition_statement} = $temp if $temp;
+    $self->{A_file_edition_statement} = $temp if $temp;
   };
 
   if ($temp = $dom->at('fileDesc')) {
     if (my $availability = $temp->at('publicationStmt > availability')) {
       $temp = _squish $availability->all_text;
-      $self->{availability} = $temp if $temp;
+      $self->{S_availability} = $temp if $temp;
     };
   };
 
   if ($temp = $dom->at('profileDesc > langUsage > language[id]')) {
-    $self->{language} = $temp->attr('id') if $temp->attr('id');
+    $self->{S_language} = $temp->attr('id') if $temp->attr('id');
   };
 
 
@@ -293,25 +340,24 @@ sub parse {
   #}
 
   # Some meta data only reevant from the text
-  #els
   if ($type eq 'text') {
 
     if ($temp = $dom->at('sourceDesc reference[type=complete]')) {
       if (my $ref_text = _squish $temp->all_text) {
         $ref_text =~ s!$REF_RE!!;
-        $self->{reference} = $ref_text;
+        $self->{A_reference} = $ref_text;
       };
     };
 
     $temp = $dom->at('textDesc > column');
     if ($temp && ($temp = _squish $temp->all_text)) {
-      $self->{text_column} = $temp;
+      $self->{S_text_column} = $temp;
     };
 
     if ($temp = $dom->at('biblStruct biblScope[type=pp]')) {
       $temp = _squish $temp->all_text;
       if ($temp && $temp =~ m/(\d+)\s*-\s*(\d+)/) {
-        $self->{src_pages} = $1 . '-' . $2;
+        $self->{A_src_pages} = $1 . '-' . $2;
       };
     };
   };

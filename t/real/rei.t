@@ -31,45 +31,45 @@ is($doc->doc_sigle, 'REI/BNG', 'Correct document sigle');
 is($doc->corpus_sigle, 'REI', 'Correct corpus sigle');
 
 my $meta = $doc->meta;
-is($meta->{title}, 'Friedensgutachten der führenden Friedensforschungsinstitute', 'Title');
-is($meta->{sub_title}, 'Rede im Deutschen Bundestag am 14.06.2002', 'SubTitle');
-is($meta->{author}, 'Nachtwei, Winfried', 'Author');
-ok(!$meta->{editor}, 'Editor');
-is($meta->{pub_place}, 'Berlin', 'PubPlace');
-ok(!$meta->{publisher}, 'Publisher');
+is($meta->{T_title}, 'Friedensgutachten der führenden Friedensforschungsinstitute', 'Title');
+is($meta->{T_sub_title}, 'Rede im Deutschen Bundestag am 14.06.2002', 'SubTitle');
+is($meta->{T_author}, 'Nachtwei, Winfried', 'Author');
+ok(!$meta->{A_editor}, 'Editor');
+is($meta->{S_pub_place}, 'Berlin', 'PubPlace');
+ok(!$meta->{A_publisher}, 'Publisher');
 
-ok(!$meta->{text_type}, 'No Text Type');
-ok(!$meta->{text_type_art}, 'No Text Type Art');
-ok(!$meta->{text_type_ref}, 'No Text Type Ref');
-ok(!$meta->{text_domain}, 'No Text Domain');
-ok(!$meta->{text_column}, 'No Text Column');
+ok(!$meta->{S_text_type}, 'No Text Type');
+ok(!$meta->{S_text_type_art}, 'No Text Type Art');
+ok(!$meta->{S_text_type_ref}, 'No Text Type Ref');
+ok(!$meta->{S_text_domain}, 'No Text Domain');
+ok(!$meta->{S_text_column}, 'No Text Column');
 
-is($meta->{text_class}->[0], 'politik', 'Correct Text Class');
-is($meta->{text_class}->[1], 'inland', 'Correct Text Class');
-ok(!$meta->{text_class}->[2], 'Correct Text Class');
+is($meta->{K_text_class}->[0], 'politik', 'Correct Text Class');
+is($meta->{K_text_class}->[1], 'inland', 'Correct Text Class');
+ok(!$meta->{K_text_class}->[2], 'Correct Text Class');
 
-is($meta->{pub_date}, '20020614', 'Creation date');
-is($meta->{creation_date}, '20020614', 'Creation date');
-is($meta->{availability}, 'CC-BY-SA', 'License');
-ok(!$meta->{pages}, 'Pages');
+is($meta->{D_pub_date}, '20020614', 'Creation date');
+is($meta->{D_creation_date}, '20020614', 'Creation date');
+is($meta->{S_availability}, 'CC-BY-SA', 'License');
+ok(!$meta->{A_pages}, 'Pages');
 
-ok(!$meta->{file_edition_statement}, 'File Statement');
-ok(!$meta->{bibl_edition_statement}, 'Bibl Statement');
+ok(!$meta->{A_file_edition_statement}, 'File Statement');
+ok(!$meta->{A_bibl_edition_statement}, 'Bibl Statement');
 
-is($meta->{reference} . "\n", <<'REF', 'Reference');
+is($meta->{A_reference} . "\n", <<'REF', 'Reference');
 Nachtwei, Winfried: Friedensgutachten der führenden Friedensforschungsinstitute. Rede im Deutschen Bundestag am 14.06.2002, Hrsg: Bundestagsfraktion Bündnis 90/DIE GRÜNEN [Ausführliche Zitierung nicht verfügbar]
 REF
-is($meta->{language}, 'de', 'Language');
+is($meta->{S_language}, 'de', 'Language');
 
-is($meta->{corpus_title}, 'Reden und Interviews', 'Correct Corpus title');
-ok(!$meta->{corpus_sub_title}, 'Correct Corpus sub title');
-ok(!$meta->{corpus_author}, 'Correct Corpus author');
-ok(!$meta->{corpus_editor}, 'Correct Corpus editor');
+is($meta->{T_corpus_title}, 'Reden und Interviews', 'Correct Corpus title');
+ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus sub title');
+ok(!$meta->{T_corpus_author}, 'Correct Corpus author');
+ok(!$meta->{A_corpus_editor}, 'Correct Corpus editor');
 
-is($meta->{doc_title}, 'Reden der Bundestagsfraktion Bündnis 90/DIE GRÜNEN, (2002-2006)', 'Correct Doc title');
-ok(!$meta->{doc_sub_title}, 'Correct Doc sub title');
-ok(!$meta->{doc_author}, 'Correct Doc author');
-ok(!$meta->{doc_editor}, 'Correct doc editor');
+is($meta->{T_doc_title}, 'Reden der Bundestagsfraktion Bündnis 90/DIE GRÜNEN, (2002-2006)', 'Correct Doc title');
+ok(!$meta->{T_doc_sub_title}, 'Correct Doc sub title');
+ok(!$meta->{T_doc_author}, 'Correct Doc author');
+ok(!$meta->{A_doc_editor}, 'Correct doc editor');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');

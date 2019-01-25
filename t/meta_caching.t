@@ -37,17 +37,17 @@ ok($cache->get('REI/BNG'), 'REI/BNG set');
 
 # REI
 my $rei = $cache->get('REI');
-is($rei->{availability}, 'CC-BY-SA');
-is($rei->{language}, 'de');
-is($rei->{corpus_title}, 'Reden und Interviews');
+is($rei->{S_availability}, 'CC-BY-SA');
+is($rei->{S_language}, 'de');
+is($rei->{T_corpus_title}, 'Reden und Interviews');
 
 # REI/BNG
 my $rei_bng = $cache->get('REI/BNG');
 
-is($rei_bng->{availability}, 'CC-BY-SA');
-is($rei_bng->{language}, 'de');
-is($rei_bng->{corpus_title}, 'Reden und Interviews');
-is($rei_bng->{doc_title}, 'Reden der Bundestagsfraktion Bündnis 90/DIE GRÜNEN, (2002-2006)');
+is($rei_bng->{S_availability}, 'CC-BY-SA');
+is($rei_bng->{S_language}, 'de');
+is($rei_bng->{T_corpus_title}, 'Reden und Interviews');
+is($rei_bng->{T_doc_title}, 'Reden der Bundestagsfraktion Bündnis 90/DIE GRÜNEN, (2002-2006)');
 
 done_testing;
 __END__
