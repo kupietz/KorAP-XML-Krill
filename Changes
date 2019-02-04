@@ -1,6 +1,7 @@
 0.37 2019-02-07
         - Support for 'koral:field' array.
         - Support for Koral versioning.
+        - Added tests for english sources.
 
 0.36 2019-01-22
         - Support for non-word tokens (fixes #5).

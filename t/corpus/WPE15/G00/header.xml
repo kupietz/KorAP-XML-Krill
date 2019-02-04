@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="document" pattern="text" status="new" version="1.0" teiform="teiHeader">
+   <fileDesc>
+    <titleStmt>
+     <dokumentSigle>WPE15/G00</dokumentSigle>
+     <d.title>Wikipedia, Artikel mit Anfangsbuchstabe G, Teil 00</d.title>
+    </titleStmt>
+    <publicationStmt>
+     <distributor></distributor>
+     <pubAddress></pubAddress>
+     <availability region="world">CC-BY-SA</availability>
+     <pubDate></pubDate>
+    </publicationStmt>
+    <sourceDesc>
+     <biblStruct default="n">
+      <monogr>
+       <h.title type="main"></h.title>
+       <imprint></imprint>
+      </monogr>
+     </biblStruct>
+    </sourceDesc>
+   </fileDesc>
+  </idsHeader>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.0" teiform="teiHeader">
+    <fileDesc>
+     <titleStmt>
+      <textSigle>WPE15/G00.11973</textSigle>
+      <t.title assemblage="external">WPE15/G00.11973: Generation X, In: Wikipedia - URL:http://en.wikipedia.org/wiki/Generation_X: Wikipedia, 2015</t.title>
+     </titleStmt>
+     <editionStmt version="0"></editionStmt>
+     <publicationStmt>
+      <distributor></distributor>
+      <pubAddress></pubAddress>
+      <availability region="world" default="n" status="unknown">CC-BY-SA</availability>
+      <pubDate></pubDate>
+     </publicationStmt>
+     <sourceDesc default="n">
+      <biblStruct default="n" status="draft">
+       <analytic>
+        <h.title type="main">Generation X</h.title>
+        <h.title type="sub"></h.title>
+        <h.title type="abbr" level="m"></h.title>
+        <h.title type="abbr" level="a"></h.title>
+        <h.author>Bnosnhoj, u.a.</h.author>
+        <editor></editor>
+        <imprint></imprint>
+        <biblScope type="subsume"></biblScope>
+        <biblScope type="pp"></biblScope>
+        <biblNote n="1"></biblNote>
+       </analytic>
+       <monogr>
+        <h.title type="main"></h.title>
+        <editor>wikipedia.org</editor>
+        <edition>
+         <further> Dump file "enwiki-20150808-pages-meta-current.xml" retrieved from http://dumps.wikimedia.org </further>
+         <kind></kind>
+         <appearance></appearance>
+        </edition>
+        <imprint>
+         <pubDate type="year">2015</pubDate>
+         <pubDate type="month">08</pubDate>
+         <pubDate type="day">08</pubDate>
+        </imprint>
+        <biblScope type="vol"></biblScope>
+        <biblScope type="volume-title"></biblScope>
+       </monogr>
+       <relatedItem type="langlink">
+        <ref target="https://de.wikipedia.org/wiki/Generation_X_(Soziologie)" xml:lang="de">Generation X (Soziologie)</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://no.wikipedia.org/wiki/Generasjon_X" xml:lang="no">Generasjon X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://fi.wikipedia.org/wiki/X-sukupolvi" xml:lang="fi">X-sukupolvi</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ru.wikipedia.org/wiki/Поколение_X" xml:lang="ru">Поколение X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://pt.wikipedia.org/wiki/Geração_X" xml:lang="pt">Geração X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://hr.wikipedia.org/wiki/Generacija_X" xml:lang="hr">Generacija X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://simple.wikipedia.org/wiki/Generation_X" xml:lang="simple">Generation X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://fr.wikipedia.org/wiki/Génération_X" xml:lang="fr">Génération X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sc.wikipedia.org/wiki/Ingènneru_X" xml:lang="sc">Ingènneru X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sh.wikipedia.org/wiki/Generacija_X" xml:lang="sh">Generacija X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ka.wikipedia.org/wiki/თაობა_X" xml:lang="ka">თაობა X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://uk.wikipedia.org/wiki/Покоління_X" xml:lang="uk">Покоління X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ca.wikipedia.org/wiki/Generació_X" xml:lang="ca">Generació X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://mk.wikipedia.org/wiki/Генерација_X" xml:lang="mk">Генерација X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sv.wikipedia.org/wiki/Generation_X" xml:lang="sv">Generation X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ko.wikipedia.org/wiki/X_세대" xml:lang="ko">X 세대</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ms.wikipedia.org/wiki/Generasi_X" xml:lang="ms">Generasi X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://it.wikipedia.org/wiki/Generazione_X" xml:lang="it">Generazione X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://es.wikipedia.org/wiki/Generación_X" xml:lang="es">Generación X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://zh.wikipedia.org/wiki/X世代" xml:lang="zh">X世代</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://et.wikipedia.org/wiki/X-põlvkond" xml:lang="et">X-põlvkond</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://cs.wikipedia.org/wiki/Generace_X" xml:lang="cs">Generace X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ar.wikipedia.org/wiki/الجيل_إكس" xml:lang="ar">الجيل إكس</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://th.wikipedia.org/wiki/เจเนอเรชันเอกซ์" xml:lang="th">เจเนอเรชันเอกซ์</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ja.wikipedia.org/wiki/ジェネレーションX" xml:lang="ja">ジェネレーションX</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://fa.wikipedia.org/wiki/نسل_ایکس" xml:lang="fa">نسل ایکس</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://pl.wikipedia.org/wiki/Generacja_X" xml:lang="pl">Generacja X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://he.wikipedia.org/wiki/דור_ה-X" xml:lang="he">דור ה-X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ro.wikipedia.org/wiki/Generația_X" xml:lang="ro">Generația X</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://nl.wikipedia.org/wiki/Generatie_X" xml:lang="nl">Generatie X</ref>
+       </relatedItem>
+      </biblStruct>
+      <reference type="complete" assemblage="non-automatic">WPE15/G00.11973: Generation X, In: Wikipedia - URL:http://en.wikipedia.org/wiki/Generation_X: Wikipedia, 2015</reference>
+      <reference type="short" assemblage="regular">WPE15/G00.11973 Wikipedia; Generation X, (Letzte Änderung 5.8.2015 ) 8.8.2015</reference>
+     </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+     <samplingDecl default="n"></samplingDecl>
+     <editorialDecl default="n">
+      <pagination type="no"></pagination>
+     </editorialDecl>
+    </encodingDesc>
+    <profileDesc>
+     <creation>
+      <creatDate>2015.08.05</creatDate>
+      <creatRef>(Letzte Änderung 5.8.2015)</creatRef>
+      <creatRefShort>(Letzte Änderung 5.8.2015)</creatRefShort>
+     </creation>
+     <textDesc default="n">
+      <textTypeArt>Enzyklopädie-Artikel</textTypeArt>
+      <textDomain></textDomain>
+     </textDesc>
+    </profileDesc>
+   </idsHeader>
