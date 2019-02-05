@@ -70,7 +70,7 @@ sub process {
   };
 
   my $file;
-  my $print_text = ($self->{pretty} ? $tokens->to_pretty_json($self->{primary}) : $tokens->to_json($self->{primary}));
+  my $print_text = ($self->{pretty} ? $tokens->to_pretty_json(undef, $self->{primary}) : $tokens->to_json(undef, $self->{primary}));
 
   # There is an output file given
   if ($output) {

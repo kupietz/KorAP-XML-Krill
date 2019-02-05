@@ -377,7 +377,7 @@ sub add_tokendata {
     }
     else {
       my $perc = _perc(
-	$tokens->should, $tokens->have, $self->should, $self->should - $self->have
+        $tokens->should, $tokens->have, $self->should, $self->should - $self->have
       );
       $self->log->debug('With an alignment quota of ' . $perc);
     };
@@ -464,13 +464,13 @@ sub support {
 
       # Get all layers
       foreach my $layer (@{$self->{support}->{$foundry}}) {
-	  my @layers = @$layer;
-	  push(@supports, $foundry . '/' . $layers[0]);
+        my @layers = @$layer;
+        push(@supports, $foundry . '/' . $layers[0]);
 
-	  # More information
-	  if ($layers[1]) {
-	      push(@supports, $foundry . '/' . join('/', @layers));
-	  };
+        # More information
+        if ($layers[1]) {
+          push(@supports, $foundry . '/' . join('/', @layers));
+        };
       };
     };
     return lc ( join ' ', sort {$a cmp $b } @supports );
@@ -488,14 +488,14 @@ sub support {
 
 
 sub layer_info {
-    my $self = shift;
-    $self->{layer_info} //= [];
-    if ($_[0]) {
-	push(@{$self->{layer_info}}, @{$_[0]});
-    }
-    else {
-	return join ' ', sort {$a cmp $b } uniq @{$self->{layer_info}};
-    };
+  my $self = shift;
+  $self->{layer_info} //= [];
+  if ($_[0]) {
+    push(@{$self->{layer_info}}, @{$_[0]});
+  }
+  else {
+    return join ' ', sort {$a cmp $b } uniq @{$self->{layer_info}};
+  };
 };
 
 
@@ -531,12 +531,15 @@ sub to_string {
 sub to_data {
   my $self = shift;
   my $primary = defined $_[0] ? $_[0] : 1;
-  my $legacy  = defined $_[1] ? $_[1] : 0;
+  my $version = defined $_[1] ? $_[1] : 0.03;
 
-  my %data = %{$self->doc->to_hash};
-  my @fields;
+  # Legacy version
+  if ($version == 0) {
 
-  if ($legacy) {
+    # Serialize meta fields
+    my %data = %{$self->doc->to_hash};
+
+    my @fields;
     push(@fields, { primaryData => $self->doc->primary->data }) if $primary;
 
     push(@fields, {
@@ -548,17 +551,39 @@ sub to_data {
     });
 
     $data{fields} = \@fields;
+
+    return \%data;
   }
 
-  else {
+  # Version 0.03 serialization
+  elsif ($version == 0.03) {
+
+    # Serialize meta fields
+    my %data = %{$self->doc->to_hash};
+
     my $tokens = $self->to_hash;
 
     $tokens->{text} = $self->doc->primary->data if $primary;
     $data{data} = $tokens;
     $data{version} = '0.03';
-  };
 
-  \%data;
+    return \%data;
+  }
+
+  # Version 0.04 serialization
+  elsif ($version == 0.4) {
+    my %data = (
+      '@context' => 'http://korap.ids-mannheim.de/ns/koral/0.4/context.jsonld',
+      '@type' => 'koral:corpus'
+    );
+    $data{fields} = $self->doc->meta->to_koral_fields;
+
+    my $tokens = $self->to_hash;
+    $tokens->{text} = $self->doc->primary->data if $primary;
+    $data{data} = $tokens;
+    $data{version} = '0.4';
+    return \%data;
+  };
 };
 
 sub to_hash {
@@ -574,16 +599,18 @@ sub to_hash {
 
 
 sub to_json_legacy {
-  encode_json($_[0]->to_data($_[1], 1));
+  encode_json($_[0]->to_data($_[1], 0));
 };
 
 sub to_json {
-  encode_json($_[0]->to_data($_[1], 0));
+  my ($self, $version, $primary) = @_;
+  encode_json($self->to_data($primary, $version));
 };
 
 
 sub to_pretty_json {
-  JSON::XS->new->pretty->encode($_[0]->to_data($_[1]));
+  my ($self, $version, $primary) = @_;
+  JSON::XS->new->pretty->encode($self->to_data($primary, $version));
 };
 
 

@@ -47,8 +47,6 @@ _contains_not($fields, 'textTypeRef');
 _contains_not($fields, 'textDomain');
 _contains_not($fields, 'keywords');
 
-# diag Dumper $fields;
-
 _contains_not($fields, 'subTitle');
 
 
