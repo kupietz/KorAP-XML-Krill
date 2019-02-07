@@ -68,8 +68,8 @@ is($json->{author}, 'Ruru; Jens.Ol; Aglarech; u.a.', 'author old');
 $json = decode_json $tokens->to_json(0.4);
 is($json->{fields}->[0]->{key}, 'corpusSigle');
 is($json->{fields}->[0]->{value}, 'WPD');
-is($json->{fields}->[6]->{key}, 'creationDate');
-is($json->{fields}->[6]->{value}, '2005');
+is($json->{fields}->[7]->{key}, 'creationDate');
+is($json->{fields}->[7]->{value}, '2005');
 
 is($json->{data}->{name}, 'tokens');
 is($json->{data}->{tokenSource}, 'opennlp#tokens');

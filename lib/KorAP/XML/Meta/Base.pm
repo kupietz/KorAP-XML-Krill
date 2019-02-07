@@ -230,11 +230,15 @@ sub _keywords_field {
 };
 
 sub _attachement_field {
+  my $value = $_[1];
+  if (index($value, 'data:') != 0) {
+    $value = 'data:,' . $value;
+  };
   return {
     '@type' => 'koral:field',
     type    => 'type:attachement',
     key     => $_[0],
-    value   => 'data:,' . $_[1]
+    value   => $value
   };
 };
 

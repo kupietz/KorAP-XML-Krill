@@ -43,6 +43,9 @@ ok(!$meta->{A_doc_editor}, 'Correct Doc editor');
 ok(!$meta->{T_corpus_title}, 'Correct Corpus title');
 ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus Sub title');
 
+# This link is broken, but that's due to the data
+is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http://de.wikipedia.org', 'No link');
+
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');
 
@@ -96,6 +99,9 @@ is($doc->text_sigle, 'WPD15/W28/65631', 'Correct text sigle');
 is($doc->doc_sigle, 'WPD15/W28', 'Correct document sigle');
 is($doc->corpus_sigle, 'WPD15', 'Correct corpus sigle');
 
+$meta = $doc->meta;
+is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http://de.wikipedia.org/wiki/Wolfgang_Krebs_(Schauspieler)', 'link');
+
 # Get tokenization
 $tokens = KorAP::XML::Tokenizer->new(
   path => $doc->path,
@@ -125,6 +131,9 @@ ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document')
 ok($doc->parse, 'Parse document');
 
 is($doc->text_sigle, 'WPD15/U43/34816', 'Correct text sigle');
+
+$meta = $doc->meta;
+is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http://de.wikipedia.org/wiki/Universitätsbibliothek_Augsburg', 'link');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');

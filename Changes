@@ -2,6 +2,8 @@
         - Support for 'koral:field' array.
         - Support for Koral versioning.
         - Added tests for english sources.
+        - Added support for external links for
+          Wikipedia resources.
 
 0.36 2019-01-22
         - Support for non-word tokens (fixes #5).

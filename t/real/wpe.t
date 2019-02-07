@@ -34,6 +34,8 @@ is($meta->{T_doc_title}, 'Wikipedia, Artikel mit Anfangsbuchstabe G, Teil 00', '
 
 is($meta->{A_reference}, 'Generation X, In: Wikipedia - URL:http://en.wikipedia.org/wiki/Generation_X: Wikipedia, 2015', 'Reference');
 
+is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http://en.wikipedia.org/wiki/Generation_X', 'link');
+
 is($meta->{'S_availability'}, 'CC-BY-SA', 'Availability');
 is($meta->{'S_language'}, 'en', 'Language');
 
@@ -87,6 +89,15 @@ $stream = $tokens->to_data->{data}->{stream};
 
 is($stream->[20]->[4], 'tt/l:historian', 'Treetagger');
 is($stream->[20]->[5], 'tt/p:NNS', 'Treetagger');
+
+
+my $koral = decode_json($tokens->to_json(0.4));
+
+my $link = $koral->{fields}->[5];
+is($link->{'@type'}, 'koral:field', 'attachement');
+is($link->{type}, 'type:attachement', 'attachement');
+is($link->{key}, 'externalLink', 'attachement');
+is($link->{value}, 'data:application/x.korap-link;title=Wikipedia,http://en.wikipedia.org/wiki/Generation_X', 'attachement');
 
 done_testing;
 __END__

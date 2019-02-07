@@ -346,6 +346,11 @@ sub parse {
       if (my $ref_text = _squish $temp->all_text) {
         $ref_text =~ s!$REF_RE!!;
         $self->{A_reference} = $ref_text;
+
+      # In case of Wikipedia texts, take the URL
+        if ($ref_text =~ /URL:(http:.+?):\s+Wikipedia,\s+\d+\s*$/) {
+          $self->{A_externalLink} = 'data:application/x.korap-link;title=Wikipedia,' . $1;
+        };
       };
     };
 
