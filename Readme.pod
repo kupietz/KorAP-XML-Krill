@@ -199,6 +199,17 @@ times the number of available cores.
 This is I<experimental>.
 
 
+=item B<--koral|-k>
+
+Version of the output format. Supported versions are:
+C<0> for legacy serialization, C<0.03> for serialization
+with metadata fields as key-values on the root object,
+C<0.4> for serialization with metadata fields as a list
+of C<"@type":"koral:field"> objects.
+
+Currently defaults to C<0.03>.
+
+
 =item B<--sequential-extraction|-se>
 
 Flag to indicate, if the C<jobs> value also applies to extraction.

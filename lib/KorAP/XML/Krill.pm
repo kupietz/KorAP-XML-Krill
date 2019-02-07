@@ -16,7 +16,7 @@ use Mojo::DOM;
 use Data::Dumper;
 use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 
-our $VERSION = '0.36';
+our $VERSION = '0.37';
 
 has 'path';
 has [qw/text_sigle doc_sigle corpus_sigle/];

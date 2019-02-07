@@ -30,6 +30,7 @@ my $call = join(
   '--input' => $input,
   '--output' => $output,
   '--cache' => $cache,
+  '-k' => 0.03,
   '-t' => 'OpenNLP#Tokens',
   '-l' => 'INFO'
 );
@@ -246,6 +247,69 @@ ok(($json = decode_json $file), 'decode json');
 
 is($json->{title}, 'Autobiographische Einzelheiten', 'title');
 is($json->{data}->{stream}->[0]->[-1], '~:base/s:pb$<i>529<i>0', 'Pagebreak annotation');
+
+
+
+# Koral version
+$input = catdir($f, '..', 'annotation', 'corpus', 'doc', '0001');
+$call = join(
+  ' ',
+  'perl', $script,
+  '--input' => $input,
+  '--output' => $output,
+  '--cache' => $cache,
+  '-t' => 'OpenNLP#Tokens',
+  '-k' => 0.4,
+  '-l' => 'INFO'
+);
+
+$call .= ' -w ';
+
+stderr_like(
+  sub {
+    system($call);
+  },
+  qr!The code took!,
+  $call
+);
+
+ok(-f $output, 'Output does exist');
+ok(($file = Mojo::File->new($output)->slurp), 'Slurp data');
+ok(($json = decode_json $file), 'decode json');
+ok(!$json->{textType}, 'text type');
+ok(!$json->{title}, 'Title');
+
+is($json->{fields}->[0]->{key}, 'corpusSigle');
+is($json->{fields}->[0]->{type}, 'type:string');
+is($json->{fields}->[0]->{value}, 'Corpus');
+is($json->{fields}->[0]->{'@type'}, 'koral:field');
+
+is($json->{fields}->[8]->{key}, 'textClass');
+is($json->{fields}->[8]->{value}->[0], 'freizeit-unterhaltung');
+is($json->{fields}->[8]->{value}->[1], 'vereine-veranstaltungen');
+is($json->{fields}->[8]->{type}, 'type:keywords');
+is($json->{fields}->[8]->{'@type'}, 'koral:field');
+
+is($json->{fields}->[13]->{key}, 'textType');
+is($json->{fields}->[13]->{value}, 'Zeitung: Tageszeitung');
+is($json->{fields}->[13]->{type}, 'type:string');
+is($json->{fields}->[13]->{'@type'}, 'koral:field');
+
+is($json->{fields}->[21]->{key}, 'title');
+is($json->{fields}->[21]->{value}, 'Beispiel Text');
+is($json->{fields}->[21]->{type}, 'type:text');
+is($json->{fields}->[21]->{'@type'}, 'koral:field');
+
+is($json->{data}->{tokenSource}, 'opennlp#tokens', 'Title');
+is($json->{data}->{foundries}, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/constituency corenlp/morpho corenlp/sentences dereko dereko/structure glemm glemm/morpho mate mate/dependency mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/morpho xip/sentences', 'Foundries');
+like($json->{data}->{text}, qr/^Zum letzten kulturellen/, 'Foundries');
+is($json->{data}->{stream}->[0]->[0], '-:base/paragraphs$<i>1', 'Paragraphs');
+is($json->{data}->{tokenSource}, 'opennlp#tokens', 'TokenSource');
+
+# Delete output
+unlink $output;
+ok(!-f $output, 'Output does not exist');
+
 
 done_testing;
 __END__

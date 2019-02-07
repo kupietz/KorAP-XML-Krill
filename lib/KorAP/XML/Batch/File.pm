@@ -19,6 +19,7 @@ sub new {
     layer           => $param{layer}     || 'Tokens',
     anno            => $param{anno}      || [[]],
     log             => $param{log}       || Mojo::Log->new(level => 'fatal'),
+    koral           => $param{koral},
     primary         => $param{primary},
     non_word_tokens => $param{non_word_tokens},
     pretty          => $param{pretty},
@@ -70,7 +71,11 @@ sub process {
   };
 
   my $file;
-  my $print_text = ($self->{pretty} ? $tokens->to_pretty_json(undef, $self->{primary}) : $tokens->to_json(undef, $self->{primary}));
+  my $print_text = (
+    $self->{pretty} ?
+      $tokens->to_pretty_json($self->{koral}, $self->{primary}) :
+      $tokens->to_json($self->{koral}, $self->{primary})
+    );
 
   # There is an output file given
   if ($output) {

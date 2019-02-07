@@ -4,6 +4,7 @@ use warnings;
 use utf8;
 use Test::More;
 use JSON::XS;
+use Data::Dumper;
 
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
@@ -69,6 +70,10 @@ is($json->{fields}->[0]->{key}, 'corpusSigle');
 is($json->{fields}->[0]->{value}, 'WPD');
 is($json->{fields}->[6]->{key}, 'creationDate');
 is($json->{fields}->[6]->{value}, '2005');
+
+is($json->{data}->{name}, 'tokens');
+is($json->{data}->{tokenSource}, 'opennlp#tokens');
+is($json->{data}->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>6083<i>1067<b>0');
 
 done_testing;
 

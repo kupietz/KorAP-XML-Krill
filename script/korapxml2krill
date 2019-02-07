@@ -132,10 +132,15 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2019/01/22
 # - Support for non-word tokens.
+#
+# 2019/02/07
+# - Support for 'koral:field' array.
+# - Support for Koral versioning.
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2019/01/22';
+our $LAST_CHANGE = '2019/02/07';
 our $LOCAL = $FindBin::Bin;
+our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
 VERSION
@@ -177,6 +182,7 @@ GetOptions(
   'primary|p!'  => \(my $primary),
   'pretty|y'    => \(my $pretty),
   'jobs|j=i'    => \(my $jobs),
+  'koral|k=f'    => \(my $koral),
   'to-tar'      => \(my $to_tar),
   'non-word-tokens|nwt' => \(my $non_word_tokens),
   'sequential-extraction|se' => \(my $sequential_extraction),
@@ -220,6 +226,11 @@ if ($cfg_file && -e $cfg_file) {
   # Jobs
   if (!defined($jobs) && defined $config{jobs}) {
     $jobs = $config{jobs};
+  };
+
+  # Koral version
+  if (!defined($koral) && defined $config{koral}) {
+    $koral = $config{koral};
   };
 
   # Input root base directory
@@ -324,6 +335,7 @@ $token_base          //= 'OpenNLP#tokens';
 $cache_file          //= 'korapxml2krill.cache';
 $cache_size          //= '50m';
 $jobs                //= 0;
+$koral               //= $KORAL_VERSION;
 $cache_delete        //= 1;
 $cache_init          //= 1;
 $sequential_extraction //= 0;
@@ -556,6 +568,7 @@ my $batch_file = KorAP::XML::Batch::File->new(
   layer     => $token_base_layer,
   gzip      => $gzip,
   log       => $log,
+  koral     => $koral,
   primary   => $primary,
   pretty    => $pretty,
   anno      => \@filtered_anno,
@@ -1251,6 +1264,17 @@ also apply to extraction.
 Pass -1, and the value will be set automatically to 5
 times the number of available cores.
 This is I<experimental>.
+
+
+=item B<--koral|-k>
+
+Version of the output format. Supported versions are:
+C<0> for legacy serialization, C<0.03> for serialization
+with metadata fields as key-values on the root object,
+C<0.4> for serialization with metadata fields as a list
+of C<"@type":"koral:field"> objects.
+
+Currently defaults to C<0.03>.
 
 
 =item B<--sequential-extraction|-se>
