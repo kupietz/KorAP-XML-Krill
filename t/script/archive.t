@@ -9,7 +9,7 @@ use Mojo::Util qw/quote/;
 use Mojo::JSON qw/decode_json/;
 use IO::Uncompress::Gunzip;
 use Test::More;
-use Test::Output qw/:stdout :stderr :functions/;
+use Test::Output qw/:stdout :stderr :combined :functions/;
 use Data::Dumper;
 use KorAP::XML::Archive;
 use utf8;
@@ -43,7 +43,6 @@ my $output = File::Temp->newdir(CLEANUP => 0);
 $output->unlink_on_destroy(0);
 
 my $cache = tmpnam();
-
 
 ok(-d $output, 'Output directory exists');
 
@@ -134,6 +133,31 @@ my ($json_1, $json_2);
 };
 
 ok(-d $output, 'Ouput directory exists');
+
+
+my $temp_extract = tmpnam();
+
+# Ignore -te when archive is a directory
+$call = join(
+  ' ',
+  'perl', $script,
+  'archive',
+  '--input' => $input,
+  '--output' => $output,
+  '--cache' => $cache,
+  '-t' => 'Tree_Tagger#Tokens',
+  '-j' => 4, # 4 jobs!
+  '-te' => $temp_extract
+);
+
+{
+  local $SIG{__WARN__} = sub {};
+
+  my $out = combined_from(sub { system($call); });
+
+  ok($out =~ m!Processed .+?\/corpus-doc-0001\.json!s, $call);
+  ok($out =~ m!Processed .+?\/corpus-doc-0002\.json!s, $call);
+};
 
 
 $input = catfile($f, '..', 'corpus', 'WDD15', 'A79', '83946');

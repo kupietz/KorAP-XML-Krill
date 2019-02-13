@@ -133,9 +133,11 @@ use Fcntl qw(:flock SEEK_END);
 # 2019/01/22
 # - Support for non-word tokens.
 #
-# 2019/02/07
+# 2019/02/13
 # - Support for 'koral:field' array.
 # - Support for Koral versioning.
+# - Ignore temporary extract parameter on
+#   directory archiving.
 # ----------------------------------------------------------
 
 our $LAST_CHANGE = '2019/02/07';
@@ -786,7 +788,7 @@ elsif ($cmd eq 'archive') {
   my $archive_output;
 
   # First extract, then archive
-  if (defined $extract_dir) {
+  if (defined $extract_dir && !-d $input[0]) {
 
     # Create new archive object
     if (-f($input[0]) && (my $archive = KorAP::XML::Archive->new($input[0]))) {
