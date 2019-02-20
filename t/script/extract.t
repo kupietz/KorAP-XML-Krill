@@ -167,7 +167,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!Extract .+? REI/BN\*!s,
+  qr!Extract .+? REI/BN!s,
   $call
 );
 

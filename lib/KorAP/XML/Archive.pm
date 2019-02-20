@@ -1,6 +1,7 @@
 package KorAP::XML::Archive;
 use Carp qw/carp/;
 use Mojo::Util qw/quote/;
+use List::Util qw/uniq/;
 use File::Spec::Functions qw(rel2abs);
 use strict;
 use warnings;
@@ -211,6 +212,24 @@ sub _extract {
 };
 
 
+sub extract_doc_new {
+  my ($self, $doc_path, $target_dir, $jobs) = @_;
+
+  my ($prefix, $corpus, $doc) = $self->split_path(
+    $doc_path . '/UNKNOWN' ) or return;
+
+  my @cmds = $self->cmds_from_sigle(
+    [join('/', $corpus, $doc)], $prefix
+  );
+
+  @cmds = map {
+    push @{$_}, '-d', $target_dir;
+    $_;
+  } @cmds;
+
+  return $self->_extract($jobs, @cmds);
+};
+
 
 # Extract document files to a directory
 sub extract_doc {
@@ -257,7 +276,7 @@ sub extract_doc {
     # As a folder sigle
     else {
       push @breadcrumbs, $doc, '*';
-    }
+    };
 
     push(@cmd, join('/', @breadcrumbs));
 
@@ -327,6 +346,94 @@ sub extract_text {
   return 1;
 };
 
+
+# Extract from sigle
+sub extract_sigle {
+  my ($self, $sigle, $target_dir, $jobs) = @_;
+  my @cmds = $self->cmds_from_sigle($sigle);
+
+  @cmds = map {
+    push @{$_}, '-d', $target_dir;
+    $_;
+  } @cmds;
+
+  return $self->_extract($jobs, @cmds);
+};
+
+
+# Create commands for sigle
+sub cmds_from_sigle {
+  my ($self, $sigle) = @_;
+
+  my $first = 1;
+
+  my @init_cmd = (
+    'unzip',          # Use unzip program
+    '-qo',            # quietly overwrite all existing files
+    '-uo',
+  );
+
+  my @cmds;
+
+  # Iterate over all attached archives
+  for  (my $i = 0; $i < @$self; $i++) {
+    my $archive = $self->[$i];
+    my $prefix_check = 0;
+    my $prefix = 0;
+
+    # $_ is the zip
+    my @cmd = @init_cmd;
+    push(@cmd, $archive->[0]); # Extract from zip
+
+    foreach (@$sigle) {
+      my ($corpus,$doc,$text) = split '/', $_;
+
+      # Add some interesting files for extraction
+      # Can't use catfile(), as this removes the '.' prefix
+      my @breadcrumbs = ($corpus);
+
+      # If the prefix is not forbidden - prefix!
+      unless ($prefix_check) {
+        $prefix = $self->check_prefix($i);
+        $prefix_check = 1;
+      };
+
+      unshift @breadcrumbs, $prefix if $prefix;
+
+      if ($first) {
+
+        # Only extract from first file
+        push(@cmd, join('/', @breadcrumbs, 'header.xml'));
+        push(@cmd, join('/', @breadcrumbs, $doc, 'header.xml'));
+      };
+
+      # With wildcard on doc level
+      if (index($doc, '*') > 0) {
+        push @breadcrumbs, $doc;
+      }
+
+      # For full-defined doc sigle
+      elsif (!$text) {
+        push @breadcrumbs, $doc, '*';
+      }
+
+      # For text sigle
+      else {
+        push @breadcrumbs, $doc, $text, '*';
+      }
+
+      # Add to command
+      push(@cmd, join('/', @breadcrumbs));
+    };
+
+    # Add to commands
+    push @cmds, [uniq @cmd];
+
+    $first = 0;
+  };
+
+  return @cmds;
+};
 
 1;
 

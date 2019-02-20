@@ -691,72 +691,75 @@ if ($cmd eq 'extract') {
     # Add further annotation archived
     $archive->attach($_) foreach @input[1..$#input];
 
-    my $prefix = 1;
+    # Will set @sigle
+    my $prefix = set_sigle($archive);
 
-    # No sigles given
-    unless (@sigle) {
-
-      # Get files
-      foreach ($archive->list_texts) {
-
-        # Split path information
-        ($prefix, my ($corpus, $doc, $text)) = $archive->split_path($_);
-
-        # TODO: Make this OS independent
-        push @sigle, join '/', $corpus, $doc, $text;
-      };
-    }
-
-    # Check sigle for doc sigles
-    else {
-      my @new_sigle;
-
-      my $prefix_check = 0;
-
-      # Iterate over all sigle
-      foreach (@sigle) {
-
-        # Sigle is a doc sigle
-        if ($_ =~ m!^(?:\.[/\\])?[^/\\]+?[/\\][^/\\]+?$!) {
-
-          print "$_ ...";
-          # Check if a prefix is needed
-          unless ($prefix_check) {
-
-            if ($prefix = $archive->check_prefix) {
-              print " with prefix ...";
-            };
-            $prefix_check = 1;
-          };
-
-          print "\n";
-
-          # TODO: Make this OS independent
-          my $path = ($prefix ? './' : '') . $_;
-
-          print '... ' . (
-            $archive->extract_doc(
-              $path, $output, $sequential_extraction ? 1 : $jobs
-            ) ? '' : 'not '
-          );
-          print "extracted.\n";
-        }
-
-        # Sigle is a text sigle
-        else {
-          push @new_sigle, $_;
-
-          unless ($prefix_check) {
-
-            if ($prefix = $archive->check_prefix) {
-              print " with prefix ...";
-            };
-            $prefix_check = 1;
-          };
-        };
-      };
-      @sigle = @new_sigle;
-    };
+#    my $prefix = 1;
+#
+#    # No sigles given
+#    unless (@sigle) {
+#
+#      # Get files
+#      foreach ($archive->list_texts) {
+#
+#        # Split path information
+#        ($prefix, my ($corpus, $doc, $text)) = $archive->split_path($_);
+#
+#        # TODO: Make this OS independent
+#        push @sigle, join '/', $corpus, $doc, $text;
+#      };
+#    }
+#
+#    # Check sigle for doc sigles
+#    else {
+#      my @new_sigle;
+#
+#      my $prefix_check = 0;
+#
+#      # Iterate over all sigle
+#      foreach (@sigle) {
+#
+#        # Sigle is a doc sigle
+#        if ($_ =~ m!^(?:\.[/\\])?[^/\\]+?[/\\][^/\\]+?$!) {
+#
+#          print "$_ ...";
+#          # Check if a prefix is needed
+#          unless ($prefix_check) {
+#
+#            if ($prefix = $archive->check_prefix) {
+#              print " with prefix ...";
+#            };
+#            $prefix_check = 1;
+#          };
+#
+#          print "\n";
+#
+#          # TODO: Make this OS independent
+#          my $path = ($prefix ? './' : '') . $_;
+#
+#          print '... ' . (
+#            $archive->extract_doc(
+#              $path, $output, $sequential_extraction ? 1 : $jobs
+#            ) ? '' : 'not '
+#          );
+#          print "extracted.\n";
+#        }
+#
+#        # Sigle is a text sigle
+#        else {
+#          push @new_sigle, $_;
+#
+#          unless ($prefix_check) {
+#
+#            if ($prefix = $archive->check_prefix) {
+#              print " with prefix ...";
+#            };
+#            $prefix_check = 1;
+#          };
+#        };
+#      };
+#      @sigle = @new_sigle;
+#    };
 
     # Iterate over all given sigles and extract
     foreach (@sigle) {
@@ -811,7 +814,7 @@ elsif ($cmd eq 'archive') {
       # Add some random extra to avoid clashes with multiple archives
       $extract_dir = catdir($extract_dir, random_string('cccccc'));
 
-      # Extract to temprary directory
+      # Extract to temporary directory
       if ($archive->extract_all($extract_dir, $sequential_extraction ? 1: $jobs)) {
         @input = ($extract_dir);
       }
@@ -828,8 +831,6 @@ elsif ($cmd eq 'archive') {
       exit 1;
     };
   };
-
-  # TODO: Support sigles
 
   # Zero means: everything runs in the parent process
   my $pool = Parallel::ForkManager->new($jobs);
@@ -971,6 +972,9 @@ elsif ($cmd eq 'archive') {
     # Add further annotation archived
     $archive->attach($_) foreach @input[1..$#input];
 
+    # Get sigles to extract
+    my $prefix = set_sigle($archive);
+
     print "Start processing ...\n";
     $t = Benchmark->new;
     my @dirs = $archive->list_texts;
@@ -1054,6 +1058,86 @@ elsif ($cmd eq 'archive') {
   print timestr(timediff(Benchmark->new, $t))."\n";
   print "Done.\n";
 };
+
+
+# For an archive, this will create the list
+# of all sigles to process
+sub set_sigle {
+  my $archive = shift;
+
+  my $prefix = 1;
+  my @dirs = ();
+
+  # No sigles given
+  unless (@sigle) {
+
+    # Get files
+    foreach ($archive->list_texts) {
+
+      push @dirs, $_;
+
+      # Split path information
+      ($prefix, my ($corpus, $doc, $text)) = $archive->split_path($_);
+
+      # TODO: Make this OS independent
+      push @sigle, join '/', $corpus, $doc, $text;
+    };
+  }
+
+  # Check sigle for doc sigles
+  else {
+    my @new_sigle;
+
+    my $prefix_check = 0;
+
+    # Iterate over all sigle
+    foreach (@sigle) {
+
+      # Sigle is a doc sigle
+      if ($_ =~ m!^(?:\.[/\\])?[^/\\]+?[/\\][^/\\]+?$!) {
+
+        print "$_ ...";
+        # Check if a prefix is needed
+        unless ($prefix_check) {
+
+          if ($prefix = $archive->check_prefix) {
+            print " with prefix ...";
+          };
+          $prefix_check = 1;
+        };
+
+        print "\n";
+
+        # TODO: Make this OS independent
+        my $path = ($prefix ? './' : '') . $_;
+
+        print '... ' . (
+          $archive->extract_doc(
+            $path, $output, $sequential_extraction ? 1 : $jobs
+          ) ? '' : 'not '
+        );
+        print "extracted.\n";
+      }
+
+      # Sigle is a text sigle
+      else {
+        push @new_sigle, $_;
+
+        unless ($prefix_check) {
+
+          if ($prefix = $archive->check_prefix) {
+            print " with prefix ...";
+          };
+          $prefix_check = 1;
+        };
+      };
+    };
+    @sigle = @new_sigle;
+  };
+
+  return $prefix;
+};
+
 
 
 # Cleanup temporary extraction directory
@@ -1344,8 +1428,8 @@ of key-value pairs with whitespace separator
 Supported parameters are:
 C<overwrite>, C<gzip>, C<jobs>, C<input-base>,
 C<token>, C<log>, C<cache>, C<cache-size>, C<cache-delete>, C<meta>,
-C<output>,
-C<temp-extract>, C<sequential-extraction>,
+C<output>, C<koral>,
+C<tempary-extract>, C<sequential-extraction>,
 C<base-sentences>, C<base-paragraphs>,
 C<base-pagebreaks>,
 C<skip> (semicolon separated), C<sigle>

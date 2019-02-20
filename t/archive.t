@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
+use Data::Dumper;
 use Test::More;
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catfile catdir/;
@@ -51,6 +52,35 @@ ok(!$archive->check_prefix, 'Archive has no prefix');
 $file = catfile(dirname(__FILE__), 'corpus','archive_rei.zip');
 $archive = KorAP::XML::Archive->new($file);
 ok(!$archive->check_prefix, 'Archive has no dot prefix');
+
+my @cmd = map { join ' ', @{$_} } $archive->cmds_from_sigle(['REI/RB*', 'REI/BNG/00071']);
+
+like($cmd[0], qr!unzip -qo -uo t/corpus/archive_rei\.zip!);
+like($cmd[0], qr!\QREI/header.xml REI/RB*/header.xml REI/RB* REI/BNG/header.xml REI/BNG/00071/*\E!);
+ok(!$cmd[1]);
+
+# New temporary directory
+$dir = tempdir(CLEANUP => 1);
+
+{
+  local $SIG{__WARN__} = sub {};
+  ok($archive->extract_sigle(['REI/RB*', 'REI/BNG/00071'], $dir), 'Fine');
+};
+
+ok(-d catdir($dir, 'REI'), 'Test corpus directory exists');
+ok(-d catdir($dir, 'REI','BNG'), 'Test corpus directory exists');
+ok(-d catdir($dir, 'REI','BNG','00071'), 'Test corpus directory exists');
+
+ok(-f catdir($dir, 'REI', 'header.xml'), 'Test corpus directory exists');
+ok(-f catdir($dir, 'REI','BNG', 'header.xml'), 'Test corpus directory exists');
+ok(-f catdir($dir, 'REI','BNG','00071', 'header.xml'), 'Test corpus directory exists');
+
+ok(-f catdir($dir, 'REI','RBR', 'header.xml'), 'Test corpus directory exists');
+ok(-f catdir($dir, 'REI','RBR','00610', 'header.xml'), 'Test corpus directory exists');
+ok(-f catdir($dir, 'REI','RBR','00610', 'header.xml'), 'Test corpus directory exists');
+
+ok(!-e catdir($dir, 'REI','BNG','00128'), 'Test corpus directory does not exist');
+
 
 done_testing;
 

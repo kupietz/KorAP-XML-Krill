@@ -38,7 +38,6 @@ stdout_like(
 
 my $input = catfile($f, '..', 'corpus', 'archive.zip');
 ok(-f $input, 'Input archive found');
-
 my $output = File::Temp->newdir(CLEANUP => 0);
 $output->unlink_on_destroy(0);
 
@@ -220,6 +219,39 @@ stdout_like(
   qr!Input is .+?wpd15-single\.zip,.+?wpd15-single\.malt\.zip,.+?wpd15-single\.corenlp\.zip,.+?wpd15-single\.opennlp\.zip,.+?wpd15-single\.mdparser\.zip,.+?wpd15-single\.tree_tagger\.zip!is,
   $call
 );
+
+
+
+# Test with sigles
+$input = catfile($f, '..', 'corpus', 'archive.zip');
+ok(-f $input, 'Input archive found');
+
+unlink($output);
+
+$call = join(
+  ' ',
+  'perl', $script,
+  'archive',
+  '--input' => '' . $input,
+  '--output' => $output,
+  '--sigle' => 'TEST/BSP/2',
+  '--sigle' => 'TEST/BSP/5',
+  '-t' => 'Base#tokens_aggr',
+  '-m' => 'Sgbr'
+);
+
+{
+  local $SIG{__WARN__} = sub {};
+  my $out = stdout_from(sub { system($call); });
+
+  like($out, qr!TEST-BSP-1\.json!s, $call);
+
+  $out =~ m!Processed (.+?\.json)!;
+  $json = $1;
+};
+
+ok(-f $json, 'Json file exists');
+
 
 done_testing;
 __END__
