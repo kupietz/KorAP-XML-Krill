@@ -36,7 +36,7 @@ my $dir = tempdir(CLEANUP => 1);
 
 {
   local $SIG{__WARN__} = sub {};
-  ok($archive->extract_text('./TEST/BSP/8', $dir), 'Wrong path');
+  ok($archive->extract_sigle(['TEST/BSP/8'], $dir), 'Wrong path');
 };
 
 ok(-d catdir($dir, 'TEST'), 'Test corpus directory exists');

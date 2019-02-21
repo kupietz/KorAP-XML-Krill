@@ -68,7 +68,7 @@ sub check_prefix {
   my $nr = shift // 0;
   my $file = $self->[$nr]->[0];
   my ($header) = `unzip -l -UU -qq $file "*/header.xml"`;
-  return $header =~ m![\s\t]\.[/\\]! ? 1 : 0;
+  return ($header && $header =~ m![\s\t]\.[/\\]!) ? 1 : 0;
 };
 
 
@@ -212,140 +212,6 @@ sub _extract {
 };
 
 
-sub extract_doc_new {
-  my ($self, $doc_path, $target_dir, $jobs) = @_;
-
-  my ($prefix, $corpus, $doc) = $self->split_path(
-    $doc_path . '/UNKNOWN' ) or return;
-
-  my @cmds = $self->cmds_from_sigle(
-    [join('/', $corpus, $doc)], $prefix
-  );
-
-  @cmds = map {
-    push @{$_}, '-d', $target_dir;
-    $_;
-  } @cmds;
-
-  return $self->_extract($jobs, @cmds);
-};
-
-
-# Extract document files to a directory
-sub extract_doc {
-  my $self = shift;
-  my ($doc_path, $target_dir, $jobs) = @_;
-
-  my $first = 1;
-
-  my @init_cmd = (
-    'unzip',          # Use unzip program
-    '-qo',            # quietly overwrite all existing files
-    '-uo',
-    '-d', $target_dir # Extract into target directory
-  );
-
-  my ($prefix, $corpus, $doc) = $self->split_path($doc_path . '/UNKNOWN' ) or return;
-  my @cmds;
-
-  # Iterate over all attached archives
-  foreach my $archive (@$self) {
-
-    # $_ is the zip
-    my @cmd = @init_cmd;
-    push(@cmd, $archive->[0]); # Extract from zip
-
-    # Add some interesting files for extraction
-    # Can't use catfile(), as this removes the '.' prefix
-    my @breadcrumbs = ($corpus);
-
-    # If the prefix is not forbidden - prefix!
-    unshift @breadcrumbs, $prefix if ($prefix && $archive->[1]);
-
-    if ($first) {
-      # Only extract from first file
-      push(@cmd, join('/', @breadcrumbs, 'header.xml'));
-      $first = 0;
-    };
-
-    # With wildcard
-    if (index($doc, '*') > 0) {
-      push @breadcrumbs, $doc;
-    }
-
-    # As a folder sigle
-    else {
-      push @breadcrumbs, $doc, '*';
-    };
-
-    push(@cmd, join('/', @breadcrumbs));
-
-    # Run system call
-    push @cmds, \@cmd;
-  };
-
-  $self->_extract($jobs, @cmds);
-};
-
-
-# Extract text files to a directory
-sub extract_text {
-  my $self = shift;
-  my $text_path = shift;
-  my $target_dir = shift;
-
-  my $first = 1;
-
-  my @init_cmd = (
-    'unzip',          # Use unzip program
-    '-qo',            # quietly overwrite all existing files
-    '-uo',
-    '-d', $target_dir # Extract into target directory
-  );
-
-  my ($prefix, $corpus, $doc, $text) = $self->split_path($text_path) or return;
-
-  # Iterate over all attached archives
-  foreach my $archive (@$self) {
-
-    # $_ is the zip
-    my @cmd = @init_cmd;
-    push(@cmd, $archive->[0]); # Extract from zip
-
-    # Add some interesting files for extraction
-    # Can't use catfile(), as this removes the '.' prefix
-    my @breadcrumbs = ($corpus);
-
-    # If the prefix is not forbidden - prefix!
-    unshift @breadcrumbs, $prefix if ($prefix && $archive->[1]);
-
-    if ($first) {
-
-      # Only extract from first file
-      push(@cmd, join('/', @breadcrumbs, 'header.xml'));
-      push(@cmd, join('/', @breadcrumbs, $doc, 'header.xml'));
-      $first = 0;
-    };
-
-    # With prefix
-    push @breadcrumbs, $doc, $text, '*';
-
-    push(@cmd, join('/', @breadcrumbs));
-
-    # Run system call
-    system(@cmd);
-
-    # Check for return code
-    if ($? != 0) {
-      carp("System call '" . join(' ', @cmd) . "' errors " . $?);
-      return;
-    };
-  };
-
-  # Fine
-  return 1;
-};
-
 
 # Extract from sigle
 sub extract_sigle {
@@ -398,7 +264,7 @@ sub cmds_from_sigle {
         $prefix_check = 1;
       };
 
-      unshift @breadcrumbs, $prefix if $prefix;
+      unshift @breadcrumbs, '.' if $prefix;
 
       if ($first) {
 

@@ -769,9 +769,10 @@ if ($cmd eq 'extract') {
       # TODO: Make this OS independent
       print '... ' . (
 
-        $archive->extract_text(
-          ($prefix ? './' : '') . $_, $output
-        ) ? '' : 'not '
+        # TODO:
+        #   - prefix???
+        $archive->extract_sigle([$_], $output, $jobs)
+        ? '' : 'not '
       );
       print "extracted.\n";
     };
@@ -1004,7 +1005,7 @@ elsif ($cmd eq 'archive') {
       # because extraction can be horrible slow!
 
       # Extract from archive
-      if ($archive->extract_text($dirs[$i], $temp)) {
+      if ($archive->extract_sigle([join('/', $corpus, $doc, $text)], $temp, $sequential_extraction ? 1 : $jobs)) {
 
         # Create corpus directory
         my $input = catdir("$temp", $corpus);
@@ -1108,13 +1109,9 @@ sub set_sigle {
 
         print "\n";
 
-        # TODO: Make this OS independent
-        my $path = ($prefix ? './' : '') . $_;
-
         print '... ' . (
-          $archive->extract_doc(
-            $path, $output, $sequential_extraction ? 1 : $jobs
-          ) ? '' : 'not '
+          $archive->extract_sigle([$_], $output, $sequential_extraction ? 1 : $jobs)
+            ? '' : 'not '
         );
         print "extracted.\n";
       }

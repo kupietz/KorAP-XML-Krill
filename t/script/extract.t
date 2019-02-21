@@ -51,14 +51,14 @@ $call = join(
   '--cache' => $cache
 );
 
-my $sep = qr!\.\.\.[\n\r]+?\.\.\.!;
+# my $sep = qr!\.\.\.[\n\r]+?\.\.\.!;
 
 # Test without compression
 stdout_like(
   sub {
     system($call);
   },
-  qr!TEST/BSP/1 $sep extracted!s,
+  qr!TEST/BSP/1 .* extracted!s,
 #  qr!TEST/BSP/1 $sep extracted.!s,
   $call
 );
@@ -91,7 +91,8 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!TEST/BSP/4 $sep extracted.!s,
+  # qr!TEST/BSP/4 $sep extracted.!s,
+  qr!TEST/BSP/4 .* extracted.!s,
   $call
 );
 
@@ -100,7 +101,8 @@ stdout_unlike(
   sub {
     system($call);
   },
-  qr!TEST/BSP/5 $sep extracted.!s,
+  # qr!TEST/BSP/5 $sep extracted.!s,
+  qr!TEST/BSP/5 .* extracted.!s,
   $call
 );
 
@@ -109,7 +111,6 @@ ok(!-d catdir($output2, 'TEST', 'BSP', '2'), 'Directory created');
 ok(!-d catdir($output2, 'TEST', 'BSP', '3'), 'Directory created');
 ok(-d catdir($output2, 'TEST', 'BSP', '4'), 'Directory created');
 ok(!-d catdir($output2, 'TEST', 'BSP', '5'), 'Directory created');
-
 
 # Test with document sigle
 my $input_rei = catdir($f, '..', 'corpus', 'archive_rei.zip');
@@ -147,7 +148,6 @@ ok(-d catdir($output2, 'REI', 'BNG', '00071'), 'Directory created');
 ok(-d catdir($output2, 'REI', 'BNG', '00128'), 'Directory created');
 ok(!-d catdir($output2, 'REI', 'RBR', '00610'), 'Directory not created');
 
-
 # Test with document sigle
 $output2 = undef;
 $output2 = tempdir(CLEANUP => 1);
@@ -176,7 +176,7 @@ stdout_unlike(
   sub {
     system($call);
   },
-  qr!REI/RBR $sep extracted!s,
+  qr!REI/RBR .* extracted!s,
   $call
 );
 
@@ -205,7 +205,7 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!WPD15/A00/00081 $sep extracted!s,
+  qr!WPD15/A00/00081 .* extracted!s,
   $call
 );
 
@@ -239,7 +239,8 @@ stdout_like(
   sub {
     system($call);
   },
-  qr!TEST/BSP "Example"\/1 $sep extracted!s,
+  qr!TEST/BSP "Example"\/1 .* extracted!s,
+  # qr!TEST/BSP "Example"\/1 $sep extracted!s,
   # qr!Extract .+? TEST/BSP "Example"\/1!s,
   $call
 );

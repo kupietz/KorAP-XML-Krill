@@ -60,7 +60,7 @@ is($path[3],'00081', 'Prefix');
 my $dir = tempdir(CLEANUP => 1);
 {
   local $SIG{__WARN__} = sub {};
-  ok($archive->extract_text($list[0], $dir), 'Wrong path');
+  ok($archive->extract_sigle([$list[0]], $dir), 'Wrong path');
 };
 
 ok(-d catdir($dir, 'WPD15'), 'Test corpus directory exists');

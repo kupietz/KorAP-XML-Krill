@@ -1,4 +1,4 @@
-0.37 2019-02-13
+0.37 2019-02-21
         - Support for 'koral:field' array.
         - Support for Koral versioning.
         - Added tests for english sources.
@@ -6,6 +6,8 @@
           Wikipedia resources.
         - Ignore temporary extraction
           on directory archiving.
+        - Remove extract_text and extract_doc in
+          favor of extract_sigle for archives.
 
 0.36 2019-01-22
         - Support for non-word tokens (fixes #5).

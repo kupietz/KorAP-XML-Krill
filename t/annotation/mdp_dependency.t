@@ -42,7 +42,7 @@ ok($archive->attach('#' . catfile(@path, $name . '.mdparser.zip')), 'Attach mdpa
 my $dir = tempdir();
 
 my $f_path = 'WPD15/A00/00081';
-$archive->extract_text($f_path, $dir);
+$archive->extract_sigle([$f_path], $dir);
 
 ok(my $doc = KorAP::XML::Krill->new( path => $dir . '/' . $f_path));
 
