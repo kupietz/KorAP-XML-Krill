@@ -62,7 +62,7 @@ sub process {
 
   # Unable to process base tokenization
   unless ($tokens->parse) {
-    $self->{log}->error(($output // $input) . " can't be processed - no base tokenization");
+    $self->{log}->error(($output // $input) . " can't be processed - no working base tokenization");
     return;
   };
 

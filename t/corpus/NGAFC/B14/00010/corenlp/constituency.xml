@@ -1,0 +1,4558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" docid="NGAFC_B14.00010" version="KorAP-0.4">
+   <spanList>
+      <span id="s1_n1" from="0" to="225">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s1_n2"/>
+      </span>
+      <span id="s1_n2" from="0" to="225">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NUR</f>
+         </fs>
+         <rel label="dominates" target="s1_n3"/>
+         <rel label="dominates" uri="morpho.xml#s1_n8"/>
+         <rel label="dominates" target="s1_n10"/>
+         <rel label="dominates" uri="morpho.xml#s1_n119"/>
+      </span>
+      <span id="s1_n3" from="0" to="13">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">MPN</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n4"/>
+         <rel label="dominates" uri="morpho.xml#s1_n6"/>
+      </span>
+      <span id="s1_n4" from="0" to="6">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s1_n6" from="7" to="13">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s1_n8" from="15" to="16">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s1_n10" from="16" to="224">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" target="s1_n11"/>
+         <rel label="dominates" uri="morpho.xml#s1_n25"/>
+         <rel label="dominates" target="s1_n27"/>
+      </span>
+      <span id="s1_n11" from="16" to="38">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" target="s1_n12"/>
+         <rel label="dominates" uri="morpho.xml#s1_n23"/>
+      </span>
+      <span id="s1_n12" from="16" to="31">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">MPN</f>
+         </fs>
+         <rel label="dominates" target="s1_n13"/>
+         <rel label="dominates" uri="morpho.xml#s1_n21"/>
+      </span>
+      <span id="s1_n13" from="16" to="30">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">MPN</f>
+         </fs>
+         <rel label="dominates" target="s1_n14"/>
+         <rel label="dominates" uri="morpho.xml#s1_n19"/>
+      </span>
+      <span id="s1_n14" from="16" to="29">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">MPN</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n15"/>
+         <rel label="dominates" uri="morpho.xml#s1_n17"/>
+      </span>
+      <span id="s1_n15" from="16" to="17">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">XY</f>
+         </fs>
+      </span>
+      <span id="s1_n17" from="17" to="29">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s1_n19" from="29" to="30">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">XY</f>
+         </fs>
+      </span>
+      <span id="s1_n21" from="30" to="31">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s1_n23" from="33" to="38">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s1_n25" from="38" to="39">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s1_n27" from="41" to="224">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CS</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n28"/>
+         <rel label="dominates" uri="morpho.xml#s1_n30"/>
+         <rel label="dominates" target="s1_n32"/>
+         <rel label="dominates" uri="morpho.xml#s1_n37"/>
+         <rel label="dominates" target="s1_n39"/>
+         <rel label="dominates" uri="morpho.xml#s1_n85"/>
+         <rel label="dominates" target="s1_n87"/>
+      </span>
+      <span id="s1_n28" from="41" to="42">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s1_n30" from="42" to="43">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">XY</f>
+         </fs>
+      </span>
+      <span id="s1_n32" from="43" to="56">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n33"/>
+         <rel label="dominates" uri="morpho.xml#s1_n35"/>
+      </span>
+      <span id="s1_n33" from="43" to="55">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s1_n35" from="55" to="56">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s1_n37" from="56" to="57">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s1_n39" from="59" to="159">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" target="s1_n40"/>
+         <rel label="dominates" uri="morpho.xml#s1_n45"/>
+         <rel label="dominates" uri="morpho.xml#s1_n47"/>
+         <rel label="dominates" uri="morpho.xml#s1_n49"/>
+         <rel label="dominates" target="s1_n51"/>
+         <rel label="dominates" uri="morpho.xml#s1_n58"/>
+         <rel label="dominates" uri="morpho.xml#s1_n60"/>
+         <rel label="dominates" target="s1_n62"/>
+         <rel label="dominates" uri="morpho.xml#s1_n76"/>
+         <rel label="dominates" target="s1_n78"/>
+      </span>
+      <span id="s1_n40" from="59" to="66">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AVP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n41"/>
+         <rel label="dominates" uri="morpho.xml#s1_n43"/>
+      </span>
+      <span id="s1_n41" from="59" to="61">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s1_n43" from="62" to="66">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s1_n45" from="67" to="69">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s1_n47" from="70" to="73">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s1_n49" from="74" to="79">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s1_n51" from="80" to="93">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n52"/>
+         <rel label="dominates" uri="morpho.xml#s1_n54"/>
+         <rel label="dominates" uri="morpho.xml#s1_n56"/>
+      </span>
+      <span id="s1_n52" from="80" to="83">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s1_n54" from="84" to="87">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s1_n56" from="88" to="93">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s1_n58" from="94" to="103">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s1_n60" from="104" to="105">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s1_n62" from="105" to="136">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n63"/>
+         <rel label="dominates" uri="morpho.xml#s1_n65"/>
+         <rel label="dominates" uri="morpho.xml#s1_n67"/>
+         <rel label="dominates" uri="morpho.xml#s1_n69"/>
+         <rel label="dominates" target="s1_n71"/>
+      </span>
+      <span id="s1_n63" from="105" to="109">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s1_n65" from="110" to="113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s1_n67" from="114" to="117">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s1_n69" from="118" to="122">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s1_n71" from="123" to="136">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">MPN</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n72"/>
+         <rel label="dominates" uri="morpho.xml#s1_n74"/>
+      </span>
+      <span id="s1_n72" from="123" to="129">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s1_n74" from="130" to="136">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s1_n76" from="137" to="141">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s1_n78" from="142" to="159">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n79"/>
+         <rel label="dominates" uri="morpho.xml#s1_n81"/>
+         <rel label="dominates" uri="morpho.xml#s1_n83"/>
+      </span>
+      <span id="s1_n79" from="142" to="144">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s1_n81" from="145" to="151">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PDAT</f>
+         </fs>
+      </span>
+      <span id="s1_n83" from="152" to="159">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s1_n85" from="159" to="160">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s1_n87" from="161" to="224">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n88"/>
+         <rel label="dominates" uri="morpho.xml#s1_n90"/>
+         <rel label="dominates" uri="morpho.xml#s1_n92"/>
+         <rel label="dominates" target="s1_n94"/>
+         <rel label="dominates" uri="morpho.xml#s1_n101"/>
+         <rel label="dominates" target="s1_n103"/>
+      </span>
+      <span id="s1_n88" from="161" to="164">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s1_n90" from="165" to="168">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s1_n92" from="169" to="170">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">--</f>
+         </fs>
+      </span>
+      <span id="s1_n94" from="171" to="194">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n95"/>
+         <rel label="dominates" uri="morpho.xml#s1_n97"/>
+         <rel label="dominates" uri="morpho.xml#s1_n99"/>
+      </span>
+      <span id="s1_n95" from="171" to="181">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s1_n97" from="182" to="183">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">--</f>
+         </fs>
+      </span>
+      <span id="s1_n99" from="184" to="194">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVPP</f>
+         </fs>
+      </span>
+      <span id="s1_n101" from="195" to="199">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s1_n103" from="199" to="224">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n104"/>
+         <rel label="dominates" uri="morpho.xml#s1_n106"/>
+         <rel label="dominates" target="s1_n108"/>
+      </span>
+      <span id="s1_n104" from="199" to="200">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s1_n106" from="200" to="201">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s1_n108" from="202" to="224">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s1_n109"/>
+         <rel label="dominates" uri="morpho.xml#s1_n111"/>
+         <rel label="dominates" uri="morpho.xml#s1_n113"/>
+         <rel label="dominates" uri="morpho.xml#s1_n115"/>
+         <rel label="dominates" uri="morpho.xml#s1_n117"/>
+      </span>
+      <span id="s1_n109" from="202" to="206">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s1_n111" from="207" to="213">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s1_n113" from="214" to="216">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s1_n115" from="217" to="223">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s1_n117" from="223" to="224">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">XY</f>
+         </fs>
+      </span>
+      <span id="s1_n119" from="224" to="225">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s2_n1" from="226" to="529">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s2_n2"/>
+      </span>
+      <span id="s2_n2" from="226" to="529">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NUR</f>
+         </fs>
+         <rel label="dominates" target="s2_n3"/>
+         <rel label="dominates" uri="morpho.xml#s2_n150"/>
+      </span>
+      <span id="s2_n3" from="226" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n4"/>
+         <rel label="dominates" uri="morpho.xml#s2_n6"/>
+         <rel label="dominates" uri="morpho.xml#s2_n8"/>
+         <rel label="dominates" uri="morpho.xml#s2_n10"/>
+         <rel label="dominates" target="s2_n12"/>
+      </span>
+      <span id="s2_n4" from="226" to="237">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s2_n6" from="238" to="243">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s2_n8" from="244" to="247">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s2_n10" from="247" to="248">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s2_n12" from="249" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n13"/>
+         <rel label="dominates" target="s2_n15"/>
+         <rel label="dominates" uri="morpho.xml#s2_n20"/>
+         <rel label="dominates" target="s2_n22"/>
+         <rel label="dominates" target="s2_n27"/>
+      </span>
+      <span id="s2_n13" from="249" to="253">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KOUS</f>
+         </fs>
+      </span>
+      <span id="s2_n15" from="254" to="267">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n16"/>
+         <rel label="dominates" uri="morpho.xml#s2_n18"/>
+      </span>
+      <span id="s2_n16" from="254" to="258">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJA</f>
+         </fs>
+      </span>
+      <span id="s2_n18" from="259" to="267">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s2_n20" from="267" to="268">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s2_n22" from="269" to="280">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n23"/>
+         <rel label="dominates" uri="morpho.xml#s2_n25"/>
+      </span>
+      <span id="s2_n23" from="269" to="272">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s2_n25" from="273" to="280">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PROAV</f>
+         </fs>
+      </span>
+      <span id="s2_n27" from="281" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" target="s2_n28"/>
+         <rel label="dominates" uri="morpho.xml#s2_n31"/>
+         <rel label="dominates" uri="morpho.xml#s2_n33"/>
+         <rel label="dominates" target="s2_n35"/>
+      </span>
+      <span id="s2_n28" from="281" to="289">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n29"/>
+      </span>
+      <span id="s2_n29" from="281" to="289">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVINF</f>
+         </fs>
+      </span>
+      <span id="s2_n31" from="290" to="294">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VMFIN</f>
+         </fs>
+      </span>
+      <span id="s2_n33" from="294" to="295">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s2_n35" from="296" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n36"/>
+         <rel label="dominates" uri="morpho.xml#s2_n38"/>
+         <rel label="dominates" uri="morpho.xml#s2_n40"/>
+         <rel label="dominates" target="s2_n42"/>
+         <rel label="dominates" target="s2_n52"/>
+         <rel label="dominates" uri="morpho.xml#s2_n55"/>
+         <rel label="dominates" uri="morpho.xml#s2_n57"/>
+         <rel label="dominates" target="s2_n59"/>
+      </span>
+      <span id="s2_n36" from="296" to="300">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KOUS</f>
+         </fs>
+      </span>
+      <span id="s2_n38" from="301" to="304">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s2_n40" from="305" to="306">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s2_n42" from="306" to="321">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CNP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n43"/>
+         <rel label="dominates" uri="morpho.xml#s2_n45"/>
+         <rel label="dominates" target="s2_n47"/>
+      </span>
+      <span id="s2_n43" from="306" to="311">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s2_n45" from="311" to="312">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s2_n47" from="313" to="321">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n48"/>
+         <rel label="dominates" uri="morpho.xml#s2_n50"/>
+      </span>
+      <span id="s2_n48" from="313" to="316">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s2_n50" from="317" to="321">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s2_n52" from="322" to="331">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n53"/>
+      </span>
+      <span id="s2_n53" from="322" to="331">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJA</f>
+         </fs>
+      </span>
+      <span id="s2_n55" from="332" to="337">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s2_n57" from="337" to="338">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s2_n59" from="339" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n60"/>
+         <rel label="dominates" uri="morpho.xml#s2_n62"/>
+         <rel label="dominates" uri="morpho.xml#s2_n64"/>
+         <rel label="dominates" uri="morpho.xml#s2_n66"/>
+         <rel label="dominates" uri="morpho.xml#s2_n68"/>
+         <rel label="dominates" uri="morpho.xml#s2_n70"/>
+         <rel label="dominates" target="s2_n72"/>
+      </span>
+      <span id="s2_n60" from="339" to="346">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KOUS</f>
+         </fs>
+      </span>
+      <span id="s2_n62" from="347" to="350">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s2_n64" from="351" to="352">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s2_n66" from="352" to="356">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s2_n68" from="356" to="357">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s2_n70" from="358" to="359">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s2_n72" from="359" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CAP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n73"/>
+         <rel label="dominates" uri="morpho.xml#s2_n75"/>
+         <rel label="dominates" target="s2_n77"/>
+      </span>
+      <span id="s2_n73" from="359" to="365">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJA</f>
+         </fs>
+      </span>
+      <span id="s2_n75" from="365" to="366">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s2_n77" from="367" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n78"/>
+         <rel label="dominates" target="s2_n80"/>
+      </span>
+      <span id="s2_n78" from="367" to="370">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APZR</f>
+         </fs>
+      </span>
+      <span id="s2_n80" from="371" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" target="s2_n81"/>
+         <rel label="dominates" uri="morpho.xml#s2_n93"/>
+         <rel label="dominates" uri="morpho.xml#s2_n95"/>
+         <rel label="dominates" target="s2_n97"/>
+      </span>
+      <span id="s2_n81" from="371" to="400">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n82"/>
+         <rel label="dominates" uri="morpho.xml#s2_n84"/>
+         <rel label="dominates" target="s2_n86"/>
+      </span>
+      <span id="s2_n82" from="371" to="375">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PIDAT</f>
+         </fs>
+      </span>
+      <span id="s2_n84" from="376" to="387">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s2_n86" from="388" to="400">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n87"/>
+         <rel label="dominates" uri="morpho.xml#s2_n89"/>
+         <rel label="dominates" uri="morpho.xml#s2_n91"/>
+      </span>
+      <span id="s2_n87" from="388" to="391">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s2_n89" from="392" to="395">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s2_n91" from="396" to="400">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s2_n93" from="401" to="409">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVPP</f>
+         </fs>
+      </span>
+      <span id="s2_n95" from="409" to="410">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s2_n97" from="411" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n98"/>
+         <rel label="dominates" uri="morpho.xml#s2_n100"/>
+         <rel label="dominates" uri="morpho.xml#s2_n102"/>
+         <rel label="dominates" uri="morpho.xml#s2_n104"/>
+         <rel label="dominates" uri="morpho.xml#s2_n106"/>
+         <rel label="dominates" uri="morpho.xml#s2_n108"/>
+         <rel label="dominates" uri="morpho.xml#s2_n110"/>
+         <rel label="dominates" target="s2_n112"/>
+      </span>
+      <span id="s2_n98" from="411" to="416">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KOUS</f>
+         </fs>
+      </span>
+      <span id="s2_n100" from="417" to="420">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s2_n102" from="421" to="425">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPOSAT</f>
+         </fs>
+      </span>
+      <span id="s2_n104" from="426" to="427">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s2_n106" from="427" to="440">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s2_n108" from="440" to="441">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s2_n110" from="442" to="443">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s2_n112" from="443" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n113"/>
+         <rel label="dominates" target="s2_n115"/>
+         <rel label="dominates" uri="morpho.xml#s2_n120"/>
+         <rel label="dominates" uri="morpho.xml#s2_n122"/>
+         <rel label="dominates" target="s2_n124"/>
+      </span>
+      <span id="s2_n113" from="443" to="447">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s2_n115" from="448" to="455">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n116"/>
+         <rel label="dominates" uri="morpho.xml#s2_n118"/>
+      </span>
+      <span id="s2_n116" from="448" to="452">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s2_n118" from="453" to="455">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CARD</f>
+         </fs>
+      </span>
+      <span id="s2_n120" from="456" to="459">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s2_n122" from="460" to="469">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s2_n124" from="469" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n125"/>
+         <rel label="dominates" target="s2_n127"/>
+      </span>
+      <span id="s2_n125" from="469" to="470">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s2_n127" from="471" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CVP</f>
+         </fs>
+         <rel label="dominates" target="s2_n128"/>
+         <rel label="dominates" uri="morpho.xml#s2_n140"/>
+         <rel label="dominates" target="s2_n142"/>
+      </span>
+      <span id="s2_n128" from="471" to="496">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n129"/>
+         <rel label="dominates" uri="morpho.xml#s2_n131"/>
+         <rel label="dominates" uri="morpho.xml#s2_n133"/>
+         <rel label="dominates" target="s2_n135"/>
+      </span>
+      <span id="s2_n129" from="471" to="473">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s2_n131" from="474" to="477">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s2_n133" from="478" to="485">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s2_n135" from="486" to="496">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n136"/>
+         <rel label="dominates" uri="morpho.xml#s2_n138"/>
+      </span>
+      <span id="s2_n136" from="486" to="489">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s2_n138" from="490" to="496">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s2_n140" from="497" to="500">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s2_n142" from="501" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" target="s2_n143"/>
+         <rel label="dominates" uri="morpho.xml#s2_n148"/>
+      </span>
+      <span id="s2_n143" from="501" to="517">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s2_n144"/>
+         <rel label="dominates" uri="morpho.xml#s2_n146"/>
+      </span>
+      <span id="s2_n144" from="501" to="506">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PDAT</f>
+         </fs>
+      </span>
+      <span id="s2_n146" from="507" to="517">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s2_n148" from="518" to="528">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVPP</f>
+         </fs>
+      </span>
+      <span id="s2_n150" from="528" to="529">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s3_n1" from="530" to="639">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s3_n2"/>
+      </span>
+      <span id="s3_n2" from="530" to="639">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CS</f>
+         </fs>
+         <rel label="dominates" target="s3_n3"/>
+         <rel label="dominates" uri="morpho.xml#s3_n21"/>
+         <rel label="dominates" target="s3_n23"/>
+         <rel label="dominates" uri="morpho.xml#s3_n50"/>
+      </span>
+      <span id="s3_n3" from="530" to="574">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s3_n4"/>
+         <rel label="dominates" uri="morpho.xml#s3_n6"/>
+         <rel label="dominates" uri="morpho.xml#s3_n8"/>
+         <rel label="dominates" target="s3_n10"/>
+      </span>
+      <span id="s3_n4" from="530" to="533">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PDS</f>
+         </fs>
+      </span>
+      <span id="s3_n6" from="534" to="538">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VMFIN</f>
+         </fs>
+      </span>
+      <span id="s3_n8" from="539" to="543">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s3_n10" from="544" to="574">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" target="s3_n11"/>
+         <rel label="dominates" target="s3_n16"/>
+      </span>
+      <span id="s3_n11" from="544" to="556">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s3_n12"/>
+         <rel label="dominates" uri="morpho.xml#s3_n14"/>
+      </span>
+      <span id="s3_n12" from="544" to="551">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s3_n14" from="552" to="556">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAINF</f>
+         </fs>
+      </span>
+      <span id="s3_n16" from="557" to="574">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VZ</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s3_n17"/>
+         <rel label="dominates" uri="morpho.xml#s3_n19"/>
+      </span>
+      <span id="s3_n17" from="557" to="559">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKZU</f>
+         </fs>
+      </span>
+      <span id="s3_n19" from="560" to="574">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVINF</f>
+         </fs>
+      </span>
+      <span id="s3_n21" from="574" to="575">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s3_n23" from="576" to="638">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s3_n24"/>
+         <rel label="dominates" uri="morpho.xml#s3_n26"/>
+         <rel label="dominates" uri="morpho.xml#s3_n28"/>
+         <rel label="dominates" target="s3_n30"/>
+         <rel label="dominates" target="s3_n35"/>
+      </span>
+      <span id="s3_n24" from="576" to="578">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s3_n26" from="579" to="583">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VMFIN</f>
+         </fs>
+      </span>
+      <span id="s3_n28" from="584" to="588">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s3_n30" from="589" to="605">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s3_n31"/>
+         <rel label="dominates" uri="morpho.xml#s3_n33"/>
+      </span>
+      <span id="s3_n31" from="589" to="600">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s3_n33" from="601" to="605">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAINF</f>
+         </fs>
+      </span>
+      <span id="s3_n35" from="606" to="638">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s3_n36"/>
+         <rel label="dominates" target="s3_n38"/>
+         <rel label="dominates" target="s3_n43"/>
+         <rel label="dominates" uri="morpho.xml#s3_n48"/>
+      </span>
+      <span id="s3_n36" from="606" to="607">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">--</f>
+         </fs>
+      </span>
+      <span id="s3_n38" from="608" to="621">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s3_n39"/>
+         <rel label="dominates" uri="morpho.xml#s3_n41"/>
+      </span>
+      <span id="s3_n39" from="608" to="611">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s3_n41" from="612" to="621">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s3_n43" from="622" to="632">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s3_n44"/>
+         <rel label="dominates" uri="morpho.xml#s3_n46"/>
+      </span>
+      <span id="s3_n44" from="622" to="625">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPRART</f>
+         </fs>
+      </span>
+      <span id="s3_n46" from="626" to="632">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s3_n48" from="633" to="638">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s3_n50" from="638" to="639">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s4_n1" from="640" to="848">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s4_n2"/>
+      </span>
+      <span id="s4_n2" from="640" to="848">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s4_n3"/>
+         <rel label="dominates" uri="morpho.xml#s4_n5"/>
+         <rel label="dominates" uri="morpho.xml#s4_n7"/>
+         <rel label="dominates" uri="morpho.xml#s4_n9"/>
+         <rel label="dominates" target="s4_n11"/>
+         <rel label="dominates" uri="morpho.xml#s4_n73"/>
+         <rel label="dominates" uri="morpho.xml#s4_n75"/>
+         <rel label="dominates" target="s4_n77"/>
+         <rel label="dominates" target="s4_n84"/>
+         <rel label="dominates" uri="morpho.xml#s4_n91"/>
+      </span>
+      <span id="s4_n3" from="640" to="644">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s4_n5" from="645" to="647">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s4_n7" from="648" to="655">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KOUS</f>
+         </fs>
+      </span>
+      <span id="s4_n9" from="655" to="656">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s4_n11" from="657" to="800">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s4_n12"/>
+         <rel label="dominates" target="s4_n14"/>
+      </span>
+      <span id="s4_n12" from="657" to="659">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KOUS</f>
+         </fs>
+      </span>
+      <span id="s4_n14" from="660" to="800">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CS</f>
+         </fs>
+         <rel label="dominates" target="s4_n15"/>
+         <rel label="dominates" uri="morpho.xml#s4_n53"/>
+         <rel label="dominates" uri="morpho.xml#s4_n55"/>
+         <rel label="dominates" target="s4_n57"/>
+      </span>
+      <span id="s4_n15" from="660" to="746">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s4_n16"/>
+         <rel label="dominates" uri="morpho.xml#s4_n18"/>
+         <rel label="dominates" uri="morpho.xml#s4_n20"/>
+         <rel label="dominates" target="s4_n22"/>
+      </span>
+      <span id="s4_n16" from="660" to="663">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s4_n18" from="664" to="670">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s4_n20" from="670" to="671">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s4_n22" from="672" to="746">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s4_n23"/>
+         <rel label="dominates" target="s4_n25"/>
+         <rel label="dominates" uri="morpho.xml#s4_n35"/>
+         <rel label="dominates" uri="morpho.xml#s4_n37"/>
+         <rel label="dominates" target="s4_n39"/>
+      </span>
+      <span id="s4_n23" from="672" to="675">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PRELS</f>
+         </fs>
+      </span>
+      <span id="s4_n25" from="676" to="694">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s4_n26"/>
+         <rel label="dominates" uri="morpho.xml#s4_n28"/>
+         <rel label="dominates" target="s4_n30"/>
+      </span>
+      <span id="s4_n26" from="676" to="679">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s4_n28" from="680" to="686">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s4_n30" from="687" to="694">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s4_n31"/>
+         <rel label="dominates" uri="morpho.xml#s4_n33"/>
+      </span>
+      <span id="s4_n31" from="687" to="689">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPRART</f>
+         </fs>
+      </span>
+      <span id="s4_n33" from="690" to="694">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s4_n35" from="695" to="700">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s4_n37" from="700" to="701">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s4_n39" from="702" to="746">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" target="s4_n40"/>
+         <rel label="dominates" uri="morpho.xml#s4_n49"/>
+         <rel label="dominates" uri="morpho.xml#s4_n51"/>
+      </span>
+      <span id="s4_n40" from="702" to="728">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s4_n41"/>
+         <rel label="dominates" uri="morpho.xml#s4_n43"/>
+         <rel label="dominates" uri="morpho.xml#s4_n45"/>
+         <rel label="dominates" uri="morpho.xml#s4_n47"/>
+      </span>
+      <span id="s4_n41" from="702" to="705">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s4_n43" from="706" to="709">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s4_n45" from="710" to="721">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJA</f>
+         </fs>
+      </span>
+      <span id="s4_n47" from="722" to="728">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s4_n49" from="729" to="732">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s4_n51" from="733" to="746">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s4_n53" from="746" to="747">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s4_n55" from="748" to="752">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s4_n57" from="753" to="800">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s4_n58"/>
+         <rel label="dominates" uri="morpho.xml#s4_n60"/>
+         <rel label="dominates" uri="morpho.xml#s4_n62"/>
+         <rel label="dominates" target="s4_n64"/>
+         <rel label="dominates" uri="morpho.xml#s4_n71"/>
+      </span>
+      <span id="s4_n58" from="753" to="755">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KOUS</f>
+         </fs>
+      </span>
+      <span id="s4_n60" from="756" to="759">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s4_n62" from="760" to="766">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PIDAT</f>
+         </fs>
+      </span>
+      <span id="s4_n64" from="767" to="795">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s4_n65"/>
+         <rel label="dominates" uri="morpho.xml#s4_n67"/>
+         <rel label="dominates" uri="morpho.xml#s4_n69"/>
+      </span>
+      <span id="s4_n65" from="767" to="778">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s4_n67" from="779" to="785">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s4_n69" from="786" to="795">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s4_n71" from="796" to="800">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s4_n73" from="800" to="801">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s4_n75" from="802" to="806">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s4_n77" from="807" to="827">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s4_n78"/>
+         <rel label="dominates" uri="morpho.xml#s4_n80"/>
+         <rel label="dominates" uri="morpho.xml#s4_n82"/>
+      </span>
+      <span id="s4_n78" from="807" to="810">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s4_n80" from="811" to="820">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s4_n82" from="821" to="827">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s4_n84" from="828" to="847">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CAP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s4_n85"/>
+         <rel label="dominates" uri="morpho.xml#s4_n87"/>
+         <rel label="dominates" uri="morpho.xml#s4_n89"/>
+      </span>
+      <span id="s4_n85" from="828" to="834">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s4_n87" from="835" to="839">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s4_n89" from="840" to="847">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s4_n91" from="847" to="848">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s5_n1" from="849" to="1114">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s5_n2"/>
+      </span>
+      <span id="s5_n2" from="849" to="1114">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NUR</f>
+         </fs>
+         <rel label="dominates" target="s5_n3"/>
+         <rel label="dominates" uri="morpho.xml#s5_n134"/>
+      </span>
+      <span id="s5_n3" from="849" to="1113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n4"/>
+         <rel label="dominates" uri="morpho.xml#s5_n6"/>
+         <rel label="dominates" uri="morpho.xml#s5_n8"/>
+         <rel label="dominates" uri="morpho.xml#s5_n10"/>
+         <rel label="dominates" target="s5_n12"/>
+         <rel label="dominates" uri="morpho.xml#s5_n19"/>
+         <rel label="dominates" uri="morpho.xml#s5_n21"/>
+         <rel label="dominates" uri="morpho.xml#s5_n23"/>
+         <rel label="dominates" target="s5_n25"/>
+      </span>
+      <span id="s5_n4" from="849" to="852">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s5_n6" from="853" to="855">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s5_n8" from="856" to="863">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s5_n10" from="864" to="867">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s5_n12" from="868" to="889">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n13"/>
+         <rel label="dominates" uri="morpho.xml#s5_n15"/>
+         <rel label="dominates" uri="morpho.xml#s5_n17"/>
+      </span>
+      <span id="s5_n13" from="868" to="873">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPOSAT</f>
+         </fs>
+      </span>
+      <span id="s5_n15" from="874" to="880">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJA</f>
+         </fs>
+      </span>
+      <span id="s5_n17" from="881" to="889">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s5_n19" from="890" to="894">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s5_n21" from="895" to="899">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s5_n23" from="899" to="900">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s5_n25" from="901" to="1113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CS</f>
+         </fs>
+         <rel label="dominates" target="s5_n26"/>
+         <rel label="dominates" uri="morpho.xml#s5_n70"/>
+         <rel label="dominates" uri="morpho.xml#s5_n72"/>
+         <rel label="dominates" target="s5_n74"/>
+      </span>
+      <span id="s5_n26" from="901" to="978">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" target="s5_n27"/>
+         <rel label="dominates" uri="morpho.xml#s5_n32"/>
+         <rel label="dominates" target="s5_n34"/>
+      </span>
+      <span id="s5_n27" from="901" to="911">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n28"/>
+         <rel label="dominates" uri="morpho.xml#s5_n30"/>
+      </span>
+      <span id="s5_n28" from="901" to="906">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s5_n30" from="907" to="911">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s5_n32" from="911" to="912">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s5_n34" from="913" to="978">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" target="s5_n35"/>
+         <rel label="dominates" uri="morpho.xml#s5_n49"/>
+         <rel label="dominates" target="s5_n51"/>
+         <rel label="dominates" uri="morpho.xml#s5_n63"/>
+         <rel label="dominates" target="s5_n65"/>
+      </span>
+      <span id="s5_n35" from="913" to="944">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n36"/>
+         <rel label="dominates" uri="morpho.xml#s5_n38"/>
+         <rel label="dominates" uri="morpho.xml#s5_n40"/>
+         <rel label="dominates" target="s5_n42"/>
+      </span>
+      <span id="s5_n36" from="913" to="917">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s5_n38" from="918" to="922">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s5_n40" from="923" to="932">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s5_n42" from="933" to="944">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n43"/>
+         <rel label="dominates" uri="morpho.xml#s5_n45"/>
+         <rel label="dominates" uri="morpho.xml#s5_n47"/>
+      </span>
+      <span id="s5_n43" from="933" to="935">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s5_n45" from="936" to="939">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s5_n47" from="940" to="944">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s5_n49" from="945" to="946">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s5_n51" from="946" to="964">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n52"/>
+         <rel label="dominates" uri="morpho.xml#s5_n54"/>
+         <rel label="dominates" target="s5_n56"/>
+      </span>
+      <span id="s5_n52" from="946" to="948">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPRART</f>
+         </fs>
+      </span>
+      <span id="s5_n54" from="949" to="954">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s5_n56" from="955" to="964">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n57"/>
+         <rel label="dominates" uri="morpho.xml#s5_n59"/>
+         <rel label="dominates" uri="morpho.xml#s5_n61"/>
+      </span>
+      <span id="s5_n57" from="955" to="958">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s5_n59" from="959" to="962">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s5_n61" from="962" to="964">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CARD</f>
+         </fs>
+      </span>
+      <span id="s5_n63" from="964" to="965">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s5_n65" from="966" to="978">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n66"/>
+         <rel label="dominates" uri="morpho.xml#s5_n68"/>
+      </span>
+      <span id="s5_n66" from="966" to="969">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s5_n68" from="970" to="978">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s5_n70" from="978" to="979">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s5_n72" from="980" to="983">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s5_n74" from="984" to="1113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n75"/>
+         <rel label="dominates" uri="morpho.xml#s5_n77"/>
+         <rel label="dominates" target="s5_n79"/>
+      </span>
+      <span id="s5_n75" from="984" to="986">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s5_n77" from="987" to="993">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APZR</f>
+         </fs>
+      </span>
+      <span id="s5_n79" from="994" to="1113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n80"/>
+         <rel label="dominates" uri="morpho.xml#s5_n82"/>
+         <rel label="dominates" uri="morpho.xml#s5_n84"/>
+         <rel label="dominates" uri="morpho.xml#s5_n86"/>
+         <rel label="dominates" target="s5_n88"/>
+      </span>
+      <span id="s5_n80" from="994" to="1008">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s5_n82" from="1009" to="1012">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s5_n84" from="1013" to="1019">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s5_n86" from="1019" to="1020">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s5_n88" from="1021" to="1113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" target="s5_n89"/>
+         <rel label="dominates" target="s5_n94"/>
+      </span>
+      <span id="s5_n89" from="1021" to="1027">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n90"/>
+         <rel label="dominates" uri="morpho.xml#s5_n92"/>
+      </span>
+      <span id="s5_n90" from="1021" to="1023">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s5_n92" from="1024" to="1027">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PRELS</f>
+         </fs>
+      </span>
+      <span id="s5_n94" from="1028" to="1113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n95"/>
+         <rel label="dominates" uri="morpho.xml#s5_n97"/>
+         <rel label="dominates" uri="morpho.xml#s5_n99"/>
+         <rel label="dominates" uri="morpho.xml#s5_n101"/>
+         <rel label="dominates" target="s5_n103"/>
+      </span>
+      <span id="s5_n95" from="1028" to="1031">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s5_n97" from="1032" to="1034">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CARD</f>
+         </fs>
+      </span>
+      <span id="s5_n99" from="1035" to="1040">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s5_n101" from="1041" to="1042">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">--</f>
+         </fs>
+      </span>
+      <span id="s5_n103" from="1043" to="1113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n104"/>
+         <rel label="dominates" uri="morpho.xml#s5_n106"/>
+         <rel label="dominates" uri="morpho.xml#s5_n108"/>
+         <rel label="dominates" target="s5_n110"/>
+      </span>
+      <span id="s5_n104" from="1043" to="1046">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s5_n106" from="1047" to="1053">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s5_n108" from="1053" to="1054">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s5_n110" from="1055" to="1113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n111"/>
+         <rel label="dominates" uri="morpho.xml#s5_n113"/>
+         <rel label="dominates" uri="morpho.xml#s5_n115"/>
+         <rel label="dominates" target="s5_n117"/>
+         <rel label="dominates" target="s5_n127"/>
+         <rel label="dominates" uri="morpho.xml#s5_n132"/>
+      </span>
+      <span id="s5_n111" from="1055" to="1058">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PRELS</f>
+         </fs>
+      </span>
+      <span id="s5_n113" from="1059" to="1062">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PWAV</f>
+         </fs>
+      </span>
+      <span id="s5_n115" from="1063" to="1069">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVPP</f>
+         </fs>
+      </span>
+      <span id="s5_n117" from="1070" to="1092">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n118"/>
+         <rel label="dominates" uri="morpho.xml#s5_n120"/>
+         <rel label="dominates" target="s5_n122"/>
+      </span>
+      <span id="s5_n118" from="1070" to="1073">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s5_n120" from="1074" to="1081">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s5_n122" from="1082" to="1092">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n123"/>
+         <rel label="dominates" uri="morpho.xml#s5_n125"/>
+      </span>
+      <span id="s5_n123" from="1082" to="1085">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s5_n125" from="1086" to="1092">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s5_n127" from="1093" to="1107">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s5_n128"/>
+         <rel label="dominates" uri="morpho.xml#s5_n130"/>
+      </span>
+      <span id="s5_n128" from="1093" to="1102">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s5_n130" from="1103" to="1107">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s5_n132" from="1108" to="1113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s5_n134" from="1113" to="1114">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s6_n1" from="1115" to="1379">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s6_n2"/>
+      </span>
+      <span id="s6_n2" from="1115" to="1379">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NUR</f>
+         </fs>
+         <rel label="dominates" target="s6_n3"/>
+         <rel label="dominates" uri="morpho.xml#s6_n113"/>
+      </span>
+      <span id="s6_n3" from="1115" to="1378">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n4"/>
+         <rel label="dominates" uri="morpho.xml#s6_n6"/>
+         <rel label="dominates" uri="morpho.xml#s6_n8"/>
+         <rel label="dominates" uri="morpho.xml#s6_n10"/>
+         <rel label="dominates" target="s6_n12"/>
+      </span>
+      <span id="s6_n4" from="1115" to="1126">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s6_n6" from="1127" to="1135">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s6_n8" from="1136" to="1141">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PROAV</f>
+         </fs>
+      </span>
+      <span id="s6_n10" from="1142" to="1143">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s6_n12" from="1143" to="1378">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n13"/>
+         <rel label="dominates" uri="morpho.xml#s6_n15"/>
+         <rel label="dominates" uri="morpho.xml#s6_n17"/>
+         <rel label="dominates" target="s6_n19"/>
+      </span>
+      <span id="s6_n13" from="1143" to="1146">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s6_n15" from="1147" to="1157">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PDS</f>
+         </fs>
+      </span>
+      <span id="s6_n17" from="1157" to="1158">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s6_n19" from="1159" to="1378">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CS</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n20"/>
+         <rel label="dominates" uri="morpho.xml#s6_n22"/>
+         <rel label="dominates" uri="morpho.xml#s6_n24"/>
+         <rel label="dominates" uri="morpho.xml#s6_n26"/>
+         <rel label="dominates" uri="morpho.xml#s6_n28"/>
+         <rel label="dominates" target="s6_n30"/>
+         <rel label="dominates" uri="morpho.xml#s6_n45"/>
+         <rel label="dominates" target="s6_n47"/>
+         <rel label="dominates" uri="morpho.xml#s6_n54"/>
+         <rel label="dominates" target="s6_n56"/>
+      </span>
+      <span id="s6_n20" from="1159" to="1162">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PRELS</f>
+         </fs>
+      </span>
+      <span id="s6_n22" from="1163" to="1167">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PRF</f>
+         </fs>
+      </span>
+      <span id="s6_n24" from="1168" to="1171">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s6_n26" from="1172" to="1195">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s6_n28" from="1195" to="1196">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s6_n30" from="1197" to="1239">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" target="s6_n31"/>
+         <rel label="dominates" uri="morpho.xml#s6_n41"/>
+         <rel label="dominates" uri="morpho.xml#s6_n43"/>
+      </span>
+      <span id="s6_n31" from="1197" to="1224">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n32"/>
+         <rel label="dominates" target="s6_n34"/>
+      </span>
+      <span id="s6_n32" from="1197" to="1205">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s6_n34" from="1205" to="1224">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CNP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n35"/>
+         <rel label="dominates" uri="morpho.xml#s6_n37"/>
+         <rel label="dominates" uri="morpho.xml#s6_n39"/>
+      </span>
+      <span id="s6_n35" from="1205" to="1206">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s6_n37" from="1207" to="1210">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s6_n39" from="1211" to="1224">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s6_n41" from="1225" to="1238">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s6_n43" from="1238" to="1239">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s6_n45" from="1239" to="1240">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s6_n47" from="1241" to="1256">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n48"/>
+         <rel label="dominates" uri="morpho.xml#s6_n50"/>
+         <rel label="dominates" uri="morpho.xml#s6_n52"/>
+      </span>
+      <span id="s6_n48" from="1241" to="1243">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s6_n50" from="1244" to="1250">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s6_n52" from="1251" to="1256">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKNEG</f>
+         </fs>
+      </span>
+      <span id="s6_n54" from="1256" to="1257">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s6_n56" from="1258" to="1378">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" target="s6_n57"/>
+         <rel label="dominates" uri="morpho.xml#s6_n90"/>
+         <rel label="dominates" uri="morpho.xml#s6_n92"/>
+         <rel label="dominates" uri="morpho.xml#s6_n94"/>
+         <rel label="dominates" target="s6_n96"/>
+      </span>
+      <span id="s6_n57" from="1258" to="1335">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" target="s6_n58"/>
+         <rel label="dominates" target="s6_n65"/>
+         <rel label="dominates" uri="morpho.xml#s6_n70"/>
+         <rel label="dominates" uri="morpho.xml#s6_n72"/>
+         <rel label="dominates" target="s6_n74"/>
+      </span>
+      <span id="s6_n58" from="1258" to="1278">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n59"/>
+         <rel label="dominates" uri="morpho.xml#s6_n61"/>
+         <rel label="dominates" uri="morpho.xml#s6_n63"/>
+      </span>
+      <span id="s6_n59" from="1258" to="1261">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s6_n61" from="1262" to="1271">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJA</f>
+         </fs>
+      </span>
+      <span id="s6_n63" from="1272" to="1278">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s6_n65" from="1279" to="1288">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VZ</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n66"/>
+         <rel label="dominates" uri="morpho.xml#s6_n68"/>
+      </span>
+      <span id="s6_n66" from="1279" to="1281">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKZU</f>
+         </fs>
+      </span>
+      <span id="s6_n68" from="1282" to="1288">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVINF</f>
+         </fs>
+      </span>
+      <span id="s6_n70" from="1288" to="1289">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s6_n72" from="1290" to="1297">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s6_n74" from="1298" to="1335">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n75"/>
+         <rel label="dominates" uri="morpho.xml#s6_n77"/>
+         <rel label="dominates" uri="morpho.xml#s6_n79"/>
+         <rel label="dominates" target="s6_n81"/>
+      </span>
+      <span id="s6_n75" from="1298" to="1301">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PIS</f>
+         </fs>
+      </span>
+      <span id="s6_n77" from="1302" to="1306">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s6_n79" from="1307" to="1311">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PRF</f>
+         </fs>
+      </span>
+      <span id="s6_n81" from="1312" to="1335">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n82"/>
+         <rel label="dominates" uri="morpho.xml#s6_n84"/>
+         <rel label="dominates" uri="morpho.xml#s6_n86"/>
+         <rel label="dominates" uri="morpho.xml#s6_n88"/>
+      </span>
+      <span id="s6_n82" from="1312" to="1315">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s6_n84" from="1316" to="1319">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s6_n86" from="1320" to="1323">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s6_n88" from="1324" to="1335">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s6_n90" from="1335" to="1336">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s6_n92" from="1337" to="1343">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVIMP</f>
+         </fs>
+      </span>
+      <span id="s6_n94" from="1343" to="1344">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s6_n96" from="1345" to="1378">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n97"/>
+         <rel label="dominates" uri="morpho.xml#s6_n99"/>
+         <rel label="dominates" target="s6_n101"/>
+      </span>
+      <span id="s6_n97" from="1345" to="1348">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s6_n99" from="1349" to="1350">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s6_n101" from="1350" to="1378">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n102"/>
+         <rel label="dominates" uri="morpho.xml#s6_n104"/>
+         <rel label="dominates" target="s6_n106"/>
+         <rel label="dominates" uri="morpho.xml#s6_n111"/>
+      </span>
+      <span id="s6_n102" from="1350" to="1354">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s6_n104" from="1354" to="1355">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s6_n106" from="1356" to="1368">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s6_n107"/>
+         <rel label="dominates" uri="morpho.xml#s6_n109"/>
+      </span>
+      <span id="s6_n107" from="1356" to="1359">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s6_n109" from="1360" to="1368">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s6_n111" from="1369" to="1378">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVPP</f>
+         </fs>
+      </span>
+      <span id="s6_n113" from="1378" to="1379">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s7_n1" from="1380" to="1501">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s7_n2"/>
+      </span>
+      <span id="s7_n2" from="1380" to="1501">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CS</f>
+         </fs>
+         <rel label="dominates" target="s7_n3"/>
+         <rel label="dominates" uri="morpho.xml#s7_n26"/>
+         <rel label="dominates" target="s7_n28"/>
+         <rel label="dominates" uri="morpho.xml#s7_n54"/>
+      </span>
+      <span id="s7_n3" from="1380" to="1433">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s7_n4"/>
+         <rel label="dominates" uri="morpho.xml#s7_n6"/>
+         <rel label="dominates" uri="morpho.xml#s7_n8"/>
+         <rel label="dominates" uri="morpho.xml#s7_n10"/>
+         <rel label="dominates" uri="morpho.xml#s7_n12"/>
+         <rel label="dominates" target="s7_n14"/>
+      </span>
+      <span id="s7_n4" from="1380" to="1383">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PWS</f>
+         </fs>
+      </span>
+      <span id="s7_n6" from="1384" to="1387">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s7_n8" from="1388" to="1398">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s7_n10" from="1399" to="1405">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s7_n12" from="1405" to="1406">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s7_n14" from="1407" to="1433">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s7_n15"/>
+         <rel label="dominates" uri="morpho.xml#s7_n17"/>
+         <rel label="dominates" target="s7_n19"/>
+         <rel label="dominates" uri="morpho.xml#s7_n24"/>
+      </span>
+      <span id="s7_n15" from="1407" to="1411">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KOUS</f>
+         </fs>
+      </span>
+      <span id="s7_n17" from="1412" to="1415">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s7_n19" from="1416" to="1425">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s7_n20"/>
+         <rel label="dominates" uri="morpho.xml#s7_n22"/>
+      </span>
+      <span id="s7_n20" from="1416" to="1420">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s7_n22" from="1421" to="1425">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s7_n24" from="1426" to="1433">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s7_n26" from="1433" to="1434">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s7_n28" from="1435" to="1500">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s7_n29"/>
+         <rel label="dominates" uri="morpho.xml#s7_n31"/>
+         <rel label="dominates" uri="morpho.xml#s7_n33"/>
+         <rel label="dominates" target="s7_n35"/>
+         <rel label="dominates" uri="morpho.xml#s7_n40"/>
+         <rel label="dominates" target="s7_n42"/>
+         <rel label="dominates" uri="morpho.xml#s7_n47"/>
+         <rel label="dominates" target="s7_n49"/>
+      </span>
+      <span id="s7_n29" from="1435" to="1438">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s7_n31" from="1439" to="1443">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s7_n33" from="1444" to="1448">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s7_n35" from="1449" to="1465">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s7_n36"/>
+         <rel label="dominates" uri="morpho.xml#s7_n38"/>
+      </span>
+      <span id="s7_n36" from="1449" to="1453">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s7_n38" from="1454" to="1465">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s7_n40" from="1465" to="1466">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s7_n42" from="1467" to="1482">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s7_n43"/>
+         <rel label="dominates" uri="morpho.xml#s7_n45"/>
+      </span>
+      <span id="s7_n43" from="1467" to="1470">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s7_n45" from="1471" to="1482">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s7_n47" from="1483" to="1486">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s7_n49" from="1487" to="1500">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s7_n50"/>
+         <rel label="dominates" uri="morpho.xml#s7_n52"/>
+      </span>
+      <span id="s7_n50" from="1487" to="1490">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s7_n52" from="1491" to="1500">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s7_n54" from="1500" to="1501">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s8_n1" from="1502" to="1580">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s8_n2"/>
+      </span>
+      <span id="s8_n2" from="1502" to="1580">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s8_n3"/>
+         <rel label="dominates" target="s8_n5"/>
+         <rel label="dominates" uri="morpho.xml#s8_n21"/>
+         <rel label="dominates" target="s8_n23"/>
+         <rel label="dominates" uri="morpho.xml#s8_n30"/>
+      </span>
+      <span id="s8_n3" from="1502" to="1506">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s8_n5" from="1507" to="1547">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s8_n6"/>
+         <rel label="dominates" uri="morpho.xml#s8_n8"/>
+         <rel label="dominates" uri="morpho.xml#s8_n10"/>
+         <rel label="dominates" target="s8_n12"/>
+      </span>
+      <span id="s8_n6" from="1507" to="1510">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s8_n8" from="1511" to="1514">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s8_n10" from="1515" to="1526">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s8_n12" from="1527" to="1547">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s8_n13"/>
+         <rel label="dominates" uri="morpho.xml#s8_n15"/>
+         <rel label="dominates" uri="morpho.xml#s8_n17"/>
+         <rel label="dominates" uri="morpho.xml#s8_n19"/>
+      </span>
+      <span id="s8_n13" from="1527" to="1530">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s8_n15" from="1531" to="1540">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s8_n17" from="1541" to="1546">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s8_n19" from="1546" to="1547">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">XY</f>
+         </fs>
+      </span>
+      <span id="s8_n21" from="1548" to="1556">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s8_n23" from="1557" to="1579">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s8_n24"/>
+         <rel label="dominates" uri="morpho.xml#s8_n26"/>
+         <rel label="dominates" uri="morpho.xml#s8_n28"/>
+      </span>
+      <span id="s8_n24" from="1557" to="1563">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s8_n26" from="1564" to="1567">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s8_n28" from="1568" to="1579">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s8_n30" from="1579" to="1580">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s9_n1" from="1581" to="1762">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s9_n2"/>
+      </span>
+      <span id="s9_n2" from="1581" to="1762">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NUR</f>
+         </fs>
+         <rel label="dominates" target="s9_n3"/>
+         <rel label="dominates" uri="morpho.xml#s9_n76"/>
+      </span>
+      <span id="s9_n3" from="1581" to="1761">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n4"/>
+         <rel label="dominates" uri="morpho.xml#s9_n6"/>
+         <rel label="dominates" target="s9_n8"/>
+         <rel label="dominates" uri="morpho.xml#s9_n11"/>
+         <rel label="dominates" target="s9_n13"/>
+         <rel label="dominates" uri="morpho.xml#s9_n18"/>
+         <rel label="dominates" target="s9_n20"/>
+      </span>
+      <span id="s9_n4" from="1581" to="1588">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PROAV</f>
+         </fs>
+      </span>
+      <span id="s9_n6" from="1589" to="1592">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s9_n8" from="1593" to="1595">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n9"/>
+      </span>
+      <span id="s9_n9" from="1593" to="1595">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s9_n11" from="1596" to="1604">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PROAV</f>
+         </fs>
+      </span>
+      <span id="s9_n13" from="1605" to="1620">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n14"/>
+         <rel label="dominates" uri="morpho.xml#s9_n16"/>
+      </span>
+      <span id="s9_n14" from="1605" to="1611">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s9_n16" from="1612" to="1620">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s9_n18" from="1620" to="1621">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s9_n20" from="1622" to="1761">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" target="s9_n21"/>
+         <rel label="dominates" target="s9_n34"/>
+         <rel label="dominates" uri="morpho.xml#s9_n39"/>
+         <rel label="dominates" target="s9_n41"/>
+      </span>
+      <span id="s9_n21" from="1622" to="1661">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n22"/>
+         <rel label="dominates" target="s9_n24"/>
+      </span>
+      <span id="s9_n22" from="1622" to="1630">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s9_n24" from="1631" to="1661">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n25"/>
+         <rel label="dominates" uri="morpho.xml#s9_n27"/>
+         <rel label="dominates" target="s9_n29"/>
+      </span>
+      <span id="s9_n25" from="1631" to="1635">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s9_n27" from="1636" to="1647">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s9_n29" from="1648" to="1661">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n30"/>
+         <rel label="dominates" uri="morpho.xml#s9_n32"/>
+      </span>
+      <span id="s9_n30" from="1648" to="1651">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s9_n32" from="1652" to="1661">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s9_n34" from="1662" to="1679">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VZ</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n35"/>
+         <rel label="dominates" uri="morpho.xml#s9_n37"/>
+      </span>
+      <span id="s9_n35" from="1662" to="1664">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKZU</f>
+         </fs>
+      </span>
+      <span id="s9_n37" from="1665" to="1679">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVINF</f>
+         </fs>
+      </span>
+      <span id="s9_n39" from="1679" to="1680">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s9_n41" from="1681" to="1761">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n42"/>
+         <rel label="dominates" target="s9_n44"/>
+         <rel label="dominates" target="s9_n49"/>
+         <rel label="dominates" target="s9_n54"/>
+         <rel label="dominates" uri="morpho.xml#s9_n61"/>
+         <rel label="dominates" target="s9_n63"/>
+      </span>
+      <span id="s9_n42" from="1681" to="1685">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s9_n44" from="1686" to="1702">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n45"/>
+         <rel label="dominates" uri="morpho.xml#s9_n47"/>
+      </span>
+      <span id="s9_n45" from="1686" to="1689">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s9_n47" from="1690" to="1702">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s9_n49" from="1703" to="1712">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VZ</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n50"/>
+         <rel label="dominates" uri="morpho.xml#s9_n52"/>
+      </span>
+      <span id="s9_n50" from="1703" to="1705">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKZU</f>
+         </fs>
+      </span>
+      <span id="s9_n52" from="1706" to="1712">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVINF</f>
+         </fs>
+      </span>
+      <span id="s9_n54" from="1713" to="1728">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CAVP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n55"/>
+         <rel label="dominates" uri="morpho.xml#s9_n57"/>
+         <rel label="dominates" uri="morpho.xml#s9_n59"/>
+      </span>
+      <span id="s9_n55" from="1713" to="1714">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">--</f>
+         </fs>
+      </span>
+      <span id="s9_n57" from="1715" to="1719">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s9_n59" from="1720" to="1728">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s9_n61" from="1728" to="1729">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s9_n63" from="1730" to="1761">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" target="s9_n64"/>
+         <rel label="dominates" uri="morpho.xml#s9_n69"/>
+         <rel label="dominates" uri="morpho.xml#s9_n71"/>
+         <rel label="dominates" target="s9_n73"/>
+      </span>
+      <span id="s9_n64" from="1730" to="1745">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n65"/>
+         <rel label="dominates" uri="morpho.xml#s9_n67"/>
+      </span>
+      <span id="s9_n65" from="1730" to="1736">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s9_n67" from="1737" to="1745">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PROAV</f>
+         </fs>
+      </span>
+      <span id="s9_n69" from="1746" to="1749">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s9_n71" from="1750" to="1752">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s9_n73" from="1753" to="1761">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s9_n74"/>
+      </span>
+      <span id="s9_n74" from="1753" to="1761">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s9_n76" from="1761" to="1762">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s10_n1" from="1763" to="1818">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s10_n2"/>
+      </span>
+      <span id="s10_n2" from="1763" to="1818">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s10_n3"/>
+         <rel label="dominates" uri="morpho.xml#s10_n5"/>
+         <rel label="dominates" uri="morpho.xml#s10_n7"/>
+         <rel label="dominates" target="s10_n9"/>
+         <rel label="dominates" uri="morpho.xml#s10_n19"/>
+         <rel label="dominates" uri="morpho.xml#s10_n21"/>
+         <rel label="dominates" uri="morpho.xml#s10_n23"/>
+      </span>
+      <span id="s10_n3" from="1763" to="1766">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s10_n5" from="1767" to="1769">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s10_n7" from="1770" to="1775">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s10_n9" from="1776" to="1808">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s10_n10"/>
+         <rel label="dominates" uri="morpho.xml#s10_n12"/>
+         <rel label="dominates" target="s10_n14"/>
+      </span>
+      <span id="s10_n10" from="1776" to="1779">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s10_n12" from="1780" to="1790">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s10_n14" from="1791" to="1808">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s10_n15"/>
+         <rel label="dominates" uri="morpho.xml#s10_n17"/>
+      </span>
+      <span id="s10_n15" from="1791" to="1794">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s10_n17" from="1795" to="1808">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s10_n19" from="1809" to="1813">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s10_n21" from="1814" to="1817">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKVZ</f>
+         </fs>
+      </span>
+      <span id="s10_n23" from="1817" to="1818">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s11_n1" from="1819" to="1846">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s11_n2"/>
+      </span>
+      <span id="s11_n2" from="1819" to="1846">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s11_n3"/>
+         <rel label="dominates" target="s11_n5"/>
+         <rel label="dominates" uri="morpho.xml#s11_n8"/>
+         <rel label="dominates" uri="morpho.xml#s11_n10"/>
+         <rel label="dominates" uri="morpho.xml#s11_n12"/>
+         <rel label="dominates" uri="morpho.xml#s11_n14"/>
+      </span>
+      <span id="s11_n3" from="1819" to="1823">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s11_n5" from="1824" to="1826">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s11_n6"/>
+      </span>
+      <span id="s11_n6" from="1824" to="1826">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s11_n8" from="1827" to="1830">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s11_n10" from="1831" to="1840">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s11_n12" from="1841" to="1845">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s11_n14" from="1845" to="1846">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s12_n1" from="1847" to="2034">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s12_n2"/>
+      </span>
+      <span id="s12_n2" from="1847" to="2034">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n3"/>
+         <rel label="dominates" uri="morpho.xml#s12_n5"/>
+         <rel label="dominates" target="s12_n7"/>
+         <rel label="dominates" uri="morpho.xml#s12_n12"/>
+         <rel label="dominates" target="s12_n14"/>
+         <rel label="dominates" uri="morpho.xml#s12_n86"/>
+      </span>
+      <span id="s12_n3" from="1847" to="1851">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s12_n5" from="1852" to="1855">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s12_n7" from="1856" to="1865">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AVP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n8"/>
+         <rel label="dominates" uri="morpho.xml#s12_n10"/>
+      </span>
+      <span id="s12_n8" from="1856" to="1859">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s12_n10" from="1860" to="1865">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s12_n12" from="1866" to="1870">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s12_n14" from="1871" to="2033">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n15"/>
+         <rel label="dominates" uri="morpho.xml#s12_n17"/>
+         <rel label="dominates" target="s12_n19"/>
+      </span>
+      <span id="s12_n15" from="1871" to="1878">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s12_n17" from="1878" to="1879">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s12_n19" from="1880" to="2033">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n20"/>
+         <rel label="dominates" target="s12_n22"/>
+         <rel label="dominates" target="s12_n29"/>
+         <rel label="dominates" uri="morpho.xml#s12_n34"/>
+         <rel label="dominates" target="s12_n36"/>
+         <rel label="dominates" uri="morpho.xml#s12_n49"/>
+         <rel label="dominates" uri="morpho.xml#s12_n51"/>
+         <rel label="dominates" target="s12_n53"/>
+      </span>
+      <span id="s12_n20" from="1880" to="1882">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PWAV</f>
+         </fs>
+      </span>
+      <span id="s12_n22" from="1883" to="1902">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n23"/>
+         <rel label="dominates" uri="morpho.xml#s12_n25"/>
+         <rel label="dominates" uri="morpho.xml#s12_n27"/>
+      </span>
+      <span id="s12_n23" from="1883" to="1886">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s12_n25" from="1887" to="1895">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJA</f>
+         </fs>
+      </span>
+      <span id="s12_n27" from="1896" to="1902">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s12_n29" from="1903" to="1913">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AVP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n30"/>
+         <rel label="dominates" uri="morpho.xml#s12_n32"/>
+      </span>
+      <span id="s12_n30" from="1903" to="1908">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKNEG</f>
+         </fs>
+      </span>
+      <span id="s12_n32" from="1909" to="1913">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s12_n34" from="1914" to="1922">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s12_n36" from="1923" to="1948">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n37"/>
+         <rel label="dominates" uri="morpho.xml#s12_n39"/>
+         <rel label="dominates" uri="morpho.xml#s12_n41"/>
+         <rel label="dominates" uri="morpho.xml#s12_n43"/>
+         <rel label="dominates" uri="morpho.xml#s12_n45"/>
+         <rel label="dominates" uri="morpho.xml#s12_n47"/>
+      </span>
+      <span id="s12_n37" from="1923" to="1925">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s12_n39" from="1926" to="1929">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s12_n41" from="1930" to="1934">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s12_n43" from="1935" to="1936">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s12_n45" from="1936" to="1947">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s12_n47" from="1947" to="1948">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s12_n49" from="1949" to="1961">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVPP</f>
+         </fs>
+      </span>
+      <span id="s12_n51" from="1961" to="1962">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s12_n53" from="1963" to="2033">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AP</f>
+         </fs>
+         <rel label="dominates" target="s12_n54"/>
+         <rel label="dominates" uri="morpho.xml#s12_n71"/>
+         <rel label="dominates" target="s12_n73"/>
+      </span>
+      <span id="s12_n54" from="1963" to="2004">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n55"/>
+         <rel label="dominates" uri="morpho.xml#s12_n57"/>
+         <rel label="dominates" target="s12_n59"/>
+         <rel label="dominates" target="s12_n64"/>
+         <rel label="dominates" uri="morpho.xml#s12_n69"/>
+      </span>
+      <span id="s12_n55" from="1963" to="1965">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PWAV</f>
+         </fs>
+      </span>
+      <span id="s12_n57" from="1966" to="1970">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s12_n59" from="1971" to="1986">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n60"/>
+         <rel label="dominates" uri="morpho.xml#s12_n62"/>
+      </span>
+      <span id="s12_n60" from="1971" to="1974">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s12_n62" from="1975" to="1986">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s12_n64" from="1987" to="1999">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n65"/>
+         <rel label="dominates" uri="morpho.xml#s12_n67"/>
+      </span>
+      <span id="s12_n65" from="1987" to="1994">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s12_n67" from="1995" to="1999">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAINF</f>
+         </fs>
+      </span>
+      <span id="s12_n69" from="2000" to="2004">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKVZ</f>
+         </fs>
+      </span>
+      <span id="s12_n71" from="2004" to="2005">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s12_n73" from="2006" to="2033">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n74"/>
+         <rel label="dominates" target="s12_n76"/>
+         <rel label="dominates" target="s12_n81"/>
+      </span>
+      <span id="s12_n74" from="2006" to="2008">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KOUI</f>
+         </fs>
+      </span>
+      <span id="s12_n76" from="2009" to="2022">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n77"/>
+         <rel label="dominates" uri="morpho.xml#s12_n79"/>
+      </span>
+      <span id="s12_n77" from="2009" to="2014">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s12_n79" from="2015" to="2022">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s12_n81" from="2023" to="2033">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VZ</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s12_n82"/>
+         <rel label="dominates" uri="morpho.xml#s12_n84"/>
+      </span>
+      <span id="s12_n82" from="2023" to="2025">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKZU</f>
+         </fs>
+      </span>
+      <span id="s12_n84" from="2026" to="2033">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVINF</f>
+         </fs>
+      </span>
+      <span id="s12_n86" from="2033" to="2034">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s13_n1" from="2035" to="2163">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s13_n2"/>
+      </span>
+      <span id="s13_n2" from="2035" to="2163">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CS</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s13_n3"/>
+         <rel label="dominates" uri="morpho.xml#s13_n5"/>
+         <rel label="dominates" target="s13_n7"/>
+         <rel label="dominates" uri="morpho.xml#s13_n57"/>
+      </span>
+      <span id="s13_n3" from="2035" to="2040">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PIS</f>
+         </fs>
+      </span>
+      <span id="s13_n5" from="2040" to="2041">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s13_n7" from="2042" to="2162">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s13_n8"/>
+         <rel label="dominates" target="s13_n10"/>
+         <rel label="dominates" uri="morpho.xml#s13_n17"/>
+         <rel label="dominates" uri="morpho.xml#s13_n19"/>
+         <rel label="dominates" target="s13_n21"/>
+      </span>
+      <span id="s13_n8" from="2042" to="2045">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PRELS</f>
+         </fs>
+      </span>
+      <span id="s13_n10" from="2046" to="2060">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s13_n11"/>
+         <rel label="dominates" uri="morpho.xml#s13_n13"/>
+         <rel label="dominates" uri="morpho.xml#s13_n15"/>
+      </span>
+      <span id="s13_n11" from="2046" to="2049">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s13_n13" from="2050" to="2054">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s13_n15" from="2055" to="2060">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s13_n17" from="2061" to="2068">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s13_n19" from="2068" to="2069">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s13_n21" from="2070" to="2162">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s13_n22"/>
+         <rel label="dominates" target="s13_n24"/>
+      </span>
+      <span id="s13_n22" from="2070" to="2073">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PRELS</f>
+         </fs>
+      </span>
+      <span id="s13_n24" from="2074" to="2162">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" target="s13_n25"/>
+         <rel label="dominates" uri="morpho.xml#s13_n42"/>
+         <rel label="dominates" uri="morpho.xml#s13_n44"/>
+         <rel label="dominates" target="s13_n46"/>
+      </span>
+      <span id="s13_n25" from="2074" to="2125">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s13_n26"/>
+         <rel label="dominates" target="s13_n28"/>
+         <rel label="dominates" target="s13_n33"/>
+         <rel label="dominates" uri="morpho.xml#s13_n40"/>
+      </span>
+      <span id="s13_n26" from="2074" to="2078">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PRF</f>
+         </fs>
+      </span>
+      <span id="s13_n28" from="2079" to="2091">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s13_n29"/>
+         <rel label="dominates" uri="morpho.xml#s13_n31"/>
+      </span>
+      <span id="s13_n29" from="2079" to="2082">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s13_n31" from="2083" to="2091">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s13_n33" from="2092" to="2113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s13_n34"/>
+         <rel label="dominates" uri="morpho.xml#s13_n36"/>
+         <rel label="dominates" uri="morpho.xml#s13_n38"/>
+      </span>
+      <span id="s13_n34" from="2092" to="2095">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s13_n36" from="2096" to="2099">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s13_n38" from="2100" to="2113">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s13_n40" from="2114" to="2125">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVINF</f>
+         </fs>
+      </span>
+      <span id="s13_n42" from="2126" to="2132">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVINF</f>
+         </fs>
+      </span>
+      <span id="s13_n44" from="2132" to="2133">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s13_n46" from="2134" to="2162">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s13_n47"/>
+         <rel label="dominates" uri="morpho.xml#s13_n49"/>
+         <rel label="dominates" uri="morpho.xml#s13_n51"/>
+         <rel label="dominates" uri="morpho.xml#s13_n53"/>
+         <rel label="dominates" uri="morpho.xml#s13_n55"/>
+      </span>
+      <span id="s13_n47" from="2134" to="2139">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PWAV</f>
+         </fs>
+      </span>
+      <span id="s13_n49" from="2140" to="2145">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PWAV</f>
+         </fs>
+      </span>
+      <span id="s13_n51" from="2146" to="2149">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s13_n53" from="2150" to="2154">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s13_n55" from="2155" to="2162">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s13_n57" from="2162" to="2163">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s14_n1" from="2164" to="2269">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s14_n2"/>
+      </span>
+      <span id="s14_n2" from="2164" to="2269">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NUR</f>
+         </fs>
+         <rel label="dominates" target="s14_n3"/>
+         <rel label="dominates" uri="morpho.xml#s14_n57"/>
+      </span>
+      <span id="s14_n3" from="2164" to="2268">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" target="s14_n4"/>
+         <rel label="dominates" uri="morpho.xml#s14_n14"/>
+         <rel label="dominates" target="s14_n16"/>
+      </span>
+      <span id="s14_n4" from="2164" to="2191">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s14_n5"/>
+         <rel label="dominates" target="s14_n7"/>
+      </span>
+      <span id="s14_n5" from="2164" to="2172">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s14_n7" from="2172" to="2191">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CNP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s14_n8"/>
+         <rel label="dominates" uri="morpho.xml#s14_n10"/>
+         <rel label="dominates" uri="morpho.xml#s14_n12"/>
+      </span>
+      <span id="s14_n8" from="2172" to="2173">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s14_n10" from="2174" to="2177">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s14_n12" from="2178" to="2191">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s14_n14" from="2192" to="2196">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VMFIN</f>
+         </fs>
+      </span>
+      <span id="s14_n16" from="2197" to="2268">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" target="s14_n17"/>
+         <rel label="dominates" target="s14_n22"/>
+         <rel label="dominates" uri="morpho.xml#s14_n27"/>
+         <rel label="dominates" target="s14_n29"/>
+      </span>
+      <span id="s14_n17" from="2197" to="2209">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s14_n18"/>
+         <rel label="dominates" uri="morpho.xml#s14_n20"/>
+      </span>
+      <span id="s14_n18" from="2197" to="2202">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s14_n20" from="2203" to="2209">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVINF</f>
+         </fs>
+      </span>
+      <span id="s14_n22" from="2210" to="2222">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VZ</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s14_n23"/>
+         <rel label="dominates" uri="morpho.xml#s14_n25"/>
+      </span>
+      <span id="s14_n23" from="2210" to="2212">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKZU</f>
+         </fs>
+      </span>
+      <span id="s14_n25" from="2213" to="2222">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVINF</f>
+         </fs>
+      </span>
+      <span id="s14_n27" from="2222" to="2223">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s14_n29" from="2224" to="2268">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CS</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s14_n30"/>
+         <rel label="dominates" uri="morpho.xml#s14_n32"/>
+         <rel label="dominates" target="s14_n34"/>
+         <rel label="dominates" uri="morpho.xml#s14_n41"/>
+         <rel label="dominates" target="s14_n43"/>
+      </span>
+      <span id="s14_n30" from="2224" to="2226">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PWAV</f>
+         </fs>
+      </span>
+      <span id="s14_n32" from="2227" to="2230">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PDS</f>
+         </fs>
+      </span>
+      <span id="s14_n34" from="2231" to="2242">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s14_n35"/>
+         <rel label="dominates" uri="morpho.xml#s14_n37"/>
+         <rel label="dominates" uri="morpho.xml#s14_n39"/>
+      </span>
+      <span id="s14_n35" from="2231" to="2235">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPOSAT</f>
+         </fs>
+      </span>
+      <span id="s14_n37" from="2236" to="2240">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJA</f>
+         </fs>
+      </span>
+      <span id="s14_n39" from="2241" to="2242">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s14_n41" from="2242" to="2245">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KON</f>
+         </fs>
+      </span>
+      <span id="s14_n43" from="2246" to="2268">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s14_n44"/>
+         <rel label="dominates" uri="morpho.xml#s14_n46"/>
+         <rel label="dominates" uri="morpho.xml#s14_n48"/>
+         <rel label="dominates" target="s14_n50"/>
+         <rel label="dominates" uri="morpho.xml#s14_n53"/>
+         <rel label="dominates" uri="morpho.xml#s14_n55"/>
+      </span>
+      <span id="s14_n44" from="2246" to="2249">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PWS</f>
+         </fs>
+      </span>
+      <span id="s14_n46" from="2250" to="2253">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PIS</f>
+         </fs>
+      </span>
+      <span id="s14_n48" from="2254" to="2258">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s14_n50" from="2259" to="2262">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s14_n51"/>
+      </span>
+      <span id="s14_n51" from="2259" to="2262">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVINF</f>
+         </fs>
+      </span>
+      <span id="s14_n53" from="2263" to="2267">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VMFIN</f>
+         </fs>
+      </span>
+      <span id="s14_n55" from="2267" to="2268">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s14_n57" from="2268" to="2269">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s15_n1" from="2270" to="2311">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s15_n2"/>
+      </span>
+      <span id="s15_n2" from="2270" to="2311">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NUR</f>
+         </fs>
+         <rel label="dominates" target="s15_n3"/>
+         <rel label="dominates" uri="morpho.xml#s15_n20"/>
+      </span>
+      <span id="s15_n3" from="2270" to="2310">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s15_n4"/>
+         <rel label="dominates" target="s15_n6"/>
+         <rel label="dominates" uri="morpho.xml#s15_n18"/>
+      </span>
+      <span id="s15_n4" from="2270" to="2276">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s15_n6" from="2277" to="2302">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s15_n7"/>
+         <rel label="dominates" uri="morpho.xml#s15_n9"/>
+         <rel label="dominates" target="s15_n11"/>
+      </span>
+      <span id="s15_n7" from="2277" to="2278">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">XY</f>
+         </fs>
+      </span>
+      <span id="s15_n9" from="2279" to="2283">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s15_n11" from="2284" to="2302">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s15_n12"/>
+         <rel label="dominates" uri="morpho.xml#s15_n14"/>
+         <rel label="dominates" uri="morpho.xml#s15_n16"/>
+      </span>
+      <span id="s15_n12" from="2284" to="2286">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s15_n14" from="2287" to="2295">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJA</f>
+         </fs>
+      </span>
+      <span id="s15_n16" from="2296" to="2302">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s15_n18" from="2303" to="2310">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVPP</f>
+         </fs>
+      </span>
+      <span id="s15_n20" from="2310" to="2311">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s16_n1" from="2312" to="2329">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s16_n2"/>
+      </span>
+      <span id="s16_n2" from="2312" to="2329">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NUR</f>
+         </fs>
+         <rel label="dominates" target="s16_n3"/>
+         <rel label="dominates" uri="morpho.xml#s16_n12"/>
+      </span>
+      <span id="s16_n3" from="2312" to="2328">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s16_n4"/>
+         <rel label="dominates" uri="morpho.xml#s16_n6"/>
+         <rel label="dominates" uri="morpho.xml#s16_n8"/>
+         <rel label="dominates" uri="morpho.xml#s16_n10"/>
+      </span>
+      <span id="s16_n4" from="2312" to="2317">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PIDAT</f>
+         </fs>
+      </span>
+      <span id="s16_n6" from="2318" to="2324">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s16_n8" from="2324" to="2325">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s16_n10" from="2326" to="2328">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s16_n12" from="2328" to="2329">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s17_n1" from="2330" to="2443">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s17_n2"/>
+      </span>
+      <span id="s17_n2" from="2330" to="2443">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NUR</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s17_n3"/>
+         <rel label="dominates" target="s17_n5"/>
+         <rel label="dominates" uri="morpho.xml#s17_n55"/>
+      </span>
+      <span id="s17_n3" from="2330" to="2331">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">XY</f>
+         </fs>
+      </span>
+      <span id="s17_n5" from="2332" to="2442">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s17_n6"/>
+         <rel label="dominates" uri="morpho.xml#s17_n8"/>
+         <rel label="dominates" uri="morpho.xml#s17_n10"/>
+         <rel label="dominates" target="s17_n12"/>
+         <rel label="dominates" uri="morpho.xml#s17_n17"/>
+         <rel label="dominates" target="s17_n19"/>
+      </span>
+      <span id="s17_n6" from="2332" to="2337">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s17_n8" from="2338" to="2342">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s17_n10" from="2343" to="2345">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s17_n12" from="2346" to="2355">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AVP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s17_n13"/>
+         <rel label="dominates" uri="morpho.xml#s17_n15"/>
+      </span>
+      <span id="s17_n13" from="2346" to="2350">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s17_n15" from="2351" to="2355">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s17_n17" from="2355" to="2356">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s17_n19" from="2357" to="2442">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s17_n20"/>
+         <rel label="dominates" uri="morpho.xml#s17_n22"/>
+         <rel label="dominates" uri="morpho.xml#s17_n24"/>
+         <rel label="dominates" target="s17_n26"/>
+         <rel label="dominates" uri="morpho.xml#s17_n31"/>
+         <rel label="dominates" uri="morpho.xml#s17_n33"/>
+         <rel label="dominates" target="s17_n35"/>
+      </span>
+      <span id="s17_n20" from="2357" to="2361">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KOUS</f>
+         </fs>
+      </span>
+      <span id="s17_n22" from="2362" to="2368">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s17_n24" from="2369" to="2382">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s17_n26" from="2383" to="2394">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s17_n27"/>
+         <rel label="dominates" uri="morpho.xml#s17_n29"/>
+      </span>
+      <span id="s17_n27" from="2383" to="2386">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s17_n29" from="2387" to="2394">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s17_n31" from="2396" to="2406">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s17_n33" from="2406" to="2407">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s17_n35" from="2408" to="2442">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s17_n36"/>
+         <rel label="dominates" uri="morpho.xml#s17_n38"/>
+         <rel label="dominates" uri="morpho.xml#s17_n40"/>
+         <rel label="dominates" target="s17_n42"/>
+         <rel label="dominates" uri="morpho.xml#s17_n49"/>
+         <rel label="dominates" uri="morpho.xml#s17_n51"/>
+         <rel label="dominates" uri="morpho.xml#s17_n53"/>
+      </span>
+      <span id="s17_n36" from="2408" to="2414">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">KOUS</f>
+         </fs>
+      </span>
+      <span id="s17_n38" from="2415" to="2417">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s17_n40" from="2418" to="2419">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s17_n42" from="2419" to="2425">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s17_n43"/>
+         <rel label="dominates" uri="morpho.xml#s17_n45"/>
+         <rel label="dominates" uri="morpho.xml#s17_n47"/>
+      </span>
+      <span id="s17_n43" from="2419" to="2422">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s17_n45" from="2422" to="2423">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s17_n47" from="2424" to="2425">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s17_n49" from="2425" to="2428">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s17_n51" from="2428" to="2429">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$(</f>
+         </fs>
+      </span>
+      <span id="s17_n53" from="2430" to="2442">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s17_n55" from="2442" to="2443">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s18_n1" from="2444" to="2476">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s18_n2"/>
+      </span>
+      <span id="s18_n2" from="2444" to="2476">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s18_n3"/>
+         <rel label="dominates" uri="morpho.xml#s18_n5"/>
+         <rel label="dominates" target="s18_n7"/>
+         <rel label="dominates" uri="morpho.xml#s18_n12"/>
+         <rel label="dominates" uri="morpho.xml#s18_n14"/>
+      </span>
+      <span id="s18_n3" from="2444" to="2447">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s18_n5" from="2448" to="2455">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s18_n7" from="2456" to="2469">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s18_n8"/>
+         <rel label="dominates" uri="morpho.xml#s18_n10"/>
+      </span>
+      <span id="s18_n8" from="2456" to="2459">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s18_n10" from="2461" to="2469">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s18_n12" from="2470" to="2475">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKNEG</f>
+         </fs>
+      </span>
+      <span id="s18_n14" from="2475" to="2476">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s19_n1" from="2477" to="2632">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s19_n2"/>
+      </span>
+      <span id="s19_n2" from="2477" to="2632">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NUR</f>
+         </fs>
+         <rel label="dominates" target="s19_n3"/>
+         <rel label="dominates" uri="morpho.xml#s19_n66"/>
+      </span>
+      <span id="s19_n3" from="2477" to="2631">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" target="s19_n4"/>
+         <rel label="dominates" uri="morpho.xml#s19_n9"/>
+         <rel label="dominates" uri="morpho.xml#s19_n11"/>
+         <rel label="dominates" target="s19_n13"/>
+      </span>
+      <span id="s19_n4" from="2477" to="2493">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s19_n5"/>
+         <rel label="dominates" uri="morpho.xml#s19_n7"/>
+      </span>
+      <span id="s19_n5" from="2477" to="2481">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPOSAT</f>
+         </fs>
+      </span>
+      <span id="s19_n7" from="2482" to="2493">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s19_n9" from="2494" to="2501">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s19_n11" from="2502" to="2506">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PRF</f>
+         </fs>
+      </span>
+      <span id="s19_n13" from="2507" to="2631">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s19_n14"/>
+         <rel label="dominates" uri="morpho.xml#s19_n16"/>
+         <rel label="dominates" uri="morpho.xml#s19_n18"/>
+         <rel label="dominates" target="s19_n20"/>
+      </span>
+      <span id="s19_n14" from="2507" to="2510">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s19_n16" from="2511" to="2514">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s19_n18" from="2515" to="2529">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s19_n20" from="2531" to="2631">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">CS</f>
+         </fs>
+         <rel label="dominates" target="s19_n21"/>
+         <rel label="dominates" uri="morpho.xml#s19_n26"/>
+         <rel label="dominates" target="s19_n28"/>
+         <rel label="dominates" uri="morpho.xml#s19_n47"/>
+         <rel label="dominates" target="s19_n49"/>
+      </span>
+      <span id="s19_n21" from="2531" to="2544">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">MPN</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s19_n22"/>
+         <rel label="dominates" uri="morpho.xml#s19_n24"/>
+      </span>
+      <span id="s19_n22" from="2531" to="2537">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s19_n24" from="2538" to="2544">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s19_n26" from="2544" to="2545">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s19_n28" from="2546" to="2590">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s19_n29"/>
+         <rel label="dominates" uri="morpho.xml#s19_n31"/>
+         <rel label="dominates" target="s19_n33"/>
+      </span>
+      <span id="s19_n29" from="2546" to="2550">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s19_n31" from="2551" to="2555">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s19_n33" from="2556" to="2590">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s19_n34"/>
+         <rel label="dominates" uri="morpho.xml#s19_n36"/>
+         <rel label="dominates" uri="morpho.xml#s19_n38"/>
+         <rel label="dominates" target="s19_n40"/>
+      </span>
+      <span id="s19_n34" from="2556" to="2560">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s19_n36" from="2561" to="2566">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKNEG</f>
+         </fs>
+      </span>
+      <span id="s19_n38" from="2567" to="2575">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s19_n40" from="2576" to="2590">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s19_n41"/>
+         <rel label="dominates" uri="morpho.xml#s19_n43"/>
+         <rel label="dominates" uri="morpho.xml#s19_n45"/>
+      </span>
+      <span id="s19_n41" from="2576" to="2578">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">APPR</f>
+         </fs>
+      </span>
+      <span id="s19_n43" from="2579" to="2582">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ART</f>
+         </fs>
+      </span>
+      <span id="s19_n45" from="2583" to="2590">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s19_n47" from="2590" to="2591">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s19_n49" from="2592" to="2631">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s19_n50"/>
+         <rel label="dominates" uri="morpho.xml#s19_n52"/>
+         <rel label="dominates" uri="morpho.xml#s19_n54"/>
+         <rel label="dominates" target="s19_n56"/>
+      </span>
+      <span id="s19_n50" from="2592" to="2597">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s19_n52" from="2599" to="2604">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s19_n54" from="2605" to="2608">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s19_n56" from="2609" to="2631">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" target="s19_n57"/>
+         <rel label="dominates" uri="morpho.xml#s19_n62"/>
+         <rel label="dominates" uri="morpho.xml#s19_n64"/>
+      </span>
+      <span id="s19_n57" from="2609" to="2618">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">AVP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s19_n58"/>
+         <rel label="dominates" uri="morpho.xml#s19_n60"/>
+      </span>
+      <span id="s19_n58" from="2609" to="2613">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s19_n60" from="2614" to="2618">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s19_n62" from="2619" to="2624">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s19_n64" from="2625" to="2631">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s19_n66" from="2631" to="2632">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s20_n1" from="2633" to="2726">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s20_n2"/>
+      </span>
+      <span id="s20_n2" from="2633" to="2726">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">S</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s20_n3"/>
+         <rel label="dominates" uri="morpho.xml#s20_n5"/>
+         <rel label="dominates" uri="morpho.xml#s20_n7"/>
+         <rel label="dominates" uri="morpho.xml#s20_n9"/>
+         <rel label="dominates" uri="morpho.xml#s20_n11"/>
+         <rel label="dominates" target="s20_n13"/>
+         <rel label="dominates" uri="morpho.xml#s20_n16"/>
+         <rel label="dominates" target="s20_n18"/>
+         <rel label="dominates" uri="morpho.xml#s20_n26"/>
+         <rel label="dominates" uri="morpho.xml#s20_n28"/>
+         <rel label="dominates" uri="morpho.xml#s20_n30"/>
+         <rel label="dominates" target="s20_n32"/>
+         <rel label="dominates" uri="morpho.xml#s20_n39"/>
+      </span>
+      <span id="s20_n3" from="2633" to="2647">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s20_n5" from="2648" to="2652">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VAFIN</f>
+         </fs>
+      </span>
+      <span id="s20_n7" from="2653" to="2655">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s20_n9" from="2656" to="2659">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PDS</f>
+         </fs>
+      </span>
+      <span id="s20_n11" from="2660" to="2665">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PTKNEG</f>
+         </fs>
+      </span>
+      <span id="s20_n13" from="2667" to="2674">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s20_n14"/>
+      </span>
+      <span id="s20_n14" from="2667" to="2674">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVPP</f>
+         </fs>
+      </span>
+      <span id="s20_n16" from="2674" to="2675">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s20_n18" from="2676" to="2690">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" target="s20_n19"/>
+         <rel label="dominates" uri="morpho.xml#s20_n24"/>
+      </span>
+      <span id="s20_n19" from="2676" to="2685">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s20_n20"/>
+         <rel label="dominates" uri="morpho.xml#s20_n22"/>
+      </span>
+      <span id="s20_n20" from="2676" to="2680">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPOSAT</f>
+         </fs>
+      </span>
+      <span id="s20_n22" from="2681" to="2685">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NN</f>
+         </fs>
+      </span>
+      <span id="s20_n24" from="2686" to="2690">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVFIN</f>
+         </fs>
+      </span>
+      <span id="s20_n26" from="2691" to="2701">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s20_n28" from="2702" to="2706">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADJD</f>
+         </fs>
+      </span>
+      <span id="s20_n30" from="2706" to="2707">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$,</f>
+         </fs>
+      </span>
+      <span id="s20_n32" from="2708" to="2725">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VP</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s20_n33"/>
+         <rel label="dominates" uri="morpho.xml#s20_n35"/>
+         <rel label="dominates" uri="morpho.xml#s20_n37"/>
+      </span>
+      <span id="s20_n33" from="2708" to="2711">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s20_n35" from="2712" to="2714">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ADV</f>
+         </fs>
+      </span>
+      <span id="s20_n37" from="2715" to="2725">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">VVIZU</f>
+         </fs>
+      </span>
+      <span id="s20_n39" from="2725" to="2726">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">$.</f>
+         </fs>
+      </span>
+      <span id="s21_n1" from="2727" to="2748">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">ROOT</f>
+         </fs>
+         <rel label="dominates" target="s21_n2"/>
+      </span>
+      <span id="s21_n2" from="2727" to="2748">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NUR</f>
+         </fs>
+         <rel label="dominates" target="s21_n3"/>
+         <rel label="dominates" uri="morpho.xml#s21_n12"/>
+         <rel label="dominates" uri="morpho.xml#s21_n14"/>
+      </span>
+      <span id="s21_n3" from="2727" to="2746">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">MTA</f>
+         </fs>
+         <rel label="dominates" uri="morpho.xml#s21_n4"/>
+         <rel label="dominates" uri="morpho.xml#s21_n6"/>
+         <rel label="dominates" uri="morpho.xml#s21_n8"/>
+         <rel label="dominates" uri="morpho.xml#s21_n10"/>
+      </span>
+      <span id="s21_n4" from="2727" to="2729">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">PPER</f>
+         </fs>
+      </span>
+      <span id="s21_n6" from="2731" to="2732">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+      <span id="s21_n8" from="2732" to="2733">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">XY</f>
+         </fs>
+      </span>
+      <span id="s21_n10" from="2733" to="2746">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">NE</f>
+         </fs>
+      </span>
+      <span id="s21_n12" from="2746" to="2747">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">XY</f>
+         </fs>
+      </span>
+      <span id="s21_n14" from="2747" to="2748">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="node">
+            <f name="const">TRUNC</f>
+         </fs>
+      </span>
+   </spanList>
+</layer>

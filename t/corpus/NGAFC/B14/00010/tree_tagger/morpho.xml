@@ -1,0 +1,5999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="NGAFC_B14.00010">
+ <spanList>
+  <span id="t_0" from="0" to="6">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Thomas</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_1" from="7" to="13">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kaiser</f>
+      <f name="certainty">0.983013</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_2" from="15" to="31">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.996513</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_3" from="33" to="38">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.471089</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.305880</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.070058</f>
+      <f name="ctag">VVPP</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.064006</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.053266</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_4" from="38" to="39">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">:</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_5" from="41" to="57">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.999941</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_6" from="59" to="61">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">so</f>
+      <f name="certainty">0.999981</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_7" from="62" to="66">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sehr</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_8" from="67" to="69">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">du</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_9" from="70" to="73">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">ich</f>
+      <f name="certainty">0.908646</f>
+      <f name="ctag">PRF</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">ich</f>
+      <f name="certainty">0.091354</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_10" from="74" to="79">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sonst</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_11" from="80" to="83">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">von</f>
+      <f name="certainty">0.999939</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_12" from="84" to="87">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999980</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_13" from="88" to="93">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Seele</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_14" from="94" to="103">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">schreiben</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_15" from="104" to="105">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">(</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_16" from="105" to="109">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">auch</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_17" from="110" to="113">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">mit</f>
+      <f name="certainty">0.999778</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_18" from="114" to="117">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999952</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_19" from="118" to="122">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Rest</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_20" from="123" to="129">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dein</f>
+      <f name="certainty">0.999999</f>
+      <f name="ctag">PPOSAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_21" from="130" to="136">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Text</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_22" from="137" to="141">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">hier</f>
+      <f name="certainty">0.998036</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_23" from="142" to="144">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">in</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_24" from="145" to="151">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dies</f>
+      <f name="certainty">0.999985</f>
+      <f name="ctag">PDAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_25" from="152" to="159">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Posting</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_26" from="159" to="160">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_27" from="161" to="164">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.995227</f>
+      <f name="ctag">PRELS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_28" from="165" to="168">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">ich</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_29" from="169" to="170">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">-</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_30" from="171" to="181">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">zustimmend</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_31" from="182" to="183">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">-</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_32" from="184" to="194">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">wegkürzen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVPP</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_33" from="195" to="199">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">haben</f>
+      <f name="certainty">0.999998</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_34" from="199" to="200">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">)</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_35" from="200" to="201">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_36" from="202" to="206">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">hier</f>
+      <f name="certainty">0.999958</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_37" from="207" to="213">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">liegen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_38" from="214" to="216">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">du</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_39" from="217" to="223">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">falsch</f>
+      <f name="certainty">0.840861</f>
+      <f name="ctag">PTKVZ</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">falsch</f>
+      <f name="certainty">0.159139</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_40" from="223" to="224">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">*</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_41" from="224" to="225">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_42" from="226" to="237">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">tatsächlich</f>
+      <f name="certainty">0.873616</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">tatsächlich</f>
+      <f name="certainty">0.126384</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_43" from="238" to="243">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">denken</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_44" from="244" to="247">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">ich</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_45" from="247" to="248">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_46" from="249" to="253">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dass</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KOUS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_47" from="254" to="258">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">gut</f>
+      <f name="certainty">0.524696</f>
+      <f name="ctag">ADJA</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">Gute</f>
+      <f name="certainty">0.475304</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_48" from="259" to="267">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Software</f>
+      <f name="certainty">0.510259</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">Software</f>
+      <f name="certainty">0.489741</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_49" from="267" to="268">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.999894</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_50" from="269" to="272">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nur</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_51" from="273" to="280">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dadurch</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PAV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_52" from="281" to="289">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">bestehen</f>
+      <f name="certainty">0.997425</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_53" from="290" to="294">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">können</f>
+      <f name="certainty">0.999974</f>
+      <f name="ctag">VMFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_54" from="294" to="295">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_55" from="296" to="300">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dass</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KOUS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_56" from="301" to="304">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sie</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_57" from="305" to="306">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_58" from="306" to="311">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">innen</f>
+      <f name="certainty">0.620262</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">innen</f>
+      <f name="certainty">0.379738</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_59" from="311" to="312">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_60" from="313" to="316">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.945233</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_61" from="317" to="321">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kiss</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_62" from="322" to="331">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.955173</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_63" from="332" to="337">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">folgen</f>
+      <f name="certainty">0.999333</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_64" from="337" to="338">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_65" from="339" to="346">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">während</f>
+      <f name="certainty">0.999311</f>
+      <f name="ctag">KOUS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_66" from="347" to="350">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sie</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_67" from="351" to="352">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_68" from="352" to="356">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nach</f>
+      <f name="certainty">0.913813</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_69" from="356" to="357">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_70" from="358" to="359">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_71" from="359" to="365">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">außenßen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_72" from="365" to="366">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_73" from="367" to="370">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">hin</f>
+      <f name="certainty">0.997454</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_74" from="371" to="375">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">alle</f>
+      <f name="certainty">0.998594</f>
+      <f name="ctag">PIAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_75" from="376" to="387">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Komplexität</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_76" from="388" to="391">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">für</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_77" from="392" to="395">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999939</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_78" from="396" to="400">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">User</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_79" from="401" to="409">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">verbergen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_80" from="409" to="410">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_81" from="411" to="416">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">indem</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KOUS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_82" from="417" to="420">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sie</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_83" from="421" to="425">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">ihr</f>
+      <f name="certainty">0.999992</f>
+      <f name="ctag">PPOSAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_84" from="426" to="427">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_85" from="427" to="440">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Schnittstelle</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_86" from="440" to="441">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_87" from="442" to="443">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">(</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_88" from="443" to="447">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">denn</f>
+      <f name="certainty">0.815275</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">denn</f>
+      <f name="certainty">0.184725</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_89" from="448" to="452">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">auch</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_90" from="453" to="455">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.881582</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_91" from="456" to="459">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sein</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_92" from="460" to="469">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Interface</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_93" from="469" to="470">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">)</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_94" from="471" to="473">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">in</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_95" from="474" to="477">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999980</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_96" from="478" to="485">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Sprache</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_97" from="486" to="489">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999973</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_98" from="490" to="496">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Nutzer</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_99" from="497" to="500">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">und</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_100" from="501" to="506">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.785988</f>
+      <f name="ctag">PRELAT</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.211313</f>
+      <f name="ctag">PDAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_101" from="507" to="517">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Denkmodell</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_102" from="518" to="528">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">modellieren</f>
+      <f name="certainty">0.826941</f>
+      <f name="ctag">VVPP</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">modellieren</f>
+      <f name="certainty">0.136614</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_103" from="528" to="529">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_104" from="530" to="533">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.998747</f>
+      <f name="ctag">PDS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_105" from="534" to="538">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">können</f>
+      <f name="certainty">0.999966</f>
+      <f name="ctag">VMFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_106" from="539" to="543">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dann</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_107" from="544" to="551">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">einfach</f>
+      <f name="certainty">0.997581</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_108" from="552" to="556">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sein</f>
+      <f name="certainty">0.999805</f>
+      <f name="ctag">VAINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_109" from="557" to="559">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">zu</f>
+      <f name="certainty">0.999998</f>
+      <f name="ctag">PTKZU</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_110" from="560" to="574">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">implementieren</f>
+      <f name="certainty">0.999999</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_111" from="574" to="575">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_112" from="576" to="578">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">es</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_113" from="579" to="583">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">können</f>
+      <f name="certainty">0.999966</f>
+      <f name="ctag">VMFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_114" from="584" to="588">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">auch</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_115" from="589" to="600">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">hochkomplex</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_116" from="601" to="605">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sein</f>
+      <f name="certainty">0.991856</f>
+      <f name="ctag">VAINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_117" from="606" to="607">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">-</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_118" from="608" to="611">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.988831</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_119" from="612" to="621">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Abbildung</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_120" from="622" to="625">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">in</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPRART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_121" from="626" to="632">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">System</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_122" from="633" to="638">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">innen</f>
+      <f name="certainty">0.649978</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">innen</f>
+      <f name="certainty">0.350022</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_123" from="638" to="639">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_124" from="640" to="644">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">denn</f>
+      <f name="certainty">0.834577</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">denn</f>
+      <f name="certainty">0.165423</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_125" from="645" to="647">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">je</f>
+      <f name="certainty">0.882479</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_126" from="648" to="655">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nachdem</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KOUS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_127" from="655" to="656">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_128" from="657" to="659">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">ob</f>
+      <f name="certainty">0.998369</f>
+      <f name="ctag">KOUS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_129" from="660" to="663">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.976817</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_130" from="664" to="670">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Modell</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_131" from="670" to="671">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_132" from="672" to="675">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.869329</f>
+      <f name="ctag">PRELS</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.128371</f>
+      <f name="ctag">PDS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_133" from="676" to="679">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999119</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_134" from="680" to="686">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Nutzer</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_135" from="687" to="689">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">in</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPRART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_136" from="690" to="694">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kopf</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_137" from="695" to="700">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">haben</f>
+      <f name="certainty">0.603387</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">haben</f>
+      <f name="certainty">0.396613</f>
+      <f name="ctag">VAINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_138" from="700" to="701">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_139" from="702" to="705">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">mit</f>
+      <f name="certainty">0.999971</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_140" from="706" to="709">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999819</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_141" from="710" to="721">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">technisch</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJA</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_142" from="722" to="728">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Modell</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_143" from="729" to="732">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">gut</f>
+      <f name="certainty">0.999787</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_144" from="733" to="746">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">übereinstimmen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_145" from="746" to="747">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_146" from="748" to="752">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">oder</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_147" from="753" to="755">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">ob</f>
+      <f name="certainty">0.965458</f>
+      <f name="ctag">KOUS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_148" from="756" to="759">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.990782</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_149" from="760" to="766">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">beide</f>
+      <f name="certainty">0.914176</f>
+      <f name="ctag">PIAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_150" from="767" to="778">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">strukturell</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_151" from="779" to="785">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">völlig</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_152" from="786" to="795">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">different</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_153" from="796" to="800">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sein</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_154" from="800" to="801">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_155" from="802" to="806">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">werden</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_156" from="807" to="810">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999361</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_157" from="811" to="820">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Abbildung</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_158" from="821" to="827">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">selbst</f>
+      <f name="certainty">0.999877</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_159" from="828" to="834">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">billig</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_160" from="835" to="839">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">oder</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_161" from="840" to="847">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">komplex</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_162" from="847" to="848">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_163" from="849" to="852">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">und</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_164" from="853" to="855">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">so</f>
+      <f name="certainty">0.999998</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_165" from="856" to="863">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">designen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_166" from="864" to="867">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">ich</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_167" from="868" to="873">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">mein</f>
+      <f name="certainty">0.972928</f>
+      <f name="ctag">PPOSAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_168" from="874" to="880">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">eigen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJA</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_169" from="881" to="889">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Software</f>
+      <f name="certainty">0.905996</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">Software</f>
+      <f name="certainty">0.094004</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_170" from="890" to="894">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dann</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_171" from="895" to="899">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">auch</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_172" from="899" to="900">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">:</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_173" from="901" to="906">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">innen</f>
+      <f name="certainty">0.947315</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_174" from="907" to="911">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kiss</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_175" from="911" to="912">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_176" from="913" to="917">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dann</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_177" from="918" to="922">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">eine</f>
+      <f name="certainty">0.998717</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_178" from="923" to="932">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Abbildung</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_179" from="933" to="935">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">in</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_180" from="936" to="939">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999936</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_181" from="940" to="944">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Welt</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_182" from="945" to="946">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">(</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_183" from="946" to="948">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">in</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPRART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_184" from="949" to="954">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Sinn</f>
+      <f name="certainty">0.999999</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_185" from="955" to="958">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999967</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_186" from="959" to="964">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.938624</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_187" from="964" to="965">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">)</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_188" from="966" to="969">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.996070</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_189" from="970" to="978">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Anwender</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_190" from="978" to="979">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_191" from="980" to="983">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">und</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_192" from="984" to="986">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">da</f>
+      <f name="certainty">0.905479</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">da</f>
+      <f name="certainty">0.094521</f>
+      <f name="ctag">KOUS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_193" from="987" to="993">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">hinein</f>
+      <f name="certainty">0.997559</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_194" from="994" to="1008">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.999852</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_195" from="1009" to="1012">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.994729</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_196" from="1013" to="1019">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Modell</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_197" from="1019" to="1020">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_198" from="1021" to="1023">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">in</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_199" from="1024" to="1027">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.921054</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_200" from="1028" to="1031">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.983801</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_201" from="1032" to="1034">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.802696</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_202" from="1035" to="1040">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">liegen</f>
+      <f name="certainty">0.999999</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_203" from="1041" to="1042">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">-</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_204" from="1043" to="1046">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">eine</f>
+      <f name="certainty">0.999486</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_205" from="1047" to="1053">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Modell</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_206" from="1053" to="1054">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_207" from="1055" to="1058">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.831329</f>
+      <f name="ctag">PRELS</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.158919</f>
+      <f name="ctag">PDS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_208" from="1059" to="1062">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">wie</f>
+      <f name="certainty">0.998062</f>
+      <f name="ctag">KOKOM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_209" from="1063" to="1069">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">gesagt</f>
+      <f name="certainty">0.725313</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">sagen</f>
+      <f name="certainty">0.274687</f>
+      <f name="ctag">VVPP</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_210" from="1070" to="1073">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.998956</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_211" from="1074" to="1081">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Sprache</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_212" from="1082" to="1085">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999973</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_213" from="1086" to="1092">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Nutzer</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_214" from="1093" to="1102">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">möglichst</f>
+      <f name="certainty">0.939846</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_215" from="1103" to="1107">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nahe</f>
+      <f name="certainty">0.984603</f>
+      <f name="ctag">PTKVZ</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_216" from="1108" to="1113">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">kommen</f>
+      <f name="certainty">0.999989</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_217" from="1113" to="1114">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_218" from="1115" to="1126">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">interessant</f>
+      <f name="certainty">0.986926</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_219" from="1127" to="1135">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">übrigens</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_220" from="1136" to="1141">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dabei</f>
+      <f name="certainty">0.916258</f>
+      <f name="ctag">PAV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_221" from="1142" to="1143">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">(</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_222" from="1143" to="1146">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">für</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_223" from="1147" to="1157">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">diejenigen</f>
+      <f name="certainty">0.808330</f>
+      <f name="ctag">PDS</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">diejenigen</f>
+      <f name="certainty">0.191670</f>
+      <f name="ctag">PDAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_224" from="1157" to="1158">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_225" from="1159" to="1162">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.993273</f>
+      <f name="ctag">PRELS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_226" from="1163" to="1167">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sich</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PRF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_227" from="1168" to="1171">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">für</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_228" from="1172" to="1195">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_229" from="1195" to="1196">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_230" from="1197" to="1206">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Sprachen-</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">TRUNC</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_231" from="1207" to="1210">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">und</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_232" from="1211" to="1224">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Modelltheorie</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_233" from="1225" to="1238">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">interessieren</f>
+      <f name="certainty">0.547415</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">interessieren</f>
+      <f name="certainty">0.452585</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_234" from="1238" to="1239">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">)</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_235" from="1239" to="1240">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">:</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_236" from="1241" to="1243">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">es</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_237" from="1244" to="1250">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">genügen</f>
+      <f name="certainty">0.860081</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">genügt</f>
+      <f name="certainty">0.135126</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_238" from="1251" to="1256">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nicht</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PTKNEG</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_239" from="1256" to="1257">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_240" from="1258" to="1261">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">eine</f>
+      <f name="certainty">0.999433</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_241" from="1262" to="1271">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">passend</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJA</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_242" from="1272" to="1278">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Modell</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_243" from="1279" to="1281">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">zu</f>
+      <f name="certainty">0.999605</f>
+      <f name="ctag">PTKZU</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_244" from="1282" to="1288">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">finden</f>
+      <f name="certainty">0.999957</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_245" from="1288" to="1289">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_246" from="1290" to="1297">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sondern</f>
+      <f name="certainty">0.999138</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_247" from="1298" to="1301">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">man</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PIS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_248" from="1302" to="1306">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">müssen</f>
+      <f name="certainty">0.510838</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">müssen</f>
+      <f name="certainty">0.489162</f>
+      <f name="ctag">VMFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_249" from="1307" to="1311">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sich</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PRF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_250" from="1312" to="1315">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">gar</f>
+      <f name="certainty">0.998247</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_251" from="1316" to="1319">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">auf</f>
+      <f name="certainty">0.999367</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_252" from="1320" to="1323">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999932</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_253" from="1324" to="1335">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Vorstellung</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_254" from="1335" to="1336">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_255" from="1337" to="1343">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sprechen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVIMP</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_256" from="1343" to="1344">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">:</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_257" from="1345" to="1348">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.973752</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_258" from="1349" to="1350">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_259" from="1350" to="1354">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Welt</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_260" from="1354" to="1355">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_261" from="1356" to="1359">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.996070</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_262" from="1360" to="1368">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Benutzer</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_263" from="1369" to="1378">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">einlassen</f>
+      <f name="certainty">0.852785</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">einlassen</f>
+      <f name="certainty">0.147215</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_264" from="1378" to="1379">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_265" from="1380" to="1383">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">wer</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PWS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_266" from="1384" to="1387">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.607251</f>
+      <f name="ctag">PDS</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.349037</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_267" from="1388" to="1398">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">verwirrend</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_268" from="1399" to="1405">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">finden</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_269" from="1405" to="1406">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_270" from="1407" to="1411">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dass</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KOUS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_271" from="1412" to="1415">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">ich</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_272" from="1416" to="1420">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">über</f>
+      <f name="certainty">0.999590</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_273" from="1421" to="1425">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kiss</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_274" from="1426" to="1433">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sprechen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_275" from="1433" to="1434">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_276" from="1435" to="1438">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">und</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_277" from="1439" to="1443">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dann</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_278" from="1444" to="1448">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">doch</f>
+      <f name="certainty">0.966709</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_279" from="1449" to="1453">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">über</f>
+      <f name="certainty">0.999831</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_280" from="1454" to="1465">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Komplexität</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_281" from="1465" to="1466">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">:</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_282" from="1467" to="1470">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999547</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_283" from="1471" to="1482">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Widerspruch</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_284" from="1483" to="1486">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sein</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_285" from="1487" to="1490">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nur</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_286" from="1491" to="1500">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">scheinbar</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_287" from="1500" to="1501">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_288" from="1502" to="1506">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">denn</f>
+      <f name="certainty">0.779768</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">denn</f>
+      <f name="certainty">0.220232</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_289" from="1507" to="1510">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">aus</f>
+      <f name="certainty">0.999040</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_290" from="1511" to="1514">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999978</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_291" from="1515" to="1526">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kombination</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_292" from="1527" to="1530">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999908</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_293" from="1531" to="1540">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">einfach</f>
+      <f name="certainty">0.969032</f>
+      <f name="ctag">ADJA</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_294" from="1541" to="1546">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Ding</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_295" from="1546" to="1547">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.999910</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_296" from="1548" to="1556">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">entstehen</f>
+      <f name="certainty">0.999999</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_297" from="1557" to="1563">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">gerade</f>
+      <f name="certainty">0.998133</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_298" from="1564" to="1567">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999821</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_299" from="1568" to="1579">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Komplexität</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_300" from="1579" to="1580">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_301" from="1581" to="1588">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">deshalb</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PAV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_302" from="1589" to="1592">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sein</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_303" from="1593" to="1595">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">es</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_304" from="1596" to="1604">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">trotzdem</f>
+      <f name="certainty">0.999186</f>
+      <f name="ctag">PAV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_305" from="1605" to="1611">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">hochöchst</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_306" from="1612" to="1620">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sinnvoll</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_307" from="1620" to="1621">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_308" from="1622" to="1630">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Software</f>
+      <f name="certainty">0.627746</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">Software</f>
+      <f name="certainty">0.372254</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_309" from="1631" to="1635">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">über</f>
+      <f name="certainty">0.999675</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_310" from="1636" to="1647">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kombination</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_311" from="1648" to="1651">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">von</f>
+      <f name="certainty">0.999450</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_312" from="1652" to="1661">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Einfache</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_313" from="1662" to="1664">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">zu</f>
+      <f name="certainty">0.999614</f>
+      <f name="ctag">PTKZU</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_314" from="1665" to="1679">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">implementieren</f>
+      <f name="certainty">0.999967</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_315" from="1679" to="1680">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_316" from="1681" to="1685">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">also</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_317" from="1686" to="1689">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999865</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_318" from="1690" to="1702">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.999996</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_319" from="1703" to="1705">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">zu</f>
+      <f name="certainty">0.999381</f>
+      <f name="ctag">PTKZU</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_320" from="1706" to="1712">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">folgen</f>
+      <f name="certainty">0.999730</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_321" from="1713" to="1714">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">-</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_322" from="1715" to="1719">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">oder</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_323" from="1720" to="1728">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">vielmehr</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_324" from="1728" to="1729">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_325" from="1730" to="1736">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">gerade</f>
+      <f name="certainty">0.994096</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_326" from="1737" to="1745">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">deswegen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PAV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_327" from="1746" to="1749">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sein</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_328" from="1750" to="1752">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">es</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_329" from="1753" to="1761">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sinnvoll</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_330" from="1761" to="1762">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_331" from="1763" to="1766">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">und</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_332" from="1767" to="1769">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">da</f>
+      <f name="certainty">0.961421</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_333" from="1770" to="1775">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">kommen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_334" from="1776" to="1779">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999396</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_335" from="1780" to="1790">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Genialität</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_336" from="1791" to="1794">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_337" from="1795" to="1808">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_338" from="1809" to="1813">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">auch</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_339" from="1814" to="1817">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">her</f>
+      <f name="certainty">0.971714</f>
+      <f name="ctag">PTKVZ</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_340" from="1817" to="1818">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_341" from="1819" to="1823">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">denn</f>
+      <f name="certainty">0.989531</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_342" from="1824" to="1826">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">es</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_343" from="1827" to="1830">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sein</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_344" from="1831" to="1840">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">durchwegs</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_345" from="1841" to="1845">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kiss</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_346" from="1845" to="1846">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_347" from="1847" to="1851">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kiss</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_348" from="1852" to="1855">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">haben</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_349" from="1856" to="1859">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nur</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_350" from="1860" to="1865">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">immer</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_351" from="1866" to="1870">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dort</f>
+      <f name="certainty">0.999398</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_352" from="1871" to="1878">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Grenze</f>
+      <f name="certainty">0.980454</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_353" from="1878" to="1879">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_354" from="1880" to="1882">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">wo</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PWAV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_355" from="1883" to="1886">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.939640</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_356" from="1887" to="1895">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">einfach</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJA</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_357" from="1896" to="1902">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Modell</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_358" from="1903" to="1908">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nicht</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PTKNEG</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_359" from="1909" to="1913">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">mehr</f>
+      <f name="certainty">0.982312</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_360" from="1914" to="1922">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">treffend</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_361" from="1923" to="1925">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">in</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_362" from="1926" to="1929">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999936</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_363" from="1930" to="1934">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Welt</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_364" from="1935" to="1936">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">(</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_365" from="1936" to="1947">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Vorstellung</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_366" from="1947" to="1948">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">)</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_367" from="1949" to="1961">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.542862</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.210448</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.090334</f>
+      <f name="ctag">ADJA</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.084100</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_368" from="1961" to="1962">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_369" from="1963" to="1965">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">wo</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PWAV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_370" from="1966" to="1970">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">also</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_371" from="1971" to="1974">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999827</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_372" from="1975" to="1986">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kombination</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_373" from="1987" to="1994">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">komplex</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_374" from="1995" to="1999">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sein</f>
+      <f name="certainty">0.999979</f>
+      <f name="ctag">VAINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_375" from="2000" to="2004">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">müssen</f>
+      <f name="certainty">0.998734</f>
+      <f name="ctag">VMFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_376" from="2004" to="2005">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_377" from="2006" to="2008">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">um</f>
+      <f name="certainty">0.643006</f>
+      <f name="ctag">KOUI</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">um</f>
+      <f name="certainty">0.356862</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_378" from="2009" to="2014">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">eine</f>
+      <f name="certainty">0.980634</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_379" from="2015" to="2022">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Begriff</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_380" from="2023" to="2025">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">zu</f>
+      <f name="certainty">0.999626</f>
+      <f name="ctag">PTKZU</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_381" from="2026" to="2033">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">treffen</f>
+      <f name="certainty">0.999978</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_382" from="2033" to="2034">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_383" from="2035" to="2040">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">jede</f>
+      <f name="certainty">0.905246</f>
+      <f name="ctag">PIS</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">jede</f>
+      <f name="certainty">0.094754</f>
+      <f name="ctag">PIAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_384" from="2040" to="2041">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_385" from="2042" to="2045">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.926196</f>
+      <f name="ctag">PRELS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_386" from="2046" to="2049">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">bei</f>
+      <f name="certainty">0.999980</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_387" from="2050" to="2054">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Unix</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_388" from="2055" to="2060">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Ding</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_389" from="2061" to="2068">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">brauchen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_390" from="2068" to="2069">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_391" from="2070" to="2073">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.993273</f>
+      <f name="ctag">PRELS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_392" from="2074" to="2078">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sich</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PRF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_393" from="2079" to="2082">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nur</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_394" from="2083" to="2091">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">schlecht</f>
+      <f name="certainty">0.999743</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_395" from="2092" to="2095">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">mit</f>
+      <f name="certainty">0.999317</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_396" from="2096" to="2099">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999950</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_397" from="2100" to="2113">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_398" from="2114" to="2125">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">vereinbaren</f>
+      <f name="certainty">0.992371</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_399" from="2126" to="2132">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">lassen</f>
+      <f name="certainty">0.848735</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">lassen</f>
+      <f name="certainty">0.150703</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_400" from="2132" to="2133">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_401" from="2134" to="2139">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">weißen</f>
+      <f name="certainty">0.975772</f>
+      <f name="ctag">VVIMP</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_402" from="2140" to="2145">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">wovon</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PWAV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_403" from="2146" to="2149">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">ich</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_404" from="2150" to="2154">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">hier</f>
+      <f name="certainty">0.997592</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_405" from="2155" to="2162">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sprechen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_406" from="2162" to="2163">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_407" from="2164" to="2173">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Sprachen-</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">TRUNC</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_408" from="2174" to="2177">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">und</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_409" from="2178" to="2191">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Modelltheorie</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_410" from="2192" to="2196">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">können</f>
+      <f name="certainty">0.999985</f>
+      <f name="ctag">VMFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_411" from="2197" to="2202">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">eine</f>
+      <f name="certainty">0.994536</f>
+      <f name="ctag">PIS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_412" from="2203" to="2209">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">helfen</f>
+      <f name="certainty">0.996502</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_413" from="2210" to="2212">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">zu</f>
+      <f name="certainty">0.999971</f>
+      <f name="ctag">PTKZU</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_414" from="2213" to="2222">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">verstehen</f>
+      <f name="certainty">0.999997</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_415" from="2222" to="2223">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_416" from="2224" to="2226">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">wo</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PWAV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_417" from="2227" to="2230">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.985840</f>
+      <f name="ctag">PDS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_418" from="2231" to="2235">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sein</f>
+      <f name="certainty">0.999648</f>
+      <f name="ctag">VAINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_419" from="2236" to="2240">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">müssen</f>
+      <f name="certainty">0.999803</f>
+      <f name="ctag">VMFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_420" from="2241" to="2242">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">(</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_421" from="2242" to="2245">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">und</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_422" from="2246" to="2249">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">was</f>
+      <f name="certainty">0.768131</f>
+      <f name="ctag">PRELS</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">was</f>
+      <f name="certainty">0.161089</f>
+      <f name="ctag">PWS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_423" from="2250" to="2253">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">man</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PIS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_424" from="2254" to="2258">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dann</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_425" from="2259" to="2262">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">tun</f>
+      <f name="certainty">0.999999</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_426" from="2263" to="2267">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">können</f>
+      <f name="certainty">0.999997</f>
+      <f name="ctag">VMFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_427" from="2267" to="2268">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">)</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_428" from="2268" to="2269">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_429" from="2270" to="2276">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.727782</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.199885</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_430" from="2277" to="2278">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">+</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_431" from="2279" to="2283">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.995923</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_432" from="2284" to="2286">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">in</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_433" from="2287" to="2295">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">passend</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJA</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_434" from="2296" to="2302">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Gruppe</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_435" from="2303" to="2310">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">setzen</f>
+      <f name="certainty">0.996411</f>
+      <f name="ctag">VVPP</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_436" from="2310" to="2311">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_437" from="2312" to="2317">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">viele</f>
+      <f name="certainty">0.998259</f>
+      <f name="ctag">PIAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_438" from="2318" to="2324">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Gruß</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_439" from="2324" to="2325">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_440" from="2326" to="2328">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">VB</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_441" from="2328" to="2329">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_442" from="2330" to="2331">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">*</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_443" from="2332" to="2337">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Recht</f>
+      <f name="certainty">0.894554</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">recht</f>
+      <f name="certainty">0.090742</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_444" from="2338" to="2342">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">haben</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_445" from="2343" to="2345">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">du</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_446" from="2346" to="2350">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">auch</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_447" from="2351" to="2355">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">hier</f>
+      <f name="certainty">0.959848</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_448" from="2355" to="2356">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_449" from="2357" to="2361">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">weil</f>
+      <f name="certainty">0.999867</f>
+      <f name="ctag">KOUS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_450" from="2362" to="2368">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_451" from="2369" to="2382">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">üblicherweise</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_452" from="2383" to="2386">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.995124</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_453" from="2387" to="2394">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Problem</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_454" from="2396" to="2406">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">ignorieren</f>
+      <f name="certainty">0.747983</f>
+      <f name="ctag">VVINF</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">ignorieren</f>
+      <f name="certainty">0.252017</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_455" from="2406" to="2407">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_456" from="2408" to="2414">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sobald</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">KOUS</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_457" from="2415" to="2417">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">es</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_458" from="2418" to="2419">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_459" from="2419" to="2422">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">für</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_460" from="2422" to="2423">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_461" from="2424" to="2425">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_462" from="2425" to="2428">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sie</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_463" from="2428" to="2429">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">/</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$(</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_464" from="2430" to="2442">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">funktionieren</f>
+      <f name="certainty">0.722409</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">funktionieren</f>
+      <f name="certainty">0.209804</f>
+      <f name="ctag">VVPP</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_465" from="2442" to="2443">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_466" from="2444" to="2447">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Sie</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_467" from="2448" to="2455">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">kümmern</f>
+      <f name="certainty">0.999739</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_468" from="2456" to="2459">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999394</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_469" from="2461" to="2469">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Anwender</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_470" from="2470" to="2475">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nicht</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PTKNEG</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_471" from="2475" to="2476">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_472" from="2477" to="2481">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">mein</f>
+      <f name="certainty">0.999608</f>
+      <f name="ctag">PPOSAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_473" from="2482" to="2493">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Widerspruch</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_474" from="2494" to="2501">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">beziehen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_475" from="2502" to="2506">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sich</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PRF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_476" from="2507" to="2510">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">auf</f>
+      <f name="certainty">0.999958</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_477" from="2511" to="2514">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999936</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_478" from="2515" to="2529">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Interpretation</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_479" from="2531" to="2537">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dein</f>
+      <f name="certainty">0.999999</f>
+      <f name="ctag">PPOSAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_480" from="2538" to="2544">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Text</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_481" from="2544" to="2545">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_482" from="2546" to="2550">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kiss</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NE</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_483" from="2551" to="2555">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sein</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_484" from="2556" to="2560">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">etwa</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_485" from="2561" to="2566">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nicht</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PTKNEG</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_486" from="2567" to="2575">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sinnvoll</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADJD</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_487" from="2576" to="2578">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">in</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_488" from="2579" to="2582">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.999980</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_489" from="2583" to="2590">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Technik</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_490" from="2590" to="2591">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_491" from="2592" to="2597">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">sonst</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_492" from="2599" to="2604">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Teil</f>
+      <f name="certainty">0.898181</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">teilen</f>
+      <f name="certainty">0.101819</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_493" from="2605" to="2608">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">ich</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_494" from="2609" to="2613">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">auch</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_495" from="2614" to="2618">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">hier</f>
+      <f name="certainty">0.999893</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_496" from="2619" to="2624">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dein</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPOSAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_497" from="2625" to="2631">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Kritik</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_498" from="2631" to="2632">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_499" from="2633" to="2647">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">möglicherweise</f>
+      <f name="certainty">0.996862</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_500" from="2648" to="2652">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">haben</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VAFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_501" from="2653" to="2655">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">du</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_502" from="2656" to="2659">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.857647</f>
+      <f name="ctag">PDS</f>
+     </fs>
+    </f>
+    <f name="lex">
+     <fs>
+      <f name="lemma">die</f>
+      <f name="certainty">0.108728</f>
+      <f name="ctag">ART</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_503" from="2660" to="2665">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nicht</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PTKNEG</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_504" from="2667" to="2674">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">meinen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVPP</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_505" from="2674" to="2675">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_506" from="2676" to="2680">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">dein</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPOSAT</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_507" from="2681" to="2685">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">Text</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_508" from="2686" to="2690">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">legen</f>
+      <f name="certainty">0.999999</f>
+      <f name="ctag">VVFIN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_509" from="2691" to="2701">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">allerdings</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_510" from="2702" to="2706">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">nahe</f>
+      <f name="certainty">0.983021</f>
+      <f name="ctag">PTKVZ</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_511" from="2706" to="2707">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">,</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_512" from="2708" to="2711">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">er</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">PPER</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_513" from="2712" to="2714">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">so</f>
+      <f name="certainty">0.999999</f>
+      <f name="ctag">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_514" from="2715" to="2725">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">auslegen</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">VVIZU</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_515" from="2725" to="2726">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">.</f>
+      <f name="certainty">1.000000</f>
+      <f name="ctag">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_516" from="2727" to="2729">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.939754</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_517" from="2731" to="2748">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="lemma">UNKNOWN</f>
+      <f name="certainty">0.997542</f>
+      <f name="ctag">NN</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+ </spanList>
+</layer>

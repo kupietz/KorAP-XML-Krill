@@ -27,6 +27,8 @@ sub data {
   # Get full data
   return $self->[0] unless $to;
 
+  return if $to > $self->data_length;
+
   # Return substring
   return (substr($self->[0], $from, $to - $from) // undef);
 };

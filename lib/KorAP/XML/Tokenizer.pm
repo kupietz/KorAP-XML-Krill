@@ -124,9 +124,12 @@ sub parse {
 
     # Token is undefined
     unless (defined $token) {
-      $self->log->error("Unable to find substring [$from-$to] in $path");
-      next;
+      $self->log->warn("Unable to find substring [$from-$to] in $path");
+      $self->log->error("Tokenization with failing offsets in $path");
+      # next;
+      return;
     };
+
 
     # This token should be recognized
     $should++;

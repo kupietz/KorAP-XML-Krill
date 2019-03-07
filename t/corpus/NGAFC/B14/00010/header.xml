@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader pattern="text" status="new" type="text" TEIform="teiHeader" version="1.0">
+    <fileDesc>
+     <titleStmt>
+      <textSigle>NGAFC/B14.00010</textSigle>
+      <t.title assemblage="external">NGAFC/B14.00010 Re: Ranking der Zuverlässigkeit von Filesystemen, In: de.sci.informatik.misc, Usenet 5.11.2014</t.title>
+     </titleStmt>
+     <editionStmt version="0"/>
+     <publicationStmt>
+      <distributor/>
+      <pubAddress/>
+      <availability region="ids" status="unknown" Default="n">QAO-NC-LOC:ids</availability>
+      <pubDate/>
+     </publicationStmt>
+     <sourceDesc Default="n">
+      <biblStruct Default="n" status="draft">
+       <analytic>
+        <h.title type="main">Re: Ranking der Zuverlässigkeit von Filesystemen, In: de.sci.informatik.misc</h.title>
+        <h.title type="sub"/>
+        <h.title level="m" type="abbr"/>
+        <h.title level="a" type="abbr"/>
+        <h.author>p_8</h.author>
+        <editor/>
+        <imprint>
+         <pubDate type="year">2014</pubDate>
+         <pubDate type="day">05</pubDate>
+         <pubDate type="month">11</pubDate>
+         <pubDate type="time">13:29:56+00:00</pubDate>
+        </imprint>
+        <biblScope/>
+       </analytic>
+       <monogr>
+        <h.title type="main"/>
+        <editor>Usenet</editor>
+        <edition>
+         <further>Download from server news.individual.de 2015-06-01 using nntp client in Python</further>
+         <kind/>
+         <appearance/>
+        </edition>
+        <imprint/>
+        <biblScope/>
+       </monogr>
+      </biblStruct>
+      <reference type="complete" assemblage="non-automatic">NGAFC/B14.00010 Re: Ranking der Zuverlässigkeit von Filesystemen, In: de.sci.informatik.misc, Usenet 5.11.2014, 13:29:56 Uhr</reference>
+      <reference type="short" assemblage="non-automatic">NGAFC/B14.00010 Re: Ranking der Zuverlässigkeit von Filesystemen, 5.11.2014</reference>
+     </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+     <samplingDecl Default="n"/>
+     <editorialDecl Default="n">
+      <pagination type="no"/>
+     </editorialDecl>
+    </encodingDesc>
+    <profileDesc>
+     <creation>
+      <creatDate>2014.11.05</creatDate>
+      <creatRef>(5.11.2014)</creatRef>
+      <creatRefShort>(5.11.2014)</creatRefShort>
+     </creation>
+     <textClass Default="n">
+      <catRef n="1" target="topic.staat-gesellschaft.biographien-interviews" scheme="topic"/>
+     </textClass>
+     <textDesc Default="n">
+      <textTypeArt>Newsgroup-Artikel</textTypeArt>
+      <textDomain/>
+     </textDesc>
+     <correspDesc Default="n">
+      <correspContext>
+       <ref type="prev" n="6">
+                        <gap reason="anonymisation" instant="false"/>
+                     </ref>
+       <ref type="prev" n="5">
+                        <gap reason="anonymisation" instant="false"/>
+                     </ref>
+       <ref type="prev" n="4">
+                        <gap reason="anonymisation" instant="false"/>
+                     </ref>
+       <ref type="prev" n="3">
+                        <gap reason="anonymisation" instant="false"/>
+                     </ref>
+       <ref type="prev" n="2">
+                        <gap reason="anonymisation" instant="false"/>
+                     </ref>
+       <ref type="prev" n="1">
+                        <gap reason="anonymisation" instant="false"/>
+                     </ref>
+      </correspContext>
+     </correspDesc>
+    </profileDesc>
+   </idsHeader>

@@ -172,7 +172,7 @@ $call = join(
   local $SIG{__WARN__} = sub {};
   my $out = stderr_from(sub { system($call); });
 
-  like($out, qr!no base tokenization!s, $call);
+  like($out, qr!no working base tokenization!s, $call);
 };
 
 my $input_quotes = catfile($f, '..', 'corpus', 'archive_quotes.zip');

@@ -1,0 +1,5234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="NGAFC_B14.00010">
+ <spanList>
+  <span id="t_0" from="0" to="6">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NE</f>
+      <f name="msd">case=nom|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_1" from="7" to="13">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NE</f>
+      <f name="msd">case=nom|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_2" from="15" to="31">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NE</f>
+      <f name="msd">case=nom|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_3" from="33" to="38">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVFIN</f>
+      <f name="msd">number=sg|person=3|tense=past|mood=ind</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_4" from="38" to="39">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_5" from="41" to="57">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NE</f>
+      <f name="msd">case=nom|number=sg|gender=*</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_6" from="59" to="61">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_7" from="62" to="66">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_8" from="67" to="69">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">PPER</f>
+      <f name="msd">case=nom|number=sg|gender=*|person=2</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_9" from="70" to="73">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">PPER</f>
+      <f name="msd">case=dat|number=sg|gender=*|person=1</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_10" from="74" to="79">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_11" from="80" to="83">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_12" from="84" to="87">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ART</f>
+      <f name="msd">case=dat|number=sg|gender=fem</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_13" from="88" to="93">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=dat|number=sg|gender=fem</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_14" from="94" to="103">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVFIN</f>
+      <f name="msd">number=sg|person=3|tense=pres|mood=ind</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_15" from="104" to="105">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">$LRB</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_16" from="105" to="109">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_17" from="110" to="113">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_18" from="114" to="117">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ART</f>
+      <f name="msd">case=dat|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_19" from="118" to="122">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=dat|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_20" from="123" to="129">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">PPOSAT</f>
+      <f name="msd">case=gen|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_21" from="130" to="136">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=gen|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_22" from="137" to="141">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_23" from="142" to="144">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_24" from="145" to="151">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">PDAT</f>
+      <f name="msd">case=dat|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_25" from="152" to="159">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=dat|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_26" from="159" to="160">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_27" from="161" to="164">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">PRELS</f>
+      <f name="msd">case=acc|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_28" from="165" to="168">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">PPER</f>
+      <f name="msd">case=nom|number=sg|gender=*|person=1</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_29" from="169" to="170">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">$LRB</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_30" from="170" to="171">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_31" from="171" to="172">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_32" from="173" to="183">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_33" from="184" to="185">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_34" from="185" to="186">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_35" from="186" to="187">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_36" from="188" to="195">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_37" from="195" to="196">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_38" from="196" to="199">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_39" from="200" to="204">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_40" from="204" to="205">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_41" from="205" to="206">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_42" from="207" to="211">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_43" from="212" to="218">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_44" from="219" to="221">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_45" from="222" to="228">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_46" from="228" to="229">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_47" from="229" to="230">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_48" from="231" to="236">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_49" from="236" to="237">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_50" from="237" to="243">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_51" from="244" to="249">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_52" from="250" to="253">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_53" from="253" to="254">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_54" from="255" to="259">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_55" from="260" to="264">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_56" from="265" to="274">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_57" from="274" to="275">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_58" from="275" to="276">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_59" from="277" to="280">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_60" from="281" to="288">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVFIN</f>
+      <f name="msd">number=sg|person=3|tense=pres|mood=subj</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_61" from="289" to="297">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_62" from="298" to="302">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_63" from="302" to="303">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_64" from="304" to="308">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_65" from="309" to="312">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_66" from="313" to="314">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_67" from="314" to="319">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_68" from="319" to="320">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_69" from="321" to="324">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_70" from="325" to="329">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_71" from="330" to="339">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_72" from="340" to="345">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_73" from="345" to="346">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_74" from="347" to="349">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_75" from="349" to="350">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_76" from="350" to="355">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_77" from="356" to="359">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_78" from="360" to="361">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_79" from="361" to="365">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_80" from="365" to="366">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">$LRB</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_81" from="367" to="368">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_82" from="368" to="374">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_83" from="374" to="375">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_84" from="376" to="379">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=nom|number=sg|gender=fem</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_85" from="380" to="384">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_86" from="385" to="395">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_87" from="395" to="396">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_88" from="396" to="397">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_89" from="398" to="400">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">PPER</f>
+      <f name="msd">case=nom|number=sg|gender=masc|person=3</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_90" from="400" to="401">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_91" from="401" to="402">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_92" from="403" to="406">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_93" from="407" to="411">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_94" from="412" to="420">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_95" from="420" to="421">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_96" from="422" to="427">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_97" from="428" to="431">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_98" from="432" to="436">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_99" from="437" to="438">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_100" from="438" to="451">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_101" from="451" to="452">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_102" from="453" to="454">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NE</f>
+      <f name="msd">case=nom|number=sg|gender=fem</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_103" from="454" to="458">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_104" from="459" to="463">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_105" from="464" to="466">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_106" from="467" to="470">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_107" from="471" to="480">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_108" from="480" to="481">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_109" from="482" to="484">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_110" from="485" to="488">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_111" from="489" to="496">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=nom|number=pl|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_112" from="497" to="500">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_113" from="501" to="507">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_114" from="508" to="511">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADJD</f>
+      <f name="msd">degree=pos</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_115" from="512" to="517">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADJD</f>
+      <f name="msd">degree=pos</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_116" from="518" to="528">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVFIN</f>
+      <f name="msd">number=sg|person=3|tense=pres|mood=ind</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_117" from="529" to="539">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_118" from="539" to="540">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_119" from="541" to="544">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_120" from="545" to="549">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_121" from="550" to="554">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_122" from="555" to="562">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_123" from="563" to="567">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_124" from="568" to="570">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_125" from="571" to="585">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_126" from="585" to="586">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_127" from="587" to="589">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_128" from="590" to="594">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_129" from="595" to="599">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_130" from="600" to="611">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_131" from="612" to="616">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_132" from="617" to="618">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_133" from="618" to="619">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_134" from="619" to="620">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_135" from="621" to="624">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_136" from="625" to="634">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_137" from="635" to="638">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_138" from="639" to="645">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_139" from="646" to="651">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_140" from="651" to="652">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_141" from="653" to="657">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_142" from="658" to="660">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_143" from="661" to="668">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_144" from="668" to="669">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_145" from="670" to="672">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_146" from="673" to="676">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_147" from="677" to="683">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_148" from="683" to="684">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_149" from="685" to="688">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_150" from="689" to="692">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_151" from="693" to="699">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_152" from="700" to="702">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_153" from="703" to="707">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_154" from="708" to="713">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_155" from="713" to="714">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_156" from="715" to="718">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_157" from="719" to="722">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_158" from="723" to="734">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_159" from="735" to="741">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_160" from="742" to="745">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_161" from="746" to="747">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_162" from="747" to="748">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_163" from="748" to="760">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_164" from="760" to="761">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_165" from="762" to="766">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_166" from="767" to="769">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_167" from="770" to="773">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_168" from="774" to="780">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_169" from="781" to="792">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_170" from="793" to="795">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_171" from="795" to="796">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_172" from="796" to="800">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VAFIN</f>
+      <f name="msd">number=pl|person=3|tense=pres|mood=ind</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_173" from="801" to="810">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_174" from="811" to="815">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=nom|number=sg|gender=fem</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_175" from="815" to="816">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_176" from="817" to="821">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_177" from="822" to="825">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_178" from="826" to="835">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_179" from="836" to="842">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_180" from="843" to="849">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_181" from="850" to="854">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_182" from="855" to="862">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_183" from="862" to="863">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_184" from="864" to="867">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">PPER</f>
+      <f name="msd">case=nom|number=sg|gender=*|person=1</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_185" from="868" to="870">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVFIN</f>
+      <f name="msd">number=sg|person=1|tense=pres|mood=ind</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_186" from="871" to="878">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_187" from="879" to="882">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_188" from="883" to="888">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_189" from="889" to="895">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_190" from="896" to="904">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_191" from="905" to="909">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_192" from="910" to="914">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_193" from="914" to="915">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_194" from="916" to="921">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_195" from="922" to="926">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_196" from="926" to="927">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_197" from="928" to="932">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_198" from="933" to="937">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_199" from="938" to="947">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_200" from="948" to="950">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_201" from="951" to="954">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_202" from="955" to="959">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_203" from="960" to="961">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_204" from="961" to="963">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_205" from="964" to="969">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_206" from="970" to="973">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_207" from="974" to="979">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_208" from="979" to="980">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_209" from="981" to="984">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_210" from="985" to="993">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_211" from="993" to="994">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_212" from="995" to="998">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_213" from="999" to="1001">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_214" from="1002" to="1008">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADJD</f>
+      <f name="msd">degree=pos</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_215" from="1009" to="1023">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_216" from="1024" to="1027">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ART</f>
+      <f name="msd">case=dat|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_217" from="1028" to="1034">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_218" from="1034" to="1035">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_219" from="1036" to="1038">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_220" from="1039" to="1042">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_221" from="1043" to="1046">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ART</f>
+      <f name="msd">case=nom|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_222" from="1047" to="1049">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=nom|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_223" from="1050" to="1055">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_224" from="1056" to="1057">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_225" from="1057" to="1058">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_226" from="1058" to="1059">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_227" from="1060" to="1063">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_228" from="1064" to="1070">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_229" from="1070" to="1071">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_230" from="1072" to="1075">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_231" from="1076" to="1079">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_232" from="1080" to="1086">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_233" from="1087" to="1090">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_234" from="1091" to="1098">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_235" from="1099" to="1102">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_236" from="1103" to="1109">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_237" from="1110" to="1112">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_238" from="1112" to="1113">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_239" from="1113" to="1120">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_240" from="1121" to="1125">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_241" from="1126" to="1131">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_242" from="1131" to="1132">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_243" from="1133" to="1144">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_244" from="1145" to="1146">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_245" from="1146" to="1147">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_246" from="1147" to="1154">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_247" from="1155" to="1160">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_248" from="1161" to="1162">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_249" from="1162" to="1164">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_250" from="1164" to="1165">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_251" from="1165" to="1166">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_252" from="1167" to="1177">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_253" from="1177" to="1178">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_254" from="1179" to="1182">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_255" from="1183" to="1187">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVFIN</f>
+      <f name="msd">number=pl|person=3|tense=past|mood=ind</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_256" from="1188" to="1190">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_257" from="1190" to="1191">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_258" from="1191" to="1192">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_259" from="1193" to="1195">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_260" from="1195" to="1196">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_261" from="1196" to="1217">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_262" from="1217" to="1218">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_263" from="1219" to="1228">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_264" from="1229" to="1232">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_265" from="1233" to="1246">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_266" from="1247" to="1260">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_267" from="1260" to="1261">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_268" from="1261" to="1262">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_269" from="1263" to="1265">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_270" from="1266" to="1270">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=*|number=sg|gender=neut</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_271" from="1270" to="1271">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_272" from="1271" to="1273">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_273" from="1274" to="1279">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_274" from="1279" to="1280">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_275" from="1281" to="1284">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_276" from="1285" to="1294">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_277" from="1295" to="1301">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_278" from="1302" to="1304">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_279" from="1305" to="1311">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_280" from="1311" to="1312">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_281" from="1313" to="1320">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_282" from="1321" to="1324">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_283" from="1325" to="1329">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_284" from="1330" to="1334">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_285" from="1335" to="1338">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_286" from="1339" to="1342">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_287" from="1343" to="1346">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_288" from="1347" to="1358">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_289" from="1358" to="1359">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_290" from="1360" to="1366">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=nom|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_291" from="1366" to="1367">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_292" from="1368" to="1371">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_293" from="1372" to="1373">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_294" from="1373" to="1377">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_295" from="1377" to="1378">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_296" from="1379" to="1382">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_297" from="1383" to="1391">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_298" from="1392" to="1401">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_299" from="1401" to="1402">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_300" from="1403" to="1406">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_301" from="1407" to="1410">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ART</f>
+      <f name="msd">case=nom|number=sg|gender=neut</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_302" from="1411" to="1421">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_303" from="1422" to="1428">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_304" from="1428" to="1429">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_305" from="1430" to="1434">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_306" from="1435" to="1438">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">KON</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_307" from="1439" to="1440">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_308" from="1440" to="1441">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_309" from="1441" to="1444">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_310" from="1445" to="1449">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_311" from="1450" to="1457">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_312" from="1457" to="1458">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_313" from="1459" to="1462">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_314" from="1463" to="1467">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_315" from="1468" to="1472">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_316" from="1473" to="1474">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_317" from="1474" to="1475">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_318" from="1475" to="1478">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_319" from="1479" to="1489">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_320" from="1489" to="1490">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_321" from="1490" to="1491">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_322" from="1491" to="1492">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_323" from="1493" to="1496">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_324" from="1497" to="1508">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_325" from="1509" to="1512">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_326" from="1513" to="1516">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_327" from="1517" to="1526">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_328" from="1526" to="1527">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_329" from="1528" to="1532">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_330" from="1533" to="1536">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_331" from="1537" to="1540">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_332" from="1541" to="1552">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_333" from="1553" to="1556">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVFIN</f>
+      <f name="msd">number=sg|person=3|tense=pres|mood=ind</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_334" from="1557" to="1566">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_335" from="1567" to="1573">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_336" from="1573" to="1574">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_337" from="1574" to="1575">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_338" from="1576" to="1584">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_339" from="1585" to="1591">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_340" from="1592" to="1595">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_341" from="1596" to="1606">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_342" from="1606" to="1607">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_343" from="1607" to="1609">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_344" from="1610" to="1617">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_345" from="1618" to="1621">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_346" from="1622" to="1624">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_347" from="1625" to="1633">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_348" from="1634" to="1636">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_349" from="1636" to="1637">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_350" from="1637" to="1641">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_351" from="1642" to="1650">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_352" from="1650" to="1651">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_353" from="1652" to="1660">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADJA</f>
+      <f name="msd">case=nom|number=sg|gender=fem|degree=pos</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_354" from="1661" to="1662">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_355" from="1662" to="1663">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_356" from="1663" to="1666">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_357" from="1667" to="1678">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVFIN</f>
+      <f name="msd">number=sg|person=3|tense=pres|mood=subj</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_358" from="1679" to="1682">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_359" from="1683" to="1692">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_360" from="1693" to="1695">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_361" from="1696" to="1710">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_362" from="1710" to="1711">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_363" from="1712" to="1716">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_364" from="1717" to="1720">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_365" from="1721" to="1733">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_366" from="1734" to="1736">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_367" from="1737" to="1743">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_368" from="1744" to="1745">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_369" from="1745" to="1746">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_370" from="1746" to="1747">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_371" from="1748" to="1752">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_372" from="1753" to="1761">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADJD</f>
+      <f name="msd">degree=pos</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_373" from="1761" to="1762">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_374" from="1763" to="1769">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_375" from="1770" to="1778">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_376" from="1779" to="1782">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_377" from="1783" to="1785">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_378" from="1786" to="1794">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_379" from="1794" to="1795">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_380" from="1796" to="1799">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_381" from="1800" to="1802">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=nom|number=sg|gender=fem</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_382" from="1803" to="1808">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_383" from="1809" to="1812">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_384" from="1813" to="1822">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_385" from="1822" to="1823">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_386" from="1823" to="1824">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_387" from="1825" to="1828">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_388" from="1829" to="1842">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_389" from="1843" to="1847">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_390" from="1848" to="1851">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_391" from="1851" to="1852">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_392" from="1853" to="1857">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_393" from="1858" to="1860">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_394" from="1861" to="1864">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_395" from="1865" to="1874">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_396" from="1875" to="1879">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_397" from="1879" to="1880">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_398" from="1881" to="1885">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_399" from="1886" to="1889">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_400" from="1890" to="1893">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_401" from="1894" to="1899">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_402" from="1900" to="1904">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_403" from="1905" to="1912">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_404" from="1912" to="1913">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_405" from="1914" to="1916">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_406" from="1917" to="1920">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_407" from="1921" to="1929">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_408" from="1930" to="1936">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_409" from="1937" to="1942">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_410" from="1943" to="1947">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_411" from="1948" to="1956">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_412" from="1957" to="1959">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_413" from="1960" to="1963">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_414" from="1964" to="1968">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_415" from="1969" to="1970">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_416" from="1970" to="1981">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_417" from="1981" to="1982">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_418" from="1983" to="1995">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_419" from="1995" to="1996">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_420" from="1997" to="1999">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_421" from="2000" to="2004">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_422" from="2005" to="2008">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_423" from="2009" to="2020">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_424" from="2021" to="2028">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_425" from="2029" to="2033">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_426" from="2034" to="2038">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_427" from="2038" to="2039">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_428" from="2040" to="2042">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_429" from="2043" to="2048">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_430" from="2049" to="2056">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_431" from="2057" to="2059">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_432" from="2060" to="2067">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_433" from="2067" to="2068">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_434" from="2069" to="2074">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_435" from="2074" to="2075">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_436" from="2076" to="2079">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_437" from="2080" to="2083">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_438" from="2084" to="2088">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_439" from="2089" to="2094">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_440" from="2095" to="2102">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_441" from="2102" to="2103">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_442" from="2104" to="2107">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_443" from="2108" to="2112">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_444" from="2113" to="2116">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_445" from="2117" to="2125">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVINF</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_446" from="2126" to="2129">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_447" from="2130" to="2133">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_448" from="2134" to="2147">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_449" from="2148" to="2159">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_450" from="2160" to="2166">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_451" from="2166" to="2167">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_452" from="2168" to="2173">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_453" from="2174" to="2179">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_454" from="2180" to="2183">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NE</f>
+      <f name="msd">case=*|number=*|gender=*</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_455" from="2184" to="2188">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NE</f>
+      <f name="msd">case=dat|number=sg|gender=masc</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_456" from="2189" to="2196">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_457" from="2196" to="2197">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_458" from="2198" to="2207">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_459" from="2208" to="2211">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_460" from="2212" to="2225">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_461" from="2226" to="2230">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_462" from="2231" to="2236">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_463" from="2237" to="2243">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_464" from="2244" to="2246">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_465" from="2247" to="2256">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_466" from="2256" to="2257">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_467" from="2258" to="2260">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_468" from="2261" to="2264">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_469" from="2265" to="2269">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_470" from="2270" to="2274">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_471" from="2275" to="2276">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_472" from="2276" to="2279">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_473" from="2280" to="2283">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_474" from="2284" to="2287">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_475" from="2288" to="2292">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_476" from="2293" to="2296">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_477" from="2297" to="2301">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_478" from="2301" to="2302">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_479" from="2302" to="2303">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_480" from="2304" to="2310">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_481" from="2311" to="2312">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_482" from="2313" to="2317">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_483" from="2318" to="2320">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_484" from="2321" to="2329">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_485" from="2330" to="2336">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_486" from="2337" to="2344">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_487" from="2344" to="2345">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_488" from="2346" to="2351">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_489" from="2352" to="2355">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_490" from="2355" to="2356">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_491" from="2356" to="2359">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_492" from="2359" to="2360">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_493" from="2361" to="2363">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_494" from="2363" to="2364">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_495" from="2365" to="2366">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_496" from="2367" to="2372">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_497" from="2373" to="2377">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_498" from="2378" to="2380">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_499" from="2381" to="2385">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_500" from="2386" to="2390">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_501" from="2390" to="2391">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_502" from="2392" to="2396">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_503" from="2397" to="2403">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_504" from="2404" to="2405">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_505" from="2405" to="2406">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_506" from="2406" to="2418">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_507" from="2419" to="2422">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">APPR</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_508" from="2423" to="2430">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADJD</f>
+      <f name="msd">degree=pos</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_509" from="2432" to="2442">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVPP</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_510" from="2442" to="2443">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">$.</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_511" from="2444" to="2450">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_512" from="2451" to="2453">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_513" from="2454" to="2455">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_514" from="2455" to="2457">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_515" from="2457" to="2458">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_516" from="2458" to="2459">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_517" from="2459" to="2460">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_518" from="2461" to="2462">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_519" from="2462" to="2465">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_520" from="2465" to="2466">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_521" from="2467" to="2479">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_522" from="2479" to="2480">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_523" from="2481" to="2484">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_524" from="2485" to="2487">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_525" from="2487" to="2488">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_526" from="2488" to="2493">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_527" from="2494" to="2497">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_528" from="2499" to="2507">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_529" from="2508" to="2513">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_530" from="2513" to="2514">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_531" from="2515" to="2519">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=nom|number=sg|gender=fem</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_532" from="2520" to="2531">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_533" from="2532" to="2539">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_534" from="2540" to="2544">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADJA</f>
+      <f name="msd">case=nom|number=sg|gender=neut|degree=pos</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_535" from="2545" to="2548">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NE</f>
+      <f name="msd">case=nom|number=sg|gender=neut</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_536" from="2549" to="2552">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_537" from="2553" to="2567">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_538" from="2569" to="2575">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_539" from="2576" to="2582">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_540" from="2582" to="2583">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_541" from="2584" to="2588">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_542" from="2589" to="2591">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_543" from="2591" to="2592">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_544" from="2592" to="2594">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">ADV</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_545" from="2595" to="2599">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_546" from="2600" to="2605">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_547" from="2606" to="2614">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_548" from="2615" to="2617">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_549" from="2618" to="2621">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_550" from="2622" to="2629">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_551" from="2629" to="2630">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_552" from="2631" to="2636">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_553" from="2638" to="2643">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_554" from="2644" to="2647">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_555" from="2648" to="2652">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VAFIN</f>
+      <f name="msd">number=sg|person=2|tense=pres|mood=ind</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_556" from="2653" to="2657">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_557" from="2658" to="2663">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_558" from="2664" to="2670">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_559" from="2670" to="2671">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">NN</f>
+      <f name="msd">case=dat|number=sg|gender=neut</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_560" from="2672" to="2674">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">VVFIN</f>
+      <f name="msd">number=sg|person=3|tense=pres|mood=ind</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_561" from="2674" to="2675">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">$,</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_562" from="2675" to="2687">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_563" from="2688" to="2692">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_564" from="2693" to="2695">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_565" from="2696" to="2699">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_566" from="2700" to="2705">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_567" from="2707" to="2714">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_568" from="2714" to="2715">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">_</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_569" from="2716" to="2720">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_570" from="2721" to="2725">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">FM</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_571" from="2726" to="2730">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_572" from="2731" to="2741">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_573" from="2742" to="2746">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+  <span id="t_574" from="2746" to="2747">
+   <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+    <f name="lex">
+     <fs>
+      <f name="pos">XY</f>
+     </fs>
+    </f>
+   </fs>
+  </span>
+ </spanList>
+</layer>
