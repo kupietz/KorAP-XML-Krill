@@ -36,6 +36,8 @@ has [qw/path foundry doc stream should have name/];
 has layer => 'Tokens';
 has non_word_tokens => 0;
 
+has 'error';
+
 has log => sub {
   if (Log::Log4perl->initialized()) {
     state $log = Log::Log4perl->get_logger(__PACKAGE__);
@@ -60,7 +62,8 @@ sub parse {
   my $path = $self->path . lc($self->foundry) . '/' . $layer_file;
 
   unless (-e $path) {
-    $self->log->warn('Unable to load base tokenization: ' . $path);
+    $self->error('Unable to load base tokenization: ' . $path);
+    $self->log->warn($self->error);
     return;
   };
 
@@ -93,8 +96,8 @@ sub parse {
     )->{layer}->{spanList};
   } catch {
 
-    $self->log->warn('Token error in ' . $path . ($_ ? ': ' . $_ : ''));
-    $error = 1;
+    $self->error('Token error in ' . $path . ($_ ? ': ' . $_ : ''));
+    $self->log->warn($self->error);
   };
 
   return if $error;
@@ -124,9 +127,8 @@ sub parse {
 
     # Token is undefined
     unless (defined $token) {
+      $self->error("Tokenization with failing offsets in $path");
       $self->log->warn("Unable to find substring [$from-$to] in $path");
-      $self->log->error("Tokenization with failing offsets in $path");
-      # next;
       return;
     };
 
@@ -192,7 +194,10 @@ sub parse {
     $have++;
   };
 
-  return if $have == 0;
+  if ($have == 0) {
+    $self->error('No tokens found in ' . $path);
+    return;
+  };
 
   # Add token count
   $mtts->add_meta('tokens', '<i>' . $have);

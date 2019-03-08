@@ -170,9 +170,9 @@ $call = join(
 # Test without compression
 {
   local $SIG{__WARN__} = sub {};
-  my $out = stderr_from(sub { system($call); });
+  my $out = combined_from(sub { system($call); });
 
-  like($out, qr!no working base tokenization!s, $call);
+  like($out, qr!No tokens found!s, $call);
 };
 
 my $input_quotes = catfile($f, '..', 'corpus', 'archive_quotes.zip');
