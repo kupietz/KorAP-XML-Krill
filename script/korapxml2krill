@@ -140,7 +140,7 @@ use Fcntl qw(:flock SEEK_END);
 #   directory archiving.
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2019/02/07';
+our $LAST_CHANGE = '2019/03/08';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";

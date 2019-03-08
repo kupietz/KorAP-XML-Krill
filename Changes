@@ -1,3 +1,7 @@
+0.38 2019-03-08
+        - Stop file processing when base tokenization
+          is wrong.
+
 0.37 2019-03-06
         - Support for 'koral:field' array.
         - Support for Koral versioning.
@@ -8,8 +12,6 @@
           on directory archiving.
         - Remove extract_text and extract_doc in
           favor of extract_sigle for archives.
-        - Stop file processing when base tokenization
-          is wrong.
 
 0.36 2019-01-22
         - Support for non-word tokens (fixes #5).
