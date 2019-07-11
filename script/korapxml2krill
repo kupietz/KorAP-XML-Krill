@@ -698,73 +698,6 @@ if ($cmd eq 'extract') {
     # Will set @sigle
     my $prefix = set_sigle($archive);
 
-#    my $prefix = 1;
-#
-#    # No sigles given
-#    unless (@sigle) {
-#
-#      # Get files
-#      foreach ($archive->list_texts) {
-#
-#        # Split path information
-#        ($prefix, my ($corpus, $doc, $text)) = $archive->split_path($_);
-#
-#        # TODO: Make this OS independent
-#        push @sigle, join '/', $corpus, $doc, $text;
-#      };
-#    }
-#
-#    # Check sigle for doc sigles
-#    else {
-#      my @new_sigle;
-#
-#      my $prefix_check = 0;
-#
-#      # Iterate over all sigle
-#      foreach (@sigle) {
-#
-#        # Sigle is a doc sigle
-#        if ($_ =~ m!^(?:\.[/\\])?[^/\\]+?[/\\][^/\\]+?$!) {
-#
-#          print "$_ ...";
-#          # Check if a prefix is needed
-#          unless ($prefix_check) {
-#
-#            if ($prefix = $archive->check_prefix) {
-#              print " with prefix ...";
-#            };
-#            $prefix_check = 1;
-#          };
-#
-#          print "\n";
-#
-#          # TODO: Make this OS independent
-#          my $path = ($prefix ? './' : '') . $_;
-#
-#          print '... ' . (
-#            $archive->extract_doc(
-#              $path, $output, $sequential_extraction ? 1 : $jobs
-#            ) ? '' : 'not '
-#          );
-#          print "extracted.\n";
-#        }
-#
-#        # Sigle is a text sigle
-#        else {
-#          push @new_sigle, $_;
-#
-#          unless ($prefix_check) {
-#
-#            if ($prefix = $archive->check_prefix) {
-#              print " with prefix ...";
-#            };
-#            $prefix_check = 1;
-#          };
-#        };
-#      };
-#      @sigle = @new_sigle;
-#    };
-
     # Iterate over all given sigles and extract
     foreach (@sigle) {
 
@@ -1451,6 +1384,13 @@ a temporary directory is used.
 This is especially useful to avoid
 massive unzipping and potential
 network latency.
+
+
+=item B<--to-tar>
+
+Only valid for the C<archive> command.
+
+Writes the output into a tar archive.
 
 
 =item B<--sigle|-sg>

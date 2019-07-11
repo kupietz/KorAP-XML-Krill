@@ -299,6 +299,13 @@ massive unzipping and potential
 network latency.
 
 
+=item B<--to-tar>
+
+Only valid for the C<archive> command.
+
+Writes the output into a tar archive.
+
+
 =item B<--sigle|-sg>
 
 Extract the given texts.
