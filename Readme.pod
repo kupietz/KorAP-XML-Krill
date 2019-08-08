@@ -398,6 +398,10 @@ L<Krill|https://github.com/KorAP/Krill>.
     #Lemma
     #Morpho
 
+  Talismane
+    #Dependency
+    #Morpho
+
   TreeTagger
     #Morpho
     #Sentences

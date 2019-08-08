@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="corpus" pattern="allesaußerZtg/Zschr" status="new" version="1.0" TEIform="teiHeader">
+  <fileDesc>
+   <titleStmt>
+    <korpusSigle>WPF19</korpusSigle>
+    <c.title>Wikipedia.fr 2019 Artikel</c.title>
+   </titleStmt>
+   <editionStmt version="1.0"/>
+   <publicationStmt>
+    <distributor>Leibniz-Institut für Deutsche Sprache</distributor>
+    <pubAddress>Postfach 10 16 21, D-68016 Mannheim</pubAddress>
+    <telephone>+49 (0)621 1581 0</telephone>
+    <eAddress type="www">http://www.ids-mannheim.de</eAddress>
+    <eAddress type="www">http://www.ids-mannheim.de/kl/projekte/korpora/</eAddress>
+    <eAddress type="email">dereko@ids-mannheim.de</eAddress>
+    <availability status="restricted">This document, the IDS-Wikipedia.fr-Corpus, is part of the Archive of General Reference Corpora at IDS. It is published under the Creative Commons Attribution-ShareAlike License. See http://creativecommons.org/licenses/by-sa/3.0/legalcode for details. See http://www.ids-mannheim.de/kl/projekte/korpora/releases.html on how to refer to this document.</availability>
+    <pubDate type="year">2019</pubDate>
+   </publicationStmt>
+   <sourceDesc>
+    <biblStruct Default="n">
+     <monogr>
+      <h.title type="main">Wikipedia</h.title>
+      <h.author/>
+      <editor>wikipedia.org</editor>
+      <edition>
+       <further>Dump file "frwiki-20190220-pages-meta-current.xml" retrieved from http://dumps.wikimedia.org</further>
+       <kind/>
+       <appearance/>
+      </edition>
+      <imprint>
+       <publisher>Wikipedia</publisher>
+       <pubPlace>URL:http://fr.wikipedia.org</pubPlace>
+      </imprint>
+     </monogr>
+    </biblStruct>
+   </sourceDesc>
+  </fileDesc>
+  <encodingDesc>
+   <editorialDecl>
+    <conformance>This document conforms to I5 (see http://jtei.revues.org/508)</conformance>
+    <transduction>This document has been generated via a two-stage conversion by Eliza Margaretha. In the first stage, wikitext from a Wikidump is converted into WikiXML by the WikiXMLConverter tool and in the second stage, WikiXML is converted into I5 by the WikiI5Converter tool. The converters are available at http://corpora.ids-mannheim.de/pub/tools/. Reference: Eliza Margaretha and Harald Lüngen (2014): Building Linguistic Corpora from Wikipedia Articles and Discussions. In: Journal of Language Technology and Computational Linguistics (JLCL) 29 (2). Special Issue on Building and Annotating Corpora of Computer-mediated Communication: Issues and Challenges at the Interface between Computational and Corpus Linguistics, edited by Michael Beißwenger, Nelleke Oostdijk, Angelika Storrer and Henk van den Heuvel. URL: http://www.jlcl.org/2014_Heft2/Heft2-2014.pdf</transduction>
+   </editorialDecl>
+  </encodingDesc>
+  <profileDesc>
+   <langUsage>
+    <language id="fr" usage="100">français</language>
+   </langUsage>
+   <textDesc>
+    <textType>Enzyklopädie</textType>
+    <textTypeRef/>
+   </textDesc>
+  </profileDesc>
+  <revisionDesc>
+   <listChange>
+    <change when="2019-05-16" who="Eliza Margaretha">public release</change>
+   </listChange>
+  </revisionDesc>
+ </idsHeader>

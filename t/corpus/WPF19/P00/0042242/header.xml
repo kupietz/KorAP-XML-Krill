@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.0" TEIform="teiHeader">
+    <fileDesc>
+     <titleStmt>
+      <textSigle>WPF19/P00.0042242</textSigle>
+      <t.title assemblage="external">WPF19/P00.0042242 Psychanalyse, In: Wikipedia - URL:http://fr.wikipedia.org/wiki/Psychanalyse: Wikipedia, 2019</t.title>
+     </titleStmt>
+     <editionStmt version="0"/>
+     <publicationStmt>
+      <distributor/>
+      <pubAddress/>
+      <availability region="world" Default="n" status="unknown">CC-BY-SA</availability>
+      <pubDate/>
+     </publicationStmt>
+     <sourceDesc Default="n">
+      <biblStruct Default="n" status="draft">
+       <analytic>
+        <h.title type="main">Psychanalyse</h.title>
+        <h.title type="sub"/>
+        <h.title type="abbr" level="m"/>
+        <h.title type="abbr" level="a"/>
+        <h.author>Pierrette13, u.a.</h.author>
+        <editor/>
+        <imprint/>
+        <biblScope type="subsume"/>
+        <biblScope type="pp"/>
+        <biblNote n="1"/>
+       </analytic>
+       <monogr>
+        <h.title type="main"/>
+        <editor>wikipedia.org</editor>
+        <edition>
+         <further>Dump file "frwiki-20190220-pages-meta-current.xml" retrieved from http://dumps.wikimedia.org</further>
+         <kind/>
+         <appearance/>
+        </edition>
+        <imprint>
+         <pubDate type="year">2019</pubDate>
+         <pubDate type="month">02</pubDate>
+         <pubDate type="day">20</pubDate>
+        </imprint>
+        <biblScope type="vol"/>
+        <biblScope type="volume-title"/>
+       </monogr>
+       <relatedItem type="langlink">
+        <ref target="https://de.wikipedia.org/wiki/Psychoanalyse" xml:lang="de">Psychoanalyse</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://hi.wikipedia.org/wiki/मनोविश्लेषण" xml:lang="hi">मनोविश्लेषण</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ast.wikipedia.org/wiki/Sicoanálisis" xml:lang="ast">Sicoanálisis</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://pt.wikipedia.org/wiki/Psicanálise" xml:lang="pt">Psicanálise</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://lt.wikipedia.org/wiki/Psichoanalizė" xml:lang="lt">Psichoanalizė</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://hr.wikipedia.org/wiki/Psihoanaliza" xml:lang="hr">Psihoanaliza</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://lv.wikipedia.org/wiki/Psihoanalīze" xml:lang="lv">Psihoanalīze</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://simple.wikipedia.org/wiki/Psychoanalysis" xml:lang="simple">Psychoanalysis</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://lij.wikipedia.org/wiki/Psicoanalixi" xml:lang="lij">Psicoanalixi</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://hu.wikipedia.org/wiki/Pszichoanalízis" xml:lang="hu">Pszichoanalízis</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://hy.wikipedia.org/wiki/Հոգեվերլուծություն" xml:lang="hy">Հոգեվերլուծություն</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://bar.wikipedia.org/wiki/Psychoanalyse" xml:lang="bar">Psychoanalyse</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://uk.wikipedia.org/wiki/Психоаналіз" xml:lang="uk">Психоаналіз</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ia.wikipedia.org/wiki/Psychoanalyse" xml:lang="ia">Psychoanalyse</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://id.wikipedia.org/wiki/Psikoanalisis" xml:lang="id">Psikoanalisis</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ur.wikipedia.org/wiki/نفسیاتی_تجزیہ" xml:lang="ur">نفسیاتیتجزیہ</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://mk.wikipedia.org/wiki/Психоанализа" xml:lang="mk">Психоанализа</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sco.wikipedia.org/wiki/Psychoanalysis" xml:lang="sco">Psychoanalysis</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://scn.wikipedia.org/wiki/Psicanalisi" xml:lang="scn">Psicanalisi</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://mn.wikipedia.org/wiki/Психоанализ" xml:lang="mn">Психоанализ</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://qu.wikipedia.org/wiki/Sikuanalisis" xml:lang="qu">Sikuanalisis</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://af.wikipedia.org/wiki/Psigoanalise" xml:lang="af">Psigoanalise</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://uz.wikipedia.org/wiki/Psixoanaliz" xml:lang="uz">Psixoanaliz</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://el.wikipedia.org/wiki/Ψυχανάλυση" xml:lang="el">Ψυχανάλυση</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://als.wikipedia.org/wiki/Psychoanalyse" xml:lang="als">Psychoanalyse</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://en.wikipedia.org/wiki/Psychoanalysis" xml:lang="en">Psychoanalysis</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://eo.wikipedia.org/wiki/Psikoanalizo" xml:lang="eo">Psikoanalizo</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://is.wikipedia.org/wiki/Sálgreining" xml:lang="is">Sálgreining</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://it.wikipedia.org/wiki/Psicoanalisi" xml:lang="it">Psicoanalisi</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://my.wikipedia.org/wiki/စိတ်ခွဲခြားစိစစ်ရေးပညာ" xml:lang="my">စိတ်ခွဲခြားစိစစ်ရေးပညာ</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://es.wikipedia.org/wiki/Psicoanálisis" xml:lang="es">Psicoanálisis</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://zh.wikipedia.org/wiki/精神分析学" xml:lang="zh">精神分析学</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://et.wikipedia.org/wiki/Psühhoanalüüs" xml:lang="et">Psühhoanalüüs</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://eu.wikipedia.org/wiki/Psikoanalisi" xml:lang="eu">Psikoanalisi</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ar.wikipedia.org/wiki/تحليل_نفسي" xml:lang="ar">تحليلنفسي</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://vi.wikipedia.org/wiki/Phân_tâm_học" xml:lang="vi">Phân tâm học</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ja.wikipedia.org/wiki/精神分析学" xml:lang="ja">精神分析学</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://az.wikipedia.org/wiki/Psixoanaliz" xml:lang="az">Psixoanaliz</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://fa.wikipedia.org/wiki/روان‌کاوی" xml:lang="fa">روان‌کاوی</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://zh-min-nan.wikipedia.org/wiki/Cheng-sîn-hun-sek" xml:lang="zh-min-nan">Cheng-sîn-hun-sek</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ro.wikipedia.org/wiki/Psihanaliză" xml:lang="ro">Psihanaliză</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://nl.wikipedia.org/wiki/Psychoanalyse" xml:lang="nl">Psychoanalyse</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://nn.wikipedia.org/wiki/Psykoanalyse" xml:lang="nn">Psykoanalyse</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://no.wikipedia.org/wiki/Psykoanalyse" xml:lang="no">Psykoanalyse</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://be.wikipedia.org/wiki/Псіхааналіз" xml:lang="be">Псіхааналіз</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://fi.wikipedia.org/wiki/Psykoanalyysi" xml:lang="fi">Psykoanalyysi</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ru.wikipedia.org/wiki/Психоанализ" xml:lang="ru">Психоанализ</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://bg.wikipedia.org/wiki/Психоанализа" xml:lang="bg">Психоанализа</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://be-x-old.wikipedia.org/wiki/Псыхааналіз" xml:lang="be-x-old">Псыхааналіз</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://bs.wikipedia.org/wiki/Psihoanaliza" xml:lang="bs">Psihoanaliza</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://oc.wikipedia.org/wiki/Psicanalisi" xml:lang="oc">Psicanalisi</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sh.wikipedia.org/wiki/Psihoanaliza" xml:lang="sh">Psihoanaliza</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://zh-yue.wikipedia.org/wiki/心理分析" xml:lang="zh-yue">心理分析</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ka.wikipedia.org/wiki/ფსიქოანალიზი" xml:lang="ka">ფსიქოანალიზი</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://si.wikipedia.org/wiki/මනෝ_විශ්ලේෂණවාදය" xml:lang="si">මනෝවිශ්ලේෂණවාදය</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sk.wikipedia.org/wiki/Psychoanalýza" xml:lang="sk">Psychoanalýza</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sl.wikipedia.org/wiki/Psihoanaliza" xml:lang="sl">Psihoanaliza</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ga.wikipedia.org/wiki/Sícanailís" xml:lang="ga">Sícanailís</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ca.wikipedia.org/wiki/Psicoanàlisi" xml:lang="ca">Psicoanàlisi</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sq.wikipedia.org/wiki/Psikoanaliza" xml:lang="sq">Psikoanaliza</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sr.wikipedia.org/wiki/Психоанализа" xml:lang="sr">Психоанализа</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://kk.wikipedia.org/wiki/Психоанализ" xml:lang="kk">Психоанализ</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://mzn.wikipedia.org/wiki/روان_کاوی" xml:lang="mzn">روانکاوی</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://km.wikipedia.org/wiki/ចិត្តវិភាគ" xml:lang="km">ចិត្តវិភាគ</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sv.wikipedia.org/wiki/Psykoanalys" xml:lang="sv">Psykoanalys</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ko.wikipedia.org/wiki/정신분석학" xml:lang="ko">정신분석학</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://sw.wikipedia.org/wiki/Saikoanalisia" xml:lang="sw">Saikoanalisia</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://gl.wikipedia.org/wiki/Psicanálise" xml:lang="gl">Psicanálise</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://arz.wikipedia.org/wiki/تحليل_نفسى" xml:lang="arz">تحليلنفسى</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ku.wikipedia.org/wiki/Psîkoanalîz" xml:lang="ku">Psîkoanalîz</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://tpi.wikipedia.org/wiki/Saikoanalisis" xml:lang="tpi">Saikoanalisis</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ta.wikipedia.org/wiki/உளநிலைப்_பகுப்பாய்வு" xml:lang="ta">உளநிலைப்பகுப்பாய்வு</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://gu.wikipedia.org/wiki/મનોવિષ્લેષણ" xml:lang="gu">મનોવિષ્લેષણ</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ky.wikipedia.org/wiki/Психоанализ" xml:lang="ky">Психоанализ</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://cs.wikipedia.org/wiki/Psychoanalýza" xml:lang="cs">Psychoanalýza</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://pa.wikipedia.org/wiki/ਮਨੋਵਿਸ਼ਲੇਸ਼ਣ" xml:lang="pa">ਮਨੋਵਿਸ਼ਲੇਸ਼ਣ</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://te.wikipedia.org/wiki/మనో_వైజ్ఞానిక_విశ్లేషణ" xml:lang="te">మనోవైజ్ఞానికవిశ్లేషణ</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://th.wikipedia.org/wiki/จิตวิเคราะห์" xml:lang="th">จิตวิเคราะห์</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://la.wikipedia.org/wiki/Psychoanalysis" xml:lang="la">Psychoanalysis</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://cy.wikipedia.org/wiki/Seicdreiddiad" xml:lang="cy">Seicdreiddiad</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://kbp.wikipedia.org/wiki/Maɣzɩm_taa_tazʊʊ_tʊmɩyɛ" xml:lang="kbp">Maɣzɩm taa tazʊʊ tʊmɩyɛ</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://tl.wikipedia.org/wiki/Sikoanalisis" xml:lang="tl">Sikoanalisis</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://ckb.wikipedia.org/wiki/سایکۆئانالیز" xml:lang="ckb">سایکۆئانالیز</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://pl.wikipedia.org/wiki/Psychoanaliza" xml:lang="pl">Psychoanaliza</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://da.wikipedia.org/wiki/Psykoanalyse" xml:lang="da">Psykoanalyse</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://he.wikipedia.org/wiki/פסיכואנליזה" xml:lang="he">פסיכואנליזה</ref>
+       </relatedItem>
+       <relatedItem type="langlink">
+        <ref target="https://tr.wikipedia.org/wiki/Psikanaliz" xml:lang="tr">Psikanaliz</ref>
+       </relatedItem>
+      </biblStruct>
+      <reference type="complete" assemblage="non-automatic">WPF19/P00.0042242 Psychanalyse, In: Wikipedia - URL:http://fr.wikipedia.org/wiki/Psychanalyse: Wikipedia, 2019</reference>
+      <reference type="short" assemblage="regular">WPF19/P00.0042242 Wikipedia; Psychanalyse, (Letzte Änderung 15.2.2019 ) 20.2.2019</reference>
+     </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+     <samplingDecl Default="n"/>
+     <editorialDecl Default="n">
+      <pagination type="no"/>
+     </editorialDecl>
+    </encodingDesc>
+    <profileDesc>
+     <textClass Default="n">
+      <classCode scheme="https://fr.wikipedia.org/wiki/Cat%C3%A9gorie:Accueil"/>
+     </textClass>
+     <creation>
+      <creatDate>2019.02.15</creatDate>
+      <creatRef>(Letzte Änderung 15.2.2019)</creatRef>
+      <creatRefShort>(Letzte Änderung 15.2.2019)</creatRefShort>
+     </creation>
+     <textDesc Default="n">
+      <textTypeArt>Enzyklopädie-Artikel</textTypeArt>
+      <textDomain/>
+     </textDesc>
+    </profileDesc>
+   </idsHeader>

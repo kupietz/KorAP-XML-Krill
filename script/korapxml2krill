@@ -139,9 +139,12 @@ use Fcntl qw(:flock SEEK_END);
 # - Support for Koral versioning.
 # - Ignore temporary extract parameter on
 #   directory archiving.
+#
+# 2019/08/08
+# - Support for Talismane.
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2019/03/08';
+our $LAST_CHANGE = '2019/08/08';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -521,6 +524,10 @@ push(@layers, ['OpenNLP', 'Sentences']);
 # Schreibgebrauch
 push(@layers, ['Sgbr', 'Lemma']);
 push(@layers, ['Sgbr', 'Morpho']);
+
+# Talismane
+push(@layers, ['Talismane', 'Dependency']);
+push(@layers, ['Talismane', 'Morpho']);
 
 # TreeTagger
 push(@layers, ['TreeTagger', 'Morpho']);
@@ -1483,6 +1490,10 @@ L<Krill|https://github.com/KorAP/Krill>.
 
   Sgbr
     #Lemma
+    #Morpho
+
+  Talismane
+    #Dependency
     #Morpho
 
   TreeTagger
