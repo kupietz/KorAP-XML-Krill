@@ -57,6 +57,9 @@ ok(!$meta->{A_bibl_edition_statement}, 'Bibl Ed Statement');
 ok(!$meta->{A_reference}, 'Reference');
 is($meta->{S_language}, 'hu', 'Language');
 
+is($meta->{S_availability}, 'Kutatási célokra, megállapodás alapján, hozzáférhető', 'Availability');
+is($meta->{A_distributor}, 'MTA Nyelvtudományi Intézet', 'Distributor');
+
 ok(!$meta->{T_corpus_title}, 'Correct Corpus title');
 ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus Sub title');
 ok(!$meta->{T_corpus_author}, 'Correct Corpus author');

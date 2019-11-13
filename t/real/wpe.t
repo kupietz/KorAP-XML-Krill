@@ -93,7 +93,8 @@ is($stream->[20]->[5], 'tt/p:NNS', 'Treetagger');
 
 my $koral = decode_json($tokens->to_json(0.4));
 
-my $link = $koral->{fields}->[5];
+my $link = $koral->{fields}->[6];
+
 is($link->{'@type'}, 'koral:field', 'attachement');
 is($link->{type}, 'type:attachement', 'attachement');
 is($link->{key}, 'externalLink', 'attachement');

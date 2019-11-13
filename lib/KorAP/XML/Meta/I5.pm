@@ -44,6 +44,7 @@ our $SIGLE_RE = qr/^([^_\/]+)(?:[_\/]([^\._\/]+?)(?:\.(.+?))?)?$/;
 #   "biblEditionStatement",
 #   "reference",
 #   "corpusEditor"
+#   "distributor"
 #
 # DATE:
 #   "pubDate",
@@ -324,10 +325,17 @@ sub parse {
   };
 
   if ($temp = $dom->at('fileDesc')) {
+    my $temp2;
+
     if (my $availability = $temp->at('publicationStmt > availability')) {
-      $temp = _squish $availability->all_text;
-      $self->{S_availability} = $temp if $temp;
+      $temp2 = _squish $availability->all_text;
+      $self->{S_availability} = $temp2 if $temp2;
     };
+
+    if (my $distributor = $temp->at('publicationStmt > distributor')) {
+      $temp2 = _squish $distributor->all_text;
+      $self->{A_distributor} = $temp2 if $temp2;
+    }
   };
 
   if ($temp = $dom->at('profileDesc > langUsage > language[id]')) {

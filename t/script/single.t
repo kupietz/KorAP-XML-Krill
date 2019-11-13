@@ -284,21 +284,26 @@ is($json->{fields}->[0]->{type}, 'type:string');
 is($json->{fields}->[0]->{value}, 'Corpus');
 is($json->{fields}->[0]->{'@type'}, 'koral:field');
 
-is($json->{fields}->[8]->{key}, 'textClass');
-is($json->{fields}->[8]->{value}->[0], 'freizeit-unterhaltung');
-is($json->{fields}->[8]->{value}->[1], 'vereine-veranstaltungen');
-is($json->{fields}->[8]->{type}, 'type:keywords');
-is($json->{fields}->[8]->{'@type'}, 'koral:field');
+is($json->{fields}->[4]->{key}, 'distributor');
+is($json->{fields}->[4]->{value}, 'data:,Institut für Deutsche Sprache');
+is($json->{fields}->[4]->{type}, 'type:attachement');
+is($json->{fields}->[4]->{'@type'}, 'koral:field');
 
-is($json->{fields}->[13]->{key}, 'textType');
-is($json->{fields}->[13]->{value}, 'Zeitung: Tageszeitung');
-is($json->{fields}->[13]->{type}, 'type:string');
-is($json->{fields}->[13]->{'@type'}, 'koral:field');
+is($json->{fields}->[9]->{key}, 'textClass');
+is($json->{fields}->[9]->{value}->[0], 'freizeit-unterhaltung');
+is($json->{fields}->[9]->{value}->[1], 'vereine-veranstaltungen');
+is($json->{fields}->[9]->{type}, 'type:keywords');
+is($json->{fields}->[9]->{'@type'}, 'koral:field');
 
-is($json->{fields}->[21]->{key}, 'title');
-is($json->{fields}->[21]->{value}, 'Beispiel Text');
-is($json->{fields}->[21]->{type}, 'type:text');
-is($json->{fields}->[21]->{'@type'}, 'koral:field');
+is($json->{fields}->[14]->{key}, 'textType');
+is($json->{fields}->[14]->{value}, 'Zeitung: Tageszeitung');
+is($json->{fields}->[14]->{type}, 'type:string');
+is($json->{fields}->[14]->{'@type'}, 'koral:field');
+
+is($json->{fields}->[22]->{key}, 'title');
+is($json->{fields}->[22]->{value}, 'Beispiel Text');
+is($json->{fields}->[22]->{type}, 'type:text');
+is($json->{fields}->[22]->{'@type'}, 'koral:field');
 
 is($json->{data}->{tokenSource}, 'opennlp#tokens', 'Title');
 is($json->{data}->{foundries}, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/constituency corenlp/morpho corenlp/sentences dereko dereko/structure glemm glemm/morpho mate mate/dependency mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/morpho xip/sentences', 'Foundries');
