@@ -1,6 +1,7 @@
-0.39 2019-11-13
+0.39 2019-11-29
         - Added Talismane support.
         - Added "distributor" field to I5 metadata.
+        - Added DGD link field to I5 metadata.
 
 0.38 2019-05-22
         - Stop file processing when base tokenization

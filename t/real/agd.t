@@ -37,8 +37,9 @@ my $meta = $doc->meta;
 is($meta->{T_title}, 'FOLK_E_00321_SE_01_T_01_DF_01', 'Title');
 is($meta->{D_creation_date}, '20181112', 'Title');
 
-# TODO:
-#   Add source as asset!
+is($meta->{A_externalLink}, 'data:application/x.korap-link;title=DGD,'.
+     'https://dgd.ids-mannheim.de/DGD2Web/ExternalAccessServlet?command=displayData'.
+     '&id=FOLK_E_00321_SE_01_T_01', 'External link');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');
