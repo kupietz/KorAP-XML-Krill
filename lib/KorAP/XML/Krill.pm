@@ -95,7 +95,7 @@ sub parse {
       $self->corpus_sigle($1);
     }
     else {
-      $self->log->warn($unable . ': ID not parseable');
+      $self->log->warn($unable . ': ID not parseable: ' . $rt->{'-docid'});
       return;
     };
   }

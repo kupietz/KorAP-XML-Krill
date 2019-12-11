@@ -41,7 +41,8 @@ sub process {
   my $doc = KorAP::XML::Krill->new(
     path      => $input,
     meta_type => $self->{meta_type},
-    cache     => $self->{cache}
+    cache     => $self->{cache},
+    log       => $self->{log}
   );
 
   # Parse document
