@@ -377,7 +377,7 @@ sub parse {
     };
 
     # DGD treatment
-    if ($self->{T_title} && !$self->{A_externalLink} && $self->{_corpus_sigle} eq 'AGD') {
+    if ($self->{T_title} && !$self->{A_externalLink} && $self->{_corpus_sigle} =~ /^(?:[AD]GD|FOLK)$/) {
       my $transcript = $self->{T_title};
       $transcript =~ s/_DF_\d+$//i;
       $self->{A_externalLink} = $KORAP_LINK_PREF . 'title=DGD,' .
