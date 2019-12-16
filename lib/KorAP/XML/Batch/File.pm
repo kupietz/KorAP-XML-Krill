@@ -22,6 +22,7 @@ sub new {
     koral           => $param{koral},
     primary         => $param{primary},
     non_word_tokens => $param{non_word_tokens},
+    non_verbal_tokens => $param{non_verbal_tokens},
     pretty          => $param{pretty},
     gzip            => $param{gzip}      // 0
   }, $class;
@@ -58,7 +59,8 @@ sub process {
     foundry => $self->{foundry},
     layer => $self->{layer},
     name => 'tokens',
-    non_word_tokens => $self->{non_word_tokens}
+    non_word_tokens => $self->{non_word_tokens},
+    non_verbal_tokens => $self->{non_verbal_tokens}
   );
 
   # Unable to process base tokenization

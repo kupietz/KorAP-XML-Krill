@@ -53,7 +53,7 @@ my $tokens = KorAP::XML::Tokenizer->new(
   foundry => $token_base_foundry,
   layer => $token_base_layer,
   name => 'tokens',
-  non_word_tokens => 1
+  non_verbal_tokens => 1
 );
 
 ok($tokens, 'Token Object is fine');
@@ -71,9 +71,9 @@ is($output->{data}->{tokenSource}, 'dgd#annot', 'tokenSource');
 is($output->{version}, '0.03', 'version');
 is($output->{data}->{foundries}, '', 'Foundries');
 is($output->{data}->{layerInfos}, '', 'layerInfos');
-is($output->{data}->{stream}->[1]->[2], 's:ku', 'data');
-is($output->{data}->{stream}->[2]->[2], 's:sqn', 'data');
-is($output->{data}->{stream}->[3]->[2], 's:alxv', 'data');
+is($output->{data}->{stream}->[0]->[4], 's:ku', 'data');
+is($output->{data}->{stream}->[1]->[2], 's:sqn', 'data');
+is($output->{data}->{stream}->[2]->[2], 's:alxv', 'data');
 is($output->{textSigle}, 'AGD/DOC/00001', 'Correct text sigle');
 is($output->{docSigle}, 'AGD/DOC', 'Correct document sigle');
 is($output->{corpusSigle}, 'AGD', 'Correct corpus sigle');
@@ -103,7 +103,7 @@ is($output->{data}->{foundries},
 is($output->{data}->{layerInfos}, 'dereko/s=spans dgd/l=tokens dgd/p=tokens dgd/para=tokens',
    'layerInfos');
 
-my $third_token = join('||', @{$output->{data}->{stream}->[3]});
+my $third_token = join('||', @{$output->{data}->{stream}->[2]});
 like($third_token, qr!dgd/l:alui!);
 like($third_token, qr!dgd/p:VMGWY!);
 like($third_token, qr!i:alxv!);
@@ -116,13 +116,18 @@ $output = decode_json( $tokens->to_json );
 # Offsets are suboptimal set, but good enough
 
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
-like($first_token, qr!<>:base/s:s\$<b>64<i>0<i>16<i>3<b>1!);
+like($first_token, qr!<>:base/s:s\$<b>64<i>0<i>16<i>2<b>1!);
 
 my $token = join('||', @{$output->{data}->{stream}->[1]});
+like($token, qr!<>:base/s:s\$<b>64<i>16<i>23<i>4<b>1!);
+$token = join('||', @{$output->{data}->{stream}->[2]});
 unlike($token, qr!<>:base/s:s!);
 
-$token = join('||', @{$output->{data}->{stream}->[2]});
-like($token, qr!<>:base/s:s\$<b>64<i>16<i>23<i>5<b>1!);
+$token = join('||', @{$output->{data}->{stream}->[3]});
+like($token, qr!<>:base/s:s\$<b>64<i>23<i>27<i>5<b>1!);
+
+$token = join('||', @{$output->{data}->{stream}->[5]});
+like($token, qr!dgd/para:pause!);
 
 done_testing;
 __END__

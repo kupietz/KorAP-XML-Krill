@@ -35,6 +35,7 @@ use Log::Log4perl;
 has [qw/path foundry doc stream should have name/];
 has layer => 'Tokens';
 has non_word_tokens => 0;
+has non_verbal_tokens => 0;
 
 has 'error';
 
@@ -117,7 +118,7 @@ sub parse {
   # my $span = $_;
   my $mtt;
   my $distance = 0;
-  my (@non_word_tokens);
+  # my (@non_word_tokens);
   foreach my $span (@$tokens) {
     my $from = $span->{'-from'};
     my $to = $span->{'-to'};
@@ -136,9 +137,10 @@ sub parse {
     # This token should be recognized
     $should++;
 
-    # Ignore non-word and non-number tokens (sorry!)
-    if (!$self->non_word_tokens && $token !~ /[\w\d]/) {
-
+    # Ignore non-word, non-number, and non-verbal tokens per default
+    if ($self->non_verbal_tokens && ord($token) == 9646) {
+      # Non-verbal token
+    } elsif (!$self->non_word_tokens && $token !~ /[\w\d]/) {
       # TODO: Recognize punctuations!
       #	if ($mtt) {
       #	  my $term = [$token, $from, $to];

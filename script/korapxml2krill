@@ -143,12 +143,13 @@ use Fcntl qw(:flock SEEK_END);
 # 2019/08/08
 # - Support for Talismane.
 #
-# 2019/12/16
+# 2019/12/17
 # - Added support for DGD pseudo-sentences
 #   based on anchor milestones.
+# - Support for non-verbal annotations.
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2019/12/16';
+our $LAST_CHANGE = '2019/12/17';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -195,6 +196,7 @@ GetOptions(
   'koral|k=f'    => \(my $koral),
   'to-tar'      => \(my $to_tar),
   'non-word-tokens|nwt' => \(my $non_word_tokens),
+  'non-verbal-tokens|nvt' => \(my $non_verbal_tokens),
   'sequential-extraction|se' => \(my $sequential_extraction),
   'cache-size|cs=s'  => \(my $cache_size),
   'cache-delete|cd!' => \(my $cache_delete),
@@ -258,9 +260,14 @@ if ($cfg_file && -e $cfg_file) {
     $token_base = $config{token};
   };
 
-  # temporary-extract
+  # Non-word tokenization
   if (!defined($non_word_tokens) && defined $config{'non-word-tokens'}) {
     $non_word_tokens = $config{'non-word-tokens'};
+  };
+
+  # Non-verbal tokenization
+  if (!defined($non_verbal_tokens) && defined $config{'non-verbal-tokens'}) {
+    $non_verbal_tokens = $config{'non-verbal-tokens'};
   };
 
   # Cache file
@@ -354,6 +361,7 @@ $base_sentences      //= '';
 $base_paragraphs     //= '';
 $base_pagebreaks     //= '';
 $non_word_tokens     //= 0;
+$non_verbal_tokens   //= 0;
 
 $base_sentences  = lc $base_sentences;
 $base_paragraphs = lc $base_paragraphs;
@@ -592,7 +600,8 @@ my $batch_file = KorAP::XML::Batch::File->new(
   primary   => $primary,
   pretty    => $pretty,
   anno      => \@filtered_anno,
-  non_word_tokens => $non_word_tokens
+  non_word_tokens => $non_word_tokens,
+  non_verbal_tokens => $non_verbal_tokens
 );
 
 # Get file name based on path information
@@ -1228,6 +1237,8 @@ Overwrite files that already exist.
 Define the default tokenization by specifying
 the name of the foundry and optionally the name
 of the layer-file. Defaults to C<OpenNLP#tokens>.
+This will directly take the file instead of running
+the layer implementation!
 
 
 =item B<--base-sentences|-bs> <foundry>#<layer>
@@ -1286,6 +1297,15 @@ Tokenize non-word tokens like word tokens (defined as matching
 C</[\d\w]/>). Useful to treat punctuations as tokens.
 
  Defaults to unset.
+
+
+=item B<--non-verbal-tokens|-nvt>
+
+Tokenize non-verbal tokens marked as in the primary data as 
+the unicode symbol 'Black Vertical Rectangle' aka \x25ae.
+
+ Defaults to unset.
+
 
 =item B<--jobs|-j>
 
@@ -1537,7 +1557,7 @@ L<KorAP::XML::Krill> is developed as part of the L<KorAP|http://korap.ids-mannhe
 Corpus Analysis Platform at the
 L<Leibniz Institute for the German Language (IDS)|http://ids-mannheim.de/>,
 member of the
-L<Leibniz-Gemeinschaft|http://www.leibniz-gemeinschaft.de/en/about-us/leibniz-competition/projekte-2011/2011-funding-line-2/>.
+L<Leibniz-Gemeinschaft|http://www.leibniz-gemeinschaft.de/>.
 
 This program is free software published under the
 L<BSD-2 License|https://raw.githubusercontent.com/KorAP/KorAP-XML-Krill/master/LICENSE>.
