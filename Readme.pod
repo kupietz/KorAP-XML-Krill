@@ -133,7 +133,8 @@ of the layer-file. Defaults to C<OpenNLP#tokens>.
 
 Define the layer for base sentences.
 If given, this will be used instead of using C<Base#Sentences>.
-Currently C<DeReKo#Structure> is the only additional layer supported.
+Currently C<DeReKo#Structure> and C<DGD#Structure> are the only additional
+layers supported.
 
  Defaults to unset.
 
@@ -364,6 +365,7 @@ L<Krill|https://github.com/KorAP/Krill>.
 
   DGD
     #Morpho
+    #Structure
 
   DRuKoLa
     #Morpho

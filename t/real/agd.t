@@ -94,7 +94,7 @@ my $first_token = join('||', @{$output->{data}->{stream}->[0]});
 like($first_token, qr!<>:dereko/s:text!);
 
 ## DGD
-$tokens->add('DGD', 'Morpho');
+ok($tokens->add('DGD', 'Morpho'), 'Add Morpho');
 
 $output = decode_json( $tokens->to_json );
 is($output->{data}->{foundries},
@@ -109,11 +109,20 @@ like($third_token, qr!dgd/p:VMGWY!);
 like($third_token, qr!i:alxv!);
 like($third_token, qr!s:alxv!);
 
-# TODO:
-#   Check sentences!
-#   Check paragraphs!
+## DGD base sentences
+ok($tokens->add('DGD', 'Structure'), 'Add sentences');
+$output = decode_json( $tokens->to_json );
 
+# Offsets are suboptimal set, but good enough
 
+$first_token = join('||', @{$output->{data}->{stream}->[0]});
+like($first_token, qr!<>:base/s:s\$<b>64<i>0<i>16<i>3<b>1!);
+
+my $token = join('||', @{$output->{data}->{stream}->[1]});
+unlike($token, qr!<>:base/s:s!);
+
+$token = join('||', @{$output->{data}->{stream}->[2]});
+like($token, qr!<>:base/s:s\$<b>64<i>16<i>23<i>5<b>1!);
 
 done_testing;
 __END__

@@ -142,9 +142,13 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2019/08/08
 # - Support for Talismane.
+#
+# 2019/12/16
+# - Added support for DGD pseudo-sentences
+#   based on anchor milestones.
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2019/08/08';
+our $LAST_CHANGE = '2019/12/16';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -491,6 +495,9 @@ else {
 
 # DGD
 push(@layers, ['DGD', 'Morpho']);
+if ($base_sentences eq 'dgd#structure') {
+  push(@layers, ['DGD', 'Structure', 'base-sentence']);
+}
 
 # DRuKoLa
 push(@layers, ['DRuKoLa', 'Morpho']);
@@ -1227,7 +1234,8 @@ of the layer-file. Defaults to C<OpenNLP#tokens>.
 
 Define the layer for base sentences.
 If given, this will be used instead of using C<Base#Sentences>.
-Currently C<DeReKo#Structure> is the only additional layer supported.
+Currently C<DeReKo#Structure> and C<DGD#Structure> are the only additional
+layers supported.
 
  Defaults to unset.
 
@@ -1458,6 +1466,7 @@ L<Krill|https://github.com/KorAP/Krill>.
 
   DGD
     #Morpho
+    #Structure
 
   DRuKoLa
     #Morpho
