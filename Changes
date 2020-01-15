@@ -1,10 +1,11 @@
-0.39 2019-12-16
+0.39 2020-01-16
         - Added Talismane support.
         - Added "distributor" field to I5 metadata.
         - Added DGD link field to I5 metadata.
         - Improve logging.
         - Added support for DGD pseudo-sentences
           based on anchor milestones.
+        - Added brief explanation of the format.
 
 0.38 2019-05-22
         - Stop file processing when base tokenization

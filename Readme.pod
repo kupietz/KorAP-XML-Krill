@@ -16,7 +16,7 @@ korapxml2krill - Merge KorapXML data and create Krill documents
 
 L<KorAP::XML::Krill> is a library to convert KorAP-XML documents to files
 compatible with the L<Krill|https://github.com/KorAP/Krill> indexer.
-The C<korapxml2krill> command line tool is a simple wrapper to the library.
+The C<korapxml2krill> command line tool is a simple wrapper of this library.
 
 
 =head1 INSTALLATION
@@ -129,6 +129,7 @@ the name of the foundry and optionally the name
 of the layer-file. Defaults to C<OpenNLP#tokens>.
 This will directly take the file instead of running
 the layer implementation!
+
 
 =item B<--base-sentences|-bs> <foundry>#<layer>
 
@@ -429,6 +430,105 @@ New annotation importers can be defined in the C<KorAP::XML::Annotation> namespa
 See the built-in annotation importers as examples.
 
 
+=head1 About KorAP-XML
+
+KorAP-XML (Bański et al. 2012) is an implementation of the KorAP
+data model (Bański et al. 2013), where text data are stored physically
+separated from their interpretations (i.e. annotations).
+A text document in KorAP-XML therefore consists of several files
+containing primary data, metadata and annotations.
+
+The structure of a single KorAP-XML document can be as follows:
+
+  - data.xml
+  - header.xml
+    + base
+      - tokens.xml
+      - ...
+    + struct
+      - structure.xml
+      - ...
+    + corenlp
+      - morpho.xml
+      - constituency.xml
+      - ...
+    + tree_tagger
+      - morpho.xml
+      - ...
+    - ...
+
+The C<data.xml> contains the primary data, the C<header.xml> contains
+the metadata, and the annotation layers are stored in subfolders
+like C<base>, C<struct> or C<corenlp>
+(so-called "foundries"; Bański et al. 2013).
+
+Metadata is available in the TEI-P5 variant I5
+(Lüngen and Sperberg-McQueen 2012), while annotations correspond to
+a variant of the TEI-P5 feature structures (TEI Consortium; Lee et al. 2004).
+
+Multiple KorAP-XML documents are organized on three levels following
+the "IDS Textmodell" (Lüngen and Sperberg-McQueen 2012):
+corpus E<gt> document E<gt> text. On each level metadata information
+can be stored, that C<korapxml2krill> will merge to a single metadata
+object per text. A corpus is therefore structured as follows:
+
+  + <corpus>
+    - header.xml
+    + <document>
+      - header.xml
+      + <text>
+        - data.xml
+        - header.xml
+        - ...
+    - ...
+
+A single text can be identified by the concatenation of
+the corpus identifier, the document identifier and the text identifier.
+This identifier is called the text sigle
+(e.g. a text with the identifier C<18486> in the document C<060> in the
+corpus C<WPD17> has the text sigle C<WPD17/060/18486>, see C<--sigle>).
+
+These corpora are often stored in zip files, with which C<korapxml2krill>
+can deal with. Corpora may also be split in multiple zip archives
+(e.g. one zip file per foundry), which is also supported (see C<--input>).
+
+Examples for KorAP-XML files are included in L<KorAP::XML::Krill>
+in form of a test suite.
+The resulting JSON format merges all annotation layers
+based on a single token stream.
+
+=head2 References
+
+Piotr Bański, Cyril Belica, Helge Krause, Marc Kupietz, Carsten Schnober, Oliver Schonefeld, and Andreas Witt (2011):
+KorAP data model: first approximation, December.
+
+Piotr Bański, Peter M. Fischer, Elena Frick, Erik Ketzan, Marc Kupietz, Carsten Schnober, Oliver Schonefeld and Andreas Witt (2012):
+"The New IDS Corpus Analysis Platform: Challenges and Prospects",
+Proceedings of the Eighth International Conference on Language Resources and Evaluation (LREC 2012).
+L<PDF|http://www.lrec-conf.org/proceedings/lrec2012/pdf/789_Paper.pdf>
+
+Piotr Bański, Elena Frick, Michael Hanl, Marc Kupietz, Carsten Schnober and Andreas Witt (2013):
+"Robust corpus architecture: a new look at virtual collections and data access",
+Corpus Linguistics 2013. Abstract Book. Lancaster: UCREL, pp. 23-25.
+L<PDF|https://ids-pub.bsz-bw.de/frontdoor/deliver/index/docId/4485/file/Ba%c5%84ski_Frick_Hanl_Robust_corpus_architecture_2013.pdf>
+
+Kiyong Lee, Lou Burnard, Laurent Romary, Eric de la Clergerie, Thierry Declerck,
+Syd Bauman, Harry Bunt, Lionel Clément, Tomaz Erjavec, Azim Roussanaly and Claude Roux (2004):
+"Towards an international standard on featurestructure representation",
+Proceedings of the fourth International Conference on Language Resources and Evaluation (LREC 2004),
+pp. 373-376.
+L<PDF|http://www.lrec-conf.org/proceedings/lrec2004/pdf/687.pdf>
+
+Harald Lüngen and C. M. Sperberg-McQueen (2012):
+"A TEI P5 Document Grammar for the IDS Text Model",
+Journal of the Text Encoding Initiative, Issue 3 | November 2012.
+L<PDF|https://journals.openedition.org/jtei/pdf/508>
+
+TEI Consortium, eds:
+"Feature Structures",
+Guidelines for Electronic Text Encoding and Interchange.
+L<html|https://www.tei-c.org/release/doc/tei-p5-doc/en/html/FS.html>
+
 =head1 AVAILABILITY
 
   https://github.com/KorAP/KorAP-XML-Krill
@@ -436,9 +536,9 @@ See the built-in annotation importers as examples.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2019, L<IDS Mannheim|http://www.ids-mannheim.de/>
+Copyright (C) 2015-2020, L<IDS Mannheim|https://www.ids-mannheim.de/>
 
-Author: L<Nils Diewald|http://nils-diewald.de/>
+Author: L<Nils Diewald|https://nils-diewald.de/>
 
 Contributor: Eliza Margaretha
 
