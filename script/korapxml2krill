@@ -1578,6 +1578,25 @@ L<KorAP::XML::Meta::I5> for translatable fields.
 
 Annotations correspond to a variant of the TEI-P5 feature structures
 (TEI Consortium; Lee et al. 2004).
+Annotation feature structures refer to character sequences of the primary text
+inside the C<text> element of the C<data.xml>.
+A single annotation containing the lemma of a token can have the following structure:
+
+  <span from="0" to="3">
+    <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+      <f name="lex">
+        <fs>
+          <f name="lemma">zum</f>
+        </fs>
+      </f>
+    </fs>
+  </span>
+
+The C<from> and C<to> attributes are refering to the character span
+in the primary text.
+Depending on the kind of annotation (e.g. token-based, span-based, relation-based),
+the structure may vary. See L<KorAP::XML::Annotation::*> for various
+annotation preprocessors.
 
 Multiple KorAP-XML documents are organized on three levels following
 the "IDS Textmodell" (Lüngen and Sperberg-McQueen 2012):
