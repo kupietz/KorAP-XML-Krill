@@ -408,3 +408,152 @@ sub _remove_prefix {
 
 1;
 
+
+__END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+KorAP::XML::Meta::I5 - Parses I5 meta data of a KorAP-XML document
+
+=head1 DESCRIPTION
+
+Parses I5 meta data of a KorAP-XML document.
+
+Following the data model, all 3 levels of metadata are parsed, while not all
+metadata levels contain the same information. The precedence is that metadata
+defined on the text level will override metadata on the document level. And
+metadata on the document level will override metadata on the corpus level.
+
+=head2 Metadata categories
+
+Krill currently supports the following types of metadata to be indexed.
+They differ especially in the way they can be used to construct a virtual corpus.
+
+=over 2
+
+=item B<String>
+
+A simple string representation of a meta data field. Useful for fixed values,
+such as I<corpusSigle> or I<language>.
+
+=item B<Text>
+
+A string representation that will be indexed as a text, so fulltext search
+(like phrase search) is supported. Useful for values where partial matches are
+useful, like I<title> or I<author>.
+
+=item B<Keywords>
+
+Multiple string representations. Identical to string, but supports multiple
+values in the same field. Useful for multiple given values such as I<textClass>.
+
+=item B<Attachement>
+
+Values that can't be used for the construction of virtual corpora, but are stored
+per document and can be retrieved. Useful for static data to be retrieved such as
+I<reference> or I<externalLink>.
+
+=item B<Date>
+
+A representation of a date, that can later be used for date range queries to construct
+virtual corpora. Useful for all date related information, such as I<pubDate> or I<createDate>.
+
+=back
+
+=head2 Metadata fields
+
+Currently L<KorAP::XML::Meta::I5> recognizes and transfers the following fields, given as
+a SCSS selector rule (plus C<@> for attribute values) followed by the field name and
+the metadata category.
+The order may indicate a field to be overwritten.
+
+=over 2
+
+=item B<On all levels>
+
+  (analytic, monogr) editor[role=translator]   translator            ATTACHEMENT
+  pubPlace@key                                 pubPlaceKey           STRING
+  pubPlace                                     pubPlace              STRING
+  imprint publisher                            publisher             ATTACHEMENT
+  textDesc textType                            textType              STRING
+  textDesc textDomain                          textDomain            STRING
+  textDesc textTypeArt                         textTypeArt           STRING
+  textDesc textTypeRef                         textTypeRef           STRING
+  pubDate[type=year]
+    & pubDate[type=month]
+    & pubDate[type=day]                        pubDate               DATE
+  creatDate                                    creationDate          DATE
+  textClass catRef@target                      textClass             KEYWORDS
+  textClass h.keywords > keyTerm               keywords              KEYWORDS
+  biblFull editionStmt                         biblEditionStatement  ATTACHEMENT
+  fileDesc editionStmt                         fileEditionStatement  ATTACHEMENT
+  fileDesc publicationStmt > availability      availability          STRING
+  fileDesc publicationStmt > distributor       distributor           ATTACHEMENT
+  profileDesc > langUsage > language[id]@id    language              STRING
+
+=item B<On text level>
+
+  textSigle                                    textSigle             STRING
+  fileDesc > titleStmt > t.title               title                 TEXT
+  (analytic, monogr) h.title[type=main]        title                 TEXT
+  (analytic, monogr) h.title[type=sub]         subTitle              TEXT
+  (analytic, monogr) h.author                  author                TEXT
+  (analytic, monogr) editor[role!=translator]  editor                ATTACHEMENT
+  sourceDesc reference[type=complete]          reference             ATTACHEMENT
+  textDesc > column                            textColumn            STRING
+  biblStruct biblScope[type=pp]                srcPages              ATTACHEMENT
+
+=item B<On document level>
+
+  dokumentSigle                                docSigle              STRING
+  fileDesc > titleStmt > d.title               docTitle              TEXT
+  (analytic, monogr) h.title[type=main]        docTitle              TEXT
+  (analytic, monogr) h.title[type=sub]         docSubTitle           TEXT
+  (analytic, monogr) h.author                  docAuthor             TEXT
+  (analytic, monogr) editor[role!=translator]  docEditor             ATTACHEMENT
+
+=item B<On corpus level>
+
+  korpusSigle                                  corpusSigle           STRING
+  fileDesc > titleStmt > c.title               corpusTitle           TEXT
+  (analytic, monogr) h.title[type=main]        corpusTitle           TEXT
+  (analytic, monogr) h.title[type=sub]         corpusSubTitle        TEXT
+  (analytic, monogr) h.author                  corpusAuthor          TEXT
+  (analytic, monogr) editor[role!=translator]  corpusEditor          ATTACHEMENT
+
+=back
+
+Some fields are specially formated, like C<srcPages> or dates.
+In case of Wikipedia texts, C<sourceDesc reference[type=complete]> will be
+turned into an C<externalLink>. In case of DGD/AGD documents, an external link
+to the DGD will be created as C<externalLink>.
+
+
+=head1 AVAILABILITY
+
+  https://github.com/KorAP/KorAP-XML-Krill
+
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2015-2020, L<IDS Mannheim|https://www.ids-mannheim.de/>
+Author: L<Nils Diewald|https://nils-diewald.de/>
+
+KorAP::XML::Krill is developed as part of the
+L<KorAP|https://korap.ids-mannheim.de/>
+Corpus Analysis Platform at the
+L<Institute for the German Language (IDS)|https://www.ids-mannheim.de/>,
+member of the
+L<Leibniz-Gemeinschaft|https://www.leibniz-gemeinschaft.de/en/>
+and supported by the L<KobRA|http://www.kobra.tu-dortmund.de> project,
+funded by the
+L<Federal Ministry of Education and Research (BMBF)|http://www.bmbf.de/en/>.
+
+KorAP::XML::Krill is free software published under the
+L<BSD-2 License|https://raw.githubusercontent.com/KorAP/KorAP-XML-Krill/master/LICENSE>.
+
+=cut

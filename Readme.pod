@@ -463,8 +463,11 @@ like C<base>, C<struct> or C<corenlp>
 (so-called "foundries"; Bański et al. 2013).
 
 Metadata is available in the TEI-P5 variant I5
-(Lüngen and Sperberg-McQueen 2012), while annotations correspond to
-a variant of the TEI-P5 feature structures (TEI Consortium; Lee et al. 2004).
+(Lüngen and Sperberg-McQueen 2012). See the documentation in
+L<KorAP::XML::Meta::I5> for translatable fields.
+
+Annotations correspond to a variant of the TEI-P5 feature structures
+(TEI Consortium; Lee et al. 2004).
 
 Multiple KorAP-XML documents are organized on three levels following
 the "IDS Textmodell" (Lüngen and Sperberg-McQueen 2012):

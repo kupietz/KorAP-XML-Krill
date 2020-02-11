@@ -414,15 +414,15 @@ Accept the tokenization based on a given foundry and a given layer.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2018, L<IDS Mannheim|http://www.ids-mannheim.de/>
-Author: L<Nils Diewald|http://nils-diewald.de/>
+Copyright (C) 2015-2020, L<IDS Mannheim|https://www.ids-mannheim.de/>
+Author: L<Nils Diewald|https://nils-diewald.de/>
 
 KorAP::XML::Krill is developed as part of the
 L<KorAP|http://korap.ids-mannheim.de/>
 Corpus Analysis Platform at the
-L<Institute for the German Language (IDS)|http://ids-mannheim.de/>,
+L<Institute for the German Language (IDS)|https://www.ids-mannheim.de/>,
 member of the
-L<Leibniz-Gemeinschaft|http://www.leibniz-gemeinschaft.de/en/about-us/leibniz-competition/projekte-2011/2011-funding-line-2/>
+L<Leibniz-Gemeinschaft|https://www.leibniz-gemeinschaft.de/en/>
 and supported by the L<KobRA|http://www.kobra.tu-dortmund.de> project,
 funded by the
 L<Federal Ministry of Education and Research (BMBF)|http://www.bmbf.de/en/>.
