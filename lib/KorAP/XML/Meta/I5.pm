@@ -321,13 +321,13 @@ sub parse {
     $self->{A_bibl_edition_statement} = $temp if $temp;
   };
 
-  if ($temp = $dom->at('fileDescl editionStmt')) {
-    $temp = _squish $temp->all_text;
-    $self->{A_file_edition_statement} = $temp if $temp;
-  };
-
   if ($temp = $dom->at('fileDesc')) {
     my $temp2;
+
+    if (my $editionStmt = $temp->at('editionStmt')) {
+      $temp2 = _squish $editionStmt->all_text;
+      $self->{A_file_edition_statement} = $temp2 if $temp2;
+    };
 
     if (my $availability = $temp->at('publicationStmt > availability')) {
       $temp2 = _squish $availability->all_text;
@@ -407,3 +407,4 @@ sub _remove_prefix {
 
 
 1;
+

@@ -52,7 +52,7 @@ ok(!$meta->{S_text_domain}, 'Correct Text Domain');
 is($meta->{D_creation_date}, '20130302', 'Creation Date');
 
 ok(!$meta->{pages}, 'Pages');
-ok(!$meta->{A_file_edition_statement}, 'File Ed Statement');
+is($meta->{A_file_edition_statement}, 'Magyar Nemzeti Szövegtár 2. változat - XML formátum', 'File Ed Statement');
 ok(!$meta->{A_bibl_edition_statement}, 'Bibl Ed Statement');
 ok(!$meta->{A_reference}, 'Reference');
 is($meta->{S_language}, 'hu', 'Language');
