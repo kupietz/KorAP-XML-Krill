@@ -4,7 +4,7 @@
 
 =head1 NAME
 
-korapxml2krill - Merge KorapXML data and create Krill documents
+korapxml2krill - Merge KorAP-XML data and create Krill documents
 
 
 =head1 SYNOPSIS
@@ -335,7 +335,7 @@ The L<Log4perl> log level, defaults to C<ERROR>.
 
 =item B<--help|-h>
 
-Print this document.
+Print help information.
 
 
 =item B<--version|-v>
