@@ -27,6 +27,7 @@ WriteMakefile(
     'IO::Dir::Recursive' => 0.03,
     'File::Temp'      => 0,
     'Directory::Iterator' => 0,
+    'Dumbbench'       => '0.111',
     'Benchmark'       => 0,
     'Unicode::Normalize' => 0,
     'Carp'            => 0,

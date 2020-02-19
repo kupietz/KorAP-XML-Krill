@@ -1,4 +1,4 @@
-0.39 2020-02-11
+0.39 2020-02-19
         - Added Talismane support.
         - Added "distributor" field to I5 metadata.
         - Added DGD link field to I5 metadata.
@@ -9,6 +9,7 @@
         - Fixed parsing of editionStmt.
         - Added documentation for supported I5 metadata
           fields.
+        - Added integrated benchmark mechanism.
 
 0.38 2019-05-22
         - Stop file processing when base tokenization
