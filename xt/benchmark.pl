@@ -72,7 +72,7 @@ if ($columns) {
   unless ($no_header) {
     print join("\t", map { $_->name } $bench->instances), "\n";
   };
-  print join("\t", map { $_->single_run } $bench->instances), "\n";
+  print join("\t", map { $_->result->raw_number } $bench->instances), "\n";
   exit(0);
 };
 
@@ -81,7 +81,7 @@ foreach my $inst ($bench->instances) {
   unless ($no_header) {
     print $inst->name, ': ';
   };
-  print $inst->single_run, "\n";
+  print $inst->result->raw_number, "\n";
 };
 
 exit(0);
