@@ -54,7 +54,7 @@ my $stream = $json->{data}->{stream};
 my $token = $stream->[4];
 is($token->[3], 'dgd/l:pui', 'Token');
 $token = $stream->[5];
-is($token->[13], 'dgd/l:xui', 'Token');
+is($token->[15], 'dgd/l:xui', 'Token');
 
 $call = join(
   ' ',
@@ -88,10 +88,10 @@ $token = $stream->[4];
 is($token->[3], 'dgd/l:pui', 'Token');
 
 $token = $stream->[5];
-is($token->[14], 'dgd/para:pause$<b>128<s>5', 'Token');
+is($token->[4], 'dgd/para:pause$<b>128<s>2', 'Token');
 
 $token = $stream->[6];
-is($token->[1], 'dgd/l:xui', 'Token');
+is($token->[13], 'dgd/l:xui', 'Token');
 
 
 

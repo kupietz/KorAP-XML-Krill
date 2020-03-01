@@ -2,6 +2,7 @@ package KorAP::XML::Tokenizer::Span;
 use strict;
 use warnings;
 use Mojo::DOM;
+use Clone;
 
 sub new {
   bless [], shift;
@@ -108,5 +109,12 @@ sub to_string {
       $v->[4] . '-' .$v->[5] . ']';
   };
 };
+
+
+# Clone the span
+sub clone {
+  return Clone::clone(shift);
+};
+
 
 1;

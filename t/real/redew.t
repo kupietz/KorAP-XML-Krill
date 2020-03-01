@@ -1,0 +1,155 @@
+use strict;
+use warnings;
+use Test::More;
+use Data::Dumper;
+use JSON::XS;
+use Log::Log4perl;
+
+use utf8;
+use lib 'lib', '../lib';
+
+use File::Basename 'dirname';
+use File::Spec::Functions 'catdir';
+
+# Initialize log4perl object
+Log::Log4perl->init({
+  'log4perl.rootLogger' => 'ERROR, STDERR',
+  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
+  'log4perl.appender.STDERR.layout' => 'PatternLayout',
+  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
+});
+
+use_ok('KorAP::XML::Krill');
+
+my $path = catdir(dirname(__FILE__), '../corpus/REDEW/DOC1/00000');
+
+ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc->parse, 'Parse document');
+
+is($doc->text_sigle, 'REDEW/DOC1/00000', 'Correct text sigle');
+is($doc->doc_sigle, 'REDEW/DOC1', 'Correct document sigle');
+is($doc->corpus_sigle, 'REDEW', 'Correct corpus sigle');
+
+my $meta = $doc->meta;
+ok(!$meta->{T_title}, 'Title');               # ???
+ok(!$meta->{T_sub_title}, 'SubTitle');
+ok(!$meta->{T_author}, 'Author');
+ok(!$meta->{A_editor}, 'Editor');
+ok(!$meta->{S_pub_place}, 'PubPlace');
+is($meta->{A_publisher}, '...', 'Publisher'); # ???
+
+is($meta->{S_text_type}, '?', 'Text Type');   # ???
+ok(!$meta->{S_text_type_art}, 'No Text Type Art');
+ok(!$meta->{S_text_type_ref}, 'No Text Type Ref');
+ok(!$meta->{S_text_domain}, 'No Text Domain');
+ok(!$meta->{S_text_column}, 'No Text Column');
+
+ok(!$meta->{K_text_class}->[0], 'Correct Text Class');
+
+is($meta->{D_pub_date}, '20200000', 'Creation date');
+is($meta->{D_creation_date}, '20200000', 'Creation date');
+is($meta->{S_availability}, 'QAO-NC', 'License');           # ???
+ok(!$meta->{A_pages}, 'Pages');
+
+ok(!$meta->{A_file_edition_statement}, 'File Statement');
+ok(!$meta->{A_bibl_edition_statement}, 'Bibl Statement');
+
+ok(!$meta->{A_reference}, 'Reference');
+ok(!$meta->{S_language}, 'Language'); # ???
+
+is($meta->{T_corpus_title}, 'Redewiedergabe', 'Correct Corpus title');
+ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus sub title');
+is($meta->{T_corpus_author}, '...', 'Correct Corpus author'); # ???
+is($meta->{A_corpus_editor}, '...', 'Correct Corpus editor'); # ???
+
+is($meta->{T_doc_title}, 'Redewiedergabe Dokument 1', 'Correct Doc title');
+ok(!$meta->{T_doc_sub_title}, 'Correct Doc sub title');
+ok(!$meta->{T_doc_author}, 'Correct Doc author');
+ok(!$meta->{A_doc_editor}, 'Correct doc editor');
+
+# Tokenization
+use_ok('KorAP::XML::Tokenizer');
+
+my ($token_base_foundry, $token_base_layer) = (qw/drukola Morpho/);
+
+# Get tokenization
+my $tokens = KorAP::XML::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => $token_base_foundry,
+  layer => $token_base_layer,
+  name => 'tokens'
+);
+
+ok($tokens, 'Token Object is fine');
+ok($tokens->parse, 'Token parsing is fine');
+
+my $output = decode_json( $tokens->to_json );
+
+is(substr($output->{data}->{text}, 0, 100), 'Cechov,_Anton_Pavlovic_Gram.tg4_1.xml 1886 1880 Gram Čechov, Anton Pavlovič yes yes Erzähltext digbi', 'Primary Data');
+
+is($output->{data}->{name}, 'tokens', 'tokenName');
+is($output->{data}->{tokenSource}, 'drukola#morpho', 'tokenSource');
+is($output->{version}, '0.03', 'version');
+
+is($output->{data}->{foundries}, '', 'Foundries');
+is($output->{data}->{layerInfos}, '', 'layerInfos');
+is($output->{data}->{stream}->[0]->[4], 's:Hörst', 'data');
+
+is($output->{textSigle}, 'REDEW/DOC1/00000', 'Correct text sigle');
+is($output->{docSigle}, 'REDEW/DOC1', 'Correct document sigle');
+is($output->{corpusSigle}, 'REDEW', 'Correct corpus sigle');
+
+ok(!$output->{title}, 'Title');
+ok(!$output->{subTitle}, 'Correct SubTitle');
+ok(!$output->{author}, 'Author');
+ok(!exists $output->{editor}, 'Publisher');
+
+# Add annotations
+$tokens->add('DRuKoLa', 'Morpho');
+$tokens->add('DeReKo', 'Structure');
+
+$output = decode_json( $tokens->to_json );
+
+my $first = $output->{data}->{stream}->[0];
+
+is('-:tokens$<i>13',$first->[0]);
+is('<>:base/s:t$<b>64<i>0<i>197<i>12<b>0',$first->[1]);
+is('<>:dereko/s:text$<b>64<i>0<i>197<i>12<b>0',$first->[2]);
+is('<>:dereko/s:body$<b>64<i>118<i>197<i>12<b>1',$first->[3]);
+is('<>:dereko/s:p$<b>64<i>118<i>197<i>12<b>2',$first->[4]);
+is('<>:dereko/s:said$<b>64<i>118<i>197<i>12<b>3<s>1',$first->[5]);
+is('@:dereko/s:level:1$<b>17<s>1<i>12',$first->[6]);
+is('@:dereko/s:content:speech$<b>17<s>1<i>12',$first->[7]);
+is('@:dereko/s:mode:direct$<b>17<s>1<i>12',$first->[8]);
+is('@:dereko/s:id:1$<b>17<s>1<i>12',$first->[9]);
+is('_0$<i>123<i>128',$first->[10]);
+is("drukola/l:H\x{f6}rst",$first->[11]);
+is('drukola/m:msd:rfpos',$first->[12]);
+is('drukola/m:sentstart:no',$first->[13]);
+is('drukola/m:stwr:direct.speech.1',$first->[14]);
+is('drukola/p:VVFIN',$first->[15]);
+is("i:h\x{f6}rst",$first->[16]);
+is("s:H\x{f6}rst",$first->[17]);
+
+my $nine = join(',', @{$output->{data}->{stream}->[9]});
+like($nine, qr{drukola\/l:nichts}, 'Nichts');
+like($nine, qr{_9\$<i>170<i>176}, 'Term boundaries');
+unlike($nine, qr{<>:dereko/s:said\$<b>64<i>176<i>196<i>12<b>4<s>1}, 'Term boundaries');
+
+my $ten = join(',', @{$output->{data}->{stream}->[10]});
+like($ten, qr{_10\$<i>177<i>180}, 'Term boundaries');
+like($ten, qr{<>:dereko/s:said\$<b>64<i>176<i>196<i>12<b>4<s>1}, 'Term boundaries');
+
+my $eleven = join(',', @{$output->{data}->{stream}->[11]});
+like($eleven, qr{_11\$<i>181<i>188}, 'Term boundaries');
+like($eleven, qr{<>:dereko/s:seg\$<b>64<i>180<i>188<i>12<b>5<s>1}, 'Segment');
+
+
+my $twelve = join(',', @{$output->{data}->{stream}->[12]});
+like($twelve, qr{_12\$<i>189<i>195}, 'Term boundaries');
+like($twelve, qr{drukola/l:Wort}, 'Lemma');
+like($twelve, qr{<>:dereko/s:seg\$<b>64<i>188<i>195<i>13<b>5<s>1}, 'Segment');
+
+done_testing;
+__END__

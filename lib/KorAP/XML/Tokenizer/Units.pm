@@ -8,6 +8,8 @@ has 'should' => 0;
 has 'have' => 0;
 has 'encoding' => 'utf-8';
 
+use constant DEBUG => 0;
+
 sub span {
   my $self = shift;
   my ($from, $to, $s) = @_;
@@ -19,10 +21,14 @@ sub span {
   $from //= 0;
 
   # The span is invalid
-  return unless $from <= $to;
+  unless ($from <= $to) {
+    if (DEBUG) {
+      warn $s->{-id} . ' is invalid';
+    };
+    return;
+  };
 
   my $span = KorAP::XML::Tokenizer::Span->new;
-
 
   # The span is a milestone
   if ($from == $to) {
@@ -41,7 +47,13 @@ sub span {
 
   unless (defined $start) {
     $start = $self->range->after($span->o_start);
-    return unless defined $start;
+
+    unless (defined $start) {
+      if (DEBUG) {
+        warn $span->id . ' has no valid start';
+      };
+      return;
+    };
   };
 
   # Set start token position to span
@@ -57,24 +69,44 @@ sub span {
 
     unless (defined $end) {
       $end = $self->range->before($span->o_end);
-      return unless defined $end;
+
+      unless (defined $end) {
+        if (DEBUG) {
+          warn $span->id . ' has no valid end';
+        };
+        return;
+      };
 
       # The next token of end has a character
-      # offset AFTER th given end character offset
+      # offset AFTER the given end character offset
       my $real_start = $self->stream->pos($end)->o_start;
 
       # Ignore non-milestone elements outside the token stream!
-      return if $to <= $real_start;
+      if ($to <= $real_start) {
+        if (DEBUG) {
+          warn 'Ignore ' . $span->id . ' is a non-milestone element outside the token stream';
+        };
+        return;
+      };
     };
 
     # $span->p_end($end);
     # return unless $span->p_end >= $span->p_start;
 
     # EXPERIMENTAL:
-    return unless $end >= $span->p_start;
+    unless ($end >= $span->p_start) {
+      if (DEBUG) {
+        warn 'Ignore ' . $span->id . ' with ' . $span->p_start . '-' . $end;
+      };
+      return;
+    };
 
     $span->p_end($end + 1);
   }
+
+  if (DEBUG && $from == 124) {
+    warn 'exact: ' . $span->p_start . '-' . $span->p_end;
+  };
 
   $span->hash($s) if $s;
 
@@ -116,6 +148,8 @@ sub _offset {
     $from = $p->bytes2chars($from);
     $to = $p->bytes2chars($to);
   }
+
+  # This is legacy treating of bytes2chars
   elsif ($self->encoding eq 'xip') {
     $from = $p->xip2chars($from);
     $to = $p->xip2chars($to);

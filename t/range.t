@@ -44,8 +44,8 @@ is($range->before(23), 1, 'Before is fine');
 is($range->after(0), 0, 'After is fine');
 is($range->after(1), 0, 'After is fine');
 is($range->after(2), 0, 'After is fine');
-is($range->after(3), 0, 'After is fine');
-is($range->after(14), 0, 'After is fine');
+is($range->after(3), 1, 'After is fine');
+is($range->after(14), 1, 'After is fine');
 is($range->after(15), 1, 'After is fine');
 
 is($range->to_string,

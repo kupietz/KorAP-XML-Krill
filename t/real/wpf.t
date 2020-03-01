@@ -101,10 +101,11 @@ is($stream->[300]->[0], '>:talismane/d:det$<b>32<i>301', 'Talismane dep annotati
 $tokens->add('Talismane', 'Morpho');
 
 $stream = $tokens->to_data->{data}->{stream};
-is($stream->[1]->[10], 'talismane/l:Sigmund', 'Talismane morpho annotation');
-is($stream->[1]->[11], 'talismane/m:g:m', 'Talismane morpho annotation');
-is($stream->[1]->[12], 'talismane/m:n:s', 'Talismane morpho annotation');
-is($stream->[1]->[13], 'talismane/p:NPP', 'Talismane morpho annotation');
+
+is($stream->[1]->[9], 'talismane/l:Sigmund', 'Talismane morpho annotation');
+is($stream->[1]->[10], 'talismane/m:g:m', 'Talismane morpho annotation');
+is($stream->[1]->[11], 'talismane/m:n:s', 'Talismane morpho annotation');
+is($stream->[1]->[12], 'talismane/p:NPP', 'Talismane morpho annotation');
 
 is($stream->[300]->[5], 'talismane/l:son', 'Talismane lemma annotation');
 is($stream->[300]->[6], 'talismane/m:g:m', 'Talismane morph annotation');
@@ -116,7 +117,10 @@ is($stream->[300]->[10], 'talismane/p:DET', 'Talismane pos annotation');
 # Add Malt dependency
 $tokens->add('Malt', 'Dependency');
 $stream = $tokens->to_data->{data}->{stream};
-is($stream->[1]->[1], '>:malt/d:dep$<b>33<i>7<i>8<i>0<i>1', 'Malt dep annotation');
+
+# This is no longer indexed
+# is($stream->[1]->[1], '>:malt/d:dep$<b>33<i>7<i>8<i>0<i>1', 'Malt dep annotation');
+
 is($stream->[1]->[2], '<:malt/d:dep$<b>32<i>2', 'Malt dep annotation');
 is($stream->[300]->[1], '>:malt/d:punct$<b>32<i>302', 'Malt dep annotation');
 
@@ -124,9 +128,10 @@ is($stream->[300]->[1], '>:malt/d:punct$<b>32<i>302', 'Malt dep annotation');
 # Add TreeTagger morpho
 $tokens->add('TreeTagger', 'Morpho');
 $stream = $tokens->to_data->{data}->{stream};
-is($stream->[1]->[14], 'tt/p:ADJ$<b>129<b>26', 'TreeTagger morph annotation');
-is($stream->[1]->[15], 'tt/p:NAM$<b>129<b>200', 'TreeTagger morph annotation');
-is($stream->[1]->[16], 'tt/p:NOM$<b>129<b>27', 'TreeTagger morph annotation');
+
+is($stream->[1]->[13], 'tt/p:ADJ$<b>129<b>26', 'TreeTagger morph annotation');
+is($stream->[1]->[14], 'tt/p:NAM$<b>129<b>200', 'TreeTagger morph annotation');
+is($stream->[1]->[15], 'tt/p:NOM$<b>129<b>27', 'TreeTagger morph annotation');
 
 
 done_testing;

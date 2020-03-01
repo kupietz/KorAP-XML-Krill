@@ -36,6 +36,16 @@ sub parse {
       # Get the mtt
       my $mtt = $stream->pos($p_start);
 
+      unless ($mtt) {
+
+        # This is a special case were a milestone is at the
+        # end of a text and can't be indexed at the moment!
+        $$self->log->warn(
+          'Span ' . $span->to_string . ' can\'t be indexed'
+        );
+        return;
+      };
+
       my $p_end = $span->p_end;
 
       # Add structure

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="text.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<raw_text docid="REDEW_DOC1.00000" xmlns="http://ids-mannheim.de/ns/KorAP">
+  <metadata file="metadata.xml" />
+  <text>Cechov,_Anton_Pavlovic_Gram.tg4_1.xml 1886 1880 Gram Čechov, Anton Pavlovič yes yes Erzähltext digbib no third chevron ... Hörst du, du alter Drachen? Oder machst du dir nichts aus unseren Worten?«</text>
+</raw_text>

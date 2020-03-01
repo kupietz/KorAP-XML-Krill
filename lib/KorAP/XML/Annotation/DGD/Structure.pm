@@ -73,7 +73,7 @@ sub parse {
       o_start => $o_start,
       o_end   => $_->[1],
       p_start => $p_start,
-      p_end   => $_->[0] + 1,
+      p_end   => $_->[0],
       pti     => 64
     );
     $mt->payload('<b>1');

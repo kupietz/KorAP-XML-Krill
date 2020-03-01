@@ -78,10 +78,17 @@ $tokens->add('Mate', 'Dependency');
 my $stream = $tokens->to_data->{data}->{stream};
 
 # This is not a goot relation example
-is($stream->[77]->[0],
-   '<:mate/d:--$<b>34<i>498<i>499<i>78<i>78',
-   'element to term');
-is($stream->[78]->[0], '>:mate/d:--$<b>33<i>498<i>499<i>77<i>78', 'term to element');
+ is($stream->[79]->[0],
+    '>:mate/d:CJ$<b>32<i>68',
+    'term to term');
+ is($stream->[79]->[1], '<:mate/d:PD$<b>32<i>81', 'term to term');
+
+
+# These are no longer aligned
+# is($stream->[77]->[0],
+#    '<:mate/d:--$<b>34<i>498<i>499<i>78<i>78',
+#    'element to term');
+# is($stream->[78]->[0], '>:mate/d:--$<b>33<i>498<i>499<i>77<i>78', 'term to element');
 
 $tokens->add('Base', 'Sentences');
 

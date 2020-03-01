@@ -80,18 +80,21 @@ sub after {
     return $2;
   }
   else {
-    # I am not sure about that ...
-    $found;
+    # The current position is likely wrong. The most common non-gap
+    # and non-exact-match is in the situation of
+    # "y<e> z</e>", where e is in the range of the y token.
+    $found + 1;
   };
 };
 
 
 sub to_string {
   my $self = shift;
-  return join('',
-	      map {'['.join(',',@$_).']'}
-		@{$$self->get_range(0,100,'...')}
-	      ) . '...';
+  return join(
+    '',
+    map {'['.join(',',@$_).']'}
+      @{$$self->get_range(0,100,'...')}
+    ) . '...';
 };
 
 1;

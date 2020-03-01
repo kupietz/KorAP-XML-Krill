@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="REDEW_DOC1.00000" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="119" to="122" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">--</f>
+            <f name="pos">$(</f>
+            <f name="msd">msd=rfpos=SYM.Pun.Cont|sentstart=yes|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s1" from="123" to="128" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Hörst</f>
+            <f name="pos">VVFIN</f>
+            <f name="msd">msd=rfpos=VFIN.Full.2.Sg.Pres.Ind|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s2" from="129" to="131" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">du</f>
+            <f name="pos">PPER</f>
+            <f name="msd">msd=rfpos=PRO.Pers.Subst.2.Nom.Sg.*|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s3" from="131" to="132" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">--</f>
+            <f name="pos">$,</f>
+            <f name="msd">msd=rfpos=SYM.Pun.Comma|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s4" from="133" to="135" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">du</f>
+            <f name="pos">PPER</f>
+            <f name="msd">msd=rfpos=PRO.Pers.Subst.2.Nom.Sg.*|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s5" from="136" to="141" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">alt</f>
+            <f name="pos">ADJA</f>
+            <f name="msd">msd=rfpos=ADJA.Pos.Gen.Pl.Masc|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s6" from="142" to="149" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Drache</f>
+            <f name="pos">NN</f>
+            <f name="msd">msd=rfpos=N.Reg.Gen.Pl.Masc|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s7" from="149" to="150" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">--</f>
+            <f name="pos">$.</f>
+            <f name="msd">msd=rfpos=SYM.Pun.Sent|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s8" from="151" to="155" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">oder</f>
+            <f name="pos">NE</f>
+            <f name="msd">msd=rfpos=CONJ.Coord.-|sentstart=yes|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s9" from="156" to="162" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">machen</f>
+            <f name="pos">VVFIN</f>
+            <f name="msd">msd=rfpos=VFIN.Full.2.Sg.Pres.Ind|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s10" from="163" to="165" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">du</f>
+            <f name="pos">PPER</f>
+            <f name="msd">msd=rfpos=PRO.Pers.Subst.2.Nom.Sg.*|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s11" from="166" to="169" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">dir</f>
+            <f name="pos">PPER</f>
+            <f name="msd">msd=rfpos=PRO.Pers.Subst.2.Dat.Sg.*|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s12" from="170" to="176" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">nichts</f>
+            <f name="pos">PIS</f>
+            <f name="msd">msd=rfpos=PRO.Indef.Subst.-.*.*.Neut|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s13" from="177" to="180" l="6">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">aus</f>
+            <f name="pos">APPR</f>
+            <f name="msd">msd=rfpos=APPR.Dat|sentstart=no|stwr=direct.speech.1|reported.speech.19</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s14" from="181" to="188" l="7">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">unser</f>
+            <f name="pos">PPOSAT</f>
+            <f name="msd">msd=rfpos=PRO.Poss.Attr.-.Dat.Pl.Neut|sentstart=no|stwr=direct.speech.1|reported.speech.19</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s15" from="189" to="195" l="7">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">Wort</f>
+            <f name="pos">NN</f>
+            <f name="msd">msd=rfpos=N.Reg.Dat.Pl.Neut|sentstart=no|stwr=direct.speech.1|reported.speech.19</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s16" from="195" to="196" l="6">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">--</f>
+            <f name="pos">$.</f>
+            <f name="msd">msd=rfpos=SYM.Pun.Sent|sentstart=no|stwr=direct.speech.1|reported.speech.19</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s17" from="196" to="197" l="5">
+      <fs type="lex" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="lex">
+          <fs>
+            <f name="lemma">"</f>
+            <f name="pos">$(</f>
+            <f name="msd">msd=rfpos=N.Reg.Nom.Sg.Masc|sentstart=no|stwr=direct.speech.1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

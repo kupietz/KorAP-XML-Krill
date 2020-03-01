@@ -42,19 +42,19 @@ is($data->{stream}->[0]->[14],
    '@:dereko/s:pattern:text$<b>17<s>2',
    'Attribute of idsHeader');
 
-is($data->{stream}->[4]->[1],
+is($data->{stream}->[5]->[1],
    '<>:dereko/s:s$<b>64<i>32<i>42<i>6<b>6<s>1',
    'Sentence span');
 
-is($data->{stream}->[4]->[2],
+is($data->{stream}->[5]->[2],
    '@:dereko/s:broken:no$<b>17<s>1<i>6',
    'Attribute of sentence span');
 
-is($data->{stream}->[6]->[0],
-   '<>:dereko/s:pb$<b>65<i>42<i>42<i>6<b>6<s>1',
+is($data->{stream}->[7]->[0],
+   '<>:dereko/s:pb$<b>65<i>42<i>42<i>7<b>6<s>1',
    'Pagebreak element');
 
-is($data->{stream}->[6]->[-1],
+is($data->{stream}->[7]->[-1],
    '~:base/s:pb$<i>2<i>42',
    'Pagebreak element');
 

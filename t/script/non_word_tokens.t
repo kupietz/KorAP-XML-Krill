@@ -51,7 +51,7 @@ is($json->{data}->{tokenSource}, 'opennlp#tokens', 'Title');
 is($json->{data}->{foundries}, 'base base/paragraphs base/sentences connexor connexor/morpho connexor/phrase connexor/sentences connexor/syntax corenlp corenlp/sentences dereko dereko/structure mate mate/dependency mate/morpho opennlp opennlp/morpho opennlp/sentences treetagger treetagger/morpho treetagger/sentences xip xip/constituency xip/morpho xip/sentences', 'Foundries');
 my $stream = $json->{data}->{stream};
 my $token = $stream->[12];
-is($token->[17], 's:Vokal', 'Token');
+is($token->[16], 's:Vokal', 'Token');
 $token = $stream->[13];
 is($token->[23], 's:Der', 'Token');
 

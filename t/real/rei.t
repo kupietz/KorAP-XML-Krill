@@ -225,16 +225,17 @@ is('tt/p:NN$<b>129<b>253', $first->[30]);
 
 my $last = $output->{data}->{stream}->[-1];
 
-is('<>:dereko/s:text$<b>65<i>17859<i>17859<i>2640<b>0', $last->[0]);
-is('<>:dereko/s:back$<b>65<i>17859<i>17859<i>2640<b>1', $last->[1]);
-is('>:malt/d:APP$<b>32<i>2639', $last->[2]);
-is('_2640$<i>17851<i>17859', $last->[3]);
-is('corenlp/p:NE', $last->[4]);
-is("i:schr\x{f6}der", $last->[5]);
-is('opennlp/p:NE', $last->[6]);
-is("s:Schr\x{f6}der", $last->[7]);
-is("tt/l:Schr\x{f6}der", $last->[8]);
-is('tt/p:NE', $last->[9]);
+# Milestones behind the final token are no longer indexed
+# is('<>:dereko/s:text$<b>65<i>17859<i>17859<i>2640<b>0', $last->[0]);
+# is('<>:dereko/s:back$<b>65<i>17859<i>17859<i>2640<b>1', $last->[1]);
+is('>:malt/d:APP$<b>32<i>2639', $last->[0]);
+is('_2640$<i>17851<i>17859', $last->[1]);
+is('corenlp/p:NE', $last->[2]);
+is("i:schr\x{f6}der", $last->[3]);
+is('opennlp/p:NE', $last->[4]);
+is("s:Schr\x{f6}der", $last->[5]);
+is("tt/l:Schr\x{f6}der", $last->[6]);
+is('tt/p:NE', $last->[7]);
 
 
 # REI/BNG/00071
@@ -282,7 +283,7 @@ is('-:base/sentences$<i>73', $first->[1]);
 is('-:corenlp/sentences$<i>69', $first->[2]);
 is('-:opennlp/sentences$<i>65', $first->[3]);
 is('-:tokens$<i>1009', $first->[4]);
-is('-:tt/sentences$<i>95', $first->[5]);
+is('-:tt/sentences$<i>94', $first->[5]);
 is('<:malt/d:APP$<b>32<i>1', $first->[6]);
 is('<>:corenlp/c:MPN$<b>64<i>0<i>16<i>2<b>3', $first->[7]);
 is('<>:base/s:s$<b>64<i>0<i>48<i>5<b>2', $first->[8]);

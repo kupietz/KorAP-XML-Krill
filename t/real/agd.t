@@ -118,12 +118,12 @@ $output = decode_json( $tokens->to_json );
 $first_token = join('||', @{$output->{data}->{stream}->[0]});
 like($first_token, qr!<>:base/s:s\$<b>64<i>0<i>16<i>2<b>1!);
 
-my $token = join('||', @{$output->{data}->{stream}->[1]});
+my $token = join('||', @{$output->{data}->{stream}->[2]});
 like($token, qr!<>:base/s:s\$<b>64<i>16<i>23<i>4<b>1!);
-$token = join('||', @{$output->{data}->{stream}->[2]});
+$token = join('||', @{$output->{data}->{stream}->[3]});
 unlike($token, qr!<>:base/s:s!);
 
-$token = join('||', @{$output->{data}->{stream}->[3]});
+$token = join('||', @{$output->{data}->{stream}->[4]});
 like($token, qr!<>:base/s:s\$<b>64<i>23<i>27<i>5<b>1!);
 
 $token = join('||', @{$output->{data}->{stream}->[5]});

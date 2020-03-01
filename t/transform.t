@@ -154,7 +154,7 @@ my $s =
   '<>:opennlp/s:s$<b>64<i>0<i>74<i>13<b>0|'.
   '-:opennlp/sentences$<i>50|'.
   '<>:corenlp/s:s$<b>64<i>0<i>6<i>2<b>0|'.
-  '-:corenlp/sentences$<i>68|'.
+  '-:corenlp/sentences$<i>67|'.
   'cnx/l:A|'.
   'cnx/p:N|'.
   'cnx/syn:@NH|'.
