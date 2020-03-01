@@ -9,7 +9,7 @@ sub parse {
   my $self = shift;
 
   # Collect all spans
-  my %xip_const;
+  my %xip_const = ();
 
   # Collect all roots
   my $xip_const_root = Set::Scalar->new;
@@ -27,29 +27,34 @@ sub parse {
 
       # Collect the span
       $xip_const{$span->id} = $span;
+      # warn 'Remember ' . $span->id;
 
       # It's probably a root
       $xip_const_root->insert($span->id);
 
       my $rel = $span->hash->{rel} or return;
+
       $rel = [$rel] unless ref $rel eq 'ARRAY';
 
       # Iterate over all relations
       foreach (@$rel) {
-	if ($_->{-label} eq 'dominates') {
+        next if $_->{-label} ne 'dominates';
 
-	  my $target = $_->{-target};
-	  if (!$target && $_->{-uri} &&
-		$_->{-uri} =~ $URI_RE)  {
-	    $target = $1;
-	  };
+        my $target = $_->{-target};
+        if (!$target && $_->{-uri} &&
+              $_->{-uri} =~ $URI_RE)  {
+          $target = $1;
+        };
 
-	  # The target may not be addressable
-	  next unless $target;
+        # The target may not be addressable
+        next unless $target;
 
-	  # It's definately not a root
-	  $xip_const_noroot->insert($target);
-	};
+        # It's definately not a root
+        $xip_const_noroot->insert($target);
+
+        # if ($target =~ /^s2_n(?:36|58|59|60|40)$/) {
+        #   warn 'Probably not a root ' . $target . ' but ' . $span->id;
+        # };
       };
     }
   ) or return;
@@ -109,20 +114,29 @@ sub parse {
 
     $rel = [$rel] unless ref $rel eq 'ARRAY';
 
+    # Iterate over all relations (again ...)
     foreach (@$rel) {
       next if $_->{-label} ne 'dominates';
-      my $target;
 
-      $target = $_->{-target};
-      if (!$target && $_->{-uri} && $_->{-uri} =~ $URI_RE)  {
-	$target = $1;
+      my $target = $_->{-target};
+      if (!$target && $_->{-uri} &&
+            $_->{-uri} =~ $URI_RE)  {
+        $target = $1;
       };
+
+      # if ($span->id =~ /^s2_n(?:36|58|59|60|40)$/ && $target =~ /^s2_n(?:36|58|59|60|40)$/) {
+      # warn 'B: ' . $span->id . ' points to ' . $target;
+      # };
 
       next unless $target;
 
       my $subspan = delete $xip_const{$target};
-      return unless $subspan;
-      #	warn "Span " . $target . " not found";
+      # warn "A-Forgot about $target: " . ($subspan ? 'yes' : 'no');
+
+      unless ($subspan) {
+        next;
+      };
+      #  warn "Span " . $target . " not found";
 
       $this->($subspan, $level + 1);
     };
@@ -133,8 +147,13 @@ sub parse {
 
   # Start tree traversal from the root
   foreach ($roots->members) {
+    my $obj = delete $xip_const{$_};
 
-    my $obj = delete $xip_const{$_} or next;
+    # warn "B-Forgot about $_: " . ($obj ? 'yes' : 'no');
+
+    unless ($obj) {
+      next;
+    };
 
     $add_const->($obj, 0);
   };
@@ -147,5 +166,6 @@ sub parse {
 sub layer_info {
   ['xip/c=spans']
 };
+
 
 1;

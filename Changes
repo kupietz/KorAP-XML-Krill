@@ -1,3 +1,6 @@
+0.40 2020-03-01
+        - Fixed XIP parser.
+
 0.39 2020-02-19
         - Added Talismane support.
         - Added "distributor" field to I5 metadata.
