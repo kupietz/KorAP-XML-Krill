@@ -51,7 +51,7 @@ is($stream->[0]->[3], '<:malt/d:ROOT$<b>34<i>0<i>49<i>6<i>0', 'Term2Term relatio
 is($stream->[0]->[5], '>:malt/d:ROOT$<b>33<i>0<i>49<i>0<i>6', 'Term2Term relation');
 
 # Text element
-is($stream->[0]->[4], '<>:base/s:t$<b>64<i>0<i>238<i>30<b>0', 'Text element');
+is($stream->[0]->[4], '<>:base/s:t$<b>64<i>0<i>238<i>31<b>0', 'Text element');
 
 done_testing;
 __END__

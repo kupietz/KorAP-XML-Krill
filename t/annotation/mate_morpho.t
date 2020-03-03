@@ -19,7 +19,7 @@ like($data->{layerInfos}, qr!mate/p=tokens!, 'data');
 like($data->{layerInfos}, qr!mate/l=tokens!, 'data');
 like($data->{layerInfos}, qr!mate/m=tokens!, 'data');
 
-is($data->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Text boundary');
+is($data->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>18<b>0', 'Text boundary');
 is($data->{stream}->[0]->[4], 'mate/l:zu', 'POS');
 is($data->{stream}->[0]->[5], 'mate/m:case:dat', 'POS');
 is($data->{stream}->[0]->[6], 'mate/m:gender:neut', 'POS');

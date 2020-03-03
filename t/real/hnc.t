@@ -88,8 +88,9 @@ ok($tokens->parse, 'Token parsing is fine');
 
 my $output = decode_json( $tokens->to_json );
 
-is($output->{data}->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>4368<i>577<b>0', 't');
+is($output->{data}->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>4368<i>578<b>0', 't');
 is($output->{data}->{stream}->[0]->[3], 'i:addbot', 't');
+is($output->{data}->{stream}->[-1]->[0], '_577$<i>4359<i>4368', 't');
 
 
 ## Base

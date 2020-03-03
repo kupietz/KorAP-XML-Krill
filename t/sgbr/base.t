@@ -32,8 +32,8 @@ my $stream = $tokens->to_data->{data}->{stream};
 
 is($stream->[0]->[0], '-:base/sentences$<i>1');
 is($stream->[0]->[1], '-:tokens$<i>15');
-is($stream->[0]->[2], '<>:base/s:t$<b>64<i>0<i>115<i>14<b>0');
-is($stream->[0]->[3], '<>:base/s:s$<b>64<i>16<i>114<i>14<b>2');
+is($stream->[0]->[2], '<>:base/s:t$<b>64<i>0<i>115<i>15<b>0');
+is($stream->[0]->[3], '<>:base/s:s$<b>64<i>16<i>114<i>15<b>2');
 is($stream->[0]->[4], '_0$<i>17<i>18');
 
 done_testing;

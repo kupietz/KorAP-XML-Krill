@@ -114,15 +114,15 @@ $output = decode_json( $tokens->to_json );
 my $first = $output->{data}->{stream}->[0];
 
 is('-:tokens$<i>13',$first->[0]);
-is('<>:base/s:t$<b>64<i>0<i>197<i>12<b>0',$first->[1]);
-is('<>:dereko/s:text$<b>64<i>0<i>197<i>12<b>0',$first->[2]);
-is('<>:dereko/s:body$<b>64<i>118<i>197<i>12<b>1',$first->[3]);
-is('<>:dereko/s:p$<b>64<i>118<i>197<i>12<b>2',$first->[4]);
-is('<>:dereko/s:said$<b>64<i>118<i>197<i>12<b>3<s>1',$first->[5]);
-is('@:dereko/s:level:1$<b>17<s>1<i>12',$first->[6]);
-is('@:dereko/s:content:speech$<b>17<s>1<i>12',$first->[7]);
-is('@:dereko/s:mode:direct$<b>17<s>1<i>12',$first->[8]);
-is('@:dereko/s:id:1$<b>17<s>1<i>12',$first->[9]);
+is('<>:base/s:t$<b>64<i>0<i>197<i>13<b>0',$first->[1]);
+is('<>:dereko/s:text$<b>64<i>0<i>197<i>13<b>0',$first->[2]);
+is('<>:dereko/s:body$<b>64<i>118<i>197<i>13<b>1',$first->[3]);
+is('<>:dereko/s:p$<b>64<i>118<i>197<i>13<b>2',$first->[4]);
+is('<>:dereko/s:said$<b>64<i>118<i>197<i>13<b>3<s>1',$first->[5]);
+is('@:dereko/s:level:1$<b>17<s>1<i>13',$first->[6]);
+is('@:dereko/s:content:speech$<b>17<s>1<i>13',$first->[7]);
+is('@:dereko/s:mode:direct$<b>17<s>1<i>13',$first->[8]);
+is('@:dereko/s:id:1$<b>17<s>1<i>13',$first->[9]);
 is('_0$<i>123<i>128',$first->[10]);
 is("drukola/l:H\x{f6}rst",$first->[11]);
 is('drukola/m:msd:rfpos',$first->[12]);
@@ -135,11 +135,11 @@ is("s:H\x{f6}rst",$first->[17]);
 my $nine = join(',', @{$output->{data}->{stream}->[9]});
 like($nine, qr{drukola\/l:nichts}, 'Nichts');
 like($nine, qr{_9\$<i>170<i>176}, 'Term boundaries');
-unlike($nine, qr{<>:dereko/s:said\$<b>64<i>176<i>196<i>12<b>4<s>1}, 'Term boundaries');
+unlike($nine, qr{<>:dereko/s:said\$<b>64<i>176<i>196<i>13<b>4<s>1}, 'Term boundaries');
 
 my $ten = join(',', @{$output->{data}->{stream}->[10]});
 like($ten, qr{_10\$<i>177<i>180}, 'Term boundaries');
-like($ten, qr{<>:dereko/s:said\$<b>64<i>176<i>196<i>12<b>4<s>1}, 'Term boundaries');
+like($ten, qr{<>:dereko/s:said\$<b>64<i>176<i>196<i>13<b>4<s>1}, 'Term boundaries');
 
 my $eleven = join(',', @{$output->{data}->{stream}->[11]});
 like($eleven, qr{_11\$<i>181<i>188}, 'Term boundaries');

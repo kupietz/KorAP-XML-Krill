@@ -23,7 +23,7 @@ is($data->{stream}->[0]->[1],
    'Empty element');
 
 
-is($data->{stream}->[0]->[5], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Text boundary');
+is($data->{stream}->[0]->[5], '<>:base/s:t$<b>64<i>0<i>129<i>18<b>0', 'Text boundary');
 
 # Attributes:
 is($data->{stream}->[0]->[11],

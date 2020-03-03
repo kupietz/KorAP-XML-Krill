@@ -32,7 +32,7 @@ my $data = $tokens->to_data->{data};
 
 my $stream = $data->{stream};
 is($stream->[0]->[0], '-:tokens$<i>51', 'Token number');
-is($stream->[0]->[1], '<>:base/s:t$<b>64<i>0<i>365<i>50<b>0', 'Text Boundary');
+is($stream->[0]->[1], '<>:base/s:t$<b>64<i>0<i>365<i>51<b>0', 'Text Boundary');
 is($stream->[0]->[2], '_0$<i>0<i>18', 'Position');
 is($stream->[0]->[3], 'i:sommerüberraschung', 'First term');
 is($stream->[0]->[4], 's:Sommerüberraschung', 'First term');

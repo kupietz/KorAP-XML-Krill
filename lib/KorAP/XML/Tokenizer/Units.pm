@@ -70,6 +70,10 @@ sub span {
     unless (defined $end) {
       $end = $self->range->before($span->o_end);
 
+      if (DEBUG && $span->o_end == 196) {
+        warn 'SPAN ends at ' . $span->o_end . ' and has ' . $end;
+      };
+
       unless (defined $end) {
         if (DEBUG) {
           warn $span->id . ' has no valid end';

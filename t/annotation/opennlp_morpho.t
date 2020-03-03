@@ -10,7 +10,7 @@ use TestInit;
 
 ok(my $tokens = TestInit::tokens('0001'), 'Parse tokens');
 
-is($tokens->stream->pos(0)->to_string, '[(0-3)-:tokens$<i>18|<>:base/s:t$<b>64<i>0<i>129<i>17<b>0|_0$<i>0<i>3|i:zum|s:Zum]', 'Token is correct');
+is($tokens->stream->pos(0)->to_string, '[(0-3)-:tokens$<i>18|<>:base/s:t$<b>64<i>0<i>129<i>18<b>0|_0$<i>0<i>3|i:zum|s:Zum]', 'Token is correct');
 
 is($tokens->stream->pos(1)->to_string, '[(4-11)_1$<i>4<i>11|i:letzten|s:letzten]', 'Token is correct');
 

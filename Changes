@@ -1,10 +1,12 @@
-0.40 2020-03-01
+0.40 2020-03-03
         - Fixed XIP parser.
         - Added example corpus of the
           Redewiedergabe-Korpus.
         - Fixed span offset bug.
         - Fixed milestones behind the last
           token bug.
+        - Fixed gap behind last token bug.
+        - Fixed <base/s:t> length.
 
 0.39 2020-02-19
         - Added Talismane support.

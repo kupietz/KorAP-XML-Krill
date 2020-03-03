@@ -133,7 +133,7 @@ ok($tokens->add('Base', 'Sentences'), 'Add Sentences');
 
 is_deeply(
   _t2h($tokens->stream->pos(0)->to_string),
-  _t2h('[(0-1)s:A|i:a|_0$<i>0<i>1|-:tokens$<i>923|mate/p:XY|<>:base/s:s$<b>64<i>0<i>74<i>13<b>2|<>:base/s:t$<b>64<i>0<i>6083<i>922<b>0|-:base/sentences$<i>96]'),
+  _t2h('[(0-1)s:A|i:a|_0$<i>0<i>1|-:tokens$<i>923|mate/p:XY|<>:base/s:s$<b>64<i>0<i>74<i>13<b>2|<>:base/s:t$<b>64<i>0<i>6083<i>923<b>0|-:base/sentences$<i>96]'),
   'Startinfo'
 );
 
@@ -146,7 +146,7 @@ my $s =
   '-:tokens$<i>923|'.
   'mate/p:XY|'.
   '<>:base/s:s$<b>64<i>0<i>74<i>13<b>2|'.
-  '<>:base/s:t$<b>64<i>0<i>6083<i>922<b>0|'.
+  '<>:base/s:t$<b>64<i>0<i>6083<i>923<b>0|'.
   '-:base/sentences$<i>96|'.
   '<>:base/s:p$<b>64<i>0<i>224<i>34<b>1|'.
   '-:base/paragraphs$<i>76|'.

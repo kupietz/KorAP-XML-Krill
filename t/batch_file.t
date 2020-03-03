@@ -35,7 +35,7 @@ is($json->{data}->{tokenSource}, 'opennlp#tokens', 'Title');
 is($json->{data}->{foundries}, '', 'Foundries');
 like($json->{data}->{text}, qr/^Zum letzten kulturellen/, 'Foundries');
 is($json->{data}->{stream}->[0]->[0], '-:tokens$<i>18', 'Tokens');
-is($json->{data}->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Data');
+is($json->{data}->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>18<b>0', 'Data');
 
 # Generate with Gzip
 $bf->{gzip} = 1;
@@ -56,7 +56,7 @@ is($json->{data}->{tokenSource}, 'opennlp#tokens', 'Title');
 is($json->{data}->{foundries}, '', 'Foundries');
 like($json->{data}->{text}, qr/^Zum letzten kulturellen/, 'Foundries');
 is($json->{data}->{stream}->[0]->[0], '-:tokens$<i>18', 'Tokens');
-is($json->{data}->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Data');
+is($json->{data}->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>18<b>0', 'Data');
 
 # Generate with annotations
 $bf->{gzip} = 0;
@@ -80,7 +80,7 @@ my $token = $json->{data}->{stream}->[0];
 
 like($json->{data}->{text}, qr/Ende Schuljahr eingestellt wird\.$/, 'Primary text');
 
-is($token->[1], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'base/s');
+is($token->[1], '<>:base/s:t$<b>64<i>0<i>129<i>18<b>0', 'base/s');
 is($token->[2], '_0$<i>0<i>3', 'position');
 is($token->[3], 'corenlp/p:APPRART', 'corenlp');
 is($token->[5], 'opennlp/p:APPRART', 'opennlp');

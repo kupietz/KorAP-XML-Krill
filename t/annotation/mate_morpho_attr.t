@@ -18,7 +18,7 @@ like($data->{foundries}, qr!mate/morphoattr!, 'data');
 like($data->{layerInfos}, qr!mate/p=tokens!, 'data');
 like($data->{layerInfos}, qr!mate/l=tokens!, 'data');
 
-is($data->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>17<b>0', 'Text boundary');
+is($data->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>129<i>18<b>0', 'Text boundary');
 is($data->{stream}->[0]->[2], '@:gender=neut$<b>16<s>1', 'POS');
 is($data->{stream}->[0]->[3], '@:number=sg$<b>16<s>1', 'POS');
 is($data->{stream}->[0]->[4], '@:case=dat$<b>16<s>1', 'POS');

@@ -138,7 +138,7 @@ my $first_token = join('||', @{$output->{data}->{stream}->[0]});
 like($first_token, qr/s:Autobiographische/, 'data');
 like($first_token, qr/_0\$<i>0<i>17/, 'data');
 like($first_token, qr!<>:dereko/s:s\$<b>64<i>0<i>30<i>2<b>4!, 'data');
-like($first_token, qr!<>:base\/s:t\$<b>64<i>0<i>35242<i>5233<b>0!, 'data');
+like($first_token, qr!<>:base\/s:t\$<b>64<i>0<i>35242<i>5234<b>0!, 'data');
 # like($first_token, qr!<>:base\/s:t\$<b>64<i>0<i>35250<i>5233<b>0!, 'data');
 like($first_token, qr!<>:base/s:s\$<b>64<i>0<i>30<i>2<b>2!, 'data');
 like($first_token, qr!-:base\/paragraphs\$\<i\>14!, 'data');

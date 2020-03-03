@@ -209,7 +209,7 @@ is('<>:dereko/s:titlePage$<b>64<i>0<i>91<i>11<b>2<s>1', $first->[14]);
 is('<>:dereko/s:docTitle$<b>64<i>0<i>91<i>11<b>3', $first->[15]);
 is('<>:dereko/s:titlePart$<b>64<i>0<i>91<i>11<b>4<s>2', $first->[16]);
 is('<>:dereko/s:s$<b>64<i>0<i>91<i>11<b>5', $first->[17]);
-is('<>:base/s:t$<b>64<i>0<i>17859<i>2640<b>0', $first->[18]);
+is('<>:base/s:t$<b>64<i>0<i>17859<i>2641<b>0', $first->[18]);
 is('>:malt/d:ROOT$<b>33<i>0<i>48<i>0<i>7', $first->[19]);
 is('<:malt/d:PP$<b>32<i>1', $first->[20]);
 is('<:malt/d:ROOT$<b>34<i>0<i>48<i>7<i>0', $first->[21]);
@@ -298,8 +298,8 @@ is('<>:dereko/s:front$<b>64<i>0<i>61<i>8<b>1', $first->[16]);
 is('<>:dereko/s:titlePage$<b>64<i>0<i>61<i>8<b>2<s>1', $first->[17]);
 is('<>:dereko/s:docTitle$<b>64<i>0<i>61<i>8<b>3', $first->[18]);
 is('<>:opennlp/s:s$<b>64<i>0<i>173<i>24<b>0', $first->[19]);
-is('<>:base/s:t$<b>64<i>0<i>7008<i>1008<b>0', $first->[20]);
-is('<>:dereko/s:text$<b>64<i>0<i>7008<i>1008<b>0', $first->[21]);
+is('<>:base/s:t$<b>64<i>0<i>7008<i>1009<b>0', $first->[20]);
+is('<>:dereko/s:text$<b>64<i>0<i>7008<i>1009<b>0', $first->[21]);
 is('>:malt/d:GMOD$<b>32<i>3', $first->[22]);
 is('<:malt/d:ROOT$<b>34<i>0<i>51<i>6<i>3', $first->[23]);
 is('@:dereko/s:id:bng.00071-0-titlepage$<b>17<s>1<i>8', $first->[24]);
@@ -313,16 +313,17 @@ is('tt/l:Christine', $first->[31]);
 is('tt/p:NE', $first->[32]);
 
 $last = $output->{data}->{stream}->[-1];
-is('<>:dereko/s:back$<b>65<i>7008<i>7008<i>1008<b>1', $last->[0]);
-is('<>:dereko/s:div$<b>65<i>7008<i>7008<i>1008<b>2<s>1', $last->[1]);
-is('@:dereko/s:n:1$<b>17<s>1', $last->[2]);
-is('@:dereko/s:type:footnotes$<b>17<s>1', $last->[3]);
-is('@:dereko/s:complete:y$<b>17<s>1', $last->[4]);
-is('_1008$<i>6990<i>7006', $last->[5]);
-is('corenlp/p:NN', $last->[6]);
-is('i:befreiungsschlag', $last->[7]);
-is('opennlp/p:NN', $last->[8]);
-is('s:Befreiungsschlag', $last->[9]);
+# No longer indexed:
+#is('<>:dereko/s:back$<b>65<i>7008<i>7008<i>1009<b>1', $last->[0]);
+#is('<>:dereko/s:div$<b>65<i>7008<i>7008<i>1009<b>2<s>1', $last->[1]);
+#is('@:dereko/s:n:1$<b>17<s>1', $last->[2]);
+#is('@:dereko/s:type:footnotes$<b>17<s>1', $last->[3]);
+#is('@:dereko/s:complete:y$<b>17<s>1', $last->[4]);
+is('_1008$<i>6990<i>7006', $last->[0]);
+is('corenlp/p:NN', $last->[1]);
+is('i:befreiungsschlag', $last->[2]);
+is('opennlp/p:NN', $last->[3]);
+is('s:Befreiungsschlag', $last->[4]);
 
 done_testing;
 __END__

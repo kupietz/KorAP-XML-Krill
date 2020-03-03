@@ -73,7 +73,8 @@ is($json->{fields}->[7]->{value}, '2005');
 
 is($json->{data}->{name}, 'tokens');
 is($json->{data}->{tokenSource}, 'opennlp#tokens');
-is($json->{data}->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>6083<i>1067<b>0');
+is($json->{data}->{stream}->[0]->[0], '-:tokens$<i>1068');
+is($json->{data}->{stream}->[0]->[1], '<>:base/s:t$<b>64<i>0<i>6083<i>1068<b>0');
 
 done_testing;
 

@@ -138,18 +138,19 @@ sub parse {
     $should++;
 
     # Ignore non-word, non-number, and non-verbal tokens per default
+    # '9646' equals the musical pause, used in speech corpora
     if ($self->non_verbal_tokens && ord($token) == 9646) {
       # Non-verbal token
     } elsif (!$self->non_word_tokens && $token !~ /[\w\d]/) {
       # TODO: Recognize punctuations!
-      #	if ($mtt) {
-      #	  my $term = [$token, $from, $to];
-      #	  $mtt->add(
-      #	    term => '.>:'.$token,
-      #	    payload => '<i>'.$from . '<i>' . $to . '<b>' . $distance++
-      #	  );
-      #	  push(@non_word_tokens, $term);
-      #	}
+      #  if ($mtt) {
+      #    my $term = [$token, $from, $to];
+      #    $mtt->add(
+      #      term => '.>:'.$token,
+      #      payload => '<i>'.$from . '<i>' . $to . '<b>' . $distance++
+      #    );
+      #    push(@non_word_tokens, $term);
+      #  }
       next;
     };
 
@@ -157,12 +158,12 @@ sub parse {
     $mtt = $mtts->add;
 
     #      while (scalar @non_word_tokens) {
-    #	local $_ = shift @non_word_tokens;
-    #	$mtt->add(
-    #	  term => '.<:' . $_->[0],
-    #	  payload => '<i>' . $_->[1] . '<i>' . $_->[2] . '<b>' . --$distance
-    #	);
-    #	$distance = 0;
+    #  local $_ = shift @non_word_tokens;
+    #  $mtt->add(
+    #    term => '.<:' . $_->[0],
+    #    payload => '<i>' . $_->[1] . '<i>' . $_->[2] . '<b>' . --$distance
+    #  );
+    #  $distance = 0;
     #      };
 
     # Add gap for later finding matching positions before or after
@@ -208,15 +209,15 @@ sub parse {
   $mtts->pos(0)->add(
     term => '<>:base/s:t',
     o_start => 0,
-    p_end => ($have - 1),
+    p_end => $have,
     o_end => $doc->primary->data_length,
     payload => '<b>0',
     pti => 64
   );
 
-  # Create a gap for the 
+  # Create a gap for the end
   if ($doc->primary->data_length >= ($old - 1)) {
-    $range->gap($old, $doc->primary->data_length + 1, $have-1)
+    $range->gap($old, $doc->primary->data_length + 1, $have)
   };
 
   # Add info
@@ -256,27 +257,27 @@ sub add_subtokens {
       my $from = $-[1];
       my $to = $+[1];
       $mtt->add(
-	term => 'i^1:' . substr($os, $from, $from + $to),
-	o_start => $from + $o_start,
-	o_end => $to + $o_start
+  term => 'i^1:' . substr($os, $from, $from + $to),
+  o_start => $from + $o_start,
+  o_end => $to + $o_start
       ) unless $to - $from == $l;
     };
     while ($s =~ /(0+)[^0]/g) {
       my $from = $-[1];
       my $to = $+[1];
       $mtt->add(
-	term => 'i^2:' . substr($os, $from, $from + $to),
-	o_start => $from + $o_start,
-	o_end => $to + $o_start
+  term => 'i^2:' . substr($os, $from, $from + $to),
+  o_start => $from + $o_start,
+  o_end => $to + $o_start
       ) unless $to - $from == $l;
     };
     while ($s =~ /(#)/g) {
       my $from = $-[1];
       my $to = $+[1];
       $mtt->add(
-	term => 'i^3:' . substr($os, $from, $from + $to),
-	o_start => $from + $o_start,
-	o_end => $to + $o_start
+  term => 'i^3:' . substr($os, $from, $from + $to),
+  o_start => $from + $o_start,
+  o_end => $to + $o_start
       ) unless $to - $from == $l;
     };
   };
@@ -772,10 +773,10 @@ This is based on the C<aggressive> tokenization, written by Carsten Schnober.
       my ($stream, $span) = @_;
       my $mtt = $stream->pos($span->p_start);
       $mtt->add(
-	term    => '<>:s',
-	o_start => $span->o_start,
-	o_end   => $span->o_end,
-	p_end   => $span->p_end
+        term    => '<>:s',
+        o_start => $span->o_start,
+        o_end   => $span->o_end,
+        p_end   => $span->p_end
       );
     }
   );
@@ -804,9 +805,9 @@ An optional parameter C<skip> allows for skipping the process.
 
       # syntax
       if ((my $found = $content->at('f[name="pos"]')) && ($found = $found->text)) {
-	$mtt->add(
-	  term => 'cnx_syn:' . $found
-	);
+        $mtt->add(
+          term => 'cnx_syn:' . $found
+        );
       };
     });
 
