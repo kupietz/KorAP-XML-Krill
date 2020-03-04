@@ -5,7 +5,8 @@ benchmark
 benchmark.csv
 docs
 todo.org
-tools
+tools/*
+!tools/rewrite_goe_licenses.pl
 build
 fixtures.txt
 node_modules
