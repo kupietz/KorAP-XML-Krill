@@ -488,7 +488,7 @@ The order may indicate a field to be overwritten.
     & pubDate[type=day]                        pubDate               DATE
   creatDate                                    creationDate          DATE
   textClass catRef@target                      textClass             KEYWORDS
-  textClass h.keywords > keyTerm               keywords              KEYWORDS
+  textClass h\.keywords > keyTerm              keywords              KEYWORDS
   biblFull editionStmt                         biblEditionStatement  ATTACHEMENT
   fileDesc editionStmt                         fileEditionStatement  ATTACHEMENT
   fileDesc publicationStmt > availability      availability          STRING
@@ -498,10 +498,10 @@ The order may indicate a field to be overwritten.
 =item B<On text level>
 
   textSigle                                    textSigle             STRING
-  fileDesc > titleStmt > t.title               title                 TEXT
-  (analytic, monogr) h.title[type=main]        title                 TEXT
-  (analytic, monogr) h.title[type=sub]         subTitle              TEXT
-  (analytic, monogr) h.author                  author                TEXT
+  fileDesc > titleStmt > t\.title              title                 TEXT
+  (analytic, monogr) h\.title[type=main]       title                 TEXT
+  (analytic, monogr) h\.title[type=sub]        subTitle              TEXT
+  (analytic, monogr) h\.author                 author                TEXT
   (analytic, monogr) editor[role!=translator]  editor                ATTACHEMENT
   sourceDesc reference[type=complete]          reference             ATTACHEMENT
   textDesc > column                            textColumn            STRING
@@ -510,19 +510,19 @@ The order may indicate a field to be overwritten.
 =item B<On document level>
 
   dokumentSigle                                docSigle              STRING
-  fileDesc > titleStmt > d.title               docTitle              TEXT
-  (analytic, monogr) h.title[type=main]        docTitle              TEXT
-  (analytic, monogr) h.title[type=sub]         docSubTitle           TEXT
-  (analytic, monogr) h.author                  docAuthor             TEXT
+  fileDesc > titleStmt > d\.title              docTitle              TEXT
+  (analytic, monogr) h\.title[type=main]       docTitle              TEXT
+  (analytic, monogr) h\.title[type=sub]        docSubTitle           TEXT
+  (analytic, monogr) h\.author                 docAuthor             TEXT
   (analytic, monogr) editor[role!=translator]  docEditor             ATTACHEMENT
 
 =item B<On corpus level>
 
   korpusSigle                                  corpusSigle           STRING
-  fileDesc > titleStmt > c.title               corpusTitle           TEXT
-  (analytic, monogr) h.title[type=main]        corpusTitle           TEXT
-  (analytic, monogr) h.title[type=sub]         corpusSubTitle        TEXT
-  (analytic, monogr) h.author                  corpusAuthor          TEXT
+  fileDesc > titleStmt > c\.title              corpusTitle           TEXT
+  (analytic, monogr) h\.title[type=main]       corpusTitle           TEXT
+  (analytic, monogr) h\.title[type=sub]        corpusSubTitle        TEXT
+  (analytic, monogr) h\.author                 corpusAuthor          TEXT
   (analytic, monogr) editor[role!=translator]  corpusEditor          ATTACHEMENT
 
 =back
