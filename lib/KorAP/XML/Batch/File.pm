@@ -88,6 +88,13 @@ sub process {
     }
     else {
       $file = IO::File->new($output, "w"); # '>:encoding(UTF-8)'); # "w");
+      # Unable to open for writing
+    };
+
+    # Output not opened
+    unless (defined $file) {
+      $self->{log}->error('Unable to open ' . $output . ' for writing');
+      return;
     };
 
     # Write to output
