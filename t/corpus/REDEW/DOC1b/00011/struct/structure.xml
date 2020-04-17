@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="REDEW_DOC1.00011" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="3062" l="1">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">text</f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="3062" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s2" from="0" to="0" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s27" from="139" to="139" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s28" from="138" to="144" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">2</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s85" from="422" to="427" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">1</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s95" from="466" to="466" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s96" from="465" to="474" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">1</f>
+            <f name="mode">direct</f>
+            <f name="content">speech</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s101" from="475" to="486" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">2</f>
+            <f name="mode">direct</f>
+            <f name="content">speech</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s102" from="476" to="477" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s107" from="487" to="487" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s114" from="516" to="535" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">3</f>
+            <f name="mode">direct</f>
+            <f name="content">speech</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s115" from="517" to="517" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s123" from="535" to="542" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">3</f>
+            <f name="type">frame</f>
+            <f name="pos">end</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s124" from="535" to="539" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">3</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s126" from="539" to="542" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">3</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s147" from="638" to="638" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s148" from="637" to="694" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">4</f>
+            <f name="mode">direct</f>
+            <f name="content">speech</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s164" from="694" to="712" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">4</f>
+            <f name="type">frame</f>
+            <f name="pos">end</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s165" from="694" to="699" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">4</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s167" from="699" to="702" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">4</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s171" from="712" to="712" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s189" from="786" to="786" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s207" from="875" to="875" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s216" from="914" to="929" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">9</f>
+            <f name="type">frame</f>
+            <f name="pos">start</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s218" from="919" to="923" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">9</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s220" from="923" to="927" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">9</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s223" from="928" to="1128" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">9</f>
+            <f name="mode">indirect</f>
+            <f name="content">thought</f>
+            <f name="level">1</f>
+            <f name="border">yes</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s227" from="943" to="952" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">12</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s238" from="995" to="1127" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">12</f>
+            <f name="mode">reported</f>
+            <f name="content">thought</f>
+            <f name="level">2</f>
+            <f name="nonfact">yes</f>
+            <f name="border">yes</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s250" from="1057" to="1065" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">12</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s265" from="1129" to="1129" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s266" from="1128" to="1132" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">5</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s286" from="1240" to="1434" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">5</f>
+            <f name="mode">direct</f>
+            <f name="content">speech</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s287" from="1241" to="1241" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s331" from="1435" to="1435" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s332" from="1434" to="1449" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">6</f>
+            <f name="mode">direct</f>
+            <f name="content">speech</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s338" from="1449" to="1466" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">6</f>
+            <f name="type">frame</f>
+            <f name="pos">mid</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s340" from="1450" to="1459" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">6</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s342" from="1459" to="1465" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">6</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s345" from="1466" to="1625" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">6</f>
+            <f name="mode">direct</f>
+            <f name="content">speech</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s350" from="1486" to="1507" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">7</f>
+            <f name="type">frame</f>
+            <f name="pos">start</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s351" from="1486" to="1494" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">7</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s354" from="1499" to="1506" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">7</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s357" from="1507" to="1529" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">7</f>
+            <f name="mode">indirect</f>
+            <f name="content">thought</f>
+            <f name="level">2</f>
+            <f name="nonfact">yes</f>
+            <f name="border">yes</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s381" from="1601" to="1601" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s388" from="1626" to="1626" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s404" from="1707" to="1707" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s433" from="1886" to="1886" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s455" from="1982" to="2033" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">8</f>
+            <f name="mode">reported</f>
+            <f name="content">speech</f>
+            <f name="level">1</f>
+            <f name="nonfact">yes</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s457" from="1987" to="1990" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">8</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s459" from="1990" to="1997" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">8</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s494" from="2146" to="2150" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">13</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s505" from="2204" to="2249" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">13</f>
+            <f name="mode">reported</f>
+            <f name="content">speech thought</f>
+            <f name="level">1</f>
+            <f name="border">yes</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s506" from="2204" to="2212" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">13</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s532" from="2341" to="2341" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s570" from="2539" to="2539" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s581" from="2596" to="2599" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">11</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s585" from="2605" to="2633" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">11</f>
+            <f name="mode">reported</f>
+            <f name="content">speech</f>
+            <f name="level">1</f>
+            <f name="nonfact">yes</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s590" from="2622" to="2631" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">11</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s593" from="2634" to="2634" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s606" from="2694" to="2694" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s627" from="2802" to="2802" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

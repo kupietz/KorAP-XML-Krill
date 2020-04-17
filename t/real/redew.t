@@ -36,7 +36,7 @@ ok(!$meta->{T_sub_title}, 'SubTitle');
 ok(!$meta->{T_author}, 'Author');
 ok(!$meta->{A_editor}, 'Editor');
 ok(!$meta->{S_pub_place}, 'PubPlace');
-is($meta->{A_publisher}, '...', 'Publisher'); # ???
+ok(!$meta->{A_publisher}, 'Publisher');
 
 is($meta->{S_text_type}, '?', 'Text Type');   # ???
 ok(!$meta->{S_text_type_art}, 'No Text Type Art');
@@ -46,7 +46,7 @@ ok(!$meta->{S_text_column}, 'No Text Column');
 
 ok(!$meta->{K_text_class}->[0], 'Correct Text Class');
 
-is($meta->{D_pub_date}, '20200000', 'Creation date');
+is($meta->{D_pub_date}, '00000000', 'Creation date'); # ???
 is($meta->{D_creation_date}, '20200000', 'Creation date');
 is($meta->{S_availability}, 'QAO-NC', 'License');           # ???
 ok(!$meta->{A_pages}, 'Pages');
@@ -59,8 +59,8 @@ ok(!$meta->{S_language}, 'Language'); # ???
 
 is($meta->{T_corpus_title}, 'Redewiedergabe', 'Correct Corpus title');
 ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus sub title');
-is($meta->{T_corpus_author}, '...', 'Correct Corpus author'); # ???
-is($meta->{A_corpus_editor}, '...', 'Correct Corpus editor'); # ???
+ok(!$meta->{T_corpus_author}, 'Correct Corpus author');
+ok(!$meta->{A_corpus_editor}, 'Correct Corpus editor');
 
 is($meta->{T_doc_title}, 'Redewiedergabe Dokument 1', 'Correct Doc title');
 ok(!$meta->{T_doc_sub_title}, 'Correct Doc sub title');
@@ -151,5 +151,69 @@ like($twelve, qr{_12\$<i>189<i>195}, 'Term boundaries');
 like($twelve, qr{drukola/l:Wort}, 'Lemma');
 like($twelve, qr{<>:dereko/s:seg\$<b>64<i>188<i>195<i>13<b>5<s>1}, 'Segment');
 
+
+# Updated format:
+$path = catdir(dirname(__FILE__), '../corpus/REDEW/DOC1b/00011');
+
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc->parse, 'Parse document');
+
+is($doc->text_sigle, 'REDEW/DOC1/00011', 'Correct text sigle');
+is($doc->doc_sigle, 'REDEW/DOC1', 'Correct document sigle');
+is($doc->corpus_sigle, 'REDEW', 'Correct corpus sigle');
+
+$meta = $doc->meta;
+
+is($meta->{A_distributor}, 'Institut für Deutsche Sprache', 'Distributor');
+is($meta->{D_pub_date}, '18730000', 'Publication date');
+is($meta->{D_creation_date}, '18730000', 'Publication date');
+is($meta->{S_pub_place_key}, 'DE', 'Publication place key');
+is($meta->{T_corpus_title}, 'Redewiedergabe', 'Title');
+is($meta->{T_doc_title}, 'Redewiedergabe Dokument 1', 'Title');
+is($meta->{T_author}, 'Christen, Ada', 'Author');
+is($meta->{T_title}, 'Rahel', 'Author');
+is($meta->{S_availability}, 'QAO-NC-LOC:ids', 'Availability');
+is($meta->{S_text_type_art}, 'Erzähltext', 'Availability');
+
+# Tokenization
+use_ok('KorAP::XML::Tokenizer');
+
+($token_base_foundry, $token_base_layer) = (qw/rwk Morpho/);
+
+# Get tokenization
+$tokens = KorAP::XML::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => $token_base_foundry,
+  layer => $token_base_layer,
+  name => 'tokens'
+);
+
+ok($tokens, 'Token Object is fine');
+ok($tokens->parse, 'Token parsing is fine');
+
+$output = decode_json( $tokens->to_json );
+
+is(substr($output->{data}->{text}, 0, 100), 'Er hatte den Kopf weit nach rückwärts gebeugt, seine langen schwarzen Haare lockten sich über den li', 'Primary Data');
+
+# Add annotations
+$tokens->add('RWK', 'Morpho');
+$tokens->add('DeReKo', 'Structure');
+
+$output = decode_json( $tokens->to_json );
+
+$first = $output->{data}->{stream}->[0];
+
+is('-:tokens$<i>522',$first->[0]);
+is('<>:base/s:t$<b>64<i>0<i>3062<i>522<b>0',$first->[2]);
+is('i:er',$first->[6]);
+is('rwk/l:er',$first->[7]);
+is('rwk/m:PRO.Pers.Subst.3.Nom.Sg.Masc',$first->[8]);
+is('rwk/norm:Er',$first->[9]);
+is('rwk/p:PPER',$first->[10]);
+is('s:Er',$first->[11]);
+
+
 done_testing;
 __END__
+
