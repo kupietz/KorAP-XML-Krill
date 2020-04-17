@@ -196,24 +196,39 @@ $output = decode_json( $tokens->to_json );
 
 is(substr($output->{data}->{text}, 0, 100), 'Er hatte den Kopf weit nach rückwärts gebeugt, seine langen schwarzen Haare lockten sich über den li', 'Primary Data');
 
+use Log::Log4perl;
+
+Log::Log4perl->init({
+  'log4perl.rootLogger' => 'WARN, STDERR',
+  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
+  'log4perl.appender.STDERR.layout' => 'PatternLayout',
+  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
+});
+
+
 # Add annotations
-$tokens->add('RWK', 'Morpho');
-$tokens->add('DeReKo', 'Structure');
+ok($tokens->add('RWK', 'Morpho'));
+ok($tokens->add('RWK', 'Structure'));
 
 $output = decode_json( $tokens->to_json );
 
 $first = $output->{data}->{stream}->[0];
 
-is('-:tokens$<i>522',$first->[0]);
-is('<>:base/s:t$<b>64<i>0<i>3062<i>522<b>0',$first->[2]);
-is('i:er',$first->[6]);
-is('rwk/l:er',$first->[7]);
-is('rwk/m:PRO.Pers.Subst.3.Nom.Sg.Masc',$first->[8]);
-is('rwk/norm:Er',$first->[9]);
-is('rwk/p:PPER',$first->[10]);
-is('s:Er',$first->[11]);
-
+is('-:base/paragraphs$<i>2',$first->[0]);
+is('-:base/sentences$<i>21',$first->[1]);
+is('-:tokens$<i>522',$first->[2]);
+is('<>:base/s:s$<b>64<i>0<i>139<i>23<b>1',$first->[3]);
+is('<>:base/s:p$<b>64<i>0<i>2631<i>449<b>1',$first->[4]);
+is('<>:base/s:t$<b>64<i>0<i>3062<i>522<b>0',$first->[5]);
+is('_0$<i>0<i>2',$first->[6]);
+is('i:er',$first->[7]);
+is('rwk/l:er',$first->[8]);
+is('rwk/m:PRO.Pers.Subst.3.Nom.Sg.Masc',$first->[9]);
+is('rwk/norm:Er',$first->[10]);
+is('rwk/p:PPER',$first->[11]);
+is('s:Er',$first->[12]);
 
 done_testing;
+
 __END__
 
