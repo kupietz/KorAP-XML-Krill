@@ -33,10 +33,10 @@ sub parse {
       my $name = $feature->{'#text'};
 
       # Check only for anchors
-      if ($name eq 's') {
+      if ($name eq 's-milestone') {
         push @{$milestones{s}}, [ $span->p_start, $span->o_start ];
       }
-      elsif ($name eq 'p') {
+      elsif ($name eq 'p-milestone') {
         push @{$milestones{p}}, [ $span->p_start, $span->o_start ];
       }
       else {
