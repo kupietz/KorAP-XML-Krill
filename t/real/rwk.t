@@ -223,10 +223,16 @@ is('<>:base/s:t$<b>64<i>0<i>3062<i>522<b>0',$first->[5]);
 is('_0$<i>0<i>2',$first->[6]);
 is('i:er',$first->[7]);
 is('rwk/l:er',$first->[8]);
-is('rwk/m:PRO.Pers.Subst.3.Nom.Sg.Masc',$first->[9]);
-is('rwk/norm:Er',$first->[10]);
-is('rwk/p:PPER',$first->[11]);
-is('s:Er',$first->[12]);
+is('rwk/m:bc:PRO',$first->[9]);
+is('rwk/m:case:Nom',$first->[10]);
+is('rwk/m:gender:Masc',$first->[11]);
+is('rwk/m:number:Sg',$first->[12]);
+is('rwk/m:person:3',$first->[13]);
+is('rwk/m:type:Pers',$first->[14]);
+is('rwk/m:usage:Subst',$first->[15]);
+is('rwk/norm:Er',$first->[16]);
+is('rwk/p:PPER',$first->[17]);
+is('s:Er',$first->[18]);
 
 done_testing;
 

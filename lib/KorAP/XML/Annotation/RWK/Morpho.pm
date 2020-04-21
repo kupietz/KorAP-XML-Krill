@@ -17,29 +17,31 @@ sub parse {
 
       foreach my $f (@{$content->{fs}->{f}}) {
 
+        my $name = lc($f->{-name});
+
         # pos tag
-        if (($f->{-name} eq 'pos') &&
+        if (($name eq 'pos') &&
               ($found = $f->{'#text'})) {
           $mtt->add(term => 'rwk/p:' . $found);
         }
 
         # normtok tag
-        elsif (($f->{-name} eq 'normtok') &&
+        elsif (($name eq 'normtok') &&
               ($found = $f->{'#text'})) {
           $mtt->add(term => 'rwk/norm:' . $found);
         }
 
-        # ana tag
-        elsif ($f->{-name} eq 'rfpos' &&
-                 ($found = $f->{'#text'})) {
-          $mtt->add(term => 'rwk/m:' . $found);
-        }
-
         # lemma tag
-        elsif (($f->{-name} eq 'lemma')
+        elsif (($name eq 'lemma')
                  && ($found = $f->{'#text'})
                  && $found ne '--') {
           $mtt->add(term => 'rwk/l:' . $found);
+        }
+
+        # ana tag
+        elsif ($name =~ m/^(?:bc|(?:sub)?type|usage|person|pos|case|number|gender|tense|mood|degree)$/ &&
+                 ($found = $f->{'#text'})) {
+          $mtt->add(term => 'rwk/m:' . $name . ':' . $found);
         };
       };
     }) or return;
