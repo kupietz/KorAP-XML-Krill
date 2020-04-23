@@ -147,9 +147,14 @@ use Fcntl qw(:flock SEEK_END);
 # - Added support for DGD pseudo-sentences
 #   based on anchor milestones.
 # - Support for non-verbal annotations.
+#
+# 2020/04/23
+# - Added support for Redewiedergabe-Korpus structure
+#   annotations, based on sentence and paragraph milestones
+# - Added support for Redewiedergabe-Korpus morphology
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2019/12/17';
+our $LAST_CHANGE = '2020/04/23';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -535,6 +540,12 @@ push(@layers, ['MDParser', 'Dependency']);
 # OpenNLP
 push(@layers, ['OpenNLP', 'Morpho']);
 push(@layers, ['OpenNLP', 'Sentences']);
+
+# Redewiedergabe
+push(@layers, ['RWK', 'Morpho']);
+if ($base_sentences eq 'rwk#structure') {
+  push(@layers, ['RWK', 'Structure']);
+};
 
 # Schreibgebrauch
 push(@layers, ['Sgbr', 'Lemma']);
@@ -1516,6 +1527,10 @@ L<Krill|https://github.com/KorAP/Krill>.
   OpenNLP
     #Morpho
     #Sentences
+
+  RWK
+    #Morpho
+    #Structure
 
   Sgbr
     #Lemma
