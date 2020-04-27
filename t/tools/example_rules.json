@@ -7,5 +7,13 @@
       ["f[name=pos]", "~"]
     ]
   ],
-  ["struct/structure.xml"]
+  ["struct/structure.xml"],
+  [
+    "header.xml",
+    [
+      ["forename"]
+    ]
+  ],
+  ["../header.xml"],
+  ["../../header.xml"]
 ]

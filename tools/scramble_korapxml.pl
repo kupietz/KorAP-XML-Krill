@@ -134,7 +134,11 @@ sub scramble {
     my $dom = Mojo::DOM->new->xml(1)->parse(b($data)->decode);
 
     foreach (@$rules) {
-      transform($dom, $_->[0], $_->[1]);
+      if ($input =~ /header\.xml$/) {
+        transform_header($dom, $_->[0]);
+      } else {
+        transform($dom, $_->[0], $_->[1]);
+      };
     };
 
     $data = b($dom->to_string)->encode;
@@ -191,6 +195,23 @@ sub transform {
     }
   )
 };
+
+
+# Transform header file
+sub transform_header {
+  my ($dom, $selector) = @_;
+
+  $dom->find($selector)->each(
+    sub {
+      my $word = $_->text;
+
+      # The random rule means the word is replaced by
+      # with a random word with the same characterisms.
+      $_->content(get_rnd_word($word));
+    }
+  )
+};
+
 
 
 __END__
@@ -255,7 +276,8 @@ If the file name is followed by a rule set, these
 CSS selector rules followed by a transformation type marker
 are used to transform elements of the file.
 
-All CSS selectors are nested in C<spanList > span>.
+All CSS selectors for annotation files
+are nested in C<spanList > span>.
 
 The following markers are supported:
 
@@ -278,5 +300,8 @@ Two identical words in a single run will always be transfered
 to the same target word.
 
 =back
+
+For header files, the rules are not nested and only the
+randomized marker C<~> is supported.
 
 =back
