@@ -1,0 +1,11 @@
+[
+  [
+    "dgd/annot.xml",
+    [
+      ["f[name=trans]", "="],
+      ["f[name=lemma]", "^"],
+      ["f[name=pos]", "~"]
+    ]
+  ],
+  ["struct/structure.xml"]
+]

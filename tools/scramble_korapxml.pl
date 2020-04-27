@@ -2,6 +2,7 @@
 use Mojo::Base -strict;
 use Mojo::DOM;
 use Mojo::File qw'path';
+use Mojo::JSON qw'decode_json';
 use Mojo::ByteStream 'b';
 use String::Random;
 use Pod::Usage;
@@ -26,6 +27,7 @@ my ($orig_folder, $scr_folder);
 GetOptions(
   'input|i=s' => \$orig_folder,
   'output|o=s' => \$scr_folder,
+  'rules|r=s' => \(my $rule_file),
   'help|h'      => sub {
     pod2usage(
       -sections => 'NAME|SYNOPSIS|DESCRIPTION|ARGUMENTS|OPTIONS',
@@ -35,7 +37,7 @@ GetOptions(
   }
 );
 
-unless ($orig_folder || $scr_folder) {
+unless ($orig_folder || $scr_folder || $rule_file) {
   pod2usage(%ERROR_HASH);
 };
 
@@ -105,18 +107,19 @@ path($scr_folder)->make_path->child('data.xml')->spurt(b($dom->to_string)->encod
 # stuffed in a hash as well.
 # If no CSS rules are parsed, the file will just be copied.
 
-scramble('dgd/annot.xml' => [
-  ["f[name=trans]", "="],
-  ["f[name=lemma]", "^"],
-  ["f[name=pos]", "~"]
-] => 'dgd/annot.xml');
+$rule_file = Mojo::File->new($rule_file);
 
-scramble('struct/structure.xml');
-scramble('header.xml');
+if (-e $rule_file) {
+  my $rules = decode_json $rule_file->slurp;
+
+  foreach my $rule (@$rules) {
+    scramble(@$rule);
+  };
+};
 
 # Scramble an annotation file
 sub scramble {
-  my ($input, $rules, $output) = @_;
+  my ($input, $rules) = @_;
   my $data_file = path($orig_folder)->child($input);
 
   unless (-f $data_file) {
@@ -135,15 +138,9 @@ sub scramble {
     };
 
     $data = b($dom->to_string)->encode;
-  }
-
-  else {
-
-    # Just copy the data
-    $output = $input;
   };
 
-  my $file = Mojo::File->new($scr_folder)->child($output);
+  my $file = Mojo::File->new($scr_folder)->child($input);
   path($file->dirname)->make_path;
   $file->spurt($data);
 };
@@ -195,23 +192,6 @@ sub transform {
   )
 };
 
-__END__
-
-# Config data:
-{
-  '/dgd/annot.xml' => [
-    ["f[name=norm]", "="],
-    ["f[name=lemma]", "^"],
-    ["f[name=pos]", "~"]
-  ],
-  '/dgd/morpho.xml' => [
-    ["f[name=norm]", "="],
-    ["f[name=lemma]", "^"],
-    ["f[name=pos]", "~"]
-  ],
-  '/dgd/nospeech.xml' => []
-}
-
 
 __END__
 
@@ -236,7 +216,67 @@ and randomizes all word strings occurring following
 several rules. This is useful to create example files
 based on corpora that can't be published.
 
+
+=head1 OPTIONS
+
+=over 2
+
+=item B<--input|-i> <directory>
+
+The unscrambled KorAP-XML directory.
+
+
+=item B<--output|-o> <directory>
+
+The output directory
+
+
+=item B<--rules|-r> <file>
+
+The rule file for transformation as a json file.
+Example:
+
+  [
+    [
+      "dgd/annot.xml",
+      [
+        ["f[name=trans]", "="],
+        ["f[name=lemma]", "^"],
+        ["f[name=pos]", "~"]
+      ]
+    ],
+    ["struct/structure.xml"]
+  ]
+
+All elements of the json list are copied from the input directory to
+the output directory.
+The C<data.xml> file will be automatically coppied and scrambled.
+If the file name is followed by a rule set, these
+CSS selector rules followed by a transformation type marker
+are used to transform elements of the file.
+
+All CSS selectors are nested in C<spanList > span>.
+
+The following markers are supported:
+
+=over 4
+
+=item B<=>
+
+Take the scrambled surface form from the C<data.xml>.
+
+=item B<^>
+
+Take the scrambled surface form from the C<data.xml> and
+modify the term by appending the string C<ui>.
+
+=item B<~>
+
+Create a randomized string, keeping the characteristicts of
+the original element content.
 Two identical words in a single run will always be transfered
 to the same target word.
 
-The C<data.xml> file will be scrambled automatically.
+=back
+
+=back
