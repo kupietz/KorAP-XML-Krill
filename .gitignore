@@ -7,6 +7,7 @@ docs
 todo.org
 tools/*
 !tools/rewrite_goe_licenses.pl
+!tools/scramble_korapxml.pl
 build
 fixtures.txt
 node_modules
