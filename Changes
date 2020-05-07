@@ -1,5 +1,6 @@
-0.41 2020-04-23
+0.41 2020-05-07
         - Added support for RWK annotations.
+        - Improved DGD support.
 
 0.40 2020-03-03
         - Fixed XIP parser.

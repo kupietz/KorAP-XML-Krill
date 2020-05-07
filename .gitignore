@@ -34,4 +34,5 @@ nytprof
 t/corpus/BRZ13
 t/corpus/DCK
 t/corpus/AGD-orig
+t/corpus/FOLK-orig
 t/real/dck.t

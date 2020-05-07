@@ -129,5 +129,108 @@ like($token, qr!<>:base/s:s\$<b>64<i>23<i>27<i>5<b>1!);
 $token = join('||', @{$output->{data}->{stream}->[5]});
 like($token, qr!dgd/para:pause!);
 
+
+# New revision
+$path = catdir(dirname(__FILE__), '..', 'corpus', 'FOLK-scrambled', '00068-SE-01', 'T-05');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc->parse, 'Parse document');
+
+is($doc->text_sigle, 'FOLK/00068-SE-01/T-05', 'Correct text sigle');
+is($doc->doc_sigle, 'FOLK/00068-SE-01', 'Correct document sigle');
+is($doc->corpus_sigle, 'FOLK', 'Correct corpus sigle');
+
+$meta = $doc->meta;
+is($meta->{T_title}, 'FOLK_E_00068_SE_01_T_05_DF_01', 'Title');
+
+is($meta->{A_externalLink}, 'data:application/x.korap-link;title=DGD,https://dgd.ids-mannheim.de/DGD2Web/ExternalAccessServlet?command=displayData&id=FOLK_E_00068_SE_01_T_05');
+
+# Tokenization
+use_ok('KorAP::XML::Tokenizer');
+
+($token_base_foundry, $token_base_layer) = (qw/DGD Annot/);
+
+# Get tokenization
+$tokens = KorAP::XML::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => $token_base_foundry,
+  layer => $token_base_layer,
+  name => 'tokens',
+  non_verbal_tokens => 1
+);
+
+ok($tokens, 'Token Object is fine');
+ok($tokens->parse, 'Token parsing is fine');
+
+## DeReKo
+# $tokens->add('DeReKo', 'Structure');
+
+## DGD
+ok($tokens->add('DGD', 'Morpho'), 'Add Morpho');
+
+$output = decode_json( $tokens->to_json );
+
+is(substr($output->{data}->{text}, 11, 30),
+   'ogeuy Nva wvho zhl usblyuug Kt',
+   'Primary Data');
+is($output->{data}->{name}, 'tokens', 'tokenName');
+is($output->{data}->{tokenSource}, 'dgd#annot', 'tokenSource');
+
+is($output->{data}->{stream}->[0]->[1],
+   '<>:base/s:t$<b>64<i>0<i>39384<i>7190<b>0',
+   'data'
+ );
+
+is($output->{data}->{stream}->[0]->[2],
+   '@:dgd/para:type:micro$<b>16<s>1',
+   'data'
+ );
+
+is($output->{data}->{stream}->[0]->[3],
+   '@:dgd/para:rend:(.)$<b>16<s>1',
+   'data'
+ );
+
+is($output->{data}->{stream}->[0]->[5],
+   'dgd/para:pause$<b>128<s>1',
+   'data'
+ );
+
+is($output->{data}->{stream}->[1]->[0],
+   '@:dgd/para:desc:short breathe in$<b>16<s>1',
+   'data'
+ );
+
+is($output->{data}->{stream}->[1]->[1],
+   "\@:dgd/para:rend:\x{b0}h\$<b>16<s>1",
+   'data'
+ );
+
+is($output->{data}->{stream}->[1]->[3],
+   'dgd/para:vocal$<b>128<s>1',
+   'data'
+ );
+
+is($output->{data}->{stream}->[97]->[1],
+   'dgd/l:ui',
+   'data'
+ );
+
+is($output->{data}->{stream}->[97]->[2],
+   'dgd/p:AUUK',
+   'data'
+ );
+
+is($output->{data}->{stream}->[97]->[3],
+   'dgd/trans:rh',
+   'data'
+ );
+
+is($output->{data}->{stream}->[97]->[4],
+   'dgd/type:assimilated',
+   'data'
+ );
+
+
 done_testing;
 __END__

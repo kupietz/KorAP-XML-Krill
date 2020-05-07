@@ -27,16 +27,31 @@ sub parse {
           );
         }
 
+        # transcription
+        elsif (($feat->{-name} eq 'trans') && ($feat->{'#text'})) {
+          $mtt->add(
+            term => 'dgd/trans:' . $feat->{'#text'}
+          );
+        }
+
+        # phonetics
+        elsif (($feat->{-name} eq 'phon') && ($feat->{'#text'})) {
+          $mtt->add(
+            term => 'dgd/phon:' . $feat->{'#text'}
+          );
+        }
+
+        # type
+        elsif (($feat->{-name} eq 'type') && ($feat->{'#text'})) {
+          $mtt->add(
+            term => 'dgd/type:' . $feat->{'#text'}
+          );
+        }
+
         elsif (($feat->{-name} eq 'lemma') && ($feat->{'#text'})) {
           $mtt->add(
             term => 'dgd/l:' . $feat->{'#text'}
           );
-          # }
-          #
-          # elsif (($feat->{-name} eq 'type') && ($feat->{'#text'})) {
-          #   $mtt->add(
-          #     term => 'dgd/h:' . $feat->{'#text'}
-          #   );
         }
 
         # Pause
@@ -51,6 +66,24 @@ sub parse {
           if ($feat->{'#text'} =~ /dur="PT([^"]+?)"/) {
             $mtt->add(
               term => '@:dgd/para:dur:' . $1,
+              pti => 16,
+              payload => '<s>' . $tui
+            );
+          };
+
+          # Rendering
+          if ($feat->{'#text'} =~ /rend="([^"]+?)"/) {
+            $mtt->add(
+              term => '@:dgd/para:rend:' . $1,
+              pti => 16,
+              payload => '<s>' . $tui
+            );
+          };
+
+          # Type
+          if ($feat->{'#text'} =~ /type="([^"]+?)"/) {
+            $mtt->add(
+              term => '@:dgd/para:type:' . $1,
               pti => 16,
               payload => '<s>' . $tui
             );
@@ -76,23 +109,15 @@ sub parse {
             );
           };
 
-          # Rendering
-          if ($feat->{'#text'} =~ /rend="([^"]+?)"/) {
-            $mtt->add(
-              term => '@:dgd/para:rend:' . $1,
-              pti => 16,
-              payload => '<s>' . $tui
-            );
-          };
-
-          # Description
-          if ($feat->{'#text'} =~ />([^<]+?)</) {
+          # desc
+          if ($feat->{'#text'} =~ m!<desc[^>]*>([^<]+?)<\/desc>!) {
             $mtt->add(
               term => '@:dgd/para:desc:' . $1,
               pti => 16,
               payload => '<s>' . $tui
             );
           };
+
           last;
         };
       };

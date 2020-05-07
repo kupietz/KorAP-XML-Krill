@@ -88,7 +88,7 @@ $token = $stream->[4];
 is($token->[3], 'dgd/l:pui', 'Token');
 
 $token = $stream->[5];
-is($token->[4], 'dgd/para:pause$<b>128<s>2', 'Token');
+is($token->[5], 'dgd/para:pause$<b>128<s>2', 'Token');
 
 $token = $stream->[6];
 is($token->[13], 'dgd/l:xui', 'Token');
