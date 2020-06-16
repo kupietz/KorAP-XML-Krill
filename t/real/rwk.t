@@ -234,7 +234,192 @@ is('rwk/norm:Er',$first->[16]);
 is('rwk/p:PPER',$first->[17]);
 is('s:Er',$first->[18]);
 
+
+
+
+# Updated format:
+$path = catdir(dirname(__FILE__), '../corpus/REDEW/DOC1b/00011');
+
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc->parse, 'Parse document');
+
+is($doc->text_sigle, 'REDEW/DOC1/00011', 'Correct text sigle');
+is($doc->doc_sigle, 'REDEW/DOC1', 'Correct document sigle');
+is($doc->corpus_sigle, 'REDEW', 'Correct corpus sigle');
+
+$meta = $doc->meta;
+
+is($meta->{A_distributor}, 'Institut für Deutsche Sprache', 'Distributor');
+is($meta->{D_pub_date}, '18730000', 'Publication date');
+is($meta->{D_creation_date}, '18730000', 'Publication date');
+is($meta->{S_pub_place_key}, 'DE', 'Publication place key');
+is($meta->{T_corpus_title}, 'Redewiedergabe', 'Title');
+is($meta->{T_doc_title}, 'Redewiedergabe Dokument 1', 'Title');
+is($meta->{T_author}, 'Christen, Ada', 'Author');
+is($meta->{T_title}, 'Rahel', 'Author');
+is($meta->{S_availability}, 'QAO-NC-LOC:ids', 'Availability');
+is($meta->{S_text_type_art}, 'Erzähltext', 'Availability');
+
+# Tokenization
+use_ok('KorAP::XML::Tokenizer');
+
+($token_base_foundry, $token_base_layer) = (qw/rwk Morpho/);
+
+# Get tokenization
+$tokens = KorAP::XML::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => $token_base_foundry,
+  layer => $token_base_layer,
+  name => 'tokens'
+);
+
+ok($tokens, 'Token Object is fine');
+ok($tokens->parse, 'Token parsing is fine');
+
+$output = decode_json( $tokens->to_json );
+
+is(substr($output->{data}->{text}, 0, 100), 'Er hatte den Kopf weit nach rückwärts gebeugt, seine langen schwarzen Haare lockten sich über den li', 'Primary Data');
+
+use Log::Log4perl;
+
+Log::Log4perl->init({
+  'log4perl.rootLogger' => 'WARN, STDERR',
+  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
+  'log4perl.appender.STDERR.layout' => 'PatternLayout',
+  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
+});
+
+
+# Add annotations
+ok($tokens->add('RWK', 'Morpho'));
+ok($tokens->add('RWK', 'Structure'));
+
+$output = decode_json( $tokens->to_json );
+
+$first = $output->{data}->{stream}->[0];
+
+is('-:base/paragraphs$<i>2',$first->[0]);
+is('-:base/sentences$<i>21',$first->[1]);
+is('-:tokens$<i>522',$first->[2]);
+is('<>:base/s:s$<b>64<i>0<i>139<i>23<b>1',$first->[3]);
+is('<>:base/s:p$<b>64<i>0<i>2631<i>449<b>1',$first->[4]);
+is('<>:base/s:t$<b>64<i>0<i>3062<i>522<b>0',$first->[5]);
+is('_0$<i>0<i>2',$first->[6]);
+is('i:er',$first->[7]);
+is('rwk/l:er',$first->[8]);
+is('rwk/m:bc:PRO',$first->[9]);
+is('rwk/m:case:Nom',$first->[10]);
+is('rwk/m:gender:Masc',$first->[11]);
+is('rwk/m:number:Sg',$first->[12]);
+is('rwk/m:person:3',$first->[13]);
+is('rwk/m:type:Pers',$first->[14]);
+is('rwk/m:usage:Subst',$first->[15]);
+is('rwk/norm:Er',$first->[16]);
+is('rwk/p:PPER',$first->[17]);
+is('s:Er',$first->[18]);
+
+
+$path = catdir(dirname(__FILE__), '../corpus/REDEW/DOC1b/00001');
+
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc->parse, 'Parse document');
+
+is($doc->text_sigle, 'REDEW/DOC1/00001', 'Correct text sigle');
+is($doc->doc_sigle, 'REDEW/DOC1', 'Correct document sigle');
+is($doc->corpus_sigle, 'REDEW', 'Correct corpus sigle');
+
+$meta = $doc->meta;
+
+is($meta->{A_distributor}, 'Institut für Deutsche Sprache', 'Distributor');
+is($meta->{D_pub_date}, '18950000', 'Publication date');
+is($meta->{D_creation_date}, '18950000', 'Publication date');
+is($meta->{S_pub_place_key}, 'DE', 'Publication place key');
+is($meta->{T_corpus_title}, 'Redewiedergabe', 'Title');
+is($meta->{T_doc_title}, 'Redewiedergabe Dokument 1', 'Title');
+is($meta->{T_author}, 'Busch, Wilhelm', 'Author');
+is($meta->{T_title}, 'Der Schmetterling', 'Titel');
+is($meta->{S_availability}, 'QAO-NC-LOC:ids', 'Availability');
+is($meta->{S_text_type_art}, 'Erzähltext', 'Availability');
+
+# Tokenization
+use_ok('KorAP::XML::Tokenizer');
+
+($token_base_foundry, $token_base_layer) = (qw/rwk Morpho/);
+
+# Get tokenization
+$tokens = KorAP::XML::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => $token_base_foundry,
+  layer => $token_base_layer,
+  name => 'tokens'
+);
+
+ok($tokens, 'Token Object is fine');
+ok($tokens->parse, 'Token parsing is fine');
+
+$output = decode_json( $tokens->to_json );
+
+is(substr($output->{data}->{text}, 0, 100), 'Eier! Schinken! Franzwein! Flink, marsch!« schrie ihn gebieterisch der Nazi an und kniff dabei einen', 'Primary Data');
+
+# Add annotations
+ok($tokens->add('RWK', 'Morpho'));
+ok($tokens->add('RWK', 'Structure'));
+
+$output = decode_json( $tokens->to_json );
+
+$first = $output->{data}->{stream}->[0];
+
+is('-:base/paragraphs$<i>2',$first->[0]);
+is('-:base/sentences$<i>33',$first->[1]);
+is('-:tokens$<i>511',$first->[2]);
+is('<>:base/s:s$<b>64<i>0<i>6<i>2<b>1',$first->[3]);
+is('<>:base/s:p$<b>64<i>0<i>2010<i>307<b>1',$first->[4]);
+is('<>:base/s:t$<b>64<i>0<i>3246<i>511<b>0',$first->[5]);
+
+
+$path = catdir(dirname(__FILE__), '../corpus/REDEW/DOC1b/00558');
+
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc->parse, 'Parse document');
+
+is($doc->text_sigle, 'REDEW/DOC1/00558', 'Correct text sigle');
+is($doc->doc_sigle, 'REDEW/DOC1', 'Correct document sigle');
+is($doc->corpus_sigle, 'REDEW', 'Correct corpus sigle');
+
+$meta = $doc->meta;
+
+# Tokenization
+use_ok('KorAP::XML::Tokenizer');
+
+($token_base_foundry, $token_base_layer) = (qw/rwk Morpho/);
+
+# Get tokenization
+$tokens = KorAP::XML::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => $token_base_foundry,
+  layer => $token_base_layer,
+  name => 'tokens'
+);
+
+ok($tokens, 'Token Object is fine');
+ok($tokens->parse, 'Token parsing is fine');
+
+$output = decode_json( $tokens->to_json );
+
+is(substr($output->{data}->{text}, 0, 100), 'Außer den sechs größten Vereinigungen haben sich 59 keiner Körperschaft angehörige Künstler angemeld', 'Primary Data');
+
+# Add annotations
+ok($tokens->add('RWK', 'Morpho'));
+ok($tokens->add('RWK', 'Structure'));
+
+$output = decode_json( $tokens->to_json );
+
+$first = $output->{data}->{stream}->[0];
+
+is('-:base/paragraphs$<i>2',$first->[0]);
+is('-:base/sentences$<i>68',$first->[1]);
+
 done_testing;
-
-__END__
-

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="REDEW_DOC1.00558" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="3589" l="1">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">text</f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="3589" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p-milestone</f>
+      </fs>
+    </span>
+    <span id="s2" from="0" to="0" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s24" from="150" to="150" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s48" from="296" to="296" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s62" from="383" to="383" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s77" from="480" to="480" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s93" from="560" to="560" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s94" from="559" to="603" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">1</f>
+            <f name="type">frame</f>
+            <f name="pos">start</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s96" from="563" to="575" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">1</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s101" from="591" to="602" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">1</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s104" from="603" to="775" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">1</f>
+            <f name="mode">indirect</f>
+            <f name="content">speech writing</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s114" from="655" to="655" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s121" from="683" to="683" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s123" from="687" to="687" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s124" from="694" to="694" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s138" from="776" to="776" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s172" from="995" to="995" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s173" from="997" to="997" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s176" from="1024" to="1024" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s198" from="1152" to="1152" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s199" from="1169" to="1169" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s213" from="1282" to="1282" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s244" from="1496" to="1496" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s245" from="1505" to="1505" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s249" from="1514" to="1514" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s250" from="1523" to="1523" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s267" from="1606" to="1606" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s273" from="1634" to="1634" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s274" from="1660" to="1660" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s282" from="1694" to="1694" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s283" from="1696" to="1696" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s289" from="1737" to="1737" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s330" from="2008" to="2008" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s343" from="2085" to="2085" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s351" from="2123" to="2123" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s352" from="2125" to="2125" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s360" from="2163" to="2163" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s390" from="2375" to="2375" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s394" from="2383" to="2383" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s395" from="2389" to="2389" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s405" from="2449" to="2449" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s409" from="2459" to="2459" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s410" from="2472" to="2472" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s422" from="2545" to="2545" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s429" from="2576" to="2576" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s430" from="2597" to="2597" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s438" from="2633" to="2633" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s441" from="2640" to="2640" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s449" from="2688" to="2688" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s451" from="2691" to="2691" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s452" from="2696" to="2696" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s463" from="2768" to="2768" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s471" from="2789" to="2789" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s472" from="2797" to="2797" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s478" from="2840" to="3013" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">2</f>
+            <f name="mode">reported</f>
+            <f name="content">speech writing</f>
+            <f name="level">1</f>
+            <f name="nonfact">yes</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s479" from="2841" to="2841" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s489" from="2913" to="2936" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">2</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s502" from="2985" to="2985" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s503" from="2988" to="2988" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s507" from="3004" to="3012" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">2</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s511" from="3014" to="3014" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s512" from="3016" to="3016" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s521" from="3053" to="3053" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s541" from="3153" to="3153" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s542" from="3155" to="3155" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s545" from="3169" to="3169" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s562" from="3260" to="3260" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s565" from="3263" to="3263" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s571" from="3292" to="3292" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s572" from="3294" to="3294" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s580" from="3332" to="3332" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s597" from="3417" to="3417" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s612" from="3503" to="3503" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s615" from="3506" to="3506" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s631" from="3583" to="3583" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s632" from="3585" to="3585" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

@@ -69,6 +69,16 @@ sub parse {
 
       my $mtt = $stream->pos($p_start);
 
+      if (!$mtt) {
+        $p_start--;
+
+        if (($_->[0] == $p_start) || ($_->[1] == $o_start)) {
+          next;
+        };
+
+        $mtt = $stream->pos($p_start);
+      }
+
       # Add the base sentence
       my $mt = $mtt->add(
         term    => '<>:base/s:' . $type,

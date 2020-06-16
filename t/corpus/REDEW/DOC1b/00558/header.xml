@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text">
+        <textSigle>REDEW/DOC1.00558</textSigle>
+        <fileDesc>
+          <titleStmt>
+            <t.title>—Fronleichnamsfest.—Personalnachricht.—Ein ehrendes Wort.—Vom Badener Kurorchester.—Kunstverein in Baden.—Wohltätigkeitsvorstellung.—Großes Kriegsfürsorge-Parkfest in Baden.—K.k. Gesellschaft vom weißen Kreuze.—Der Plan der neuen Roten Kreuz Lose.—Zur Mehlversorgung der Stadt Baden.—Mädchen-Lyzeum.—Herzliche Bitte der„Kinderfürsorge“.—Zur Mehlabgabe.—Vom Konsumentenverein.—Die Reichsorganisation der Hausfrauen Oesterreichs—Trabrennen in Baden.—Postverkehr mit Griechenland.</t.title>
+            <textSigle>REDEW/DOC1.00558</textSigle>
+          </titleStmt>
+          <publicationStmt>
+            <availability region="ids">QAO-NC-LOC:ids</availability>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <h.author>Undefined</h.author>
+                <imprint/>
+                <biblScope type="pp"></biblScope>
+                <biblScope type="suppl"/>
+                <biblScope type="suppltitle"/>
+                <biblNote>source: mkhz.badener, filename: BZ_1916_06_21.txt_2.xml, url: rwk_mkhz_11021-1.xml, sample_id: 1, decade: 1910, fictional: no, narrative: yes, dialect: no, perspective: third, quotes: german</biblNote>
+              </analytic>
+              <monogr>
+                <h.title type="main"/>
+                <imprint>
+                  <pubDate type="year">1916</pubDate>
+                  <pubDate type="month"></pubDate>
+                  <pubDate type="day"></pubDate>
+                </imprint>
+                <biblScope type="issue"/>
+                <biblScope type="issueplace"></biblScope>
+              </monogr>
+            </biblStruct>
+          </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+         <creation>
+          <creatDate>1916</creatDate>
+         </creation>
+         <textDesc>
+          <textTypeArt>Nachrichten</textTypeArt>
+         </textDesc>
+        </profileDesc>
+      </idsHeader>

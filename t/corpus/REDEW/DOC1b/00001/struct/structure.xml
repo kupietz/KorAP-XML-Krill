@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+
+<layer docid="REDEW_DOC1.00001" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="3246" l="1">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">text</f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="3246" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p-milestone</f>
+      </fs>
+    </span>
+    <span id="s2" from="0" to="42" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">1</f>
+            <f name="mode">direct</f>
+            <f name="content">speech</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s3" from="0" to="0" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s6" from="6" to="6" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s9" from="16" to="16" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s12" from="27" to="27" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s18" from="42" to="78" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">1</f>
+            <f name="type">frame</f>
+            <f name="pos">end</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s19" from="42" to="49" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">1</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s24" from="70" to="75" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">1</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s26" from="75" to="78" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">1</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s53" from="233" to="233" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s84" from="405" to="405" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s85" from="404" to="426" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">2</f>
+            <f name="type">frame</f>
+            <f name="pos">start</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s87" from="407" to="416" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">2</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s89" from="416" to="421" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">2</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s93" from="426" to="527" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">2</f>
+            <f name="mode">indirect</f>
+            <f name="content">thought</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s96" from="435" to="441" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">8 9</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s99" from="442" to="470" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">8</f>
+            <f name="mode">reported</f>
+            <f name="content">speech</f>
+            <f name="level">2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s106" from="471" to="527" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">9</f>
+            <f name="mode">reported</f>
+            <f name="content">speech</f>
+            <f name="level">2</f>
+            <f name="nonfact">yes</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s116" from="527" to="553" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">3</f>
+            <f name="type">frame</f>
+            <f name="pos">start</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s117" from="528" to="528" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s119" from="535" to="542" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">3</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s121" from="542" to="545" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">3</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s125" from="553" to="726" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">3</f>
+            <f name="mode">direct</f>
+            <f name="content">speech</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s126" from="554" to="554" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s135" from="592" to="592" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s147" from="659" to="659" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s155" from="684" to="684" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s167" from="727" to="727" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s178" from="786" to="786" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s186" from="816" to="816" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s213" from="957" to="957" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s229" from="1043" to="1043" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s235" from="1073" to="1073" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s253" from="1164" to="1164" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s262" from="1199" to="1245" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">4</f>
+            <f name="mode">reported</f>
+            <f name="content">thought</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s264" from="1205" to="1209" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">4 10</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s270" from="1236" to="1245" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">4</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s277" from="1277" to="1277" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s315" from="1489" to="1489" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s326" from="1540" to="1540" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s339" from="1606" to="1606" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s345" from="1632" to="1632" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s356" from="1670" to="1670" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s362" from="1699" to="1699" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s379" from="1782" to="1782" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s380" from="1781" to="1788" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">5</f>
+            <f name="mode">direct</f>
+            <f name="content">thought</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s385" from="1788" to="1799" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">5</f>
+            <f name="type">frame</f>
+            <f name="pos">end</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s386" from="1788" to="1794" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">5</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s388" from="1794" to="1798" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">5 6</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s391" from="1799" to="1871" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">6</f>
+            <f name="mode">direct</f>
+            <f name="content">thought</f>
+            <f name="level">1</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s392" from="1800" to="1800" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s397" from="1812" to="1812" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s398" from="1811" to="1845" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">11</f>
+            <f name="mode">reported</f>
+            <f name="content">speech</f>
+            <f name="level">2</f>
+            <f name="nonfact">yes</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s401" from="1824" to="1827" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">11</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s405" from="1838" to="1845" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">11</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s413" from="1872" to="1872" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s423" from="1921" to="1985" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">said</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">12</f>
+            <f name="mode">indirect</f>
+            <f name="content">thought</f>
+            <f name="level">1</f>
+            <f name="nonfact">yes</f>
+            <f name="border">yes</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s437" from="1985" to="2011" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">12</f>
+            <f name="type">frame</f>
+            <f name="pos">end</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s440" from="1991" to="1995" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">12</f>
+            <f name="type">speaker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s443" from="2001" to="2010" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">seg</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="id">12</f>
+            <f name="type">intExpr</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s446" from="2012" to="2012" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s588" from="2731" to="2731" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s630" from="2969" to="2969" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+    <span id="s643" from="3047" to="3047" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s-milestone</f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

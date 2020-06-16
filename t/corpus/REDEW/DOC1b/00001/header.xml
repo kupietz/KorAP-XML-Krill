@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN" "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text">
+        <textSigle>REDEW/DOC1.00001</textSigle>
+        <fileDesc>
+          <titleStmt>
+            <t.title>Der Schmetterling</t.title>
+            <textSigle>REDEW/DOC1.00001</textSigle>
+          </titleStmt>
+          <publicationStmt>
+            <availability region="ids">QAO-NC-LOC:ids</availability>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <h.author>Busch, Wilhelm</h.author>
+                <imprint/>
+                <biblScope type="pp"></biblScope>
+                <biblScope type="suppl"/>
+                <biblScope type="suppltitle"/>
+                <biblNote>source: digbib, filename: Busch,_Wilhelm_Der_Schmetterling.tg644_1.xml, url: rwk_digbib_1014-1.xml, sample_id: 1, decade: 1890, fictional: yes, narrative: yes, dialect: no, perspective: first, quotes: chevron</biblNote>
+              </analytic>
+              <monogr>
+                <h.title type="main"/>
+                <imprint>
+                  <pubDate type="year">1895</pubDate>
+                  <pubDate type="month"></pubDate>
+                  <pubDate type="day"></pubDate>
+                </imprint>
+                <biblScope type="issue"/>
+                <biblScope type="issueplace"></biblScope>
+              </monogr>
+            </biblStruct>
+          </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+         <creation>
+          <creatDate>1895</creatDate>
+         </creation>
+         <textDesc>
+          <textTypeArt>Erzähltext</textTypeArt>
+         </textDesc>
+        </profileDesc>
+      </idsHeader>
