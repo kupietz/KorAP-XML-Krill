@@ -4,6 +4,10 @@ use Test::More;
 use Data::Dumper;
 use JSON::XS;
 
+if ($ENV{SKIP_REAL}) {
+  plan skip_all => 'Skip real tests';
+};
+
 use Benchmark qw/:hireswallclock/;
 
 my $t = Benchmark->new;

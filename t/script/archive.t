@@ -14,6 +14,10 @@ use Data::Dumper;
 use KorAP::XML::Archive;
 use utf8;
 
+if ($ENV{SKIP_SCRIPT}) {
+  plan skip_all => 'Skip script tests';
+};
+
 my $f = dirname(__FILE__);
 my $script = catfile($f, '..', '..', 'script', 'korapxml2krill');
 

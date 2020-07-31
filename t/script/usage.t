@@ -11,6 +11,10 @@ use Test::More;
 use Test::Output;
 use Data::Dumper;
 
+if ($ENV{SKIP_SCRIPT}) {
+  plan skip_all => 'Skip script tests';
+};
+
 my $f = dirname(__FILE__);
 my $script = catfile($f, '..', '..', 'script', 'korapxml2krill');
 ok(-f $script, 'Script found');

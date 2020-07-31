@@ -5,6 +5,10 @@ use Data::Dumper;
 use JSON::XS;
 use Log::Log4perl;
 
+if ($ENV{SKIP_REAL}) {
+  plan skip_all => 'Skip real tests';
+};
+
 use utf8;
 use lib 'lib', '../lib';
 

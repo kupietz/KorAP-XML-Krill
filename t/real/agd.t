@@ -6,6 +6,10 @@ use JSON::XS;
 use Log::Log4perl;
 use utf8;
 
+if ($ENV{SKIP_REAL}) {
+  plan skip_all => 'Skip real tests';
+};
+
 use Benchmark qw/:hireswallclock/;
 
 my $t = Benchmark->new;

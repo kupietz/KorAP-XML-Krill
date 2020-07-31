@@ -6,6 +6,10 @@ use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
 use File::Temp qw/:POSIX/;
 
+if ($ENV{SKIP_SCRIPT}) {
+  plan skip_all => 'Skip script tests';
+};
+
 my $f = dirname(__FILE__);
 my $script = catfile($f, '..', '..', 'script', 'korapxml2krill');
 
