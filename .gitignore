@@ -1,3 +1,4 @@
+MANIFEST.bak
 sandbox
 Sandbox
 examples
@@ -9,7 +10,6 @@ tools/*
 !tools/rewrite_goe_licenses.pl
 !tools/scramble_korapxml.pl
 build
-fixtures.txt
 node_modules
 log
 blib
@@ -32,7 +32,8 @@ nytprof
 
 # Protected checks
 t/corpus/BRZ13
-t/corpus/DCK
-t/corpus/AGD-orig
-t/corpus/FOLK-orig
+t/real/corpus/BRZ13
+t/real/corpus/DCK
+t/real/corpus/AGD-orig
+t/real/corpus/FOLK-orig
 t/real/dck.t

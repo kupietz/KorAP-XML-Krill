@@ -11,10 +11,14 @@ use Data::Dumper;
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
+if ($ENV{SKIP_REAL}) {
+  plan skip_all => 'Skip real tests';
+};
+
 use_ok('KorAP::XML::Krill');
 
 # WPD/00001
-my $path = catdir(dirname(__FILE__), 'corpus/WPD/00001');
+my $path = catdir(dirname(__FILE__), qw!corpus WPD 00001!);
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 like($doc->path, qr!\Q$path\E/!, 'Path');
 

@@ -9,6 +9,10 @@ use Data::Dumper;
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
+if ($ENV{SKIP_REAL}) {
+  plan skip_all => 'Skip real tests';
+};
+
 sub _t2h {
   my $string = shift;
   $string =~ s/^\[\(\d+?-\d+?\)(.+?)\]$/$1/;
@@ -21,7 +25,7 @@ sub _t2h {
 
 use_ok('KorAP::XML::Krill');
 
-my $path = catdir(dirname(__FILE__), 'corpus/WPD/00001');
+my $path = catdir(dirname(__FILE__), qw/corpus WPD 00001/);
 ok(my $doc = KorAP::XML::Krill->new( path => $path ), 'Load Korap::Document');
 like($doc->path, qr!\Q$path\E/$!, 'Path');
 ok($doc->parse, 'Parse document');

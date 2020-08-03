@@ -23,7 +23,7 @@ use_ok('KorAP::XML::Krill');
 # This will check preliminary HNC-Files
 
 # HNC/DOC00001/00001
-my $path = catdir(dirname(__FILE__), '../corpus/HNC/DOC00001/00001');
+my $path = catdir(dirname(__FILE__), 'corpus','HNC','DOC00001','00001');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');

@@ -9,13 +9,17 @@ use Mojo::ByteStream 'b';
 use Data::Dumper;
 use lib 'lib', '../lib';
 
+if ($ENV{SKIP_REAL}) {
+  plan skip_all => 'Skip real tests';
+};
+
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
 use_ok('KorAP::XML::Krill');
 
 # WPD/00001
-my $path = catdir(dirname(__FILE__), 'corpus/WPD/00001');
+my $path = catdir(dirname(__FILE__), 'corpus','WPD','00001');
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 like($doc->path, qr!\Q$path\E/!, 'Path');
 
@@ -65,7 +69,7 @@ is($meta->keywords('K_text_class'), 'freizeit-unterhaltung reisen wissenschaft p
 #ok(!$doc->coll_author, 'Collection author');
 
 # A01/13047
-$path = catdir(dirname(__FILE__), 'corpus/A01/13047');
+$path = catdir(dirname(__FILE__), 'corpus','A01','13047');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
@@ -94,7 +98,7 @@ ok(!$meta->{S_text_type}, 'text_type');
 is($meta->{S_text_type_art}, 'Bericht', 'text_type art');
 
 # ERL/0001
-$path = catdir(dirname(__FILE__), 'corpus/ERL/00001');
+$path = catdir(dirname(__FILE__), 'corpus','ERL','00001');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 
 ok($doc->parse, 'Parse document');
@@ -131,7 +135,7 @@ ok(!$meta->{S_text_type_art}, 'text_type art');
 
 
 # A01/02035-substring
-$path = catdir(dirname(__FILE__), 'corpus/A00/02035-substring');
+$path = catdir(dirname(__FILE__), 'corpus','A00','02035-substring');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 
@@ -160,7 +164,7 @@ ok(!$meta->{S_text_type}, 'text_type');
 is($meta->{S_text_type_art}, 'Bericht', 'text_type art');
 
 # A01/02873-meta
-$path = catdir(dirname(__FILE__), 'corpus/A00/02873-meta');
+$path = catdir(dirname(__FILE__), 'corpus','A00','02873-meta');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 $meta = $doc->meta;
@@ -190,7 +194,7 @@ is($meta->{S_text_type_art}, 'Bericht', 'text_type art');
 
 
 # A01/05663-unbalanced
-$path = catdir(dirname(__FILE__), 'corpus/A00/05663-unbalanced');
+$path = catdir(dirname(__FILE__), 'corpus','A00','05663-unbalanced');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 $meta = $doc->meta;
@@ -219,7 +223,7 @@ ok(!$meta->{S_text_type}, 'text_type');
 is($meta->{S_text_type_art}, 'Bericht', 'text_type art');
 
 # A01/07452-deep
-$path = catdir(dirname(__FILE__), 'corpus/A00/07452-deep');
+$path = catdir(dirname(__FILE__), 'corpus','A00','07452-deep');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 $meta = $doc->meta;
@@ -247,47 +251,8 @@ is($meta->{D_creation_date}, "20000129", 'Creation date');
 ok(!$meta->{S_text_type}, 'text_type');
 is($meta->{S_text_type_art}, 'Bericht', 'text_type art');
 
-# ART
-$path = catdir(dirname(__FILE__), 'corpus/artificial');
-ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
-#is($doc->path, $path . '/', 'Path');
-
-ok($doc = KorAP::XML::Krill->new( path => $path ), 'Load Korap::Document');
-#is($doc->path, $path . '/', 'Path');
-
-ok($doc->parse, 'Parse document');
-$meta = $doc->meta;
-
-# Metdata
-is($meta->{T_title}, 'Artificial Title', 'title');
-is($meta->{T_sub_title}, 'Artificial Subtitle', 'subTitle');
-is($doc->text_sigle, 'ART/ABC/00001', 'ID');
-is($doc->corpus_sigle, 'ART', 'corpusID');
-is($meta->{D_pub_date}, '20010402', 'pubDate');
-is($meta->{S_pub_place}, 'Mannheim', 'pubPlace');
-is($meta->{S_pub_place_key}, 'DE', 'pubPlace key');
-is($meta->{K_text_class}->[0], 'freizeit-unterhaltung', 'TextClass');
-is($meta->{K_text_class}->[1], 'vereine-veranstaltungen', 'TextClass');
-ok(!$meta->{K_text_class}->[2], 'TextClass');
-#is($doc->author->[0], 'Ruru', 'author');
-#is($doc->author->[1], 'Jens.Ol', 'author');
-#is($doc->author->[2], 'Aglarech', 'author');
-is($meta->{T_author}, 'Ruru; Jens.Ol; Aglarech; u.a.', 'author');
-
-# Additional information
-is($meta->{A_editor}, 'Nils Diewald', 'Editor');
-is($meta->{A_publisher}, 'Artificial articles Inc.', 'Publisher');
-is($meta->{D_creation_date}, '19990601', 'Creation date');
-#is($doc->coll_title, 'Artificial articles', 'Collection title');
-#is($doc->coll_sub_title, 'Best of!', 'Collection subtitle');
-#is($doc->coll_editor, 'Nils Diewald', 'Collection editor');
-#is($doc->coll_author, 'Nils Diewald', 'Collection author');
-is($meta->{S_text_type}, 'Zeitung: Tageszeitung', 'No text_type');
-is($meta->{S_text_type_art}, 'Bericht', 'text_type art');
-
-
 # Multipath headers
-$path = catdir(dirname(__FILE__), 'corpus/VDI/JAN/00001');
+$path = catdir(dirname(__FILE__), 'corpus','VDI','JAN','00001');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 like($doc->path, qr!\Q$path\E/!, 'Path');
 
@@ -340,7 +305,7 @@ is($meta->keywords('K_keywords'), '', 'Keywords');
 is($meta->keywords('K_text_class'), 'Freizeit-Unterhaltung Reisen Politik Ausland', 'Text class');
 
 # WDD
-$path = catdir(dirname(__FILE__), 'corpus/WDD/G27/38989');
+$path = catdir(dirname(__FILE__), 'corpus','WDD','G27','38989');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 like($doc->path, qr!\Q$path\E/!, 'Path');
 ok($doc->parse, 'Parse document');

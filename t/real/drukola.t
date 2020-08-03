@@ -24,7 +24,7 @@ use_ok('KorAP::XML::Krill');
 
 # New
 # BBU/BLOG/83709_a_82384
-my $path = catdir(dirname(__FILE__), '../corpus/CoRoLa/BBU/BLOG/83709_a_82384');
+my $path = catdir(dirname(__FILE__), 'corpus','CoRoLa','BBU','BLOG','83709_a_82384');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -113,7 +113,7 @@ like($token, qr!drukola/p:NOUN!, 'data');
 
 # New
 # BBU2/BLOG/83709_a_82384
-$path = catdir(dirname(__FILE__), '../corpus/CoRoLa/BBU2/Blog/83701_a_82376');
+$path = catdir(dirname(__FILE__), 'corpus','CoRoLa','BBU2','Blog','83701_a_82376');
 
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -127,7 +127,7 @@ ok(!exists $meta->{K_text_class}, 'No translator');
 
 
 
-$path = catdir(dirname(__FILE__), '../corpus/CoRoLa/Corola-Journal/-/247_a_537');
+$path = catdir(dirname(__FILE__), 'corpus','CoRoLa','Corola-Journal','-','247_a_537');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 
@@ -138,7 +138,7 @@ is($meta->corpus_sigle, 'Corola-Journal', 'Corpus Sigle');
 is($meta->{K_text_class}->[0], 'Sport', 'Text class');
 
 
-$path = catdir(dirname(__FILE__), '../corpus/CoRoLa/Corola-Journal/COLEGIUL NATIONAL „OCTAV BANCILA“ - IASI/326_a_562');
+$path = catdir(dirname(__FILE__), 'corpus','CoRoLa','Corola-Journal','COLEGIUL NATIONAL „OCTAV BANCILA“ - IASI','326_a_562');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 

@@ -12,12 +12,12 @@ use Test::Output;
 use Data::Dumper;
 use utf8;
 
-if ($ENV{SKIP_SCRIPT}) {
-  plan skip_all => 'Skip script tests';
+if ($ENV{SKIP_SCRIPT} || $ENV{SKIP_REAL}) {
+  plan skip_all => 'Skip script/real tests';
 };
 
 my $f = dirname(__FILE__);
-my $script = catfile($f, '..', '..', 'script', 'korapxml2krill');
+my $script = catfile($f, '..', '..', '..', 'script', 'korapxml2krill');
 
 my $input = catdir($f, '..', 'corpus', 'GOE2', 'AGA', '03828');
 ok(-d $input, 'Input directory found');

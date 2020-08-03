@@ -23,7 +23,7 @@ use_ok('KorAP::XML::Krill');
 # This will Check Goethe-Files without base annotations!
 
 # GOE/AGA/03828
-my $path = catdir(dirname(__FILE__), '../corpus/GOE-TAGGED/AGA/03828');
+my $path = catdir(dirname(__FILE__), 'corpus','GOE-TAGGED','AGA','03828');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');

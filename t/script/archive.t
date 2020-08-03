@@ -163,22 +163,6 @@ $call = join(
 };
 
 
-$input = catfile($f, '..', 'corpus', 'WDD15', 'A79', '83946');
-$call = join(
-  ' ',
-  'perl', $script,
-  '--input' => $input,
-  '--cache' => $cache
-);
-
-# Test without compression
-{
-  local $SIG{__WARN__} = sub {};
-  my $out = combined_from(sub { system($call); });
-
-  like($out, qr!No tokens found!s, $call);
-};
-
 my $input_quotes = catfile($f, '..', 'corpus', 'archive_quotes.zip');
 $call = join(
   ' ',
@@ -202,7 +186,6 @@ stdout_like(
 
 unlink($output);
 
-
 $input_quotes = "'".catfile($f, '..', 'corpus', 'archives', 'wpd15*.zip') . "'";
 
 $call = join(
@@ -223,7 +206,6 @@ stdout_like(
   qr!Input is .+?wpd15-single\.zip,.+?wpd15-single\.malt\.zip,.+?wpd15-single\.corenlp\.zip,.+?wpd15-single\.opennlp\.zip,.+?wpd15-single\.mdparser\.zip,.+?wpd15-single\.tree_tagger\.zip!is,
   $call
 );
-
 
 
 # Test with sigles

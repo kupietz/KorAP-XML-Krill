@@ -20,7 +20,7 @@ use File::Spec::Functions 'catdir';
 
 use_ok('KorAP::XML::Krill');
 
-my $path = catdir(dirname(__FILE__), '../corpus/WPD/00001');
+my $path = catdir(dirname(__FILE__), 'corpus','WPD','00001');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -102,7 +102,7 @@ is($stream->[0]->[2], '<>:base/s:s$<b>64<i>0<i>74<i>13<b>2', 'Text starts with s
 
 
 # Problematic document
-$path = catdir(dirname(__FILE__), '../corpus/WPD15/W28/65631');
+$path = catdir(dirname(__FILE__), 'corpus','WPD15','W28','65631');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 
@@ -137,7 +137,7 @@ is($doc->meta->{A_editor}, 'wikipedia.org', 'Editor');
 
 
 # Check offset problem
-$path = catdir(dirname(__FILE__), '../corpus/WPD15/U43/34816');
+$path = catdir(dirname(__FILE__), 'corpus','WPD15','U43','34816');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 

@@ -28,7 +28,7 @@ use File::Spec::Functions 'catdir';
 
 use_ok('KorAP::XML::Krill');
 
-my $path = catdir(dirname(__FILE__), '..', 'corpus', 'AGD-scrambled', 'DOC', '00001');
+my $path = catdir(dirname(__FILE__), 'corpus', 'AGD-scrambled', 'DOC', '00001');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -135,7 +135,7 @@ like($token, qr!dgd/para:pause!);
 
 
 # New revision
-$path = catdir(dirname(__FILE__), '..', 'corpus', 'FOLK-scrambled', '00068-SE-01', 'T-05');
+$path = catdir(dirname(__FILE__), 'corpus', 'FOLK-scrambled', '00068-SE-01', 'T-05');
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 

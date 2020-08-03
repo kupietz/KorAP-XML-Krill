@@ -1,0 +1,38 @@
+# Skip real corpus regression files and tests
+^t/real/
+
+# Makemaker generated files and dirs.
+^MANIFEST\.
+^Makefile$
+^blib/
+^pm_to_blib
+^MakeMaker-\d
+^MYMETA
+
+# Git files
+.git
+^.gitignore
+^Readme.pod
+
+# File management
+^[Ss]andbox
+^examples
+^\.?bench
+^docs
+^todo.org
+^tools
+^build
+^fixtures
+^nytprof
+^log
+
+# Temp, old and emacs backup files.
+~$
+\.sqlite$
+\.log$
+\.db$
+\.tmp$
+\.cache$
+\.old$
+^#.*#$
+^\.#

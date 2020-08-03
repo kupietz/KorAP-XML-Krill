@@ -10,6 +10,10 @@ use File::Temp qw/tmpnam/;
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
+if ($ENV{SKIP_REAL}) {
+  plan skip_all => 'Skip real tests';
+};
+
 use_ok('KorAP::XML::Krill');
 
 my $file = tmpnam();

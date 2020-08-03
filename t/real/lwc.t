@@ -24,7 +24,7 @@ use_ok('KorAP::XML::Krill');
 
 # New
 
-my $path = catdir(dirname(__FILE__), '../corpus/WPD17/000/22053');
+my $path = catdir(dirname(__FILE__), 'corpus','WPD17','000','22053');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -109,7 +109,7 @@ like($token, qr!>:lwc/d:--\$<b>33<i>64<i>76<i>8<i>11!, 'data');
 like($token, qr!s:Januar!, 'data');
 
 
-$path = catdir(dirname(__FILE__), '../corpus/WPD17/060/18486');
+$path = catdir(dirname(__FILE__), 'corpus','WPD17','060','18486');
 
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');

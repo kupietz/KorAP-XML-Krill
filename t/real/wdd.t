@@ -1,4 +1,4 @@
-use strict;
+#use strict;
 use warnings;
 use Test::More;
 use Data::Dumper;
@@ -21,7 +21,7 @@ use File::Spec::Functions 'catdir';
 use_ok('KorAP::XML::Krill');
 
 # GOE/AGA/03828
-my $path = catdir(dirname(__FILE__), '../corpus/WDD/G27/38989');
+my $path = catdir(dirname(__FILE__), 'corpus','WDD','G27','38989');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -271,7 +271,7 @@ like($output->{data}->{layerInfos}, qr!xip/c=spans!, 'layerInfos');
 
 # diag "No test for xip dependency";
 
-$path = catdir(dirname(__FILE__), '../corpus/WDD15/A79/83946');
+$path = catdir(dirname(__FILE__), 'corpus','WDD15','A79','83946');
 
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');

@@ -8,6 +8,10 @@ use KorAP::XML::Tokenizer;
 use KorAP::XML::Krill;
 use utf8;
 
+if ($ENV{SKIP_REAL}) {
+  plan skip_all => 'Skip real tests';
+};
+
 my $path = catdir(dirname(__FILE__), 'CMC-TSK', '2014-09', 3401);
 
 ok(my $doc = KorAP::XML::Krill->new(

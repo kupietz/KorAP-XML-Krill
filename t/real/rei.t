@@ -25,7 +25,7 @@ Log::Log4perl->init({
 
 use_ok('KorAP::XML::Krill');
 
-my $path = catdir(dirname(__FILE__), '../corpus/REI/BNG/00128');
+my $path = catdir(dirname(__FILE__), 'corpus','REI','BNG','00128');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -157,7 +157,7 @@ like($first_token, qr/_0\$<i>0<i>8/, 'data');
 
 
 # REI/RBR/00610
-$path = catdir(dirname(__FILE__), '../corpus/REI/RBR/00610');
+$path = catdir(dirname(__FILE__), 'corpus','REI','RBR','00610');
 
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -243,7 +243,7 @@ is('tt/p:NE', $last->[7]);
 
 
 # REI/BNG/00071
-$path = catdir(dirname(__FILE__), '../corpus/REI/BNG/00071');
+$path = catdir(dirname(__FILE__), 'corpus','REI','BNG','00071');
 
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');

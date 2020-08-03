@@ -25,7 +25,7 @@ Log::Log4perl->init({
 
 use_ok('KorAP::XML::Krill');
 
-my $path = catdir(dirname(__FILE__), '../corpus/REDEW/DOC1/00000');
+my $path = catdir(dirname(__FILE__), 'corpus','REDEW','DOC1','00000');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -157,7 +157,7 @@ like($twelve, qr{<>:dereko/s:seg\$<b>64<i>188<i>195<i>13<b>5<s>1}, 'Segment');
 
 
 # Updated format:
-$path = catdir(dirname(__FILE__), '../corpus/REDEW/DOC1b/00011');
+$path = catdir(dirname(__FILE__), 'corpus','REDEW','DOC1b','00011');
 
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -242,7 +242,7 @@ is('s:Er',$first->[18]);
 
 
 # Updated format:
-$path = catdir(dirname(__FILE__), '../corpus/REDEW/DOC1b/00011');
+$path = catdir(dirname(__FILE__), 'corpus','REDEW','DOC1b','00011');
 
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -324,7 +324,7 @@ is('rwk/p:PPER',$first->[17]);
 is('s:Er',$first->[18]);
 
 
-$path = catdir(dirname(__FILE__), '../corpus/REDEW/DOC1b/00001');
+$path = catdir(dirname(__FILE__), 'corpus','REDEW','DOC1b','00001');
 
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
@@ -383,7 +383,7 @@ is('<>:base/s:p$<b>64<i>0<i>2010<i>307<b>1',$first->[4]);
 is('<>:base/s:t$<b>64<i>0<i>3246<i>511<b>0',$first->[5]);
 
 
-$path = catdir(dirname(__FILE__), '../corpus/REDEW/DOC1b/00558');
+$path = catdir(dirname(__FILE__), 'corpus','REDEW','DOC1b','00558');
 
 ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');

@@ -34,7 +34,7 @@ use_ok('KorAP::XML::Krill');
 # This will check files from the dortmund chat corpus
 
 # New
-my $path = catdir(dirname(__FILE__), '../corpus/NGAFC/B14/00010');
+my $path = catdir(dirname(__FILE__), 'corpus','NGAFC','B14','00010');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');

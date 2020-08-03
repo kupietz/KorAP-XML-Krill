@@ -21,7 +21,7 @@ use File::Spec::Functions 'catdir';
 use_ok('KorAP::XML::Krill');
 
 # GOE/AGA/03828
-my $path = catdir(dirname(__FILE__), '../corpus/GOE/AGA/03828');
+my $path = catdir(dirname(__FILE__), 'corpus','GOE','AGA','03828');
 # my $path = '/home/ndiewald/Repositories/korap/KorAP-sandbox/KorAP-lucene-indexer/t/GOE/AGA/03828';
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');

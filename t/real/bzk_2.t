@@ -20,7 +20,7 @@ use File::Spec::Functions 'catdir';
 
 use_ok('KorAP::XML::Krill');
 
-my $path = catdir(dirname(__FILE__), '../corpus/BZK/D59/00089');
+my $path = catdir(dirname(__FILE__), 'corpus','BZK','D59','00089');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::XML::Krill');
 ok($doc->parse, 'Parse document');

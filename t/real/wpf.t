@@ -20,7 +20,7 @@ use File::Spec::Functions 'catdir';
 
 use_ok('KorAP::XML::Krill');
 
-my $path = catdir(dirname(__FILE__), '../corpus/WPF19/P00/0042242');
+my $path = catdir(dirname(__FILE__), 'corpus','WPF19','P00','0042242');
 
 ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');

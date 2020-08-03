@@ -46,7 +46,7 @@ my $bench = Dumbbench->new(
 # Add benchmark instances
 $bench->add_instances(
   Dumbbench::Instance::PerlSub->new(
-    name => 'ExampleRun 1',
+    name => 'Script-ExampleRun-1',
     code => sub {
       my $cmd = join(
         ' ',
