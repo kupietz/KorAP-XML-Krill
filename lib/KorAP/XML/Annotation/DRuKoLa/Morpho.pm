@@ -20,7 +20,7 @@ sub parse {
         # pos tag
         if (($f->{-name} eq 'pos') &&
               ($found = $f->{'#text'})) {
-          $mtt->add(term => 'drukola/p:' . $found);
+          $mtt->add('drukola/p:' . $found);
         }
 
         # ana tag
@@ -28,7 +28,7 @@ sub parse {
                  ($found = $f->{'#text'})) {
           my ($pos, $msd) = split(/ /, $found);
           if ($msd) {
-            $mtt->add(term => 'drukola/p:' . $pos);
+            $mtt->add('drukola/p:' . $pos);
           }
           else {
             $msd = $pos;
@@ -38,7 +38,7 @@ sub parse {
           foreach (split '\|', $msd) {
             my ($x, $y) = split "=", $_;
             # case, tense, number, mood, person, degree, gender
-            $mtt->add(term => 'drukola/m:' . $x . ($y ? ':' . $y : ''));
+            $mtt->add('drukola/m:' . $x . ($y ? ':' . $y : ''));
           };
         }
 
@@ -47,7 +47,7 @@ sub parse {
                  && ($found = $f->{'#text'})
                  && $found ne '--') {
           # b($found)->decode('latin-1')->encode->to_string
-          $mtt->add(term => 'drukola/l:' . $found);
+          $mtt->add('drukola/l:' . $found);
         };
       };
     }) or return;

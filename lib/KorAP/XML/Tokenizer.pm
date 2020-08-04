@@ -119,12 +119,14 @@ sub parse {
   my $mtt;
   my $distance = 0;
   # my (@non_word_tokens);
+
+  my $p = $doc->primary;
   foreach my $span (@$tokens) {
     my $from = $span->{'-from'};
     my $to = $span->{'-to'};
 
     # Get the subring from primary data
-    my $token = $doc->primary->data($from, $to);
+    my $token = $p->data($from, $to);
 
     # Token is undefined
     unless (defined $token) {
@@ -188,10 +190,10 @@ sub parse {
     $old = $to + 1;
 
     # Add position term
-    $mtt->add(
-      term => '_' . $have,
-      o_start => $mtt->get_o_start,
-      o_end => $mtt->get_o_end
+    $mtt->add_position_term(
+      $have,
+      $mtt->get_o_start,
+      $mtt->get_o_end
     );
 
     $have++;
@@ -206,14 +208,12 @@ sub parse {
   $mtts->add_meta('tokens', '<i>' . $have);
 
   # Add text boundary
-  $mtts->pos(0)->add(
-    term => '<>:base/s:t',
-    o_start => 0,
-    p_end => $have,
-    o_end => $doc->primary->data_length,
-    payload => '<b>0',
-    pti => 64
-  );
+  my $tb = $mtts->pos(0)->add('<>:base/s:t');
+  $tb->set_o_start(0);
+  $tb->set_p_end($have);
+  $tb->set_o_end($doc->primary->data_length);
+  $tb->set_payload('<b>0');
+  $tb->set_pti(64);
 
   # Create a gap for the end
   if ($doc->primary->data_length >= ($old - 1)) {
@@ -257,27 +257,27 @@ sub add_subtokens {
       my $from = $-[1];
       my $to = $+[1];
       $mtt->add(
-  term => 'i^1:' . substr($os, $from, $from + $to),
-  o_start => $from + $o_start,
-  o_end => $to + $o_start
+        term => 'i^1:' . substr($os, $from, $from + $to),
+        o_start => $from + $o_start,
+        o_end => $to + $o_start
       ) unless $to - $from == $l;
     };
     while ($s =~ /(0+)[^0]/g) {
       my $from = $-[1];
       my $to = $+[1];
       $mtt->add(
-  term => 'i^2:' . substr($os, $from, $from + $to),
-  o_start => $from + $o_start,
-  o_end => $to + $o_start
+        term => 'i^2:' . substr($os, $from, $from + $to),
+        o_start => $from + $o_start,
+        o_end => $to + $o_start
       ) unless $to - $from == $l;
     };
     while ($s =~ /(#)/g) {
       my $from = $-[1];
       my $to = $+[1];
       $mtt->add(
-  term => 'i^3:' . substr($os, $from, $from + $to),
-  o_start => $from + $o_start,
-  o_end => $to + $o_start
+        term => 'i^3:' . substr($os, $from, $from + $to),
+        o_start => $from + $o_start,
+        o_end => $to + $o_start
       ) unless $to - $from == $l;
     };
   };
@@ -421,9 +421,9 @@ sub add {
   my $mod = 'KorAP::XML::Annotation::' . $foundry . '::' . $layer;
 
   if ($mod->can('new') || eval("require $mod; 1;")) {
-      my $obj = $mod->new($self);
+    my $obj = $mod->new($self);
 
-      if (my $retval = $obj->parse(@_)) {
+    if (my $retval = $obj->parse(@_)) {
 
       # This layer is supported
       $self->support($foundry => $layer, @_);
@@ -458,7 +458,7 @@ sub _perc {
   my $b_quota = ($b_have * 100) / $b_should;
   return sprintf("%.2f", $a_quota) . '%' .
     ((($a_quota + $b_quota) <= 100) ?
-       ' [' . sprintf("%.2f", $a_quota + $b_quota) . '%]' : '');
+     ' [' . sprintf("%.2f", $a_quota + $b_quota) . '%]' : '');
 };
 
 

@@ -49,14 +49,12 @@ sub parse {
       my $p_end = $span->get_p_end;
 
       # Add structure
-      my $mt = $mtt->add(
-        term    => '<>:dereko/s:' . $name,
-        o_start => $span->get_o_start,
-        o_end   => $span->get_o_end,
-        p_start => $p_start,
-        p_end   => $p_end,
-        pti     => $span->get_milestone ? 65 : 64,
-      );
+      my $mt = $mtt->add('<>:dereko/s:' . $name);
+      $mt->set_o_start($span->get_o_start);
+      $mt->set_o_end($span->get_o_end);
+      $mt->set_p_start($p_start);
+      $mt->set_p_end($p_end);
+      $mt->set_pti($span->get_milestone ? 65 : 64);
 
       my $level = $span->get_hash->{'-l'};
       if ($level || $tui) {
@@ -109,14 +107,10 @@ sub parse {
         foreach (@$attrs) {
 
           # Add attributes
-          $mtt->add(
-            term =>
-              '@:dereko/s:' . $_->{'-name'} . ($_->{'#text'} ? ':' . $_->{'#text'} : ''),
-            p_start => $p_start,
-            pti     => 17,
-            payload => '<s>' . $tui .
-              ($span->get_milestone ? '' : '<i>' . $p_end)
-            );
+          my $mt = $mtt->add('@:dereko/s:' . $_->{'-name'} . ($_->{'#text'} ? ':' . $_->{'#text'} : ''));
+          $mt->set_p_start($p_start);
+          $mt->set_pti(17);
+          $mt->set_payload('<s>' . $tui .($span->get_milestone ? '' : '<i>' . $p_end));
         };
       };
     }

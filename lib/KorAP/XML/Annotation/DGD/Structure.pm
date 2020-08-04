@@ -68,14 +68,12 @@ sub parse {
     my $mtt = $stream->pos($p_start);
 
     # Add the base sentence
-    my $mt = $mtt->add(
-      term    => '<>:base/s:s',
-      o_start => $o_start,
-      o_end   => $_->[1],
-      p_start => $p_start,
-      p_end   => $_->[0],
-      pti     => 64
-    );
+    my $mt = $mtt->add('<>:base/s:s');
+    $mt->set_o_start($o_start);
+    $mt->set_o_end($_->[1]);
+    $mt->set_p_start($p_start);
+    $mt->set_p_end($_->[0]);
+    $mt->set_pti(64);
     $mt->set_payload('<b>1');
     $sentences++;
 

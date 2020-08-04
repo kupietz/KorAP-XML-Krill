@@ -52,6 +52,14 @@ sub new {
   $self;
 };
 
+sub new_from_array {
+  bless [@_], shift;
+};
+
+sub new_blank {
+  bless [], shift;
+}
+
 sub set_payload {
   return $_[0]->[PAYLOAD] = $_[1];
 };
@@ -149,7 +157,7 @@ sub to_string {
     if (defined $_[0]->[P_END]) {
       $pre .= '<i>' . $_[0]->[P_END];
     };
-    if ($_[0]->[0]) {
+    if ($_[0]->[PAYLOAD]) {
       if (index($_[0]->[PAYLOAD], '<') == 0) {
         $pre .= $_[0]->[PAYLOAD];
       }

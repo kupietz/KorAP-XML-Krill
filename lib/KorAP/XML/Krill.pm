@@ -6,14 +6,12 @@ use Mojo::File;
 use Scalar::Util qw/weaken/;
 use XML::Fast;
 use Try::Tiny;
-use Carp qw/croak carp/;
 use KorAP::XML::Document::Primary;
 use KorAP::XML::Tokenizer;
 use Log::Log4perl;
 use KorAP::XML::Log;
 use Cache::FastMmap;
 use Mojo::DOM;
-use Data::Dumper;
 use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 
 our $VERSION = '0.41';
@@ -204,9 +202,9 @@ sub tokenize {
   unless ($tokens->parse) {
     $self->log->warn(
       'Unable to tokenize ' . $self->path .
-	' with ' . $token_foundry . '#'
-	  . $token_layer
-    );
+        ' with ' . $token_foundry . '#'
+        . $token_layer
+      );
   }
   else {
     weaken $self;
@@ -265,7 +263,7 @@ sub to_hash {
       $hash{_k($_)} = $meta->keywords($_);
     }
     else {
-      $v =~ s/\n/ /g;
+      $v =~ tr/\n/ /;
       $v =~ s/\s\s+/ /g;
       $hash{_k($_)} = $v;
     };
@@ -280,10 +278,7 @@ sub to_hash {
 
 
 sub _k {
-  my $x = substr($_[0], 2);
-  $x =~ s/_(\w)/\U$1\E/g;
-  $x =~ s/id$/ID/gi;
-  return $x;
+  substr($_[0], 2) =~ s/_(\w)/\U$1\E/gr =~ s/id$/ID/gir;
 };
 
 
@@ -295,41 +290,6 @@ sub to_json {
   };
 
   return $self->{tokenizer}->to_json;
-};
-
-
-1;
-
-
-__END__
-
-sub to_string {
-  my $self = shift;
-
-  my $string;
-
-  foreach (@ATTR) {
-    if (my $att = $self->$_) {
-      $att =~ s/\n/ /g;
-      $att =~ s/\s\s+/ /g;
-      $string .= $_ . ' = ' . $att . "\n";
-    };
-  };
-
-  $string .= 'text_class = ' . $self->text_class_string . "\n";
-  $string .= 'keywords = ' . $self->keywords_string . "\n";
-
-  return $string;
-};
-
-# Todo: Make this a KoralQuery serializer
-sub to_koral_query {
-  my $self = shift;
-  my $hash = {};
-  $hash->{'@context'} = 'http://korap.ids-mannheim.de/ns/koral/0.4/context.jsonld';
-  $hash->{'@type'} = 'koral:corpus';
-#  $hash->{'text'} = $self->primary->data;
-#  my $hash = $self->to_hash;
 };
 
 

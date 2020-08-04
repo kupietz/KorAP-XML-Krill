@@ -23,7 +23,7 @@ sub get_node {
   my ($self, $unit, $term) = @_;
 
   if ($unit->type eq 'token') {
-    my $mtt = $self->pos($unit->pos);
+    my $mtt = $self->pos($unit->get_pos);
     my $node = $mtt->grep_mt($term);
 
     # TODO: Check if term has PTI 128 - or what is wanted!
@@ -31,31 +31,42 @@ sub get_node {
     # TODO: if the node has no TUI - add!
     return $node if $node;
 
-    my $tui = $self->tui($unit->pos);
-    return $mtt->add(
-      term => $term,
-      pti => 128,
-      payload => '<s>' . $tui,
-      tui => $tui
-    );
+    my $tui = $self->tui($unit->get_pos);
+    #    return $mtt->add(
+    #      term => $term,
+    #      pti => 128,
+    #      payload => '<s>' . $tui,
+    #      tui => $tui
+    #    );
+    return $mtt->add_as_array(
+      '<s>' . $tui, # PAYLOAD=0
+      undef,
+      undef,
+      undef,
+      undef,
+      $term,        # TERM=5
+      undef,
+      128,         # PTI=7
+      $tui          # TUI=8
+    )
   }
 
   # Is span
   else {
-    my $mtt = $self->pos($unit->p_start);
+    my $mtt = $self->pos($unit->get_p_start);
     my $node = $mtt->grep_mt('<>:' . $term);
 
     # TODO: if the node has no TUI - add!
     return $node if $node;
 
-    my $tui = $self->tui($unit->p_start);
+    my $tui = $self->tui($unit->get_p_start);
 
     return $mtt->add(
       term => '<>:' . $term,
-      o_start => $unit->o_start,
-      o_end   => $unit->o_end,
-      p_start => $unit->p_start,
-      p_end   => $unit->p_end,
+      o_start => $unit->get_o_start,
+      o_end   => $unit->get_o_end,
+      p_start => $unit->get_p_start,
+      p_end   => $unit->get_p_end,
       pti => 64,
       payload => '<b>0<s>' . $tui,
       tui => $tui
@@ -73,10 +84,8 @@ sub add_meta {
 };
 
 sub pos {
-  my $self = shift;
-  my $pos = shift;
-  return unless defined $pos;
-  return $self->[MTT]->[$pos];
+  return unless defined $_[1];
+  return $_[0]->[MTT]->[$_[1]];
 };
 
 sub to_string {
@@ -89,10 +98,8 @@ sub multi_term_tokens {
 };
 
 sub tui {
-  my $self = shift;
-  my $pos = shift;
-  return unless defined $pos;
-  return ++$self->[TUI]->[$pos];
+  return unless defined $_[1];
+  return ++$_[0]->[TUI]->[$_[1]];
 };
 
 sub to_array {

@@ -1,5 +1,4 @@
 package KorAP::XML::Annotation::Base;
-
 use strict;
 use warnings;
 
@@ -21,8 +20,7 @@ sub import {
 
 # Constructor
 sub new {
-  my $class = shift;
-  my $tokens = shift;
+  my ($class, $tokens) = @_;
   bless \$tokens, $class;
 };
 

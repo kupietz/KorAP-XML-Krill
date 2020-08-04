@@ -14,11 +14,11 @@ use constant {
   MT      => 0,
   O_START => 1,
   O_END   => 2,
-  ID_COUNTER => 3
+  ID_COUNTER => 3,
 };
 
 sub new {
-  bless [], shift;
+  bless [[]], shift;
 };
 
 
@@ -28,7 +28,8 @@ sub add {
   my $mt;
   unless (blessed $_[0]) {
     if (@_ == 1) {
-      $mt = KorAP::XML::Index::MultiTerm->new(term => $_[0]);
+      $mt = KorAP::XML::Index::MultiTerm->new_blank;
+      $mt->set_term($_[0]);
     }
     else {
       $mt = KorAP::XML::Index::MultiTerm->new(@_);
@@ -37,10 +38,20 @@ sub add {
   else {
     $mt = $_[0];
   };
-  $self->[MT] //= [];
   push(@{$self->[MT]}, $mt);
   $mt;
 };
+
+sub add_position_term {
+  my $self = shift;
+  my $mt = KorAP::XML::Index::MultiTerm->new_blank;
+  $mt->set_term('_'. $_[0]);
+  $mt->set_o_start($_[1]);
+  $mt->set_o_end($_[2]);
+  push(@{$self->[MT]}, $mt);
+  $mt;
+};
+
 
 sub set_o_start {
   return $_[0]->[O_START] = $_[1];
@@ -130,15 +141,15 @@ sub _rel_right_pos {
 sub _sort {
 
   # Both are no spans
-  if (index($a->[5], '<>:') != 0 && index($b->[5], '<>:') != 0) {
+  if (index($a->get_term, '<>:') != 0 && index($b->get_term, '<>:') != 0) {
 
     # Both are attributes
     # Order attributes by reference id
-    if (index($a->[5], '@:') == 0 && index($b->[5], '@:') == 0) {
+    if (index($a->get_term, '@:') == 0 && index($b->get_term, '@:') == 0) {
 
       # Check TUI
-      my ($a_id) = ($a->[0] =~ m/^<s>(\d+)/);
-      my ($b_id) = ($b->[0] =~ m/^<s>(\d+)/);
+      my ($a_id) = ($a->get_payload =~ m/^<s>(\d+)/);
+      my ($b_id) = ($b->get_payload =~ m/^<s>(\d+)/);
       if ($a_id > $b_id) {
         return 1;
       }
@@ -152,18 +163,18 @@ sub _sort {
 
     # Both are relations
     elsif (
-      (index($a->[5],'<:') == 0 || index($a->[5],'>:') == 0)  &&
-        (index($b->[5], '<:') == 0 || index($b->[5],'>:') == 0)) {
+      (index($a->get_term,'<:') == 0 || index($a->get_term,'>:') == 0)  &&
+        (index($b->get_term, '<:') == 0 || index($b->get_term,'>:') == 0)) {
 
       my $a_end = ($a->get_pti < 34 ? $a->get_p_start : (
-        ($a->get_pti == 35 ? ($a->[0] =~ /^(?:<i>\d+){4}<i>(\d+)</ && $1) :
-           ($a->[0] =~ /^(?:<i>\d+){2}<i>(\d+)</ && $1)
+        ($a->get_pti == 35 ? ($a->get_payload =~ /^(?:<i>\d+){4}<i>(\d+)</ && $1) :
+           ($a->get_payload =~ /^(?:<i>\d+){2}<i>(\d+)</ && $1)
          )
       ));
 
       my $b_end = ($b->get_pti < 34 ? $b->get_p_start : (
-        ($b->get_pti == 35 ? ($b->[0] =~ /^(?:<i>\d+){4}<i>(\d+)</ && $1) :
-           ($b->[0] =~ /^(?:<i>\d+){2}<i>(\d+)</ && $1)
+        ($b->get_pti == 35 ? ($b->get_payload =~ /^(?:<i>\d+){4}<i>(\d+)</ && $1) :
+           ($b->get_payload =~ /^(?:<i>\d+){2}<i>(\d+)</ && $1)
          )
       ));
 
@@ -178,8 +189,8 @@ sub _sort {
         # Both are either > or <
 
         # Check for right positions
-        (my $a_start, $a_end) = _rel_right_pos($a->get_pti, $a->[0]);
-        (my $b_start, $b_end) = _rel_right_pos($b->get_pti, $b->[0]);
+        (my $a_start, $a_end) = _rel_right_pos($a->get_pti, $a->get_payload);
+        (my $b_start, $b_end) = _rel_right_pos($b->get_pti, $b->get_payload);
         if ($a_start < $b_start) {
           return -1;
         }
@@ -199,31 +210,31 @@ sub _sort {
     };
 
     # This has to be sorted alphabetically!
-    return $a->[5] cmp $b->[5];
+    return $a->get_term cmp $b->get_term;
   }
 
   # Not identical
-  elsif (index($a->[5], '<>:') != 0) {
-    return $a->[5] cmp $b->[5];
+  elsif (index($a->get_term, '<>:') != 0) {
+    return $a->get_term cmp $b->get_term;
   }
   # Not identical
-  elsif (index($b->[5], '<>:') != 0) {
-    return $a->[5] cmp $b->[5];
+  elsif (index($b->get_term, '<>:') != 0) {
+    return $a->get_term cmp $b->get_term;
   }
 
   # Sort both spans
   else {
-    if ($a->[2] < $b->[2]) {
+    if ($a->get_p_end < $b->get_p_end) {
       return -1;
     }
-    elsif ($a->[2] > $b->[2]) {
+    elsif ($a->get_p_end > $b->get_p_end) {
       return 1;
     }
 
     # Check depth
     else {
-      my ($a_depth) = ($a->[0] ? $a->[0] =~ m/<b>(\d+)(?:<s>\d+)?$/ : 0);
-      my ($b_depth) = ($b->[0] ? $b->[0] =~ m/<b>(\d+)(?:<s>\d+)?$/ : 0);
+      my ($a_depth) = ($a->get_payload ? $a->get_payload =~ m/<b>(\d+)(?:<s>\d+)?$/ : 0);
+      my ($b_depth) = ($b->get_payload ? $b->get_payload =~ m/<b>(\d+)(?:<s>\d+)?$/ : 0);
 
       $a_depth //= 0;
       $b_depth //= 0;
@@ -234,7 +245,7 @@ sub _sort {
         return 1;
       }
       else {
-        return $a->[5] cmp $b->[5];
+        return $a->get_term cmp $b->get_term;
       };
     };
   };

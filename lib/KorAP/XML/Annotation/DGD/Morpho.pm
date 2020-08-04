@@ -2,6 +2,14 @@ package KorAP::XML::Annotation::DGD::Morpho;
 use KorAP::XML::Annotation::Base;
 use Data::Dumper;
 
+our %conv = (
+  pos   => 'p',
+  trans => 'trans',
+  phon  => 'phon',
+  type  => 'type',
+  lemma => 'l'
+);
+
 sub parse {
   my $self = shift;
 
@@ -20,102 +28,61 @@ sub parse {
 
       foreach my $feat (@$content) {
 
-        # syntax
-        if (($feat->{-name} eq 'pos') && ($feat->{'#text'})) {
-          $mtt->add(
-            term => 'dgd/p:' . $feat->{'#text'}
-          );
-        }
+        my $text = $feat->{'#text'} or next;
+        my $name = $feat->{-name};
 
-        # transcription
-        elsif (($feat->{-name} eq 'trans') && ($feat->{'#text'})) {
-          $mtt->add(
-            term => 'dgd/trans:' . $feat->{'#text'}
-          );
-        }
-
-        # phonetics
-        elsif (($feat->{-name} eq 'phon') && ($feat->{'#text'})) {
-          $mtt->add(
-            term => 'dgd/phon:' . $feat->{'#text'}
-          );
-        }
-
-        # type
-        elsif (($feat->{-name} eq 'type') && ($feat->{'#text'})) {
-          $mtt->add(
-            term => 'dgd/type:' . $feat->{'#text'}
-          );
-        }
-
-        elsif (($feat->{-name} eq 'lemma') && ($feat->{'#text'})) {
-          $mtt->add(
-            term => 'dgd/l:' . $feat->{'#text'}
-          );
+        if (my $t = $conv{$name}) {
+          $mtt->add('dgd/' . $t . ':' . $text);
         }
 
         # Pause
-        elsif ($feat->{-name} eq 'pause') {
-          $mtt->add(
-            term => 'dgd/para:pause',
-            pti => 128,
-            payload => '<s>' . $tui
-          );
+        elsif ($name eq 'pause') {
+          my $p = $mtt->add('dgd/para:pause');
+          $p->set_pti(128);
+          $p->set_payload('<s>' . $tui);
 
           # Duration
-          if ($feat->{'#text'} =~ /dur="PT([^"]+?)"/) {
-            $mtt->add(
-              term => '@:dgd/para:dur:' . $1,
-              pti => 16,
-              payload => '<s>' . $tui
-            );
+          if ($text =~ /dur="PT([^"]+?)"/) {
+            $p = $mtt->add('@:dgd/para:dur:' . $1);
+            $p->set_pti(16);
+            $p->set_payload('<s>' . $tui);
           };
 
           # Rendering
-          if ($feat->{'#text'} =~ /rend="([^"]+?)"/) {
-            $mtt->add(
-              term => '@:dgd/para:rend:' . $1,
-              pti => 16,
-              payload => '<s>' . $tui
-            );
+          if ($text =~ /rend="([^"]+?)"/) {
+            $p = $mtt->add('@:dgd/para:rend:' . $1);
+            $p->set_pti(16);
+            $p->set_payload('<s>' . $tui);
           };
 
           # Type
-          if ($feat->{'#text'} =~ /type="([^"]+?)"/) {
-            $mtt->add(
-              term => '@:dgd/para:type:' . $1,
-              pti => 16,
-              payload => '<s>' . $tui
-            );
+          if ($text =~ /type="([^"]+?)"/) {
+            $p = $mtt->add('@:dgd/para:type:' . $1);
+            $p->set_pti(16);
+            $p->set_payload('<s>' . $tui);
           };
 
           last;
         }
 
         # Incident
-        elsif (($feat->{-name} eq 'incident') || ($feat->{-name} eq 'vocal')) {
-          $mtt->add(
-            term => 'dgd/para:' . $feat->{-name},
-            pti => 128,
-            payload => '<s>' . $tui
-          );
+        elsif (($name eq 'incident') || ($name eq 'vocal')) {
+          my $i = $mtt->add('dgd/para:' . $name);
+          $i->set_pti(128);
+          $i->set_payload('<s>' . $tui);
 
           # Rendering
-          if ($feat->{'#text'} =~ /rend="([^"]+?)"/) {
-            $mtt->add(
-              term => '@:dgd/para:rend:' . $1,
-              pti => 16,
-              payload => '<s>' . $tui
-            );
+          if ($text =~ /rend="([^"]+?)"/) {
+            $i = $mtt->add('@:dgd/para:rend:' . $1);
+            $i->set_pti(16);
+            $i->set_payload('<s>' . $tui);
           };
 
           # desc
-          if ($feat->{'#text'} =~ m!<desc[^>]*>([^<]+?)<\/desc>!) {
-            $mtt->add(
-              term => '@:dgd/para:desc:' . $1,
-              pti => 16,
-              payload => '<s>' . $tui
-            );
+          if ($text =~ m!<desc[^>]*>([^<]+?)<\/desc>!) {
+            $i = $mtt->add('@:dgd/para:desc:' . $1);
+            $i->set_pti(16);
+            $i->set_payload('<s>' . $tui);
           };
 
           last;
