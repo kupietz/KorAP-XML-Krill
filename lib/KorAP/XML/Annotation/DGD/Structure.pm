@@ -68,7 +68,7 @@ sub parse {
     my $mtt = $stream->pos($p_start);
 
     # Add the base sentence
-    my $mt = $mtt->add('<>:base/s:s');
+    my $mt = $mtt->add_by_term('<>:base/s:s');
     $mt->set_o_start($o_start);
     $mt->set_o_end($_->[1]);
     $mt->set_p_start($p_start);

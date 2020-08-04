@@ -16,9 +16,7 @@ sub parse {
 
       # syntax
       if (($content->{-name} eq 'pos') && ($content->{'#text'})) {
-        $mtt->add(
-          term => 'corenlp/p:' . $content->{'#text'}
-        );
+        $mtt->add_by_term('corenlp/p:' . $content->{'#text'});
       };
     }) or return;
 

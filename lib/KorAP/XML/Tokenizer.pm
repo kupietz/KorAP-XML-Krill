@@ -174,10 +174,10 @@ sub parse {
 
     # Add surface term
     # That's always the first term!
-    $mtt->add('s:' . $token);
+    $mtt->add_by_term('s:' . $token);
 
     # Add case insensitive term
-    $mtt->add('i:' . fc $token);
+    $mtt->add_by_term('i:' . fc $token);
 
     # Add offset information
     $mtt->set_o_start($from);
@@ -190,11 +190,9 @@ sub parse {
     $old = $to + 1;
 
     # Add position term
-    $mtt->add_position_term(
-      $have,
-      $mtt->get_o_start,
-      $mtt->get_o_end
-    );
+    my $mt = $mtt->add_by_term('_' . $have);
+    $mt->set_o_start($mtt->get_o_start);
+    $mt->set_o_end($mtt->get_o_end);
 
     $have++;
   };
@@ -208,16 +206,16 @@ sub parse {
   $mtts->add_meta('tokens', '<i>' . $have);
 
   # Add text boundary
-  my $tb = $mtts->pos(0)->add('<>:base/s:t');
+  my $tb = $mtts->pos(0)->add_by_term('<>:base/s:t');
   $tb->set_o_start(0);
   $tb->set_p_end($have);
-  $tb->set_o_end($doc->primary->data_length);
+  $tb->set_o_end($p->data_length);
   $tb->set_payload('<b>0');
   $tb->set_pti(64);
 
   # Create a gap for the end
-  if ($doc->primary->data_length >= ($old - 1)) {
-    $range->gap($old, $doc->primary->data_length + 1, $have)
+  if ($p->data_length >= ($old - 1)) {
+    $range->gap($old, $p->data_length + 1, $have)
   };
 
   # Add info

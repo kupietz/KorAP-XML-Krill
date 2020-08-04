@@ -59,7 +59,7 @@ sub parse {
     my $type = $f->{'#text'} or return;
 
     # $type is now NPA, NP, NUM ...
-    my $term = $mtt->add('<>:corenlp/c:' . $type);
+    my $term = $mtt->add_by_term('<>:corenlp/c:' . $type);
     $term->set_o_start($span->get_o_start);
     $term->set_o_end($span->get_o_end);
     $term->set_p_end($span->get_p_end);

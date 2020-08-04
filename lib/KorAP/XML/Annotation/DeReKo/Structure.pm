@@ -49,7 +49,7 @@ sub parse {
       my $p_end = $span->get_p_end;
 
       # Add structure
-      my $mt = $mtt->add('<>:dereko/s:' . $name);
+      my $mt = $mtt->add_by_term('<>:dereko/s:' . $name);
       $mt->set_o_start($span->get_o_start);
       $mt->set_o_end($span->get_o_end);
       $mt->set_p_start($p_start);
@@ -75,7 +75,7 @@ sub parse {
           $sentences++;
 
           # Add to stream
-          $mtt->add($mt2);
+          $mtt->add_blessed($mt2);
         }
         elsif ($name eq 'p' && index($as_base, 'paragraphs') >= 0) {
           # Clone Multiterm
@@ -85,14 +85,14 @@ sub parse {
           $paragraphs++;
 
           # Add to stream
-          $mtt->add($mt2);
+          $mtt->add_blessed($mt2);
         }
 
         # Add pagebreaks
         elsif ($name eq 'pb' && index($as_base, 'pagebreaks') >= 0) {
           if (my $nr = first { $_->{-name} eq 'n' } @$attrs) {
             if (($nr = $nr->{'#text'}) && looks_like_number($nr)) {
-              my $mt2 = $mtt->add('~:base/s:pb');
+              my $mt2 = $mtt->add_by_term('~:base/s:pb');
               $mt2->set_payload('<i>' . $nr . '<i>' . $span->get_o_start);
               $mt2->set_stored_offsets(0);
             };
@@ -107,7 +107,7 @@ sub parse {
         foreach (@$attrs) {
 
           # Add attributes
-          my $mt = $mtt->add('@:dereko/s:' . $_->{'-name'} . ($_->{'#text'} ? ':' . $_->{'#text'} : ''));
+          my $mt = $mtt->add_by_term('@:dereko/s:' . $_->{'-name'} . ($_->{'#text'} ? ':' . $_->{'#text'} : ''));
           $mt->set_p_start($p_start);
           $mt->set_pti(17);
           $mt->set_payload('<s>' . $tui .($span->get_milestone ? '' : '<i>' . $p_end));

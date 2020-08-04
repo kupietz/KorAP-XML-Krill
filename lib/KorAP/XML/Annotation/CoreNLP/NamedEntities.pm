@@ -24,9 +24,7 @@ sub parse {
             ($found = $found->{f}) &&
             ($found->{-name} eq 'ent') &&
             ($found = $found->{'#text'})) {
-        $mtt->add(
-          term => 'corenlp/ne:' . $found
-        );
+        $mtt->add_by_term('corenlp/ne:' . $found);
       };
     }) or return;
 

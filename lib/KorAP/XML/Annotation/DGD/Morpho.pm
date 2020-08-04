@@ -32,32 +32,32 @@ sub parse {
         my $name = $feat->{-name};
 
         if (my $t = $conv{$name}) {
-          $mtt->add('dgd/' . $t . ':' . $text);
+          $mtt->add_by_term('dgd/' . $t . ':' . $text);
         }
 
         # Pause
         elsif ($name eq 'pause') {
-          my $p = $mtt->add('dgd/para:pause');
+          my $p = $mtt->add_by_term('dgd/para:pause');
           $p->set_pti(128);
           $p->set_payload('<s>' . $tui);
 
           # Duration
           if ($text =~ /dur="PT([^"]+?)"/) {
-            $p = $mtt->add('@:dgd/para:dur:' . $1);
+            $p = $mtt->add_by_term('@:dgd/para:dur:' . $1);
             $p->set_pti(16);
             $p->set_payload('<s>' . $tui);
           };
 
           # Rendering
           if ($text =~ /rend="([^"]+?)"/) {
-            $p = $mtt->add('@:dgd/para:rend:' . $1);
+            $p = $mtt->add_by_term('@:dgd/para:rend:' . $1);
             $p->set_pti(16);
             $p->set_payload('<s>' . $tui);
           };
 
           # Type
           if ($text =~ /type="([^"]+?)"/) {
-            $p = $mtt->add('@:dgd/para:type:' . $1);
+            $p = $mtt->add_by_term('@:dgd/para:type:' . $1);
             $p->set_pti(16);
             $p->set_payload('<s>' . $tui);
           };
@@ -67,20 +67,20 @@ sub parse {
 
         # Incident
         elsif (($name eq 'incident') || ($name eq 'vocal')) {
-          my $i = $mtt->add('dgd/para:' . $name);
+          my $i = $mtt->add_by_term('dgd/para:' . $name);
           $i->set_pti(128);
           $i->set_payload('<s>' . $tui);
 
           # Rendering
           if ($text =~ /rend="([^"]+?)"/) {
-            $i = $mtt->add('@:dgd/para:rend:' . $1);
+            $i = $mtt->add_by_term('@:dgd/para:rend:' . $1);
             $i->set_pti(16);
             $i->set_payload('<s>' . $tui);
           };
 
           # desc
           if ($text =~ m!<desc[^>]*>([^<]+?)<\/desc>!) {
-            $i = $mtt->add('@:dgd/para:desc:' . $1);
+            $i = $mtt->add_by_term('@:dgd/para:desc:' . $1);
             $i->set_pti(16);
             $i->set_payload('<s>' . $tui);
           };

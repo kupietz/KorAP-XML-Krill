@@ -7,19 +7,22 @@ use MIME::Base64;
 # Everything should be stored as bytes already (if this is feasible)
 
 use constant {
-  PAYLOAD => 0,
-  P_START => 1,
-  P_END => 2,
-  O_START => 3,
-  O_END => 4,
-  TERM => 5,
-  STORED_OFFSETS => 6,
-  PTI => 7, # former 10
-  TUI => 8,
+  TERM           => 0,
+  O_START        => 1,
+  O_END          => 2,
+  P_START        => 3,
+  P_END          => 4,
+  STORED_OFFSETS => 5,
+  PTI            => 6,
+  TUI            => 7,
+  PAYLOAD        => 8,
 };
 
 sub new {
   my $self = bless [], shift;
+
+  # TODO:
+  #   Deprecate!
   for (my $i = 0; $i < scalar @_; $i+=2) {
     if ($_[$i] eq 'term') {
       $self->[TERM] = $_[$i+1];
@@ -52,8 +55,8 @@ sub new {
   $self;
 };
 
-sub new_from_array {
-  bless [@_], shift;
+sub new_from_term {
+  bless [$_[1]], $_[0];
 };
 
 sub new_blank {

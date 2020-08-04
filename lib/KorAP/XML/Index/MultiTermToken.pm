@@ -42,16 +42,16 @@ sub add {
   $mt;
 };
 
-sub add_position_term {
-  my $self = shift;
-  my $mt = KorAP::XML::Index::MultiTerm->new_blank;
-  $mt->set_term('_'. $_[0]);
-  $mt->set_o_start($_[1]);
-  $mt->set_o_end($_[2]);
-  push(@{$self->[MT]}, $mt);
+sub add_by_term {
+  my $mt = KorAP::XML::Index::MultiTerm->new_from_term($_[1]);
+  push(@{$_[0]->[MT]}, $mt);
   $mt;
 };
 
+sub add_blessed {
+  push(@{$_[0]->[MT]}, $_[1]);
+  $_[1];
+};
 
 sub set_o_start {
   return $_[0]->[O_START] = $_[1];

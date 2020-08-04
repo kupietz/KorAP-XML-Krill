@@ -32,23 +32,11 @@ sub get_node {
     return $node if $node;
 
     my $tui = $self->tui($unit->get_pos);
-    #    return $mtt->add(
-    #      term => $term,
-    #      pti => 128,
-    #      payload => '<s>' . $tui,
-    #      tui => $tui
-    #    );
-    return $mtt->add_as_array(
-      '<s>' . $tui, # PAYLOAD=0
-      undef,
-      undef,
-      undef,
-      undef,
-      $term,        # TERM=5
-      undef,
-      128,         # PTI=7
-      $tui          # TUI=8
-    )
+    my $mt = $mtt->add_by_term($term);
+    $mt->set_payload('<s>' . $tui);
+    $mt->set_pti(128);
+    $mt->set_tui($tui);
+    return $mt;
   }
 
   # Is span

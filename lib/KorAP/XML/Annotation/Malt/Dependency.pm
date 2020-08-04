@@ -26,6 +26,8 @@ sub parse {
       my $rel = $content->{rel};
       $rel = [$rel] unless ref $rel eq 'ARRAY';
 
+      my $mt;
+
       # Iterate over relations
       foreach (@$rel) {
         my $label = $_->{-label};
@@ -41,34 +43,31 @@ sub parse {
         if ($target) {
 
           # Unary means, it refers to itself!
-          $mtt->add(
-            term => '>:malt/d:' . $label,
-            pti => 32, # term-to-term relation
-            payload =>
-              '<i>' . $target->get_pos # . # right part token position
+          $mt = $mtt->add_by_term('>:malt/d:' . $label);
+          $mt->set_pti(32); # term-to-term relation
+          $mt->set_payload(
+            '<i>' . $target->get_pos # . # right part token position
               # '<s>0' . # $source_term->tui . # left part tui
               # '<s>0' # . $target_term->tui # right part tui
-            );
+          );
 
           my $target_mtt = $stream->pos($target->get_pos);
 
-          $target_mtt->add(
-            term => '<:malt/d:' . $label,
-            pti => 32, # term-to-term relation
-            payload =>
-              '<i>' . $source->get_pos # . # left part token position
+          $mt = $target_mtt->add_by_term('<:malt/d:' . $label);
+          $mt->set_pti(32); # term-to-term relation
+          $mt->set_payload(
+            '<i>' . $source->get_pos # . # left part token position
               # '<s>0' . # $source_term->tui . # left part tui
               # '<s>0' # . $target_term->tui # right part tui
-            );
+          );
         }
 
         # Relation is possibly term-to-element with a found target!
         elsif ($target = $tokens->span($from, $to)) {
-          $mtt->add(
-            term => '>:malt/d:' . $label,
-            pti => 33, # term-to-element relation
-            payload =>
-              '<i>' . $target->get_o_start . # end position
+          $mt = $mtt->add_by_term('>:malt/d:' . $label);
+          $mt->set_pti(33); # term-to-element relation
+          $mt->set_payload(
+            '<i>' . $target->get_o_start . # end position
               '<i>' . $target->get_o_end . # end position
               '<i>' . $target->get_p_start . # right part start position
               '<i>' . $target->get_p_end # . # right part end position
@@ -77,11 +76,10 @@ sub parse {
             );
 
           my $target_mtt = $stream->pos($target->get_p_start);
-          $target_mtt->add(
-            term => '<:malt/d:' . $label,
-            pti => 34, # element-to-term relation
-            payload =>
-              '<i>' . $target->get_o_start . # end position
+          $mt = $target_mtt->add_by_term('<:malt/d:' . $label);
+          $mt->set_pti(34); # element-to-term relation
+          $mt->set_payload(
+            '<i>' . $target->get_o_start . # end position
               '<i>' . $target->get_o_end . # end position
               '<i>' . $target->get_p_end . # right part end position
               '<i>' . $source->get_pos # . # left part token position

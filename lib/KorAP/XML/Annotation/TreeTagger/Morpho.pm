@@ -54,27 +54,24 @@ sub parse {
       };
 
       my %term;
+      my $mt;
       foreach (keys %lemma) {
         if ($lemma{$_} < 1) {
-          $mtt->add(
-            term => 'tt/l:' . $_,
-            pti => 129,
-            payload => '<b>' . floor(($lemma{$_} * 255))
-          );
+          $mt = $mtt->add_by_term('tt/l:' . $_);
+          $mt->set_pti(129);
+          $mt->set_payload('<b>' . floor(($lemma{$_} * 255)));
         } else {
-          $mtt->add(term => 'tt/l:' . $_);
+          $mtt->add_by_term('tt/l:' . $_);
         };
       };
 
       foreach (keys %pos) {
         if ($pos{$_} < 1) {
-          $mtt->add(
-            term => 'tt/p:' . $_,
-            pti => 129,
-            payload => '<b>' . floor(($pos{$_} * 255))
-          );
+          $mt = $mtt->add_by_term('tt/p:' . $_);
+          $mt->set_pti(129);
+          $mt->set_payload('<b>' . floor(($pos{$_} * 255)));
         } else {
-          $mtt->add(term => 'tt/p:' . $_);
+          $mtt->add_by_term('tt/p:' . $_);
         };
       };
 

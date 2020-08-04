@@ -11,7 +11,7 @@ sub parse {
     cb => sub {
       my ($stream, $span) = @_;
       my $mtt = $stream->pos($span->get_p_start);
-      my $mt = $mtt->add('<>:base/s:p');
+      my $mt = $mtt->add_by_term('<>:base/s:p');
       $mt->set_o_start($span->get_o_start);
       $mt->set_o_end($span->get_o_end);
       $mt->set_p_end($span->get_p_end);

@@ -1,10 +1,11 @@
-0.41 2020-08-03
+0.41 2020-08-04
         - Added support for RWK annotations.
         - Improved DGD support.
         - Fixed bug in RWK support that broke on
           some KorAP-XML files.
         - Separate "real data" test suite from artificial
           tests to prepare for CPAN release.
+        - Optimizations and cleanup based on profiling.
 
 0.40 2020-03-03
         - Fixed XIP parser.
