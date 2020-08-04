@@ -14,19 +14,19 @@ sub parse {
     layer => $model // lc('NamedEntities'),
     cb => sub {
       my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
+      my $mtt = $stream->pos($token->get_pos);
 
-      my $content = $token->hash->{fs}->{f} or return;
+      my $content = $token->get_hash->{fs}->{f} or return;
       my $found;
 
       if (($content->{-name} eq 'ne') &&
-	    ($found = $content->{fs}) &&
-	      ($found = $found->{f}) &&
-		($found->{-name} eq 'ent') &&
-		  ($found = $found->{'#text'})) {
-	$mtt->add(
-	  term => 'corenlp/ne:' . $found
-	);
+            ($found = $content->{fs}) &&
+            ($found = $found->{f}) &&
+            ($found->{-name} eq 'ent') &&
+            ($found = $found->{'#text'})) {
+        $mtt->add(
+          term => 'corenlp/ne:' . $found
+        );
       };
     }) or return;
 
@@ -34,7 +34,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['corenlp/ne=tokens'];
+  ['corenlp/ne=tokens'];
 };
 
 1;

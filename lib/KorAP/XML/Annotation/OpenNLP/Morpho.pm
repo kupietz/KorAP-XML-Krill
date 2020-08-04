@@ -8,18 +8,18 @@ sub parse {
     layer => 'morpho',
     cb => sub {
       my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
+      my $mtt = $stream->pos($token->get_pos);
 
-      my $content = $token->hash->{fs}->{f} or return;
+      my $content = $token->get_hash->{fs}->{f} or return;
 
       $content = $content->{fs}->{f};
       my $found;
 
       # syntax
       if (($content->{-name} eq 'pos') && ($content->{'#text'})) {
-	$mtt->add(
-	  term => 'opennlp/p:' . $content->{'#text'}
-	) if $content->{'#text'};
+        $mtt->add(
+          term => 'opennlp/p:' . $content->{'#text'}
+        ) if $content->{'#text'};
       };
     }) or return;
 
@@ -27,7 +27,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['opennlp/p=tokens'];
+  ['opennlp/p=tokens'];
 };
 
 1;

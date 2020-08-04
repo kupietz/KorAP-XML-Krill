@@ -4,6 +4,19 @@ use warnings;
 use Mojo::DOM;
 use Clone;
 
+use constant {
+  O_START   => 0,
+  O_END     => 1,
+  P_START   => 2,
+  P_END     => 3,
+  ID        => 4,
+  CONTENT   => 5,
+  DOM       => 6,
+  HASH      => 7,
+  MILESTONE => 8,
+  PTI       => 9
+};
+
 sub new {
   bless [], shift;
 };
@@ -12,123 +25,103 @@ sub type {
   'span';
 };
 
-sub o_start {
-  if (defined $_[1]) {
-    $_[0]->[0] = $_[1];
-  };
-  $_[0]->[0];
-};
-
 sub set_o_start {
-  $_[0]->[0] = $_[1];
+  $_[0]->[O_START] = $_[1];
 };
 
-sub o_end {
-  if (defined $_[1]) {
-    $_[0]->[1] = $_[1];
-  };
-  $_[0]->[1];
+sub get_o_start {
+  $_[0]->[O_START]
 };
 
 sub set_o_end {
-  $_[0]->[1] = $_[1];
+  $_[0]->[O_END] = $_[1];
 };
 
-sub p_start {
-  if (defined $_[1]) {
-    $_[0]->[2] = $_[1];
-  };
-  $_[0]->[2];
+sub get_o_end {
+  $_[0]->[O_END]
 };
 
 sub set_p_start {
-  $_[0]->[2] = $_[1];
+  $_[0]->[P_START] = $_[1];
 };
 
-sub p_end {
-  if (defined $_[1]) {
-    $_[0]->[3] = $_[1];
-  };
-  $_[0]->[3];
+sub get_p_start {
+  $_[0]->[P_START]
 };
 
 sub set_p_end {
-  $_[0]->[3] = $_[1];
+  $_[0]->[P_END] = $_[1];
 };
 
-sub id {
-  if (defined $_[1]) {
-    $_[0]->[4] = $_[1];
-  };
-  $_[0]->[4];
+sub get_p_end {
+  $_[0]->[P_END];
 };
 
-sub content {
-  if (defined $_[1]) {
-    $_[0]->[5] = $_[1];
-  }
-  else {
-    return $_[0]->[5];
-  };
+sub set_id {
+  $_[0]->[ID] = $_[1];
+};
+
+sub get_id {
+  $_[0]->[ID];
+};
+
+sub set_content {
+  $_[0]->[CONTENT] = $_[1];
+};
+
+sub get_content {
+  $_[0]->[CONTENT];
 };
 
 sub dom {
-  if ($_[0]->[6]) {
-    return $_[0]->[6];
+  if ($_[0]->[DOM]) {
+    return $_[0]->[DOM];
   }
   else {
-    my $c = Mojo::DOM->new($_[0]->[5]);
+    my $c = Mojo::DOM->new($_[0]->[CONTENT]);
     $c->xml(1);
-    return $_[0]->[6] = $c;
+    return $_[0]->[DOM] = $c;
   };
 };
 
-sub hash {
-  if (defined $_[1]) {
-    $_[0]->[7] = $_[1];
-  }
-  else {
-    return $_[0]->[7];
-  };
+sub set_hash {
+  $_[0]->[HASH] = $_[1];
 };
 
-
-sub milestone {
-  if (defined $_[1]) {
-    $_[0]->[8] = 1;
-  };
-  $_[0]->[8] ? 1 : 0;
+sub get_hash {
+  return $_[0]->[HASH];
 };
 
-
-#sub tui {
-#  if (defined $_[1]) {
-#    $_[0]->[9] = $_[1];
-#  };
-#  $_[0]->[9];
-#};
-
-sub pti {
-  if (defined $_[1]) {
-    $_[0]->[10] = $_[1];
-  };
-  $_[0]->[10];
+sub set_milestone {
+  $_[0]->[MILESTONE] = 1;
 };
 
+sub get_milestone {
+  $_[0]->[MILESTONE] ? 1 : 0;
+};
+
+sub set_pti {
+  $_[0]->[PTI] = $_[1];
+};
+
+sub get_pti {
+  $_[0]->[PTI];
+};
 
 sub to_string {
   my $v = shift;
   {
     no warnings;
-    return '[(' . $v->[0] . ':' . $v->[1] . '|' .
-      $v->[2] . ':' . $v->[3] . ')' .
-      $v->[4] . '-' .$v->[5] . ']';
+    return '[(' . $v->[O_START] . ':' . $v->[O_END] . '|' .
+      $v->[P_START] . ':' . $v->[P_END] . ')' .
+      $v->[ID] . '-' .$v->[CONTENT] . ']';
   };
 };
 
-
 # Clone the span
 sub clone {
+  # TODO:
+  #   Optionally clone without DOM and treat hash specially
   return Clone::clone(shift);
 };
 

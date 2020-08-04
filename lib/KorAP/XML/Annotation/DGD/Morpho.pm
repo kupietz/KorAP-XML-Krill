@@ -10,10 +10,10 @@ sub parse {
     layer => 'annot',
     cb => sub {
       my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
-      my $tui = $stream->tui($token->pos);
+      my $mtt = $stream->pos($token->get_pos);
+      my $tui = $stream->tui($token->get_pos);
 
-      my $content = $token->hash->{fs}->{f} or return;
+      my $content = $token->get_hash->{fs}->{f} or return;
 
       $content = $content->{fs}->{f};
       $content = [$content] unless ref $content eq 'ARRAY';

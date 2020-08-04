@@ -19,7 +19,7 @@ sub parse {
       my ($stream, $span) = @_;
 
       # Read feature
-      my $feature = $span->hash->{fs}->{f};
+      my $feature = $span->get_hash->{fs}->{f};
       my $attrs;
 
       # Get attributes
@@ -34,14 +34,14 @@ sub parse {
 
       # Check only for anchors
       if ($name eq 's-milestone') {
-        push @{$milestones{s}}, [ $span->p_start, $span->o_start ];
+        push @{$milestones{s}}, [ $span->get_p_start, $span->get_o_start ];
       }
       elsif ($name eq 'p-milestone') {
-        push @{$milestones{p}}, [ $span->p_start, $span->o_start ];
+        push @{$milestones{p}}, [ $span->get_p_start, $span->get_o_start ];
       }
       else {
-        $last_p = $span->p_start;
-        $last_o = $span->o_end;
+        $last_p = $span->get_p_start;
+        $last_o = $span->get_o_end;
       }
     }
   ) or return;

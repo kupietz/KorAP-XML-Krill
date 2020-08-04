@@ -9,16 +9,16 @@ sub parse {
     layer => 'morpho',
     cb => sub {
       my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
+      my $mtt = $stream->pos($token->get_pos);
 
-      my $content = $token->hash->{fs}->{f} or return;
+      my $content = $token->get_hash->{fs}->{f} or return;
       $content = $content->{fs}->{f};
 
       # syntax
       if (($content->{-name} eq 'pos') && ($content->{'#text'})) {
-	$mtt->add(
-	  term => 'corenlp/p:' . $content->{'#text'}
-	);
+        $mtt->add(
+          term => 'corenlp/p:' . $content->{'#text'}
+        );
       };
     }) or return;
 

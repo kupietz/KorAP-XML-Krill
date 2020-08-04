@@ -342,7 +342,7 @@ sub add_spandata {
 
   if ($cb) {
     foreach (@$spanarray) {
-      $cb->($self->stream, $_) if defined $_->p_start;
+      $cb->($self->stream, $_) if defined $_->get_p_start;
     };
     return 1;
   };
@@ -398,7 +398,7 @@ sub add_tokendata {
   if ($cb) {
     foreach (@$tokenarray) {
       # weaken $tokens;
-      $cb->($self->stream, $_, $tokens) if defined $_->pos;
+      $cb->($self->stream, $_, $tokens) if defined $_->get_pos;
       #, $tokens);
     };
     return 1;
@@ -771,12 +771,12 @@ This is based on the C<aggressive> tokenization, written by Carsten Schnober.
     layer => 'sentences',
     cb => sub {
       my ($stream, $span) = @_;
-      my $mtt = $stream->pos($span->p_start);
+      my $mtt = $stream->pos($span->get_p_start);
       $mtt->add(
         term    => '<>:s',
-        o_start => $span->o_start,
-        o_end   => $span->o_end,
-        p_end   => $span->p_end
+        o_start => $span->get_o_start,
+        o_end   => $span->get_o_end,
+        p_end   => $span->get_p_end
       );
     }
   );

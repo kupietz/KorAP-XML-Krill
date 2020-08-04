@@ -12,32 +12,22 @@ sub parse {
     layer => 'sentences',
     cb => sub {
       my ($stream, $span) = @_;
-      my $mtt = $stream->pos($span->p_start);
+      my $mtt = $stream->pos($span->get_p_start);
 
-      $first = [$span->p_start, $span->o_start] unless defined $first;
+      $first = [$span->get_p_start, $span->get_o_start] unless defined $first;
       $mtt->add(
         term => '<>:base/s:s',
-        o_start => $span->o_start,
-        o_end => $span->o_end,
-        p_end => $span->p_end,
+        o_start => $span->get_o_start,
+        o_end => $span->get_o_end,
+        p_end => $span->get_p_end,
         payload => '<b>2',
         pti => 64
       );
-      $last_p = $span->p_end;
-      $last_o = $span->o_end;
+      $last_p = $span->get_p_end;
+      $last_o = $span->get_o_end;
       $i++;
     }
   ) or return;
-
-  #  my $mt = $$self->stream->pos($first->[0]);
-  #  $mt->add(
-  #    term => '<>:base/s:t',
-  #    o_start => $first->[1],
-  #    p_end => $last_p,
-  #    o_end => $last_o,
-  #    payload => '<b>0',
-  #    pti => 64
-  #  );
 
   $$self->stream->add_meta('base/sentences', '<i>' . $i);
 

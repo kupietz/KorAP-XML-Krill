@@ -3,6 +3,14 @@ use strict;
 use warnings;
 use Mojo::DOM;
 
+use constant {
+  POS     => 0,
+  CONTENT => 1,
+  ID      => 2,
+  DOM     => 3,
+  HASH    => 4,
+};
+
 sub new {
   bless [], shift;
 };
@@ -11,63 +19,56 @@ sub type {
   'token';
 };
 
-# get or set token position
-sub pos {
-  if (defined $_[1]) {
-    $_[0]->[0] = $_[1];
-  };
-  $_[0]->[0];
+sub set_pos {
+  $_[0]->[POS] = $_[1];
 };
 
-
-# Get or set token content
-sub content {
-  if (defined $_[1]) {
-    $_[0]->[1] = $_[1];
-  }
-  else {
-    return $_[0]->[1];
-  };
+sub get_pos {
+  $_[0]->[POS];
 };
 
-
-# Get or set token id
-sub id {
-  if ($_[1]) {
-    $_[0]->[2] = $_[1];
-  }
-  else {
-    $_[0]->[2];
-  };
+sub set_content {
+  $_[0]->[CONTENT] = $_[1];
 };
 
+sub get_content {
+  $_[0]->[CONTENT];
+};
+
+sub set_id {
+  $_[0]->[ID] = $_[1];
+};
+
+sub get_id {
+  $_[0]->[ID];
+};
 
 sub dom {
-  if ($_[0]->[3]) {
-    return $_[0]->[3];
+  if ($_[0]->[DOM]) {
+    return $_[0]->[DOM];
   }
   else {
-    my $c = Mojo::DOM->new($_[0]->[1]);
+    my $c = Mojo::DOM->new($_[0]->[CONTENT]);
     $c->xml(1);
-    return $_[0]->[3] = $c;
+    return $_[0]->[DOM] = $c;
   };
 };
 
-sub hash {
-  if (defined $_[1]) {
-    $_[0]->[4] = $_[1];
-  }
-  else {
-    return $_[0]->[4];
-  };
+sub set_hash {
+  return $_[0]->[HASH] = $_[1];
 };
+
+sub get_hash {
+  return $_[0]->[HASH];
+};
+
 
 sub to_string {
   my $v = shift;
   {
     no warnings;
-    return '[(' . $v->[0] . ')' .
-      $v->[1] . '-' .$v->[2] . ']';
+    return '[(' . $v->[POS] . ')' .
+      $v->[CONTENT] . '-' . $v->[ID] . ']';
   };
 };
 

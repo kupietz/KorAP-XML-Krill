@@ -27,9 +27,9 @@ sub parse {
     layer => 'morpho',
     cb => sub {
       my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
+      my $mtt = $stream->pos($token->get_pos);
 
-      my $content = $token->hash->{fs}->{f};
+      my $content = $token->get_hash->{fs}->{f};
 
       my $found;
 
@@ -37,39 +37,38 @@ sub parse {
 
       for my $f (@$features) {
 
-      # Lemma
-	if (($f->{-name} eq 'lemma') && ($found = $f->{'#text'})) {
-	  if (index($found, "\N{U+00a0}") >= 0) {
-	    foreach (split(/\x{00A0}/, $found)) {
-	      $mtt->add(
-		term => 'cnx/l:' . $_
-	      );
-	    }
-	  }
-	  else {
-	    $mtt->add(
-	      term => 'cnx/l:' . $found
-	    );
-	  };
-	}
+        # Lemma
+        if (($f->{-name} eq 'lemma') && ($found = $f->{'#text'})) {
+          if (index($found, "\N{U+00a0}") >= 0) {
+            foreach (split(/\x{00A0}/, $found)) {
+              $mtt->add(
+                term => 'cnx/l:' . $_
+              );
+            }
+          }
+          else {
+            $mtt->add(
+              term => 'cnx/l:' . $found
+            );
+          };
+        }
 
-	# POS
-	elsif (($f->{-name} eq 'pos') && ($found = $f->{'#text'})) {
-	  $mtt->add(
-	    term => 'cnx/p:' . $found
-	  );
-
-	}
-	# MSD
-	# This could follow
-	# http://www.ids-mannheim.de/cosmas2/projekt/referenz/connexor/morph.html
-	elsif (($f->{-name} eq 'msd') && ($found = $f->{'#text'})) {
-	  foreach (split(':', $found)) {
-	    $mtt->add(
-	      term => 'cnx/m:' . $_
-	    );
-	  };
-	};
+        # POS
+        elsif (($f->{-name} eq 'pos') && ($found = $f->{'#text'})) {
+          $mtt->add(
+            term => 'cnx/p:' . $found
+          );
+        }
+        # MSD
+        # This could follow
+        # http://www.ids-mannheim.de/cosmas2/projekt/referenz/connexor/morph.html
+        elsif (($f->{-name} eq 'msd') && ($found = $f->{'#text'})) {
+          foreach (split(':', $found)) {
+            $mtt->add(
+              term => 'cnx/m:' . $_
+            );
+          };
+        };
       };
     }
   ) or return;
@@ -78,7 +77,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['cnx/l=tokens', 'cnx/p=tokens', 'cnx/m=tokens'];
+  ['cnx/l=tokens', 'cnx/p=tokens', 'cnx/m=tokens'];
 };
 
 

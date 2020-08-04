@@ -12,40 +12,40 @@ sub parse {
     cb => sub {
       my ($stream, $token) = @_;
 
-      my $mtt = $stream->pos($token->pos);
+      my $mtt = $stream->pos($token->get_pos);
 
-      my $content = $token->hash->{'fs'}->{'f'} or return;
+      my $content = $token->get_hash->{'fs'}->{'f'} or return;
 
       # All interpretations
       foreach (ref $content eq 'ARRAY' ? @$content : $content) {
 
-	# All features
-	$content = $_->{'fs'}->{'f'};
+        # All features
+        $content = $_->{'fs'}->{'f'};
 
-	my $lemma;
-	my ($composition, $derivation) = (0,0);
+        my $lemma;
+        my ($composition, $derivation) = (0,0);
 
-	# Iterate over
-	foreach (ref $content eq 'ARRAY' ? @$content : $content) {
+        # Iterate over
+        foreach (ref $content eq 'ARRAY' ? @$content : $content) {
 
-	  # syntax
-	  if (($_->{-name} eq 'lemma') && $_->{'#text'}) {
-	    $lemma = $_->{'#text'};
-	  }
-	  elsif ($_->{-name} eq 'composition' && $_->{'#text'} eq 'true') {
-	    $composition = 1;
-	  }
-	  elsif ($_->{-name} eq 'derivation' && $_->{'#text'} eq 'true') {
-	    $derivation = 1;
-	  };
-	};
+          # syntax
+          if (($_->{-name} eq 'lemma') && $_->{'#text'}) {
+            $lemma = $_->{'#text'};
+          }
+          elsif ($_->{-name} eq 'composition' && $_->{'#text'} eq 'true') {
+            $composition = 1;
+          }
+          elsif ($_->{-name} eq 'derivation' && $_->{'#text'} eq 'true') {
+            $derivation = 1;
+          };
+        };
 
-	$mtt->add(
-	  term => 'glemm/l:' .
-	    ($composition ? '+' : '_') .
-	      ($derivation ? '+' : '_') .
-		$lemma
-	) if $lemma;
+        $mtt->add(
+          term => 'glemm/l:' .
+            ($composition ? '+' : '_') .
+            ($derivation ? '+' : '_') .
+            $lemma
+          ) if $lemma;
       };
     }) or return;
 
@@ -53,7 +53,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['glemm/l=tokens'];
+  ['glemm/l=tokens'];
 };
 
 1;

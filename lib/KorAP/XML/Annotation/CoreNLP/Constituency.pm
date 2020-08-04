@@ -17,26 +17,26 @@ sub parse {
     cb => sub {
       my ($stream, $span) = @_;
 
-      $corenlp_const{$span->id} = $span;
+      $corenlp_const{$span->get_id} = $span;
 
       # Maybe root
-      $corenlp_const_root->insert($span->id);
+      $corenlp_const_root->insert($span->get_id);
 
-      my $rel = $span->hash->{rel} or return;
+      my $rel = $span->get_hash->{rel} or return;
 
       # Make rel an array in case it's not
       $rel = [$rel] unless ref $rel eq 'ARRAY';
 
       foreach (@$rel) {
-	if ($_->{-label} eq 'dominates') {
-	  if ($_->{-target}) {
-	    $corenlp_const_noroot->insert($_->{-target});
-	  }
-	  elsif (my $uri = $_->{-uri}) {
-	    $uri =~ s/^morpho\.xml#//;
-	    $corenlp_const_noroot->insert($uri);
-	  };
-	};
+        if ($_->{-label} eq 'dominates') {
+          if ($_->{-target}) {
+            $corenlp_const_noroot->insert($_->{-target});
+          }
+          elsif (my $uri = $_->{-uri}) {
+            $uri =~ s/^morpho\.xml#//;
+            $corenlp_const_noroot->insert($uri);
+          };
+        };
       };
     }
   ) or return;
@@ -50,9 +50,9 @@ sub parse {
   $add_const = sub {
     my $span = shift;
     my $level = shift;
-    my $mtt = $stream->pos($span->p_start);
+    my $mtt = $stream->pos($span->get_p_start);
 
-    my $content = $span->hash;
+    my $content = $span->get_hash;
     my $f = $content->{fs}->{f};
     return unless $f->{-name} eq 'const';
 
@@ -61,9 +61,9 @@ sub parse {
     # $type is now NPA, NP, NUM ...
     my %term = (
       term => '<>:corenlp/c:' . $type,
-      o_start => $span->o_start,
-      o_end => $span->o_end,
-      p_end => $span->p_end,
+      o_start => $span->get_o_start,
+      o_end => $span->get_o_end,
+      p_end => $span->get_p_end,
       pti => 64
     );
 

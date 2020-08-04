@@ -10,22 +10,22 @@ sub parse {
     cb => sub {
       my ($stream, $span) = @_;
 
-      my $content = $span->hash->{fs}->{f};
+      my $content = $span->get_hash->{fs}->{f};
 
       return if $content->{-name} ne 'pos';
 
       my $type = $content->{'#text'};
 
       if ($type) {
-	my $mtt = $stream->pos($span->p_start);
-	$mtt->add(
-	  term => '<>:cnx/c:' . $type,
-	  o_start => $span->o_start,
-	  o_end => $span->o_end,
-	  p_end => $span->p_end,
-	  pti => 64,
-	  payload => '<b>0' # Pseudo-depth
-	);
+        my $mtt = $stream->pos($span->get_p_start);
+        $mtt->add(
+          term => '<>:cnx/c:' . $type,
+          o_start => $span->get_o_start,
+          o_end => $span->get_o_end,
+          p_end => $span->get_p_end,
+          pti => 64,
+          payload => '<b>0' # Pseudo-depth
+        );
       };
     }
   ) or return;

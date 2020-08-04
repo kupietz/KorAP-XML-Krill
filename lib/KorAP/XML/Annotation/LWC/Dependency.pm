@@ -14,10 +14,10 @@ sub parse {
       my ($stream, $source, $tokens) = @_;
 
       # Get MultiTermToken from stream for source
-      my $mtt = $stream->pos($source->pos);
+      my $mtt = $stream->pos($source->get_pos);
 
       # Serialized information from token
-      my $content = $source->hash;
+      my $content = $source->get_hash;
 
       # Get relation information
       my $rel = $content->{rel};
@@ -42,18 +42,18 @@ sub parse {
             term => '>:lwc/d:' . $label,
             pti => 32, # term-to-term relation
             payload =>
-              '<i>' . $target->pos # . # right part token position
+              '<i>' . $target->get_pos # . # right part token position
               # '<s>0' . # $source_term->tui . # left part tui
               # '<s>0' # . $target_term->tui # right part tui
             );
 
-          my $target_mtt = $stream->pos($target->pos);
+          my $target_mtt = $stream->pos($target->get_pos);
 
           $target_mtt->add(
             term => '<:lwc/d:' . $label,
             pti => 32, # term-to-term relation
             payload =>
-              '<i>' . $source->pos # . # left part token position
+              '<i>' . $source->get_pos # . # left part token position
               # '<s>0' . # $source_term->tui . # left part tui
               # '<s>0' # . $target_term->tui # right part tui
             );
@@ -66,23 +66,23 @@ sub parse {
             term => '>:lwc/d:' . $label,
             pti => 33, # term-to-element relation
             payload =>
-              '<i>' . $target->o_start . # end position
-              '<i>' . $target->o_end . # end position
-              '<i>' . $target->p_start . # right part start position
-              '<i>' . $target->p_end # . # right part end position
+              '<i>' . $target->get_o_start . # end position
+              '<i>' . $target->get_o_end . # end position
+              '<i>' . $target->get_p_start . # right part start position
+              '<i>' . $target->get_p_end # . # right part end position
               # '<s>0' . # $source_term->tui . # left part tui
               # '<s>0' # . $target_span->tui # right part tui
             );
 
-          my $target_mtt = $stream->pos($target->p_start);
+          my $target_mtt = $stream->pos($target->get_p_start);
           $target_mtt->add(
             term => '<:lwc/d:' . $label,
             pti => 34, # element-to-term relation
             payload =>
-              '<i>' . $target->o_start . # end position
-              '<i>' . $target->o_end . # end position
-              '<i>' . $target->p_end . # right part end position
-              '<i>' . $source->pos # . # left part token position
+              '<i>' . $target->get_o_start . # end position
+              '<i>' . $target->get_o_end . # end position
+              '<i>' . $target->get_p_end . # right part end position
+              '<i>' . $source->get_pos # . # left part token position
               #	'<s>0' . # $source_term->tui . # left part tui
               # '<s>0' # . $target_span->tui # right part tui
             );

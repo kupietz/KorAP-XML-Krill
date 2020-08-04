@@ -16,10 +16,10 @@ sub parse {
       my $tui = 0;
 
       # Get starting position
-      my $p_start = $span->p_start;
+      my $p_start = $span->get_p_start;
 
       # Read feature
-      my $feature = $span->hash->{fs}->{f};
+      my $feature = $span->get_hash->{fs}->{f};
       my $attrs;
 
       # Get attributes
@@ -46,19 +46,19 @@ sub parse {
         return;
       };
 
-      my $p_end = $span->p_end;
+      my $p_end = $span->get_p_end;
 
       # Add structure
       my $mt = $mtt->add(
         term    => '<>:dereko/s:' . $name,
-        o_start => $span->o_start,
-        o_end   => $span->o_end,
+        o_start => $span->get_o_start,
+        o_end   => $span->get_o_end,
         p_start => $p_start,
         p_end   => $p_end,
-        pti     => $span->milestone ? 65 : 64,
+        pti     => $span->get_milestone ? 65 : 64,
       );
 
-      my $level = $span->hash->{'-l'};
+      my $level = $span->get_hash->{'-l'};
       if ($level || $tui) {
         my $pl;
         $pl .= '<b>' . ($level ? $level - 1 : 0);
@@ -95,7 +95,7 @@ sub parse {
           if (my $nr = first { $_->{-name} eq 'n' } @$attrs) {
             if (($nr = $nr->{'#text'}) && looks_like_number($nr)) {
               my $mt2 = $mtt->add('~:base/s:pb');
-              $mt2->set_payload('<i>' . $nr . '<i>' . $span->o_start);
+              $mt2->set_payload('<i>' . $nr . '<i>' . $span->get_o_start);
               $mt2->set_stored_offsets(0);
             };
           };
@@ -115,7 +115,7 @@ sub parse {
             p_start => $p_start,
             pti     => 17,
             payload => '<s>' . $tui .
-              ($span->milestone ? '' : '<i>' . $p_end)
+              ($span->get_milestone ? '' : '<i>' . $p_end)
             );
         };
       };

@@ -26,13 +26,13 @@ sub parse {
       my ($stream, $span) = @_;
 
       # Collect the span
-      $xip_const{$span->id} = $span;
-      # warn 'Remember ' . $span->id;
+      $xip_const{$span->get_id} = $span;
+      # warn 'Remember ' . $span->get_id;
 
       # It's probably a root
-      $xip_const_root->insert($span->id);
+      $xip_const_root->insert($span->get_id);
 
-      my $rel = $span->hash->{rel} or return;
+      my $rel = $span->get_hash->{rel} or return;
 
       $rel = [$rel] unless ref $rel eq 'ARRAY';
 
@@ -71,9 +71,9 @@ sub parse {
     weaken $xip_const_noroot;
 
     # Get the correct position for the span
-    my $mtt = $stream->pos($span->p_start);
+    my $mtt = $stream->pos($span->get_p_start);
 
-    my $content = $span->hash;
+    my $content = $span->get_hash;
     my $f = $content->{fs}->{f};
 
     unless ($f->{-name} eq 'const') {
@@ -91,9 +91,9 @@ sub parse {
     # $type is now NPA, NP, NUM ...
     my %term = (
       term => '<>:xip/c:' . $type,
-      o_start => $span->o_start,
-      o_end => $span->o_end,
-      p_end => $span->p_end,
+      o_start => $span->get_o_start,
+      o_end => $span->get_o_end,
+      p_end => $span->get_p_end,
       pti => 64
     );
 
@@ -133,9 +133,7 @@ sub parse {
       my $subspan = delete $xip_const{$target};
       # warn "A-Forgot about $target: " . ($subspan ? 'yes' : 'no');
 
-      unless ($subspan) {
-        next;
-      };
+      next unless $subspan;
       #  warn "Span " . $target . " not found";
 
       $this->($subspan, $level + 1);
@@ -151,9 +149,7 @@ sub parse {
 
     # warn "B-Forgot about $_: " . ($obj ? 'yes' : 'no');
 
-    unless ($obj) {
-      next;
-    };
+    next unless $obj;
 
     $add_const->($obj, 0);
   };

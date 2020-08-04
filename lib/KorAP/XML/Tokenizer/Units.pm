@@ -32,21 +32,21 @@ sub span {
 
   # The span is a milestone
   if ($from == $to) {
-    $span->milestone(1);
+    $span->set_milestone(1);
   };
 
   # The span has an id (probably useful)
-  $span->id($s->{-id}) if $s && $s->{-id};
+  $span->set_id($s->{-id}) if $s && $s->{-id};
 
   # Set character offsets
-  $span->o_start($from);
-  $span->o_end($to);
+  $span->set_o_start($from);
+  $span->set_o_end($to);
 
   # Get start position (exactly)
-  my $start = $self->match->startswith($span->o_start);
+  my $start = $self->match->startswith($from);
 
   unless (defined $start) {
-    $start = $self->range->after($span->o_start);
+    $start = $self->range->after($from);
 
     unless (defined $start) {
       if (DEBUG) {
@@ -57,21 +57,21 @@ sub span {
   };
 
   # Set start token position to span
-  $span->p_start($start);
+  $span->set_p_start($start);
 
-  if ($span->milestone) {
-    $span->p_end($start);
+  if ($span->get_milestone) {
+    $span->set_p_end($start);
   }
   else {
 
     # Get end position (exactly)
-    my $end = $self->match->endswith($span->o_end);
+    my $end = $self->match->endswith($span->get_o_end);
 
     unless (defined $end) {
-      $end = $self->range->before($span->o_end);
+      $end = $self->range->before($span->get_o_end);
 
       if (DEBUG && $span->o_end == 196) {
-        warn 'SPAN ends at ' . $span->o_end . ' and has ' . $end;
+        warn 'SPAN ends at ' . $span->get_o_end . ' and has ' . $end;
       };
 
       unless (defined $end) {
@@ -98,21 +98,21 @@ sub span {
     # return unless $span->p_end >= $span->p_start;
 
     # EXPERIMENTAL:
-    unless ($end >= $span->p_start) {
+    unless ($end >= $span->get_p_start) {
       if (DEBUG) {
-        warn 'Ignore ' . $span->id . ' with ' . $span->p_start . '-' . $end;
+        warn 'Ignore ' . $span->id . ' with ' . $span->get_p_start . '-' . $end;
       };
       return;
     };
 
-    $span->p_end($end + 1);
+    $span->set_p_end($end + 1);
   }
 
   if (DEBUG && $from == 124) {
-    warn 'exact: ' . $span->p_start . '-' . $span->p_end;
+    warn 'exact: ' . $span->get_p_start . '-' . $span->get_p_end;
   };
 
-  $span->hash($s) if $s;
+  $span->set_hash($s) if $s;
 
   $span;
 };
@@ -132,10 +132,10 @@ sub token {
   return unless defined $pos;
 
   my $token = KorAP::XML::Tokenizer::Token->new;
-  $token->id($s->{-id}) if $s && $s->{-id};
-  $token->pos($pos);
+  $token->set_id($s->{-id}) if $s && $s->{-id};
+  $token->set_pos($pos);
 
-  $token->hash($s) if $s;
+  $token->set_hash($s) if $s;
 
   $token;
 };

@@ -11,9 +11,9 @@ sub parse {
     layer => 'morpho',
     cb => sub {
       my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
+      my $mtt = $stream->pos($token->get_pos);
 
-      my $content = $token->hash->{fs}->{f};
+      my $content = $token->get_hash->{fs}->{f};
 
       my ($found, $pos, $msd, $tui);
 
@@ -21,50 +21,50 @@ sub parse {
 
       foreach my $f (@{$content->{fs}->{f}}) {
 
-	#pos
-	if (($f->{-name} eq 'pos') && ($found = $f->{'#text'})) {
-	  $pos = $found;
-	}
+        #pos
+        if (($f->{-name} eq 'pos') && ($found = $f->{'#text'})) {
+          $pos = $found;
+        }
 
-	# lemma
-	elsif (($f->{-name} eq 'lemma')
-		 && ($found = $f->{'#text'})
-		   && $found ne '--') {
-	  $mtt->add(term => 'mate/l:' . $found);
-	}
+        # lemma
+        elsif (($f->{-name} eq 'lemma')
+                 && ($found = $f->{'#text'})
+                 && $found ne '--') {
+          $mtt->add(term => 'mate/l:' . $found);
+        }
 
-	# MSD
-	elsif (($f->{-name} eq 'msd') &&
-		 ($found = $f->{'#text'}) &&
-		   ($found ne '_')) {
-	  $msd = $found;
-	  $tui = $mtt->id_counter;
-	};
+        # MSD
+        elsif (($f->{-name} eq 'msd') &&
+                 ($found = $f->{'#text'}) &&
+                 ($found ne '_')) {
+          $msd = $found;
+          $tui = $mtt->id_counter;
+        };
       };
 
       my %term = (
-	term => 'mate/p:' . $pos
+        term => 'mate/p:' . $pos
       );
 
       # There are attributes needed
       if ($tui) {
-	$term{pti} = 128;
-	$term{payload} = '<s>' . $tui
-      };;
+        $term{pti} = 128;
+        $term{payload} = '<s>' . $tui
+      };
 
       $mtt->add(%term);
 
       # MSD
       if ($msd) {
-	foreach (split '\|', $msd) {
-	  my ($x, $y) = split "=", $_;
-	  # case, tense, number, mood, person, degree, gender
-	  $mtt->add(
-	    term => '@:' . $x . ($y ? '=' . $y : ''),
-	    pti => 16,
-	    payload => '<s>' . $tui
-	  );
-	};
+        foreach (split '\|', $msd) {
+          my ($x, $y) = split "=", $_;
+          # case, tense, number, mood, person, degree, gender
+          $mtt->add(
+            term => '@:' . $x . ($y ? '=' . $y : ''),
+            pti => 16,
+            payload => '<s>' . $tui
+          );
+        };
       };
     }) or return;
 
@@ -72,7 +72,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['mate/l=tokens', 'mate/p=tokens']
+  ['mate/l=tokens', 'mate/p=tokens']
 };
 
 1;

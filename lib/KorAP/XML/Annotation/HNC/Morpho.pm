@@ -10,9 +10,9 @@ sub parse {
     cb => sub {
       my ($stream, $token) = @_;
 
-      my $mtt = $stream->pos($token->pos);
+      my $mtt = $stream->pos($token->get_pos);
 
-      my $content = $token->hash->{fs}->{f};
+      my $content = $token->get_hash->{fs}->{f};
 
       my $found;
 

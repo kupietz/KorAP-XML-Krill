@@ -10,14 +10,14 @@ sub parse {
     layer => 'sentences',
     cb => sub {
       my ($stream, $span) = @_;
-      my $mtt = $stream->pos($span->p_start);
+      my $mtt = $stream->pos($span->get_p_start);
       $mtt->add(
-	term => '<>:tt/s:s',
-	o_start => $span->o_start,
-	o_end => $span->o_end,
-	p_end => $span->p_end,
-	pti => 64,
-	payload => '<b>0' # Could be 2 as well t/p/s
+        term => '<>:tt/s:s',
+        o_start => $span->get_o_start,
+        o_end => $span->get_o_end,
+        p_end => $span->get_p_end,
+        pti => 64,
+        payload => '<b>0' # Could be 2 as well t/p/s
       );
       $i++;
     }
@@ -29,7 +29,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['tt/s=spans'];
+  ['tt/s=spans'];
 };
 
 

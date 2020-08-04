@@ -64,11 +64,11 @@ sub id_counter {
 };
 
 sub surface {
-  substr($_[0]->[0]->[0]->term,2);
+  substr($_[0]->[MT]->[0]->term,2);
 };
 
 sub lc_surface {
-  substr($_[0]->[0]->[1]->term,2);
+  substr($_[0]->[MT]->[1]->term,2);
 };
 
 sub to_array {

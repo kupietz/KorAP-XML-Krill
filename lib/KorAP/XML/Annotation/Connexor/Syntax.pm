@@ -9,17 +9,17 @@ sub parse {
     layer => 'syntax',
     cb => sub {
       my ($stream, $token) = @_;
-      my $mtt = $stream->pos($token->pos);
+      my $mtt = $stream->pos($token->get_pos);
       my $found;
-      my $spans = $token->hash->{fs}->{f}->{fs}->{f};
+      my $spans = $token->get_hash->{fs}->{f}->{fs}->{f};
 
       # syntax
       foreach (@$spans) {
-	if (($_->{-name} eq 'pos') && ($found = $_->{'#text'})) {
-	  $mtt->add(
-	    term => 'cnx/syn:' . $found
-	  );
-	};
+        if (($_->{-name} eq 'pos') && ($found = $_->{'#text'})) {
+          $mtt->add(
+            term => 'cnx/syn:' . $found
+          );
+        };
       };
     }) or return;
 
