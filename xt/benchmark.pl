@@ -38,6 +38,16 @@ my $output = tmpnam();
 my $cache = tmpnam();
 # end instance 1
 
+
+# begin instance 2 setup
+# Load example file
+use KorAP::XML::Krill;
+use KorAP::XML::Tokenizer;
+my $path = catdir(dirname(__FILE__), '..','t','real', 'corpus','GOE-TAGGED','AGA','03828');
+my ($tokens, $result);
+# end instance 2
+
+
 # Create a new benchmark object
 my $bench = Dumbbench->new(
   verbosity => 0
@@ -61,6 +71,46 @@ $bench->add_instances(
       );
       `$cmd`;
     }
+  ),
+  Dumbbench::Instance::PerlSub->new(
+    name => 'Conversion-GOE-Tagged-1',
+    code => sub {
+      my $doc = KorAP::XML::Krill->new(path => $path . '/');
+      $doc->parse;
+      my $meta = $doc->meta;
+      $tokens = KorAP::XML::Tokenizer->new(
+        path => $doc->path,
+        doc => $doc,
+        foundry => 'Base',
+        layer => 'Tokens_conservative',
+        name => 'tokens'
+      );
+      $tokens->parse;
+      $tokens->add('DeReKo', 'Structure', 'base_sentences_paragraphs');
+      $tokens->add('DRuKoLa', 'Morpho');
+      $result = $tokens->to_data;
+      $tokens = undef;
+    }
+  ),
+  Dumbbench::Instance::PerlSub->new(
+    name => 'Conversion-GOE-Tagged-1',
+    code => sub {
+      my $doc = KorAP::XML::Krill->new(path => $path . '/');
+      $doc->parse;
+      my $meta = $doc->meta;
+      $tokens = KorAP::XML::Tokenizer->new(
+        path => $doc->path,
+        doc => $doc,
+        foundry => 'Base',
+        layer => 'Tokens_conservative',
+        name => 'tokens'
+      );
+      $tokens->parse;
+      $tokens->add('DeReKo', 'Structure', 'base_sentences_paragraphs');
+      $tokens->add('DRuKoLa', 'Morpho');
+      $result = $tokens->to_data;
+      $tokens = undef;
+    }
   )
 );
 
@@ -75,6 +125,8 @@ if ($columns) {
   print join("\t", map { $_->result->raw_number } $bench->instances), "\n";
   exit(0);
 };
+
+print "----------------------------------\n";
 
 # Output simple timings for comparation
 foreach my $inst ($bench->instances) {

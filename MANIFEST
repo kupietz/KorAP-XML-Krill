@@ -191,4 +191,3 @@ t/tokenization.t
 t/tokens.t
 t/tools/example_rules.json
 t/transform.t
-xt/benchmark.pl

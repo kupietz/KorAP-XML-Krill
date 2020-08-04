@@ -1,5 +1,6 @@
 # Skip real corpus regression files and tests
 ^t/real/
+^xt/
 
 # Makemaker generated files and dirs.
 ^MANIFEST\.
