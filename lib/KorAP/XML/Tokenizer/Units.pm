@@ -1,6 +1,9 @@
 package KorAP::XML::Tokenizer::Units;
 use KorAP::XML::Tokenizer::Span;
 use KorAP::XML::Tokenizer::Token;
+
+# TODO:
+#   Don't use Mojo::Base! - "encodings" is called too often
 use Mojo::Base -base;
 
 has [qw/path foundry layer match range primary stream/];
@@ -118,24 +121,25 @@ sub span {
 };
 
 sub token {
-  my $self = shift;
-  my ($from, $to, $s) = @_;
+  my ($self, $from, $to, $s) = @_;
 
   ($from, $to) = $self->_offset($from, $to);
 
   return if !$to;
-  $from ||= 0;
   return unless $to > $from;
+  $from ||= 0;
 
   my $pos = $self->match->lookup($from, $to);
 
   return unless defined $pos;
 
   my $token = KorAP::XML::Tokenizer::Token->new;
-  $token->set_id($s->{-id}) if $s && $s->{-id};
   $token->set_pos($pos);
 
-  $token->set_hash($s) if $s;
+  if ($s) {
+    $token->set_id($s->{-id}) if $s->{-id};
+    $token->set_hash($s);
+  };
 
   $token;
 };

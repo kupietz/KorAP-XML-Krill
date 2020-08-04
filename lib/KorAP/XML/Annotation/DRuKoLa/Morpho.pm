@@ -15,16 +15,19 @@ sub parse {
 
       my $found;
 
+      my $name;
       foreach my $f (@{$content->{fs}->{f}}) {
 
+        $name = $f->{-name};
+
         # pos tag
-        if (($f->{-name} eq 'pos') &&
+        if (($name eq 'pos') &&
               ($found = $f->{'#text'})) {
           $mtt->add_by_term('drukola/p:' . $found);
         }
 
         # ana tag
-        elsif ($f->{-name} eq 'msd' &&
+        elsif ($name eq 'msd' &&
                  ($found = $f->{'#text'})) {
           my ($pos, $msd) = split(/ /, $found);
           if ($msd) {
@@ -43,7 +46,7 @@ sub parse {
         }
 
         # lemma tag
-        elsif (($f->{-name} eq 'lemma')
+        elsif (($name eq 'lemma')
                  && ($found = $f->{'#text'})
                  && $found ne '--') {
           # b($found)->decode('latin-1')->encode->to_string

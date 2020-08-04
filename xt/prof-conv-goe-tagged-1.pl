@@ -2,16 +2,15 @@
 use strict;
 use warnings;
 use FindBin;
+BEGIN {
+  unshift @INC, "$FindBin::Bin/../lib";
+};
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catfile catdir rel2abs/;
 
 # Run
 # $ perl -d:NYTProf xt/prof-conv-goe-tagged-1.pl
 # $ nytprofhtml --open
-
-BEGIN {
-  unshift @INC, "$FindBin::Bin/../lib";
-};
 
 use KorAP::XML::Krill;
 use KorAP::XML::Tokenizer;
