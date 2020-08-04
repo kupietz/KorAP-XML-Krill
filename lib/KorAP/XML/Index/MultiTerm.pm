@@ -181,9 +181,7 @@ sub clone {
 
 
 sub _escape_term ($) {
-  my $str = shift;
-  $str =~ s/([\#\$\\])/\\$1/g;
-  return $str;
+  $_[0] =~ s/([\#\$\\])/\\$1/gr;
 };
 
 

@@ -140,12 +140,14 @@ sub _rel_right_pos {
 # Sort spans, attributes and relations
 sub _sort {
 
+  my ($at, $bt) = ($a->get_term, $b->get_term);
+
   # Both are no spans
-  if (index($a->get_term, '<>:') != 0 && index($b->get_term, '<>:') != 0) {
+  if (index($at, '<>:') != 0 && index($bt, '<>:') != 0) {
 
     # Both are attributes
     # Order attributes by reference id
-    if (index($a->get_term, '@:') == 0 && index($b->get_term, '@:') == 0) {
+    if (index($at, '@:') == 0 && index($bt, '@:') == 0) {
 
       # Check TUI
       my ($a_id) = ($a->get_payload =~ m/^<s>(\d+)/);
@@ -163,8 +165,8 @@ sub _sort {
 
     # Both are relations
     elsif (
-      (index($a->get_term,'<:') == 0 || index($a->get_term,'>:') == 0)  &&
-        (index($b->get_term, '<:') == 0 || index($b->get_term,'>:') == 0)) {
+      (index($at,'<:') == 0 || index($at,'>:') == 0)  &&
+        (index($bt, '<:') == 0 || index($bt,'>:') == 0)) {
 
       my $a_end = ($a->get_pti < 34 ? $a->get_p_start : (
         ($a->get_pti == 35 ? ($a->get_payload =~ /^(?:<i>\d+){4}<i>(\d+)</ && $1) :
@@ -210,16 +212,16 @@ sub _sort {
     };
 
     # This has to be sorted alphabetically!
-    return $a->get_term cmp $b->get_term;
+    return $at cmp $bt;
   }
 
   # Not identical
-  elsif (index($a->get_term, '<>:') != 0) {
-    return $a->get_term cmp $b->get_term;
+  elsif (index($at, '<>:') != 0) {
+    return $at cmp $bt;
   }
   # Not identical
-  elsif (index($b->get_term, '<>:') != 0) {
-    return $a->get_term cmp $b->get_term;
+  elsif (index($bt, '<>:') != 0) {
+    return $at cmp $bt;
   }
 
   # Sort both spans
@@ -245,7 +247,7 @@ sub _sort {
         return 1;
       }
       else {
-        return $a->get_term cmp $b->get_term;
+        return $at cmp $bt;
       };
     };
   };
