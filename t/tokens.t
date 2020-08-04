@@ -16,36 +16,36 @@ ok(my $term = KorAP::XML::Index::MultiTerm->new(
   o_end => 120
 ), 'Create new object');
 
-is($term->term, 'Baum');
-is($term->p_start, 0);
-is($term->p_end, 56);
-is($term->o_start, 34);
-is($term->o_end, 120);
-is($term->payload, '<i>56');
+is($term->get_term, 'Baum');
+is($term->get_p_start, 0);
+is($term->get_p_end, 56);
+is($term->get_o_start, 34);
+is($term->get_o_end, 120);
+is($term->get_payload, '<i>56');
 is($term->to_string, 'Baum$<i>34<i>120<i>56<i>56');
 
 ok($term = KorAP::XML::Index::MultiTerm->new(
   term => 'Baum'
 ), 'Create new object');
 
-is($term->term, 'Baum');
-is($term->p_start, 0);
-is($term->p_end, 0);
-is($term->o_start, 0);
-is($term->o_end, 0);
-is($term->payload, undef);
+is($term->get_term, 'Baum');
+is($term->get_p_start, 0);
+is($term->get_p_end, 0);
+is($term->get_o_start, 0);
+is($term->get_o_end, 0);
+is($term->get_payload, undef);
 is($term->to_string, 'Baum');
 
 ok($term = KorAP::XML::Index::MultiTerm->new(
   term => 'Ba#um'
 ), 'Create new object');
 
-is($term->term, 'Ba#um');
-is($term->p_start, 0);
-is($term->p_end, 0);
-is($term->o_start, 0);
-is($term->o_end, 0);
-is($term->payload, undef);
+is($term->get_term, 'Ba#um');
+is($term->get_p_start, 0);
+is($term->get_p_end, 0);
+is($term->get_o_start, 0);
+is($term->get_o_end, 0);
+is($term->get_payload, undef);
 is($term->to_string, 'Ba\#um');
 
 ok($term = KorAP::XML::Index::MultiTerm->new(
@@ -53,12 +53,12 @@ ok($term = KorAP::XML::Index::MultiTerm->new(
   payload => '<i>45'
 ), 'Create new object');
 
-is($term->term, 'Ba#u$m');
-is($term->p_start, 0);
-is($term->p_end, 0);
-is($term->o_start, 0);
-is($term->o_end, 0);
-is($term->payload, '<i>45');
+is($term->get_term, 'Ba#u$m');
+is($term->get_p_start, 0);
+is($term->get_p_end, 0);
+is($term->get_o_start, 0);
+is($term->get_o_end, 0);
+is($term->get_payload, '<i>45');
 is($term->to_string, 'Ba\#u\$m$<i>45');
 
 use_ok('KorAP::XML::Tokenizer');

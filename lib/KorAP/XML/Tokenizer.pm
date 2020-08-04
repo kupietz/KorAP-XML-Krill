@@ -178,8 +178,8 @@ sub parse {
     $mtt->add('i:' . fc $token);
 
     # Add offset information
-    $mtt->o_start($from);
-    $mtt->o_end($to);
+    $mtt->set_o_start($from);
+    $mtt->set_o_end($to);
 
     # Store offset information for position matching
     $range->set($from, $to, $have);
@@ -190,8 +190,8 @@ sub parse {
     # Add position term
     $mtt->add(
       term => '_' . $have,
-      o_start => $mtt->o_start,
-      o_end => $mtt->o_end
+      o_start => $mtt->get_o_start,
+      o_end => $mtt->get_o_end
     );
 
     $have++;

@@ -76,7 +76,7 @@ sub parse {
       p_end   => $_->[0],
       pti     => 64
     );
-    $mt->payload('<b>1');
+    $mt->set_payload('<b>1');
     $sentences++;
 
     $p_start = $_->[0];

@@ -1,15 +1,21 @@
 package KorAP::XML::Index::MultiTermTokenStream;
-use Mojo::Base -base;
+use strict;
+use warnings;
 use KorAP::XML::Index::MultiTermToken;
 
-has [qw/oStart oEnd/];
+use constant {
+  MTT => 0,
+  TUI => 1
+};
+
+sub new {
+  bless [[],[]], shift;
+};
 
 sub add {
   my $self = shift;
   my $mtt = shift // KorAP::XML::Index::MultiTermToken->new;
-  $self->{mtt} //= [];
-  $self->{tui} //= [];
-  push(@{$self->{mtt}}, $mtt);
+  push(@{$self->[MTT]}, $mtt);
   return $mtt;
 };
 
@@ -62,41 +68,36 @@ sub add_meta {
   my $self = shift;
   my $pos_0 = $self->pos(0) or return;
   my $mt = $pos_0->add('-:' . shift);
-  $mt->payload(shift);
-  $mt->store_offsets(0);
+  $mt->set_payload(shift);
+  $mt->set_stored_offsets(0);
 };
 
 sub pos {
   my $self = shift;
   my $pos = shift;
   return unless defined $pos;
-  return $self->{mtt}->[$pos];
+  return $self->[MTT]->[$pos];
 };
 
 sub to_string {
   my $self = shift;
-  return join("\n" , map { $_->to_string } @{$self->{mtt}}) . "\n";
+  return join("\n" , map { $_->to_string } @{$self->[MTT]}) . "\n";
 };
 
 sub multi_term_tokens {
-  $_[0]->{mtt};
+  $_[0]->[MTT];
 };
 
 sub tui {
   my $self = shift;
   my $pos = shift;
   return unless defined $pos;
-  return ++$self->{tui}->[$pos];
+  return ++$self->[TUI]->[$pos];
 };
 
 sub to_array {
   my $self = shift;
-  [ map { $_->to_array } @{$self->{mtt}} ];
-};
-
-sub to_solr {
-  my $self = shift;
-  [ map { $_->to_solr } @{$self->{mtt}} ];
+  [ map { $_->to_array } @{$self->[MTT]} ];
 };
 
 1;

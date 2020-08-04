@@ -63,7 +63,7 @@ sub parse {
         my $pl;
         $pl .= '<b>' . ($level ? $level - 1 : 0);
         $pl .= '<s>' . $tui if $tui;
-        $mt->payload($pl);
+        $mt->set_payload($pl);
       };
 
       # Use sentence and paragraph elements for base
@@ -72,8 +72,8 @@ sub parse {
         if ($name eq 's' && index($as_base, 'sentences') >= 0) {
           # Clone Multiterm
           my $mt2 = $mt->clone;
-          $mt2->term('<>:base/s:' . $name);
-          $mt2->payload('<b>2');
+          $mt2->set_term('<>:base/s:' . $name);
+          $mt2->set_payload('<b>2');
           $sentences++;
 
           # Add to stream
@@ -82,8 +82,8 @@ sub parse {
         elsif ($name eq 'p' && index($as_base, 'paragraphs') >= 0) {
           # Clone Multiterm
           my $mt2 = $mt->clone;
-          $mt2->term('<>:base/s:' . $name);
-          $mt2->payload('<b>1');
+          $mt2->set_term('<>:base/s:' . $name);
+          $mt2->set_payload('<b>1');
           $paragraphs++;
 
           # Add to stream
@@ -95,8 +95,8 @@ sub parse {
           if (my $nr = first { $_->{-name} eq 'n' } @$attrs) {
             if (($nr = $nr->{'#text'}) && looks_like_number($nr)) {
               my $mt2 = $mtt->add('~:base/s:pb');
-              $mt2->payload('<i>' . $nr . '<i>' . $span->o_start);
-              $mt2->store_offsets(0);
+              $mt2->set_payload('<i>' . $nr . '<i>' . $span->o_start);
+              $mt2->set_stored_offsets(0);
             };
           };
         };

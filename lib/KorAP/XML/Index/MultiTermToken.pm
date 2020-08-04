@@ -10,6 +10,13 @@ use warnings;
 # but is rather slow on sorting relations.
 # Should be replaced by an efficient implementation!
 
+use constant {
+  MT      => 0,
+  O_START => 1,
+  O_END   => 2,
+  ID_COUNTER => 3
+};
+
 sub new {
   bless [], shift;
 };
@@ -30,33 +37,30 @@ sub add {
   else {
     $mt = $_[0];
   };
-  $self->[0] //= [];
-  push(@{$self->[0]}, $mt);
+  $self->[MT] //= [];
+  push(@{$self->[MT]}, $mt);
   $mt;
 };
 
-# 0 -> mt
-
-# 1
-sub o_start {
-  if (defined $_[1]) {
-    return $_[0]->[1] = $_[1];
-  };
-  $_[0]->[1];
+sub set_o_start {
+  return $_[0]->[O_START] = $_[1];
 };
 
-# 2
-sub o_end {
-  if (defined $_[1]) {
-    return $_[0]->[2] = $_[1];
-  };
-  $_[0]->[2];
+sub get_o_start {
+  $_[0]->[O_START]
 };
 
-# 3: Return a new term id
+sub set_o_end {
+  return $_[0]->[O_END] = $_[1];
+};
+
+sub get_o_end {
+  $_[0]->[O_END]
+};
+
 sub id_counter {
-  $_[0]->[3] //= 1;
-  return $_[0]->[3]++;
+  $_[0]->[ID_COUNTER] //= 1;
+  return $_[0]->[ID_COUNTER]++;
 };
 
 sub surface {
@@ -85,7 +89,7 @@ sub grep_mt {
 
 sub to_string {
   my $self = shift;
-  my $string = '[(' . $self->o_start . '-'. $self->o_end . ')';
+  my $string = '[(' . $self->get_o_start . '-'. $self->get_o_end . ')';
   $string .= join ('|', @{$self->to_array});
   $string .= ']';
   return $string;
@@ -121,6 +125,7 @@ sub _rel_right_pos {
   return (0,0);
 };
 
+
 # Sort spans, attributes and relations
 sub _sort {
 
@@ -135,64 +140,61 @@ sub _sort {
       my ($a_id) = ($a->[0] =~ m/^<s>(\d+)/);
       my ($b_id) = ($b->[0] =~ m/^<s>(\d+)/);
       if ($a_id > $b_id) {
-	return 1;
+        return 1;
       }
       elsif ($a_id < $b_id) {
-	return -1;
+        return -1;
       }
       else {
-	return 1;
+        return 1;
       };
     }
 
     # Both are relations
     elsif (
       (index($a->[5],'<:') == 0 || index($a->[5],'>:') == 0)  &&
-      (index($b->[5], '<:') == 0 || index($b->[5],'>:') == 0)) {
+        (index($b->[5], '<:') == 0 || index($b->[5],'>:') == 0)) {
 
-      my $a_end = ($a->pti < 34 ? $a->p_start : (
-	($a->pti == 35 ? ($a->[0] =~ /^(?:<i>\d+){4}<i>(\d+)</ && $1) :
-	   ($a->[0] =~ /^(?:<i>\d+){2}<i>(\d+)</ && $1)
-	)
+      my $a_end = ($a->get_pti < 34 ? $a->get_p_start : (
+        ($a->get_pti == 35 ? ($a->[0] =~ /^(?:<i>\d+){4}<i>(\d+)</ && $1) :
+           ($a->[0] =~ /^(?:<i>\d+){2}<i>(\d+)</ && $1)
+         )
       ));
 
-      my $b_end = ($b->pti < 34 ? $b->p_start : (
-	($b->pti == 35 ? ($b->[0] =~ /^(?:<i>\d+){4}<i>(\d+)</ && $1) :
-	   ($b->[0] =~ /^(?:<i>\d+){2}<i>(\d+)</ && $1)
-	 )
+      my $b_end = ($b->get_pti < 34 ? $b->get_p_start : (
+        ($b->get_pti == 35 ? ($b->[0] =~ /^(?:<i>\d+){4}<i>(\d+)</ && $1) :
+           ($b->[0] =~ /^(?:<i>\d+){2}<i>(\d+)</ && $1)
+         )
       ));
-
-#      my $a_end = $a->[2] // 0;
-#      my $b_end = $b->[2] // 0;
 
       # left is p_end
       if ($a_end < $b_end) {
-	return -1;
+        return -1;
       }
       elsif ($a_end > $b_end) {
-	return 1;
+        return 1;
       }
       else {
-	# Both are either > or <
+        # Both are either > or <
 
-	# Check for right positions
-	(my $a_start, $a_end) = _rel_right_pos($a->pti, $a->[0]);
-	(my $b_start, $b_end) = _rel_right_pos($b->pti, $b->[0]);
-	if ($a_start < $b_start) {
-	  return -1;
-	}
-	elsif ($a_start > $b_start) {
-	  return 1;
-	}
-	elsif ($a_end < $b_end) {
-	  return -1;
-	}
-	elsif ($a_end > $b_end) {
-	  return 1;
-	}
-	else {
-	  return 1;
-	};
+        # Check for right positions
+        (my $a_start, $a_end) = _rel_right_pos($a->get_pti, $a->[0]);
+        (my $b_start, $b_end) = _rel_right_pos($b->get_pti, $b->[0]);
+        if ($a_start < $b_start) {
+          return -1;
+        }
+        elsif ($a_start > $b_start) {
+          return 1;
+        }
+        elsif ($a_end < $b_end) {
+          return -1;
+        }
+        elsif ($a_end > $b_end) {
+          return 1;
+        }
+        else {
+          return 1;
+        };
       };
     };
 
@@ -226,24 +228,16 @@ sub _sort {
       $a_depth //= 0;
       $b_depth //= 0;
       if ($a_depth < $b_depth) {
-	return -1;
+        return -1;
       }
       elsif ($a_depth > $b_depth) {
-	return 1;
+        return 1;
       }
       else {
-	return $a->[5] cmp $b->[5];
+        return $a->[5] cmp $b->[5];
       };
     };
   };
-};
-
-
-sub to_solr {
-  my $self = shift;
-  my @array = map { $_->to_solr(0) } @{$self->{mt}};
-  $array[0]->{i} = 1;
-  return \@array;
 };
 
 
@@ -251,29 +245,3 @@ sub to_solr {
 
 
 __END__
-
-[
-  {
-   "e":128,
-   "i":22,
-   "p":"DQ4KDQsODg8=",
-   "s":123,
-   "t":"one",
-   "y":"word"
-  },
-  {
-   "e":8,
-   "i":1,
-   "s":5,
-   "t":"two",
-   "y":"word"
-  },
-  {
-   "e":22,
-   "i":1,
-   "s":20,
-   "t":"three",
-   "y":"foobar"
-  }
- ]
-

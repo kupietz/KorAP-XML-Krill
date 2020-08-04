@@ -6,143 +6,155 @@ use MIME::Base64;
 # Todo: This should store only the pti and the payload - with clever access using the pti!
 # Everything should be stored as bytes already (if this is feasible)
 
+use constant {
+  PAYLOAD => 0,
+  P_START => 1,
+  P_END => 2,
+  O_START => 3,
+  O_END => 4,
+  TERM => 5,
+  STORED_OFFSETS => 6,
+  PTI => 7, # former 10
+  TUI => 8,
+};
+
 sub new {
   my $self = bless [], shift;
-  my $i = 0;
-  for (; $i < scalar @_; $i+=2) {
+  for (my $i = 0; $i < scalar @_; $i+=2) {
     if ($_[$i] eq 'term') {
-      $self->term($_[$i+1]);
+      $self->[TERM] = $_[$i+1];
     }
     elsif ($_[$i] eq 'p_start') {
-      $self->p_start($_[$i+1]);
+      $self->[P_START] = $_[$i+1];
     }
     elsif ($_[$i] eq 'p_end') {
-      $self->p_end($_[$i+1]);
+      $self->[P_END] = $_[$i+1];
     }
     elsif ($_[$i] eq 'payload') {
-      $self->payload($_[$i+1]);
+      $self->[PAYLOAD] = $_[$i+1];
     }
     elsif ($_[$i] eq 'store_offsets') {
       $self->store_offsets($_[$i+1]);
     }
     elsif ($_[$i] eq 'o_start') {
-      $self->o_start($_[$i+1]);
+      $self->[O_START] = $_[$i+1];
     }
     elsif ($_[$i] eq 'o_end') {
-      $self->o_end($_[$i+1]);
+      $self->[O_END] = $_[$i+1];
     }
     elsif ($_[$i] eq 'pti') {
-      $self->pti($_[$i+1]);
+      $self->[PTI] = $_[$i+1];
     }
     elsif ($_[$i] eq 'tui') {
-      $self->tui($_[$i+1]);
+      $self->[TUI] = $_[$i+1];
     };
   };
   $self;
 };
 
-# 0
-sub payload {
-  if (defined $_[1]) {
-    return $_[0]->[0] = $_[1];
-  };
-  $_[0]->[0];
+sub set_payload {
+  return $_[0]->[PAYLOAD] = $_[1];
 };
 
-# 1
-sub p_start {
-  if (defined $_[1]) {
-    return $_[0]->[1] = $_[1];
-  };
-  $_[0]->[1] // 0;
+sub get_payload {
+  $_[0]->[PAYLOAD];
 };
 
-# 2
-sub p_end {
-  if (defined $_[1]) {
-    return $_[0]->[2] = $_[1];
-  };
-  $_[0]->[2] // 0;
+sub set_p_start {
+  return $_[0]->[P_START] = $_[1];
 };
 
-# 3
-sub o_start {
-  if (defined $_[1]) {
-    return $_[0]->[3] = $_[1];
-  };
-  $_[0]->[3] // 0;
+sub get_p_start {
+  $_[0]->[P_START] // 0;
 };
 
-# 4
-sub o_end {
-  if (defined $_[1]) {
-    return $_[0]->[4] = $_[1];
-  };
-  $_[0]->[4] // 0;
+sub set_p_end {
+  $_[0]->[P_END] = $_[1];
 };
 
-# 5
-sub term {
-  if (defined $_[1]) {
-    return $_[0]->[5] = $_[1];
-  };
-  $_[0]->[5] // '';
+sub get_p_end {
+  $_[0]->[P_END] // 0
 };
 
-# 6
-sub store_offsets {
-  if (defined $_[1]) {
-    return $_[0]->[6] = $_[1];
-  };
-  $_[0]->[6];
+sub set_o_start {
+  return $_[0]->[O_START] = $_[1];
 };
 
-# pti
-sub pti {
-  if (defined $_[1]) {
-    return $_[0]->[10] = $_[1];
-  };
-  $_[0]->[10];
+sub get_o_start {
+  $_[0]->[O_START] // 0;
 };
 
-# Not serialized - just setter/getter
-sub tui {
-  if (defined $_[1]) {
-    return $_[0]->[11] = $_[1];
-  };
-  $_[0]->[11];
+sub set_o_end {
+  $_[0]->[O_END] = $_[1];
 };
+
+sub get_o_end {
+  $_[0]->[O_END] // 0;
+};
+
+sub set_term {
+  return $_[0]->[TERM] = $_[1];
+};
+
+sub get_term {
+  $_[0]->[TERM] // '';
+};
+
+sub set_stored_offsets {
+  return $_[0]->[STORED_OFFSETS] = $_[1];
+};
+
+sub get_stored_offsets {
+  $_[0]->[STORED_OFFSETS];
+};
+
+sub set_pti {
+  return $_[0]->[PTI] = $_[1];
+};
+
+sub get_pti {
+  $_[0]->[PTI];
+};
+
+sub set_tui {
+  return $_[0]->[TUI] = $_[1];
+};
+
+sub get_tui {
+  $_[0]->[TUI];
+};
+
 
 # To string based on array
 sub to_string {
-  my $string = _escape_term($_[0]->[5]);
+  my $string = _escape_term($_[0]->[TERM]);
 
   my $pre;
 
   # PTI
-  $pre .= '<b>' . $_[0]->[10] if  $_[0]->[10];
+  $pre .= '<b>' . $_[0]->[PTI] if  $_[0]->[PTI];
 
   # Offsets
-  if (defined $_[0]->[3]) {
-    $pre .= '<i>' .$_[0]->[3] .
-      '<i>' . $_[0]->[4];
+  if (defined $_[0]->[O_START]) {
+    $pre .= '<i>' .$_[0]->[O_START] .
+      '<i>' . $_[0]->[O_END];
   };
 
   #  my $pl = $_[0]->[1] ?
   #    $_[0]->[1] - 1 : $_[0]->[0];
 
-  if ($_[0]->[2] || $_[0]->[0]) {
+  if ($_[0]->[P_END] || $_[0]->[PAYLOAD]) {
 
     # p_end
-    if (defined $_[0]->[2]) {
-      $pre .= '<i>' . $_[0]->[2];
+    if (defined $_[0]->[P_END]) {
+      $pre .= '<i>' . $_[0]->[P_END];
     };
     if ($_[0]->[0]) {
-      if (index($_[0]->[0], '<') == 0) {
-        $pre .= $_[0]->[0];
+      if (index($_[0]->[PAYLOAD], '<') == 0) {
+        $pre .= $_[0]->[PAYLOAD];
       }
       else {
-        $pre .= '<?>' . $_[0]->[0];
+        $pre .= '<?>' . $_[0]->[PAYLOAD];
       };
     };
   };
@@ -156,31 +168,6 @@ sub clone {
   bless [@$self], __PACKAGE__;
 };
 
-sub to_string_2 {
-  my $self = shift;
-  my $string = $self->term;
-  if (defined $self->o_start) {
-    $string .= '#' .$self->o_start .'-' . $self->o_end;
-  };
-
-  my $pl = $self->p_end ? $self->p_end - 1 : $self->payload;
-  if ($self->p_end || $self->payload) {
-    $string .= '$';
-    if ($self->p_end) {
-      $string .= '<i>' . $self->p_end;
-    };
-    if ($self->payload) {
-      if (index($self->payload, '<') == 0) {
-        $string .= $self->payload;
-      }
-      else {
-        $string .= '<?>' . $self->payload;
-      };
-    };
-  };
-
-  return $string;
-};
 
 sub _escape_term ($) {
   my $str = shift;
@@ -188,72 +175,5 @@ sub _escape_term ($) {
   return $str;
 };
 
-
-# DEPRECATED
-sub to_solr {
-  my $self = shift;
-  my $increment = shift;
-
-  my (@payload_types, @payload) = ();
-
-  my $term = $self->term;
-  if ($term =~ s/\#(\d+)-(\d+)//) {
-    push(@payload, $1, $2);
-    push(@payload_types, 'l', 'l');
-  };
-
-  my %term = ( t => $term );
-  if (defined $increment && $increment == 0) {
-    $term{i} = 0;
-  };
-
-  if (defined $self->o_start && !@payload) {
-    push(@payload, $self->o_start, $self->o_end);
-    push(@payload_types, 'l', 'l');
-  };
-
-  if ($self->p_end || $self->payload) {
-    if ($self->p_end) {
-      push(@payload, $self->p_end);
-      push(@payload_types, 'l');
-    };
-    if ($self->payload) {
-      if (index($self->payload, '<') == 0) {
-	my @pls = split /(?=<)|(?<=>)/, $self->payload;
-	for (my $i = 0; $i < @pls; $i+=2) {
-	  if ($pls[$i] eq 'b') {
-	    push(@payload, $pls[$i+1]);
-	    push(@payload_types, 'c');
-	  }
-	  elsif ($pls[$i] eq 's') {
-	    push(@payload, $pls[$i+1]);
-	    push(@payload_types, 's');
-	  }
-	  elsif ($pls[$i] eq 'i') {
-	    push(@payload, $pls[$i+1]);
-	    push(@payload_types, 'l');
-	  }
-	  elsif ($pls[$i] eq 'l') {
-	    push(@payload, $pls[$i+1]);
-	    push(@payload_types, 'q');
-	  }
-	  else {
-	    push(@payload, $pls[$i+1]);
-	    push(@payload_types, 'w*');
-	  };
-	};
-      }
-      else {
-	push(@payload, $self->payload);
-	push(@payload_types, 'w*');
-      };
-    };
-  };
-  if (@payload) {
-    $term{p} = encode_base64(pack(join('', @payload_types), @payload), '');
-  };
-
-  return \%term;
-};
 
 1;

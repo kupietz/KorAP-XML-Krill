@@ -17,9 +17,9 @@ if ($ENV{SKIP_SCRIPT} || $ENV{SKIP_REAL}) {
 };
 
 my $f = dirname(__FILE__);
-my $script = catfile($f, '..', '..', 'script', 'korapxml2krill');
+my $script = catfile($f, '..', '..', '..', 'script', 'korapxml2krill');
 
-my $input = catdir($f, '..', 'sgbr', 'PRO-DUD', 'BSP-2013-01', '32');
+my $input = catdir($f, 'PRO-DUD', 'BSP-2013-01', '32');
 
 my $output = tmpnam();
 my $cache = tmpnam();

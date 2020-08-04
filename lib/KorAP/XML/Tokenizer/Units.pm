@@ -83,7 +83,7 @@ sub span {
 
       # The next token of end has a character
       # offset AFTER the given end character offset
-      my $real_start = $self->stream->pos($end)->o_start;
+      my $real_start = $self->stream->pos($end)->get_o_start;
 
       # Ignore non-milestone elements outside the token stream!
       if ($to <= $real_start) {

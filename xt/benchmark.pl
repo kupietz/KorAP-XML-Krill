@@ -73,7 +73,7 @@ $bench->add_instances(
     }
   ),
   Dumbbench::Instance::PerlSub->new(
-    name => 'Conversion-GOE-Tagged-1',
+    name => 'Script-Conversion-GOE-Tagged-1',
     code => sub {
       my $doc = KorAP::XML::Krill->new(path => $path . '/');
       $doc->parse;
