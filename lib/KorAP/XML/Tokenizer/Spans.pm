@@ -48,10 +48,10 @@ sub parse {
   return if $error;
 
   if (ref $spans && $spans->{span}) {
-      $spans = $spans->{span};
+    $spans = $spans->{span};
   }
   else {
-      return [];
+    return [];
   };
 
 

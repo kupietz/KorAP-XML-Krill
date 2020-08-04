@@ -1,11 +1,16 @@
 package KorAP::XML::Document::Primary;
 use strict;
 use warnings;
-use Carp qw/croak carp/;
 use Mojo::ByteStream 'b';
 use feature 'state';
 use Packed::Array;
 use utf8;
+
+use constant {
+  DATA => 0,
+  BYTES => 1,
+  XIP => 2
+};
 
 # our $QUOT = b("„“”")->decode;
 our $QUOT_RE = qr/[„“”]/;
@@ -22,15 +27,15 @@ sub data {
   my ($self, $from, $to) = @_;
 
   # Get range data from primary
-  return substr($self->[0], $from) if $from && !$to;
+  return substr($self->[DATA], $from) if $from && !$to;
 
   # Get full data
-  return $self->[0] unless $to;
+  return $self->[DATA] unless $to;
 
   return if $to > $self->data_length;
 
   # Return substring
-  return (substr($self->[0], $from, $to - $from) // undef);
+  return (substr($self->[DATA], $from, $to - $from) // undef);
 };
 
 
@@ -42,14 +47,14 @@ sub data_bytes {
 
   # Only start offset defined
   if ($from && !$to) {
-    return b(substr($self->[0], $from))->decode;
+    return b(substr($self->[DATA], $from))->decode;
   };
 
   # No offset defined
-  return b($self->[0])->decode unless $to;
+  return b($self->[DATA])->decode unless $to;
 
   # Get the substring based on offsets
-  my $substr = substr($self->[0], $from, $to - $from);
+  my $substr = substr($self->[DATA], $from, $to - $from);
 
   # Decode
   return b($substr)->decode if defined $substr;
@@ -61,42 +66,34 @@ sub data_bytes {
 
 # The length of the primary text in characters
 sub data_length {
-  my $self = shift;
-  return $self->[1] if $self->[1];
-  $self->[1] = length($self->[0]);
-  return $self->[1];
+  length($_[0]->[DATA]);
 };
 
 
 # Get correct offset
 sub bytes2chars {
   my $self = shift;
-  unless ($self->[2]) {
-    $self->[2] = $self->_calc_chars($self->[0]);
+  unless ($self->[BYTES]) {
+    $self->[BYTES] = _calc_chars($self->[DATA]);
   };
-  return $self->[2]->[shift];
+  return $self->[BYTES]->[shift];
 };
 
 
 # Get correct offset
 sub xip2chars {
   my $self = shift;
-  unless ($self->[3]) {
-    my $buffer = $self->[0];
-
+  unless ($self->[XIP]) {
     # Hacky work around: replace fancy quotation marks for XIP
-    $buffer =~ s{$QUOT_RE}{"}g;
-
-    $self->[3] = $self->_calc_chars($buffer);
+    $self->[XIP] = _calc_chars($self->[DATA] =~ s{$QUOT_RE}{"}gr);
   };
-  return $self->[3]->[shift];
+  return $self->[XIP]->[shift];
 };
 
 
 # Calculate character offsets
 sub _calc_chars {
   use bytes;
-  my ($self, $text) = @_;
 
   tie my @array, 'Packed::Array';
 
@@ -107,14 +104,14 @@ sub _calc_chars {
   my $c;
 
   # Init array
-  my $l = length($text);
+  my $l = length($_[0]);
   $array[$l-1] = 0;
 
   # Iterate over every character
   while ($i <= $l) {
 
     # Get actual character
-    $c = substr($text, $i, 1);
+    $c = substr($_[0], $i, 1);
 
     # store character position
     $array[$i++] = $j;
@@ -123,16 +120,16 @@ sub _calc_chars {
     if (ord($c & $leading) && ord($c & $start)) {
 
       # Get the next byte - expecting a following character
-      $c = substr($text, $i, 1);
+      $c = substr($_[0], $i, 1);
 
       # Character is part of a multibyte
       while (ord($c & $leading)) {
 
-	# Set count
-	$array[$i] = (ord($c & $start)) ? ++$j : $j;
+        # Set count
+        $array[$i] = (ord($c & $start)) ? ++$j : $j;
 
-	# Get next character
-	$c = substr($text, ++$i, 1);
+        # Get next character
+        $c = substr($_[0], ++$i, 1);
       };
     };
 

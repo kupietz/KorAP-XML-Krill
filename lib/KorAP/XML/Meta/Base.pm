@@ -55,6 +55,7 @@ sub keywords {
   return join(' ', @{$self->{$_[0]} // []});
 };
 
+
 # Check if cached
 # Cache differently!
 sub is_cached {
@@ -93,7 +94,7 @@ sub to_hash {
     if ($self->doc_sigle) {
       $new{doc_sigle} = $self->doc_sigle;
       if ($self->text_sigle) {
-	$new{text_sigle} = $self->text_sigle;
+        $new{text_sigle} = $self->text_sigle;
       }
     }
   };
