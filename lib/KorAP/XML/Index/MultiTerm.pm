@@ -18,50 +18,11 @@ use constant {
   PAYLOAD        => 8,
 };
 
+
+# Construct a multiterm object by passing a term
 sub new {
-  my $self = bless [], shift;
-
-  # TODO:
-  #   Deprecate!
-  for (my $i = 0; $i < scalar @_; $i+=2) {
-    if ($_[$i] eq 'term') {
-      $self->[TERM] = $_[$i+1];
-    }
-    elsif ($_[$i] eq 'p_start') {
-      $self->[P_START] = $_[$i+1];
-    }
-    elsif ($_[$i] eq 'p_end') {
-      $self->[P_END] = $_[$i+1];
-    }
-    elsif ($_[$i] eq 'payload') {
-      $self->[PAYLOAD] = $_[$i+1];
-    }
-    elsif ($_[$i] eq 'store_offsets') {
-      $self->store_offsets($_[$i+1]);
-    }
-    elsif ($_[$i] eq 'o_start') {
-      $self->[O_START] = $_[$i+1];
-    }
-    elsif ($_[$i] eq 'o_end') {
-      $self->[O_END] = $_[$i+1];
-    }
-    elsif ($_[$i] eq 'pti') {
-      $self->[PTI] = $_[$i+1];
-    }
-    elsif ($_[$i] eq 'tui') {
-      $self->[TUI] = $_[$i+1];
-    };
-  };
-  $self;
-};
-
-sub new_from_term {
   bless [$_[1]], $_[0];
 };
-
-sub new_blank {
-  bless [], shift;
-}
 
 sub set_payload {
   return $_[0]->[PAYLOAD] = $_[1];

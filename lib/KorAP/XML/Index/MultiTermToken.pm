@@ -21,29 +21,8 @@ sub new {
   bless [[]], shift;
 };
 
-
-sub add {
-  my $self = shift;
-
-  my $mt;
-  unless (blessed $_[0]) {
-    if (@_ == 1) {
-      $mt = KorAP::XML::Index::MultiTerm->new_blank;
-      $mt->set_term($_[0]);
-    }
-    else {
-      $mt = KorAP::XML::Index::MultiTerm->new(@_);
-    };
-  }
-  else {
-    $mt = $_[0];
-  };
-  push(@{$self->[MT]}, $mt);
-  $mt;
-};
-
 sub add_by_term {
-  my $mt = KorAP::XML::Index::MultiTerm->new_from_term($_[1]);
+  my $mt = KorAP::XML::Index::MultiTerm->new($_[1]);
   push(@{$_[0]->[MT]}, $mt);
   $mt;
 };

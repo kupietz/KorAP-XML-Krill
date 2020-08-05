@@ -49,24 +49,22 @@ sub get_node {
 
     my $tui = $self->tui($unit->get_p_start);
 
-    return $mtt->add(
-      term => '<>:' . $term,
-      o_start => $unit->get_o_start,
-      o_end   => $unit->get_o_end,
-      p_start => $unit->get_p_start,
-      p_end   => $unit->get_p_end,
-      pti => 64,
-      payload => '<b>0<s>' . $tui,
-      tui => $tui
-    );
-
+    my $mt = $mtt->add_by_term('<>:' . $term);
+    $mt->set_o_start($unit->get_o_start);
+    $mt->set_o_end($unit->get_o_end);
+    $mt->set_p_start($unit->get_p_start);
+    $mt->set_p_end($unit->get_p_end);
+    $mt->set_pti(64);
+    $mt->set_payload('<b>0<s>' . $tui);
+    $mt->set_tui($tui);
+    return $mt;
   };
 };
 
 sub add_meta {
   my $self = shift;
   my $pos_0 = $self->pos(0) or return;
-  my $mt = $pos_0->add('-:' . shift);
+  my $mt = $pos_0->add_by_term('-:' . shift);
   $mt->set_payload(shift);
   $mt->set_stored_offsets(0);
 };

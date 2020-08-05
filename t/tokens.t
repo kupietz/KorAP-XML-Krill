@@ -7,14 +7,12 @@ use lib 'lib', '../lib';
 
 use_ok('KorAP::XML::Index::MultiTerm');
 
-ok(my $term = KorAP::XML::Index::MultiTerm->new(
-  term => 'Baum',
-  p_start => 0,
-  p_end => 56,
-  payload => '<i>56',
-  o_start => 34,
-  o_end => 120
-), 'Create new object');
+ok(my $term = KorAP::XML::Index::MultiTerm->new('Baum'), 'Create new object');
+$term->set_p_start(0);
+$term->set_p_end(56);
+$term->set_payload('<i>56');
+$term->set_o_start(34);
+$term->set_o_end(120);
 
 is($term->get_term, 'Baum');
 is($term->get_p_start, 0);
@@ -24,9 +22,7 @@ is($term->get_o_end, 120);
 is($term->get_payload, '<i>56');
 is($term->to_string, 'Baum$<i>34<i>120<i>56<i>56');
 
-ok($term = KorAP::XML::Index::MultiTerm->new(
-  term => 'Baum'
-), 'Create new object');
+ok($term = KorAP::XML::Index::MultiTerm->new('Baum'), 'Create new object');
 
 is($term->get_term, 'Baum');
 is($term->get_p_start, 0);
@@ -36,9 +32,7 @@ is($term->get_o_end, 0);
 is($term->get_payload, undef);
 is($term->to_string, 'Baum');
 
-ok($term = KorAP::XML::Index::MultiTerm->new(
-  term => 'Ba#um'
-), 'Create new object');
+ok($term = KorAP::XML::Index::MultiTerm->new('Ba#um'), 'Create new object');
 
 is($term->get_term, 'Ba#um');
 is($term->get_p_start, 0);
@@ -48,10 +42,8 @@ is($term->get_o_end, 0);
 is($term->get_payload, undef);
 is($term->to_string, 'Ba\#um');
 
-ok($term = KorAP::XML::Index::MultiTerm->new(
-  term => 'Ba#u$m',
-  payload => '<i>45'
-), 'Create new object');
+ok($term = KorAP::XML::Index::MultiTerm->new('Ba#u$m'), 'Create new object');
+$term->set_payload('<i>45');
 
 is($term->get_term, 'Ba#u$m');
 is($term->get_p_start, 0);

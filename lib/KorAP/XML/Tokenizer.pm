@@ -236,6 +236,8 @@ sub add_subtokens {
   my $self = shift;
   my $mtts = $self->stream or return;
 
+  my $mt;
+
   foreach my $mtt (@{$mtts->multi_term_tokens}) {
     my $o_start = $mtt->o_start;
     my $o_end = $mtt->o_end;
@@ -254,29 +256,23 @@ sub add_subtokens {
     while ($s =~ /(a+)[^a]/g) {
       my $from = $-[1];
       my $to = $+[1];
-      $mtt->add(
-        term => 'i^1:' . substr($os, $from, $from + $to),
-        o_start => $from + $o_start,
-        o_end => $to + $o_start
-      ) unless $to - $from == $l;
+      $mt = $mtt->add_by_term('i^1:' . substr($os, $from, $from + $to));
+      $mt->set_o_start($from + $o_start);
+      $mt->set_o_end($to + $o_start) unless $to - $from == $l;
     };
     while ($s =~ /(0+)[^0]/g) {
       my $from = $-[1];
       my $to = $+[1];
-      $mtt->add(
-        term => 'i^2:' . substr($os, $from, $from + $to),
-        o_start => $from + $o_start,
-        o_end => $to + $o_start
-      ) unless $to - $from == $l;
+      $mt = $mtt->add_by_term('i^2:' . substr($os, $from, $from + $to));
+      $mt->set_o_start($from + $o_start);
+      $mt->set_o_end($to + $o_start) unless $to - $from == $l;
     };
     while ($s =~ /(#)/g) {
       my $from = $-[1];
       my $to = $+[1];
-      $mtt->add(
-        term => 'i^3:' . substr($os, $from, $from + $to),
-        o_start => $from + $o_start,
-        o_end => $to + $o_start
-      ) unless $to - $from == $l;
+      $mt = $mtt->add_by_term('i^3:' . substr($os, $from, $from + $to));
+      $mt->set_o_start($from + $o_start);
+      $mt->set_o_end($to + $o_start) unless $to - $from == $l;
     };
   };
 
@@ -770,12 +766,10 @@ This is based on the C<aggressive> tokenization, written by Carsten Schnober.
     cb => sub {
       my ($stream, $span) = @_;
       my $mtt = $stream->pos($span->get_p_start);
-      $mtt->add(
-        term    => '<>:s',
-        o_start => $span->get_o_start,
-        o_end   => $span->get_o_end,
-        p_end   => $span->get_p_end
-      );
+      my $mt = $mtt->add_by_term('<>:s');
+      $mt->set_o_start($span->get_o_start);
+      $mt->set_o_end($span->get_o_end);
+      $mt->set_p_end($span->get_p_end);
     }
   );
 
@@ -803,9 +797,7 @@ An optional parameter C<skip> allows for skipping the process.
 
       # syntax
       if ((my $found = $content->at('f[name="pos"]')) && ($found = $found->text)) {
-        $mtt->add(
-          term => 'cnx_syn:' . $found
-        );
+        $mtt->add_by_term('cnx_syn:' . $found);
       };
     });
 
