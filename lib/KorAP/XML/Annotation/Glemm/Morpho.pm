@@ -40,8 +40,8 @@ sub parse {
           };
         };
 
-        $mtt->add(
-          term => 'glemm/l:' .
+        $mtt->add_by_term(
+          'glemm/l:' .
             ($composition ? '+' : '_') .
             ($derivation ? '+' : '_') .
             $lemma
