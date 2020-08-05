@@ -25,7 +25,7 @@ sub parse {
         # pos tag
         if (($f->{-name} eq 'pos') &&
               ($found = $f->{'#text'})) {
-          $mtt->add(term => 'marmot/p:' . $found);
+          $mtt->add_by_term('marmot/p:' . $found);
         }
 
         # msd tag
@@ -36,7 +36,7 @@ sub parse {
           foreach (split '\|', $found) {
             my ($x, $y) = split "=", $_;
             # case, tense, number, mood, person, degree, gender
-            $mtt->add(term => 'marmot/m:' . $x . ($y ? ':' . $y : ''));
+            $mtt->add_by_term('marmot/m:' . $x . ($y ? ':' . $y : ''));
           };
         };
       };
