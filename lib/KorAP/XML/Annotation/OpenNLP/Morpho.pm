@@ -17,9 +17,7 @@ sub parse {
 
       # syntax
       if (($content->{-name} eq 'pos') && ($content->{'#text'})) {
-        $mtt->add(
-          term => 'opennlp/p:' . $content->{'#text'}
-        ) if $content->{'#text'};
+        $mtt->add_by_term('opennlp/p:' . $content->{'#text'});
       };
     }) or return;
 
