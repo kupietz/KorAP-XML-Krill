@@ -16,9 +16,7 @@ sub parse {
       # syntax
       foreach (@$spans) {
         if (($_->{-name} eq 'pos') && ($found = $_->{'#text'})) {
-          $mtt->add(
-            term => 'cnx/syn:' . $found
-          );
+          $mtt->add_by_term('cnx/syn:' . $found);
         };
       };
     }) or return;

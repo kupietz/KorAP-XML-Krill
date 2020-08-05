@@ -41,32 +41,24 @@ sub parse {
         if (($f->{-name} eq 'lemma') && ($found = $f->{'#text'})) {
           if (index($found, "\N{U+00a0}") >= 0) {
             foreach (split(/\x{00A0}/, $found)) {
-              $mtt->add(
-                term => 'cnx/l:' . $_
-              );
+              $mtt->add_by_term('cnx/l:' . $_);
             }
           }
           else {
-            $mtt->add(
-              term => 'cnx/l:' . $found
-            );
+            $mtt->add_by_term('cnx/l:' . $found);
           };
         }
 
         # POS
         elsif (($f->{-name} eq 'pos') && ($found = $f->{'#text'})) {
-          $mtt->add(
-            term => 'cnx/p:' . $found
-          );
+          $mtt->add_by_term('cnx/p:' . $found);
         }
         # MSD
         # This could follow
         # http://www.ids-mannheim.de/cosmas2/projekt/referenz/connexor/morph.html
         elsif (($f->{-name} eq 'msd') && ($found = $f->{'#text'})) {
           foreach (split(':', $found)) {
-            $mtt->add(
-              term => 'cnx/m:' . $_
-            );
+            $mtt->add_by_term('cnx/m:' . $_);
           };
         };
       };
