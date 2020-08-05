@@ -21,9 +21,7 @@ sub parse {
         # pos
         if (($_->{-name} eq 'pos') &&
               ($found = $_->{'#text'})) {
-          $mtt->add(
-            term => 'xip/p:' . $found
-          );
+          $mtt->add_by_term('xip/p:' . $found);
 
           $capital = 1 if $found eq 'NOUN';
         }
@@ -35,9 +33,9 @@ sub parse {
               ($found = $_->{'#text'})) {
 
           # Verb delimiter (aus=druecken)
-          $mtt->add(term => 'xip/l:' . $found);
+          $mtt->add_by_term('xip/l:' . $found);
           if ($found =~ tr/=//d) {
-            $mtt->add(term => 'xip/l:' . $found);
+            $mtt->add_by_term('xip/l:' . $found);
           };
 
           # Composites
@@ -49,7 +47,7 @@ sub parse {
           foreach (@token) {
             $full .= $_;
             $_ =~ s{/\w+$}{};
-            $mtt->add(term => 'xip/l:#' . $_);
+            $mtt->add_by_term('xip/l:#' . $_);
           };
         };
       };
@@ -59,7 +57,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['xip/l=tokens', 'xip/p=tokens']
+  ['xip/l=tokens', 'xip/p=tokens']
 };
 
 

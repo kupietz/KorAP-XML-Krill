@@ -36,11 +36,14 @@ sub parse {
 
       $rel = [$rel] unless ref $rel eq 'ARRAY';
 
+      my $target;
+
       # Iterate over all relations
       foreach (@$rel) {
+
         next if $_->{-label} ne 'dominates';
 
-        my $target = $_->{-target};
+        $target = $_->{-target};
         if (!$target && $_->{-uri} &&
               $_->{-uri} =~ $URI_RE)  {
           $target = $1;
@@ -89,18 +92,14 @@ sub parse {
     };
 
     # $type is now NPA, NP, NUM ...
-    my %term = (
-      term => '<>:xip/c:' . $type,
-      o_start => $span->get_o_start,
-      o_end => $span->get_o_end,
-      p_end => $span->get_p_end,
-      pti => 64
-    );
+    my $mt = $mtt->add_by_term('<>:xip/c:' . $type);
+    $mt->set_o_start($span->get_o_start);
+    $mt->set_o_end($span->get_o_end);
+    $mt->set_p_end($span->get_p_end);
+    $mt->set_pti(64);
 
     # Only add level payload if node != root
-    $term{payload} ='<b>' . ($level // 0);
-
-    $mtt->add(%term);
+    $mt->set_payload('<b>' . ($level // 0));
 
     # my $this = __SUB__
     my $this = $add_const;

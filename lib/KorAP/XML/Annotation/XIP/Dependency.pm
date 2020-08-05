@@ -20,49 +20,45 @@ sub parse {
     encoding => 'xip',
     cb => sub {
       my ($stream, $token, $tokens) = @_;
-      my $mtt = $stream->pos($token->pos);
+      my $mtt = $stream->pos($token->get_pos);
+      my $mt;
 
-      my $content = $token->hash;
+      my $content = $token->get_hash;
 
       my $rel = $content->{rel};
       $rel = [$rel] unless ref $rel eq 'ARRAY';
 
       foreach (@$rel) {
-	my $label = $_->{-label};
+        my $label = $_->{-label};
 
-	# Relation is "unary" - meaning relation to itself
-	if ($_->{-type} && $_->{-type} eq 'unary') {
-	  $mtt->add(
-	    term => '>:xip/d:' . $label,
-	    payload => '<i>' . $token->pos
-	  );
-	  $mtt->add(
-	    term => '<:xip/d:' . $label,
-	    payload => '<i>' . $token->pos
-	  );
-	}
-	else {
+        # Relation is "unary" - meaning relation to itself
+        if ($_->{-type} && $_->{-type} eq 'unary') {
+          $mt = $mtt->add_by_term('>:xip/d:' . $label);
+          $mt->set_payload('<i>' . $token->get_pos);
 
-	  my $from = $_->{span}->{-from};
-	  my $to   = $_->{span}->{-to};
+        };
+        $mt = $mtt->add_by_term('<:xip/d:' . $label);
+        $mt->set_payload('<i>' . $token->get_pos);
+      }
+      else {
 
-	  my $rel_token = $tokens->token($from, $to) or next;
+        my $from = $_->{span}->{-from};
+        my $to   = $_->{span}->{-to};
 
-	  # die $token->pos . ' -' . $label . '-> ' . $rel_token->pos;
-	  $mtt->add(
-	    term => '>:xip/d:' . $label,
-	    payload => '<i>' . $rel_token->pos
-	  );
+        my $rel_token = $tokens->token($from, $to) or next;
 
-	  $stream->pos($rel_token->pos)->add(
-	    term => '<:xip/d:' . $label,
-	    payload => '<i>' . $token->pos
-	  );
-	};
+        # die $token->pos . ' -' . $label . '-> ' . $rel_token->pos;
+        $mt = $mtt->add_by_term('>:xip/d:' . $label);
+        $mt->set_payload('<i>' . $rel_token->get_pos);
+      );
 
-#	print $label,"\n";
-      };
-    }) or return;
+      $mt = $stream->pos($rel_token->get_pos)
+        ->add_by_term('<:xip/d:' . $label);
+      $mt->set_payload('<i>' . $token->get_pos);
+
+    #	print $label,"\n";
+    }
+  ) or return;
 
   return 1;
 };

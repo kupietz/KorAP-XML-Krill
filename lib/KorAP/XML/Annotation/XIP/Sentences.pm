@@ -13,15 +13,13 @@ sub parse {
     cb => sub {
       my ($stream, $span) = @_;
 
-      my $mtt = $stream->pos($span->get_p_start);
-      $mtt->add(
-        term => '<>:xip/s:s',
-        o_start => $span->get_o_start,
-        o_end => $span->get_o_end,
-        p_end => $span->get_p_end,
-        pti => 64,
-        payload => '<b>0' # Could be 2 as well for t/p/s
-      );
+      my $mt = $stream->pos($span->get_p_start)
+        ->add_by_term('<>:xip/s:s');
+      $mt->set_o_start($span->get_o_start);
+      $mt->set_o_end($span->get_o_end);
+      $mt->set_p_end($span->get_p_end);
+      $mt->set_pti(64);
+      $mt->set_payload('<b>0'); # Could be 2 as well for t/p/s
       $i++;
     }
   ) or return;
