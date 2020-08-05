@@ -27,6 +27,7 @@ sub parse {
       # Get relation information
       my $rel = $content->{rel};
       $rel = [$rel] unless ref $rel eq 'ARRAY';
+      my $mt;
 
       # Iterate over relations
       foreach (@$rel) {
@@ -48,23 +49,17 @@ sub parse {
           # Target is at the same position!
           my $pos = $source->get_pos;
 
-          my %rel = (
-            pti => 32, # term-to-term relation
-            payload =>
-              '<i>' . $pos # . # right part token position
+          # Add relations
+          $mt = $mtt->add_by_term('>:mate/d:' . $label);
+          $mt->set_pti(32); # term-to-term relation
+          $mt->set_payload(
+            '<i>' . $pos # . # right part token position
               #    '<s>0' . # $target->tui . # left part tui
               #      '<s>0'  # . $target->tui # right part tui
-            );
-
-          # Add relations
-          $mtt->add(
-            term => '>:mate/d:' . $label,
-            %rel
           );
-          $mtt->add(
-            term => '<:mate/d:' . $label,
-            %rel
-          );
+          my $clone = $mt->clone;
+          $clone->set_term('<:mate/d:' . $label);
+          $mtt->add_blessed($clone);
         }
 
         # Not unary
@@ -91,24 +86,22 @@ sub parse {
             #        $target, 'mate/d:' . $NODE_LABEL
             #      );
 
-            $mtt->add(
-              term => '>:mate/d:' . $label,
-              pti => 32, # term-to-term relation
-              payload =>
-                '<i>' . $target->get_pos # . # right part token position
+            $mt = $mtt->add_by_term('>:mate/d:' . $label);
+            $mt->set_pti(32); # term-to-term relation
+            $mt->set_payload(
+              '<i>' . $target->get_pos # . # right part token position
                 #      '<s>0' . # $source_term->tui . # left part tui
                 #        '<s>0' # . $target_term->tui # right part tui
-              );
+            );
 
             my $target_mtt = $stream->pos($target->get_pos);
-            $target_mtt->add(
-              term => '<:mate/d:' . $label,
-              pti => 32, # term-to-term relation
-              payload =>
-                '<i>' . $source->get_pos # . # left part token position
+            $mt = $target_mtt->add_by_term('<:mate/d:' . $label);
+            $mt->set_pti(32); # term-to-term relation
+            $mt->set_payload(
+              '<i>' . $source->get_pos # . # left part token position
                 #      '<s>0' . # $source_term->tui . # left part tui
                 #        '<s>0' # . $target_term->tui # right part tui
-              );
+            );
           }
 
           # Relation is possibly term-to-element with a found target!
@@ -119,11 +112,10 @@ sub parse {
             #        $target, 'mate/d:' . $NODE_LABEL
             #      );
 
-            $mtt->add(
-              term => '>:mate/d:' . $label,
-              pti => 33, # term-to-element relation
-              payload =>
-                '<i>' . $target->o_start . # end position
+            $mt = $mtt->add_by_term('>:mate/d:' . $label);
+            $mt->set_pti(33); # term-to-element relation
+            $mt->set_payload(
+              '<i>' . $target->o_start . # end position
                 '<i>' . $target->o_end . # end position
                 '<i>' . $target->p_start . # right part start position
                 '<i>' . $target->p_end # . # right part end position
@@ -132,17 +124,15 @@ sub parse {
               );
 
             my $target_mtt = $stream->pos($target->p_start);
-            $target_mtt->add(
-              term => '<:mate/d:' . $label,
-              pti => 34, # element-to-term relation
-              payload =>
-                '<i>' . $target->o_start . # end position
+            $mt = $target_mtt->add_by_term('<:mate/d:' . $label);
+            $mt->set_pti(34); # element-to-term relation
+            $mt->set_payload(
+              '<i>' . $target->o_start . # end position
                 '<i>' . $target->o_end . # end position
                 '<i>' . $target->p_end . # right part end position
                 '<i>' . $source->get_pos # . # left part token position
                 #      '<s>0' . # $source_term->tui . # left part tui
                 #        '<s>0' # . $target_span->tui # right part tui
-
               );
           }
           else {

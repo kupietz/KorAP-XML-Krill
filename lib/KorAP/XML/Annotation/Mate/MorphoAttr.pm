@@ -19,6 +19,8 @@ sub parse {
 
       my $capital = 0;
 
+      my $mt;
+
       foreach my $f (@{$content->{fs}->{f}}) {
 
         #pos
@@ -30,7 +32,7 @@ sub parse {
         elsif (($f->{-name} eq 'lemma')
                  && ($found = $f->{'#text'})
                  && $found ne '--') {
-          $mtt->add(term => 'mate/l:' . $found);
+          $mtt->add_by_term('mate/l:' . $found);
         }
 
         # MSD
@@ -42,28 +44,22 @@ sub parse {
         };
       };
 
-      my %term = (
-        term => 'mate/p:' . $pos
-      );
+      $mt = $mtt->add_by_term('mate/p:' . $pos);
 
       # There are attributes needed
       if ($tui) {
-        $term{pti} = 128;
-        $term{payload} = '<s>' . $tui
+        $mt->set_pti(128);
+        $mt->set_payload('<s>' . $tui);
       };
-
-      $mtt->add(%term);
 
       # MSD
       if ($msd) {
         foreach (split '\|', $msd) {
           my ($x, $y) = split "=", $_;
           # case, tense, number, mood, person, degree, gender
-          $mtt->add(
-            term => '@:' . $x . ($y ? '=' . $y : ''),
-            pti => 16,
-            payload => '<s>' . $tui
-          );
+          $mt = $mtt->add_by_term('@:' . $x . ($y ? '=' . $y : ''));
+          $mt->set_pti(16);
+          $mt->set_payload('<s>' . $tui);
         };
       };
     }) or return;
