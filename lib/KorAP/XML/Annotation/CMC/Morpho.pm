@@ -27,13 +27,13 @@ sub parse {
         # pos tag
         if (($f->{-name} eq 'pos') &&
               ($found = $f->{'#text'})) {
-          $mtt->add(term => 'cmc/p:' . $found);
+          $mtt->add_by_term('cmc/p:' . $found);
         }
 
         # lemma tag
         elsif (($f->{-name} eq 'lemma')
                  && ($found = $f->{'#text'})) {
-          $mtt->add(term => 'cmc/l:' . $found);
+          $mtt->add_by_term('cmc/l:' . $found);
         };
       };
     }) or return;
