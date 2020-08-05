@@ -34,14 +34,10 @@ sub parse {
           # warn $found;
 
           unless ($first++) {
-            $mtt->add(
-              term => 'sgbr/l:' . $found
-            );
+            $mtt->add_by_term('sgbr/l:' . $found);
           }
           else {
-            $mtt->add(
-              term => 'sgbr/lv:' . $found
-            );
+            $mtt->add_by_term('sgbr/lv:' . $found);
           };
         };
       };

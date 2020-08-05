@@ -23,7 +23,7 @@ sub parse {
         if (($f->{-name} eq 'ctag')
               && ($found = $f->{'#text'})) {
           # b($found)->decode('latin-1')->encode->to_string
-          $mtt->add(term => 'sgbr/p:' . $found);
+          $mtt->add_by_term('sgbr/p:' . $found);
         };
       };
     }) or return;
