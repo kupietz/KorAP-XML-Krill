@@ -21,7 +21,7 @@ sub parse {
         # pos tag
         if (($f->{-name} eq 'pos') &&
               ($found = $f->{'#text'})) {
-          $mtt->add(term => 'hnc/p:' . $found);
+          $mtt->add_by_term('hnc/p:' . $found);
         }
 
         # ana tag
@@ -35,7 +35,7 @@ sub parse {
           foreach (split ';;', $found) {
             my ($x, $y) = split "=", $_;
             # compound,hyphenated,stem,morphemes,mboundary
-            $mtt->add(term => 'hnc/m:' . $x . ($y ? ':' . $y : ''));
+            $mtt->add_by_term('hnc/m:' . $x . ($y ? ':' . $y : ''));
           };
         }
 
@@ -44,7 +44,7 @@ sub parse {
                  && ($found = $f->{'#text'})
                  && $found ne '--') {
           # b($found)->decode('latin-1')->encode->to_string
-          $mtt->add(term => 'hnc/l:' . $found);
+          $mtt->add_by_term('hnc/l:' . $found);
         };
       };
     }) or return;
