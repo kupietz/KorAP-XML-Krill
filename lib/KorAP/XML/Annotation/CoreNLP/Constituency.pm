@@ -1,6 +1,7 @@
 package KorAP::XML::Annotation::CoreNLP::Constituency;
 use KorAP::XML::Annotation::Base;
 use Set::Scalar;
+use feature 'current_sub';
 
 sub parse {
   my $self = shift;
@@ -59,14 +60,8 @@ sub parse {
     my $type = $f->{'#text'} or return;
 
     # $type is now NPA, NP, NUM ...
-    my $term = $mtt->add_by_term('<>:corenlp/c:' . $type);
-    $term->set_o_start($span->get_o_start);
-    $term->set_o_end($span->get_o_end);
-    $term->set_p_end($span->get_p_end);
-    $term->set_pti(64);
-    $term->set_payload('<b>' . ($level // 0));
-
-    my $this = $add_const;
+    $mtt->add_span('<>:corenlp/c:' . $type, $span)
+      ->set_payload('<b>' . ($level // 0));
 
     my $rel = $content->{rel} or return;
     $rel = [$rel] unless ref $rel eq 'ARRAY';
@@ -76,7 +71,7 @@ sub parse {
       my $subspan = delete $corenlp_const{$_->{-target}} or return;
 
       # This will be called recursively
-      $this->($subspan, $level + 1);
+      __SUB__->($subspan, $level + 1);
     };
   };
 

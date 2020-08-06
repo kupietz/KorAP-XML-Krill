@@ -271,7 +271,7 @@ sub token {
 
   return if !$to;
   return unless $to > $from;
-  $from ||= 0;
+  $from //= 0;
 
   my $pos = $self->match->lookup($from, $to);
 

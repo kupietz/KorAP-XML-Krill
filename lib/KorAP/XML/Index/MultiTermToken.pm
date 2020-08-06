@@ -21,6 +21,22 @@ sub new {
   bless [[]], shift;
 };
 
+
+# Add span annotation
+sub add_span {
+  my ($class, $term, $span) = @_;
+  my $mt = KorAP::XML::Index::MultiTerm->new(
+    $term, # Term
+    $span->get_o_start, # o_start
+    $span->get_o_end, # o_end
+    undef, # p_start
+    $span->get_p_end, # p_end
+    64,    # pti
+  );
+  push(@{$_[0]->[MT]}, $mt);
+  $mt;
+};
+
 sub add_by_term {
   my $mt = KorAP::XML::Index::MultiTerm->new($_[1]);
   push(@{$_[0]->[MT]}, $mt);

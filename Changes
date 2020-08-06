@@ -9,6 +9,7 @@
         - Remove MultiTerm->add() in favor of
           MultiTerm->add_by_term().
         - Optimization by reducing calls to _offset().
+        - Introduced add_span() method to MultiTermToken.
 
 0.40 2020-03-03
         - Fixed XIP parser.

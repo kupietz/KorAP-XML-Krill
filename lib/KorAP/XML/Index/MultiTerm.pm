@@ -3,25 +3,23 @@ use strict;
 use warnings;
 use MIME::Base64;
 
-# Todo: This should store only the pti and the payload - with clever access using the pti!
-# Everything should be stored as bytes already (if this is feasible)
-
 use constant {
   TERM           => 0,
   O_START        => 1,
   O_END          => 2,
   P_START        => 3,
   P_END          => 4,
-  STORED_OFFSETS => 5,
-  PTI            => 6,
-  TUI            => 7,
-  PAYLOAD        => 8,
+  PTI            => 5,
+  TUI            => 6,
+  PAYLOAD        => 7,
+  STORED_OFFSETS => 8,
 };
 
 
 # Construct a multiterm object by passing a term
 sub new {
-  bless [$_[1]], $_[0];
+  my $class = shift;
+  bless [@_], $class;
 };
 
 sub set_payload {
