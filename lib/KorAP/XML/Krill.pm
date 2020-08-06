@@ -13,6 +13,10 @@ use KorAP::XML::Log;
 use Cache::FastMmap;
 use Mojo::DOM;
 use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
+use Exporter 'import';
+
+our @EXPORT_OK = qw(get_file_name_from_glob);
+
 
 our $VERSION = '0.41';
 
@@ -290,6 +294,20 @@ sub to_json {
   };
 
   return $self->{tokenizer}->to_json;
+};
+
+# Functions
+
+sub get_file_name_from_glob ($) {
+  my $glob = shift;
+  $glob =~ s![\\\/},]!-!g;       # Transform paths
+  $glob =~ s/[\*\?]//g;         # Remove arbitrary fills
+  $glob =~ s/[\{\}\[\]]/-/g;    # Remove class and multiple brackets
+  $glob =~ s/\-\-+/-/g;         # Remove sequences of binding characters
+  $glob =~ s/^-//;              # Clean beginning
+  $glob =~ s/\.zip$//;          # Remove file extension
+  $glob =~ s/-$//;              # Clean end
+  return $glob;
 };
 
 

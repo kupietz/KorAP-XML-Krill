@@ -12,7 +12,7 @@ use Log::Log4perl;
 use Pod::Usage;
 use Cache::FastMmap;
 use Directory::Iterator;
-use KorAP::XML::Krill;
+use KorAP::XML::Krill qw!get_file_name_from_glob!;
 use KorAP::XML::Archive;
 use KorAP::XML::Tokenizer;
 use KorAP::XML::Batch::File;
@@ -162,7 +162,6 @@ Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
 VERSION
 
 # Prototypes
-sub get_file_name_from_glob($);
 sub get_file_name($);
 
 # Parse comand
@@ -630,19 +629,6 @@ sub get_file_name ($) {
   $file =~ s{^-+}{};
   $file =~ s/^.*?-(.+?-.+?-.+?)$/$1/;
   return $file;
-};
-
-
-sub get_file_name_from_glob ($) {
-  my $glob = shift;
-  $glob =~ s![\\\/]!-!g;        # Transform paths
-  $glob =~ s/[\*\?]//g;         # Remove arbitrary fills
-  $glob =~ s/[\{\}\[\]]/-/g;    # Remove class and multiple brackets
-  $glob =~ s/\-\-+/-/g;         # Remove sequences of binding characters
-  $glob =~ s/^-//;              # Clean beginning
-  $glob =~ s/-$//;              # Clean end
-  $glob =~ s/\.zip$//;          # Remove file extension
-  return $glob;
 };
 
 
