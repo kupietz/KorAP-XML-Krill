@@ -186,6 +186,7 @@ sub parse {
 };
 
 
+# Start token parsing
 sub tokenize {
   my $self = shift;
   my ($token_foundry, $token_layer) = @_;
@@ -247,10 +248,14 @@ sub primary {
   $_[0]->{pd};
 };
 
+
+# Get meta object
 sub meta {
   return $_[0]->{meta};
 };
 
+
+# Serialize to hash
 sub to_hash {
   my $self = shift;
 

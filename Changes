@@ -1,4 +1,4 @@
-0.41 2020-08-05
+0.41 2020-08-06
         - Added support for RWK annotations.
         - Improved DGD support.
         - Fixed bug in RWK support that broke on
@@ -8,6 +8,7 @@
         - Optimizations and cleanup based on profiling.
         - Remove MultiTerm->add() in favor of
           MultiTerm->add_by_term().
+        - Optimization by reducing calls to _offset().
 
 0.40 2020-03-03
         - Fixed XIP parser.

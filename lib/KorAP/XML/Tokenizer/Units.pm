@@ -1,23 +1,165 @@
 package KorAP::XML::Tokenizer::Units;
+use strict;
+use warnings;
 use KorAP::XML::Tokenizer::Span;
 use KorAP::XML::Tokenizer::Token;
 
-# TODO:
-#   Don't use Mojo::Base! - "encodings" is called too often
-use Mojo::Base -base;
-
-has [qw/path foundry layer match range primary stream/];
-has 'should' => 0;
-has 'have' => 0;
-has 'encoding' => 'utf-8';
-
 use constant DEBUG => 0;
 
+
+# Construct a new units object
+sub new {
+  my $class = shift;
+  my $self = bless {@_}, $class;
+
+  $self->{should} //= 0;
+  $self->{have} //= 0;
+
+  # Set _offset
+  $self->encoding(
+    $self->{encoding} // 'utf-8'
+  );
+  return $self;
+};
+
+
+# Get or set "should"
+sub should {
+  if (defined $_[1]) {
+    $_[0]->{should} = $_[1];
+    return $_[0];
+  };
+  $_[0]->{should};
+};
+
+
+# Get or set "have"
+sub have {
+  if (defined $_[1]) {
+    $_[0]->{have} = $_[1];
+    return $_[0];
+  };
+  $_[0]->{have};
+};
+
+
+# Get or set encoding
+sub encoding {
+
+  # Set encoding
+  if (defined $_[1]) {
+    my $self = shift;
+    $self->{encoding} = $_[0];
+
+    # Set offset handling for bytes
+    if ($_[0] eq 'bytes') {
+      $self->{_offset} = sub {
+        my ($self, $from, $to) = @_;
+        my $p = $self->primary;
+        $from = $p->bytes2chars($from);
+        $to = $p->bytes2chars($to);
+        return ($from, $to);
+      }
+    }
+
+    # Set offset method for xip
+    elsif ($_[0] eq 'xip') {
+      $self->{_offset} = sub {
+        my ($self, $from, $to) = @_;
+        my $p = $self->primary;
+        $from = $p->xip2chars($from);
+        $to = $p->xip2chars($to);
+        return ($from, $to);
+      }
+    }
+
+    # Set to default
+    else {
+      $self->{_offset} = undef;
+    }
+    return $self;
+  };
+
+  # Get encoding
+  $_[0]->{encoding};
+};
+
+
+# Get or set path
+sub path {
+  if (@_ == 1) {
+    return $_[0]->{path};
+  };
+  $_[0]->{path} = $_[1];
+  return $_[0];
+};
+
+# Get or set foundry
+sub foundry {
+  if (@_ == 1) {
+    return $_[0]->{foundry};
+  };
+  $_[0]->{foundry} = $_[1];
+  return $_[0];
+};
+
+
+# Get or set layer
+sub layer {
+  if (@_ == 1) {
+    return $_[0]->{layer};
+  };
+  $_[0]->{layer} = $_[1];
+  return $_[0];
+};
+
+
+# Get or set match
+sub match {
+  if (defined $_[1]) {
+    $_[0]->{match} = $_[1];
+    return $_[0];
+  };
+  $_[0]->{match};
+};
+
+
+# Get or set range
+sub range {
+  if (defined $_[1]) {
+    $_[0]->{range} = $_[1];
+    return $_[0];
+  };
+  $_[0]->{range};
+};
+
+
+# Get or set primary
+sub primary {
+  if (defined $_[1]) {
+    $_[0]->{primary} = $_[1];
+    return $_[0];
+  };
+  $_[0]->{primary};
+};
+
+
+# Get or set stream
+sub stream {
+  if (defined $_[1]) {
+    $_[0]->{stream} = $_[1];
+    return $_[0];
+  };
+  $_[0]->{stream};
+};
+
+
+# Create new span
 sub span {
   my $self = shift;
   my ($from, $to, $s) = @_;
 
-  ($from, $to) = $self->_offset($from, $to);
+  ($from, $to) = $self->{_offset}->($self, $from, $to) if $self->{_offset};
 
   # return if !$to;
   $to   //= 0;
@@ -120,10 +262,12 @@ sub span {
   $span;
 };
 
+
+# Create new token
 sub token {
   my ($self, $from, $to, $s) = @_;
 
-  ($from, $to) = $self->_offset($from, $to);
+  ($from, $to) = $self->{_offset}->($self, $from, $to) if $self->{_offset};
 
   return if !$to;
   return unless $to > $from;
@@ -144,26 +288,5 @@ sub token {
   $token;
 };
 
-
-sub _offset {
-  my $self = shift;
-  return @_ if ($self->encoding eq 'utf-8' || !$self->encoding);
-
-  my ($from, $to) = @_;
-
-  my $p = $self->primary;
-  if ($self->encoding eq 'bytes') {
-    $from = $p->bytes2chars($from);
-    $to = $p->bytes2chars($to);
-  }
-
-  # This is legacy treating of bytes2chars
-  elsif ($self->encoding eq 'xip') {
-    $from = $p->xip2chars($from);
-    $to = $p->xip2chars($to);
-  };
-
-  ($from, $to);
-};
 
 1;
