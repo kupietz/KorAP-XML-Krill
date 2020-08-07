@@ -93,7 +93,6 @@ is($token->[3], 'opennlp/p:VAFIN', 'opennlp');
 # Check layer and foundry for base tokenization
 # No primary data
 $bf->{anno} = [[]];
-$bf->{primary} = 0;
 $bf->{foundry} = 'CoreNLP';
 $bf->{layer} = 'Tokens';
 
@@ -102,7 +101,6 @@ ok(-f $output, 'File exists');
 ok($file = Mojo::File->new($output)->slurp, 'Slurp data');
 ok($json = decode_json $file, 'decode json');
 
-ok(!$json->{data}->{text}, 'No Primary text');
 is($json->{data}->{tokenSource}, 'corenlp#tokens', 'Title');
 
 like($file, qr/^\{"/, 'No pretty printing');

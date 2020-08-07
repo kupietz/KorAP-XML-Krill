@@ -20,7 +20,6 @@ sub new {
     anno            => $param{anno}      || [[]],
     log             => $param{log}       || Mojo::Log->new(level => 'fatal'),
     koral           => $param{koral},
-    primary         => $param{primary},
     non_word_tokens => $param{non_word_tokens},
     non_verbal_tokens => $param{non_verbal_tokens},
     pretty          => $param{pretty},
@@ -76,8 +75,8 @@ sub process {
   my $file;
   my $print_text = (
     $self->{pretty} ?
-      $tokens->to_pretty_json($self->{koral}, $self->{primary}) :
-      $tokens->to_json($self->{koral}, $self->{primary})
+      $tokens->to_pretty_json($self->{koral}) :
+      $tokens->to_json($self->{koral})
     );
 
   # There is an output file given
@@ -200,11 +199,6 @@ The list is empty by default.
 =item log
 
 A L<Mojo::Log> compatible log object.
-
-=item primary
-
-Export primary text associated with the document.
-Defaults to C<true>.
 
 =item pretty
 

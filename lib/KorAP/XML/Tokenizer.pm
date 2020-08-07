@@ -535,8 +535,7 @@ sub to_string {
 
 sub to_data {
   my $self = shift;
-  my $primary = defined $_[0] ? $_[0] : 1;
-  my $version = defined $_[1] ? $_[1] : 0.03;
+  my $version = defined $_[0] ? $_[0] : 0.03;
 
   # Legacy version
   if ($version == 0) {
@@ -544,18 +543,15 @@ sub to_data {
     # Serialize meta fields
     my %data = %{$self->doc->to_hash};
 
-    my @fields;
-    push(@fields, { primaryData => $self->doc->primary->data }) if $primary;
-
-    push(@fields, {
+    $data{fields} = [{
+      primaryData => $self->doc->primary->data
+    },{
       name => $self->name,
       data => $self->stream->to_array,
       tokenization => lc($self->foundry) . '#' . lc($self->layer),
       foundries => $self->support,
       layerInfo => $self->layer_info
-    });
-
-    $data{fields} = \@fields;
+    }];
 
     return \%data;
   }
@@ -568,7 +564,7 @@ sub to_data {
 
     my $tokens = $self->to_hash;
 
-    $tokens->{text} = $self->doc->primary->data if $primary;
+    $tokens->{text} = $self->doc->primary->data;
     $data{data} = $tokens;
     $data{version} = '0.03';
 
@@ -584,7 +580,7 @@ sub to_data {
     $data{fields} = $self->doc->meta->to_koral_fields;
 
     my $tokens = $self->to_hash;
-    $tokens->{text} = $self->doc->primary->data if $primary;
+    $tokens->{text} = $self->doc->primary->data;
     $data{data} = $tokens;
     $data{version} = '0.4';
     return \%data;
@@ -604,18 +600,18 @@ sub to_hash {
 
 
 sub to_json_legacy {
-  encode_json($_[0]->to_data($_[1], 0));
+  encode_json($_[0]->to_data(0));
 };
 
 sub to_json {
-  my ($self, $version, $primary) = @_;
-  encode_json($self->to_data($primary, $version));
+  my ($self, $version) = @_;
+  encode_json($self->to_data($version));
 };
 
 
 sub to_pretty_json {
-  my ($self, $version, $primary) = @_;
-  JSON::XS->new->pretty->encode($self->to_data($primary, $version));
+  my ($self, $version) = @_;
+  JSON::XS->new->pretty->encode($self->to_data($version));
 };
 
 

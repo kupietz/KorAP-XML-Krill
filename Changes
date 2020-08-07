@@ -1,4 +1,4 @@
-0.41 2020-08-06
+0.41 2020-08-07
         - Added support for RWK annotations.
         - Improved DGD support.
         - Fixed bug in RWK support that broke on
@@ -10,6 +10,7 @@
           MultiTerm->add_by_term().
         - Optimization by reducing calls to _offset().
         - Introduced add_span() method to MultiTermToken.
+        - Removed deprecated 'primary' flag.
 
 0.40 2020-03-03
         - Fixed XIP parser.

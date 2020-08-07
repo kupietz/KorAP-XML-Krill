@@ -193,7 +193,9 @@ GetOptions(
   'config|cfg=s' => \(my $cfg_file),
   'log|l=s'     => \($cfg{log}),
   'anno|a=s'    => \@anno,
-  'primary|p!'  => \(my $primary),
+  'primary|p!'  => sub {
+    warn 'Primary flag no longer supported!';
+  },
   'pretty|y'    => \(my $pretty),
   'jobs|j=i'    => \($cfg{jobs}),
   'koral|k=f'    => \($cfg{koral}),
@@ -500,7 +502,6 @@ my $batch_file = KorAP::XML::Batch::File->new(
   gzip      => $gzip,
   log       => $log,
   koral     => ($cfg{koral} // $KORAL_VERSION),
-  primary   => $primary,
   pretty    => $pretty,
   anno      => \@filtered_anno,
   non_word_tokens   => ($cfg{non_word_tokens}   // 0),
@@ -1151,13 +1152,6 @@ Convert specific annotations by specifying the foundry
 (and optionally the layer with a C<#>-prefix),
 e.g. C<Mate> or C<Mate#Morpho>.
 Can be set multiple times.
-
-
-=item B<--primary|-p>
-
-Output primary data or not. Defaults to C<true>.
-Can be flagged using C<--no-primary> as well.
-This is I<deprecated>.
 
 
 =item B<--non-word-tokens|-nwt>
