@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
+use v5.10;
 use FindBin;
 BEGIN { unshift @INC, "$FindBin::Bin/../lib" };
 use File::Spec::Functions qw/catfile catdir/;
@@ -18,7 +19,6 @@ use KorAP::XML::Tokenizer;
 use KorAP::XML::Batch::File;
 use Config::Simple;
 use Parallel::ForkManager;
-use v5.10;
 use Sys::Info;
 use Sys::Info::Constants qw( :device_cpu );
 use File::Glob ':bsd_glob';
@@ -154,15 +154,12 @@ use Fcntl qw(:flock SEEK_END);
 # - Added support for Redewiedergabe-Korpus morphology
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2020/04/23';
+our $LAST_CHANGE = '2020/08/07';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
 Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
 VERSION
-
-# Prototypes
-sub get_file_name($$);
 
 # Parse comand
 my $cmd;
@@ -173,38 +170,40 @@ if ($ARGV[0] && index($ARGV[0], '-') != 0) {
 my @keep_argv = @ARGV;
 
 my (@skip, @sigle, @anno, @input);
-my $text;
+
+# Configuration hash
+my %cfg = ();
 
 # Parse options from the command line
 GetOptions(
   'input|i=s'   => \@input,
-  'input-base|ib=s' => \(my $input_base),
-  'output|o=s'  => \(my $output),
-  'overwrite|w' => \(my $overwrite),
-  'meta|m=s'    => \(my $meta),
-  'token|t=s'   => \(my $token_base),
-  'base-sentences|bs=s'   => \(my $base_sentences),
-  'base-paragraphs|bp=s'  => \(my $base_paragraphs),
-  'base-pagebreaks|bpb=s' => \(my $base_pagebreaks),
-  'gzip|z'      => \(my $gzip),
-  'temporary-extract|te=s' => \(my $extract_dir),
+  'input-base|ib=s' => \($cfg{input_base}),
+  'output|o=s'  => \($cfg{output}),
+  'overwrite|w' => \($cfg{overwrite}),
+  'meta|m=s'    => \($cfg{meta}),
+  'token|t=s'   => \($cfg{token}),
+  'base-sentences|bs=s'   => \($cfg{base_sentences}),
+  'base-paragraphs|bp=s'  => \($cfg{base_paragraphs}),
+  'base-pagebreaks|bpb=s' => \($cfg{base_pagebreaks}),
+  'gzip|z'      => \($cfg{gzip}),
+  'temporary-extract|te=s' => \($cfg{extract_dir}),
   'skip|s=s'    => \@skip,
   'sigle|sg=s'  => \@sigle,
-  'cache|c=s'   => \(my $cache_file),
+  'cache|c=s'   => \($cfg{cache_file}),
   'config|cfg=s' => \(my $cfg_file),
-  'log|l=s'     => \(my $log_level),
+  'log|l=s'     => \($cfg{log}),
   'anno|a=s'    => \@anno,
   'primary|p!'  => \(my $primary),
   'pretty|y'    => \(my $pretty),
-  'jobs|j=i'    => \(my $jobs),
-  'koral|k=f'    => \(my $koral),
-  'to-tar'      => \(my $to_tar),
-  'non-word-tokens|nwt' => \(my $non_word_tokens),
-  'non-verbal-tokens|nvt' => \(my $non_verbal_tokens),
-  'sequential-extraction|se' => \(my $sequential_extraction),
-  'cache-size|cs=s'  => \(my $cache_size),
-  'cache-delete|cd!' => \(my $cache_delete),
-  'cache-init|ci!'   => \(my $cache_init),
+  'jobs|j=i'    => \($cfg{jobs}),
+  'koral|k=f'    => \($cfg{koral}),
+  'to-tar'      => \($cfg{to_tar}),
+  'non-word-tokens|nwt' => \($cfg{non_word_tokens}),
+  'non-verbal-tokens|nvt' => \($cfg{non_verbal_tokens}),
+  'sequential-extraction|se' => \($cfg{sequential_extraction}),
+  'cache-size|cs=s'  => \($cfg{cache_size}),
+  'cache-delete|cd!' => \($cfg{cache_delete}),
+  'cache-init|ci!'   => \($cfg{cache_init}),
   'help|h'      => sub {
     pod2usage(
       -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
@@ -223,115 +222,23 @@ GetOptions(
 );
 
 
-# Load from configuration
+# Load from configuration and fill non-given data
 if ($cfg_file && -e $cfg_file) {
   my %config;
 
+  print "Reading config from $cfg_file\n";
+
   Config::Simple->import_from($cfg_file, \%config);
 
-  # Overwrite
-  if (!defined($overwrite) && defined $config{overwrite}) {
-    $overwrite = $config{overwrite};
-  };
-
-  # Gzip
-  if (!defined($gzip) && defined $config{gzip}) {
-    $gzip = $config{gzip};
-  };
-
-  # Jobs
-  if (!defined($jobs) && defined $config{jobs}) {
-    $jobs = $config{jobs};
-  };
-
-  # Koral version
-  if (!defined($koral) && defined $config{koral}) {
-    $koral = $config{koral};
-  };
-
-  # Input root base directory
-  if (!defined($input_base) && defined $config{'input-base'}) {
-    $input_base = $config{'input-base'};
-  };
-
-  # temporary-extract
-  if (!defined($extract_dir) && defined $config{'temporary-extract'}) {
-    $extract_dir = $config{'temporary-extract'};
-  };
-
-  # Token base
-  if (!defined($token_base) && defined $config{token}) {
-    $token_base = $config{token};
-  };
-
-  # Non-word tokenization
-  if (!defined($non_word_tokens) && defined $config{'non-word-tokens'}) {
-    $non_word_tokens = $config{'non-word-tokens'};
-  };
-
-  # Non-verbal tokenization
-  if (!defined($non_verbal_tokens) && defined $config{'non-verbal-tokens'}) {
-    $non_verbal_tokens = $config{'non-verbal-tokens'};
-  };
-
-  # Cache file
-  if (!defined($cache_file) && defined $config{cache}) {
-    $cache_file = $config{cache};
-  };
-
-  # Cache size
-  if (!defined($cache_size) && defined $config{'cache-size'}) {
-    $cache_size = $config{'cache-size'};
-  };
-
-  # Cache delete
-  if (!defined($cache_delete) && defined $config{'cache-delete'}) {
-    $cache_delete = $config{'cache-delete'} ;
-  };
-
-  # Cache init
-  if (!(defined $cache_init) && defined $config{'cache-init'}) {
-    $cache_init = $config{'cache-init'} ;
-  };
-
-  # Jobs for extraction
-  if (!(defined $sequential_extraction) && defined $config{'sequential-extraction'}) {
-    $sequential_extraction = $config{'sequential-extraction'} ;
-  };
-
-  # Meta
-  if (!(defined $meta) && defined $config{'meta'}) {
-    $meta = $config{'meta'} ;
-  };
-
-  # Output
-  if (!(defined $output) && defined $config{'output'}) {
-    $output = $config{'output'} ;
-  };
-
-  # Base-sentences
-  if (!(defined $base_sentences) && defined $config{'base-sentences'}) {
-    $base_sentences = $config{'base-sentences'} ;
-  };
-
-  # Base-paragraphs
-  if (!(defined $base_paragraphs) && defined $config{'base-paragraphs'}) {
-    $base_paragraphs = $config{'base-paragraphs'} ;
-  };
-
-  # Base-pagebreaks
-  if (!(defined $base_pagebreaks) && defined $config{'base-pagebreaks'}) {
-    $base_pagebreaks = $config{'base-pagebreaks'} ;
-  };
-
-  # Write to tar
-  if (!(defined $to_tar) && defined $config{'to-tar'}) {
-    $to_tar = $config{'to-tar'} ;
-  };
-
-  # Log
-  if (!(defined $log_level) && defined $config{'log'}) {
-    $log_level = $config{'log'} ;
+  foreach (qw!output cache-size input-base token overwrite
+              meta base-sentences base-paragraphs base-pagebreaks
+              gzip to-tar log cache non-word-tokens
+              non-verbal-tokens sequential-extraction cache-init
+              koral extract-dir jobs!) {
+    my $underlined = $_ =~ tr/-/_/r;
+    if (!defined($cfg{$underlined}) && defined $config{$_}) {
+      $cfg{$underlined} = $config{$_};
+    };
   };
 
   # Skip
@@ -350,31 +257,36 @@ if ($cfg_file && -e $cfg_file) {
   };
 };
 
+# Init variables and set default values
+my $output           = $cfg{output};
+my $input_base       = $cfg{input_base};
+my $gzip             = $cfg{gzip};
+my $to_tar           = $cfg{to_tar};
+my $extract_dir      = $cfg{extract_dir};
+my $token_base       = $cfg{token}               // 'OpenNLP#tokens';
+my $cache_file       = $cfg{cache}               // 'korapxml2krill.cache';
+my $jobs             = $cfg{jobs}                // 0;
+my $cache_delete     = $cfg{cache_delete}        // 1;
+my $base_sentences   = lc($cfg{base_sentences}   // '');
+my $base_paragraphs  = lc($cfg{base_paragraphs}  // '');
+my $base_pagebreaks  = lc($cfg{base_pagebreaks}  // '');
+my $sequential_extraction = $cfg{sequential_extraction} // 0;
 
-# Set default token base
-$token_base          //= 'OpenNLP#tokens';
-$cache_file          //= 'korapxml2krill.cache';
-$cache_size          //= '50m';
-$jobs                //= 0;
-$koral               //= $KORAL_VERSION;
-$cache_delete        //= 1;
-$cache_init          //= 1;
-$sequential_extraction //= 0;
-$log_level           //= 'ERROR';
-$base_sentences      //= '';
-$base_paragraphs     //= '';
-$base_pagebreaks     //= '';
-$non_word_tokens     //= 0;
-$non_verbal_tokens   //= 0;
+# Get tokenization basis
+my ($token_base_foundry, $token_base_layer) = split(/#/, $token_base) if $token_base;
 
-$base_sentences  = lc $base_sentences;
-$base_paragraphs = lc $base_paragraphs;
-$base_pagebreaks = lc $base_pagebreaks;
+# Remove file extension
+$token_base_layer =~ s/\.xml$//i;
 
+# Convert sigle to path construct
+s!^\s*([^_]+?)_([^\.]+?)\.(.+?)\s*$!$1/$2/$3! foreach @sigle;
+
+my %skip;
+$skip{lc($_)} = 1 foreach @skip;
 
 # Initialize log4perl object
 Log::Log4perl->init({
-  'log4perl.rootLogger' => uc($log_level) . ', STDERR',
+  'log4perl.rootLogger' => uc($cfg{log} // 'ERROR') . ', STDERR',
   'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
   'log4perl.appender.STDERR.layout' => 'PatternLayout',
   'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
@@ -382,9 +294,10 @@ Log::Log4perl->init({
 
 my $log = Log::Log4perl->get_logger('main');
 
-
-print "Reading config from $cfg_file\n" if $cfg_file;
-
+if ($cmd && $output && (!defined($to_tar)) && (!-e $output || !-d $output)) {
+  $log->error("Directory '$output' does not exist.");
+  exit 1;
+};
 
 my %ERROR_HASH = (
   -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
@@ -401,8 +314,9 @@ pod2usage(%ERROR_HASH) unless @input;
 pod2usage(%ERROR_HASH) if $gzip && !$output;
 
 
+# Auto adjust jobs
 if ($jobs eq '-1') {
-  state $cores = Sys::Info->new->device('CPU')->count;
+  my $cores = Sys::Info->new->device('CPU')->count;
   $jobs = ceil(5 * $cores);
   $log->info("Run using $jobs jobs on $cores cores");
 };
@@ -462,9 +376,6 @@ if ($cmd && $cmd eq 'serial') {
 
   exit;
 };
-
-my %skip;
-$skip{lc($_)} = 1 foreach @skip;
 
 my @layers;
 push(@layers, ['Base', 'Sentences']) unless $base_sentences;
@@ -584,46 +495,30 @@ else {
   };
 };
 
-# Get tokenization basis
-my ($token_base_foundry, $token_base_layer) = split(/#/, $token_base) if $token_base;
-
-# Remove file extension
-$token_base_layer =~ s/\.xml$//i;
 
 # TODO: This should not be initialized for batch
 my $cache = Cache::FastMmap->new(
   share_file => $cache_file,
-  cache_size => $cache_size,
-  init_file  => $cache_init
+  cache_size => ($cfg{cache_size} // '50m'),
+  init_file  => ($cfg{cache_init} // 1)
 );
 
 # Create batch object
 my $batch_file = KorAP::XML::Batch::File->new(
   cache     => $cache,
-  meta_type => $meta,
-  overwrite => $overwrite,
+  meta_type => $cfg{meta},
+  overwrite => $cfg{overwrite},
   foundry   => $token_base_foundry,
   layer     => $token_base_layer,
   gzip      => $gzip,
   log       => $log,
-  koral     => $koral,
+  koral     => ($cfg{koral} // $KORAL_VERSION),
   primary   => $primary,
   pretty    => $pretty,
   anno      => \@filtered_anno,
-  non_word_tokens => $non_word_tokens,
-  non_verbal_tokens => $non_verbal_tokens
+  non_word_tokens   => ($cfg{non_word_tokens}   // 0),
+  non_verbal_tokens => ($cfg{non_verbal_tokens} // 0)
 );
-
-# Convert sigle to path construct
-s!^\s*([^_]+?)_([^\.]+?)\.(.+?)\s*$!$1/$2/$3! foreach @sigle;
-
-if ($cmd) {
-  if ($output && (!defined($to_tar)) && (!-e $output || !-d $output)) {
-    $log->error("Directory '$output' does not exist.");
-    exit 1;
-  };
-};
-
 
 # Glob and prefix files
 if (@input) {
@@ -1076,11 +971,10 @@ sub set_sigle {
 };
 
 
-
 # Cleanup temporary extraction directory
 if ($extract_dir) {
   my $objects = remove_tree($extract_dir, { safe => 1 });
-  print "Removed directory $extract_dir with $objects objects.\n";
+  $log->info("Removed directory $extract_dir with $objects objects");
 };
 
 
