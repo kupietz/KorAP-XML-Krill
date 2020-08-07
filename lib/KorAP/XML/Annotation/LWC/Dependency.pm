@@ -50,7 +50,6 @@ sub parse {
 
           $mt = $stream->pos($target->get_pos)
             ->add_by_term('<:lwc/d:' . $label);
-
           $mt->set_pti(32); # term-to-term relation
           $mt->set_payload(
             '<i>' . $source->get_pos # . # left part token position

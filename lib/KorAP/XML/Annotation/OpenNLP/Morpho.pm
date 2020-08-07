@@ -12,11 +12,10 @@ sub parse {
 
       my $content = $token->get_hash->{fs}->{f} or return;
 
-      $content = $content->{fs}->{f};
-      my $found;
+      $content = $content->{fs}->{f} or return;
 
       # syntax
-      if (($content->{-name} eq 'pos') && ($content->{'#text'})) {
+      if (($content->{-name} eq 'pos') && $content->{'#text'}) {
         $mtt->add_by_term('opennlp/p:' . $content->{'#text'});
       };
     }) or return;

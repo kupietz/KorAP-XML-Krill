@@ -16,8 +16,6 @@ sub parse {
 
       my $found;
 
-      my $capital = 0;
-
       my $lemmata = (ref $content->{fs}->{f} eq 'ARRAY') ?
         $content->{fs}->{f} : [$content->{fs}->{f}];
 

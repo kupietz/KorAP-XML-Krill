@@ -11,7 +11,7 @@ sub parse {
       my ($stream, $token) = @_;
       my $mtt = $stream->pos($token->get_pos);
 
-      my $content = $token->get_hash->{fs}->{f};
+      my $content = $token->get_hash->{fs}->{f} or return;
 
       my $found;
 
@@ -39,8 +39,7 @@ sub parse {
         }
 
         # ana tag
-        elsif ($name =~ m/^(?:bc|(?:sub)?type|usage|person|pos|case|number|gender|tense|mood|degree)$/ &&
-                 ($found = $f->{'#text'})) {
+        elsif (($found = $f->{'#text'}) && $name =~ m/^(?:bc|(?:sub)?type|usage|person|pos|case|number|gender|tense|mood|degree)$/o) {
           $mtt->add_by_term('rwk/m:' . $name . ':' . $found);
         };
       };

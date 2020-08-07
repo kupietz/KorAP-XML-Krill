@@ -1,6 +1,8 @@
 package KorAP::XML::Annotation::XIP::Constituency;
 use KorAP::XML::Annotation::Base;
 use Set::Scalar;
+use feature 'current_sub';
+
 use Scalar::Util qw/weaken/;
 
 our $URI_RE = qr/^[^\#]+\#(.+?)$/;
@@ -27,7 +29,6 @@ sub parse {
 
       # Collect the span
       $xip_const{$span->get_id} = $span;
-      # warn 'Remember ' . $span->get_id;
 
       # It's probably a root
       $xip_const_root->insert($span->get_id);
@@ -66,8 +67,7 @@ sub parse {
   my $stream = $$self->stream;
 
   # Recursive tree traversal method
-  my $add_const;
-  $add_const = sub {
+  my $add_const = sub {
     my ($span, $level) = @_;
 
     weaken $xip_const_root;
@@ -92,17 +92,9 @@ sub parse {
     };
 
     # $type is now NPA, NP, NUM ...
-    my $mt = $mtt->add_by_term('<>:xip/c:' . $type);
-    $mt->set_o_start($span->get_o_start);
-    $mt->set_o_end($span->get_o_end);
-    $mt->set_p_end($span->get_p_end);
-    $mt->set_pti(64);
-
-    # Only add level payload if node != root
-    $mt->set_payload('<b>' . ($level // 0));
-
-    # my $this = __SUB__
-    my $this = $add_const;
+    $mtt->add_span('<>:xip/c:' . $type, $span)
+      # Only add level payload if node != root
+      ->set_payload('<b>' . ($level // 0));
 
     my $rel = $content->{rel};
 
@@ -133,9 +125,9 @@ sub parse {
       # warn "A-Forgot about $target: " . ($subspan ? 'yes' : 'no');
 
       next unless $subspan;
-      #  warn "Span " . $target . " not found";
 
-      $this->($subspan, $level + 1);
+      # Recursive call
+      __SUB__->($subspan, $level + 1);
     };
   };
 
@@ -145,8 +137,6 @@ sub parse {
   # Start tree traversal from the root
   foreach ($roots->members) {
     my $obj = delete $xip_const{$_};
-
-    # warn "B-Forgot about $_: " . ($obj ? 'yes' : 'no');
 
     next unless $obj;
 

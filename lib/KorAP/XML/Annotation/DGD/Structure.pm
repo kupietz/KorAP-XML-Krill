@@ -71,7 +71,6 @@ sub parse {
     my $mt = $mtt->add_by_term('<>:base/s:s');
     $mt->set_o_start($o_start);
     $mt->set_o_end($_->[1]);
-    $mt->set_p_start($p_start);
     $mt->set_p_end($_->[0]);
     $mt->set_pti(64);
     $mt->set_payload('<b>1');

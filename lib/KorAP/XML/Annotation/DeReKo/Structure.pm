@@ -46,14 +46,9 @@ sub parse {
         return;
       };
 
-      my $p_end = $span->get_p_end;
-
       # Add structure
-      my $mt = $mtt->add_by_term('<>:dereko/s:' . $name);
-      $mt->set_o_start($span->get_o_start);
-      $mt->set_o_end($span->get_o_end);
-      $mt->set_p_start($p_start);
-      $mt->set_p_end($p_end);
+      my $mt = $mtt->add_span('<>:dereko/s:' . $name, $span);
+      # $mt->set_p_start($p_start);
       $mt->set_pti($span->get_milestone ? 65 : 64);
 
       my $level = $span->get_hash->{'-l'};
@@ -69,32 +64,32 @@ sub parse {
 
         if ($name eq 's' && index($as_base, 'sentences') >= 0) {
           # Clone Multiterm
-          my $mt2 = $mt->clone;
-          $mt2->set_term('<>:base/s:' . $name);
-          $mt2->set_payload('<b>2');
+          $mt = $mt->clone;
+          $mt->set_term('<>:base/s:' . $name);
+          $mt->set_payload('<b>2');
           $sentences++;
 
           # Add to stream
-          $mtt->add_blessed($mt2);
+          $mtt->add_blessed($mt);
         }
         elsif ($name eq 'p' && index($as_base, 'paragraphs') >= 0) {
           # Clone Multiterm
-          my $mt2 = $mt->clone;
-          $mt2->set_term('<>:base/s:' . $name);
-          $mt2->set_payload('<b>1');
+          $mt = $mt->clone;
+          $mt->set_term('<>:base/s:' . $name);
+          $mt->set_payload('<b>1');
           $paragraphs++;
 
           # Add to stream
-          $mtt->add_blessed($mt2);
+          $mtt->add_blessed($mt);
         }
 
         # Add pagebreaks
         elsif ($name eq 'pb' && index($as_base, 'pagebreaks') >= 0) {
           if (my $nr = first { $_->{-name} eq 'n' } @$attrs) {
             if (($nr = $nr->{'#text'}) && looks_like_number($nr)) {
-              my $mt2 = $mtt->add_by_term('~:base/s:pb');
-              $mt2->set_payload('<i>' . $nr . '<i>' . $span->get_o_start);
-              $mt2->set_stored_offsets(0);
+              $mt = $mtt->add_by_term('~:base/s:pb');
+              $mt->set_payload('<i>' . $nr . '<i>' . $span->get_o_start);
+              $mt->set_stored_offsets(0);
             };
           };
         };
@@ -103,14 +98,16 @@ sub parse {
       # Add attributes
       if ($attrs) {
 
+        my $pl = '<s>' . $tui .($span->get_milestone ? '' : '<i>' . $span->get_p_end);
+
         # Set a tui if attributes are set
         foreach (@$attrs) {
 
           # Add attributes
-          my $mt = $mtt->add_by_term('@:dereko/s:' . $_->{'-name'} . ($_->{'#text'} ? ':' . $_->{'#text'} : ''));
+          $mt = $mtt->add_by_term('@:dereko/s:' . $_->{'-name'} . ($_->{'#text'} ? ':' . $_->{'#text'} : ''));
           $mt->set_p_start($p_start);
           $mt->set_pti(17);
-          $mt->set_payload('<s>' . $tui .($span->get_milestone ? '' : '<i>' . $p_end));
+          $mt->set_payload($pl);
         };
       };
     }
