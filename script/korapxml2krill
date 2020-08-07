@@ -367,22 +367,23 @@ if ($cmd && $cmd eq 'serial') {
   exit;
 };
 
-
-my @layers;
+# Define supported (and preinstalled) transformation modules
+my @layers = ();
 push(@layers, ['Base', 'Sentences']) unless $base_sentences;
 push(@layers, ['Base', 'Paragraphs']) unless $base_paragraphs;
 
 # Connexor
-push(@layers, ['Connexor', 'Morpho']);
-push(@layers, ['Connexor', 'Syntax']);
-push(@layers, ['Connexor', 'Phrase']);
-push(@layers, ['Connexor', 'Sentences']);
+push(@layers, ['Connexor', 'Morpho'],
+     ['Connexor', 'Syntax'],
+     ['Connexor', 'Phrase'],
+     ['Connexor', 'Sentences']);
 
 # CoreNLP
-push(@layers, ['CoreNLP', 'NamedEntities']);
-push(@layers, ['CoreNLP', 'Sentences']);
-push(@layers, ['CoreNLP', 'Morpho']);
-push(@layers, ['CoreNLP', 'Constituency']);
+push(@layers,
+     ['CoreNLP', 'NamedEntities'],
+     ['CoreNLP', 'Sentences'],
+     ['CoreNLP', 'Morpho'],
+     ['CoreNLP', 'Constituency']);
 
 # CMC
 push(@layers, ['CMC', 'Morpho']);
@@ -414,33 +415,42 @@ if ($base_sentences eq 'dgd#structure') {
 }
 
 # DRuKoLa
-push(@layers, ['DRuKoLa', 'Morpho']);
+push(@layers,
+     ['DRuKoLa', 'Morpho']);
 
 # Glemm
-push(@layers, ['Glemm', 'Morpho']);
+push(@layers,
+     ['Glemm', 'Morpho']);
 
 # HNC
-push(@layers, ['HNC', 'Morpho']);
+push(@layers,
+     ['HNC', 'Morpho']);
 
 # LWC
-push(@layers, ['LWC', 'Dependency']);
+push(@layers,
+     ['LWC', 'Dependency']);
 
 # Malt
-push(@layers, ['Malt', 'Dependency']);
+push(@layers,
+     ['Malt', 'Dependency']);
 
 # Marmot
-push(@layers, ['MarMoT', 'Morpho']);
+push(@layers,
+     ['MarMoT', 'Morpho']);
 
 # Mate
-push(@layers, ['Mate', 'Morpho']);
-push(@layers, ['Mate', 'Dependency']);
+push(@layers,
+     ['Mate', 'Morpho'],
+     ['Mate', 'Dependency']);
 
 # MDParser
-push(@layers, ['MDParser', 'Dependency']);
+push(@layers,
+     ['MDParser', 'Dependency']);
 
 # OpenNLP
-push(@layers, ['OpenNLP', 'Morpho']);
-push(@layers, ['OpenNLP', 'Sentences']);
+push(@layers,
+     ['OpenNLP', 'Morpho'],
+     ['OpenNLP', 'Sentences']);
 
 # Redewiedergabe
 push(@layers, ['RWK', 'Morpho']);
@@ -449,22 +459,26 @@ if ($base_sentences eq 'rwk#structure') {
 };
 
 # Schreibgebrauch
-push(@layers, ['Sgbr', 'Lemma']);
-push(@layers, ['Sgbr', 'Morpho']);
+push(@layers,
+     ['Sgbr', 'Lemma'],
+     ['Sgbr', 'Morpho']);
 
 # Talismane
-push(@layers, ['Talismane', 'Dependency']);
-push(@layers, ['Talismane', 'Morpho']);
+push(@layers,
+     ['Talismane', 'Dependency'],
+     ['Talismane', 'Morpho']);
 
 # TreeTagger
-push(@layers, ['TreeTagger', 'Morpho']);
-push(@layers, ['TreeTagger', 'Sentences']);
+push(@layers,
+     ['TreeTagger', 'Morpho'],
+     ['TreeTagger', 'Sentences']);
 
 # XIP
-push(@layers, ['XIP', 'Morpho']);
-push(@layers, ['XIP', 'Constituency']);
-push(@layers, ['XIP', 'Sentences']);
-push(@layers, ['XIP', 'Dependency']);
+push(@layers,
+     ['XIP', 'Morpho'],
+     ['XIP', 'Constituency'],
+     ['XIP', 'Sentences'],
+     ['XIP', 'Dependency']);
 
 
 # Check filters
@@ -750,6 +764,8 @@ elsif ($cmd eq 'archive') {
 
   # Input is a directory
   if (-d $input[0]) {
+    # TODO:
+    #   Replace with Mojo::File
     my $it = Directory::Iterator->new($input[0]);
     my @dirs;
     my $dir;
