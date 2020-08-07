@@ -15,7 +15,7 @@ use Mojo::DOM;
 use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
 use Exporter 'import';
 
-our @EXPORT_OK = qw(get_file_name_from_glob);
+our @EXPORT_OK = qw(get_file_name get_file_name_from_glob);
 
 
 our $VERSION = '0.41';
@@ -313,6 +313,28 @@ sub get_file_name_from_glob ($) {
   $glob =~ s/\.zip$//;          # Remove file extension
   $glob =~ s/-$//;              # Clean end
   return $glob;
+};
+
+
+# Get file name based on path information
+sub get_file_name ($$) {
+  my $i = shift;
+
+  # Check if the base dir is a directory
+  if (-d $i) {
+
+    # Remove following slashes
+    $i =~ s![^\/]+$!!;
+  };
+  my $file = shift;
+
+  # Remove temp dir fragments
+  $file =~ s!^/?tmp/[^/]+!!;
+  $file =~ s/^?\/?$i//;
+  $file =~ tr/\//-/;
+  $file =~ s{^-+}{};
+  $file =~ s/^.*?-(.+?-.+?-.+?)$/$1/; # shorten
+  return $file;
 };
 
 

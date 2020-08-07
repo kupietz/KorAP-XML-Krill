@@ -12,7 +12,7 @@ use Log::Log4perl;
 use Pod::Usage;
 use Cache::FastMmap;
 use Directory::Iterator;
-use KorAP::XML::Krill qw!get_file_name_from_glob!;
+use KorAP::XML::Krill qw!get_file_name get_file_name_from_glob!;
 use KorAP::XML::Archive;
 use KorAP::XML::Tokenizer;
 use KorAP::XML::Batch::File;
@@ -162,7 +162,7 @@ Version $KorAP::XML::Krill::VERSION - diewald\@ids-mannheim.de - $LAST_CHANGE
 VERSION
 
 # Prototypes
-sub get_file_name($);
+sub get_file_name($$);
 
 # Parse comand
 my $cmd;
@@ -614,24 +614,6 @@ my $batch_file = KorAP::XML::Batch::File->new(
   non_verbal_tokens => $non_verbal_tokens
 );
 
-# Get file name based on path information
-sub get_file_name ($) {
-  my $i = $input[0];
-  if (-d $i) {
-    $i =~ s![^\/]+$!!;
-  };
-  my $file = shift;
-
-  # Remove temp dir fragments
-  $file =~ s!^/?tmp/[^/]+!!;
-  $file =~ s/^?\/?$i//;
-  $file =~ tr/\//-/;
-  $file =~ s{^-+}{};
-  $file =~ s/^.*?-(.+?-.+?-.+?)$/$1/;
-  return $file;
-};
-
-
 # Convert sigle to path construct
 s!^\s*([^_]+?)_([^\.]+?)\.(.+?)\s*$!$1/$2/$3! foreach @sigle;
 
@@ -897,7 +879,7 @@ elsif ($cmd eq 'archive') {
 
       my $filename = catfile(
         $output_dir,
-        get_file_name($dirs[$i]) . '.json' . ($gzip ? '.gz' : '')
+        get_file_name($input[0], $dirs[$i]) . '.json' . ($gzip ? '.gz' : '')
       );
 
       # Get the next fork
@@ -947,6 +929,7 @@ elsif ($cmd eq 'archive') {
       my $filename = catfile(
         $output_dir,
         get_file_name(
+          $input[0],
           catfile($corpus, $doc, $text)
             . '.json' . ($gzip ? '.gz' : '')
           )
