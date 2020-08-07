@@ -11,6 +11,7 @@
         - Optimization by reducing calls to _offset().
         - Introduced add_span() method to MultiTermToken.
         - Removed deprecated 'primary' flag.
+        - Removed deprecated 'pretty' flag.
 
 0.40 2020-03-03
         - Fixed XIP parser.

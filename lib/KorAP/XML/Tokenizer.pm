@@ -608,13 +608,6 @@ sub to_json {
   encode_json($self->to_data($version));
 };
 
-
-sub to_pretty_json {
-  my ($self, $version) = @_;
-  JSON::XS->new->pretty->encode($self->to_data($version));
-};
-
-
 # Remove diacritics from a unicode string
 sub remove_diacritics {
   use utf8;

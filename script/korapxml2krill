@@ -196,7 +196,9 @@ GetOptions(
   'primary|p!'  => sub {
     warn 'Primary flag no longer supported!';
   },
-  'pretty|y'    => \(my $pretty),
+  'pretty|y'    => sub {
+    warn 'Pretty flag no longer supported!';
+  },
   'jobs|j=i'    => \($cfg{jobs}),
   'koral|k=f'    => \($cfg{koral}),
   'to-tar'      => \($cfg{to_tar}),
@@ -502,7 +504,6 @@ my $batch_file = KorAP::XML::Batch::File->new(
   gzip      => $gzip,
   log       => $log,
   koral     => ($cfg{koral} // $KORAL_VERSION),
-  pretty    => $pretty,
   anno      => \@filtered_anno,
   non_word_tokens   => ($cfg{non_word_tokens}   // 0),
   non_verbal_tokens => ($cfg{non_verbal_tokens} // 0)
@@ -1209,12 +1210,6 @@ Defaults to C<false>.
 Define the metadata parser to use. Defaults to C<I5>.
 Metadata parsers can be defined in the C<KorAP::XML::Meta> namespace.
 This is I<experimental>.
-
-
-=item B<--pretty|-y>
-
-Pretty print JSON output. Defaults to C<false>.
-This is I<deprecated>.
 
 
 =item B<--gzip|-z>

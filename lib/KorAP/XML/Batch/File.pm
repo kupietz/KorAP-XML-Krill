@@ -22,7 +22,6 @@ sub new {
     koral           => $param{koral},
     non_word_tokens => $param{non_word_tokens},
     non_verbal_tokens => $param{non_verbal_tokens},
-    pretty          => $param{pretty},
     gzip            => $param{gzip}      // 0
   }, $class;
 };
@@ -73,11 +72,7 @@ sub process {
   };
 
   my $file;
-  my $print_text = (
-    $self->{pretty} ?
-      $tokens->to_pretty_json($self->{koral}) :
-      $tokens->to_json($self->{koral})
-    );
+  my $print_text = $tokens->to_json($self->{koral});
 
   # There is an output file given
   if ($output) {
@@ -199,11 +194,6 @@ The list is empty by default.
 =item log
 
 A L<Mojo::Log> compatible log object.
-
-=item pretty
-
-Pretty print the output JSON.
-Defaults to C<false>.
 
 =item gzip
 

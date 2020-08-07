@@ -105,13 +105,6 @@ is($json->{data}->{tokenSource}, 'corenlp#tokens', 'Title');
 
 like($file, qr/^\{"/, 'No pretty printing');
 
-# Check pretty printing
-$bf->{pretty} = 1;
-ok($bf->process($path => $output), 'Process file');
-ok(-f $output, 'File exists');
-ok($file = Mojo::File->new($output)->slurp, 'Slurp data');
-like($file, qr/^\{[\n\s]+"/, 'No pretty printing');
-
 # Check overwriting
 $bf->{overwrite} = 0;
 
