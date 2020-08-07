@@ -221,6 +221,13 @@ GetOptions(
   }
 );
 
+my %ERROR_HASH = (
+  -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
+  -verbose  => 99,
+  -msg      => $VERSION_MSG,
+  -output   => '-',
+  -exit     => 1
+);
 
 # Load from configuration and fill non-given data
 if ($cfg_file && -e $cfg_file) {
@@ -299,14 +306,6 @@ if ($cmd && $output && (!defined($to_tar)) && (!-e $output || !-d $output)) {
   exit 1;
 };
 
-my %ERROR_HASH = (
-  -sections => 'NAME|SYNOPSIS|ARGUMENTS|OPTIONS',
-  -verbose  => 99,
-  -msg      => $VERSION_MSG,
-  -output   => '-',
-  -exit     => 1
-);
-
 # Input has to be defined
 pod2usage(%ERROR_HASH) unless @input;
 
@@ -314,21 +313,8 @@ pod2usage(%ERROR_HASH) unless @input;
 pod2usage(%ERROR_HASH) if $gzip && !$output;
 
 
-# Auto adjust jobs
-if ($jobs eq '-1') {
-  my $cores = Sys::Info->new->device('CPU')->count;
-  $jobs = ceil(5 * $cores);
-  $log->info("Run using $jobs jobs on $cores cores");
-};
-
-
 # Start serial processing
 if ($cmd && $cmd eq 'serial') {
-
-  if ($output && (!defined($to_tar)) && (!-e $output || !-d $output)) {
-    $log->error("Directory '$output' does not exist.");
-    exit 1;
-  };
 
   # Remove all inputs
   my $remove_next = 0;
@@ -376,6 +362,7 @@ if ($cmd && $cmd eq 'serial') {
 
   exit;
 };
+
 
 my @layers;
 push(@layers, ['Base', 'Sentences']) unless $base_sentences;
@@ -520,8 +507,17 @@ my $batch_file = KorAP::XML::Batch::File->new(
   non_verbal_tokens => ($cfg{non_verbal_tokens} // 0)
 );
 
+
+# Auto adjust jobs
+if ($jobs eq '-1') {
+  my $cores = Sys::Info->new->device('CPU')->count;
+  $jobs = ceil(5 * $cores);
+  $log->info("Run using $jobs jobs on $cores cores");
+};
+
+
 # Glob and prefix files
-if (@input) {
+if (@input > 0) {
 
   my @new_input = ();
 
@@ -561,7 +557,7 @@ unless ($cmd) {
   };
 
   # Create and parse new document
-  $input =~ s{([^/])$}{$1/};
+  $input =~ s{([^/])$}{$1/}o;
 
   # Process file
   $batch_file->process($input, $output);
@@ -860,7 +856,6 @@ elsif ($cmd eq 'archive') {
               $filename
             ]
           );
-          #$pool->finish(0, ["Processed " . $filename, $temp]);
         }
         else {
           # Delete temporary file
