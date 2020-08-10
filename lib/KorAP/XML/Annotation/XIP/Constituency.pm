@@ -55,10 +55,6 @@ sub parse {
 
         # It's definately not a root
         $xip_const_noroot->insert($target);
-
-        # if ($target =~ /^s2_n(?:36|58|59|60|40)$/) {
-        #   warn 'Probably not a root ' . $target . ' but ' . $span->id;
-        # };
       };
     }
   ) or return;
@@ -115,14 +111,9 @@ sub parse {
         $target = $1;
       };
 
-      # if ($span->id =~ /^s2_n(?:36|58|59|60|40)$/ && $target =~ /^s2_n(?:36|58|59|60|40)$/) {
-      # warn 'B: ' . $span->id . ' points to ' . $target;
-      # };
-
       next unless $target;
 
       my $subspan = delete $xip_const{$target};
-      # warn "A-Forgot about $target: " . ($subspan ? 'yes' : 'no');
 
       next unless $subspan;
 

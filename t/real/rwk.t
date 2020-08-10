@@ -218,9 +218,10 @@ $output = decode_json( $tokens->to_json );
 
 $first = $output->{data}->{stream}->[0];
 
-is('-:base/paragraphs$<i>2',$first->[0]);
+is('-:base/paragraphs$<i>1',$first->[0]);
 is('-:base/sentences$<i>21',$first->[1]);
 is('-:tokens$<i>522',$first->[2]);
+
 is('<>:base/s:s$<b>64<i>0<i>139<i>23<b>1',$first->[3]);
 is('<>:base/s:p$<b>64<i>0<i>2631<i>449<b>1',$first->[4]);
 is('<>:base/s:t$<b>64<i>0<i>3062<i>522<b>0',$first->[5]);
@@ -303,7 +304,7 @@ $output = decode_json( $tokens->to_json );
 
 $first = $output->{data}->{stream}->[0];
 
-is('-:base/paragraphs$<i>2',$first->[0]);
+is('-:base/paragraphs$<i>1',$first->[0]);
 is('-:base/sentences$<i>21',$first->[1]);
 is('-:tokens$<i>522',$first->[2]);
 is('<>:base/s:s$<b>64<i>0<i>139<i>23<b>1',$first->[3]);
@@ -375,7 +376,7 @@ $output = decode_json( $tokens->to_json );
 
 $first = $output->{data}->{stream}->[0];
 
-is('-:base/paragraphs$<i>2',$first->[0]);
+is('-:base/paragraphs$<i>1',$first->[0]);
 is('-:base/sentences$<i>33',$first->[1]);
 is('-:tokens$<i>511',$first->[2]);
 is('<>:base/s:s$<b>64<i>0<i>6<i>2<b>1',$first->[3]);
@@ -423,7 +424,7 @@ $output = decode_json( $tokens->to_json );
 
 $first = $output->{data}->{stream}->[0];
 
-is('-:base/paragraphs$<i>2',$first->[0]);
+is('-:base/paragraphs$<i>1',$first->[0]);
 is('-:base/sentences$<i>68',$first->[1]);
 
 done_testing;

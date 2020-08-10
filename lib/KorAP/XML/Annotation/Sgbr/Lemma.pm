@@ -28,9 +28,6 @@ sub parse {
         if (($f->{-name} eq 'lemma')
               && ($found = $f->{'#text'})) {
 
-          # $found = b($found)->decode('latin-1')->encode->to_string;
-          # warn $found;
-
           unless ($first++) {
             $mtt->add_by_term('sgbr/l:' . $found);
           }

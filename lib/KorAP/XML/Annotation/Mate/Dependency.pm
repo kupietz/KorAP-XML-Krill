@@ -1,8 +1,6 @@
 package KorAP::XML::Annotation::Mate::Dependency;
 use KorAP::XML::Annotation::Base;
-use strict;
-use warnings;
-our $NODE_LABEL = '&&&';
+# our $NODE_LABEL = '&&&';
 
 sub parse {
   my $self = shift;

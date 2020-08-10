@@ -24,7 +24,7 @@ sub parse {
 
 
 sub layer_info {
-    ['corenlp/s=spans'];
+  ['corenlp/s=spans'];
 };
 
 1;

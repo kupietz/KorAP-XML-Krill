@@ -1,7 +1,5 @@
 package KorAP::XML::Annotation::MDParser::Dependency;
 use KorAP::XML::Annotation::Base;
-use strict;
-use warnings;
 
 sub parse {
   my $self = shift;

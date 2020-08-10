@@ -23,7 +23,7 @@ sub parse {
 };
 
 sub layer_info {
-    ['opennlp/s=spans'];
+  ['opennlp/s=spans'];
 };
 
 1;

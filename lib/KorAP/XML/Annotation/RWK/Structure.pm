@@ -3,13 +3,8 @@ use KorAP::XML::Annotation::Base;
 
 sub parse {
   my $self = shift;
+  my (@sentences, @paragraphs);
 
-  my %milestones = (
-    s => [],
-    p => [],
-  );
-
-  my ($p_start, $o_start) = (0,0);
   my ($last_p, $last_o) = (0,0);
 
   $$self->add_spandata(
@@ -34,10 +29,10 @@ sub parse {
 
       # Check only for anchors
       if ($name eq 's-milestone') {
-        push @{$milestones{s}}, [ $span->get_p_start, $span->get_o_start ];
+        push @sentences, [ $span->get_p_start, $span->get_o_start ];
       }
       elsif ($name eq 'p-milestone') {
-        push @{$milestones{p}}, [ $span->get_p_start, $span->get_o_start ];
+        push @paragraphs, [ $span->get_p_start, $span->get_o_start ];
       }
       else {
         $last_p = $span->get_p_start;
@@ -49,19 +44,24 @@ sub parse {
   my ($sentences, $paragraphs) = (0, 0);
 
   # Add final position
-  push @{$milestones{s}}, [$last_p, $last_o];
-  push @{$milestones{p}}, [$last_p, $last_o];
+  push @sentences, [$last_p, $last_o];
+  push @paragraphs, [$last_p, $last_o];
 
   my $stream = $$self->stream;
-  foreach my $type ('s', 'p') {
+  my %hash = (
+    s => \@sentences,
+    p => \@paragraphs
+  );
+  while (my ($type, $list) = each %hash) {
+    my ($p_start, $o_start) = (0,0);
 
     # Sort and unique milestones
-    @{$milestones{$type}} = sort {
+    @$list = sort {
       $a->[0] <=> $b->[0]
-    } @{$milestones{$type}};
+    } @$list;
 
     # Iterate overs milestones
-    foreach (@{$milestones{$type}}) {
+    foreach (@$list) {
 
       if (($_->[0] == $p_start) || ($_->[1] == $o_start)) {
         next;
@@ -77,7 +77,7 @@ sub parse {
         };
 
         $mtt = $stream->pos($p_start);
-      }
+      };
 
       # Add the base sentence
       my $mt = $mtt->add_by_term('<>:base/s:' . $type);
@@ -107,6 +107,7 @@ sub parse {
     };
   };
 
+  # Set meta information about sentence count
   return 1;
 };
 

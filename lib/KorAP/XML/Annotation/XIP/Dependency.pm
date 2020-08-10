@@ -47,7 +47,6 @@ sub parse {
 
         my $rel_token = $tokens->token($from, $to) or next;
 
-        # die $token->pos . ' -' . $label . '-> ' . $rel_token->pos;
         $mt = $mtt->add_by_term('>:xip/d:' . $label);
         $mt->set_payload('<i>' . $rel_token->get_pos);
       );
@@ -56,7 +55,6 @@ sub parse {
         ->add_by_term('<:xip/d:' . $label);
       $mt->set_payload('<i>' . $token->get_pos);
 
-    #	print $label,"\n";
     }
   ) or return;
 

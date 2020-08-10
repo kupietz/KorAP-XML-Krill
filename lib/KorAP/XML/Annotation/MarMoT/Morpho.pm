@@ -1,6 +1,5 @@
 package KorAP::XML::Annotation::MarMoT::Morpho;
 use KorAP::XML::Annotation::Base;
-use Data::Dumper;
 
 sub parse {
   my $self = shift;

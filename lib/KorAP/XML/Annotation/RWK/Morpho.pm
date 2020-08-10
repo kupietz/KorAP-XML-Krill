@@ -39,7 +39,8 @@ sub parse {
         }
 
         # ana tag
-        elsif (($found = $f->{'#text'}) && $name =~ m/^(?:bc|(?:sub)?type|usage|person|pos|case|number|gender|tense|mood|degree)$/o) {
+        elsif (($found = $f->{'#text'}) &&
+                 $name =~ m/^(?:bc|(?:sub)?type|usage|person|pos|case|number|gender|tense|mood|degree)$/o) {
           $mtt->add_by_term('rwk/m:' . $name . ':' . $found);
         };
       };

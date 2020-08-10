@@ -104,7 +104,9 @@ sub parse {
         foreach (@$attrs) {
 
           # Add attributes
-          $mt = $mtt->add_by_term('@:dereko/s:' . $_->{'-name'} . ($_->{'#text'} ? ':' . $_->{'#text'} : ''));
+          $mt = $mtt->add_by_term(
+            '@:dereko/s:' . $_->{'-name'} .
+              ($_->{'#text'} ? ':' . $_->{'#text'} : ''));
           $mt->set_p_start($p_start);
           $mt->set_pti(17);
           $mt->set_payload($pl);
@@ -114,11 +116,12 @@ sub parse {
   ) or return;
 
   if ($as_base) {
+    my $s = $$self->stream;
     if (index($as_base, 'sentences') >= 0) {
-      $$self->stream->add_meta('base/sentences', '<i>' . $sentences);
+      $s->add_meta('base/sentences', '<i>' . $sentences);
     };
     if (index($as_base, 'paragraphs') >= 0) {
-      $$self->stream->add_meta('base/paragraphs', '<i>' . $paragraphs);
+      $s->add_meta('base/paragraphs', '<i>' . $paragraphs);
     };
   };
 
