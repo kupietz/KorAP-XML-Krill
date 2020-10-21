@@ -3,7 +3,6 @@ use warnings;
 use Test::More;
 use Data::Dumper;
 use JSON::XS;
-use Log::Log4perl;
 use utf8;
 
 if ($ENV{SKIP_REAL}) {
@@ -13,15 +12,6 @@ if ($ENV{SKIP_REAL}) {
 use Benchmark qw/:hireswallclock/;
 
 my $t = Benchmark->new;
-
-# Initialize log4perl object
-#Log::Log4perl->init({
-#  'log4perl.rootLogger' => 'TRACE, STDERR',
-#  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
-#  'log4perl.appender.STDERR.layout' => 'PatternLayout',
-#  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
-#});
-
 
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';

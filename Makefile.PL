@@ -14,7 +14,7 @@ WriteMakefile(
     'Mojolicious'     => 7.23,
     'Packed::Array'   => 0.01,
     'Test::Output'    => 0,
-    'Log::Log4perl'   => 1.42,
+    'Log::Any'        => 1.708,
     'JSON::XS'        => 3.01,
     'Set::Scalar'     => 1.26,
     'XML::Fast'       => 0.11,

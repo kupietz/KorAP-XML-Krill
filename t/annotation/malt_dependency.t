@@ -3,15 +3,6 @@ use strict;
 use warnings;
 use KorAP::XML::Annotation::Malt::Dependency;
 use utf8;
-use Log::Log4perl;
-
-Log::Log4perl->init({
-  'log4perl.rootLogger' => 'ERROR, STDERR',
-  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
-  'log4perl.appender.STDERR.layout' => 'PatternLayout',
-  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
-});
-
 use Test::More;
 use Scalar::Util qw/weaken/;
 use Data::Dumper;

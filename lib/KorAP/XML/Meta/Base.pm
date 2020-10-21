@@ -1,5 +1,6 @@
 package KorAP::XML::Meta::Base;
-use Mojo::Log;
+# use Mojo::Log;
+use Log::Any qw($log);
 use strict;
 use warnings;
 
@@ -20,7 +21,7 @@ sub import {
 
 sub log {
   return $_[0]->{_log} if $_[0]->{_log};
-  $_[0]->{_log} = Mojo::Log->new;
+  $_[0]->{_log} = $log;
 };
 
 sub corpus_sigle {

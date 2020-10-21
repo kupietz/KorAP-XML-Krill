@@ -1,4 +1,4 @@
-#use strict;
+use strict;
 use warnings;
 use Test::More;
 use Data::Dumper;
@@ -292,14 +292,6 @@ $tokens = KorAP::XML::Tokenizer->new(
   name => 'tokens'
 );
 ok($tokens, 'Token Object is fine');
-
-# Initialize log4perl object
-Log::Log4perl->init({
-  'log4perl.rootLogger' => 'DEBUG, STDERR',
-  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
-  'log4perl.appender.STDERR.layout' => 'PatternLayout',
-  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
-});
 
 ok(!$tokens->parse, 'Token parsing is fine');
 

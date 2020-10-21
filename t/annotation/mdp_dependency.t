@@ -2,16 +2,7 @@
 use strict;
 use warnings;
 use utf8;
-use Log::Log4perl;
 use Data::Dumper;
-
-Log::Log4perl->init({
-  'log4perl.rootLogger' => 'ERROR, STDERR',
-  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
-  'log4perl.appender.STDERR.layout' => 'PatternLayout',
-  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
-});
-
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
 use Test::More;

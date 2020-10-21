@@ -9,7 +9,8 @@ use Getopt::Long qw/GetOptions :config no_auto_abbrev/;
 use Benchmark qw/:hireswallclock/;
 use IO::Compress::Gzip qw/$GzipError/;
 use POSIX qw/ceil/;
-use Log::Log4perl;
+use Log::Any qw($log);
+use Log::Any::Adapter;
 use Pod::Usage;
 use Cache::FastMmap;
 use Directory::Iterator;
@@ -152,7 +153,7 @@ use Fcntl qw(:flock SEEK_END);
 # - Added support for Redewiedergabe-Korpus morphology
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2020/08/07';
+our $LAST_CHANGE = '2020/10/21';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -293,15 +294,9 @@ s!^\s*([^_]+?)_([^\.]+?)\.(.+?)\s*$!$1/$2/$3! foreach @sigle;
 my %skip;
 $skip{lc($_)} = 1 foreach @skip;
 
-# Initialize log4perl object
-Log::Log4perl->init({
-  'log4perl.rootLogger' => uc($cfg{log} // 'ERROR') . ', STDERR',
-  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
-  'log4perl.appender.STDERR.layout' => 'PatternLayout',
-  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
-});
-
-my $log = Log::Log4perl->get_logger('main');
+Log::Any::Adapter->set(
+  'Stderr', log_level => uc($cfg{log} // 'ERROR')
+);
 
 if ($cmd && $output && (!defined($to_tar)) && (!-e $output || !-d $output)) {
   $log->error("Directory '$output' does not exist.");
@@ -1321,7 +1316,7 @@ On the document level, the postfix wildcard C<*> is supported.
 
 =item B<--log|-l>
 
-The L<Log4perl> log level, defaults to C<ERROR>.
+The L<Log::Any> log level, defaults to C<ERROR>.
 
 
 =item B<--help|-h>

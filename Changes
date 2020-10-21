@@ -1,4 +1,7 @@
-0.41 2020-10-30
+0.42 2020-11-03
+        - Replaced Log4perl with Log::Any.
+
+0.41 2020-08-10
         - Added support for RWK annotations.
         - Improved DGD support.
         - Fixed bug in RWK support that broke on

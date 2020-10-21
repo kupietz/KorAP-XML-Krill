@@ -6,9 +6,10 @@ use KorAP::XML::Tokenizer::Token;
 use File::Spec::Functions qw/catdir catfile/;
 use XML::Fast;
 use Try::Tiny;
+use Log::Any qw($log);
 
 has 'log' => sub {
-  Log::Log4perl->get_logger(__PACKAGE__)
+  $log;
 };
 
 sub parse {
@@ -50,7 +51,7 @@ sub parse {
     };
     $spans = xml2hash($file, text => '#text', attr => '-')->{layer}->{spanList};
   } catch  {
-    $self->log->warn('Span error in ' . $path . ($_ ? ': ' . $_ : ''));
+    $log->warn('Span error in ' . $path . ($_ ? ': ' . $_ : ''));
     $error = 1;
   };
 

@@ -3,7 +3,6 @@ use warnings;
 use Test::More;
 use Data::Dumper;
 use JSON::XS;
-use Log::Log4perl;
 
 if ($ENV{SKIP_REAL}) {
   plan skip_all => 'Skip real tests';
@@ -14,14 +13,6 @@ use lib 'lib', '../lib';
 
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
-
-# Initialize log4perl object
-Log::Log4perl->init({
-  'log4perl.rootLogger' => 'ERROR, STDERR',
-  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
-  'log4perl.appender.STDERR.layout' => 'PatternLayout',
-  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
-});
 
 use_ok('KorAP::XML::Krill');
 
@@ -200,16 +191,6 @@ $output = decode_json( $tokens->to_json );
 
 is(substr($output->{data}->{text}, 0, 100), 'Er hatte den Kopf weit nach rückwärts gebeugt, seine langen schwarzen Haare lockten sich über den li', 'Primary Data');
 
-use Log::Log4perl;
-
-Log::Log4perl->init({
-  'log4perl.rootLogger' => 'WARN, STDERR',
-  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
-  'log4perl.appender.STDERR.layout' => 'PatternLayout',
-  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
-});
-
-
 # Add annotations
 ok($tokens->add('RWK', 'Morpho'));
 ok($tokens->add('RWK', 'Structure'));
@@ -285,16 +266,6 @@ ok($tokens->parse, 'Token parsing is fine');
 $output = decode_json( $tokens->to_json );
 
 is(substr($output->{data}->{text}, 0, 100), 'Er hatte den Kopf weit nach rückwärts gebeugt, seine langen schwarzen Haare lockten sich über den li', 'Primary Data');
-
-use Log::Log4perl;
-
-Log::Log4perl->init({
-  'log4perl.rootLogger' => 'WARN, STDERR',
-  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
-  'log4perl.appender.STDERR.layout' => 'PatternLayout',
-  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
-});
-
 
 # Add annotations
 ok($tokens->add('RWK', 'Morpho'));

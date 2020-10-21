@@ -8,8 +8,7 @@ use XML::Fast;
 use Try::Tiny;
 use KorAP::XML::Document::Primary;
 use KorAP::XML::Tokenizer;
-use Log::Log4perl;
-use KorAP::XML::Log;
+use Log::Any qw($log);
 use Cache::FastMmap;
 use Mojo::DOM;
 use File::Spec::Functions qw/catdir catfile catpath splitdir splitpath rel2abs/;
@@ -17,8 +16,7 @@ use Exporter 'import';
 
 our @EXPORT_OK = qw(get_file_name get_file_name_from_glob);
 
-
-our $VERSION = '0.41';
+our $VERSION = '0.42';
 
 has 'path';
 has [qw/text_sigle doc_sigle corpus_sigle/];
@@ -26,10 +24,6 @@ has 'meta_type' => 'I5';
 has 'cache';
 
 has log => sub {
-  if(Log::Log4perl->initialized()) {
-    state $log = Log::Log4perl->get_logger(__PACKAGE__);
-  };
-  state $log = KorAP::XML::Log->new;
   return $log;
 };
 
@@ -64,7 +58,7 @@ sub parse {
 
   # No primary data found
   unless (-e $data_xml) {
-    $self->log->warn($unable . ' - no data.xml found');
+    $log->warn($unable . ' - no data.xml found');
     $error = 1;
   }
 
@@ -80,14 +74,14 @@ sub parse {
       $rt = xml2hash($file, text => '#text', attr => '-')->{raw_text};
 
     } catch  {
-      $self->log->warn($unable);
+      $log->warn($unable);
       $error = 1;
     };
   };
 
   return if $error;
 
-  $self->log->debug('Parse document ' . $self->path);
+  $log->debug('Parse document ' . $self->path);
 
   # Get document id and corpus id
   if ($rt && $rt->{'-docid'}) {
@@ -97,12 +91,12 @@ sub parse {
       $self->corpus_sigle($1);
     }
     else {
-      $self->log->warn($unable . ': ID not parseable: ' . $rt->{'-docid'});
+      $log->warn($unable . ': ID not parseable: ' . $rt->{'-docid'});
       return;
     };
   }
   else {
-    $self->log->warn($unable . ': No raw_text found or no ID');
+    $log->warn($unable . ': No raw_text found or no ID');
     return;
   };
 
@@ -116,7 +110,7 @@ sub parse {
   my $pd = html_unescape substr($file, $start, $end - $start);
 
   unless ($pd) {
-    $self->log->warn($unable . ': No primary data found');
+    $log->warn($unable . ': No primary data found');
     return;
   };
 
@@ -142,7 +136,7 @@ sub parse {
 
   if ($meta_class->can('new') || eval("require $meta_class; 1;")) {
     $meta = $meta_class->new(
-      log          => $self->log,
+      log          => $log,
       corpus_sigle => $self->corpus_sigle,
       doc_sigle    => $self->doc_sigle,
       text_sigle   => $self->text_sigle,
@@ -154,7 +148,7 @@ sub parse {
   };
 
   unless ($meta) {
-    $self->log->warn(
+    $log->warn(
       "Metadata object for $meta_data_type not initializable"
     );
   };
@@ -205,7 +199,7 @@ sub tokenize {
 
   # Parse tokens
   unless ($tokens->parse) {
-    $self->log->warn(
+    $log->warn(
       'Unable to tokenize ' . $self->path .
         ' with ' . $token_foundry . '#'
         . $token_layer
@@ -224,7 +218,7 @@ sub tokenize {
 sub annotate {
   my $self = shift;
   unless ($self->{tokenizer}) {
-    $self->log->warn('No tokenizer defined')
+    $log->warn('No tokenizer defined')
   }
   else {
     $self->{tokenizer}->add(@_);
@@ -294,7 +288,7 @@ sub _k {
 sub to_json {
   my $self = shift;
   unless ($self->{tokenizer}) {
-    $self->log->warn('No tokenizer defined');
+    $log->warn('No tokenizer defined');
     return;
   };
 
@@ -372,7 +366,7 @@ Parse the primary and meta data of a KorAP-XML document.
 
 =head2 log
 
-L<Log::Log4perl> object for logging.
+L<Log::Any> object for logging.
 
 =head2 path
 

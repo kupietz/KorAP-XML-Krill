@@ -15,7 +15,7 @@ use KorAP::XML::Index::MultiTermTokenStream;
 use Unicode::Normalize qw/getCombinClass normalize/;
 use List::MoreUtils 'uniq';
 use JSON::XS;
-use Log::Log4perl;
+use Log::Any qw($log);
 
 # TODO 1:
 # Bei den Autoren im Index darauf achten,
@@ -40,11 +40,6 @@ has non_verbal_tokens => 0;
 has 'error';
 
 has log => sub {
-  if (Log::Log4perl->initialized()) {
-    state $log = Log::Log4perl->get_logger(__PACKAGE__);
-    return $log;
-  };
-  state $log = KorAP::XML::Log->new;
   return $log;
 };
 
@@ -64,7 +59,7 @@ sub parse {
 
   unless (-e $path) {
     $self->error('Unable to load base tokenization: ' . $path);
-    $self->log->warn($self->error);
+    $log->warn($self->error);
     return;
   };
 
@@ -80,7 +75,7 @@ sub parse {
 
   my $old = 0;
 
-  $self->log->trace('Tokenize data ' . $self->foundry . ':' . $self->layer);
+  $log->trace('Tokenize data ' . $self->foundry . ':' . $self->layer);
 
   # TODO: Reuse the following code from Spans.pm and Tokens.pm
   my ($tokens, $error);
@@ -98,7 +93,7 @@ sub parse {
   } catch {
 
     $self->error('Token error in ' . $path . ($_ ? ': ' . $_ : ''));
-    $self->log->warn($self->error);
+    $log->warn($self->error);
   };
 
   return if $error;
@@ -131,7 +126,7 @@ sub parse {
     # Token is undefined
     unless (defined $token) {
       $self->error("Tokenization with failing offsets in $path");
-      $self->log->warn("Unable to find substring [$from-$to] in $path");
+      $log->warn("Unable to find substring [$from-$to] in $path");
       return;
     };
 
@@ -225,7 +220,7 @@ sub parse {
   $self->should($should);
   $self->have($have);
 
-  $self->log->debug('With a non-word quota of ' . _perc($self->should, $self->should - $self->have) . ' %');
+  $log->debug('With a non-word quota of ' . _perc($self->should, $self->should - $self->have) . ' %');
 
   return $self;
 };
@@ -298,13 +293,13 @@ sub add_spandata {
   my %param = @_;
 
   unless ($self->stream) {
-    $self->log->warn(
+    $log->warn(
       'No token data available'
     );
     return;
   };
 
-  $self->log->trace(
+  $log->trace(
     ($param{skip} ? 'Skip' : 'Add').' span data '.$param{foundry}.':'.$param{layer}
   );
 
@@ -325,12 +320,12 @@ sub add_spandata {
 
   my $spanarray = $spans->parse or return;
 
-  if ($self->log->is_debug) {
+  if ($log->is_debug) {
     if ($spans->should == $spans->have) {
-      $self->log->trace('With perfect alignment!');
+      $log->trace('With perfect alignment!');
     }
     else {
-      $self->log->debug('With an alignment quota of ' . _perc($spans->should, $spans->have) . ' %');
+      $log->debug('With an alignment quota of ' . _perc($spans->should, $spans->have) . ' %');
     };
   };
 
@@ -349,13 +344,13 @@ sub add_tokendata {
   my %param = @_;
 
   unless ($self->stream) {
-    $self->log->warn(
+    $log->warn(
       'No token data available'
     );
     return;
   };
 
-  $self->log->trace(
+  $log->trace(
     ($param{skip} ? 'Skip' : 'Add').' token data '.$param{foundry}.':'.$param{layer}
   );
   return if $param{skip};
@@ -376,15 +371,15 @@ sub add_tokendata {
 
   # Output some debug information
   # on token alignment
-  if ($self->log->is_debug) {
+  if ($log->is_debug) {
     if ($tokens->should == $tokens->have) {
-      $self->log->trace('With perfect alignment!');
+      $log->trace('With perfect alignment!');
     }
     else {
       my $perc = _perc(
         $tokens->should, $tokens->have, $self->should, $self->should - $self->have
       );
-      $self->log->debug('With an alignment quota of ' . $perc);
+      $log->debug('With an alignment quota of ' . $perc);
     };
   };
 
@@ -408,7 +403,7 @@ sub add {
   my $layer = shift;
 
   unless ($foundry && $layer) {
-    $self->log->warn('Unable to add specific module - not enough information given!');
+    $log->warn('Unable to add specific module - not enough information given!');
     return;
   };
 
@@ -427,11 +422,11 @@ sub add {
       return $retval;
     }
     else {
-      $self->log->debug('Unable to parse '.$mod);
+      $log->debug('Unable to parse '.$mod);
     };
   }
   else {
-    $self->log->warn('Unable to load '.$mod . '(' . $@ . ')');
+    $log->warn('Unable to load '.$mod . '(' . $@ . ')');
   };
 
   return;

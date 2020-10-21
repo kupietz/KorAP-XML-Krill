@@ -3,7 +3,6 @@ use warnings;
 use Test::More;
 use Data::Dumper;
 use JSON::XS;
-use Log::Log4perl;
 
 if ($ENV{SKIP_REAL}) {
   plan skip_all => 'Skip real tests';
@@ -14,14 +13,6 @@ use lib 'lib', '../lib';
 
 use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
-
-# Initialize log4perl object
-Log::Log4perl->init({
-  'log4perl.rootLogger' => 'ERROR, STDERR',
-  'log4perl.appender.STDERR' => 'Log::Log4perl::Appender::ScreenColoredLevels',
-  'log4perl.appender.STDERR.layout' => 'PatternLayout',
-  'log4perl.appender.STDERR.layout.ConversionPattern' => '[%r] %F %L %c - %m%n'
-});
 
 use_ok('KorAP::XML::Krill');
 

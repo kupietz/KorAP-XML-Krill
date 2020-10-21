@@ -1,6 +1,7 @@
 package KorAP::XML::Batch::File;
 use KorAP::XML::Krill;
-use Mojo::Log;
+# use Mojo::Log;
+use Log::Any qw($log);
 use IO::Compress::Gzip;
 use IO::File;
 use strict;
@@ -18,7 +19,7 @@ sub new {
     foundry         => $param{foundry}   || 'Base',
     layer           => $param{layer}     || 'Tokens',
     anno            => $param{anno}      || [[]],
-    log             => $param{log}       || Mojo::Log->new(level => 'fatal'),
+    log             => $param{log}       || $log,
     koral           => $param{koral},
     non_word_tokens => $param{non_word_tokens},
     non_verbal_tokens => $param{non_verbal_tokens},
@@ -193,7 +194,7 @@ The list is empty by default.
 
 =item log
 
-A L<Mojo::Log> compatible log object.
+A L<Log::Any> compatible log object.
 
 =item gzip
 

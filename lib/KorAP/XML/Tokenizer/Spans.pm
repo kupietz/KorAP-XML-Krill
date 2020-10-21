@@ -1,7 +1,6 @@
 package KorAP::XML::Tokenizer::Spans;
 use strict;
 use warnings;
-use KorAP::XML::Log;
 use Data::Dumper;
 use Mojo::Base 'KorAP::XML::Tokenizer::Units';
 use Mojo::File;
@@ -9,15 +8,12 @@ use KorAP::XML::Tokenizer::Span;
 use Mojo::ByteStream 'b';
 use XML::Fast;
 use Try::Tiny;
+use Log::Any qw($log);
 
 has 'range';
 
 has 'log' => sub {
-  if(Log::Log4perl->initialized()) {
-    state $log = Log::Log4perl->get_logger(__PACKAGE__);
-  };
-  state $log = KorAP::XML::Log->new;
-  return $log;
+  $log;
 };
 
 
