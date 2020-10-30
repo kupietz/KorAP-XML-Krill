@@ -35,28 +35,24 @@ sub parse {
         if ($_->{-type} && $_->{-type} eq 'unary') {
           $mt = $mtt->add_by_term('>:xip/d:' . $label);
           $mt->set_payload('<i>' . $token->get_pos);
+          $mt = $mtt->add_by_term('<:xip/d:' . $label);
+          $mt->set_payload('<i>' . $token->get_pos);
+        }
+        else {
 
+          my $from = $_->{span}->{-from};
+          my $to   = $_->{span}->{-to};
+
+          my $rel_token = $tokens->token($from, $to) or next;
+          $mt = $mtt->add_by_term('>:xip/d:' . $label);
+          $mt->set_payload('<i>' . $rel_token->get_pos);
+
+          $mt = $stream->pos($rel_token->get_pos)
+            ->add_by_term('<:xip/d:' . $label);
+          $mt->set_payload('<i>' . $token->get_pos);
         };
-        $mt = $mtt->add_by_term('<:xip/d:' . $label);
-        $mt->set_payload('<i>' . $token->get_pos);
-      }
-      else {
-
-        my $from = $_->{span}->{-from};
-        my $to   = $_->{span}->{-to};
-
-        my $rel_token = $tokens->token($from, $to) or next;
-
-        $mt = $mtt->add_by_term('>:xip/d:' . $label);
-        $mt->set_payload('<i>' . $rel_token->get_pos);
-      );
-
-      $mt = $stream->pos($rel_token->get_pos)
-        ->add_by_term('<:xip/d:' . $label);
-      $mt->set_payload('<i>' . $token->get_pos);
-
-    }
-  ) or return;
+      };
+    }) or return;
 
   return 1;
 };
