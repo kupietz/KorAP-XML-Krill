@@ -28,6 +28,7 @@ The preferred way to install L<KorAP::XML::Krill> is to use L<cpanm|App::cpanmin
 In case everything went well, the C<korapxml2krill> tool will
 be available on your command line immediately.
 Minimum requirement for L<KorAP::XML::Krill> is Perl 5.16.
+Optional support for L<Sys::Info> to calculate available cores.
 In addition to work with zip archives, the C<unzip> tool needs to be present.
 
 =head1 ARGUMENTS
@@ -174,13 +175,6 @@ e.g. C<Mate> or C<Mate#Morpho>.
 Can be set multiple times.
 
 
-=item B<--primary|-p>
-
-Output primary data or not. Defaults to C<true>.
-Can be flagged using C<--no-primary> as well.
-This is I<deprecated>.
-
-
 =item B<--non-word-tokens|-nwt>
 
 Tokenize non-word tokens like word tokens (defined as matching
@@ -207,7 +201,8 @@ If C<sequential-extraction> is not set to false, this will
 also apply to extraction.
 
 Pass -1, and the value will be set automatically to 5
-times the number of available cores.
+times the number of available cores, in case L<Sys::Info>
+is available.
 This is I<experimental>.
 
 
@@ -236,12 +231,6 @@ Defaults to C<false>.
 Define the metadata parser to use. Defaults to C<I5>.
 Metadata parsers can be defined in the C<KorAP::XML::Meta> namespace.
 This is I<experimental>.
-
-
-=item B<--pretty|-y>
-
-Pretty print JSON output. Defaults to C<false>.
-This is I<deprecated>.
 
 
 =item B<--gzip|-z>
@@ -406,6 +395,10 @@ L<Krill|https://github.com/KorAP/Krill>.
   OpenNLP
     #Morpho
     #Sentences
+
+  RWK
+    #Morpho
+    #Structure
 
   Sgbr
     #Lemma
