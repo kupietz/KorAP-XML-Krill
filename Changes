@@ -1,4 +1,4 @@
-0.41 2020-08-10
+0.41 2020-10-30
         - Added support for RWK annotations.
         - Improved DGD support.
         - Fixed bug in RWK support that broke on
@@ -13,6 +13,7 @@
         - Removed deprecated 'primary' flag.
         - Removed deprecated 'pretty' flag.
         - Fix RWK paragraph handling.
+        - Updated 'Clone' dependency in Makefile.
 
 0.40 2020-03-03
         - Fixed XIP parser.
