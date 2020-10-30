@@ -2,6 +2,7 @@
 use strict;
 use warnings;
 use utf8;
+use KorAP::XML::Annotation::Base::Paragraphs;
 use Test::More;
 use lib 't/annotation';
 use TestInit;

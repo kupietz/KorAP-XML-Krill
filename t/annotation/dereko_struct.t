@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use utf8;
 use Test::More;
+use KorAP::XML::Annotation::DeReKo::Structure;
 use lib 't/annotation';
 use TestInit;
 use Scalar::Util qw/weaken/;

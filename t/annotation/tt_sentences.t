@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use utf8;
 use Test::More;
+use KorAP::XML::Annotation::TreeTagger::Sentences;
 use Scalar::Util qw/weaken/;
 use Data::Dumper;
 use lib 't/annotation';

@@ -2,6 +2,7 @@
 use strict;
 use warnings;
 use utf8;
+use KorAP::XML::Annotation::Connexor::Syntax;
 use Test::More;
 use Scalar::Util qw/weaken/;
 use Data::Dumper;

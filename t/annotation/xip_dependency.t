@@ -2,6 +2,7 @@
 use strict;
 use warnings;
 use utf8;
+use KorAP::XML::Annotation::XIP::Dependency;
 use Test::More skip_all => 'Not yet implemented';
 use Scalar::Util qw/weaken/;
 use Data::Dumper;

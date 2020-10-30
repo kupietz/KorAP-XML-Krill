@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
+use KorAP::XML::Annotation::Malt::Dependency;
 use utf8;
 use Log::Log4perl;
 
