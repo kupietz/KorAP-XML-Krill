@@ -55,5 +55,20 @@ WriteMakefile(
       't/real/*.t ' .
       't/script/*.t '
 	  },
-  EXE_FILES => ['script/korapxml2krill']
+  EXE_FILES => ['script/korapxml2krill'],
+  META_MERGE   => {
+    'meta-spec' => { version => 2 },
+    requires  => { perl => '5.010001' },
+    resources => {
+      license     => 'https://opensource.org/licenses/BSD-2-Clause',
+      repository  => {
+        type => 'git',
+        url => 'https://github.com/KorAP/KorAP-XML-Krill.git',
+        web => 'https://github.com/KorAP/KorAP-XML-Krill',
+      },
+      bugtracker => {
+        web => 'https://github.com/KorAP/KorAP-XML-Krill/issues'
+      }
+    }
+  }
 );

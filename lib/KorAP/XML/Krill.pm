@@ -413,8 +413,8 @@ Accept the tokenization based on a given foundry and a given layer.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2020, L<IDS Mannheim|https://www.ids-mannheim.de/>
-Author: L<Nils Diewald|https://nils-diewald.de/>
+Copyright (C) 2015-2021, L<IDS Mannheim|https://www.ids-mannheim.de/>
+Author: L<Nils Diewald|https://www.nils-diewald.de/>
 
 KorAP::XML::Krill is developed as part of the
 L<KorAP|http://korap.ids-mannheim.de/>
@@ -427,6 +427,6 @@ funded by the
 L<Federal Ministry of Education and Research (BMBF)|http://www.bmbf.de/en/>.
 
 KorAP::XML::Krill is free software published under the
-L<BSD-2 License|https://raw.githubusercontent.com/KorAP/KorAP-XML-Krill/master/LICENSE>.
+L<BSD-2 License|https://opensource.org/licenses/BSD-2-Clause>.
 
 =cut

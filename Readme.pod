@@ -319,7 +319,7 @@ On the document level, the postfix wildcard C<*> is supported.
 
 =item B<--log|-l>
 
-The L<Log4perl> log level, defaults to C<ERROR>.
+The L<Log::Any> log level, defaults to C<ERROR>.
 
 
 =item B<--help|-h>
@@ -551,19 +551,19 @@ L<html|https://www.tei-c.org/release/doc/tei-p5-doc/en/html/FS.html>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2020, L<IDS Mannheim|https://www.ids-mannheim.de/>
+Copyright (C) 2015-2021, L<IDS Mannheim|https://www.ids-mannheim.de/>
 
-Author: L<Nils Diewald|https://nils-diewald.de/>
+Author: L<Nils Diewald|https://www.nils-diewald.de/>
 
 Contributor: Eliza Margaretha
 
-L<KorAP::XML::Krill> is developed as part of the L<KorAP|http://korap.ids-mannheim.de/>
+L<KorAP::XML::Krill> is developed as part of the L<KorAP|https://korap.ids-mannheim.de/>
 Corpus Analysis Platform at the
-L<Leibniz Institute for the German Language (IDS)|http://ids-mannheim.de/>,
+L<Leibniz Institute for the German Language (IDS)|https://www.ids-mannheim.de/>,
 member of the
 L<Leibniz-Gemeinschaft|http://www.leibniz-gemeinschaft.de/>.
 
 This program is free software published under the
-L<BSD-2 License|https://raw.githubusercontent.com/KorAP/KorAP-XML-Krill/master/LICENSE>.
+L<BSD-2 License|https://opensource.org/licenses/BSD-2-Clause>.
 
 =cut
