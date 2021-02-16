@@ -107,13 +107,14 @@ path($scr_folder)->make_path->child('data.xml')->spurt(b($dom->to_string)->encod
 # stuffed in a hash as well.
 # If no CSS rules are parsed, the file will just be copied.
 
-$rule_file = Mojo::File->new($rule_file);
+if ($rule_file) {
+  $rule_file = Mojo::File->new($rule_file);
+  if (-e $rule_file) {
+    my $rules = decode_json $rule_file->slurp;
 
-if (-e $rule_file) {
-  my $rules = decode_json $rule_file->slurp;
-
-  foreach my $rule (@$rules) {
-    scramble(@$rule);
+    foreach my $rule (@$rules) {
+      scramble(@$rule);
+    };
   };
 };
 
