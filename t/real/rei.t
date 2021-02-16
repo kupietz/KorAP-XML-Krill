@@ -320,5 +320,75 @@ is('i:befreiungsschlag', $last->[2]);
 is('opennlp/p:NN', $last->[3]);
 is('s:Befreiungsschlag', $last->[4]);
 
+
+# Check with negative level (required for wikidemo conversion)
+$path = catdir(dirname(__FILE__), 'corpus','REI','RBP','00007');
+
+ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc->parse, 'Parse document');
+
+is($doc->text_sigle, 'REI/RBP/00007', 'Correct text sigle');
+is($doc->doc_sigle, 'REI/RBP', 'Correct document sigle');
+is($doc->corpus_sigle, 'REI', 'Correct corpus sigle');
+
+$meta = $doc->meta;
+is($meta->{T_title}, 'Ansprache von Bundespräsident Richard von Weizsäcker bei einem Abendessen, gegeben von Königin Beatrix und Prinz Claus im Königlichen Palais Op de Dam', 'Title');
+ok(!$meta->{T_sub_title}, 'SubTitle');
+is($meta->{T_author}, 'Richard von Weizsäcker', 'Author');
+ok(!$meta->{A_editor}, 'Editor');
+is($meta->{S_pub_place}, 'Bonnn', 'PubPlace'); # sic!
+ok(!$meta->{A_publisher}, 'Publisher');
+
+ok(!$meta->{S_text_type}, 'No Text Type');
+ok(!$meta->{S_text_type_art}, 'No Text Type Art');
+ok(!$meta->{S_text_type_ref}, 'No Text Type Ref');
+ok(!$meta->{S_text_domain}, 'No Text Domain');
+ok(!$meta->{S_text_column}, 'No Text Column');
+
+is($meta->{K_text_class}->[0], 'politik', 'Correct Text Class');
+is($meta->{K_text_class}->[1], 'ausland', 'Correct Text Class');
+ok(!$meta->{K_text_class}->[2], 'Correct Text Class');
+
+is($meta->{D_pub_date}, '19850530', 'Creation date');
+is($meta->{D_creation_date}, '19850530', 'Creation date');
+is($meta->{S_availability}, 'CC-BY-SA', 'License');
+ok(!$meta->{A_pages}, 'Pages');
+
+ok(!$meta->{A_file_edition_statement}, 'File Statement');
+ok(!$meta->{A_bibl_edition_statement}, 'Bibl Statement');
+
+# Get tokenization
+$tokens = KorAP::XML::Tokenizer->new(
+  path => $doc->path,
+  doc => $doc,
+  foundry => $token_base_foundry,
+  layer => 'tokens',
+  name => 'tokens'
+);
+
+ok($tokens, 'Token Object is fine');
+ok($tokens->parse, 'Token parsing is fine');
+ok(!$tokens->error);
+
+$tokens->add('DeReKo', 'Structure', 'base-sentences-paragraphs-pagebreaks');
+ok(!$tokens->error);
+
+$output = decode_json( $tokens->to_json );
+
+is(substr($output->{data}->{text}, 0, 100), 'Ansprache von Bundespräsident Richard von Weizsäcker bei einem Abendessen, gegeben von Königin Beatr', 'Primary Data');
+
+is($output->{data}->{foundries}, 'dereko dereko/structure dereko/structure/base-sentences-paragraphs-pagebreaks', 'Foundries');
+is($output->{data}->{layerInfos}, 'dereko/s=spans', 'layerInfos');
+
+my $stream = $output->{data}->{stream};
+
+is($stream->[0]->[0], '-:base/paragraphs$<i>3');
+is($stream->[0]->[1], '-:base/sentences$<i>16');
+is($stream->[0]->[2], '-:tokens$<i>418');
+is($stream->[0]->[7], '<>:base/s:s$<b>64<i>0<i>353<i>53<b>2');
+is($stream->[0]->[8], '<>:base/s:t$<b>64<i>0<i>2664<i>418<b>0');
+
+is(index(join('',@{$stream->[0]}), '<>:dereko/s:s$'), -1);
+
 done_testing;
 __END__
