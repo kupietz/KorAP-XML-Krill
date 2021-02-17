@@ -1,5 +1,7 @@
-0.42 2020-11-03
+0.42 2021-02-16
         - Replaced Log4perl with Log::Any.
+        - Ignore level < 0 structures in DeReKo, but support
+          them for base annotations.
 
 0.41 2020-08-10
         - Added support for RWK annotations.

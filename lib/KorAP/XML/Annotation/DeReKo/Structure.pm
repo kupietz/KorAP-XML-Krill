@@ -46,10 +46,15 @@ sub parse {
         return;
       };
 
-      # Add structure
-      my $mt = $mtt->add_span('<>:dereko/s:' . $name, $span);
-      # $mt->set_p_start($p_start);
-      $mt->set_pti($span->get_milestone ? 65 : 64);
+      # Create MT
+      my $mt = KorAP::XML::Index::MultiTerm->new(
+        '<>:dereko/s:' . $name,        # Term
+        $span->get_o_start,            # o_start
+        $span->get_o_end,              # o_end
+        undef,                         # p_start
+        $span->get_p_end,              # p_end
+        $span->get_milestone ? 65 : 64 # pti
+      );
 
       my $level = $span->get_hash->{'-l'};
       if ($level || $tui) {
@@ -57,6 +62,11 @@ sub parse {
         $pl .= '<b>' . ($level ? $level - 1 : 0);
         $pl .= '<s>' . $tui if $tui;
         $mt->set_payload($pl);
+      };
+
+      # Add structure only if level is not negative
+      if (!$level || $level >= 0) {
+        $mtt->add_blessed($mt);
       };
 
       # Use sentence and paragraph elements for base

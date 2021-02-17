@@ -1143,7 +1143,8 @@ layers supported.
 
 Define the layer for base paragraphs.
 If given, this will be used instead of using C<Base#Paragraphs>.
-Currently C<DeReKo#Structure> is the only additional layer supported.
+Currently C<DeReKo#Structure> and C<DGD#Structure> are the only additional
+layer supported.
 
  Defaults to unset.
 
