@@ -28,6 +28,7 @@ nytprof
 *.tmp
 *.cache
 .*
+!.github
 !.gitignore
 
 # Protected checks
