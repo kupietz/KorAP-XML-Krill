@@ -43,7 +43,8 @@ WriteMakefile(
     'File::Path'      => 2.12,
     'Archive::Tar::Builder' => 2.5002,
     'Archive::Tar'    => 2.24,
-    'Clone'           => 0.45
+    'Clone'           => 0.45,
+    'List::Util'      => 1.45,
   },
   MIN_PERL_VERSION => '5.016',
   test => {
