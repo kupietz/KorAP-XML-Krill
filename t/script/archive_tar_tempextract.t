@@ -19,6 +19,10 @@ if ($ENV{SKIP_SCRIPT}) {
   plan skip_all => 'Skip script tests';
 };
 
+unless (KorAP::XML::Archive::test_unzip) {
+  plan skip_all => 'unzip not found';
+};
+
 my $f = dirname(__FILE__);
 my $script = catfile($f, '..', '..', 'script', 'korapxml2krill');
 

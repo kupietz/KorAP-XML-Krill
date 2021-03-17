@@ -5,9 +5,14 @@ use Test::Output qw/stdout_from/;
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catdir catfile/;
 use File::Temp qw/:POSIX/;
+use KorAP::XML::Archive;
 
 if ($ENV{SKIP_SCRIPT}) {
   plan skip_all => 'Skip script tests';
+};
+
+unless (KorAP::XML::Archive::test_unzip) {
+  plan skip_all => 'unzip not found';
 };
 
 my $f = dirname(__FILE__);
