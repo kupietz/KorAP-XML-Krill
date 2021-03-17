@@ -8,9 +8,14 @@ use Mojo::File;
 use Test::More;
 use Test::Output qw/combined_from/;
 use Data::Dumper;
+use KorAP::XML::Archive;
 
 if ($ENV{SKIP_SCRIPT}) {
   plan skip_all => 'Skip script tests';
+};
+
+unless (KorAP::XML::Archive::test_unzip) {
+  plan skip_all => 'unzip not found';
 };
 
 my $f = dirname(__FILE__);
