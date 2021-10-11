@@ -151,9 +151,12 @@ use Fcntl qw(:flock SEEK_END);
 # - Added support for Redewiedergabe-Korpus structure
 #   annotations, based on sentence and paragraph milestones
 # - Added support for Redewiedergabe-Korpus morphology
+#
+# 2021/10/11
+# - Introduced support for Gingko
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2021/02/08';
+our $LAST_CHANGE = '2021/10/11';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -410,6 +413,10 @@ if ($base_sentences eq 'dgd#structure') {
 # DRuKoLa
 push(@layers,
      ['DRuKoLa', 'Morpho']);
+
+# Gingko
+push(@layers,
+     ['Gingko', 'Morpho']);
 
 # Glemm
 push(@layers,
@@ -1369,6 +1376,9 @@ L<Krill|https://github.com/KorAP/Krill>.
     #Morpho
 
   Glemm
+    #Morpho
+
+  Gingko
     #Morpho
 
   HNC

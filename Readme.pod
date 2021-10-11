@@ -370,6 +370,9 @@ L<Krill|https://github.com/KorAP/Krill>.
   DRuKoLa
     #Morpho
 
+  Gingko
+    #Morpho
+
   Glemm
     #Morpho
 

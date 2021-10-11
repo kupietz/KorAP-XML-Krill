@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="text.rng"
+            type="application/xml"
+            schematypens="http://relaxng.org/ns/structure/1.0"?>
+<raw_text docid="ATZ07_JAN.00001"
+          xmlns="http://ids-mannheim.de/ns/KorAP">
+  <metadata file="metadata.xml" />
+  <text>Ein neues Energiemanagement-Konzept für das elektrische Bordnetz Energiemanagement-Systeme für heutige Kraftfahrzeuge sollen ohne Komfort einbußen die Fahrzeugstartfähigkeit sicherstellen und durch einen möglichst optimalen Betrieb der Batterie vorzeitige Batterieausfälle vermeiden.</text>
+</raw_text>

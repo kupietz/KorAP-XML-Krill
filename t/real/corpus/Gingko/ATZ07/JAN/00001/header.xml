@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng"
+            type="application/xml"
+            schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN"
+          "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader TEIform="teiHeader" pattern="text" status="new" type="text" version="1.0">
+        <fileDesc>
+          <titleStmt>
+            <textSigle>ATZ07/JAN.00001</textSigle>
+            <t.title assemblage="external">ATZ07/JAN.00001 ATZ - Automobiltechnische Zeitschrift, Januar 2007, Nr.109, S. 10-15; Ein neues Energiemanagement-Konzept für das elektrische Bordnetz</t.title>
+          </titleStmt>
+          <publicationStmt>
+            <distributor/>
+            <pubAddress/>
+            <availability region="world">QAO-NC</availability>
+            <pubDate type="year">2021</pubDate>
+          </publicationStmt>
+          <sourceDesc>
+            <biblStruct>
+              <analytic>
+                <h.title type="main">Ein neues Energiemanagement-Konzept für das elektrische Bordnetz</h.title>
+                <h.title type="sub"/>
+                <h.author>Theuerkauf, Heinz; Schmidt, Matthias</h.author>
+                <imprint/>
+                <biblScope type="pp">S. 10-15</biblScope>
+                <biblNote n="DOI">10.1007/BF03221854</biblNote>
+              </analytic>
+              <monogr>
+                <h.title type="main">ATZ - Automobiltechnische Zeitschrift</h.title>
+                <h.title type="short">ATZ</h.title>
+                <imprint>
+                  <publisher>Springer Fachmedien GmbH</publisher>
+                  <pubPlace>Wiesbaden</pubPlace>
+                  <pubDate type="year">2007</pubDate>
+                </imprint>
+                <biblScope type="issue">1</biblScope>
+                <biblScope type="vol">109</biblScope>
+              </monogr>
+            </biblStruct>
+            <reference type="complete" assemblage="external">ATZ07/JAN.00001 ATZ - Automobiltechnische Zeitschrift, Januar 2007, Nr.109, S. 10-15 - Theuerkauf, H.; Schmidt, M.: Ein neues Energiemanagement-Konzept für das elektrische Bordnetz</reference>
+            <reference type="short" assemblage="external">ATZ07/JAN.00001 ATZ, 2007, Nr.109</reference>
+            <reference type="super" assemblage="external">ATZ07/JAN ATZ - Automobiltechnische Zeitschrift, Wiesbaden: Springer Fachmedien GmbH; 2007</reference>
+          </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+          <editorialDecl>
+            <pagination type="no"/>
+            <transduction n="1">gingko-XML by Leipzig University</transduction>
+            <transduction n="2">Sentence splitting using NLTK by Leipzig
+                        University</transduction>
+            <transduction n="3">Tokenisation, Lemmatisation, POS-annotation using TreeTagger
+                        with STTS by Leipzig University</transduction>
+            <transduction n="4">XSL Conversion to I5 by IDS</transduction>
+            <correction n="lemma">no</correction>
+          </editorialDecl>
+          <tagsDecl>
+            <tagUsage gi="w" occurs="2191">used to mark a single token</tagUsage>
+          </tagsDecl>
+        </encodingDesc>
+        <profileDesc>
+          <textClass>
+            <catRef n="1" target="topic.wissenschaft.populaerwissenschaft" scheme="topic"/>
+          </textClass>
+          <textDesc>
+            <textType>Zeitschrift: Fachzeitschrift</textType>
+            <textTypeRef>Fachzeitschrift</textTypeRef>
+            <textTypeArt>Fachartikel</textTypeArt>
+          </textDesc>
+          <creation>
+            <creatDate>2007.01.</creatDate>
+            <creatRef>Januar 2007</creatRef>
+            <creatRefShort>Januar 2007</creatRefShort>
+          </creation>
+          <textClass>
+            <catRef n="0.6" target="topic.technik-industrie.kfz" scheme="topic"/>
+            <classCode scheme="gingkoGenre.top">wissenschaftlich</classCode>
+            <classCode scheme="gingkoGenre.sub">wissenschaftlich</classCode>
+          </textClass>
+        </profileDesc>
+      </idsHeader>

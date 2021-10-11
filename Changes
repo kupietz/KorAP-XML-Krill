@@ -5,6 +5,7 @@
         - Define resources in Makefile.
         - Add GitHub action for CI.
         - Remove MANIFEST file from repo.
+        - Introduce Gingko support.
 
 0.41 2020-08-10
         - Added support for RWK annotations.

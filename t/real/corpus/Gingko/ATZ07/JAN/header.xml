@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng"
+            type="application/xml"
+            schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN"
+          "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader TEIform="teiHeader" pattern="text" type="document" version="1.1">
+      <fileDesc>
+        <titleStmt>
+          <dokumentSigle>ATZ07/JAN</dokumentSigle>
+          <d.title>Gingko - Geschriebenes Ingenieurwissenschaftliches Korpus: ATZ -
+                Automobiltechnische Zeitschrift, Januar 2007</d.title>
+          <editor>                
+                <orgName type="project" from="2017" to="2021">Muster in der Sprache der Ingenieurwissenschaften</orgName>
+                <persName>Prof. Dr. Christian Fandrych, University of Leipzig</persName>
+            </editor>
+        </titleStmt>
+        <publicationStmt>
+          <distributor> Institut für Deutsche Sprache </distributor>
+          <pubAddress> Postfach 10 16 21, D-68016 Mannheim </pubAddress>
+          <telephone> +49 (0)621 1581 0 </telephone>
+          <availability region="ids">QAO-NC</availability>
+          <pubDate>2021</pubDate>
+        </publicationStmt>
+        <sourceDesc>
+          <biblStruct>
+            <monogr>
+              <h.title type="main">Gingko - Geschriebenes Ingenieurwissenschaftliches Korpus</h.title>
+              <editor>Prof. Dr. Christian Fandrych, Leipzig University</editor>
+              <imprint>
+                <publisher>Herder-Institut, Leipzig University</publisher>
+                <pubPlace>Leipzig</pubPlace>
+                <pubDate type="year">2021</pubDate>
+              </imprint>
+              <biblNote>https://www.philol.uni-leipzig.de/herder-institut/forschung/projekte/laufende-projekte/gingko/</biblNote>
+            </monogr>
+          </biblStruct>
+        </sourceDesc>
+      </fileDesc>
+    </idsHeader>
