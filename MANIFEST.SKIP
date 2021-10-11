@@ -26,6 +26,7 @@
 ^fixtures
 ^nytprof
 ^log
+^cover_db
 
 # Temp, old and emacs backup files.
 ~$
@@ -37,3 +38,11 @@
 \.old$
 ^#.*#$
 ^\.#
+
+# Protected checks
+^t/corpus/BRZ13
+^t/real/corpus/BRZ13
+^t/real/corpus/DCK
+^t/real/corpus/AGD-orig
+^t/real/corpus/FOLK-orig
+t/real/dck.t
