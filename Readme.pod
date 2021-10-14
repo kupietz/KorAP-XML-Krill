@@ -426,6 +426,26 @@ New annotation importers can be defined in the C<KorAP::XML::Annotation> namespa
 See the built-in annotation importers as examples.
 
 
+=head1 METADATA SUPPORT
+
+L<KorAP::XML::Krill> has built-in importer for some meta data variants
+developed in the KorAP project that are part of the KorAP preprocessing pipeline.
+
+=over 2
+
+=item I5 - Meta data for all I5 files
+
+=item Sgbr - Meta data from the Schreibgebrauch project
+
+=item Gingko - Meta data from the Gingko project in addition to I5
+
+=back
+
+More importers are in preparation.
+New meta data importers can be defined in the C<KorAP::XML::Meta> namespace.
+See the built-in meta data importers as examples.
+
+
 =head1 About KorAP-XML
 
 KorAP-XML (Bański et al. 2012) is an implementation of the KorAP

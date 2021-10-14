@@ -26,7 +26,10 @@ use_ok('KorAP::XML::Krill');
 # ATZ07/JAN/00001
 my $path = catdir(dirname(__FILE__), 'corpus','Gingko', 'ATZ07','JAN','00001');
 
-ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok(my $doc = KorAP::XML::Krill->new(
+  path => $path . '/',
+  meta_type => 'Gingko'
+), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 
 is($doc->text_sigle, 'ATZ07/JAN/00001', 'Correct text sigle');
@@ -65,6 +68,15 @@ is($meta->{T_doc_title}, 'Gingko - Geschriebenes Ingenieurwissenschaftliches Kor
 ok(!$meta->{T_doc_sub_title}, 'Correct Doc Sub title');
 ok(!$meta->{T_doc_author}, 'Correct Doc author');
 is($meta->{A_doc_editor}, 'Prof. Dr. Christian Fandrych, Leipzig University', 'Correct Doc editor');
+
+# Ginkgo Metadata
+is($meta->{S_gingko_genre_main}, 'wissenschaftlich');
+is($meta->{S_gingko_genre_sub}, 'wissenschaftlich');
+is($meta->{T_gingko_source}, 'ATZ - Automobiltechnische Zeitschrift');
+is($meta->{S_gingko_source_short}, 'ATZ');
+is($meta->{S_gingko_lemma_corr}, 'no');
+is($meta->{T_gingko_collection}, 'Gingko - Geschriebenes Ingenieurwissenschaftliches Korpus');
+is($meta->{S_gingko_collection_short}, 'Gingko');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');
@@ -105,6 +117,25 @@ $token = join('||', @{$output->{data}->{stream}->[9]});
 like($token, qr!i:heutige!, 'data');
 like($token, qr!ginkgo/p:ADJA!, 'data');
 like($token, qr!gingko/l:heutig!, 'data');
+
+# Check Ginkgo meta in Koral
+my $koral = decode_json($tokens->to_json(0.4));
+
+my $test = 0;
+foreach (@{$koral->{fields}}) {
+  if ($_->{key} eq 'gingkoGenreMain') {
+    is($_->{'type'},'type:string');
+    is($_->{'value'},'wissenschaftlich');
+    $test++;
+  }
+  elsif ($_->{key} eq 'gingkoCollection') {
+    is($_->{'type'},'type:text');
+    is($_->{'value'},'Gingko - Geschriebenes Ingenieurwissenschaftliches Korpus');
+    $test++;
+  };
+};
+
+is($test,2);
 
 done_testing;
 __END__
