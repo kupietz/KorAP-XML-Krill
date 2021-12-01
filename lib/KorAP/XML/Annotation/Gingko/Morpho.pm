@@ -23,7 +23,7 @@ sub parse {
         # pos tag
         if (($name eq 'pos') &&
               ($found = $f->{'#text'})) {
-          $mtt->add_by_term('ginkgo/p:' . $found);
+          $mtt->add_by_term('gingko/p:' . $found);
         }
 
         # lemma tag
