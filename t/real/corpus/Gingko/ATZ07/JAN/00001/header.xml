@@ -8,7 +8,7 @@
         <fileDesc>
           <titleStmt>
             <textSigle>ATZ07/JAN.00001</textSigle>
-            <t.title assemblage="external">ATZ07/JAN.00001 ATZ - Automobiltechnische Zeitschrift, Januar 2007, Nr.109, S. 10-15; Ein neues Energiemanagement-Konzept für das elektrische Bordnetz</t.title>
+            <t.title assemblage="external">ATZ07/JAN.00001 ATZ - Automobiltechnische Zeitschrift, Januar 2007, Nr. 109(1), S. 10-15; Ein neues Energiemanagement-Konzept für das elektrische Bordnetz</t.title>
           </titleStmt>
           <publicationStmt>
             <distributor/>
@@ -31,15 +31,15 @@
                 <h.title type="short">ATZ</h.title>
                 <imprint>
                   <publisher>Springer Fachmedien GmbH</publisher>
-                  <pubPlace>Wiesbaden</pubPlace>
+                  <pubPlace key="DE">Wiesbaden</pubPlace>
                   <pubDate type="year">2007</pubDate>
                 </imprint>
                 <biblScope type="issue">1</biblScope>
                 <biblScope type="vol">109</biblScope>
               </monogr>
             </biblStruct>
-            <reference type="complete" assemblage="external">ATZ07/JAN.00001 ATZ - Automobiltechnische Zeitschrift, Januar 2007, Nr.109, S. 10-15 - Theuerkauf, H.; Schmidt, M.: Ein neues Energiemanagement-Konzept für das elektrische Bordnetz</reference>
-            <reference type="short" assemblage="external">ATZ07/JAN.00001 ATZ, 2007, Nr.109</reference>
+            <reference type="complete" assemblage="external">ATZ07/JAN.00001 ATZ - Automobiltechnische Zeitschrift, Januar 2007, Nr. 109(1), S. 10-15 - Theuerkauf, H.; Schmidt, M.: Ein neues Energiemanagement-Konzept für das elektrische Bordnetz (DOI:10.1007/BF03221854)</reference>
+            <reference type="short" assemblage="external">ATZ07/JAN.00001 ATZ, 2007, Nr. 109(1)</reference>
             <reference type="super" assemblage="external">ATZ07/JAN ATZ - Automobiltechnische Zeitschrift, Wiesbaden: Springer Fachmedien GmbH; 2007</reference>
           </sourceDesc>
         </fileDesc>

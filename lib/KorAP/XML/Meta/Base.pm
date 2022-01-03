@@ -160,9 +160,9 @@ sub to_koral_fields {
     elsif (index($_, 'T_') == 0) {
       push @fields, _text_field(_k($_), $self->{$_});
     }
-    # elsif (index($_, 'I_') == 0) {
-    #  _int_field(_k($_), $self->{$_});
-    # }
+    elsif (index($_, 'I_') == 0) {
+      push @fields, _int_field(_k($_), $self->{$_});
+    }
     elsif (index($_, 'A_') == 0) {
       push @fields, _attachement_field(_k($_), $self->{$_});
     }
@@ -259,5 +259,15 @@ sub _attachement_field {
     value   => $value
   };
 };
+
+sub _int_field {
+  return {
+    '@type' => 'koral:field',
+    type    => 'type:integer',
+    key     => $_[0],
+    value   => $_[1]
+  };
+};
+
 
 1;

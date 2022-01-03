@@ -56,18 +56,21 @@ ok(!$meta->{D_creation_date}, 'Creation Date');
 ok(!$meta->{pages}, 'Pages');
 ok(!$meta->{A_file_edition_statement}, 'File Ed Statement');
 ok(!$meta->{A_bibl_edition_statement}, 'Bibl Ed Statement');
-is($meta->{A_reference}, 'ATZ - Automobiltechnische Zeitschrift, Januar 2007, Nr.109, S. 10-15 - Theuerkauf, H.; Schmidt, M.: Ein neues Energiemanagement-Konzept für das elektrische Bordnetz', 'Reference');
+is($meta->{A_reference}, 'ATZ - Automobiltechnische Zeitschrift, Januar 2007, Nr. 109(1), S. 10-15 - Theuerkauf, H.; Schmidt, M.: Ein neues Energiemanagement-Konzept für das elektrische Bordnetz (DOI:10.1007/BF03221854)', 'Reference');
 is($meta->{S_language}, 'de', 'Language');
 
-is($meta->{T_corpus_title}, 'Gingko - Geschriebenes Ingenieurwissenschaftliches Korpus', 'Correct Corpus title');
+ok(!$meta->{A_bibl_edition_statement}, 'Bibl Ed Statement');
+
+
+is($meta->{T_corpus_title}, 'Gingko - Geschriebenes Ingenieurwissenschaftliches Korpus: ATZ - Automobiltechnische Zeitschrift, 2007', 'Correct Corpus title');
 ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus Sub title');
 ok(!$meta->{T_corpus_author}, 'Correct Corpus author');
-is($meta->{A_corpus_editor}, 'Christian Fandrych', 'Correct Corpus editor');
+is($meta->{A_corpus_editor}, 'Prof. Dr. Christian Fandrych, Leipzig University; Jun.-Prof. Dr. Antje Heine', 'Correct Corpus editor');
 
-is($meta->{T_doc_title}, 'Gingko - Geschriebenes Ingenieurwissenschaftliches Korpus',   'Correct Doc title');
+is($meta->{T_doc_title}, 'ATZ - Automobiltechnische Zeitschrift, Januar 2007',   'Correct Doc title');
 ok(!$meta->{T_doc_sub_title}, 'Correct Doc Sub title');
 ok(!$meta->{T_doc_author}, 'Correct Doc author');
-is($meta->{A_doc_editor}, 'Prof. Dr. Christian Fandrych, Leipzig University', 'Correct Doc editor');
+ok(!$meta->{A_doc_editor}, 'Correct Doc editor');
 
 # Gingko Metadata
 is($meta->{S_gingko_genre_main}, 'wissenschaftlich');
@@ -77,6 +80,11 @@ is($meta->{S_gingko_source_short}, 'ATZ');
 is($meta->{S_gingko_lemma_corr}, 'no');
 is($meta->{T_gingko_collection}, 'Gingko - Geschriebenes Ingenieurwissenschaftliches Korpus');
 is($meta->{S_gingko_collection_short}, 'Gingko');
+is($meta->{A_gingko_article_DOI}, 'data:application/x.korap-link;title=doi%3A10.1007%2FBF03221854,https%3A%2F%2Fdoi.org%2F10.1007%2FBF03221854', 'Gingko Article DOI');
+is($meta->{I_gingko_text_tokens}, '2191', 'Gingko Text Tokens');
+is($meta->{A_internal_link}, 'data:application/x.korap-link;title=IDS%20webpage%20on%20Gingko%20in%20the%20DeReKo%20archive,https%3A%2F%2Fwww.ids-mannheim.de%2Fdigspra%2Fkl%2Fprojekte%2Fkorpora%2Farchiv-1%2Fgingko%2F', 'Gingko Internal Link');
+is($meta->{A_external_link}, 'data:application/x.korap-link;title=Gingko-Webseite%20an%20der%20Universit%E4t%20Leipzig,http%3A%2F%2Fwww.uni-leipzig.de%2Fgingko%2F', 'Gingko External Link');
+
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');

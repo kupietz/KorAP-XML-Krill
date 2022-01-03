@@ -12,31 +12,48 @@
         <editor>
                 <orgName type="project" from="2017" to="2021">Muster in der Sprache der
                     Ingenieurwissenschaften</orgName>
-                <persName>Prof. Dr. Christian Fandrych, University of Leipzig</persName>
+                <persName n="1">Prof. Dr. Christian Fandrych, Leipzig University</persName>
+                <persName n="2">Jun.-Prof. Dr. Antje Heine</persName>
             </editor>
         <respStmt>
-          <persName from="2017" to="2019">Unbekannt</persName>
+          <persName from="2017" to="2019">Antje Heine</persName>
+          <persName from="2017" to="2019">Marlene Rummel</persName>
+          <persName from="2017" to="2019">Lars Schirrmeister</persName>
+          <persName from="2017" to="2019">Nina Suppus</persName>
+          <persName from="2017" to="2019">Sarah Brauer</persName>
+          <persName from="2017" to="2019">Rebekka Fricke</persName>
+          <persName from="2017" to="2019">Anne Hertel</persName>
+          <persName from="2017" to="2019">Marcel Knorn</persName>
+          <persName from="2017" to="2019">Bárbara Mendoza Sanchez</persName>
+          <persName from="2017" to="2019">Paul Knötgen</persName>
+          <persName from="2017" to="2019">Agnes Koschmider</persName>
+          <persName from="2020" to="2021">Christian Fandrych</persName>
+          <persName from="2020" to="2021">Cordula Meißner</persName>
+          <persName from="2020" to="2021">Annette Portmann</persName>
+          <persName from="2020" to="2021">Lars Schirrmeister</persName>
+          <persName from="2020" to="2021">Franziska Wallner</persName>
         </respStmt>
       </titleStmt>
       <publicationStmt>
         <distributor> Institut für Deutsche Sprache </distributor>
         <pubAddress> Postfach 10 16 21, D-68016 Mannheim </pubAddress>
         <telephone> +49 (0)621 1581 0 </telephone>
-        <availability region="ids">QAO-NC</availability>
+        <availability region="world">QAO-NC</availability>
         <pubDate>2021</pubDate>
       </publicationStmt>
       <sourceDesc>
         <biblStruct>
           <monogr>
             <h.title type="main">Gingko - Geschriebenes Ingenieurwissenschaftliches
-                        Korpus</h.title>
-            <editor>Christian Fandrych</editor>
+                        Korpus: ATZ - Automobiltechnische Zeitschrift, 2007</h.title>
+            <editor>Prof. Dr. Christian Fandrych, Leipzig University; Jun.-Prof. Dr. Antje Heine</editor>
             <imprint>
               <publisher>Herder-Institut der Universität Leipzig</publisher>
               <pubPlace>Leipzig</pubPlace>
               <pubDate type="year">2021</pubDate>
             </imprint>
-            <biblNote n="url">https://www.philol.uni-leipzig.de/herder-institut/forschung/projekte/laufende-projekte/gingko/</biblNote>
+            <biblNote n="url">http://www.uni-leipzig.de/gingko/</biblNote>
+            <biblNote n="url.ids">https://www.ids-mannheim.de/digspra/kl/projekte/korpora/archiv-1/gingko/</biblNote>
             <biblNote n="collection">Gingko - Geschriebenes Ingenieurwissenschaftliches Korpus</biblNote>
             <biblNote n="collectionShort">Gingko</biblNote>
           </monogr>
@@ -58,7 +75,7 @@
                 Forschungsprojektes „Muster in der Sprache der Ingenieurwissenschaften“ entstanden.
                 Das Projekt hat das Ziel, Muster in der Sprache der Ingenieurwissenschaften (am
                 Beispiel der Automobiltechnik) systematisch zu erfassen und zu beschreiben.</p>
-            <p>Project Website: <ref type="url" target="https://www.philol.uni-leipzig.de/herder-institut/forschung/projekte/laufende-projekte/gingko/">Gingko website</ref></p>
+            <p>Project Website: <ref type="url" target="http://www.uni-leipzig.de/gingko">Gingko website</ref></p>
             <p>Publication: Schirrmeister, L., Rummel, M., Heine, A., Suppus, N. &amp; Mendoza
                 Sánchez, B. (2021). Gingko – ein Korpus der ingenieurwissenschaftlichen Sprache.
                     <ref target="https://www.dafdigital.de/">Deutsch als Fremdsprache</ref> 58.</p>
