@@ -38,7 +38,7 @@ is($meta->{T_doc_title}, 'Wikipedia, Artikel mit Anfangsbuchstabe G, Teil 00', '
 
 is($meta->{A_reference}, 'Generation X, In: Wikipedia - URL:http://en.wikipedia.org/wiki/Generation_X: Wikipedia, 2015', 'Reference');
 
-is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http://en.wikipedia.org/wiki/Generation_X', 'link');
+is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGeneration_X', 'link');
 
 is($meta->{'S_availability'}, 'CC-BY-SA', 'Availability');
 is($meta->{'S_language'}, 'en', 'Language');
@@ -102,7 +102,7 @@ my $link = $koral->{fields}->[6];
 is($link->{'@type'}, 'koral:field', 'attachement');
 is($link->{type}, 'type:attachement', 'attachement');
 is($link->{key}, 'externalLink', 'attachement');
-is($link->{value}, 'data:application/x.korap-link;title=Wikipedia,http://en.wikipedia.org/wiki/Generation_X', 'attachement');
+is($link->{value}, 'data:application/x.korap-link;title=Wikipedia,http%3A%2F%2Fen.wikipedia.org%2Fwiki%2FGeneration_X', 'attachement');
 
 done_testing;
 __END__

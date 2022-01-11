@@ -47,7 +47,7 @@ is($meta->{T_corpus_title}, 'Wikipedia', 'Correct Corpus title');
 ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus Sub title');
 
 # This link is broken, but that's due to the data
-is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http://fr.wikipedia.org/wiki/Psychanalyse', 'No link');
+is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http%3A%2F%2Ffr.wikipedia.org%2Fwiki%2FPsychanalyse', 'No link');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');

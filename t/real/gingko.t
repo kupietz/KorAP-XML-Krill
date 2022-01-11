@@ -69,7 +69,7 @@ ok(!$meta->{T_doc_sub_title}, 'Correct Doc Sub title');
 ok(!$meta->{T_doc_author}, 'Correct Doc author');
 is($meta->{A_doc_editor}, 'Prof. Dr. Christian Fandrych, Leipzig University', 'Correct Doc editor');
 
-# Ginkgo Metadata
+# Gingko Metadata
 is($meta->{S_gingko_genre_main}, 'wissenschaftlich');
 is($meta->{S_gingko_genre_sub}, 'wissenschaftlich');
 is($meta->{T_gingko_source}, 'ATZ - Automobiltechnische Zeitschrift');
@@ -110,15 +110,15 @@ my $token = join('||', @{$output->{data}->{stream}->[7]});
 
 # Unknown
 unlike($token, qr!gingko/l!, 'data');
-like($token, qr!ginkgo/p:NN!, 'data');
+like($token, qr!gingko/p:NN!, 'data');
 
 $token = join('||', @{$output->{data}->{stream}->[9]});
 
 like($token, qr!i:heutige!, 'data');
-like($token, qr!ginkgo/p:ADJA!, 'data');
+like($token, qr!gingko/p:ADJA!, 'data');
 like($token, qr!gingko/l:heutig!, 'data');
 
-# Check Ginkgo meta in Koral
+# Check Gingko meta in Koral
 my $koral = decode_json($tokens->to_json(0.4));
 
 my $test = 0;

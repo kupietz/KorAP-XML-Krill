@@ -52,7 +52,7 @@ Diskussion:Gunter A. Pilz, In: Wikipedia - URL:http://de.wikipedia.org/wiki/Disk
 REF
 is($meta->{S_language}, 'de', 'Language');
 
-is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http://de.wikipedia.org/wiki/Diskussion:Gunter_A._Pilz', 'link');
+is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http%3A%2F%2Fde.wikipedia.org%2Fwiki%2FDiskussion%3AGunter_A._Pilz', 'link');
 
 is($meta->{T_corpus_title}, 'Wikipedia', 'Correct Corpus title');
 ok(!$meta->{T_corpus_sub_title}, 'Correct Corpus sub title');
@@ -281,7 +281,7 @@ is($doc->doc_sigle, 'WDD15/A79', 'Correct document sigle');
 is($doc->corpus_sigle, 'WDD15', 'Correct corpus sigle');
 
 $meta = $doc->meta;
-is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http://de.wikipedia.org/wiki/Diskussion:Arteria_interossea_communis', 'link');
+is($meta->{A_externalLink}, 'data:application/x.korap-link;title=Wikipedia,http%3A%2F%2Fde.wikipedia.org%2Fwiki%2FDiskussion%3AArteria_interossea_communis', 'link');
 
 # Get tokenization
 $tokens = KorAP::XML::Tokenizer->new(

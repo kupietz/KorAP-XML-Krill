@@ -52,6 +52,13 @@ is($meta->{D_creation_date}, '19990601', 'Creation date');
 is($meta->{S_text_type}, 'Zeitung: Tageszeitung', 'No text_type');
 is($meta->{S_text_type_art}, 'Bericht', 'text_type art');
 
+use_ok('KorAP::XML::Meta::I5');
+
+$meta = new KorAP::XML::Meta::I5();
+
+is('data:application/x.korap-link;example=%20Das%20war%20einfach;title=Hallo%21,https%3A%2F%2Fwww.test.de',
+   $meta->korap_data_uri('https://www.test.de', title => 'Hallo!', example => ' Das war einfach'));
+
 done_testing;
 __END__
 

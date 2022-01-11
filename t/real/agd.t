@@ -32,8 +32,8 @@ is($meta->{T_title}, 'FOLK_E_00321_SE_01_T_01_DF_01', 'Title');
 is($meta->{D_creation_date}, '20181112', 'Title');
 
 is($meta->{A_externalLink}, 'data:application/x.korap-link;title=DGD,'.
-     'https://dgd.ids-mannheim.de/DGD2Web/ExternalAccessServlet?command=displayData'.
-     '&id=FOLK_E_00321_SE_01_T_01', 'External link');
+     'https%3A%2F%2Fdgd.ids-mannheim.de%2FDGD2Web%2FExternalAccessServlet%3F'.
+     'command%3DdisplayData%26id%3DFOLK_E_00321_SE_01_T_01', 'External link');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');
@@ -136,7 +136,9 @@ is($doc->corpus_sigle, 'FOLK', 'Correct corpus sigle');
 $meta = $doc->meta;
 is($meta->{T_title}, 'FOLK_E_00068_SE_01_T_05_DF_01', 'Title');
 
-is($meta->{A_externalLink}, 'data:application/x.korap-link;title=DGD,https://dgd.ids-mannheim.de/DGD2Web/ExternalAccessServlet?command=displayData&id=FOLK_E_00068_SE_01_T_05');
+is($meta->{A_externalLink}, 'data:application/x.korap-link;title=DGD,'.
+     'https%3A%2F%2Fdgd.ids-mannheim.de%2FDGD2Web%2FExternalAccessServlet'.
+     '%3Fcommand%3DdisplayData%26id%3DFOLK_E_00068_SE_01_T_05');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');

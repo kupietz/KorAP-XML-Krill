@@ -3,7 +3,6 @@ use KorAP::XML::Meta::Base;
 use Mojo::Util qw/url_escape/;
 
 our $SIGLE_RE = qr/^([^_\/]+)(?:[_\/]([^\._\/]+?)(?:\.(.+?))?)?$/;
-our $KORAP_LINK_PREF = 'data:application/x.korap-link;';
 
 # STRING:
 #   "pubPlace",
@@ -359,7 +358,7 @@ sub parse {
 
         # In case of Wikipedia texts, take the URL
         if ($ref_text =~ /URL:(http:.+?):\s+Wikipedia,\s+\d+\s*$/) {
-          $self->{A_externalLink} = $KORAP_LINK_PREF . 'title=Wikipedia,' . $1;
+          $self->{A_externalLink} = $self->korap_data_uri($1, title => 'Wikipedia');
         };
       };
     };
@@ -380,9 +379,9 @@ sub parse {
     if ($self->{T_title} && !$self->{A_externalLink} && $self->{_corpus_sigle} =~ /^(?:[AD]GD|FOLK)$/) {
       my $transcript = $self->{T_title};
       $transcript =~ s/_DF_\d+$//i;
-      $self->{A_externalLink} = $KORAP_LINK_PREF . 'title=DGD,' .
+      $self->{A_externalLink} = $self->korap_data_uri(
         'https://dgd.ids-mannheim.de/DGD2Web/ExternalAccessServlet?command=displayData&id=' .
-        url_escape($transcript);
+          url_escape($transcript), title => 'DGD');
     }
   };
 

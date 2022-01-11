@@ -1,5 +1,6 @@
 package KorAP::XML::Meta::Base;
 # use Mojo::Log;
+use Mojo::Util 'url_escape';
 use Log::Any qw($log);
 use strict;
 use warnings;
@@ -174,6 +175,21 @@ sub to_koral_fields {
   };
 
   return \@fields;
+};
+
+sub korap_data_uri {
+  my $self = shift;
+  my $data = shift;
+  my %attributes = @_;
+
+  my $link = 'data:application/x.korap-link;';
+
+  foreach (sort CORE::keys %attributes) {
+    $link .= url_escape($_) . '=' . url_escape($attributes{$_}) . ';';
+  };
+
+  chop $link;
+  return $link . ',' . url_escape($data);
 };
 
 sub _k {

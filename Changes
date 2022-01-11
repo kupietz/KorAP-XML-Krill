@@ -1,4 +1,4 @@
-0.42 2021-10-11
+0.42 2022-01-11
         - Replaced Log4perl with Log::Any.
         - Ignore level < 0 structures in DeReKo, but support
           them for base annotations.
@@ -6,6 +6,7 @@
         - Add GitHub action for CI.
         - Remove MANIFEST file from repo.
         - Introduce Gingko support.
+        - Fix data URIs to always encode percentage-wise.
 
 0.41 2020-08-10
         - Added support for RWK annotations.
