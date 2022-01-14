@@ -1,0 +1,236 @@
+Reading config from /export/netapp/korap/krill-json/dereko-2020-1/dereko-2020-1.cfg
+Start serial processing of e03.*zip to /export/netapp/korap/krill-json/dereko-2020-1/e03
+Reading config from /export/netapp/korap/krill-json/dereko-2020-1/dereko-2020-1.cfg
+Input is /vol/corpora/DeReKo/incoming/KorAP/zip/e03.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/e03.malt.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/e03.marmot.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/e03.corenlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/e03.opennlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/e03.tree_tagger.zip
+Extract unzip -qo -uo -d /opt/korap/temp/esymtk /vol/corpora/DeReKo/incoming/KorAP/zip/e03.zip
+Extract unzip -qo -uo -d /opt/korap/temp/esymtk /vol/corpora/DeReKo/incoming/KorAP/zip/e03.malt.zip
+Extract unzip -qo -uo -d /opt/korap/temp/esymtk /vol/corpora/DeReKo/incoming/KorAP/zip/e03.marmot.zip
+Extract unzip -qo -uo -d /opt/korap/temp/esymtk /vol/corpora/DeReKo/incoming/KorAP/zip/e03.corenlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/esymtk /vol/corpora/DeReKo/incoming/KorAP/zip/e03.opennlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/esymtk /vol/corpora/DeReKo/incoming/KorAP/zip/e03.tree_tagger.zip
+Writing to file /export/netapp/korap/krill-json/dereko-2020-1/e03.tar
+Reading data ...
+Start processing ...
+Convert [$10112:1/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02929.json.gz
+Convert [$10117:2/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02924.json.gz
+Convert [$10095:3/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02945.json.gz
+Convert [$10140:4/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02902.json.gz
+Convert [$10087:5/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02951.json.gz
+Convert [$10085:6/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02953.json.gz
+Convert [$10124:7/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02917.json.gz
+Convert [$10081:8/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02957.json.gz
+Convert [$10115:9/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02926.json.gz
+Convert [$10126:10/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02915.json.gz
+Convert [$10132:11/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02910.json.gz
+Convert [$10082:12/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02956.json.gz
+Convert [$10146:13/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02897.json.gz
+Convert [$10152:14/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02891.json.gz
+Convert [$10084:15/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02954.json.gz
+Convert [$10121:16/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02920.json.gz
+Convert [$10110:17/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02931.json.gz
+Convert [$10104:18/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02937.json.gz
+Convert [$10101:19/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02939.json.gz
+Convert [$10118:20/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02923.json.gz
+Convert [$10151:21/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02892.json.gz
+Convert [$10133:22/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02909.json.gz
+Convert [$10088:23/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02950.json.gz
+Convert [$10154:24/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02889.json.gz
+Convert [$10116:25/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02925.json.gz
+Convert [$10111:26/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02930.json.gz
+Convert [$10089:27/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02949.json.gz
+Convert [$10109:28/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02932.json.gz
+Convert [$10083:29/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02955.json.gz
+Convert [$10086:30/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02952.json.gz
+Convert [$10134:31/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02908.json.gz
+Convert [$10136:32/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02906.json.gz
+Convert [$10141:33/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02901.json.gz
+Convert [$10098:34/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02942.json.gz
+Convert [$10128:35/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02914.json.gz
+Convert [$10147:36/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02896.json.gz
+Convert [$10123:37/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02918.json.gz
+Convert [$10131:38/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02911.json.gz
+Convert [$10096:39/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02944.json.gz
+Convert [$10108:40/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02933.json.gz
+Convert [$10161:41/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02883.json.gz
+Convert [$10113:42/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02928.json.gz
+Convert [$10125:43/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02916.json.gz
+Convert [$10158:44/37068] Processed /tmp/0G0gY5K6yu/E03-DEZ-02886.json.gz
+Convert [$16705:37067/37068] Processed /tmp/0G0gY5K6yu/E03-JAN-00018.json.gz
+Convert [$16680:37068/37068] Processed /tmp/0G0gY5K6yu/E03-JAN-00043.json.gz
+Wrote to tar archive.
+1432.24 wallclock secs (13.66 usr 76.84 sys + 15834.30 cusr 985.44 csys = 16910.24 CPU)
+Done.
+Removed directory /opt/korap/temp/esymtk with 889660 objects.
+
+Start serial processing of e04.*zip to /export/netapp/korap/krill-json/dereko-2020-1/e04
+Reading config from /export/netapp/korap/krill-json/dereko-2020-1/dereko-2020-1.cfg
+Input is /vol/corpora/DeReKo/incoming/KorAP/zip/e04.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/e04.malt.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/e04.marmot.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/e04.corenlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/e04.opennlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/e04.tree_tagger.zip
+Extract unzip -qo -uo -d /opt/korap/temp/fqcpqb /vol/corpora/DeReKo/incoming/KorAP/zip/e04.zip
+Extract unzip -qo -uo -d /opt/korap/temp/fqcpqb /vol/corpora/DeReKo/incoming/KorAP/zip/e04.malt.zip
+Extract unzip -qo -uo -d /opt/korap/temp/fqcpqb /vol/corpora/DeReKo/incoming/KorAP/zip/e04.marmot.zip
+Extract unzip -qo -uo -d /opt/korap/temp/fqcpqb /vol/corpora/DeReKo/incoming/KorAP/zip/e04.corenlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/fqcpqb /vol/corpora/DeReKo/incoming/KorAP/zip/e04.opennlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/fqcpqb /vol/corpora/DeReKo/incoming/KorAP/zip/e04.tree_tagger.zip
+Writing to file /export/netapp/korap/krill-json/dereko-2020-1/e04.tar
+Reading data ...
+Start processing ...
+971715 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971716 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971717 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971718 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971719 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971720 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971721 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971722 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971723 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971724 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971725 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971726 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971727 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971728 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971729 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971730 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971731 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971732 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971733 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+971734 Use of uninitialized value in concatenation (.) or string at /home/korap/perl5/perlbrew/perls/perl-5.22.0/bin/korapxml2krill line 836.
+Convert [$18127:1/37921] Processed /tmp/ZHzsuReHxW/E04-DEZ-03245.json.gz
+Convert [$18146:2/37921] Processed /tmp/ZHzsuReHxW/E04-DEZ-03223.json.gz
+Convert [$18129:3/37921] Processed /tmp/ZHzsuReHxW/E04-DEZ-03243.json.gz
+Convert [$18144:4/37921] Processed /tmp/ZHzsuReHxW/E04-DEZ-03225.json.gz
+Wrote to tar archive.
+1432.24 wallclock secs (13.66 usr 76.84 sys + 15834.30 cusr 985.44 csys = 16910.24 CPU)
+Done.
+Removed directory /opt/korap/temp/esymtk with 889660 objects.
+
+Start serial processing of m89.*zip to /export/netapp/korap/krill-json/dereko-2020-1/m89
+Reading config from /export/netapp/korap/krill-json/dereko-2020-1/dereko-2020-1.cfg
+Input is /vol/corpora/DeReKo/incoming/KorAP/zip/m89.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m89.malt.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m89.marmot.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m89.corenlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m89.opennlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m89.tree_tagger.zip
+Extract unzip -qo -uo -d /opt/korap/temp/hlpddy /vol/corpora/DeReKo/incoming/KorAP/zip/m89.zip
+Extract unzip -qo -uo -d /opt/korap/temp/hlpddy /vol/corpora/DeReKo/incoming/KorAP/zip/m89.malt.zip
+Extract unzip -qo -uo -d /opt/korap/temp/hlpddy /vol/corpora/DeReKo/incoming/KorAP/zip/m89.marmot.zip
+Extract unzip -qo -uo -d /opt/korap/temp/hlpddy /vol/corpora/DeReKo/incoming/KorAP/zip/m89.corenlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/hlpddy /vol/corpora/DeReKo/incoming/KorAP/zip/m89.opennlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/hlpddy /vol/corpora/DeReKo/incoming/KorAP/zip/m89.tree_tagger.zip
+Writing to file /export/netapp/korap/krill-json/dereko-2020-1/m89.tar
+Reading data ...
+Start processing ...
+Convert [$23794:1/39892] Processed /tmp/2zkfNcFXYW/M89-912-48372.json.gz
+Convert [$23764:2/39892] Processed /tmp/2zkfNcFXYW/M89-912-48411.json.gz
+Convert [$23741:3/39892] Processed /tmp/2zkfNcFXYW/M89-912-48579.json.gz
+Convert [$23746:4/39892] Processed /tmp/2zkfNcFXYW/M89-912-48440.json.gz
+Convert [$23769:5/39892] Processed /tmp/2zkfNcFXYW/M89-912-48404.json.gz
+Convert [$23782:6/39892] Processed /tmp/2zkfNcFXYW/M89-912-48386.json.gz
+Wrote to tar archive.
+1145.07 wallclock secs (13.89 usr 106.63 sys + 12032.54 cusr 1056.80 csys = 13209.86 CPU)
+Done.
+Removed directory /opt/korap/temp/hlpddy with 957436 objects.
+
+Start serial processing of m91.*zip to /export/netapp/korap/krill-json/dereko-2020-1/m91
+Reading config from /export/netapp/korap/krill-json/dereko-2020-1/dereko-2020-1.cfg
+Input is /vol/corpora/DeReKo/incoming/KorAP/zip/m91.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m91.malt.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m91.marmot.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m91.corenlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m91.opennlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m91.tree_tagger.zip
+Extract unzip -qo -uo -d /opt/korap/temp/rgavhd /vol/corpora/DeReKo/incoming/KorAP/zip/m91.zip
+Extract unzip -qo -uo -d /opt/korap/temp/rgavhd /vol/corpora/DeReKo/incoming/KorAP/zip/m91.malt.zip
+Extract unzip -qo -uo -d /opt/korap/temp/rgavhd /vol/corpora/DeReKo/incoming/KorAP/zip/m91.marmot.zip
+[/vol/corpora/DeReKo/incoming/KorAP/zip/m91.corenlp.zip]
+  End-of-central-directory signature not found.  Either this file is not
+  a zipfile, or it constitutes one disk of a multi-part archive.  In the
+  latter case the central directory and zipfile comment will be found on
+  the last disk(s) of this archive.
+unzip:  cannot find zipfile directory in one of /vol/corpora/DeReKo/incoming/KorAP/zip/m91.corenlp.zip or
+        /vol/corpora/DeReKo/incoming/KorAP/zip/m91.corenlp.zip.zip, and cannot find /vol/corpora/DeReKo/incoming/KorAP/zip/m91.corenlp.zip.ZIP, period.
+Extract 2304 unzip -qo -uo -d /opt/korap/temp/rgavhd /vol/corpora/DeReKo/incoming/KorAP/zip/m91.corenlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/rgavhd /vol/corpora/DeReKo/incoming/KorAP/zip/m91.opennlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/rgavhd /vol/corpora/DeReKo/incoming/KorAP/zip/m91.tree_tagger.zip
+Writing to file /export/netapp/korap/krill-json/dereko-2020-1/m91.tar
+Reading data ...
+Start processing ...
+Convert [$712:1/10946] Processed /tmp/Jp30jRQeRz/M91-108-24510.json.gz
+Convert [$681:2/10946] Processed /tmp/Jp30jRQeRz/M91-109-25573.json.gz
+Convert [$714:3/10946] Processed /tmp/Jp30jRQeRz/M91-108-24507.json.gz
+Convert [$672:4/10946] Processed /tmp/Jp30jRQeRz/M91-112-31439.json.gz
+Convert [$693:5/10946] Processed /tmp/Jp30jRQeRz/M91-108-25554.json.gz
+Convert [$710:6/10946] Processed /tmp/Jp30jRQeRz/M91-108-24518.json.gz
+Convert [$716:7/10946] Processed /tmp/Jp30jRQeRz/M91-108-24499.json.gz
+[35m[268777] /home/ingestor/perl5/perlbrew/perls/perl-5.22.0/lib/site_perl/5.22.0/KorAP/XML/Batch/File.pm 68 main - /tmp/7aKw2I7Nf1/M94-410-05334.json.gz can't be processed - No tokens found in /opt/korap/temp/gcansn/M94/410/05334/base/tokens.xml[0m
+Convert [$18504:6017/10490] 1 Unable to process /opt/korap/temp/gcansn/M94/410/05334
+Wrote to tar archive.
+248.941 wallclock secs ( 3.11 usr 17.33 sys + 2352.09 cusr 230.38 csys = 2602.91 CPU)
+Done.
+Removed directory /opt/korap/temp/rgavhd with 197052 objects.
+
+Start serial processing of m95.*zip to /export/netapp/korap/krill-json/dereko-2020-1/m95
+Reading config from /export/netapp/korap/krill-json/dereko-2020-1/dereko-2020-1.cfg
+Input is /vol/corpora/DeReKo/incoming/KorAP/zip/m95.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m95.malt.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m95.marmot.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m95.corenlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m95.opennlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m95.tree_tagger.zip
+Extract unzip -qo -uo -d /opt/korap/temp/krhycp /vol/corpora/DeReKo/incoming/KorAP/zip/m95.zip
+Extract unzip -qo -uo -d /opt/korap/temp/krhycp /vol/corpora/DeReKo/incoming/KorAP/zip/m95.malt.zip
+Extract unzip -qo -uo -d /opt/korap/temp/krhycp /vol/corpora/DeReKo/incoming/KorAP/zip/m95.marmot.zip
+error [/vol/corpora/DeReKo/incoming/KorAP/zip/m95.corenlp.zip]:  missing 70639568 bytes in zipfile
+  (attempting to process anyway)
+error [/vol/corpora/DeReKo/incoming/KorAP/zip/m95.corenlp.zip]:  attempt to seek before beginning of zipfile
+  (please check that you have transferred or created the zipfile in the
+  appropriate BINARY mode and that you have compiled UnZip properly)
+  (attempting to re-compensate)
+file #1:  bad zipfile offset (local header sig):  552992
+  (attempting to re-compensate)
+error [/vol/corpora/DeReKo/incoming/KorAP/zip/m95.corenlp.zip]:  attempt to seek before beginning of zipfile
+  (please check that you have transferred or created the zipfile in the
+  appropriate BINARY mode and that you have compiled UnZip properly)
+error [/vol/corpora/DeReKo/incoming/KorAP/zip/m95.corenlp.zip]:  attempt to seek before beginning of zipfile
+  (please check that you have transferred or created the zipfile in the
+  appropriate BINARY mode and that you have compiled UnZip properly)
+error [/vol/corpora/DeReKo/incoming/KorAP/zip/m95.corenlp.zip]:  attempt to seek before beginning of zipfile
+  (please check that you have transferred or created the zipfile in the
+  appropriate BINARY mode and that you have compiled UnZip properly)
+error [/vol/corpora/DeReKo/incoming/KorAP/zip/m95.corenlp.zip]:  attempt to seek before beginning of zipfile
+  (please check that you have transferred or created the zipfile in the
+  appropriate BINARY mode and that you have compiled UnZip properly)
+file #5:  bad zipfile offset (local header sig):  8724412
+Extract 512 unzip -qo -uo -d /opt/korap/temp/krhycp /vol/corpora/DeReKo/incoming/KorAP/zip/m95.corenlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/krhycp /vol/corpora/DeReKo/incoming/KorAP/zip/m95.opennlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/krhycp /vol/corpora/DeReKo/incoming/KorAP/zip/m95.tree_tagger.zip
+Writing to file /export/netapp/korap/krill-json/dereko-2020-1/m95.tar
+Reading data ...
+Start processing ...
+Convert [$23501:1/29307] Processed /tmp/UHs_b27XGi/M95-512-37070.json.gz
+Convert [$23478:2/29307] Processed /tmp/UHs_b27XGi/M95-512-37098.json.gz
+Convert [$23502:3/29307] Processed /tmp/UHs_b27XGi/M95-512-37069.json.gz
+Convert [$23505:4/29307] Processed /tmp/UHs_b27XGi/M95-512-37066.json.gz
+Convert [$23508:5/29307] Processed /tmp/UHs_b27XGi/M95-512-37063.json.gz
+Convert [$23472:6/29307] Processed /tmp/UHs_b27XGi/M95-512-37105.json.gz
+Wrote to tar archive.
+2284.59 wallclock secs (27.94 usr 292.61 sys + 23686.76 cusr 2418.33 csys = 26425.64 CPU)
+Done.
+Removed directory /opt/korap/temp/nyvcoq with 1847860 objects.
+
+Start serial processing of m99.*zip to /export/netapp/korap/krill-json/dereko-2020-1/m99
+Reading config from /export/netapp/korap/krill-json/dereko-2020-1/dereko-2020-1.cfg
+Input is /vol/corpora/DeReKo/incoming/KorAP/zip/m99.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m99.malt.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m99.marmot.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m99.corenlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m99.opennlp.zip, /vol/corpora/DeReKo/incoming/KorAP/zip/m99.tree_tagger.zip
+Extract unzip -qo -uo -d /opt/korap/temp/nmdcdp /vol/corpora/DeReKo/incoming/KorAP/zip/m99.zip
+Extract unzip -qo -uo -d /opt/korap/temp/nmdcdp /vol/corpora/DeReKo/incoming/KorAP/zip/m99.malt.zip
+Extract unzip -qo -uo -d /opt/korap/temp/nmdcdp /vol/corpora/DeReKo/incoming/KorAP/zip/m99.marmot.zip
+[/vol/corpora/DeReKo/incoming/KorAP/zip/m99.corenlp.zip]
+fatal error: read failure while seeking for End-of-centdir-64 signature.
+  This zipfile is corrupt.
+unzip:  cannot find zipfile directory in one of /vol/corpora/DeReKo/incoming/KorAP/zip/m99.corenlp.zip or
+        /vol/corpora/DeReKo/incoming/KorAP/zip/m99.corenlp.zip.zip, and cannot find /vol/corpora/DeReKo/incoming/KorAP/zip/m99.corenlp.zip.ZIP, period.
+Extract 2304 unzip -qo -uo -d /opt/korap/temp/nmdcdp /vol/corpora/DeReKo/incoming/KorAP/zip/m99.corenlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/nmdcdp /vol/corpora/DeReKo/incoming/KorAP/zip/m99.opennlp.zip
+Extract unzip -qo -uo -d /opt/korap/temp/nmdcdp /vol/corpora/DeReKo/incoming/KorAP/zip/m99.tree_tagger.zip
+Writing to file /export/netapp/korap/krill-json/dereko-2020-1/m99.tar
+Reading data ...
+Start processing ...
+Convert [$1194:1/63500] Processed /tmp/HuS3SZe33k/M99-DEZ-84493.json.gz
+Convert [$1167:2/63500] Processed /tmp/HuS3SZe33k/M99-DEZ-84518.json.gz
+Convert [$1164:3/63500] Processed /tmp/HuS3SZe33k/M99-DEZ-84521.json.gz
+Convert [$1192:4/63500] Processed /tmp/HuS3SZe33k/M99-DEZ-84495.json.gz
+Convert [$1152:5/63500] Processed /tmp/HuS3SZe33k/M99-DEZ-84527.json.gz
+Convert [$1201:6/63500] Processed /tmp/HuS3SZe33k/M99-DEZ-84486.json.gz
+Convert [$1161:7/63500] Processed /tmp/HuS3SZe33k/M99-DEZ-84522.json.gz
+Convert [$30551:22374/59739] 1 Unable to process /opt/korap/temp/evgcxo/N00/AUG/37895
+Convert [$30551:22374/59739] 1 Unable to process /opt/korap/temp/evgcxo/N00/AUG/37895
+Wrote to tar archive.
+2284.59 wallclock secs (27.94 usr 292.61 sys + 23686.76 cusr 2418.33 csys = 26425.64 CPU)
+Done.
+Removed directory /opt/korap/temp/nyvcoq with 1847860 objects.
+701788 

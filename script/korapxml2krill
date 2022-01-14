@@ -157,6 +157,7 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2022/01/17
 # - Support for temporary extraction in config
+# - Introduced support for Gingko
 # ----------------------------------------------------------
 
 our $LAST_CHANGE = '2022/01/17';
@@ -305,6 +306,29 @@ Log::Any::Adapter->set(
   'Stderr', log_level => uc($cfg{log} // 'ERROR')
 );
 
+# Start log slimming
+if ($cmd && $cmd eq 'slimlog') {
+  require KorAP::XML::Log::Slim;
+
+  my $log_file = shift @ARGV;
+
+  if (-e $log_file) {
+
+    my $slimmer = KorAP::XML::Log::Slim->new($log_file);
+
+    # Run log filter
+    $slimmer->slim_to;
+  }
+
+  else {
+    warn "Log file can't be found";
+    exit(1);
+  };
+
+  exit;
+};
+
+
 if ($cmd && $output && (!defined($to_tar)) && (!-e $output || !-d $output)) {
   $log->error("Directory '$output' does not exist.");
   exit 1;
@@ -315,7 +339,6 @@ pod2usage(%ERROR_HASH) unless @input;
 
 # Gzip has no effect, if no output is given
 pod2usage(%ERROR_HASH) if $gzip && !$output;
-
 
 # Start serial processing
 if ($cmd && $cmd eq 'serial') {
@@ -1070,6 +1093,14 @@ as they are (so they may be premerged or globs).
 the C<--out> directory is treated as the base directory where subdirectories
 are created based on the archive name. In case the C<--to-tar> flag is given,
 the output will be a tar file.
+
+
+=item B<slimlog>
+
+  $ korapxml2krill slimlog <logfile> > <logfile-slim>
+
+Filters out all useless aka succesfull information from logs, to simplify
+log checks. Expects no further options.
 
 
 =back

@@ -3,6 +3,7 @@
           in a config file.
         - Improve handling of invalid certainty values
           in TreeTagger.
+        - Add log slimming function.
 
 0.42 2022-01-11
         - Replaced Log4perl with Log::Any.
