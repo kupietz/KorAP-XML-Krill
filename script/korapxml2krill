@@ -154,9 +154,12 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2021/10/11
 # - Introduced support for Gingko
+#
+# 2022/01/17
+# - Support for temporary extraction in config
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2021/10/11';
+our $LAST_CHANGE = '2022/01/17';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -246,7 +249,8 @@ if ($cfg_file && -e $cfg_file) {
   foreach (qw!output cache-size input-base token overwrite
               meta base-sentences base-paragraphs base-pagebreaks
               gzip to-tar log cache non-word-tokens
-              non-verbal-tokens sequential-extraction cache-init
+              non-verbal-tokens sequential-extraction
+              temporary-extract cache-init
               koral extract-dir jobs!) {
     my $underlined = $_ =~ tr/-/_/r;
     if (!defined($cfg{$underlined}) && defined $config{$_}) {
@@ -1579,7 +1583,7 @@ L<html|https://www.tei-c.org/release/doc/tei-p5-doc/en/html/FS.html>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2021, L<IDS Mannheim|https://www.ids-mannheim.de/>
+Copyright (C) 2015-2022, L<IDS Mannheim|https://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|https://www.nils-diewald.de/>
 

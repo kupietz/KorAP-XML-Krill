@@ -277,7 +277,7 @@ Supported parameters are:
 C<overwrite>, C<gzip>, C<jobs>, C<input-base>,
 C<token>, C<log>, C<cache>, C<cache-size>, C<cache-delete>, C<meta>,
 C<output>, C<koral>,
-C<tempary-extract>, C<sequential-extraction>,
+C<temporary-extract>, C<sequential-extraction>,
 C<base-sentences>, C<base-paragraphs>,
 C<base-pagebreaks>,
 C<skip> (semicolon separated), C<sigle>
@@ -574,7 +574,7 @@ L<html|https://www.tei-c.org/release/doc/tei-p5-doc/en/html/FS.html>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2021, L<IDS Mannheim|https://www.ids-mannheim.de/>
+Copyright (C) 2015-2022, L<IDS Mannheim|https://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|https://www.nils-diewald.de/>
 
