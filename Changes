@@ -1,6 +1,8 @@
 0.43 2022-01-17
         - Fix temporary extract handling when defined
           in a config file.
+        - Improve handling of invalid certainty values
+          in TreeTagger.
 
 0.42 2022-01-11
         - Replaced Log4perl with Log::Any.

@@ -1,6 +1,7 @@
 package KorAP::XML::Annotation::TreeTagger::Morpho;
 use KorAP::XML::Annotation::Base;
 use POSIX 'floor';
+use Scalar::Util 'looks_like_number';
 
 sub parse {
   my $self = shift;
@@ -28,7 +29,14 @@ sub parse {
         my $certainty = 0;
         foreach (@$content) {
           if ($_->{-name} eq 'certainty') {
-            $certainty = $_->{'#text'};
+
+            if (looks_like_number($_->{'#text'})) {
+              $certainty = $_->{'#text'};
+            }
+            else {
+              $certainty = 1;
+              $$self->log->warn('"' . $_->{'#text'} . '" is not a valid certainty value');
+            }
           }
           else {
             push @val, $_

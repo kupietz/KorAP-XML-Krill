@@ -180,7 +180,7 @@
         <f name="lex">
           <fs>
             <f name="lemma">Betrieb</f>
-            <f name="certainty">1.000000</f>
+            <f name="certainty">'hurra'</f>
             <f name="ctag">NN</f>
           </fs>
         </f>

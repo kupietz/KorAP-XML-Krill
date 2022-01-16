@@ -45,6 +45,7 @@ WriteMakefile(
     'Archive::Tar'    => 2.24,
     'Clone'           => 0.45,
     'List::Util'      => 1.45,
+    'Scalar::Util'    => 1.60,
   },
   MIN_PERL_VERSION => '5.016',
   test => {

@@ -28,6 +28,8 @@ is($data->{stream}->[3]->[4], 'tt/p:NN', 'POS');
 is($data->{stream}->[10]->[3], 'tt/l:ein$<b>129<b>253', 'POS');
 is($data->{stream}->[10]->[4], 'tt/p:PTKVZ$<b>129<b>253', 'POS');
 
+is($data->{stream}->[13]->[3], 'tt/l:Betrieb', 'POS');
+
 is($data->{stream}->[-1]->[3], 'tt/l:werden', 'POS');
 is($data->{stream}->[-1]->[4], 'tt/p:VAFIN', 'POS');
 
