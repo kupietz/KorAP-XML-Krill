@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer docid="NDY_296.008718" xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4">
+<spanList>
+<span id="s2318566_n1" from="0" to="1">
+<rel label="ROOT">
+<span from="0" to="1"/>
+</rel>
+</span>
+</spanList>
+</layer>

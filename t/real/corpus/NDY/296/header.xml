@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng"
+            type="application/xml"
+            schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN"
+          "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="document" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+   <fileDesc>
+    <titleStmt>
+     <dokumentSigle>NDY/296</dokumentSigle>
+     <d.title>LOCKE hat mein MERCEDES AMG ZERSTÖRT!😡 (AutoUnfall)</d.title>
+    </titleStmt>
+    <publicationStmt>
+     <distributor/>
+     <pubAddress/>
+     <availability region="ids" Default="n" status="unknown">QAO-NC-LOC:ids</availability>
+     <pubDate/>
+    </publicationStmt>
+    <sourceDesc Default="n">
+     <biblStruct Default="n" status="draft">
+      <monogr>
+       <h.title type="main">LOCKE hat mein MERCEDES AMG ZERSTÖRT!😡 (AutoUnfall)</h.title>
+       <h.author>Leon Machère</h.author>
+       <imprint/>
+       <biblScope unit="channel" n="1">https://www.youtube.com/watch?v=UCk-ERvn9_tUjg7e8Bn921gA</biblScope>
+       <biblScope unit="video" n="1">https://www.youtube.com/watch?v=JnPVOl-sO64</biblScope>
+      </monogr>
+     </biblStruct>
+    </sourceDesc>
+   </fileDesc>
+   <profileDesc/>
+  </idsHeader>

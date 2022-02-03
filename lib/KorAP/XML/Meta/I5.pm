@@ -304,6 +304,7 @@ sub parse {
 
     $temp->find("catRef")->each(
       sub {
+        return unless $_->attr('target');
         my ($ign, @ttopic) = grep { $_ } map { _squish($_) } split('\.', $_->attr('target'));
         push(@topic, @ttopic);
       }

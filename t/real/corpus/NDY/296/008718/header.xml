@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="header.rng"
+            type="application/xml"
+            schematypens="http://relaxng.org/ns/structure/1.0"?>
+<!DOCTYPE idsCorpus PUBLIC "-//IDS//DTD IDS-XCES 1.0//EN"
+          "http://corpora.ids-mannheim.de/idsxces1/DTD/ids.xcesdoc.dtd">
+<idsHeader type="text" pattern="text" status="new" version="1.1" TEIform="teiHeader">
+    <fileDesc>
+     <titleStmt>
+      <textSigle>NDY/296.008718</textSigle>
+      <t.title assemblage="external">NDY/296.008718 Kommentar zu: LOCKE hat mein MERCEDES AMG ZERSTÖRT!😡 (AutoUnfall), - YouTube, 04.12.2017</t.title>
+     </titleStmt>
+     <publicationStmt>
+      <distributor/>
+      <pubAddress/>
+      <availability region="ids" Default="n" status="unknown">QAO-NC-LOC:ids</availability>
+      <pubDate/>
+     </publicationStmt>
+     <sourceDesc Default="n">
+      <biblStruct Default="n" status="draft">
+       <analytic>
+        <h.title type="main">Kommentar zu: LOCKE hat mein MERCEDES AMG ZERSTÖRT!😡 (AutoUnfall)</h.title>
+        <h.author>Livia Banse</h.author>
+        <imprint/>
+        <biblScope type="pp"/>
+        <biblScope type="suppl"/>
+        <biblScope type="suppltitle"/>
+        <biblNote n="1"/>
+        <biblNote n="url">https://youtube.googleapis.com/youtube/v3/comments?part=snippet&amp;id=UgwyndbbrTpNztj0vwh4AaABAg&amp;key=[YOUR_API_KEY]</biblNote>
+       </analytic>
+       <monogr>
+        <h.title type="main">YouTube</h.title>
+        <h.title type="sub"/>
+        <h.title type="abbr">YouTube</h.title>
+        <editor/>
+        <imprint>
+         <publisher>YouTube</publisher>
+         <pubDate type="year">2017</pubDate>
+         <pubDate type="month">12</pubDate>
+         <pubDate type="day">04</pubDate>
+         <pubDate type="time">2017-12-04T12:56:36.000Z</pubDate>
+         <pubPlace/>
+        </imprint>
+        <biblScope type="issue"/>
+        <biblScope type="issueplace"/>
+        <biblScope type="vol"/>
+       </monogr>
+      </biblStruct>
+      <reference type="complete" assemblage="regular">NDY/296.008718, YouTube, 04.12.2017. Livia Banse: Kommentar zu: LOCKE hat mein MERCEDES AMG ZERSTÖRT!😡 (AutoUnfall), - YouTube
+        </reference>
+      <reference type="short" assemblage="regular">NDY/296.008718, YouTube, 04.12.2017</reference>
+     </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+     <samplingDecl Default="n"/>
+     <editorialDecl Default="n">
+      <pagination type="no"/>
+     </editorialDecl>
+     <tagsDecl>
+      <tagUsage gi="p" occurs="1"/>
+     </tagsDecl>
+    </encodingDesc>
+    <profileDesc>
+     <creation>
+      <creatDate>2017.12.04</creatDate>
+      <creatRef>4.12.2017</creatRef>
+      <creatRefShort>4.12.2017</creatRefShort>
+     </creation>
+     <textClass Default="n">
+      <catRef n="24" target="videoCategories.entertainment" scheme="YTvideoCategories"/>
+     </textClass>
+     <textDesc Default="n">
+      <textType>Kurzmeldungen: YouTube-Kommentare</textType>
+      <textTypeArt/>
+      <textDomain/>
+      <column/>
+     </textDesc>
+     <correspDesc Default="n">
+      <correspContext>
+       <ref type="channel" n="1" target="https://www.youtube.com/watch?v=UCk-ERvn9_tUjg7e8Bn921gA"/>
+       <ref type="video" n="1" target="https://www.youtube.com/watch?v=JnPVOl-sO64"/>
+       <ref type="parent"/>
+      </correspContext>
+     </correspDesc>
+    </profileDesc>
+   </idsHeader>
