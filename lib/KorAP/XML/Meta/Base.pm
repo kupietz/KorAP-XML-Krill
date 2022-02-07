@@ -1,6 +1,6 @@
 package KorAP::XML::Meta::Base;
 # use Mojo::Log;
-use Mojo::Util 'url_escape';
+use Mojo::Util qw!encode url_escape!;
 use Log::Any qw($log);
 use strict;
 use warnings;
@@ -185,7 +185,7 @@ sub korap_data_uri {
   my $link = 'data:application/x.korap-link;';
 
   foreach (sort CORE::keys %attributes) {
-    $link .= url_escape($_) . '=' . url_escape($attributes{$_}) . ';';
+    $link .= url_escape(encode('UTF-8', $_)) . '=' . url_escape(encode('UTF-8', $attributes{$_})) . ';';
   };
 
   chop $link;

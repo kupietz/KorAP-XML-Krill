@@ -83,7 +83,7 @@ is($meta->{S_gingko_collection_short}, 'Gingko');
 is($meta->{A_gingko_article_DOI}, 'data:application/x.korap-link;title=doi%3A10.1007%2FBF03221854,https%3A%2F%2Fdoi.org%2F10.1007%2FBF03221854', 'Gingko Article DOI');
 is($meta->{I_gingko_text_tokens}, '2191', 'Gingko Text Tokens');
 is($meta->{A_internal_link}, 'data:application/x.korap-link;title=IDS%20webpage%20on%20Gingko%20in%20the%20DeReKo%20archive,https%3A%2F%2Fwww.ids-mannheim.de%2Fdigspra%2Fkl%2Fprojekte%2Fkorpora%2Farchiv-1%2Fgingko%2F', 'Gingko Internal Link');
-is($meta->{A_external_link}, 'data:application/x.korap-link;title=Gingko-Webseite%20an%20der%20Universit%E4t%20Leipzig,http%3A%2F%2Fwww.uni-leipzig.de%2Fgingko%2F', 'Gingko External Link');
+is($meta->{A_external_link}, 'data:application/x.korap-link;title=Gingko-Webseite%20an%20der%20Universit%C3%A4t%20Leipzig,http%3A%2F%2Fwww.uni-leipzig.de%2Fgingko%2F', 'Gingko External Link');
 
 
 # Tokenization
