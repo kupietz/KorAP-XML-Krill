@@ -116,9 +116,18 @@ sub parse {
   # my (@non_word_tokens);
 
   my $p = $doc->primary;
+  my $old_end = 0;
   foreach my $span (@$tokens) {
     my $from = $span->{'-from'};
     my $to = $span->{'-to'};
+
+    if ($from < $old_end) {
+      $self->error("Tokens duplicated or not in order");
+      $log->warn("Token positions not in order in [$from-$to] in $path");
+      return;
+    };
+
+    $old_end = $to;
 
     # Get the subring from primary data
     my $token = $p->data($from, $to);
