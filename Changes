@@ -1,3 +1,8 @@
+0.45 2022-02-24
+        - Due to problems installing Archive::Tar::Builder
+          in certain environments, this is now optional,
+          with a pure perl fallback archiver.
+
 0.44 2022-02-17
         - Improve Gingko Metadata support.
         - Fix data-URIs by always refering to UTF-8.

@@ -16,6 +16,7 @@ use Cache::FastMmap;
 use Directory::Iterator;
 use KorAP::XML::Krill qw!get_file_name get_file_name_from_glob!;
 use KorAP::XML::Archive;
+use KorAP::XML::TarBuilder;
 use KorAP::XML::Tokenizer;
 use KorAP::XML::Batch::File;
 use Config::Simple;
@@ -27,7 +28,6 @@ use File::Basename;
 use Mojo::Collection 'c';
 use String::Random qw(random_string);
 use IO::File;
-use Archive::Tar::Builder;
 use Fcntl qw(:flock SEEK_END);
 
 # use KorAP::XML::ForkPool;
@@ -160,7 +160,7 @@ use Fcntl qw(:flock SEEK_END);
 # - Introduced support for Gingko
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2022/01/17';
+our $LAST_CHANGE = '2022/02/24';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -725,9 +725,6 @@ elsif ($cmd eq 'archive') {
 
   # Initialize tar archive
   if ($to_tar) {
-    $tar_archive = Archive::Tar::Builder->new(
-      ignore_errors => 1
-    );
 
     # Set output name
     my $tar_file = $output;
@@ -740,8 +737,22 @@ elsif ($cmd eq 'archive') {
     $tar_fh = IO::File->new($tar_file, 'w');
     $tar_fh->binmode(1);
 
-    # Set handle
-    $tar_archive->set_handle($tar_fh);
+    # Use tar builder for archiving
+    if (eval("use Archive::Tar::Builder; 1;")) {
+      $tar_archive = Archive::Tar::Builder->new(
+        ignore_errors => 1
+      );
+
+      # Set handle
+      $tar_archive->set_handle($tar_fh);
+    }
+
+    # Fallback solution
+    else {
+      $tar_archive = KorAP::XML::TarBuilder->new(
+        $tar_fh
+      );
+    };
 
     # Output to temporary directory
     $output_dir = File::Temp->newdir;
@@ -1059,7 +1070,8 @@ The preferred way to install L<KorAP::XML::Krill> is to use L<cpanm|App::cpanmin
 In case everything went well, the C<korapxml2krill> tool will
 be available on your command line immediately.
 Minimum requirement for L<KorAP::XML::Krill> is Perl 5.16.
-Optional support for L<Sys::Info> to calculate available cores.
+Optionally installing L<Archive::Tar::Builder> speeds up archive building.
+Optional support for L<Sys::Info> to calculate available cores is available.
 In addition to work with zip archives, the C<unzip> tool needs to be present.
 
 =head1 ARGUMENTS
@@ -1317,7 +1329,7 @@ Supported parameters are:
 C<overwrite>, C<gzip>, C<jobs>, C<input-base>,
 C<token>, C<log>, C<cache>, C<cache-size>, C<cache-delete>, C<meta>,
 C<output>, C<koral>,
-C<tempary-extract>, C<sequential-extraction>,
+C<temporary-extract>, C<sequential-extraction>,
 C<base-sentences>, C<base-paragraphs>,
 C<base-pagebreaks>,
 C<skip> (semicolon separated), C<sigle>
