@@ -135,6 +135,18 @@ sub parse {
     $sub_title = $sub_title ? _squish $sub_title->all_text : undef;
     $author    = $author    ? _squish $author->all_text    : undef;
 
+    if (my $temp = $analytic->at('biblNote[n="url"]')) {
+      my $url = _squish $temp->all_text;
+      my $title = $temp->attr('rend') || $url;
+      $self->{"A_${type}_external_link"} = $self->korap_data_uri($url, title => $title);
+    };
+
+    if (my $temp = $analytic->at('biblNote[n="url.ids"]')) {
+      my $url = _squish $temp->all_text;
+      my $title = $temp->attr('rend') || $url;
+      $self->{"A_${type}_internal_link"} = $self->korap_data_uri($url, title => $title);
+    };
+
     # Text meta data
     if ($type eq 'text') {
       unless ($self->{T_title} || $self->{T_sub_title}) {

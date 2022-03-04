@@ -32,7 +32,7 @@
         <f name="name">head</f>
         <f name="attr">
           <fs type="attr">
-            <f name="type"></f>
+            <f name="type">main</f>
           </fs>
         </f>
       </fs>

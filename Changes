@@ -1,7 +1,9 @@
-0.45 2022-02-24
+0.45 2022-03-04
         - Due to problems installing Archive::Tar::Builder
           in certain environments, this is now optional,
           with a pure perl fallback archiver.
+        - Support externalLink and internalLink universally in
+          i5 meta data.
 
 0.44 2022-02-17
         - Improve Gingko Metadata support.

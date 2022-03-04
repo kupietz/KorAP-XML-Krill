@@ -69,15 +69,17 @@ sub parse {
         $self->{S_gingko_collection_short} = $temp if $temp;
       };
 
-      if ($temp = $mono->at('biblNote[n="url"]')) {
-        $temp = $squish->($temp->all_text);
-        $self->{A_external_link} = $self->korap_data_uri($temp, title => 'Gingko-Webseite an der Universität Leipzig');
-      };
+#      if ($temp = $mono->at('biblNote[n="url"]')) {
+#        my $title = $temp->attr('rend') || 'Gingko-Webseite an der Universität Leipzig';
+#        $temp = $squish->($temp->all_text);
+#        $self->{A_external_link} = $self->korap_data_uri($temp, title => $title);
+#      };
 
-      if ($temp = $mono->at('biblNote[n="url.ids"]')) {
-        $temp = $squish->($temp->all_text);
-        $self->{A_internal_link} = $self->korap_data_uri($temp, title => 'IDS webpage on Gingko in the DeReKo archive');
-      };
+#      if ($temp = $mono->at('biblNote[n="url.ids"]')) {
+#        my $title = $temp->attr('rend') || 'IDS webpage on Gingko in the DeReKo archive';
+#        $temp = $squish->($temp->all_text);
+#        $self->{A_internal_link} = $self->korap_data_uri($temp, title => $title);
+#      };
 
     };
   };

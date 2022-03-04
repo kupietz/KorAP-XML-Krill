@@ -24,8 +24,8 @@
               <imprint>
                 <pubDate type="year">2007</pubDate>
               </imprint>
-              <biblNote n="url">http://www.uni-leipzig.de/gingko/</biblNote>
-              <biblNote n="url.ids">https://www.ids-mannheim.de/digspra/kl/projekte/korpora/archiv-1/gingko/</biblNote>
+              <biblNote n="url" rend="Gingko-Webseite an der Universität Leipzig">http://www.uni-leipzig.de/gingko/</biblNote>
+              <biblNote n="url.ids" rend="IDS webpage on Gingko in the DeReKo archive">https://www.ids-mannheim.de/digspra/kl/projekte/korpora/archiv-1/gingko/</biblNote>
             </monogr>
           </biblStruct>
         </sourceDesc>
