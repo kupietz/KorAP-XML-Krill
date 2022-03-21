@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idsHeader type="corpus"
+           pattern="text"
+           status="new"
+           version="1.1"
+           TEIform="teiHeader">
+   <fileDesc>
+      <titleStmt>
+         <korpusSigle>NKJP</korpusSigle>
+         <c.title xml:lang="pl">Narodowy Korpus Języka Polskiego -- podkorpus zawierający 1 milion słów</c.title>
+         <c.title xml:lang="en">National Corpus of Polish -- the 1 million word subcorpus</c.title>
+      </titleStmt>
+      <publicationStmt>
+         <availability status="unknown">
+            <p>This 1 million word subcorpus of the National Corpus of Polish is available publicly for free.</p>
+         </availability>
+      </publicationStmt>
+   </fileDesc>
+   <encodingDesc>
+      <classDecl>
+         <taxonomy xml:id="taxonomy-NKJP-type">
+            <category xml:id="typ_lit">
+               <desc xml:lang="pl">literatura piękna</desc>
+               <desc xml:lang="en">fiction</desc>
+            </category>
+            <category xml:id="typ_fakt">
+               <desc xml:lang="pl">literatura faktu</desc>
+               <desc xml:lang="en">non-fiction novel</desc>
+            </category>
+            <category xml:id="typ_publ">
+               <desc xml:lang="pl">publicystyka i wiadomości prasowe</desc>
+               <desc xml:lang="en">journalism</desc>
+            </category>
+            <category xml:id="typ_nd">
+               <desc xml:lang="pl">naukowo-dydaktyczny</desc>
+               <desc xml:lang="en">academic writing</desc>
+            </category>
+            <category xml:id="typ_inf-por">
+               <desc xml:lang="pl">informacyjno-poradnikowy</desc>
+               <desc xml:lang="en">informative and instructive writing</desc>
+            </category>
+            <category xml:id="typ_nklas">
+               <desc xml:lang="pl">książka niebeletrystyczna niesklasyfikowana</desc>
+               <desc xml:lang="en">unclassified non-fiction book</desc>
+            </category>
+            <category xml:id="typ_inne_pisane">
+               <desc xml:lang="pl">inne teksty pisane</desc>
+               <desc xml:lang="en">miscellaneous (written)</desc>
+               <category xml:id="typ_urzed">
+                  <desc xml:lang="pl">urzędowo-kancelaryjny</desc>
+                  <desc xml:lang="en">legal and official</desc>
+               </category>
+            </category>
+            <category xml:id="typ_internet">
+               <desc xml:lang="pl">Internet</desc>
+               <desc xml:lang="en">Internet</desc>
+            </category>
+            <category xml:id="typ_konwers">
+               <desc xml:lang="pl">konwersacyjne</desc>
+               <desc xml:lang="en">conversational</desc>
+            </category>
+            <category xml:id="typ_media">
+               <desc xml:lang="pl">mówione medialne</desc>
+               <desc xml:lang="en">spoken from the media</desc>
+            </category>
+            <category xml:id="typ_qmow">
+               <desc xml:lang="pl">quasi-mówione</desc>
+               <desc xml:lang="en">quasi-spoken</desc>
+            </category>
+         </taxonomy>
+      </classDecl>
+      <classDecl>
+         <taxonomy xml:id="taxonomy-NKJP-channel">
+            <category xml:id="kanal_prasa">
+               <desc xml:lang="pl">prasa</desc>
+               <desc xml:lang="en">press</desc>
+               <category xml:id="kanal_prasa_dziennik">
+                  <desc xml:lang="pl">dziennik</desc>
+                  <desc xml:lang="en">daily</desc>
+               </category>
+               <category xml:id="kanal_prasa_tygodnik">
+                  <desc xml:lang="pl">tygodnik</desc>
+                  <desc xml:lang="en">weekly</desc>
+               </category>
+               <category xml:id="kanal_prasa_miesiecznik">
+                  <desc xml:lang="pl">miesiecznik</desc>
+                  <desc xml:lang="en">monthly</desc>
+               </category>
+               <category xml:id="kanal_prasa_inne">
+                  <desc xml:lang="pl">inne prasowe</desc>
+                  <desc xml:lang="en">other press</desc>
+               </category>
+            </category>
+            <category xml:id="kanal_ksiazka">
+               <desc xml:lang="pl">książka</desc>
+               <desc xml:lang="en">book</desc>
+            </category>
+            <category xml:id="kanal_internet">
+               <desc xml:lang="pl">Internet</desc>
+               <desc xml:lang="en">internet</desc>
+            </category>
+            <category xml:id="kanal_mowiony">
+               <desc xml:lang="pl">mówiony</desc>
+               <desc xml:lang="en">spoken</desc>
+            </category>
+            <category xml:id="kanal_ulotka">
+               <desc xml:lang="pl">ulotki, ogłoszenia, reklamy</desc>
+               <desc xml:lang="en">leaflets, announcemnets, ads</desc>
+            </category>
+         </taxonomy>
+      </classDecl>
+      <classDecl>
+         <taxonomy xml:id="ukd">
+            <bibl>
+               <title xml:lang="pl">Uniwersalna Klasyfikacja Dziesiętna</title>
+               <title xml:lang="en">Universal Decimal Classification</title>
+               <edition>UDC-P058</edition>
+            </bibl>
+         </taxonomy>
+      </classDecl>
+      <classDecl>
+         <taxonomy xml:id="bn">
+            <bibl>
+               <title xml:lang="pl">Klasyfikacja Biblioteki Narodowej</title>
+               <title xml:lang="en">Polish National Library Classification</title>
+               <edition>Słownik języka haseł przedmiotowych Biblioteki Narodowej. Wyd. 5 popr. i rozsz., stan na dzień 31 grudnia 2004 roku.</edition>
+            </bibl>
+         </taxonomy>
+      </classDecl>
+   </encodingDesc>
+</idsHeader>

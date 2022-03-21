@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer xmlns="http://ids-mannheim.de/ns/KorAP"
+       docid="NKJP_NKJP.KOT"
+       version="KorAP-0.4">
+   <spanList>
+      <span id="s2" from="0" to="279" l="1">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">text</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">segm_text</f>
+                  <f name="lang">pl</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s3" from="0" to="279" l="2">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">body</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">segm_body</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s4" from="0" to="279" l="3">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">p</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#txt_76-div</f>
+                  <f name="id">segm_76-p</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s5" from="0" to="183" l="4">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">s</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">segm_76.33-s</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s6" from="0" to="3" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,0,3)</f>
+                  <f name="id">segm_76.1-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s7" from="4" to="11" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,4,7)</f>
+                  <f name="id">segm_76.2-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s8" from="11" to="12" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,11,1)</f>
+                  <f name="nps">true</f>
+                  <f name="id">segm_76.3-seg</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s9" from="13" to="20" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,13,7)</f>
+                  <f name="id">segm_76.4-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s10" from="21" to="32" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,21,11)</f>
+                  <f name="id">segm_76.5-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s11" from="33" to="43" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,33,10)</f>
+                  <f name="id">segm_76.6-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s12" from="44" to="46" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,44,2)</f>
+                  <f name="id">segm_76.7-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s13" from="47" to="51" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,47,4)</f>
+                  <f name="id">segm_76.8-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s14" from="52" to="54" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,52,2)</f>
+                  <f name="id">segm_76.9-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s15" from="55" to="62" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,55,7)</f>
+                  <f name="id">segm_76.10-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s16" from="63" to="67" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,63,4)</f>
+                  <f name="id">segm_76.11-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s17" from="67" to="68" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,67,1)</f>
+                  <f name="nps">true</f>
+                  <f name="id">segm_76.12-seg</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s18" from="69" to="74" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,69,5)</f>
+                  <f name="id">segm_76.13-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s19" from="75" to="82" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,75,7)</f>
+                  <f name="id">segm_76.14-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s20" from="83" to="84" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,83,1)</f>
+                  <f name="id">segm_76.15-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s21" from="85" to="88" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,85,3)</f>
+                  <f name="id">segm_76.16-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s22" from="89" to="94" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,89,5)</f>
+                  <f name="id">segm_76.17-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s23" from="95" to="102" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,95,7)</f>
+                  <f name="id">segm_76.18-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s24" from="102" to="103" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,102,1)</f>
+                  <f name="nps">true</f>
+                  <f name="id">segm_76.19-seg</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s25" from="104" to="109" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,104,5)</f>
+                  <f name="id">segm_76.20-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s26" from="110" to="112" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,110,2)</f>
+                  <f name="id">segm_76.21-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s27" from="113" to="123" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,113,10)</f>
+                  <f name="id">segm_76.22-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s28" from="124" to="126" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,124,2)</f>
+                  <f name="id">segm_76.23-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s29" from="127" to="133" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,127,6)</f>
+                  <f name="id">segm_76.24-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s30" from="134" to="138" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,134,4)</f>
+                  <f name="id">segm_76.25-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s31" from="139" to="144" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,139,5)</f>
+                  <f name="id">segm_76.26-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s32" from="145" to="152" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,145,7)</f>
+                  <f name="id">segm_76.27-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s33" from="153" to="156" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,153,3)</f>
+                  <f name="id">segm_76.28-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s34" from="157" to="163" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,157,6)</f>
+                  <f name="id">segm_76.29-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s35" from="164" to="167" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,164,3)</f>
+                  <f name="id">segm_76.30-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s36" from="168" to="173" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,168,5)</f>
+                  <f name="id">segm_76.31-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s37" from="174" to="182" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,174,8)</f>
+                  <f name="id">segm_76.32-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s38" from="182" to="183" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,182,1)</f>
+                  <f name="nps">true</f>
+                  <f name="id">segm_76.33-seg</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s39" from="184" to="279" l="4">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">s</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">segm_76.48-s</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s40" from="184" to="192" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,184,8)</f>
+                  <f name="id">segm_76.34-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s41" from="193" to="197" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,193,4)</f>
+                  <f name="id">segm_76.35-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s42" from="198" to="204" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,198,6)</f>
+                  <f name="id">segm_76.36-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s43" from="205" to="212" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,205,7)</f>
+                  <f name="id">segm_76.37-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s44" from="213" to="214" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,213,1)</f>
+                  <f name="id">segm_76.38-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s45" from="215" to="227" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,215,12)</f>
+                  <f name="id">segm_76.39-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s46" from="228" to="231" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,228,3)</f>
+                  <f name="id">segm_76.40-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s47" from="232" to="239" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,232,7)</f>
+                  <f name="id">segm_76.41-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s48" from="240" to="246" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,240,6)</f>
+                  <f name="id">segm_76.42-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s49" from="246" to="247" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,246,1)</f>
+                  <f name="nps">true</f>
+                  <f name="id">segm_76.43-seg</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s50" from="248" to="255" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,248,7)</f>
+                  <f name="id">segm_76.44-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s51" from="256" to="261" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,256,5)</f>
+                  <f name="id">segm_76.45-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s52" from="262" to="268" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,262,6)</f>
+                  <f name="id">segm_76.46-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s53" from="269" to="278" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,269,9)</f>
+                  <f name="id">segm_76.47-seg</f>
+                  <f name="nps">false</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s54" from="278" to="279" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="corresp">text.xml#string-range(txt_76.1-ab,278,1)</f>
+                  <f name="nps">true</f>
+                  <f name="id">segm_76.48-seg</f>
+                  <f name="rejected">false</f>
+                  <f name="part">N</f>
+                  <f name="type">token</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+   </spanList>
+</layer>

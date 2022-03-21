@@ -474,6 +474,10 @@ push(@layers,
 push(@layers,
      ['MDParser', 'Dependency']);
 
+# NKJP
+push(@layers,
+     ['NKJP', 'Morpho']);
+
 # OpenNLP
 push(@layers,
      ['OpenNLP', 'Morpho'],

@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer xmlns="http://ids-mannheim.de/ns/KorAP"
+       docid="NKJP_NKJP.KOT"
+       version="KorAP-0.4">
+   <spanList>
+      <span id="s6" from="0" to="3" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--Nie-->
+                  <f name="lemma">nie</f>
+                  <f name="pos">qub</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s7" from="4" to="11" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--zdążyła-->
+                  <f name="lemma">zdążyć</f>
+                  <f name="pos">praet</f>
+                  <f name="msd">sg:f:perf</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s8" from="11" to="12" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--m-->
+                  <f name="lemma">być</f>
+                  <f name="pos">aglt</f>
+                  <f name="msd">sg:pri:imperf:nwok</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s9" from="13" to="20" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--jeszcze-->
+                  <f name="lemma">jeszcze</f>
+                  <f name="pos">qub</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s10" from="21" to="32" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--doprowadzić-->
+                  <f name="lemma">doprowadzić</f>
+                  <f name="pos">inf</f>
+                  <f name="msd">perf</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s11" from="33" to="43" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--mieszkania-->
+                  <f name="lemma">mieszkanie</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:gen:n</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s12" from="44" to="46" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--do-->
+                  <f name="lemma">do</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">gen</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s13" from="47" to="51" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--ładu-->
+                  <f name="lemma">ład</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:gen:m3</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s14" from="52" to="54" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--po-->
+                  <f name="lemma">po</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s15" from="55" to="62" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--rządach-->
+                  <f name="lemma">rząd</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">pl:loc:m3</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s16" from="63" to="67" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--Mini-->
+                  <f name="lemma">Minia</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:gen:f</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s17" from="67" to="68" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--,-->
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s18" from="69" to="74" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--która-->
+                  <f name="lemma">który</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:nom:f:pos</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s19" from="75" to="82" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--zrobiła-->
+                  <f name="lemma">zrobić</f>
+                  <f name="pos">praet</f>
+                  <f name="msd">sg:f:perf</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s20" from="83" to="84" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--w-->
+                  <f name="lemma">w</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc:nwok</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s21" from="85" to="88" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--nim-->
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">sg:loc:n:ter:akc:praep</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s22" from="89" to="94" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--maksi-->
+                  <f name="lemma">maksi</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:acc:m3:pos</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s23" from="95" to="102" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--bałagan-->
+                  <f name="lemma">bałagan</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:acc:m3</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s24" from="102" to="103" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--,-->
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s25" from="104" to="109" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--kiedy-->
+                  <f name="lemma">kiedy</f>
+                  <f name="pos">adv</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s26" from="110" to="112" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--na-->
+                  <f name="lemma">na</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s27" from="113" to="123" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--horyzoncie-->
+                  <f name="lemma">horyzont</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:loc:m3</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s28" from="124" to="126" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--za-->
+                  <f name="lemma">za</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">inst</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s29" from="127" to="133" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--sprawą-->
+                  <f name="lemma">sprawa</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:inst:f</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s30" from="134" to="138" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--pani-->
+                  <f name="lemma">pani</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:gen:f</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s31" from="139" to="144" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--Joasi-->
+                  <f name="lemma">Joasia</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:gen:f</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s32" from="145" to="152" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--pojawił-->
+                  <f name="lemma">pojawić</f>
+                  <f name="pos">praet</f>
+                  <f name="msd">sg:m2:perf</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s33" from="153" to="156" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--się-->
+                  <f name="lemma">się</f>
+                  <f name="pos">qub</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s34" from="157" to="163" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--czarny-->
+                  <f name="lemma">czarny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:nom:m2:pos</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s35" from="164" to="167" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--jak-->
+                  <f name="lemma">jak</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">nom</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s36" from="168" to="173" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--smoła-->
+                  <f name="lemma">smoła</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:f</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s37" from="174" to="182" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--Dratewka-->
+                  <f name="lemma">Dratewka</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:m2</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s38" from="182" to="183" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--.-->
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s40" from="184" to="192" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--Dratewkę-->
+                  <f name="lemma">Dratewka</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:acc:m2</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s41" from="193" to="197" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--pani-->
+                  <f name="lemma">pani</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:f</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s42" from="198" to="204" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--Joasia-->
+                  <f name="lemma">Joasia</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:f</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s43" from="205" to="212" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--wyrwała-->
+                  <f name="lemma">wyrwać</f>
+                  <f name="pos">praet</f>
+                  <f name="msd">sg:f:perf</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s44" from="213" to="214" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--z-->
+                  <f name="lemma">z</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">gen:nwok</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s45" from="215" to="227" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--bestialskich-->
+                  <f name="lemma">bestialski</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">pl:gen:f:pos</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s46" from="228" to="231" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--łap-->
+                  <f name="lemma">łapa</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">pl:gen:f</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s47" from="232" to="239" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--pewnego-->
+                  <f name="lemma">pewien</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:gen:m1:pos</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s48" from="240" to="246" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--szewca-->
+                  <f name="lemma">szewc</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:gen:m1</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s49" from="246" to="247" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--,-->
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s50" from="248" to="255" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--którego-->
+                  <f name="lemma">który</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:acc:m1:pos</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s51" from="256" to="261" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--niech-->
+                  <f name="lemma">niech</f>
+                  <f name="pos">qub</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s52" from="262" to="268" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--piekło-->
+                  <f name="lemma">piekło</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:n</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s53" from="269" to="278" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--pochłonie-->
+                  <f name="lemma">pochłonąć</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">sg:ter:perf</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s54" from="278" to="279" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex">
+               <fs><!--.-->
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+   </spanList>
+</layer>
