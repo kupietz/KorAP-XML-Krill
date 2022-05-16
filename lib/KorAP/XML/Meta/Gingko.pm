@@ -7,23 +7,29 @@ my $squish = \&KorAP::XML::Meta::I5::_squish;
 sub parse {
   my ($self, $dom, $type) = @_;
 
+  # Parse using the parent I% class
   unless (KorAP::XML::Meta::I5::parse($self, $dom, $type)) {
     return 0;
   };
 
   my $temp;
 
+  # Add metadata on the text level
   if ($type eq 'text') {
+
+    # Add main genre information
     if ($temp = $dom->at('textClass > classCode[scheme=gingkoGenre.top]')) {
       $temp = $squish->($temp->all_text);
       $self->{S_gingko_genre_main} = $temp if $temp;
     };
 
+    # Add subordinate genre information
     if ($temp = $dom->at('textClass > classCode[scheme=gingkoGenre.sub]')) {
       $temp = $squish->($temp->all_text);
       $self->{S_gingko_genre_sub} = $temp if $temp;
     };
 
+    # Add source information
     if (my $mono = $dom->at('sourceDesc > biblStruct > monogr')) {
       if ($temp = $mono->at('h\.title[type=main]')) {
         $temp = $squish->($temp->all_text);
@@ -36,6 +42,7 @@ sub parse {
       };
     };
 
+    # Add article DOI
     if (my $analytic = $dom->at('sourceDesc > biblStruct > analytic')) {
       if ($temp = $analytic->at('biblNote[n=DOI]')) {
         $temp = $squish->($temp->all_text);
@@ -45,11 +52,13 @@ sub parse {
       };
     };
 
+    # Add lemma correction information
     if ($temp = $dom->at('correction')) {
       $temp = $squish->($temp->all_text);
       $self->{S_gingko_lemma_corr} = $temp if $temp;
     };
 
+    # Add text tokens count
     if ($temp = $dom->at('encodingDesc > tagsDecl > tagUsage[gi=w]')) {
       if ($temp->attr('occurs')) {
         $self->{I_gingko_text_tokens} = $temp->attr('occurs');
@@ -57,7 +66,10 @@ sub parse {
     };
   }
 
+  # Add metadata on the corpus level
   elsif ($type eq 'corpus') {
+
+    # Add collection information
     if (my $mono = $dom->at('sourceDesc > biblStruct > monogr')) {
       if ($temp = $mono->at('biblNote[n=collection]')) {
         $temp = $squish->($temp->all_text);
@@ -68,19 +80,6 @@ sub parse {
         $temp = $squish->($temp->all_text);
         $self->{S_gingko_collection_short} = $temp if $temp;
       };
-
-#      if ($temp = $mono->at('biblNote[n="url"]')) {
-#        my $title = $temp->attr('rend') || 'Gingko-Webseite an der Universität Leipzig';
-#        $temp = $squish->($temp->all_text);
-#        $self->{A_external_link} = $self->korap_data_uri($temp, title => $title);
-#      };
-
-#      if ($temp = $mono->at('biblNote[n="url.ids"]')) {
-#        my $title = $temp->attr('rend') || 'IDS webpage on Gingko in the DeReKo archive';
-#        $temp = $squish->($temp->all_text);
-#        $self->{A_internal_link} = $self->korap_data_uri($temp, title => $title);
-#      };
-
     };
   };
 };
