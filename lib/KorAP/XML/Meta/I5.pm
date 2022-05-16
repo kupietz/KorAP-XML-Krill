@@ -46,6 +46,8 @@ our $SIGLE_RE = qr/^([^_\/]+)(?:[_\/]([^\._\/]+?)(?:\.(.+?))?)?$/;
 #   "reference",
 #   "corpusEditor"
 #   "distributor"
+#   "internalLink"
+#   "externalLink"
 #
 # DATE:
 #   "pubDate",
@@ -518,6 +520,10 @@ The order may indicate a field to be overwritten.
   sourceDesc reference[type=complete]          reference             ATTACHEMENT
   textDesc > column                            textColumn            STRING
   biblStruct biblScope[type=pp]                srcPages              ATTACHEMENT
+  biblNote[n=url]                              textExternalLink
+    & @rend                                                          ATTACHEMENT
+  biblNote[n="url.ids"]                        textInternalLink
+    & @rend                                                          ATTACHEMENT
 
 =item B<On document level>
 
@@ -527,6 +533,10 @@ The order may indicate a field to be overwritten.
   (analytic, monogr) h\.title[type=sub]        docSubTitle           TEXT
   (analytic, monogr) h\.author                 docAuthor             TEXT
   (analytic, monogr) editor[role!=translator]  docEditor             ATTACHEMENT
+  biblNote[n=url]                              docExternalLink
+    & @rend                                                          ATTACHEMENT
+  biblNote[n="url.ids"]                        docInternalLink
+    & @rend                                                          ATTACHEMENT
 
 =item B<On corpus level>
 
@@ -536,6 +546,10 @@ The order may indicate a field to be overwritten.
   (analytic, monogr) h\.title[type=sub]        corpusSubTitle        TEXT
   (analytic, monogr) h\.author                 corpusAuthor          TEXT
   (analytic, monogr) editor[role!=translator]  corpusEditor          ATTACHEMENT
+  biblNote[n=url]                              corpusExternalLink
+    & @rend                                                          ATTACHEMENT
+  biblNote[n="url.ids"]                        corpudInternalLink
+    & @rend                                                          ATTACHEMENT
 
 =back
 
