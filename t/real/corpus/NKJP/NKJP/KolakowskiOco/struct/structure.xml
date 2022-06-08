@@ -1,0 +1,1657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer xmlns="http://ids-mannheim.de/ns/KorAP"
+       docid="NKJP_NKJP.KolakowskiOco"
+       version="KorAP-0.4">
+   <spanList>
+      <span id="s1" from="0" to="798" l="1">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">text</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_text</f>
+                  <f name="lang">pl</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s2" from="0" to="798" l="2">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">body</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_body</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s3" from="0" to="459" l="3">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">p</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1-p</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1-p</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s4" from="0" to="114" l="4">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">s</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.19-s</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.19-s</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s5" from="0" to="3" l="5"><!-- _Czy-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.1-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.1-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s6" from="4" to="10" l="5"><!-- _zdarza-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.2-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.2-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s7" from="11" to="14" l="5"><!-- _się-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.3-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.3-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s8" from="15" to="16" l="5"><!-- _w-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.4-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.4-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s9" from="17" to="22" l="5"><!-- _ogóle-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.5-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.5-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s10" from="23" to="28" l="5"><!-- _takie-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.6-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.6-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s11" from="29" to="42" l="5"><!-- _doświadczenie-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.7-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.7-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s12" from="42" to="43" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.8-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.8-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s13" from="44" to="49" l="5"><!-- _które-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.9-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.9-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s14" from="50" to="55" l="5"><!-- _można-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.10-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.10-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s15" from="56" to="62" l="5"><!-- _opisać-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.11-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.11-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s16" from="63" to="64" l="5"><!-- _i-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.12-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.12-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s17" from="65" to="70" l="5"><!-- _które-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.13-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.13-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s18" from="71" to="78" l="5"><!-- _zarazem-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.14-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.14-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s19" from="79" to="82" l="5"><!-- _nie-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.15-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.15-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s20" from="83" to="90" l="5"><!-- _podlega-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.16-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.16-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s21" from="91" to="101" l="5"><!-- _absolutnie-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.17-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.17-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s22" from="102" to="113" l="5"><!-- _wątpliwości-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.18-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.18-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s23" from="113" to="114" l="5"><!-- ?-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.19-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.19-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s24" from="115" to="201" l="4">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">s</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.33-s</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.33-s</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s25" from="115" to="118" l="5"><!-- _Czy-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.20-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.20-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s26" from="119" to="124" l="5"><!-- _nauki-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.21-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.21-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s27" from="125" to="135" l="5"><!-- _empiryczne-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.22-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.22-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s28" from="136" to="138" l="5"><!-- _są-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.23-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.23-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s29" from="139" to="147" l="5"><!-- _istotnie-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.24-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.24-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s30" from="148" to="150" l="5"><!-- _na-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.25-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.25-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s31" from="151" to="156" l="5"><!-- _takim-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.26-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.26-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s32" from="157" to="170" l="5"><!-- _doświadczeniu-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.27-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.27-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s33" from="171" to="180" l="5"><!-- _zbudowane-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.28-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.28-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s34" from="180" to="181" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.29-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.29-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s35" from="182" to="187" l="5"><!-- _jeśli-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.30-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.30-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s36" from="188" to="191" l="5"><!-- _ono-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.31-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.31-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s37" from="192" to="200" l="5"><!-- _istnieje-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.32-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.32-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s38" from="200" to="201" l="5"><!-- ?-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.33-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.33-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s39" from="202" to="459" l="4">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">s</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.77-s</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.77-s</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s40" from="202" to="208" l="5"><!-- _Trudno-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.34-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.34-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s41" from="209" to="214" l="5"><!-- _mówić-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.35-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.35-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s42" from="215" to="216" l="5"><!-- _o-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.36-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.36-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s43" from="217" to="225" l="5"><!-- _Husserlu-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.37-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.37-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s44" from="225" to="226" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.38-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.38-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s45" from="227" to="230" l="5"><!-- _nie-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.39-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.39-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s46" from="231" to="242" l="5"><!-- _korzystając-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.40-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.40-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s47" from="243" to="244" l="5"><!-- _z-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.41-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.41-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s48" from="245" to="252" l="5"><!-- _różnych-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.42-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.42-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s49" from="253" to="264" l="5"><!-- _neologizmów-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.43-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.43-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s50" from="264" to="265" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.44-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.44-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s51" from="266" to="268" l="5"><!-- _od-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.45-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.45-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s52" from="269" to="276" l="5"><!-- _których-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.46-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.46-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s53" from="277" to="283" l="5"><!-- _mrowią-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.47-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.47-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s54" from="284" to="287" l="5"><!-- _się-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.48-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.48-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s55" from="288" to="292" l="5"><!-- _jego-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.49-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.49-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s56" from="293" to="298" l="5"><!-- _pisma-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.50-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.50-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s57" from="298" to="299" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.51-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.51-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s58" from="300" to="301" l="5"><!-- _i-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.52-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.52-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s59" from="302" to="305" l="5"><!-- _nie-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.53-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.53-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s60" from="306" to="317" l="5"><!-- _wspominając-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.54-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.54-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s61" from="318" to="319" l="5"><!-- _o-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.55-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.55-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s62" from="320" to="328" l="5"><!-- _zmianach-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.56-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.56-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s63" from="328" to="329" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.57-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.57-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s64" from="330" to="336" l="5"><!-- _czasem-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.58-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.58-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s65" from="337" to="348" l="5"><!-- _radykalnych-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.59-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.59-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s66" from="348" to="349" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.60-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.60-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s67" from="350" to="355" l="5"><!-- _jakie-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.61-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.61-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s68" from="356" to="367" l="5"><!-- _przechodził-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.62-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.62-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s69" from="368" to="370" l="5"><!-- _ów-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.63-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.63-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s70" from="371" to="376" l="5"><!-- _żywot-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.64-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.64-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s71" from="377" to="382" l="5"><!-- _długi-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.65-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.65-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s72" from="382" to="383" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.66-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.66-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s73" from="384" to="394" l="5"><!-- _nadzwyczaj-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.67-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.67-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s74" from="395" to="400" l="5"><!-- _pełen-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.68-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.68-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s75" from="401" to="408" l="5"><!-- _wysiłku-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.69-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.69-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s76" from="409" to="410" l="5"><!-- _i-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.70-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.70-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s77" from="411" to="425" l="5"><!-- _bezprzykładnie-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.71-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.71-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s78" from="426" to="431" l="5"><!-- _chyba-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.72-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.72-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s79" from="432" to="434" l="5"><!-- _na-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.73-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.73-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s80" from="435" to="441" l="5"><!-- _jednym-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.74-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.74-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s81" from="442" to="449" l="5"><!-- _zadaniu-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.75-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.75-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s82" from="450" to="458" l="5"><!-- _skupiony-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.76-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.76-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s83" from="458" to="459" l="5"><!-- .-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_1.77-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_1.77-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s84" from="460" to="798" l="3">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">p</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2-p</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2-p</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s85" from="460" to="561" l="4">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">s</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.16-s</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.16-s</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s86" from="460" to="463" l="5"><!-- _Jak-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.1-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.1-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s87" from="464" to="475" l="5"><!-- _Kierkegaard-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.2-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.2-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s88" from="476" to="483" l="5"><!-- _widział-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.3-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.3-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s89" from="484" to="492" l="5"><!-- _stosunek-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.4-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.4-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s90" from="493" to="499" l="5"><!-- _między-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.5-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.5-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s91" from="500" to="507" l="5"><!-- _światem-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.6-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.6-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s92" from="508" to="509" l="5"><!-- _a-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.7-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.7-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s93" from="510" to="521" l="5"><!-- _wiecznością-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.8-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.8-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s94" from="521" to="522" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.9-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.9-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s95" from="523" to="530" l="5"><!-- _ukazuje-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.10-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.10-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s96" from="531" to="535" l="5"><!-- _jego-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.11-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.11-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s97" from="536" to="541" l="5"><!-- _uwaga-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.12-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.12-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s98" from="542" to="543" l="5"><!-- _o-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.13-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.13-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s99" from="544" to="549" l="5"><!-- _znaku-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.14-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.14-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s100" from="550" to="560" l="5"><!-- _apokalipsy-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.15-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.15-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s101" from="560" to="561" l="5"><!-- .-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.16-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.16-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s102" from="562" to="641" l="4">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">s</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.32-s</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.32-s</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s103" from="562" to="563" l="5"><!-- _W-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.17-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.17-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s104" from="564" to="571" l="5"><!-- _teatrze-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.18-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.18-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s105" from="572" to="579" l="5"><!-- _wybucha-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.19-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.19-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s106" from="580" to="585" l="5"><!-- _pożar-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.20-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.20-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s107" from="585" to="586" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.21-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.21-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s108" from="587" to="590" l="5"><!-- _ale-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.22-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.22-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s109" from="591" to="594" l="5"><!-- _tak-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.23-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.23-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s110" from="595" to="598" l="5"><!-- _się-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.24-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.24-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s111" from="599" to="605" l="5"><!-- _składa-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.25-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.25-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s112" from="605" to="606" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.26-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.26-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s113" from="607" to="609" l="5"><!-- _że-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.27-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.27-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s114" from="610" to="616" l="5"><!-- _pierot-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.28-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.28-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s115" from="617" to="624" l="5"><!-- _ogłasza-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.29-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.29-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s116" from="625" to="627" l="5"><!-- _to-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.30-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.30-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s117" from="628" to="640" l="5"><!-- _publiczności-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.31-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.31-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s118" from="640" to="641" l="5"><!-- .-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.32-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.32-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s119" from="642" to="731" l="4">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">s</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.52-s</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.52-s</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s120" from="642" to="646" l="5"><!-- _Nikt-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.33-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.33-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s121" from="647" to="649" l="5"><!-- _mu-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.34-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.34-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s122" from="649" to="650" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.35-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.35-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s123" from="651" to="661" l="5"><!-- _oczywiście-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.36-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.36-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s124" from="661" to="662" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.37-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.37-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s125" from="663" to="666" l="5"><!-- _nie-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.38-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.38-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s126" from="667" to="673" l="5"><!-- _wierzy-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.39-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.39-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s127" from="673" to="674" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.40-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.40-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s128" from="675" to="682" l="5"><!-- _wszyscy-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.41-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.41-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s129" from="683" to="686" l="5"><!-- _się-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.42-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.42-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s130" from="687" to="693" l="5"><!-- _śmieją-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.43-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.43-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s131" from="693" to="694" l="5"><!-- ,-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.44-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.44-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s132" from="695" to="697" l="5"><!-- _aż-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.45-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.45-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s133" from="698" to="700" l="5"><!-- _do-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.46-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.46-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s134" from="701" to="707" l="5"><!-- _chwili-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.47-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.47-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s135" from="708" to="711" l="5"><!-- _gdy-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.48-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.48-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s136" from="712" to="716" l="5"><!-- _giną-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.49-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.49-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s137" from="717" to="718" l="5"><!-- _w-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.50-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.50-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s138" from="719" to="730" l="5"><!-- _płomieniach-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.51-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.51-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s139" from="730" to="731" l="5"><!-- .-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.52-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.52-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s140" from="732" to="798" l="4">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">s</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.62-s</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.62-s</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s141" from="732" to="735" l="5"><!-- _Tak-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.53-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.53-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s142" from="736" to="738" l="5"><!-- _to-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.54-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.54-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s143" from="739" to="745" l="5"><!-- _koniec-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.55-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.55-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s144" from="746" to="752" l="5"><!-- _świata-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.56-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.56-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s145" from="753" to="762" l="5"><!-- _przyjdzie-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.57-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.57-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s146" from="763" to="764" l="5"><!-- _w-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.58-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.58-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s147" from="765" to="775" l="5"><!-- _atmosferze-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.59-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.59-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s148" from="776" to="787" l="5"><!-- _powszechnej-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.60-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.60-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s149" from="788" to="797" l="5"><!-- _wesołości-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.61-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.61-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="s150" from="797" to="798" l="5"><!-- .-->
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="struct">
+            <f name="name">seg</f>
+            <f name="attr">
+               <fs type="attr">
+                  <f name="id">morph_2.62-seg</f>
+                  <f name="corresp">ann_segmentation.xml#segm_2.62-seg</f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+   </spanList>
+</layer>

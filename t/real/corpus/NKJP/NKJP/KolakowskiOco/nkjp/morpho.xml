@@ -1,0 +1,3893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer xmlns="http://ids-mannheim.de/ns/KorAP"
+       docid="NKJP_NKJP.KolakowskiOco"
+       version="KorAP-0.4">
+   <spanList>
+      <span id="m5" from="0" to="3" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _Czy-->
+               <fs>
+                  <f name="orig">Czy</f>
+                  <f name="lemma">czy</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">czy</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">czy</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m6" from="4" to="10" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _zdarza-->
+               <fs>
+                  <f name="orig">zdarza</f>
+                  <f name="lemma">zdarzać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">sg:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">zdarzać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="sg:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m7" from="11" to="14" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _się-->
+               <fs>
+                  <f name="orig">się</f>
+                  <f name="lemma">się</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">się</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m8" from="15" to="16" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _w-->
+               <fs>
+                  <f name="orig">w</f>
+                  <f name="lemma">w</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc:nwok</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">w</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="acc:nwok"/>
+                        <symbol value="loc:nwok" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m9" from="17" to="22" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _ogóle-->
+               <fs>
+                  <f name="orig">ogóle</f>
+                  <f name="lemma">ogół</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:loc:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">ogół</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:loc:m3" n="choice"/>
+                        <symbol value="sg:voc:m3"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m10" from="23" to="28" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _takie-->
+               <fs>
+                  <f name="orig">takie</f>
+                  <f name="lemma">taki</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:nom:n:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">taki</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m2:pos"/>
+                        <symbol value="pl:acc:m3:pos"/>
+                        <symbol value="pl:acc:f:pos"/>
+                        <symbol value="pl:acc:n:pos"/>
+                        <symbol value="pl:nom:m2:pos"/>
+                        <symbol value="pl:nom:m3:pos"/>
+                        <symbol value="pl:nom:f:pos"/>
+                        <symbol value="pl:nom:n:pos"/>
+                        <symbol value="pl:voc:m2:pos"/>
+                        <symbol value="pl:voc:m3:pos"/>
+                        <symbol value="pl:voc:f:pos"/>
+                        <symbol value="pl:voc:n:pos"/>
+                        <symbol value="sg:acc:n:pos"/>
+                        <symbol value="sg:nom:n:pos" n="choice"/>
+                        <symbol value="sg:voc:n:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m11" from="29" to="42" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _doświadczenie-->
+               <fs>
+                  <f name="orig">doświadczenie</f>
+                  <f name="lemma">doświadczenie</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:n:ncol</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">doświadczenie</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:nom:n:ncol" n="choice"/>
+                        <symbol value="sg:acc:n:ncol"/>
+                        <symbol value="sg:voc:n:ncol"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">doświadczyć</f>
+                  <f name="pos">ger</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:nom:n:perf:aff"/>
+                        <symbol value="sg:acc:n:perf:aff"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m12" from="42" to="43" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m13" from="44" to="49" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _które-->
+               <fs>
+                  <f name="orig">które</f>
+                  <f name="lemma">który</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:acc:n:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">który</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m2:pos"/>
+                        <symbol value="pl:acc:m3:pos"/>
+                        <symbol value="pl:acc:f:pos"/>
+                        <symbol value="pl:acc:n:pos"/>
+                        <symbol value="pl:nom:m2:pos"/>
+                        <symbol value="pl:nom:m3:pos"/>
+                        <symbol value="pl:nom:f:pos"/>
+                        <symbol value="pl:nom:n:pos"/>
+                        <symbol value="pl:voc:m2:pos"/>
+                        <symbol value="pl:voc:m3:pos"/>
+                        <symbol value="pl:voc:f:pos"/>
+                        <symbol value="pl:voc:n:pos"/>
+                        <symbol value="sg:acc:n:pos" n="choice"/>
+                        <symbol value="sg:nom:n:pos"/>
+                        <symbol value="sg:voc:n:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m14" from="50" to="55" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _można-->
+               <fs>
+                  <f name="orig">można</f>
+                  <f name="lemma">można</f>
+                  <f name="pos">pred</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">można</f>
+                  <f name="pos">pred</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">możny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:nom:f:pos"/>
+                        <symbol value="sg:voc:f:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m15" from="56" to="62" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _opisać-->
+               <fs>
+                  <f name="orig">opisać</f>
+                  <f name="lemma">opisać</f>
+                  <f name="pos">inf</f>
+                  <f name="msd">perf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">opisać</f>
+                  <f name="pos">inf</f>
+                  <f name="msd">
+                     <symbol value="perf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m16" from="63" to="64" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _i-->
+               <fs>
+                  <f name="orig">i</f>
+                  <f name="lemma">i</f>
+                  <f name="pos">conj</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">i</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">i</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">i</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m17" from="65" to="70" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _które-->
+               <fs>
+                  <f name="orig">które</f>
+                  <f name="lemma">który</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:nom:n:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">który</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m2:pos"/>
+                        <symbol value="pl:acc:m3:pos"/>
+                        <symbol value="pl:acc:f:pos"/>
+                        <symbol value="pl:acc:n:pos"/>
+                        <symbol value="pl:nom:m2:pos"/>
+                        <symbol value="pl:nom:m3:pos"/>
+                        <symbol value="pl:nom:f:pos"/>
+                        <symbol value="pl:nom:n:pos"/>
+                        <symbol value="pl:voc:m2:pos"/>
+                        <symbol value="pl:voc:m3:pos"/>
+                        <symbol value="pl:voc:f:pos"/>
+                        <symbol value="pl:voc:n:pos"/>
+                        <symbol value="sg:acc:n:pos"/>
+                        <symbol value="sg:nom:n:pos" n="choice"/>
+                        <symbol value="sg:voc:n:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m18" from="71" to="78" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _zarazem-->
+               <fs>
+                  <f name="orig">zarazem</f>
+                  <f name="lemma">zarazem</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">zarazem</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m19" from="79" to="82" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _nie-->
+               <fs>
+                  <f name="orig">nie</f>
+                  <f name="lemma">nie</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">nie</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">nie</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">nie</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m2:ter:akc:praep"/>
+                        <symbol value="pl:acc:m2:ter:nakc:praep"/>
+                        <symbol value="pl:acc:m3:ter:akc:praep"/>
+                        <symbol value="pl:acc:m3:ter:nakc:praep"/>
+                        <symbol value="pl:acc:f:ter:akc:praep"/>
+                        <symbol value="pl:acc:f:ter:nakc:praep"/>
+                        <symbol value="pl:acc:n:ter:akc:praep"/>
+                        <symbol value="pl:acc:n:ter:nakc:praep"/>
+                        <symbol value="sg:acc:n:ter:akc:praep"/>
+                        <symbol value="sg:acc:n:ter:nakc:praep"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m20" from="83" to="90" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _podlega-->
+               <fs>
+                  <f name="orig">podlega</f>
+                  <f name="lemma">podlegać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">sg:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">podlegać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="sg:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m21" from="91" to="101" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _absolutnie-->
+               <fs>
+                  <f name="orig">absolutnie</f>
+                  <f name="lemma">absolutnie</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">absolutnie</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">
+                     <symbol value="pos" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m22" from="102" to="113" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _wątpliwości-->
+               <fs>
+                  <f name="orig">wątpliwości</f>
+                  <f name="lemma">wątpliwość</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:dat:f</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">wątpliwość</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:gen:f"/>
+                        <symbol value="sg:dat:f" n="choice"/>
+                        <symbol value="sg:loc:f"/>
+                        <symbol value="sg:voc:f"/>
+                        <symbol value="pl:nom:f"/>
+                        <symbol value="pl:acc:f"/>
+                        <symbol value="pl:voc:f"/>
+                        <symbol value="pl:gen:f"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m23" from="113" to="114" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ?-->
+               <fs>
+                  <f name="orig">?</f>
+                  <f name="lemma">?</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">?</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m25" from="115" to="118" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _Czy-->
+               <fs>
+                  <f name="orig">Czy</f>
+                  <f name="lemma">czy</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">czy</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">czy</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m26" from="119" to="124" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _nauki-->
+               <fs>
+                  <f name="orig">nauki</f>
+                  <f name="lemma">nauka</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">pl:nom:f</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">nauka</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:gen:f"/>
+                        <symbol value="pl:nom:f" n="choice"/>
+                        <symbol value="pl:acc:f"/>
+                        <symbol value="pl:voc:f"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m27" from="125" to="135" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _empiryczne-->
+               <fs>
+                  <f name="orig">empiryczne</f>
+                  <f name="lemma">empiryczny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">pl:nom:f:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">empiryczny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m2:pos"/>
+                        <symbol value="pl:acc:m3:pos"/>
+                        <symbol value="pl:acc:f:pos"/>
+                        <symbol value="pl:acc:n:pos"/>
+                        <symbol value="pl:nom:m2:pos"/>
+                        <symbol value="pl:nom:m3:pos"/>
+                        <symbol value="pl:nom:f:pos" n="choice"/>
+                        <symbol value="pl:nom:n:pos"/>
+                        <symbol value="pl:voc:m2:pos"/>
+                        <symbol value="pl:voc:m3:pos"/>
+                        <symbol value="pl:voc:f:pos"/>
+                        <symbol value="pl:voc:n:pos"/>
+                        <symbol value="sg:acc:n:pos"/>
+                        <symbol value="sg:nom:n:pos"/>
+                        <symbol value="sg:voc:n:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m28" from="136" to="138" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _są-->
+               <fs>
+                  <f name="orig">są</f>
+                  <f name="lemma">być</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">pl:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">być</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="pl:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m29" from="139" to="147" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _istotnie-->
+               <fs>
+                  <f name="orig">istotnie</f>
+                  <f name="lemma">istotnie</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">istotnie</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">
+                     <symbol value="pos" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">istotnie</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m30" from="148" to="150" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _na-->
+               <fs>
+                  <f name="orig">na</f>
+                  <f name="lemma">na</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">na</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">na</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="acc"/>
+                        <symbol value="loc" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m31" from="151" to="156" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _takim-->
+               <fs>
+                  <f name="orig">takim</f>
+                  <f name="lemma">taki</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:loc:n:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">taki</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:dat:m1:pos"/>
+                        <symbol value="pl:dat:m2:pos"/>
+                        <symbol value="pl:dat:m3:pos"/>
+                        <symbol value="pl:dat:f:pos"/>
+                        <symbol value="pl:dat:n:pos"/>
+                        <symbol value="sg:inst:m1:pos"/>
+                        <symbol value="sg:inst:m2:pos"/>
+                        <symbol value="sg:inst:m3:pos"/>
+                        <symbol value="sg:inst:n:pos"/>
+                        <symbol value="sg:loc:m1:pos"/>
+                        <symbol value="sg:loc:m2:pos"/>
+                        <symbol value="sg:loc:m3:pos"/>
+                        <symbol value="sg:loc:n:pos" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m32" from="157" to="170" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _doświadczeniu-->
+               <fs>
+                  <f name="orig">doświadczeniu</f>
+                  <f name="lemma">doświadczenie</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:loc:n:ncol</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">doświadczenie</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:dat:n:ncol"/>
+                        <symbol value="sg:loc:n:ncol" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">doświadczyć</f>
+                  <f name="pos">ger</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:dat:n:perf:aff"/>
+                        <symbol value="sg:loc:n:perf:aff"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m33" from="171" to="180" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _zbudowane-->
+               <fs>
+                  <f name="orig">zbudowane</f>
+                  <f name="lemma">zbudować</f>
+                  <f name="pos">ppas</f>
+                  <f name="msd">pl:nom:f:perf:aff</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">zbudować</f>
+                  <f name="pos">ppas</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:nom:m2:perf:aff"/>
+                        <symbol value="pl:nom:m3:perf:aff"/>
+                        <symbol value="pl:nom:f:perf:aff" n="choice"/>
+                        <symbol value="pl:nom:n:perf:aff"/>
+                        <symbol value="pl:acc:m2:perf:aff"/>
+                        <symbol value="pl:acc:m3:perf:aff"/>
+                        <symbol value="pl:acc:f:perf:aff"/>
+                        <symbol value="pl:acc:n:perf:aff"/>
+                        <symbol value="pl:voc:m2:perf:aff"/>
+                        <symbol value="pl:voc:m3:perf:aff"/>
+                        <symbol value="pl:voc:f:perf:aff"/>
+                        <symbol value="pl:voc:n:perf:aff"/>
+                        <symbol value="sg:nom:n:perf:aff"/>
+                        <symbol value="sg:acc:n:perf:aff"/>
+                        <symbol value="sg:voc:n:perf:aff"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m34" from="180" to="181" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m35" from="182" to="187" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _jeśli-->
+               <fs>
+                  <f name="orig">jeśli</f>
+                  <f name="lemma">jeśli</f>
+                  <f name="pos">comp</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">jeśli</f>
+                  <f name="pos">comp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m36" from="188" to="191" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _ono-->
+               <fs>
+                  <f name="orig">ono</f>
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">sg:nom:n:ter:akc:npraep</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">on</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:acc:n:pos"/>
+                        <symbol value="sg:nom:n:pos"/>
+                        <symbol value="sg:voc:n:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:nom:n:ter:akc:praep"/>
+                        <symbol value="sg:nom:n:ter:akc:npraep" n="choice"/>
+                        <symbol value="sg:nom:n:ter:nakc:praep"/>
+                        <symbol value="sg:nom:n:ter:nakc:npraep"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m37" from="192" to="200" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _istnieje-->
+               <fs>
+                  <f name="orig">istnieje</f>
+                  <f name="lemma">istnieć</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">sg:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">istnieć</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="sg:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m38" from="200" to="201" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ?-->
+               <fs>
+                  <f name="orig">?</f>
+                  <f name="lemma">?</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">?</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m40" from="202" to="208" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _Trudno-->
+               <fs>
+                  <f name="orig">Trudno</f>
+                  <f name="lemma">trudno</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">trudno</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">
+                     <symbol value="pos" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m41" from="209" to="214" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _mówić-->
+               <fs>
+                  <f name="orig">mówić</f>
+                  <f name="lemma">mówić</f>
+                  <f name="pos">inf</f>
+                  <f name="msd">imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">mówić</f>
+                  <f name="pos">inf</f>
+                  <f name="msd">
+                     <symbol value="imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m42" from="215" to="216" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _o-->
+               <fs>
+                  <f name="orig">o</f>
+                  <f name="lemma">o</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">o</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">o</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="acc"/>
+                        <symbol value="loc" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m43" from="217" to="225" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _Husserlu-->
+               <fs>
+                  <f name="orig">Husserlu</f>
+                  <f name="lemma">Husserl</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:loc:m1</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">Husserl</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:loc:m1" n="choice"/>
+                        <symbol value="sg:voc:m1"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m44" from="225" to="226" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m45" from="227" to="230" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _nie-->
+               <fs>
+                  <f name="orig">nie</f>
+                  <f name="lemma">nie</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">nie</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">nie</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">nie</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m2:ter:akc:praep"/>
+                        <symbol value="pl:acc:m2:ter:nakc:praep"/>
+                        <symbol value="pl:acc:m3:ter:akc:praep"/>
+                        <symbol value="pl:acc:m3:ter:nakc:praep"/>
+                        <symbol value="pl:acc:f:ter:akc:praep"/>
+                        <symbol value="pl:acc:f:ter:nakc:praep"/>
+                        <symbol value="pl:acc:n:ter:akc:praep"/>
+                        <symbol value="pl:acc:n:ter:nakc:praep"/>
+                        <symbol value="sg:acc:n:ter:akc:praep"/>
+                        <symbol value="sg:acc:n:ter:nakc:praep"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m46" from="231" to="242" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _korzystając-->
+               <fs>
+                  <f name="orig">korzystając</f>
+                  <f name="lemma">korzystać</f>
+                  <f name="pos">pcon</f>
+                  <f name="msd">imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">korzystać</f>
+                  <f name="pos">pcon</f>
+                  <f name="msd">
+                     <symbol value="imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m47" from="243" to="244" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _z-->
+               <fs>
+                  <f name="orig">z</f>
+                  <f name="lemma">z</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">gen:nwok</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">z</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="nwok"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">z</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="gen:nwok" n="choice"/>
+                        <symbol value="inst:nwok"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m48" from="245" to="252" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _różnych-->
+               <fs>
+                  <f name="orig">różnych</f>
+                  <f name="lemma">różny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">pl:gen:m3:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">różny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m1:pos"/>
+                        <symbol value="pl:gen:m1:pos"/>
+                        <symbol value="pl:gen:m2:pos"/>
+                        <symbol value="pl:gen:m3:pos" n="choice"/>
+                        <symbol value="pl:gen:f:pos"/>
+                        <symbol value="pl:gen:n:pos"/>
+                        <symbol value="pl:loc:m1:pos"/>
+                        <symbol value="pl:loc:m2:pos"/>
+                        <symbol value="pl:loc:m3:pos"/>
+                        <symbol value="pl:loc:f:pos"/>
+                        <symbol value="pl:loc:n:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m49" from="253" to="264" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _neologizmów-->
+               <fs>
+                  <f name="orig">neologizmów</f>
+                  <f name="lemma">neologizm</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">pl:gen:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">neologizm</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="pl:gen:m3" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m50" from="264" to="265" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m51" from="266" to="268" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _od-->
+               <fs>
+                  <f name="orig">od</f>
+                  <f name="lemma">od</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">gen:nwok</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">od</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <symbol value="gen:nwok" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">oda</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="pl:gen:f"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m52" from="269" to="276" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _których-->
+               <fs>
+                  <f name="orig">których</f>
+                  <f name="lemma">który</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">pl:gen:m3:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">który</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m1:pos"/>
+                        <symbol value="pl:gen:m1:pos"/>
+                        <symbol value="pl:gen:m2:pos"/>
+                        <symbol value="pl:gen:m3:pos" n="choice"/>
+                        <symbol value="pl:gen:f:pos"/>
+                        <symbol value="pl:gen:n:pos"/>
+                        <symbol value="pl:loc:m1:pos"/>
+                        <symbol value="pl:loc:m2:pos"/>
+                        <symbol value="pl:loc:m3:pos"/>
+                        <symbol value="pl:loc:f:pos"/>
+                        <symbol value="pl:loc:n:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m53" from="277" to="283" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _mrowią-->
+               <fs>
+                  <f name="orig">mrowią</f>
+                  <f name="lemma">mrowić</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">pl:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">mrowi</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:acc:f:pos"/>
+                        <symbol value="sg:inst:f:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">mrowić</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="pl:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m54" from="284" to="287" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _się-->
+               <fs>
+                  <f name="orig">się</f>
+                  <f name="lemma">się</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">się</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m55" from="288" to="292" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _jego-->
+               <fs>
+                  <f name="orig">jego</f>
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">sg:gen:m1:ter:akc:npraep</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:acc:m1:ter:akc:npraep"/>
+                        <symbol value="sg:acc:m2:ter:akc:npraep"/>
+                        <symbol value="sg:acc:m3:ter:akc:npraep"/>
+                        <symbol value="sg:gen:m1:ter:akc:npraep" n="choice"/>
+                        <symbol value="sg:gen:m2:ter:akc:npraep"/>
+                        <symbol value="sg:gen:m3:ter:akc:npraep"/>
+                        <symbol value="sg:gen:n:ter:akc:npraep"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m56" from="293" to="298" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _pisma-->
+               <fs>
+                  <f name="orig">pisma</f>
+                  <f name="lemma">pismo</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">pl:nom:n:ncol</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">pismo</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:gen:n:ncol"/>
+                        <symbol value="pl:nom:n:ncol" n="choice"/>
+                        <symbol value="pl:acc:n:ncol"/>
+                        <symbol value="pl:voc:n:ncol"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m57" from="298" to="299" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m58" from="300" to="301" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _i-->
+               <fs>
+                  <f name="orig">i</f>
+                  <f name="lemma">i</f>
+                  <f name="pos">conj</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">i</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">i</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">i</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m59" from="302" to="305" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _nie-->
+               <fs>
+                  <f name="orig">nie</f>
+                  <f name="lemma">nie</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">nie</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">nie</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">nie</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m2:ter:akc:praep"/>
+                        <symbol value="pl:acc:m2:ter:nakc:praep"/>
+                        <symbol value="pl:acc:m3:ter:akc:praep"/>
+                        <symbol value="pl:acc:m3:ter:nakc:praep"/>
+                        <symbol value="pl:acc:f:ter:akc:praep"/>
+                        <symbol value="pl:acc:f:ter:nakc:praep"/>
+                        <symbol value="pl:acc:n:ter:akc:praep"/>
+                        <symbol value="pl:acc:n:ter:nakc:praep"/>
+                        <symbol value="sg:acc:n:ter:akc:praep"/>
+                        <symbol value="sg:acc:n:ter:nakc:praep"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m60" from="306" to="317" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _wspominając-->
+               <fs>
+                  <f name="orig">wspominając</f>
+                  <f name="lemma">wspominać</f>
+                  <f name="pos">pcon</f>
+                  <f name="msd">imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">wspominać</f>
+                  <f name="pos">pcon</f>
+                  <f name="msd">
+                     <symbol value="imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m61" from="318" to="319" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _o-->
+               <fs>
+                  <f name="orig">o</f>
+                  <f name="lemma">o</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">o</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">o</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="acc"/>
+                        <symbol value="loc" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m62" from="320" to="328" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _zmianach-->
+               <fs>
+                  <f name="orig">zmianach</f>
+                  <f name="lemma">zmiana</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">pl:loc:f</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">zmiana</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="pl:loc:f" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m63" from="328" to="329" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m64" from="330" to="336" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _czasem-->
+               <fs>
+                  <f name="orig">czasem</f>
+                  <f name="lemma">czas</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:inst:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">czas</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="sg:inst:m3" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m65" from="337" to="348" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _radykalnych-->
+               <fs>
+                  <f name="orig">radykalnych</f>
+                  <f name="lemma">radykalny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">pl:loc:f:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">radykalny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m1:pos"/>
+                        <symbol value="pl:gen:m1:pos"/>
+                        <symbol value="pl:gen:m2:pos"/>
+                        <symbol value="pl:gen:m3:pos"/>
+                        <symbol value="pl:gen:f:pos"/>
+                        <symbol value="pl:gen:n:pos"/>
+                        <symbol value="pl:loc:m1:pos"/>
+                        <symbol value="pl:loc:m2:pos"/>
+                        <symbol value="pl:loc:m3:pos"/>
+                        <symbol value="pl:loc:f:pos" n="choice"/>
+                        <symbol value="pl:loc:n:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m66" from="348" to="349" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m67" from="350" to="355" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _jakie-->
+               <fs>
+                  <f name="orig">jakie</f>
+                  <f name="lemma">jaki</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">pl:acc:f:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">jaki</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m2:pos"/>
+                        <symbol value="pl:acc:m3:pos"/>
+                        <symbol value="pl:acc:f:pos" n="choice"/>
+                        <symbol value="pl:acc:n:pos"/>
+                        <symbol value="pl:nom:m2:pos"/>
+                        <symbol value="pl:nom:m3:pos"/>
+                        <symbol value="pl:nom:f:pos"/>
+                        <symbol value="pl:nom:n:pos"/>
+                        <symbol value="pl:voc:m2:pos"/>
+                        <symbol value="pl:voc:m3:pos"/>
+                        <symbol value="pl:voc:f:pos"/>
+                        <symbol value="pl:voc:n:pos"/>
+                        <symbol value="sg:acc:n:pos"/>
+                        <symbol value="sg:nom:n:pos"/>
+                        <symbol value="sg:voc:n:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m68" from="356" to="367" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _przechodził-->
+               <fs>
+                  <f name="orig">przechodził</f>
+                  <f name="lemma">przechodzić</f>
+                  <f name="pos">praet</f>
+                  <f name="msd">sg:m3:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">przechodzić</f>
+                  <f name="pos">praet</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:m1:imperf"/>
+                        <symbol value="sg:m2:imperf"/>
+                        <symbol value="sg:m3:imperf" n="choice"/>
+                        <symbol value="sg:m1:perf"/>
+                        <symbol value="sg:m2:perf"/>
+                        <symbol value="sg:m3:perf"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m69" from="368" to="370" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _ów-->
+               <fs>
+                  <f name="orig">ów</f>
+                  <f name="lemma">ów</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:nom:m3:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">ów</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:acc:m3:pos"/>
+                        <symbol value="sg:nom:m1:pos"/>
+                        <symbol value="sg:nom:m2:pos"/>
+                        <symbol value="sg:nom:m3:pos" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m70" from="371" to="376" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _żywot-->
+               <fs>
+                  <f name="orig">żywot</f>
+                  <f name="lemma">żywot</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">żywot</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:nom:m3" n="choice"/>
+                        <symbol value="sg:acc:m3"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m71" from="377" to="382" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _długi-->
+               <fs>
+                  <f name="orig">długi</f>
+                  <f name="lemma">długi</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:nom:m3:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">dług</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:nom:m3"/>
+                        <symbol value="pl:acc:m3"/>
+                        <symbol value="pl:voc:m3"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">długi</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:acc:m3:pos"/>
+                        <symbol value="sg:nom:m1:pos"/>
+                        <symbol value="sg:nom:m2:pos"/>
+                        <symbol value="sg:nom:m3:pos" n="choice"/>
+                        <symbol value="sg:voc:m1:pos"/>
+                        <symbol value="sg:voc:m2:pos"/>
+                        <symbol value="sg:voc:m3:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m72" from="382" to="383" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m73" from="384" to="394" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _nadzwyczaj-->
+               <fs>
+                  <f name="orig">nadzwyczaj</f>
+                  <f name="lemma">nadzwyczaj</f>
+                  <f name="pos">adv</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">nadzwyczaj</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m74" from="395" to="400" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _pełen-->
+               <fs>
+                  <f name="orig">pełen</f>
+                  <f name="lemma">pełny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:nom:m3:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">pełny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:acc:m3:pos"/>
+                        <symbol value="sg:nom:m1:pos"/>
+                        <symbol value="sg:nom:m2:pos"/>
+                        <symbol value="sg:nom:m3:pos" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m75" from="401" to="408" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _wysiłku-->
+               <fs>
+                  <f name="orig">wysiłku</f>
+                  <f name="lemma">wysiłek</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:gen:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">wysiłek</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:gen:m3" n="choice"/>
+                        <symbol value="sg:loc:m3"/>
+                        <symbol value="sg:voc:m3"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m76" from="409" to="410" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _i-->
+               <fs>
+                  <f name="orig">i</f>
+                  <f name="lemma">i</f>
+                  <f name="pos">conj</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">i</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">i</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">i</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m77" from="411" to="425" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _bezprzykładnie-->
+               <fs>
+                  <f name="orig">bezprzykładnie</f>
+                  <f name="lemma">bezprzykładnie</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">bezprzykładnie</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">
+                     <symbol value="pos" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m78" from="426" to="431" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _chyba-->
+               <fs>
+                  <f name="orig">chyba</f>
+                  <f name="lemma">chyba</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">chyba</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">chybać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="sg:ter:imperf"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m79" from="432" to="434" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _na-->
+               <fs>
+                  <f name="orig">na</f>
+                  <f name="lemma">na</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">na</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">na</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="acc"/>
+                        <symbol value="loc" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m80" from="435" to="441" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _jednym-->
+               <fs>
+                  <f name="orig">jednym</f>
+                  <f name="lemma">jeden</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:loc:n:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">jeden</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:dat:m1:pos"/>
+                        <symbol value="pl:dat:m2:pos"/>
+                        <symbol value="pl:dat:m3:pos"/>
+                        <symbol value="pl:dat:f:pos"/>
+                        <symbol value="pl:dat:n:pos"/>
+                        <symbol value="sg:inst:m1:pos"/>
+                        <symbol value="sg:inst:m2:pos"/>
+                        <symbol value="sg:inst:m3:pos"/>
+                        <symbol value="sg:inst:n:pos"/>
+                        <symbol value="sg:loc:m1:pos"/>
+                        <symbol value="sg:loc:m2:pos"/>
+                        <symbol value="sg:loc:m3:pos"/>
+                        <symbol value="sg:loc:n:pos" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">jeden</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:inst:m2"/>
+                        <symbol value="sg:loc:m2"/>
+                        <symbol value="pl:dat:m2"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">jedno</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:inst:n:ncol"/>
+                        <symbol value="sg:loc:n:ncol"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m81" from="442" to="449" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _zadaniu-->
+               <fs>
+                  <f name="orig">zadaniu</f>
+                  <f name="lemma">zadanie</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:loc:n:ncol</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">zadanie</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:dat:n:ncol"/>
+                        <symbol value="sg:loc:n:ncol" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">zadać</f>
+                  <f name="pos">ger</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:dat:n:perf:aff"/>
+                        <symbol value="sg:loc:n:perf:aff"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m82" from="450" to="458" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _skupiony-->
+               <fs>
+                  <f name="orig">skupiony</f>
+                  <f name="lemma">skupiony</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:nom:m3:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">skupiony</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:acc:m3:pos"/>
+                        <symbol value="sg:nom:m1:pos"/>
+                        <symbol value="sg:nom:m2:pos"/>
+                        <symbol value="sg:nom:m3:pos" n="choice"/>
+                        <symbol value="sg:voc:m1:pos"/>
+                        <symbol value="sg:voc:m2:pos"/>
+                        <symbol value="sg:voc:m3:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">skupić</f>
+                  <f name="pos">ppas</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:acc:m3:perf:aff"/>
+                        <symbol value="sg:nom:m1:perf:aff"/>
+                        <symbol value="sg:nom:m2:perf:aff"/>
+                        <symbol value="sg:nom:m3:perf:aff"/>
+                        <symbol value="sg:voc:m1:perf:aff"/>
+                        <symbol value="sg:voc:m2:perf:aff"/>
+                        <symbol value="sg:voc:m3:perf:aff"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m83" from="458" to="459" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- .-->
+               <fs>
+                  <f name="orig">.</f>
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m86" from="460" to="463" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _Jak-->
+               <fs>
+                  <f name="orig">Jak</f>
+                  <f name="lemma">jak</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">Jaki</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="pl:gen:n:pt"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">jak</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">
+                     <symbol value="pos" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">jak</f>
+                  <f name="pos">comp</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">jak</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">jak</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <symbol value="nom"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">jak</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="sg:nom:m2"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">jaka</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="pl:gen:f"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m87" from="464" to="475" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _Kierkegaard-->
+               <fs>
+                  <f name="orig">Kierkegaard</f>
+                  <f name="lemma">Kierkegaard</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:m1</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">Kierkegaard</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="sg:nom:m1" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m88" from="476" to="483" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _widział-->
+               <fs>
+                  <f name="orig">widział</f>
+                  <f name="lemma">widzieć</f>
+                  <f name="pos">praet</f>
+                  <f name="msd">sg:m1:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">widzieć</f>
+                  <f name="pos">praet</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:m1:imperf" n="choice"/>
+                        <symbol value="sg:m2:imperf"/>
+                        <symbol value="sg:m3:imperf"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m89" from="484" to="492" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _stosunek-->
+               <fs>
+                  <f name="orig">stosunek</f>
+                  <f name="lemma">stosunek</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:acc:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">stosunek</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:nom:m3"/>
+                        <symbol value="sg:acc:m3" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m90" from="493" to="499" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _między-->
+               <fs>
+                  <f name="orig">między</f>
+                  <f name="lemma">między</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">inst</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">między</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="acc"/>
+                        <symbol value="inst" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m91" from="500" to="507" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _światem-->
+               <fs>
+                  <f name="orig">światem</f>
+                  <f name="lemma">świat</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:inst:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">świat</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="sg:inst:m3" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m92" from="508" to="509" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _a-->
+               <fs>
+                  <f name="orig">a</f>
+                  <f name="lemma">a</f>
+                  <f name="pos">conj</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">a</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">a</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">a</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">a</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <symbol value="nom"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m93" from="510" to="521" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _wiecznością-->
+               <fs>
+                  <f name="orig">wiecznością</f>
+                  <f name="lemma">wieczność</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:inst:f</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">wieczność</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="sg:inst:f" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m94" from="521" to="522" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m95" from="523" to="530" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _ukazuje-->
+               <fs>
+                  <f name="orig">ukazuje</f>
+                  <f name="lemma">ukazywać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">sg:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">ukazować</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="sg:ter:imperf"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">ukazywać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="sg:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m96" from="531" to="535" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _jego-->
+               <fs>
+                  <f name="orig">jego</f>
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">sg:gen:m1:ter:akc:npraep</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:acc:m1:ter:akc:npraep"/>
+                        <symbol value="sg:acc:m2:ter:akc:npraep"/>
+                        <symbol value="sg:acc:m3:ter:akc:npraep"/>
+                        <symbol value="sg:gen:m1:ter:akc:npraep" n="choice"/>
+                        <symbol value="sg:gen:m2:ter:akc:npraep"/>
+                        <symbol value="sg:gen:m3:ter:akc:npraep"/>
+                        <symbol value="sg:gen:n:ter:akc:npraep"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m97" from="536" to="541" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _uwaga-->
+               <fs>
+                  <f name="orig">uwaga</f>
+                  <f name="lemma">uwaga</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:f</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">uwaga</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="sg:nom:f" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m98" from="542" to="543" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _o-->
+               <fs>
+                  <f name="orig">o</f>
+                  <f name="lemma">o</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">o</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">o</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="acc"/>
+                        <symbol value="loc" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m99" from="544" to="549" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _znaku-->
+               <fs>
+                  <f name="orig">znaku</f>
+                  <f name="lemma">znak</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:loc:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">znak</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:gen:m3"/>
+                        <symbol value="sg:loc:m3" n="choice"/>
+                        <symbol value="sg:voc:m3"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m100" from="550" to="560" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _apokalipsy-->
+               <fs>
+                  <f name="orig">apokalipsy</f>
+                  <f name="lemma">apokalipsa</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:gen:f</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">apokalipsa</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:gen:f" n="choice"/>
+                        <symbol value="pl:nom:f"/>
+                        <symbol value="pl:acc:f"/>
+                        <symbol value="pl:voc:f"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m101" from="560" to="561" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- .-->
+               <fs>
+                  <f name="orig">.</f>
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m103" from="562" to="563" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _W-->
+               <fs>
+                  <f name="orig">W</f>
+                  <f name="lemma">w</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc:nwok</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">w</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="acc:nwok"/>
+                        <symbol value="loc:nwok" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m104" from="564" to="571" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _teatrze-->
+               <fs>
+                  <f name="orig">teatrze</f>
+                  <f name="lemma">teatr</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:loc:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">teatr</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:loc:m3" n="choice"/>
+                        <symbol value="sg:voc:m3"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m105" from="572" to="579" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _wybucha-->
+               <fs>
+                  <f name="orig">wybucha</f>
+                  <f name="lemma">wybuchać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">sg:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">wybuchać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="sg:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m106" from="580" to="585" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _pożar-->
+               <fs>
+                  <f name="orig">pożar</f>
+                  <f name="lemma">pożar</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">pożar</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:nom:m3" n="choice"/>
+                        <symbol value="sg:acc:m3"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m107" from="585" to="586" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m108" from="587" to="590" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _ale-->
+               <fs>
+                  <f name="orig">ale</f>
+                  <f name="lemma">ale</f>
+                  <f name="pos">conj</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">ale</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">ale</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">ale</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m109" from="591" to="594" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _tak-->
+               <fs>
+                  <f name="orig">tak</f>
+                  <f name="lemma">tak</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">tak</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">
+                     <symbol value="pos" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">tak</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">tak</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">taka</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="pl:gen:f"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m110" from="595" to="598" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _się-->
+               <fs>
+                  <f name="orig">się</f>
+                  <f name="lemma">się</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">się</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m111" from="599" to="605" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _składa-->
+               <fs>
+                  <f name="orig">składa</f>
+                  <f name="lemma">składać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">sg:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">składać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="sg:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m112" from="605" to="606" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m113" from="607" to="609" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _że-->
+               <fs>
+                  <f name="orig">że</f>
+                  <f name="lemma">że</f>
+                  <f name="pos">comp</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">że</f>
+                  <f name="pos">comp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">że</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m114" from="610" to="616" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _pierot-->
+               <fs>
+                  <f name="orig">pierot</f>
+                  <f name="lemma">pierot</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:m1</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">pierot</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="sg:nom:m1" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">pierot</f>
+                  <f name="pos">ign</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m115" from="617" to="624" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _ogłasza-->
+               <fs>
+                  <f name="orig">ogłasza</f>
+                  <f name="lemma">ogłaszać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">sg:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">ogłaszać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="sg:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m116" from="625" to="627" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _to-->
+               <fs>
+                  <f name="orig">to</f>
+                  <f name="lemma">to</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:acc:n:ncol</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">ten</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:acc:n:pos"/>
+                        <symbol value="sg:nom:n:pos"/>
+                        <symbol value="sg:voc:n:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">to</f>
+                  <f name="pos">comp</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">to</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">to</f>
+                  <f name="pos">pred</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">to</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:nom:n:ncol"/>
+                        <symbol value="sg:acc:n:ncol" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m117" from="628" to="640" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _publiczności-->
+               <fs>
+                  <f name="orig">publiczności</f>
+                  <f name="lemma">publiczność</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:dat:f</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">publiczność</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:gen:f"/>
+                        <symbol value="sg:dat:f" n="choice"/>
+                        <symbol value="sg:loc:f"/>
+                        <symbol value="sg:voc:f"/>
+                        <symbol value="pl:nom:f"/>
+                        <symbol value="pl:acc:f"/>
+                        <symbol value="pl:voc:f"/>
+                        <symbol value="pl:gen:f"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m118" from="640" to="641" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- .-->
+               <fs>
+                  <f name="orig">.</f>
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m120" from="642" to="646" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _Nikt-->
+               <fs>
+                  <f name="orig">Nikt</f>
+                  <f name="lemma">nikt</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:m1</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">nikt</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="sg:nom:m1" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m121" from="647" to="649" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _mu-->
+               <fs>
+                  <f name="orig">mu</f>
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">sg:dat:m1:ter:nakc:npraep</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">mu</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:dat:m1:ter:nakc:npraep" n="choice"/>
+                        <symbol value="sg:dat:m2:ter:nakc:npraep"/>
+                        <symbol value="sg:dat:m3:ter:nakc:npraep"/>
+                        <symbol value="sg:dat:n:ter:nakc:npraep"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m122" from="649" to="650" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m123" from="651" to="661" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _oczywiście-->
+               <fs>
+                  <f name="orig">oczywiście</f>
+                  <f name="lemma">oczywiście</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">oczywiście</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">
+                     <symbol value="pos"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">oczywiście</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">oczywiście</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m124" from="661" to="662" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m125" from="663" to="666" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _nie-->
+               <fs>
+                  <f name="orig">nie</f>
+                  <f name="lemma">nie</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">nie</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">nie</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">nie</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">on</f>
+                  <f name="pos">ppron3</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:acc:m2:ter:akc:praep"/>
+                        <symbol value="pl:acc:m2:ter:nakc:praep"/>
+                        <symbol value="pl:acc:m3:ter:akc:praep"/>
+                        <symbol value="pl:acc:m3:ter:nakc:praep"/>
+                        <symbol value="pl:acc:f:ter:akc:praep"/>
+                        <symbol value="pl:acc:f:ter:nakc:praep"/>
+                        <symbol value="pl:acc:n:ter:akc:praep"/>
+                        <symbol value="pl:acc:n:ter:nakc:praep"/>
+                        <symbol value="sg:acc:n:ter:akc:praep"/>
+                        <symbol value="sg:acc:n:ter:nakc:praep"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m126" from="667" to="673" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _wierzy-->
+               <fs>
+                  <f name="orig">wierzy</f>
+                  <f name="lemma">wierzyć</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">sg:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">wierzyć</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="sg:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m127" from="673" to="674" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m128" from="675" to="682" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _wszyscy-->
+               <fs>
+                  <f name="orig">wszyscy</f>
+                  <f name="lemma">wszyscy</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">pl:nom:m1:pt</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">wszyscy</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:nom:m1:pt" n="choice"/>
+                        <symbol value="pl:voc:m1:pt"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">wszystek</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="pl:nom:m1:pos"/>
+                        <symbol value="pl:voc:m1:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m129" from="683" to="686" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _się-->
+               <fs>
+                  <f name="orig">się</f>
+                  <f name="lemma">się</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">się</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m130" from="687" to="693" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _śmieją-->
+               <fs>
+                  <f name="orig">śmieją</f>
+                  <f name="lemma">śmiać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">pl:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">śmiać</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="pl:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">śmieć</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="pl:ter:imperf"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m131" from="693" to="694" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- ,-->
+               <fs>
+                  <f name="orig">,</f>
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">,</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m132" from="695" to="697" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _aż-->
+               <fs>
+                  <f name="orig">aż</f>
+                  <f name="lemma">aż</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">aż</f>
+                  <f name="pos">comp</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">aż</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m133" from="698" to="700" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _do-->
+               <fs>
+                  <f name="orig">do</f>
+                  <f name="lemma">do</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">gen</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">do</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <symbol value="gen" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">do</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:nom:n:ncol"/>
+                        <symbol value="sg:gen:n:ncol"/>
+                        <symbol value="sg:dat:n:ncol"/>
+                        <symbol value="sg:acc:n:ncol"/>
+                        <symbol value="sg:inst:n:ncol"/>
+                        <symbol value="sg:loc:n:ncol"/>
+                        <symbol value="sg:voc:n:ncol"/>
+                        <symbol value="pl:nom:n:ncol"/>
+                        <symbol value="pl:gen:n:ncol"/>
+                        <symbol value="pl:dat:n:ncol"/>
+                        <symbol value="pl:acc:n:ncol"/>
+                        <symbol value="pl:inst:n:ncol"/>
+                        <symbol value="pl:loc:n:ncol"/>
+                        <symbol value="pl:voc:n:ncol"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m134" from="701" to="707" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _chwili-->
+               <fs>
+                  <f name="orig">chwili</f>
+                  <f name="lemma">chwila</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:gen:f</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">chwila</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:gen:f" n="choice"/>
+                        <symbol value="sg:dat:f"/>
+                        <symbol value="sg:loc:f"/>
+                        <symbol value="pl:gen:f"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m135" from="708" to="711" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _gdy-->
+               <fs>
+                  <f name="orig">gdy</f>
+                  <f name="lemma">gdy</f>
+                  <f name="pos">adv</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">gdy</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">gdy</f>
+                  <f name="pos">comp</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m136" from="712" to="716" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _giną-->
+               <fs>
+                  <f name="orig">giną</f>
+                  <f name="lemma">ginąć</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">pl:ter:imperf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">ginąć</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="pl:ter:imperf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m137" from="717" to="718" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _w-->
+               <fs>
+                  <f name="orig">w</f>
+                  <f name="lemma">w</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc:nwok</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">w</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="acc:nwok"/>
+                        <symbol value="loc:nwok" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m138" from="719" to="730" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _płomieniach-->
+               <fs>
+                  <f name="orig">płomieniach</f>
+                  <f name="lemma">płomień</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">pl:loc:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">płomień</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="pl:loc:m3" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m139" from="730" to="731" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- .-->
+               <fs>
+                  <f name="orig">.</f>
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m141" from="732" to="735" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _Tak-->
+               <fs>
+                  <f name="orig">Tak</f>
+                  <f name="lemma">tak</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">tak</f>
+                  <f name="pos">adv</f>
+                  <f name="msd">
+                     <symbol value="pos" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">tak</f>
+                  <f name="pos">interj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">tak</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">taka</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="pl:gen:f"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m142" from="736" to="738" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _to-->
+               <fs>
+                  <f name="orig">to</f>
+                  <f name="lemma">to</f>
+                  <f name="pos">part</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt">
+                  <f name="lemma">ten</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:acc:n:pos"/>
+                        <symbol value="sg:nom:n:pos"/>
+                        <symbol value="sg:voc:n:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">to</f>
+                  <f name="pos">comp</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt" n="choice">
+                  <f name="lemma">to</f>
+                  <f name="pos">part</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">to</f>
+                  <f name="pos">pred</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">to</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:nom:n:ncol"/>
+                        <symbol value="sg:acc:n:ncol"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m143" from="739" to="745" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _koniec-->
+               <fs>
+                  <f name="orig">koniec</f>
+                  <f name="lemma">koniec</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:nom:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">koniec</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:nom:m3" n="choice"/>
+                        <symbol value="sg:acc:m3"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m144" from="746" to="752" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _świata-->
+               <fs>
+                  <f name="orig">świata</f>
+                  <f name="lemma">świat</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:gen:m3</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">świat</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <symbol value="sg:gen:m3" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m145" from="753" to="762" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _przyjdzie-->
+               <fs>
+                  <f name="orig">przyjdzie</f>
+                  <f name="lemma">przyjść</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">sg:ter:perf</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">przyjść</f>
+                  <f name="pos">fin</f>
+                  <f name="msd">
+                     <symbol value="sg:ter:perf" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m146" from="763" to="764" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _w-->
+               <fs>
+                  <f name="orig">w</f>
+                  <f name="lemma">w</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">loc:nwok</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">w</f>
+                  <f name="pos">prep</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="acc:nwok"/>
+                        <symbol value="loc:nwok" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m147" from="765" to="775" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _atmosferze-->
+               <fs>
+                  <f name="orig">atmosferze</f>
+                  <f name="lemma">atmosfera</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:loc:f</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">atmosfera</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:dat:f"/>
+                        <symbol value="sg:loc:f" n="choice"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m148" from="776" to="787" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _powszechnej-->
+               <fs>
+                  <f name="orig">powszechnej</f>
+                  <f name="lemma">powszechny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">sg:gen:f:pos</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">powszechny</f>
+                  <f name="pos">adj</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:dat:f:pos"/>
+                        <symbol value="sg:gen:f:pos" n="choice"/>
+                        <symbol value="sg:loc:f:pos"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m149" from="788" to="797" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- _wesołości-->
+               <fs>
+                  <f name="orig">wesołości</f>
+                  <f name="lemma">wesołość</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">sg:gen:f</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">wesołość</f>
+                  <f name="pos">subst</f>
+                  <f name="msd">
+                     <vAlt>
+                        <symbol value="sg:gen:f" n="choice"/>
+                        <symbol value="sg:dat:f"/>
+                        <symbol value="sg:loc:f"/>
+                        <symbol value="sg:voc:f"/>
+                        <symbol value="pl:nom:f"/>
+                        <symbol value="pl:acc:f"/>
+                        <symbol value="pl:voc:f"/>
+                        <symbol value="pl:gen:f"/>
+                     </vAlt>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+      <span id="m150" from="797" to="798" l="5">
+         <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">
+            <f name="lex"><!-- .-->
+               <fs>
+                  <f name="orig">.</f>
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="join">left</f>
+               </fs>
+            </f>
+            <f name="interps">
+               <fs type="alt" n="choice">
+                  <f name="lemma">.</f>
+                  <f name="pos">interp</f>
+                  <f name="msd">
+                     <symbol value="0" n="choice"/>
+                  </f>
+               </fs>
+            </f>
+         </fs>
+      </span>
+   </spanList>
+</layer>

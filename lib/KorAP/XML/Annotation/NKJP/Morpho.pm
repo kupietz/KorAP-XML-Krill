@@ -1,5 +1,6 @@
 package KorAP::XML::Annotation::NKJP::Morpho;
 use KorAP::XML::Annotation::Base;
+use Data::Dumper;
 
 sub parse {
   my $self = shift;
@@ -15,28 +16,46 @@ sub parse {
 
       my $found;
 
+      if (ref $content eq 'HASH') {
+        $content = [$content];
+      };
+
       my $name;
-      foreach my $f (@{$content->{fs}->{f}}) {
+      foreach my $c (@$content) {
 
-        $name = $f->{-name};
+        # For the moment, ignore all interps
+        next if $c->{-name} ne 'lex';
 
-        # pos tag
-        if (($name eq 'pos') &&
-              ($found = $f->{'#text'})) {
-          $mtt->add_by_term('nkjp/p:' . $found);
-        }
+        if (ref $c->{fs} eq 'HASH') {
+          $c = [$c->{fs}];
+        } else {
+          $c = $c->{fs};
+        };
 
-        # lemma tag
-        elsif (($name eq 'lemma')
-                 && ($found = $f->{'#text'})
-                 && $found ne '<unknown>') {
-          $mtt->add_by_term('nkjp/l:' . $found);
-        }
+        foreach my $ci (@$c) {
+          foreach my $f (@{$ci->{f}}) {
 
-        # msd tag
-        elsif (($name eq 'msd')
-                 && ($found = $f->{'#text'})) {
-          $mtt->add_by_term('nkjp/m:' . $found);
+            $name = $f->{-name};
+
+            # pos tag
+            if (($name eq 'pos') &&
+                  ($found = $f->{'#text'})) {
+              $mtt->add_by_term('nkjp/p:' . $found);
+            }
+
+            # lemma tag
+            elsif (($name eq 'lemma')
+                     && ($found = $f->{'#text'})
+                     && $found ne '<unknown>') {
+              $mtt->add_by_term('nkjp/l:' . $found);
+            }
+
+            # msd tag
+            elsif (($name eq 'msd')
+                     && ($found = $f->{'#text'})) {
+              $mtt->add_by_term('nkjp/m:' . $found);
+            };
+          };
         };
       };
     }) or return;
