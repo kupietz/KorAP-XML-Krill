@@ -1,3 +1,6 @@
+0.46 2022-07-21
+        - Support NKJP Meta, Morpho and NamedEntities.
+
 0.45 2022-03-04
         - Due to problems installing Archive::Tar::Builder
           in certain environments, this is now optional,

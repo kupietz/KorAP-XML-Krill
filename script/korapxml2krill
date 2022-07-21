@@ -158,9 +158,12 @@ use Fcntl qw(:flock SEEK_END);
 # 2022/01/17
 # - Support for temporary extraction in config
 # - Introduced support for Gingko
+#
+# 2022/07/21
+# - Support for NKJP
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2022/03/04';
+our $LAST_CHANGE = '2022/07/21';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -476,7 +479,8 @@ push(@layers,
 
 # NKJP
 push(@layers,
-     ['NKJP', 'Morpho']);
+     ['NKJP', 'Morpho'],
+     ['NKJP', 'NamedEntities']);
 
 # OpenNLP
 push(@layers,
