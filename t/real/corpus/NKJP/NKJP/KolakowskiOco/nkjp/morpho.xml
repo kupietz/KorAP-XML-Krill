@@ -2989,6 +2989,13 @@
                </fs>
                <fs type="alt">
                   <f name="lemma">to</f>
+                  <f name="pos">conj</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">to</f>
                   <f name="pos">part</f>
                   <f name="msd">
                      <symbol value="0"/>
@@ -3668,6 +3675,13 @@
                <fs type="alt">
                   <f name="lemma">to</f>
                   <f name="pos">comp</f>
+                  <f name="msd">
+                     <symbol value="0"/>
+                  </f>
+               </fs>
+               <fs type="alt">
+                  <f name="lemma">to</f>
+                  <f name="pos">conj</f>
                   <f name="msd">
                      <symbol value="0"/>
                   </f>

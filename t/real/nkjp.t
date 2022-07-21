@@ -15,6 +15,7 @@ use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
 use_ok('KorAP::XML::Krill');
+use_ok('KorAP::XML::Annotation::NKJP::NamedEntities');
 
 my $path = catdir(dirname(__FILE__), 'corpus','NKJP','NKJP','KOT');
 
@@ -52,7 +53,7 @@ my $tokens = KorAP::XML::Tokenizer->new(
   doc => $doc,
   foundry => $token_base_foundry,
   layer => $token_base_layer,
-  name => 'tokens'
+  name => 'tokens',
 );
 ok($tokens, 'Token Object is fine');
 ok($tokens->parse, 'Token parsing is fine');
@@ -65,7 +66,7 @@ is($output->{data}->{stream}->[1]->[2], 's:zdążyła', 't');
 
 ## Base
 ok($tokens->add('DeReKo', 'Structure', 'base_sentences_paragraphs'));
-ok($tokens->add('NKJP', 'Morpho'), 'Add Gingko');
+ok($tokens->add('NKJP', 'Morpho'), 'Add Morpho');
 
 $output = $tokens->to_data;
 
@@ -128,13 +129,14 @@ is($output->{data}->{stream}->[1]->[2], 's:zdarza', 't');
 
 ## Base
 ok($tokens->add('DeReKo', 'Structure', 'base_sentences_paragraphs'));
-ok($tokens->add('NKJP', 'Morpho'), 'Add Gingko');
+ok($tokens->add('NKJP', 'Morpho'), 'Add Morpho');
+ok($tokens->add('NKJP', 'NamedEntities'), 'Add NamedEntities');
 
 $output = $tokens->to_data;
 
-is($output->{data}->{foundries}, 'dereko dereko/structure dereko/structure/base_sentences_paragraphs nkjp nkjp/morpho', 'Foundries');
+is($output->{data}->{foundries}, 'dereko dereko/structure dereko/structure/base_sentences_paragraphs nkjp nkjp/morpho nkjp/namedentities', 'Foundries');
 
-is($output->{data}->{layerInfos}, 'dereko/s=spans nkjp/l=tokens nkjp/m=tokens nkjp/p=tokens', 'layerInfos');
+is($output->{data}->{layerInfos}, 'dereko/s=spans nkjp/l=tokens nkjp/m=tokens nkjp/ne=tokens nkjp/p=tokens', 'layerInfos');
 
 $token = join('||', @{$output->{data}->{stream}->[5]});
 
@@ -145,6 +147,19 @@ like($token, qr!nkjp/l:taki!);
 like($token, qr!nkjp/m:sg:nom:n:pos!);
 like($token, qr!nkjp/p:adj!);
 like($token, qr!s:takie!);
+
+$token = join('||', @{$output->{data}->{stream}->[67]});
+
+like($token, qr!<>:dereko/s:seg\$<b>64<i>464<i>475<i>68<b>4<s>1!);
+like($token, qr!\@:dereko\/s:corresp:ann_segmentation\.xml\\#segm_2\.2-seg\$<b>17<s>1<i>68!);
+like($token, qr!\@:dereko\/s:id:morph_2\.2-seg\$<b>17<s>1<i>68!);
+like($token, qr!_67\$<i>464<i>475!);
+like($token, qr!i:kierkegaard!);
+like($token, qr!nkjp/l:Kierkegaard!);
+like($token, qr!nkjp/m:sg:nom:m1!);
+like($token, qr!nkjp/ne:persName:surname!);
+like($token, qr!nkjp/p:subst!);
+like($token, qr!s:Kierkegaard!);
 
 done_testing;
 __END__

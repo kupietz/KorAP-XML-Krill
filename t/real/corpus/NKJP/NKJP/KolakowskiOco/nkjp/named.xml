@@ -8,34 +8,30 @@
          <fs xmlns="http://www.tei-c.org/ns/1.0" type="ne">
             <f name="ne"><!-- _Kierkegaard-->
                <fs>
-                  <f name="complex-ent">
-                     <fs type="complex-ent">
-                        <f name="type">
-                           <symbol value="persName"/>
-                        </f>
-                        <f name="subtype">
-                           <symbol value="surname"/>
-                        </f>
-                        <f name="nkjp-named">
-                           <fs type="named">
-                              <f name="type">
-                                 <symbol value="persName"/>
-                              </f>
-                              <f name="subtype">
-                                 <symbol value="surname"/>
-                              </f>
-                              <f name="orth">
-                                 <string>Kierkegaard</string>
-                              </f>
-                              <f name="base">
-                                 <string>Kierkegaard</string>
-                              </f>
-                              <f name="certainty">
-                                 <symbol value="high"/>
-                              </f>
-                           </fs>
-                        </f>
-                     </fs>
+                  <f name="type">
+                     <symbol value="persName"/>
+                  </f>
+                  <f name="subtype">
+                     <symbol value="surname"/>
+                  </f>
+               </fs>
+            </f>
+            <f name="nkjp">
+               <fs type="named">
+                  <f name="type">
+                     <symbol value="persName"/>
+                  </f>
+                  <f name="subtype">
+                     <symbol value="surname"/>
+                  </f>
+                  <f name="orth">
+                     <string>Kierkegaard</string>
+                  </f>
+                  <f name="base">
+                     <string>Kierkegaard</string>
+                  </f>
+                  <f name="certainty">
+                     <symbol value="high"/>
                   </f>
                </fs>
             </f>
