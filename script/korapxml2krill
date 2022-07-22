@@ -1455,6 +1455,10 @@ L<Krill|https://github.com/KorAP/Krill>.
   MDParser
     #Dependency
 
+  NKJP
+    #Morpho
+    #NamedEntities
+
   OpenNLP
     #Morpho
     #Sentences
