@@ -20,6 +20,7 @@ sub new {
     layer           => $param{layer}     || 'Tokens',
     anno            => $param{anno}      || [[]],
     log             => $param{log}       || $log,
+    lang            => $param{lang},
     koral           => $param{koral},
     non_word_tokens => $param{non_word_tokens},
     non_verbal_tokens => $param{non_verbal_tokens},
@@ -42,7 +43,8 @@ sub process {
     path      => $input,
     meta_type => $self->{meta_type},
     cache     => $self->{cache},
-    log       => $self->{log}
+    log       => $self->{log},
+    lang      => $self->{lang}
   );
 
   # Parse document

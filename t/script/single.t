@@ -237,6 +237,38 @@ unlink $output;
 ok(!-f $output, 'Output does not exist');
 
 
+# Koral version
+$input = catdir($f, '..', 'real', 'corpus', 'NKJP', 'NKJP', 'KOT');
+$call = join(
+  ' ',
+  'perl', $script,
+  '--input' => $input,
+  '--output' => $output,
+  '--cache' => $cache,
+  '-t' => 'NKJP#Morpho',
+  '-l' => 'INFO',
+  '--lang' => 'en'
+);
+
+$call .= ' -w ';
+
+stderr_like(
+  sub {
+    system($call);
+  },
+  qr!The code took!,
+  $call
+);
+
+ok(-f $output, 'Output does exist');
+ok(($file = Mojo::File->new($output)->slurp), 'Slurp data');
+ok(($json = decode_json $file), 'decode json');
+is($json->{corpusTitle}, 'National Corpus of Polish -- the 1 million word subcorpus', 'Title');
+
+
+
+
+
 done_testing;
 __END__
 

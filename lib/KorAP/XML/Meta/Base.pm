@@ -39,13 +39,17 @@ sub text_sigle {
 
 sub cache {
   $_[0]->{_cache};
-}
+};
+
+sub lang {
+  $_[0]->{_lang};
+};
 
 sub new {
   my $class = shift;
   my %hash = @_;
   my $copy = {};
-  foreach (qw/log cache corpus_sigle doc_sigle text_sigle/) {
+  foreach (qw/log cache lang corpus_sigle doc_sigle text_sigle/) {
     $copy->{'_' . $_} = $hash{$_};
   };
 

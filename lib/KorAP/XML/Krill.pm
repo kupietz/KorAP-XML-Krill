@@ -16,12 +16,13 @@ use Exporter 'import';
 
 our @EXPORT_OK = qw(get_file_name get_file_name_from_glob);
 
-our $VERSION = '0.46';
+our $VERSION = '0.47';
 
 has 'path';
 has [qw/text_sigle doc_sigle corpus_sigle/];
 has 'meta_type' => 'I5';
 has 'cache';
+has 'lang';
 
 has log => sub {
   return $log;
@@ -140,7 +141,8 @@ sub parse {
       corpus_sigle => $self->corpus_sigle,
       doc_sigle    => $self->doc_sigle,
       text_sigle   => $self->text_sigle,
-      cache        => $self->cache
+      cache        => $self->cache,
+      lang         => $self->lang
     );
 
     # Associate meta object

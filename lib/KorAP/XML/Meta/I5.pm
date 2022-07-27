@@ -69,6 +69,8 @@ sub _squish ($) {
 sub parse {
   my ($self, $dom, $type) = @_;
 
+  my $lang = $self->lang;
+
   # Parse text sigle
   if ($type eq 'text' && !$self->text_sigle) {
     my $v = $dom->at('textSigle');
@@ -106,8 +108,20 @@ sub parse {
     # There is an analytic element
 
     # Get title, subtitle, author, editor
-    my $title     = $analytic->at('h\.title[type=main]');
-    my $sub_title = $analytic->at('h\.title[type=sub]');
+    my $titles = $analytic->find('h\.title[type=main]');
+    my $title;
+    if ($lang) {
+      $title = $titles->first(sub{ $_->attr('xml:lang') && lc($_->attr('xml:lang')) eq lc($lang) });
+    };
+    $title = $titles->first unless $title;
+
+    my $sub_title;
+    $titles    = $analytic->find('h\.title[type=sub]');
+    if ($lang) {
+      $sub_title = $titles->first(sub{ $_->attr('xml:lang') && lc($_->attr('xml:lang')) eq lc($lang) });
+    };
+    $sub_title = $titles->first unless $sub_title;
+
     my $author    = $analytic->at('h\.author');
     my $editor    = $analytic->at('editor');
 
@@ -181,16 +195,24 @@ sub parse {
   };
 
   # Not in analytic
-  my $title;
+  my ($titles, $title);
   if ($type eq 'corpus') {
 
     # Corpus title not yet given
     unless ($self->{T_corpus_title}) {
-      if ($title = $dom->at('fileDesc > titleStmt > c\.title')) {
-        $title = _squish($title->all_text);
+      if ($titles = $dom->find('fileDesc > titleStmt > c\.title')) {
+        if ($lang) {
+          $title = $titles->first(sub{ $_->attr('xml:lang') && lc($_->attr('xml:lang')) eq lc($lang) });
+        };
+
+        $title = $titles->first unless $title;
 
         if ($title) {
-          $self->{T_corpus_title} = _remove_prefix($title, $self->corpus_sigle);
+          $title = _squish($title->all_text);
+
+          if ($title) {
+            $self->{T_corpus_title} = _remove_prefix($title, $self->corpus_sigle);
+          };
         };
       };
     };
@@ -199,11 +221,19 @@ sub parse {
   # doc title
   elsif ($type eq 'doc') {
     unless ($self->{T_doc_title}) {
-      if ($title = $dom->at('fileDesc > titleStmt > d\.title')) {
-        $title = _squish($title->all_text);
+      if ($titles = $dom->find('fileDesc > titleStmt > d\.title')) {
+        if ($lang) {
+          $title = $titles->first(sub{ $_->attr('xml:lang') && lc($_->attr('xml:lang')) eq lc($lang) });
+        };
+
+        $title = $titles->first unless $title;
 
         if ($title) {
-          $self->{T_doc_title} = _remove_prefix($title, $self->doc_sigle);
+          $title = _squish($title->all_text);
+
+          if ($title) {
+            $self->{T_doc_title} = _remove_prefix($title, $self->doc_sigle);
+          };
         };
       };
     };
@@ -212,12 +242,21 @@ sub parse {
   # text title
   elsif ($type eq 'text') {
     unless ($self->{T_title}) {
-      if ($title = $dom->at('fileDesc > titleStmt > t\.title')) {
-        $title = _squish($title->all_text);
-        if ($title) {
-          $self->{T_title} = _remove_prefix($title, $self->text_sigle);
+      if ($titles = $dom->find('fileDesc > titleStmt > t\.title')) {
+        if ($lang) {
+          $title = $titles->first(sub{ $_->attr('xml:lang') && lc($_->attr('xml:lang')) eq lc($lang) });
         };
-      }
+
+        $title = $titles->first unless $title;
+
+        if ($title) {
+          $title = _squish($title->all_text);
+
+          if ($title) {
+            $self->{T_title} = _remove_prefix($title, $self->text_sigle);
+          };
+        };
+      };
     };
   };
 

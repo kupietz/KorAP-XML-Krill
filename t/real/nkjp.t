@@ -15,6 +15,7 @@ use File::Basename 'dirname';
 use File::Spec::Functions 'catdir';
 
 use_ok('KorAP::XML::Krill');
+use_ok('KorAP::XML::Meta::I5');
 use_ok('KorAP::XML::Annotation::NKJP::NamedEntities');
 
 my $path = catdir(dirname(__FILE__), 'corpus','NKJP','NKJP','KOT');
@@ -29,6 +30,15 @@ is($doc->corpus_sigle, 'NKJP', 'Correct corpus sigle');
 my $meta = $doc->meta;
 
 is($meta->{T_title}, 'TEI P5 encoded version of sample(s) of "Kot"', 'Title');
+is($meta->{T_corpus_title}, 'Narodowy Korpus Języka Polskiego -- podkorpus zawierający 1 milion słów', 'Title');
+
+ok($doc = KorAP::XML::Krill->new( path => $path . '/', lang => 'en' ), 'Load Korap::Document');
+ok($doc->parse, 'Parse document');
+$meta = $doc->meta;
+
+is($meta->{T_title}, 'TEI P5 encoded version of sample(s) of "Kot"', 'Title');
+is($meta->{T_corpus_title}, 'National Corpus of Polish -- the 1 million word subcorpus', 'Language sensitive Title');
+
 ok(!$meta->{T_sub_title}, 'SubTitle');
 ok(!$meta->{T_author}, 'Author');
 ok(!$meta->{A_editor}, 'Editor');

@@ -1,3 +1,6 @@
+0.47 2022-07-27
+        - Support for preferred language transformation.
+
 0.46 2022-07-21
         - Support NKJP Meta, Morpho and NamedEntities.
 

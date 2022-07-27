@@ -161,9 +161,12 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2022/07/21
 # - Support for NKJP
+#
+# 2022/07/27
+# - Support for preferred language transformation
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2022/07/21';
+our $LAST_CHANGE = '2022/07/27';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -200,6 +203,7 @@ GetOptions(
   'sigle|sg=s'  => \@sigle,
   'cache|c=s'   => \($cfg{cache_file}),
   'config|cfg=s' => \(my $cfg_file),
+  'lang=s'        => \($cfg{lang}),
   'log|l=s'     => \($cfg{log}),
   'anno|a=s'    => \@anno,
   'primary|p!'  => sub {
@@ -252,7 +256,7 @@ if ($cfg_file && -e $cfg_file) {
 
   foreach (qw!output cache-size input-base token overwrite
               meta base-sentences base-paragraphs base-pagebreaks
-              gzip to-tar log cache non-word-tokens
+              gzip to-tar log lang cache non-word-tokens
               non-verbal-tokens sequential-extraction
               temporary-extract cache-init
               koral extract-dir jobs!) {
@@ -555,9 +559,9 @@ my $batch_file = KorAP::XML::Batch::File->new(
   koral     => ($cfg{koral} // $KORAL_VERSION),
   anno      => \@filtered_anno,
   non_word_tokens   => ($cfg{non_word_tokens}   // 0),
-  non_verbal_tokens => ($cfg{non_verbal_tokens} // 0)
+  non_verbal_tokens => ($cfg{non_verbal_tokens} // 0),
+  lang      => $cfg{lang},
 );
-
 
 # Auto adjust jobs
 if ($jobs eq '-1') {
@@ -1375,6 +1379,15 @@ I<Currently only supported on C<extract>.>
 Sigles have the structure C<Corpus>/C<Document>/C<Text>.
 In case the C<Text> path is omitted, the whole document will be extracted.
 On the document level, the postfix wildcard C<*> is supported.
+
+=item B<--lang>
+
+Preferred language for metadata fields. In case multiple titles are
+given (on any level) with different C<xml:lang> attributes,
+the language given is preferred.
+Because titles may have different sources and different priorities,
+non-specific language titles may still be preferred in case the title
+source has a higher priority.
 
 
 =item B<--log|-l>
