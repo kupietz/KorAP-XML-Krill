@@ -16,11 +16,12 @@ use File::Spec::Functions 'catdir';
 
 use_ok('KorAP::XML::Krill');
 use_ok('KorAP::XML::Meta::I5');
+use_ok('KorAP::XML::Meta::NKJP');
 use_ok('KorAP::XML::Annotation::NKJP::NamedEntities');
 
 my $path = catdir(dirname(__FILE__), 'corpus','NKJP','NKJP','KOT');
 
-ok(my $doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok(my $doc = KorAP::XML::Krill->new( path => $path . '/', meta_type => 'NKJP' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 
 is($doc->text_sigle, 'NKJP/NKJP/KOT', 'Correct text sigle');
@@ -32,7 +33,12 @@ my $meta = $doc->meta;
 is($meta->{T_title}, 'TEI P5 encoded version of sample(s) of "Kot"', 'Title');
 is($meta->{T_corpus_title}, 'Narodowy Korpus Języka Polskiego -- podkorpus zawierający 1 milion słów', 'Title');
 
-ok($doc = KorAP::XML::Krill->new( path => $path . '/', lang => 'en' ), 'Load Korap::Document');
+is($meta->{K_nkjp_channel}->[0], 'miesiecznik', 'NKJP-Channel');
+ok(!$meta->{K_nkjp_channel}->[1], 'NKJP-Channel');
+is($meta->{K_nkjp_type}->[0], 'publicystyka i wiadomości prasowe', 'NKJP-Type');
+ok(!$meta->{K_nkjp_type}->[1], 'NKJP-Type');
+
+ok($doc = KorAP::XML::Krill->new( path => $path . '/', meta_type => 'NKJP', lang => 'en' ), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 $meta = $doc->meta;
 
@@ -51,6 +57,10 @@ ok(!$meta->{S_text_type_ref}, 'No Text Type Ref');
 ok(!$meta->{S_text_domain}, 'No Text Domain');
 ok(!$meta->{S_text_column}, 'No Text Column');
 
+is($meta->{K_nkjp_channel}->[0], 'monthly', 'NKJP-Channel');
+ok(!$meta->{K_nkjp_channel}->[1], 'NKJP-Channel');
+is($meta->{K_nkjp_type}->[0], 'journalism', 'NKJP-Type');
+ok(!$meta->{K_nkjp_type}->[1], 'NKJP-Type');
 
 # Tokenization
 use_ok('KorAP::XML::Tokenizer');
@@ -98,7 +108,7 @@ like($token, qr!s:ładu!);
 # KolakowskiOco
 $path = catdir(dirname(__FILE__), 'corpus','NKJP','NKJP','KolakowskiOco');
 
-ok($doc = KorAP::XML::Krill->new( path => $path . '/' ), 'Load Korap::Document');
+ok($doc = KorAP::XML::Krill->new( path => $path . '/', meta_type => 'NKJP', lang => 'pl'), 'Load Korap::Document');
 ok($doc->parse, 'Parse document');
 
 is($doc->text_sigle, 'NKJP/NKJP/KolakowskiOco', 'Correct text sigle');
@@ -119,6 +129,12 @@ ok(!$meta->{S_text_type_art}, 'No Text Type Art');
 ok(!$meta->{S_text_type_ref}, 'No Text Type Ref');
 ok(!$meta->{S_text_domain}, 'No Text Domain');
 ok(!$meta->{S_text_column}, 'No Text Column');
+
+is($meta->{K_nkjp_channel}->[0], 'książka', 'NKJP-Channel');
+ok(!$meta->{K_nkjp_channel}->[1], 'NKJP-Channel');
+is($meta->{K_nkjp_type}->[0], 'literatura piękna', 'NKJP-Type');
+ok(!$meta->{K_nkjp_type}->[1], 'NKJP-Type');
+
 
 # Get tokenization
 $tokens = KorAP::XML::Tokenizer->new(
