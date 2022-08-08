@@ -1,6 +1,7 @@
-0.47 2022-07-27
+0.47 2022-08-08
         - Support for preferred language transformation.
         - Support for NKJP taxonomies.
+        - Support for NKJP 'orig' values.
 
 0.46 2022-07-21
         - Support NKJP Meta, Morpho and NamedEntities.

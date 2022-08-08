@@ -50,6 +50,12 @@ sub parse {
               $mtt->add_by_term('nkjp/l:' . $found);
             }
 
+            # orig tag
+            elsif (($name eq 'orig')
+                     && ($found = $f->{'#text'})) {
+              $mtt->add_by_term('nkjp/ov:' . $found);
+            }
+
             # msd tag
             elsif (($name eq 'msd')
                      && ($found = $f->{'#text'})) {
@@ -63,7 +69,7 @@ sub parse {
 };
 
 sub layer_info {
-  ['nkjp/l=tokens', 'nkjp/p=tokens', 'nkjp/m=tokens']
+  ['nkjp/l=tokens', 'nkjp/p=tokens', 'nkjp/m=tokens', 'nkjp/ov=tokens']
 }
 
 1;

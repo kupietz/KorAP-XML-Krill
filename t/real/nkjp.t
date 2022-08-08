@@ -92,7 +92,7 @@ $output = $tokens->to_data;
 
 is($output->{data}->{foundries}, 'dereko dereko/structure dereko/structure/base_sentences_paragraphs nkjp nkjp/morpho', 'Foundries');
 
-is($output->{data}->{layerInfos}, 'dereko/s=spans nkjp/l=tokens nkjp/m=tokens nkjp/p=tokens', 'layerInfos');
+is($output->{data}->{layerInfos}, 'dereko/s=spans nkjp/l=tokens nkjp/m=tokens nkjp/ov=tokens nkjp/p=tokens', 'layerInfos');
 
 my $token = join('||', @{$output->{data}->{stream}->[7]});
 
@@ -162,7 +162,7 @@ $output = $tokens->to_data;
 
 is($output->{data}->{foundries}, 'dereko dereko/structure dereko/structure/base_sentences_paragraphs nkjp nkjp/morpho nkjp/namedentities', 'Foundries');
 
-is($output->{data}->{layerInfos}, 'dereko/s=spans nkjp/l=tokens nkjp/m=tokens nkjp/ne=tokens nkjp/p=tokens', 'layerInfos');
+is($output->{data}->{layerInfos}, 'dereko/s=spans nkjp/l=tokens nkjp/m=tokens nkjp/ne=tokens nkjp/ov=tokens nkjp/p=tokens', 'layerInfos');
 
 $token = join('||', @{$output->{data}->{stream}->[5]});
 
@@ -173,6 +173,9 @@ like($token, qr!nkjp/l:taki!);
 like($token, qr!nkjp/m:sg:nom:n:pos!);
 like($token, qr!nkjp/p:adj!);
 like($token, qr!s:takie!);
+like($token, qr!nkjp/ov:takie!);
+
+
 
 $token = join('||', @{$output->{data}->{stream}->[67]});
 
@@ -186,6 +189,7 @@ like($token, qr!nkjp/m:sg:nom:m1!);
 like($token, qr!nkjp/ne:persName:surname!);
 like($token, qr!nkjp/p:subst!);
 like($token, qr!s:Kierkegaard!);
+like($token, qr!nkjp/ov:Kierkegaard!);
 
 done_testing;
 __END__
