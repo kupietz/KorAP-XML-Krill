@@ -33,10 +33,10 @@ ok($tar_read->contains_file('example1.xml'), 'File exists');
 ok($tar_read->contains_file('example2.xml'), 'File exists');
 
 my $content = $tar_read->get_content('example1.xml');
-like($content, qr!ART_ABC\.00001!, 'Content is correct');
+like($content, qr!A_RT_ABC\.00001!, 'Content is correct');
 
 $content = $tar_read->get_content('example2.xml');
-like($content, qr!ART\/ABC\.00001!, 'Content is correct');
+like($content, qr!A_RT\/ABC\.00001!, 'Content is correct');
 
 
 
@@ -74,10 +74,10 @@ if (eval("use Archive::Tar::Builder; 1;")) {
   ok($tar_read->contains_file('example2.xml'), 'File exists');
 
   $content = $tar_read->get_content('example1.xml');
-  like($content, qr!ART_ABC\.00001!, 'Content is correct');
+  like($content, qr!A_RT_ABC\.00001!, 'Content is correct');
 
   $content = $tar_read->get_content('example2.xml');
-  like($content, qr!ART\/ABC\.00001!, 'Content is correct');
+  like($content, qr!A_RT\/ABC\.00001!, 'Content is correct');
 }
 else {
   diag 'Archive::Tar::Builder not installed.';

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="span.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
-<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="A01_APR.13047">
+<layer xmlns="http://ids-mannheim.de/ns/KorAP" version="KorAP-0.4" docid="A_RT_ABC.00001">
   <spanList>
     <span id="s8" from="0" to="2">
       <fs xmlns="http://www.tei-c.org/ns/1.0" type="lex">

@@ -28,8 +28,8 @@ my $meta = $doc->meta;
 # Metdata
 is($meta->{T_title}, 'Artificial Title', 'title');
 is($meta->{T_sub_title}, 'Artificial Subtitle', 'subTitle');
-is($doc->text_sigle, 'ART/ABC/00001', 'ID');
-is($doc->corpus_sigle, 'ART', 'corpusID');
+is($doc->text_sigle, 'A_RT/ABC/00001', 'ID');
+is($doc->corpus_sigle, 'A_RT', 'corpusID');
 is($meta->{D_pub_date}, '20010402', 'pubDate');
 is($meta->{S_pub_place}, 'Mannheim', 'pubPlace');
 is($meta->{S_pub_place_key}, 'DE', 'pubPlace key');

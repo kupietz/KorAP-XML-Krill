@@ -16,7 +16,7 @@ use Exporter 'import';
 
 our @EXPORT_OK = qw(get_file_name get_file_name_from_glob);
 
-our $VERSION = '0.47';
+our $VERSION = '0.48';
 
 has 'path';
 has [qw/text_sigle doc_sigle corpus_sigle/];
@@ -86,7 +86,7 @@ sub parse {
 
   # Get document id and corpus id
   if ($rt && $rt->{'-docid'}) {
-    if ($rt->{'-docid'} =~ /^([^_]+)_([^\._]+?)\.(.+?)$/) {
+    if ($rt->{'-docid'} =~ /^(.+?)_([^\._]+)\.(.+)$/) {
       $self->text_sigle(join('/', $1, $2, $3));
       $self->doc_sigle(join('/', $1, $2));
       $self->corpus_sigle($1);
