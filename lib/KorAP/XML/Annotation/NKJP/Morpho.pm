@@ -2,6 +2,45 @@ package KorAP::XML::Annotation::NKJP::Morpho;
 use KorAP::XML::Annotation::Base;
 use Data::Dumper;
 
+our %morpho = (
+  sg => 'number',
+  pl => 'number',
+  nom => 'case',
+  gen => 'case',
+  dat => 'case',
+  acc => 'case',
+  inst => 'case',
+  loc => 'case',
+  voc => 'case',
+  m1 => 'gender',
+  m2 => 'gender',
+  m3 => 'gender',
+  f => 'gender',
+  n => 'gender',
+  pri => 'person',
+  sec => 'person',
+  ter => 'person',
+  pos => 'degree',
+  com => 'degree',
+  sup => 'degree',
+  imperf => 'aspect',
+  perf => 'aspect',
+  aff => 'negation',
+  neg => 'negation',
+  akc => 'accent',
+  nakc => 'accent',
+  praep => 'postprep',
+  npraep => 'postprep',
+  congr => 'accomm',
+  rec => 'accomm',
+  nagl => 'agglut',
+  agl => 'agglut',
+  wok => 'vocal',
+  nwok => 'vocal',
+  pun => 'fullstopp',
+  npun => 'fullstopp',
+);
+
 sub parse {
   my $self = shift;
 
@@ -59,7 +98,15 @@ sub parse {
             # msd tag
             elsif (($name eq 'msd')
                      && ($found = $f->{'#text'})) {
-              $mtt->add_by_term('nkjp/m:' . $found);
+              foreach (split(':',$found)) {
+                if (exists $morpho{$_}) {
+                  $mtt->add_by_term('nkjp/m:' . $morpho{$_} . ':' . $_);
+                }
+
+                else {
+                  $$self->log->warn('Unknown morphological feature: ' . $_);
+                };
+              };
             };
           };
         };
