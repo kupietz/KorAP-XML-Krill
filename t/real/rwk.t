@@ -26,7 +26,7 @@ is($doc->doc_sigle, 'REDEW/DOC1', 'Correct document sigle');
 is($doc->corpus_sigle, 'REDEW', 'Correct corpus sigle');
 
 my $meta = $doc->meta;
-ok(!$meta->{T_title}, 'Title');               # ???
+is($meta->{T_title}, 'Gram', 'Title');               # ???
 ok(!$meta->{T_sub_title}, 'SubTitle');
 ok(!$meta->{T_author}, 'Author');
 ok(!$meta->{A_editor}, 'Editor');
@@ -95,7 +95,7 @@ is($output->{textSigle}, 'REDEW/DOC1/00000', 'Correct text sigle');
 is($output->{docSigle}, 'REDEW/DOC1', 'Correct document sigle');
 is($output->{corpusSigle}, 'REDEW', 'Correct corpus sigle');
 
-ok(!$output->{title}, 'Title');
+is($output->{title}, 'Gram', 'Title');
 ok(!$output->{subTitle}, 'Correct SubTitle');
 ok(!$output->{author}, 'Author');
 ok(!exists $output->{editor}, 'Publisher');

@@ -512,6 +512,11 @@ push(@layers,
      ['TreeTagger', 'Morpho'],
      ['TreeTagger', 'Sentences']);
 
+# UDPipe
+push(@layers,
+    ['UDPipe', 'Morpho'],
+    ['UDPipe', 'Dependency']);
+
 # XIP
 push(@layers,
      ['XIP', 'Morpho'],

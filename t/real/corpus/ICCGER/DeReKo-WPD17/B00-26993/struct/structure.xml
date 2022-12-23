@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="span.rng"
+            type="application/xml"
+            schematypens="http://relaxng.org/ns/structure/1.0"?>
+<layer docid="ICCGER_DeReKo-WPD17.B00-26993"
+       xmlns="http://ids-mannheim.de/ns/KorAP"
+       version="KorAP-0.4">
+  <spanList>
+    <span id="s0" from="0" to="9450" l="1">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">text</f>
+      </fs>
+    </span>
+    <span id="s1" from="0" to="9450" l="2">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">body</f>
+      </fs>
+    </span>
+    <span id="s2" from="0" to="414" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">fix2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s3" from="0" to="414" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s4" from="0" to="66" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s5" from="5" to="15" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">bo</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s6" from="25" to="37" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Membran_%28Trennschicht%29</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s7" from="47" to="65" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Zellkompartiment</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s8" from="67" to="190" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s9" from="150" to="160" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Organell</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s10" from="166" to="174" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Vakuole</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s11" from="179" to="189" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Cytoplasma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s12" from="191" to="414" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s13" from="284" to="293" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Molek%C3%BCl</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s14" from="353" to="367" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Zellkompartiment</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s15" from="414" to="1023" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">fix2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s16" from="414" to="430" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s17" from="415" to="430" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s18" from="430" to="430" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s19" from="430" to="430" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s20" from="430" to="430" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">gap</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="reason">template</f>
+            <f name="instant">false</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s21" from="430" to="1023" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s22" from="431" to="566" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s23" from="567" to="716" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s24" from="576" to="585" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Lipophil</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s25" from="679" to="691" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Kohlendioxid</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s26" from="693" to="701" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Alkohole</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s27" from="706" to="715" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Harnstoff</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s28" from="717" to="971" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s29" from="811" to="816" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Ion</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s30" from="822" to="833" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Zucker</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s31" from="886" to="903" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Transportprotein</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s32" from="972" to="1023" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s33" from="996" to="1020" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Selektive_Permeabilit%C3%A4t</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s34" from="1021" to="1021" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ptr</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">WPD17.B00.26993-f1</f>
+            <f name="rend">ref</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s35" from="1023" to="2663" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">fix2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s36" from="1023" to="1032" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s37" from="1024" to="1032" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s38" from="1032" to="1327" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s39" from="1033" to="1108" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s40" from="1109" to="1181" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s41" from="1182" to="1327" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s42" from="1255" to="1273" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s43" from="1293" to="1316" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s44" from="1327" to="1327" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ptr</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">WPD17.B00.26993-f2</f>
+            <f name="rend">ref</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s45" from="1327" to="2064" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s46" from="1328" to="1376" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s47" from="1354" to="1361" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Lipide</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s48" from="1366" to="1375" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Protein</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s49" from="1377" to="1433" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s50" from="1434" to="1584" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s51" from="1461" to="1479" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Lipiddoppelschicht</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s52" from="1538" to="1555" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Physikalische_Chemie</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s53" from="1585" to="1648" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s54" from="1648" to="1829" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s55" from="1649" to="1657" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Steroide</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s56" from="1666" to="1677" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Cholesterin</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s57" from="1830" to="1951" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s58" from="1880" to="1888" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Protein</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s59" from="1952" to="2064" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s60" from="2064" to="2546" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s61" from="2065" to="2175" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s62" from="2098" to="2104" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Dichte_%28Physik%29</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s63" from="2172" to="2174" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">super</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s64" from="2176" to="2546" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s65" from="2303" to="2316" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Myelin</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s66" from="2366" to="2378" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Erythrozyten</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s67" from="2404" to="2411" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/E._coli</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s68" from="2426" to="2446" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Mitochondrien</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s69" from="2483" to="2496" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Purpurmembran</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s70" from="2501" to="2514" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Halobacterium</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s71" from="2546" to="2546" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ptr</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">WPD17.B00.26993-f3</f>
+            <f name="rend">ref</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s72" from="2546" to="2663" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s73" from="2547" to="2663" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s74" from="2575" to="2585" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Organell</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s75" from="2587" to="2595" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Zellkern</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s76" from="2597" to="2610" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Mitochondrium</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s77" from="2612" to="2619" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Plastid</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s78" from="2645" to="2658" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Doppelmembran</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s79" from="2663" to="5165" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">fix2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s80" from="2663" to="2684" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s81" from="2664" to="2684" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s82" from="2684" to="3392" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s83" from="2684" to="2871" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s84" from="2685" to="2685" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">gap</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="reason">template</f>
+            <f name="instant">false</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s85" from="2734" to="2745" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Amphiphil</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s86" from="2746" to="2760" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Phospholipide</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s87" from="2771" to="2781" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Hydrophil</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s88" from="2802" to="2812" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Hydrophob</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s89" from="2837" to="2860" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Kohlenwasserstoff</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s90" from="2872" to="3042" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s91" from="2914" to="2934" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Hydrophober_Effekt</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s92" from="3043" to="3231" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s93" from="3232" to="3323" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s94" from="3324" to="3392" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s95" from="3368" to="3375" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Lipasen</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s96" from="3392" to="3498" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s97" from="3393" to="3498" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s98" from="3498" to="3561" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s99" from="3498" to="3561" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s100" from="3499" to="3561" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Datei%3ALipid_bilayer_fluid.svg</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s101" from="3561" to="4494" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s102" from="3562" to="3633" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s103" from="3634" to="3703" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s104" from="3704" to="3830" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s105" from="3831" to="4067" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s106" from="3889" to="3899" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s107" from="3890" to="3898" l="7">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Flipflop_%28Zellbiologie%29</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s108" from="3988" to="3997" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s109" from="4002" to="4011" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s110" from="4033" to="4052" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Adenosintriphosphat</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s111" from="4068" to="4166" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s112" from="4167" to="4292" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s113" from="4293" to="4494" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s114" from="4336" to="4347" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s115" from="4494" to="4972" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s116" from="4495" to="4694" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s117" from="4651" to="4660" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Bakterien</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s118" from="4661" to="4661" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ptr</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">WPD17.B00.26993-f5</f>
+            <f name="rend">ref</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s119" from="4695" to="4736" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s120" from="4737" to="4823" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s121" from="4824" to="4972" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s122" from="4952" to="4960" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Gel</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s123" from="4972" to="5165" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s124" from="4972" to="5165" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s125" from="4973" to="4982" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Vitamin_E</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s126" from="4991" to="5002" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Antioxidans</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s127" from="5008" to="5017" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Ascorbins%C3%A4ure</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s128" from="5146" to="5163" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Lipidperoxidation</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s129" from="5165" to="6654" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">fix2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s130" from="5165" to="5183" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s131" from="5166" to="5183" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s132" from="5183" to="5247" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s133" from="5183" to="5247" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s134" from="5184" to="5247" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Datei%3ACell_membrane_detailed_diagram_de.svg</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s135" from="5247" to="5753" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s136" from="5248" to="5428" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s137" from="5271" to="5287" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Membranprotein</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s138" from="5349" to="5376" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Protein-Lipid-Interaktion</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s139" from="5429" to="5540" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s140" from="5541" to="5753" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s141" from="5564" to="5574" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Rezeptor_%28Biochemie%29</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s142" from="5753" to="6235" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s143" from="5754" to="5810" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s144" from="5777" to="5793" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Membrantransport</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s145" from="5811" to="5882" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s146" from="5883" to="6105" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s147" from="6080" to="6085" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Blutgruppe</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s148" from="6090" to="6103" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Human_Leukocyte_Antigen</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s149" from="6106" to="6235" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s150" from="6169" to="6194" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Schl%C3%BCssel-Schloss-Prinzip</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s151" from="6235" to="6556" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s152" from="6236" to="6399" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s153" from="6245" to="6266" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Fl%C3%BCssig-Mosaik-Modell</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s154" from="6400" to="6556" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s155" from="6556" to="6654" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s156" from="6557" to="6654" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s157" from="6654" to="6881" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">fix2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s158" from="6654" to="6665" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s159" from="6655" to="6665" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s160" from="6665" to="6881" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s161" from="6666" to="6752" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s162" from="6670" to="6680" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Zytoplasma</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s163" from="6753" to="6834" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s164" from="6769" to="6780" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Zellmembran</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s165" from="6782" to="6795" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s166" from="6797" to="6808" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s167" from="6814" to="6833" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">hi</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="rend">it</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s168" from="6835" to="6881" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s169" from="6881" to="7892" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">fix2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s170" from="6881" to="6893" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s171" from="6882" to="6893" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s172" from="6893" to="6955" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s173" from="6893" to="6955" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s174" from="6894" to="6955" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Datei%3ALipid_unsaturation_effect.svg</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s175" from="6955" to="7892" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s176" from="6956" to="7015" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s177" from="7001" to="7011" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Temperatur</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s178" from="7016" to="7144" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s179" from="7145" to="7235" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s180" from="7208" to="7223" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Fl%C3%BCssigkristall</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s181" from="7236" to="7369" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s182" from="7370" to="7580" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s183" from="7575" to="7579" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Gel</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s184" from="7581" to="7723" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s185" from="7669" to="7684" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Doppelbindung</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s186" from="7724" to="7825" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s187" from="7826" to="7892" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s188" from="7892" to="8806" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">fix2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s189" from="7892" to="7904" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s190" from="7893" to="7904" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s191" from="7904" to="8806" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s192" from="7905" to="8005" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s193" from="8006" to="8101" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s194" from="8102" to="8154" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s195" from="8155" to="8396" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s196" from="8202" to="8215" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Membrangenese</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s197" from="8268" to="8279" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Zellteilung</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s198" from="8281" to="8293" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Zellwachstum</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s199" from="8295" to="8304" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Sekretion</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s200" from="8397" to="8736" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s201" from="8510" to="8521" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Desaturase</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s202" from="8737" to="8806" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s203" from="8753" to="8766" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Wechselwarm</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s204" from="8806" to="9271" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">fix2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s205" from="8806" to="8819" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s206" from="8807" to="8819" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s207" from="8819" to="8819" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s208" from="8819" to="8819" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s209" from="8819" to="8819" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">gap</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="reason">template</f>
+            <f name="instant">false</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s210" from="8819" to="9271" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s211" from="8820" to="8954" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s212" from="8955" to="9031" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s213" from="9032" to="9163" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s214" from="9164" to="9271" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s215" from="9271" to="9419" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">fix2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s216" from="9271" to="9284" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s217" from="9272" to="9284" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s218" from="9284" to="9419" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s219" from="9284" to="9419" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s220" from="9285" to="9364" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Datei%3AMembran2.png</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s221" from="9365" to="9419" l="6">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">ref</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="target">https://de.wikipedia.org/wiki/Datei%3AVersuch_zum_Fluid-Mosaic-Modell.png</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s222" from="9419" to="9450" l="3">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">div</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">fix2</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s223" from="9419" to="9430" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s224" from="9420" to="9430" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">s</f>
+      </fs>
+    </span>
+    <span id="s225" from="9431" to="9448" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">head</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="type">cross</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s226" from="9448" to="9448" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+    <span id="s227" from="9448" to="9448" l="5">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">gap</f>
+        <f name="attr">
+          <fs type="attr">
+            <f name="reason">references</f>
+            <f name="instant">false</f>
+          </fs>
+        </f>
+      </fs>
+    </span>
+    <span id="s228" from="9449" to="9450" l="4">
+      <fs type="struct" xmlns="http://www.tei-c.org/ns/1.0">
+        <f name="name">p</f>
+      </fs>
+    </span>
+  </spanList>
+</layer>

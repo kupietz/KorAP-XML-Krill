@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiHeader>
+         <fileDesc>
+            <titleStmt>
+               <title>WPD17/B00.26993 Biomembran, In: Wikipedia -
+                     URL:http://de.wikipedia.org/wiki/Biomembran: Wikipedia, 2017 [Extract]</title>
+               <respStmt>
+                  <resp>compiled by ICC</resp>
+                  <name>ICC: IDS</name>
+               </respStmt>
+            </titleStmt>
+            <publicationStmt>
+               <distributor>
+                  <note>NOT FOR DISTRIBUTION</note>
+                  <note>German Reference Corpus DeReKo</note>
+               </distributor>
+               <idno>ID</idno>
+            </publicationStmt>
+            <sourceDesc>
+               <bibl>
+                  <author>Ghilt, u.a.</author>
+                  <title>Biomembran</title>
+                  <pubPlace/>
+                  <publisher/>
+                  <date when="2017">2017</date>
+               </bibl>
+            </sourceDesc>
+         </fileDesc>
+         <profileDesc>
+            <textClass>
+               <classCode scheme="ICC">Learned_Natural_Sciences</classCode>
+            </textClass>
+         </profileDesc>
+         <revisionDesc>
+            <change when="2022-12-21" who="IDS">Updated conversion from TEI I5</change>
+         </revisionDesc>
+      </teiHeader>

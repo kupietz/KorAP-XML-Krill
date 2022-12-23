@@ -242,7 +242,7 @@ sub parse {
   # text title
   elsif ($type eq 'text') {
     unless ($self->{T_title}) {
-      if ($titles = $dom->find('fileDesc > titleStmt > t\.title')) {
+      if ($titles = $dom->find('fileDesc > titleStmt > t\.title, fileDesc > titleStmt > title')) {
         if ($lang) {
           $title = $titles->first(sub{ $_->attr('xml:lang') && lc($_->attr('xml:lang')) eq lc($lang) });
         };

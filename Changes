@@ -1,3 +1,6 @@
+        - Support for UDPipe POS, lemma and dependency
+          annotations (kupietz).
+
 0.48 2022-11-15
         - Improve support for text siglen including
           underscore in corpus parts.
