@@ -164,9 +164,12 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2022/07/27
 # - Support for preferred language transformation
+#
+# 2023/02/05
+# - Support for UD
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2022/07/27';
+our $LAST_CHANGE = '2023/02/05';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -1497,6 +1500,10 @@ L<Krill|https://github.com/KorAP/Krill>.
     #Morpho
     #Sentences
 
+  UDPipe
+    #Dependency
+    #Morpho
+
   XIP
     #Constituency
     #Morpho
@@ -1656,7 +1663,7 @@ L<html|https://www.tei-c.org/release/doc/tei-p5-doc/en/html/FS.html>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2022, L<IDS Mannheim|https://www.ids-mannheim.de/>
+Copyright (C) 2015-2023, L<IDS Mannheim|https://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|https://www.nils-diewald.de/>
 

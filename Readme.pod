@@ -438,6 +438,10 @@ L<Krill|https://github.com/KorAP/Krill>.
     #Morpho
     #Sentences
 
+  UDPipe
+    #Dependency
+    #Morpho
+
   XIP
     #Constituency
     #Morpho
@@ -597,7 +601,7 @@ L<html|https://www.tei-c.org/release/doc/tei-p5-doc/en/html/FS.html>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2022, L<IDS Mannheim|https://www.ids-mannheim.de/>
+Copyright (C) 2015-2023, L<IDS Mannheim|https://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|https://www.nils-diewald.de/>
 
