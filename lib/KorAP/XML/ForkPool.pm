@@ -3,8 +3,6 @@ use strict;
 use warnings;
 use Parallel::ForkManager;
 use v5.10;
-use Sys::Info;
-use Sys::Info::Constants qw( :device_cpu );
 
 # Construct a new fork pool
 sub new {
