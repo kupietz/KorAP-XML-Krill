@@ -167,9 +167,13 @@ use Fcntl qw(:flock SEEK_END);
 #
 # 2023/02/05
 # - Support for UD
+#
+# 2023/02/13
+# - Fix temporary-extract handling from configuration file.
+#
 # ----------------------------------------------------------
 
-our $LAST_CHANGE = '2023/02/05';
+our $LAST_CHANGE = '2023/02/13';
 our $LOCAL = $FindBin::Bin;
 our $KORAL_VERSION = 0.03;
 our $VERSION_MSG = <<"VERSION";
@@ -201,7 +205,7 @@ GetOptions(
   'base-paragraphs|bp=s'  => \($cfg{base_paragraphs}),
   'base-pagebreaks|bpb=s' => \($cfg{base_pagebreaks}),
   'gzip|z'      => \($cfg{gzip}),
-  'temporary-extract|te=s' => \($cfg{extract_dir}),
+  'temporary-extract|te=s' => \($cfg{temporary_extract}),
   'skip|s=s'    => \@skip,
   'sigle|sg=s'  => \@sigle,
   'cache|c=s'   => \($cfg{cache_file}),
@@ -290,7 +294,7 @@ my $output           = $cfg{output};
 my $input_base       = $cfg{input_base};
 my $gzip             = $cfg{gzip};
 my $to_tar           = $cfg{to_tar};
-my $extract_dir      = $cfg{extract_dir};
+my $extract_dir      = $cfg{temporary_extract};
 my $token_base       = $cfg{token}               // 'OpenNLP#tokens';
 my $cache_file       = $cfg{cache}               // 'korapxml2krill.cache';
 my $jobs             = $cfg{jobs}                // 0;
@@ -392,6 +396,7 @@ if ($cmd && $cmd eq 'serial') {
     # Create archive command
     my @archive_cmd = ($^X, $0, 'archive', @keep_argv, '-i', $_, '-o', $new_out);
     print "Start serial processing of $_ to $new_out\n";
+    print 'Command: ', join(' ', @archive_cmd), "\n";
 
     # Start archiving
     system @archive_cmd;
@@ -717,6 +722,7 @@ elsif ($cmd eq 'archive') {
 
       # Extract to temporary directory
       if ($archive->extract_all($extract_dir, $sequential_extraction ? 1: $jobs)) {
+        print "Extract sequentially to $extract_dir\n";
         @input = ($extract_dir);
       }
       else {
@@ -1269,7 +1275,7 @@ Define the number of concurrent jobs in seperated forks
 for archive processing.
 Defaults to C<0> (everything runs in a single process).
 
-If C<sequential-extraction> is not set to false, this will
+If C<sequential-extraction> is not set to true, this will
 also apply to extraction.
 
 Pass -1, and the value will be set automatically to 5
@@ -1361,7 +1367,8 @@ passed parameters.
 
 =item B<--temporary-extract|-te>
 
-Only valid for the C<archive> command.
+Only valid for the C<archive> and C<serial>
+commands.
 
 This will first extract all files into a
 directory and then will archive.

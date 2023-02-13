@@ -18,7 +18,9 @@ sub new {
   }, $class;
 };
 
-sub new_pool {
+
+# Create new fork pool
+sub _new_pool {
   my $self = shift;
 
   # Zero means: everything runs in the parent process
@@ -39,11 +41,13 @@ sub new_pool {
   return $pool;
 };
 
+
+# Iterate over a directory and process all documents
 sub process_directory {
   my $self = shift;
   my $input = shift;
 
-  my $pool = $self->new_pool;
+  my $pool = $self->_new_pool;
 
   print "Reading data ...\n";
 
@@ -91,6 +95,7 @@ sub process_directory {
 };
 
 
+# Take an archive, uncompress and iterate over all texts
 sub process_archive {
   my $self = shift;
   my $archive = shift;
@@ -110,7 +115,7 @@ sub process_archive {
   $self->{count} = scalar @dirs;
 
   # Creae new pool
-  my $pool = $self->new_pool;
+  my $pool = $self->_new_pool;
 
  ARCHIVE_LOOP:
   for (my $i = 0; $i < $count; $i++) {

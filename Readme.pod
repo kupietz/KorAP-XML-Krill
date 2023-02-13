@@ -207,7 +207,7 @@ Define the number of concurrent jobs in seperated forks
 for archive processing.
 Defaults to C<0> (everything runs in a single process).
 
-If C<sequential-extraction> is not set to false, this will
+If C<sequential-extraction> is not set to true, this will
 also apply to extraction.
 
 Pass -1, and the value will be set automatically to 5
@@ -299,7 +299,8 @@ passed parameters.
 
 =item B<--temporary-extract|-te>
 
-Only valid for the C<archive> command.
+Only valid for the C<archive> and C<serial>
+commands.
 
 This will first extract all files into a
 directory and then will archive.

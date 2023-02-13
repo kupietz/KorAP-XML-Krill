@@ -24,6 +24,9 @@ my ($fh, $cfg_file) = tempfile();
 
 my $input_base = catdir($f, '..', 'corpus', 'archives');
 
+# Temporary extract
+my $temp_out = File::Temp->newdir(CLEANUP => 0);
+
 print $fh <<"CFG";
 overwrite       0
 token           OpenNLP#tokens
@@ -34,6 +37,8 @@ jobs            -1
 meta            I5
 gzip            1
 log             DEBUG
+temporary-extract $temp_out
+sequential-extraction 1
 input-base      $input_base
 CFG
 
@@ -68,6 +73,8 @@ like($stdout, qr!Reading config from!, 'Config');
 
 # Processed using gzip
 like($stdout, qr!Processed .+?WPD15-A00-00081\.json\.gz!, 'Gzip');
+
+like($stdout, qr!Extract sequentially to!);
 
 # Check log level
 like($stdout, qr!Unable to parse KorAP::XML::Annotation::Glemm::Morpho!, 'Check log level');
