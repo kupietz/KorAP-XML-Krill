@@ -4,6 +4,8 @@ use utf8;
 use Test::More;
 use Benchmark ':hireswallclock';
 use lib 'lib', '../lib';
+use File::Basename 'dirname';
+use File::Spec::Functions 'catdir';
 
 use_ok('KorAP::XML::Index::MultiTerm');
 
@@ -89,6 +91,29 @@ is(remove_diacritics(
 is(remove_diacritics(
   q/!"#$'()*+,-.0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_` abcdefghijklmnoprstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿−ÀÁÂ ÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ/),
   q/!"#$'()*+,-.0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_` abcdefghijklmnoprstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿−AAA AAAÆCEEEEIIIIDNOOOOO×OUUUUYÞßaaaaaaæceeeeiiiiðnooooo÷ouuuuyþy/);
+
+
+# Create emoji path relative to test file
+my $emoji_file = catdir(dirname(__FILE__), 'real','all_emojis.txt');
+
+# Init test values
+my ($ok, $fail) = (0, 0);
+
+# Test all emojis line by line
+open(in_file,"<:encoding(utf8)",$emoji_file) or die("Could not open emoji file.");
+while(<in_file>){
+  chomp $_;
+  if (KorAP::XML::Tokenizer::is_emoji($_)) {
+    $ok++;
+  } else {
+    $fail++;
+  }
+};
+close(in_file);
+
+# Check emojis for regressions
+ok($ok >= 2036, "Emojis fine");
+ok($fail <= 1746, "Emojis fine");
 
 no utf8;
 

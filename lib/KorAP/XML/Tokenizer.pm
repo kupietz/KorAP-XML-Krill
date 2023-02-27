@@ -16,6 +16,7 @@ use Unicode::Normalize qw/getCombinClass normalize/;
 use List::MoreUtils 'uniq';
 use JSON::XS;
 use Log::Any qw($log);
+use utf8;
 
 # TODO 1:
 # Bei den Autoren im Index darauf achten,
@@ -41,6 +42,11 @@ has 'error';
 
 has log => sub {
   return $log;
+};
+
+# Check if token is emoji
+sub is_emoji {
+  return $_[0] =~ m{^(\p{Extended_Pictographic}+\p{Emoji_Modifier}*)$}i;
 };
 
 # Parse tokens of the document
@@ -139,15 +145,21 @@ sub parse {
       return;
     };
 
-
     # This token should be recognized
     $should++;
 
     # Ignore non-word, non-number, and non-verbal tokens per default
     # '9646' equals the musical pause, used in speech corpora
-    if ($self->non_verbal_tokens && ord($token) == 9646) {
+    if (ord($token) == 9646 && $self->non_verbal_tokens) {
       # Non-verbal token
-    } elsif (!$self->non_word_tokens && $token !~ /[\w\d]/) {
+    }
+
+    # works fine but does not match all emojis:
+    elsif (is_emoji($token)) {
+      # Emoji
+    }
+
+    elsif (!$self->non_word_tokens && $token !~ /[\w\d]/) {
       # TODO: Recognize punctuations!
       #  if ($mtt) {
       #    my $term = [$token, $from, $to];
