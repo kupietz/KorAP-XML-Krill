@@ -16,7 +16,6 @@ use Unicode::Normalize qw/getCombinClass normalize/;
 use List::MoreUtils 'uniq';
 use JSON::XS;
 use Log::Any qw($log);
-use utf8;
 
 # TODO 1:
 # Bei den Autoren im Index darauf achten,
@@ -147,15 +146,8 @@ sub parse {
     # Ignore non-word, non-number, and non-verbal tokens per default
     # '9646' equals the musical pause, used in speech corpora
     if ($self->non_verbal_tokens && ord($token) == 9646) {
-	# Non-verbal token
-    }
-    # elsif ($token eq '😍') {
-	#;
-    #}
-    elsif ($token =~ m{\p{Emoji}}){
-	;
-    }
-    elsif (!$self->non_word_tokens && $token !~ /[\w\d]/) {
+      # Non-verbal token
+    } elsif (!$self->non_word_tokens && $token !~ /[\w\d]/) {
       # TODO: Recognize punctuations!
       #  if ($mtt) {
       #    my $term = [$token, $from, $to];

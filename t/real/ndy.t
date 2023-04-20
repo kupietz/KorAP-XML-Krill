@@ -66,22 +66,5 @@ is($meta->{T_doc_author},'Leon Machère', 'Correct Doc author');
 ok(!$meta->{A_doc_editor}, 'Correct doc editor');
 
 
-# Tokenization
-use_ok('KorAP::XML::Tokenizer');
-
-my ($token_base_foundry, $token_base_layer) = (qw/Base Tokens/);
-
-# Get tokenization
-my $tokens = KorAP::XML::Tokenizer->new(
-  path => $doc->path,
-  doc => $doc,
-  foundry => $token_base_foundry,
-  layer => $token_base_layer,
-  name => 'tokens'
-);
-
-ok($tokens, 'Token Object is fine');
-ok($tokens->parse, 'Token parsing is fine');
-
 done_testing;
 __END__
