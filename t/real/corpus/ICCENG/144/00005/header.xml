@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiHeader>
+        <fileDesc>
+          <titleStmt>
+            <textSigle>EN/144.00005</textSigle>
+            <title>Irish News</title>
+            <domain>PreEdi</domain>
+          </titleStmt>
+          <sourceDesc>
+            <analytic>
+              <h.author> </h.author>
+            </analytic>
+            <imprint>
+              <pubDate type="year">1994</pubDate>
+              <pubDate type="month"/>
+              <pubDate type="day"/>
+              <pubPlace>
+                <idno type="URI"> </idno>
+              </pubPlace>
+            </imprint>
+          </sourceDesc>
+        </fileDesc>
+      </teiHeader>

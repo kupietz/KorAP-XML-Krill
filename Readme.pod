@@ -467,6 +467,8 @@ developed in the KorAP project that are part of the KorAP preprocessing pipeline
 
 =item Gingko - Meta data from the Gingko project in addition to I5
 
+=item ICC - Meta data for the ICC in addition to I5
+
 =back
 
 More importers are in preparation.

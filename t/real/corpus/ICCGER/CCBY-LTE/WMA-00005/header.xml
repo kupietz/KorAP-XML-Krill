@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiHeader>
+         <fileDesc>
+            <titleStmt>
+               <title>Affinitätschromatografie [Extract]</title>
+               <respStmt>
+                  <resp>compiled by ICC</resp>
+                  <name>ICC: IDS</name>
+               </respStmt>
+            </titleStmt>
+            <publicationStmt>
+               <distributor>
+                  <note>NOT FOR DISTRIBUTION</note>
+                  <note>German Reference Corpus DeReKo</note>
+               </distributor>
+               <idno>ID</idno>
+            </publicationStmt>
+            <sourceDesc>
+               <bibl>
+                  <author>Wilke, Marco; Weller, Michael G.</author>
+                  <title>Affinitätschromatografie</title>
+                  <pubPlace>Zug</pubPlace>
+                  <publisher>Sigwerb Sigwerb</publisher>
+                  <date when="2019">2019</date>
+                  <availability>
+                     <licence>Lizenz (Deutsch): License LogoCreative Commons - CC BY - Namensnennung 4.0 International</licence>
+                  </availability>
+               </bibl>
+            </sourceDesc>
+         </fileDesc>
+         <encodingDesc>
+            <samplingDecl>
+               <p>Extract: Pages 1-2 </p>
+            </samplingDecl>
+         </encodingDesc>
+         <profileDesc>
+            <textClass>
+               <classCode scheme="ICC">Learned_Technology</classCode>
+            </textClass>
+         </profileDesc>
+         <revisionDesc>
+            <change when="2023-01-13" who="IDS">Updated conversion from TEI I5</change>
+         </revisionDesc>
+      </teiHeader>

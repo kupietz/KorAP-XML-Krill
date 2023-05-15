@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teiHeader>
+<fileDesc>
+<titleStmt>
+<textSigle>NO/199.00002</textSigle>
+<title>Pengesnakk</title>
+<domain>blog</domain>
+</titleStmt>
+<sourceDesc>
+<analytic>
+<h.author>Kristoffersen, Lise Vermelid</h.author>
+</analytic>
+<imprint>
+<pubDate type="year">2019</pubDate>
+<pubDate type="month"/>
+<pubDate type="day"/>
+<pubPlace>
+<idno type="URI">https://www.pengesnakk.no/</idno>
+</pubPlace>
+</imprint>
+</sourceDesc>
+</fileDesc>
+</teiHeader>
