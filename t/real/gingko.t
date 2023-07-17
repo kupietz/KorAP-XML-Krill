@@ -126,6 +126,11 @@ like($token, qr!i:heutige!, 'data');
 like($token, qr!gingko/p:ADJA!, 'data');
 like($token, qr!gingko/l:heutig!, 'data');
 
+$token = join('||', @{$output->{data}->{stream}->[157]});
+like($token, qr!i:massnahme!, 'data');
+like($token, qr!s:Maßnahme!, 'data');
+
+
 # Check Gingko meta in Koral
 my $koral = decode_json($tokens->to_json(0.4));
 
