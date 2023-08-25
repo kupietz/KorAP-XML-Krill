@@ -324,7 +324,21 @@ sub parse {
       $month = 0 if $month !~ $NR_RE;
       $day   = 0 if $day   !~ $NR_RE;
 
-      my $date = $year ? ($year < 100 ? '20' . $year : $year) : '0000';
+      my $date = '0000';
+      if ($year) {
+        if (length($year) <= 2) {
+          # TEMP: This may change in the future!
+          if ($year < 50) {
+            $date = '20' . (length($year) == 1 ? '0' : '') . $year;
+          } else {
+            $date = '19' . $year;
+          };
+        }
+        else {
+          $date = $year;
+        };
+      };
+
       $date .= length($month) == 1 ? '0' . $month : $month;
       $date .= length($day) == 1 ? '0' . $day : $day;
       $self->{D_pub_date} = $date;
