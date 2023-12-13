@@ -2,6 +2,7 @@
         - Support ICC meta.
         - Fix date handling for years of length < 2.
         - Improve emoji detection (rebecca).
+        - Upgrade minimum perl version required.
 
 0.50 2023-02-13
         - Fix 'temporary-extract' configuration

@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-use v5.16;
+use v5.32;
 use strict;
 use warnings;
 use ExtUtils::MakeMaker;
@@ -49,7 +49,7 @@ WriteMakefile(
     'List::Util'      => 1.60,
     'Scalar::Util'    => 1.60,
   },
-  MIN_PERL_VERSION => '5.016',
+  MIN_PERL_VERSION => '5.032',
   test => {
     TESTS =>
       't/*.t '.
