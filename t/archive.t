@@ -6,6 +6,7 @@ use Test::More;
 use File::Basename 'dirname';
 use File::Spec::Functions qw/catfile catdir/;
 use File::Temp qw/tempdir/;
+use Test::Output qw/:stdout :stderr :functions/;
 
 use KorAP::XML::Archive;
 
@@ -36,7 +37,12 @@ my $dir = tempdir(CLEANUP => 1);
 
 {
   local $SIG{__WARN__} = sub {};
-  ok($archive->extract_sigle(['TEST/BSP/8'], $dir), 'Wrong path');
+  my $stdout = stdout_from(
+    sub {
+      ok($archive->extract_sigle(0, ['TEST/BSP/8'], $dir), 'Wrong path');
+    }
+  );
+  like($stdout, qr!Extract unzip!);
 };
 
 ok(-d catdir($dir, 'TEST'), 'Test corpus directory exists');
@@ -64,8 +70,14 @@ $dir = tempdir(CLEANUP => 1);
 
 {
   local $SIG{__WARN__} = sub {};
-  ok($archive->extract_sigle(['REI/RB*', 'REI/BNG/00071'], $dir), 'Fine');
+  my $stdout = stdout_from(
+    sub {
+      ok($archive->extract_sigle(1, ['REI/RB*', 'REI/BNG/00071'], $dir), 'Fine');
+    }
+  );
+  is($stdout, '');
 };
+
 
 ok(-d catdir($dir, 'REI'), 'Test corpus directory exists');
 ok(-d catdir($dir, 'REI','BNG'), 'Test corpus directory exists');

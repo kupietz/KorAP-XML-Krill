@@ -342,6 +342,11 @@ source has a higher priority.
 The L<Log::Any> log level, defaults to C<ERROR>.
 
 
+=item B<--quiet>
+
+Silence all information (non-log) outputs.
+
+
 =item B<--help|-h>
 
 Print help information.
@@ -478,8 +483,8 @@ See the built-in meta data importers as examples.
 
 =head1 About KorAP-XML
 
-KorAP-XML (Banski et al. 2012) is an implementation of the KorAP
-data model (Banski et al. 2013), where text data are stored physically
+KorAP-XML (Bański et al. 2012) is an implementation of the KorAP
+data model (Bański et al. 2013), where text data are stored physically
 separated from their interpretations (i.e. annotations).
 A text document in KorAP-XML therefore consists of several files
 containing primary data, metadata and annotations.
@@ -506,7 +511,7 @@ The structure of a single KorAP-XML document can be as follows:
 The C<data.xml> contains the primary data, the C<header.xml> contains
 the metadata, and the annotation layers are stored in subfolders
 like C<base>, C<struct> or C<corenlp>
-(so-called "foundries"; Banski et al. 2013).
+(so-called "foundries"; Bański et al. 2013).
 
 Metadata is available in the TEI-P5 variant I5
 (Lüngen and Sperberg-McQueen 2012). See the documentation in
@@ -567,15 +572,15 @@ based on a single token stream.
 
 =head2 References
 
-Piotr Banski, Cyril Belica, Helge Krause, Marc Kupietz, Carsten Schnober, Oliver Schonefeld, and Andreas Witt (2011):
+Piotr Bański, Cyril Belica, Helge Krause, Marc Kupietz, Carsten Schnober, Oliver Schonefeld, and Andreas Witt (2011):
 KorAP data model: first approximation, December.
 
-Piotr Banski, Peter M. Fischer, Elena Frick, Erik Ketzan, Marc Kupietz, Carsten Schnober, Oliver Schonefeld and Andreas Witt (2012):
+Piotr Bański, Peter M. Fischer, Elena Frick, Erik Ketzan, Marc Kupietz, Carsten Schnober, Oliver Schonefeld and Andreas Witt (2012):
 "The New IDS Corpus Analysis Platform: Challenges and Prospects",
 Proceedings of the Eighth International Conference on Language Resources and Evaluation (LREC 2012).
 L<PDF|http://www.lrec-conf.org/proceedings/lrec2012/pdf/789_Paper.pdf>
 
-Piotr Banski, Elena Frick, Michael Hanl, Marc Kupietz, Carsten Schnober and Andreas Witt (2013):
+Piotr Bański, Elena Frick, Michael Hanl, Marc Kupietz, Carsten Schnober and Andreas Witt (2013):
 "Robust corpus architecture: a new look at virtual collections and data access",
 Corpus Linguistics 2013. Abstract Book. Lancaster: UCREL, pp. 23-25.
 L<PDF|https://ids-pub.bsz-bw.de/frontdoor/deliver/index/docId/4485/file/Ba%c5%84ski_Frick_Hanl_Robust_corpus_architecture_2013.pdf>
@@ -604,7 +609,7 @@ L<html|https://www.tei-c.org/release/doc/tei-p5-doc/en/html/FS.html>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2023, L<IDS Mannheim|https://www.ids-mannheim.de/>
+Copyright (C) 2015-2024, L<IDS Mannheim|https://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|https://www.nils-diewald.de/>
 

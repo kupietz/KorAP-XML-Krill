@@ -142,7 +142,7 @@ sub _file_to_array {
 
 sub extract_all {
   my $self = shift;
-  my ($target_dir, $jobs) = @_;
+  my ($quiet, $target_dir, $jobs) = @_;
 
   my @init_cmd = (
     'unzip',          # Use unzip program
@@ -163,12 +163,12 @@ sub extract_all {
     push @cmds, \@cmd;
   };
 
-  $self->_extract($jobs, @cmds);
+  $self->_extract($quiet, $jobs, @cmds);
 };
 
 
 sub _extract {
-  my ($self, $jobs, @cmds) = @_;
+  my ($self, $quiet, $jobs, @cmds) = @_;
 
   # Only single call
   if (!$jobs || $jobs == 1) {
@@ -179,8 +179,10 @@ sub _extract {
       # Check for return code
       my $code = $?;
 
-      print "Extract" .
-        ($code ? " $code" : '') . " " . join(' ', @$_) . "\n";
+      unless ($quiet) {
+        print "Extract" .
+          ($code ? " $code" : '') . " " . join(' ', @$_) . "\n";
+      };
     };
   }
 
@@ -191,8 +193,10 @@ sub _extract {
       sub {
         my ($pid, $code) = @_;
         my $data = pop;
-        print "Extract [\$$pid] " .
-          ($code ? " $code" : '') . " $$data\n";
+        unless ($quiet) {
+          print "Extract [\$$pid] " .
+            ($code ? " $code" : '') . " $$data\n";
+        };
       }
     );
 
@@ -215,7 +219,7 @@ sub _extract {
 
 # Extract from sigle
 sub extract_sigle {
-  my ($self, $sigle, $target_dir, $jobs) = @_;
+  my ($self, $quiet, $sigle, $target_dir, $jobs) = @_;
   my @cmds = $self->cmds_from_sigle($sigle);
 
   @cmds = map {
@@ -223,7 +227,7 @@ sub extract_sigle {
     $_;
   } @cmds;
 
-  return $self->_extract($jobs, @cmds);
+  return $self->_extract($quiet, $jobs, @cmds);
 };
 
 

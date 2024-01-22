@@ -238,6 +238,30 @@ $call = join(
 
 ok(-f $json, 'Json file exists');
 
+# Test quiet
+
+# my $input = catfile($f, '..', 'corpus', 'archive.zip');
+# ok(-f $input, 'Input archive found');
+
+$call = join(
+  ' ',
+  'perl', $script,
+  'archive',
+  '--input' => '' . $input,
+  '--quiet',
+  '--output' => $output,
+  '--sigle' => 'TEST/BSP/2',
+  '--sigle' => 'TEST/BSP/5',
+  '-t' => 'Base#tokens_aggr',
+  '-m' => 'Sgbr'
+);
+
+{
+  local $SIG{__WARN__} = sub {};
+  my $out = stdout_from(sub { system($call); });
+
+  is($out, "\n", $call);
+};
 
 done_testing;
 __END__

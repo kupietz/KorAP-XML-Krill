@@ -216,6 +216,7 @@ GetOptions(
   'primary|p!'  => sub {
     warn 'Primary flag no longer supported!';
   },
+  'quiet'       => \($cfg{quiet}),
   'pretty|y'    => sub {
     warn 'Pretty flag no longer supported!';
   },
@@ -266,7 +267,7 @@ if ($cfg_file && -e $cfg_file) {
               gzip to-tar log lang cache non-word-tokens
               non-verbal-tokens sequential-extraction
               temporary-extract cache-init
-              koral extract-dir jobs!) {
+              koral extract-dir jobs quiet!) {
     my $underlined = $_ =~ tr/-/_/r;
     if (!defined($cfg{$underlined}) && defined $config{$_}) {
       $cfg{$underlined} = $config{$_};
@@ -303,6 +304,7 @@ my $base_sentences   = lc($cfg{base_sentences}   // '');
 my $base_paragraphs  = lc($cfg{base_paragraphs}  // '');
 my $base_pagebreaks  = lc($cfg{base_pagebreaks}  // '');
 my $sequential_extraction = $cfg{sequential_extraction} // 0;
+my $q                = !!($cfg{quiet}) // 0;
 
 # Get tokenization basis
 my ($token_base_foundry, $token_base_layer) = split(/#/, $token_base) if $token_base;
@@ -395,8 +397,10 @@ if ($cmd && $cmd eq 'serial') {
 
     # Create archive command
     my @archive_cmd = ($^X, $0, 'archive', @keep_argv, '-i', $_, '-o', $new_out);
-    print "Start serial processing of $_ to $new_out\n";
-    print 'Command: ', join(' ', @archive_cmd), "\n";
+    unless ($q) {
+      print "Start serial processing of $_ to $new_out\n";
+      print 'Command: ', join(' ', @archive_cmd), "\n";
+    };
 
     # Start archiving
     system @archive_cmd;
@@ -608,7 +612,7 @@ if (@input > 0) {
   # Sort files by length
   @input = sort { length($a) <=> length($b) } @new_input;
 
-  print 'Input is ' . join(', ', @input)."\n";
+  print 'Input is ' . join(', ', @input)."\n" unless $q;
 };
 
 
@@ -669,17 +673,21 @@ if ($cmd eq 'extract') {
     # Iterate over all given sigles and extract
     foreach (@sigle) {
 
-      print "$_ ...\n";
+      unless ($q) {
+        print "$_ ...\n";
 
-      # TODO: Make this OS independent
-      print '... ' . (
+        # TODO: Make this OS independent
+        print '... ' . (
 
-        # TODO:
-        #   - prefix???
-        $archive->extract_sigle([$_], $output, $jobs)
-        ? '' : 'not '
-      );
-      print "extracted.\n";
+          # TODO:
+          #   - prefix???
+          $archive->extract_sigle(0, [$_], $output, $jobs)
+          ? '' : 'not '
+        );
+        print "extracted.\n";
+      } else {
+        $archive->extract_sigle(1, [$_], $output, $jobs);
+      }
     };
   }
 
@@ -714,15 +722,15 @@ elsif ($cmd eq 'archive') {
       # Create a temporary directory
       if ($extract_dir eq ':temp:') {
         $extract_dir = tempdir(CLEANUP => 0);
-        print "Temporarily extract to $extract_dir\n";
+        print "Temporarily extract to $extract_dir\n" unless $q;
       };
 
       # Add some random extra to avoid clashes with multiple archives
       $extract_dir = catdir($extract_dir, random_string('cccccc'));
 
       # Extract to temporary directory
-      if ($archive->extract_all($extract_dir, $sequential_extraction ? 1: $jobs)) {
-        print "Extract sequentially to $extract_dir\n";
+      if ($archive->extract_all($q, $extract_dir, $sequential_extraction ? 1: $jobs)) {
+        print "Extract sequentially to $extract_dir\n" unless $q;
         @input = ($extract_dir);
       }
       else {
@@ -759,7 +767,7 @@ elsif ($cmd eq 'archive') {
     };
 
     # Initiate the tar file
-    print "Writing to file $tar_file\n";
+    print "Writing to file $tar_file\n" unless $q;
     $tar_fh = IO::File->new($tar_file, 'w');
     $tar_fh->binmode(1);
 
@@ -790,10 +798,13 @@ elsif ($cmd eq 'archive') {
       my ($pid, $code) = @_;
       my $data = pop;
 
-      print 'Convert ['. ($jobs > 0 ? "\$$pid:" : '') .
-        ($iter++) . "/$count]" .
-        ($code ? " $code" : '') .
-        ' ' . $data->[0] . "\n";
+      unless ($q) {
+        print 'Convert ['. ($jobs > 0 ? "\$$pid:" : '') .
+          $iter . "/$count]" .
+          ($code ? " $code" : '') .
+          ' ' . $data->[0] . "\n";
+      };
+      $iter++;
 
       if (!$code && $to_tar && $data->[2]) {
         my $filename = $data->[2];
@@ -821,7 +832,7 @@ elsif ($cmd eq 'archive') {
 
   my $t;
   my $temp;
-  print "Reading data ...\n";
+  print "Reading data ...\n" unless $q;
 
   #  unless (Cache::FastMmap->new(
   #    share_file => $cache_file,
@@ -850,7 +861,7 @@ elsif ($cmd eq 'archive') {
       last unless $it->next;
     };
 
-    print "Start processing ...\n";
+    print "Start processing ...\n" unless $q;
     $t = Benchmark->new;
     $count = scalar @dirs;
 
@@ -895,7 +906,7 @@ elsif ($cmd eq 'archive') {
     # Get sigles to extract
     my $prefix = set_sigle($archive);
 
-    print "Start processing ...\n";
+    print "Start processing ...\n" unless $q;
     $t = Benchmark->new;
     my @dirs = $archive->list_texts;
     $count = scalar @dirs;
@@ -925,7 +936,7 @@ elsif ($cmd eq 'archive') {
       # because extraction can be horrible slow!
 
       # Extract from archive
-      if ($archive->extract_sigle([join('/', $corpus, $doc, $text)], $temp, $sequential_extraction ? 1 : $jobs)) {
+      if ($archive->extract_sigle($q, [join('/', $corpus, $doc, $text)], $temp, $sequential_extraction ? 1 : $jobs)) {
 
         # Create corpus directory
         my $input = catdir("$temp", $corpus);
@@ -960,7 +971,7 @@ elsif ($cmd eq 'archive') {
   }
 
   else {
-    print "Input is neither a directory nor an archive.\n\n";
+    print "Input is neither a directory nor an archive.\n\n" unless $q;
   };
 
   $pool->wait_all_children;
@@ -972,11 +983,12 @@ elsif ($cmd eq 'archive') {
   if ($to_tar && $tar_fh) {
     $tar_archive->finish;
     $tar_fh->close;
-    print "Wrote to tar archive.\n";
+    print "Wrote to tar archive.\n" unless $q;
   };
-
-  print timestr(timediff(Benchmark->new, $t))."\n";
-  print "Done.\n";
+  unless ($q) {
+    print timestr(timediff(Benchmark->new, $t))."\n";
+    print "Done.\n";
+  };
 };
 
 
@@ -1016,23 +1028,28 @@ sub set_sigle {
       # Sigle is a doc sigle
       if ($_ =~ m!^(?:\.[/\\])?[^/\\]+?[/\\][^/\\]+?$!) {
 
-        print "$_ ...";
+        print "$_ ..." unless $q;
         # Check if a prefix is needed
         unless ($prefix_check) {
 
-          if ($prefix = $archive->check_prefix) {
+          if ($prefix = $archive->check_prefix && !$q) {
             print " with prefix ...";
           };
           $prefix_check = 1;
         };
 
-        print "\n";
+        unless ($q) {
+          print "\n";
 
-        print '... ' . (
-          $archive->extract_sigle([$_], $output, $sequential_extraction ? 1 : $jobs)
+          print '... ' . (
+            $archive->extract_sigle($q, [$_], $output, $sequential_extraction ? 1 : $jobs)
             ? '' : 'not '
-        );
-        print "extracted.\n";
+          );
+          print "extracted.\n";
+        }
+        else {
+          $archive->extract_sigle($q, [$_], $output, $sequential_extraction ? 1 : $jobs)
+        };
       }
 
       # Sigle is a text sigle
@@ -1041,7 +1058,7 @@ sub set_sigle {
 
         unless ($prefix_check) {
 
-          if ($prefix = $archive->check_prefix) {
+          if ($prefix = $archive->check_prefix && !$q) {
             print " with prefix ...";
           };
           $prefix_check = 1;
@@ -1410,6 +1427,11 @@ source has a higher priority.
 The L<Log::Any> log level, defaults to C<ERROR>.
 
 
+=item B<--quiet>
+
+Silence all information (non-log) outputs.
+
+
 =item B<--help|-h>
 
 Print help information.
@@ -1672,7 +1694,7 @@ L<html|https://www.tei-c.org/release/doc/tei-p5-doc/en/html/FS.html>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2015-2023, L<IDS Mannheim|https://www.ids-mannheim.de/>
+Copyright (C) 2015-2024, L<IDS Mannheim|https://www.ids-mannheim.de/>
 
 Author: L<Nils Diewald|https://www.nils-diewald.de/>
 
