@@ -54,7 +54,7 @@ sub parse {
           };
 
           # pos
-          if (($_->{-name} eq 'ctag') && ($found = $_->{'#text'})) {
+          if (($_->{-name} eq 'ctag' || $_->{-name} eq 'pos') && ($found = $_->{'#text'})) {
             $pos{$found} += $certainty // 1;
           };
         };
