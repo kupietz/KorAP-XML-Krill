@@ -514,6 +514,10 @@ push(@layers,
      ['Sgbr', 'Lemma'],
      ['Sgbr', 'Morpho']);
 
+# Spacy
+push(@layers,
+     ['Spacy', 'Morpho']);
+
 # Talismane
 push(@layers,
      ['Talismane', 'Dependency'],
